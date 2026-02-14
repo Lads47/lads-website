@@ -103,7 +103,7 @@
         }
         .page-hero::before {
             content: ''; position: absolute; inset: 0;
-            background: url('../photo/20220717_194319.jpg') center/cover no-repeat;
+            background: url('../photo/ino0.jpg') center calc(50% + 100px)/cover no-repeat;
             opacity: 0.3;
         }
         .page-hero-content {
@@ -214,6 +214,34 @@
             width: 16px; height: 16px; stroke: currentColor; stroke-width: 2;
             fill: none; transition: var(--t);
         }
+
+        /* ============================================
+           PHOTOS
+           ============================================ */
+        .real-photos { margin-top: 60px; display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .real-photos.has-two { grid-template-columns: 1fr 1fr; }
+        .real-photos.has-three { grid-template-columns: 1fr 1fr 1fr; }
+        .real-photos.has-four { grid-template-columns: 1fr 1fr 1fr 1fr; }
+        .real-photo-item { border-radius: var(--radius); overflow: hidden; cursor: pointer; }
+        .real-photo-item img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--radius); transition: transform 0.3s ease; }
+        .real-photo-item:hover img { transform: scale(1.03); }
+        .real-photo-item .photo-caption { font-size: 0.82rem; color: var(--secondary); margin-top: 8px; text-align: center; font-style: italic; }
+        @media (max-width: 768px) {
+            .real-photos.has-two, .real-photos.has-three, .real-photos.has-four { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================
+           VIDEO
+           ============================================ */
+        .video-container { margin-top: 20px; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: var(--radius); }
+
+        /* ============================================
+           LIGHTBOX
+           ============================================ */
+        .lightbox-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9999; align-items: center; justify-content: center; cursor: pointer; }
+        .lightbox-overlay.active { display: flex; }
+        .lightbox-overlay img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: var(--radius); }
 
         /* ============================================
            BACK LINK
@@ -440,6 +468,7 @@
                         <li>Synchronisation parfaite entre les sites</li>
                     </ul>
                 </div>
+                <div class="real-sidebar">
                 <div class="real-meta">
                     <div class="real-meta-item">
                         <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
@@ -452,7 +481,7 @@
                         <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
                         <div>
                             <span class="meta-label">Technologie</span>
-                            <span class="meta-value">Fibre optique, 5G</span>
+                            <span class="meta-value">Remote Production</span>
                         </div>
                     </div>
                     <div class="real-meta-item">
@@ -463,6 +492,32 @@
                         </div>
                     </div>
                 </div>
+                <!-- Video -->
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/1006640017" title="inovae_1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                </div>
+            </div>
+
+            <!-- Photos -->
+            <div class="real-photos reveal">
+                <div class="real-photo-item">
+                    <img src="../photo/ino0.jpg" alt="R&eacute;alisation en Remote Production">
+                    <p class="photo-caption">R&eacute;alisation en Remote Production avec la r&eacute;ception des cam&eacute;ras de Bordeaux, Poitiers et Limoges</p>
+                </div>
+                <div class="real-photo-item">
+                    <img src="../photo/ino1.png" alt="Les 3 villes en sc&egrave;ne">
+                    <p class="photo-caption">Une des sc&egrave;nes avec les 3 villes de cette r&eacute;alisation</p>
+                </div>
+                <div class="real-photo-item">
+                    <img src="../photo/ino3.jpg" alt="La r&eacute;gie de Bordeaux">
+                    <p class="photo-caption">La r&eacute;gie de Bordeaux avec sur le vid&eacute;oprojecteur en miniature le plan large de Limoges et le plan large de Poitiers pour le public de Bordeaux</p>
+                </div>
+            </div>
+
+            <!-- Lightbox -->
+            <div class="lightbox-overlay" id="lightbox">
+                <img src="" alt="">
             </div>
 
             <!-- Back link -->
@@ -567,6 +622,27 @@
                 backToTop.classList.remove('visible');
             }
         });
+
+        // Photo grid auto-detect
+        document.querySelectorAll('.real-photos').forEach(function(grid) {
+            var count = grid.querySelectorAll('.real-photo-item').length;
+            if (count === 2) grid.classList.add('has-two');
+            else if (count === 3) grid.classList.add('has-three');
+            else if (count >= 4) grid.classList.add('has-four');
+        });
+
+        // Lightbox
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = lightbox.querySelector('img');
+        document.querySelectorAll('.real-photo-item img').forEach(function(img) {
+            img.addEventListener('click', function() {
+                lightboxImg.src = this.src;
+                lightboxImg.alt = this.alt;
+                lightbox.classList.add('active');
+            });
+        });
+        lightbox.addEventListener('click', function() { lightbox.classList.remove('active'); });
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') lightbox.classList.remove('active'); });
 
         // Scroll reveal
         var reveals = document.querySelectorAll('.reveal');

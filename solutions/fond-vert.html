@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peer Gynt &mdash; Op&eacute;ra de Limoges &mdash; 2024 - Les Ateliers du Stream</title>
-    <meta name="description" content="R&eacute;alisation Peer Gynt &agrave; l'Op&eacute;ra de Limoges : six cam&eacute;ras sur sc&egrave;ne, trente vid&eacute;os, r&eacute;gie &agrave; trois m&eacute;langeurs vid&eacute;o et liaison fibre optique.">
+    <title>Fond vert - Les Ateliers du Stream</title>
+    <meta name="description" content="Studio virtuel sur fond vert de 4 &agrave; 12 m&egrave;tres de long et 2,20 m&egrave;tres de haut pour r&eacute;aliser des productions immersives avec incrustation de d&eacute;cors virtuels en temps r&eacute;el.">
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <style>
         /* ============================================
@@ -103,7 +103,7 @@
         }
         .page-hero::before {
             content: ''; position: absolute; inset: 0;
-            background: url('../photo/peer-gynt.webp') center/cover no-repeat;
+            background: url('../photo/20210406_151153.jpg') center calc(50% + 130px)/cover no-repeat;
             opacity: 0.3;
         }
         .page-hero-content {
@@ -144,7 +144,7 @@
         }
 
         /* ============================================
-           REALISATION DETAIL
+           SOLUTION DETAIL
            ============================================ */
         .real-detail-layout {
             display: grid;
@@ -152,9 +152,7 @@
             gap: 80px;
             align-items: start;
         }
-        .real-detail-text .section-desc {
-            margin-bottom: 20px;
-        }
+        .real-detail-text .section-desc { margin-bottom: 20px; }
         .real-tag-inline {
             display: inline-block; padding: 4px 14px; font-size: 0.68rem;
             font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px;
@@ -168,9 +166,7 @@
             border-radius: var(--radius);
             border: 1px solid var(--gris-clair);
         }
-        .real-meta-item {
-            display: flex; align-items: center; gap: 14px;
-        }
+        .real-meta-item { display: flex; align-items: center; gap: 14px; }
         .real-meta-item svg {
             width: 22px; height: 22px; flex-shrink: 0;
             stroke: var(--at-primary); stroke-width: 2;
@@ -187,56 +183,36 @@
         }
 
         /* ============================================
+           FEATURE LIST
+           ============================================ */
+        .feature-list { list-style: none; margin-top: 20px; }
+        .feature-list li {
+            position: relative; padding-left: 22px;
+            font-size: 0.9rem; color: var(--secondary); line-height: 2.2;
+        }
+        .feature-list li::before {
+            content: ''; position: absolute; left: 0; top: 12px;
+            width: 10px; height: 10px; border-radius: 50%;
+            background: var(--at-primary);
+        }
+
+        /* ============================================
            PHOTO SECTION
            ============================================ */
-        .real-photos {
-            margin-top: 60px;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
+        .real-photos { margin-top: 60px; display: grid; grid-template-columns: 1fr; gap: 20px; }
         .real-photos.has-two { grid-template-columns: 1fr 1fr; }
         .real-photos.has-three { grid-template-columns: 1fr 1fr 1fr; }
         .real-photos.has-four { grid-template-columns: 1fr 1fr 1fr 1fr; }
-        .real-photo-item {
-            border-radius: var(--radius);
-            overflow: hidden;
-            cursor: pointer;
-        }
-        .real-photo-item img {
-            width: 100%;
-            aspect-ratio: 16/9;
-            object-fit: cover;
-            border-radius: var(--radius);
-            transition: transform 0.3s ease;
-        }
-        .real-photo-item:hover img {
-            transform: scale(1.03);
-        }
-        .real-photo-caption {
-            font-size: 0.82rem;
-            color: var(--secondary);
-            font-style: italic;
-            margin-top: 10px;
-            text-align: center;
-        }
+        .real-photo-item { border-radius: var(--radius); overflow: hidden; cursor: pointer; }
+        .real-photo-item img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--radius); transition: transform 0.3s ease; }
+        .real-photo-item:hover img { transform: scale(1.03); }
+        .real-photo-caption { font-size: 0.82rem; color: var(--secondary); font-style: italic; margin-top: 10px; text-align: center; }
 
         /* Lightbox */
-        .lightbox {
-            display: none; position: fixed; inset: 0; z-index: 9999;
-            background: rgba(0,0,0,0.9); align-items: center; justify-content: center;
-            cursor: zoom-out;
-        }
+        .lightbox { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; cursor: zoom-out; }
         .lightbox.active { display: flex; }
-        .lightbox img {
-            max-width: 92vw; max-height: 90vh; object-fit: contain;
-            border-radius: var(--radius); box-shadow: 0 10px 60px rgba(0,0,0,0.5);
-        }
-        .lightbox-close {
-            position: absolute; top: 25px; right: 30px;
-            background: none; border: none; color: #fff; font-size: 2.2rem;
-            cursor: pointer; opacity: 0.7; transition: opacity 0.2s;
-        }
+        .lightbox img { max-width: 92vw; max-height: 90vh; object-fit: contain; border-radius: var(--radius); box-shadow: 0 10px 60px rgba(0,0,0,0.5); }
+        .lightbox-close { position: absolute; top: 25px; right: 30px; background: none; border: none; color: #fff; font-size: 2.2rem; cursor: pointer; opacity: 0.7; transition: opacity 0.2s; }
         .lightbox-close:hover { opacity: 1; }
 
         /* ============================================
@@ -423,8 +399,8 @@
             </button>
             <nav>
                 <ul>
-                    <li><a href="../nos-solutions.html">Nos solutions</a></li>
-                    <li><a href="../nos-realisations.html" class="active">Nos r&eacute;alisations</a></li>
+                    <li><a href="../nos-solutions.html" class="active">Nos solutions</a></li>
+                    <li><a href="../nos-realisations.html">Nos r&eacute;alisations</a></li>
                     <li><a href="../index.html#process">Notre approche</a></li>
                     <li><a href="../nos-formations.html">Nos formations</a></li>
                     <li><a href="../notre-histoire.html">Notre histoire</a></li>
@@ -440,18 +416,18 @@
     <section class="page-hero">
         <div class="container">
             <div class="page-hero-content">
-                <span class="section-tag">Spectacle vivant</span>
-                <h1>Peer Gynt &mdash; Op&eacute;ra de Limoges</h1>
-                <p>2024</p>
+                <span class="section-tag">Studio virtuel</span>
+                <h1>Fond vert</h1>
+                <p>Studio virtuel sur fond vert de 4 &agrave; 12&nbsp;m&egrave;tres de long et 2,20&nbsp;m&egrave;tres de haut</p>
             </div>
         </div>
     </section>
 
     <!-- Breadcrumb retour -->
     <div class="container">
-        <a href="../nos-realisations.html" class="breadcrumb-back">
+        <a href="../nos-solutions.html" class="breadcrumb-back">
             <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-            Retour nos r&eacute;alisations
+            Retour nos solutions
         </a>
     </div>
 
@@ -462,37 +438,51 @@
         <div class="container">
             <div class="real-detail-layout reveal">
                 <div class="real-detail-text">
-                    <span class="real-tag-inline">Spectacle vivant</span>
-                    <h2 class="section-title" style="text-align: left;">Peer Gynt &mdash; Op&eacute;ra de Limoges &mdash; 2024</h2>
+                    <span class="real-tag-inline">Studio virtuel</span>
+                    <h2 class="section-title" style="text-align: left;">Fond vert</h2>
                     <hr class="divider">
                     <br>
                     <p class="section-desc">
-                        La compagnie Clarac-Deloeil a r&eacute;interpr&eacute;t&eacute; l'op&eacute;ra Peer Gynt de Werner Egk en int&eacute;grant six cam&eacute;ras manipulables sur sc&egrave;ne et environ trente vid&eacute;os diffus&eacute;es sur le mur du d&eacute;cor d'une maison. Cette installation vid&eacute;o devenait partie int&eacute;grante de la narration du spectacle. L'objectif principal consistait &agrave; assurer la synchronisation pr&eacute;cise du lancement des vid&eacute;os et des plans de cam&eacute;ras affich&eacute;s sur le mur de diffusion.
+                        Notre fond vert modulable de 4 &agrave; 12&nbsp;m&egrave;tres de long et 2,20&nbsp;m&egrave;tres de haut permet de r&eacute;aliser des productions immersives avec incrustation de d&eacute;cors virtuels en temps r&eacute;el.
                     </p>
                     <p class="section-desc">
-                        L'&eacute;quipe a d&eacute;ploy&eacute; une r&eacute;gie compos&eacute;e de trois m&eacute;langeurs vid&eacute;o pour garantir la redondance et permettre aux op&eacute;rateurs une meilleure pr&eacute;cision d'ex&eacute;cution. Un syst&egrave;me de liaison par fibre optique a &eacute;t&eacute; utilis&eacute; pour connecter la r&eacute;gie aux cam&eacute;ras positionn&eacute;es sur sc&egrave;ne.
+                        Id&eacute;al pour cr&eacute;er un studio virtuel directement sur le lieu de votre &eacute;v&eacute;nement. Le fond vert s'adapte &agrave; vos besoins&nbsp;: interviews, pr&eacute;sentations, animations ou s&eacute;quences cr&eacute;atives avec incrustation de d&eacute;cors personnalis&eacute;s.
                     </p>
+                    <ul class="feature-list">
+                        <li>Fond vert modulable de 4 &agrave; 12&nbsp;m de long</li>
+                        <li>Hauteur de 2,20&nbsp;m</li>
+                        <li>Incrustation de d&eacute;cors virtuels en temps r&eacute;el</li>
+                        <li>Installation sur site</li>
+                        <li>Compatible avec nos r&eacute;gies de captation</li>
+                    </ul>
                 </div>
                 <div class="real-meta">
                     <div class="real-meta-item">
-                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                        <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
                         <div>
-                            <span class="meta-label">Client</span>
-                            <span class="meta-value">Compagnie Clarac-Deloeil / Op&eacute;ra de Limoges</span>
+                            <span class="meta-label">Type de solution</span>
+                            <span class="meta-value">Studio virtuel fond vert</span>
                         </div>
                     </div>
                     <div class="real-meta-item">
-                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
                         <div>
-                            <span class="meta-label">Ann&eacute;e</span>
-                            <span class="meta-value">2024</span>
+                            <span class="meta-label">Dimensions</span>
+                            <span class="meta-value">4 &agrave; 12 m de long &middot; 2,20 m de haut</span>
                         </div>
                     </div>
                     <div class="real-meta-item">
-                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="12" x2="16" y2="12"/></svg>
                         <div>
-                            <span class="meta-label">Lieu</span>
-                            <span class="meta-value">Op&eacute;ra de Limoges</span>
+                            <span class="meta-label">Rendu</span>
+                            <span class="meta-value">Incrustation temps r&eacute;el</span>
+                        </div>
+                    </div>
+                    <div class="real-meta-item">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <div>
+                            <span class="meta-label">Usage</span>
+                            <span class="meta-value">Interviews &middot; Pr&eacute;sentations &middot; Animations</span>
                         </div>
                     </div>
                 </div>
@@ -501,15 +491,23 @@
             <!-- Photos -->
             <div class="real-photos reveal">
                 <div class="real-photo-item">
-                    <img src="../photo/peer-gynt.webp" alt="Peer Gynt - La sc&egrave;ne avec les cam&eacute;ras">
-                    <p class="real-photo-caption">La sc&egrave;ne, avec nos cam&eacute;ras sur chaque table blanche</p>
+                    <img src="../photo/20210601_144731.jpg" alt="R&eacute;alisation en direct sur fond vert">
+                    <p class="real-photo-caption">R&eacute;alisation en direct sur fond vert dans les locaux du client</p>
+                </div>
+                <div class="real-photo-item">
+                    <img src="../photo/20210406_151153.jpg" alt="12 m&egrave;tres de fond vert">
+                    <p class="real-photo-caption">12 m&egrave;tres de fond vert et une cam&eacute;ra par intervenant</p>
+                </div>
+                <div class="real-photo-item">
+                    <img src="../photo/adi europe 2.png" alt="Int&eacute;gration finale">
+                    <p class="real-photo-caption">Une des sc&egrave;nes de l'int&eacute;gration finale</p>
                 </div>
             </div>
 
             <!-- Back link -->
-            <a href="../nos-realisations.html" class="back-link reveal">
+            <a href="../nos-solutions.html" class="back-link reveal">
                 <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-                Retour aux r&eacute;alisations
+                Retour aux solutions
             </a>
         </div>
     </section>
@@ -520,7 +518,7 @@
     <section id="contact" class="cta-contact">
         <div class="container reveal">
             <span class="section-tag" style="color: var(--accent);">Vous avez un projet similaire ?</span>
-            <h2 class="section-title">On ajoute votre &eacute;v&eacute;nement ?</h2>
+            <h2 class="section-title">Et si on travaillait ensemble ?</h2>
             <p class="section-desc">
                 Un projet en construction, un &eacute;v&eacute;nement qui approche que vous envisagez de filmer et diffuser ? Parlons-en.
             </p>
