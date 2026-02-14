@@ -281,6 +281,29 @@
             border-radius: var(--radius);
         }
 
+        .process-photo {
+            position: relative;
+            flex: 1;
+            display: flex;
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .process-photo img {
+            flex: 1;
+        }
+
+        .process-photo-caption {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 10px 16px;
+            background: linear-gradient(0deg, rgba(0,0,0,0.55) 0%, transparent 100%);
+            color: var(--blanc);
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
         .timeline {
             position: relative;
             padding-left: 40px;
@@ -1021,8 +1044,14 @@
             </div>
             <div class="process-layout reveal">
                 <div class="process-visual">
-                    <img src="images/visite-technique.avif" alt="Visite technique">
-                    <img src="images/habillage_graphique.avif" alt="Habillage graphique">
+                    <div class="process-photo">
+                        <img src="images/visite-technique.avif" alt="Visite technique">
+                        <span class="process-photo-caption">Visite technique avant l'&eacute;v&eacute;nement</span>
+                    </div>
+                    <div class="process-photo">
+                        <img src="images/habillage_graphique.avif" alt="Habillage graphique">
+                        <span class="process-photo-caption">Cr&eacute;ation d'un habillage vid&eacute;o</span>
+                    </div>
                 </div>
                 <div>
                     <div class="timeline">
