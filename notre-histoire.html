@@ -217,6 +217,24 @@
             border-radius: var(--radius);
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
+        .timeline-img .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 360px;
+            padding-bottom: 202px;
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .timeline-img .video-container iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: var(--radius);
+        }
 
         /* Point central sur la ligne */
         .timeline-dot {
@@ -524,7 +542,11 @@
                         <p>Ils sont les deuxi&egrave;mes en France &agrave; utiliser la toute nouvelle fonctionnalit&eacute; de Facebook : les lives, afin de diffuser en direct les signaux du num&eacute;rique. Cette curiosit&eacute; et app&eacute;tence les rend pr&eacute;curseur d'un domaine maintenant indispensable dans le monde actuel.</p>
                     </div>
                     <div class="timeline-dot"></div>
-                    <div class="timeline-img"></div>
+                    <div class="timeline-img">
+                        <div class="video-container">
+                            <iframe src="https://player.vimeo.com/video/1006969061" title="2016 - Diffusion Facebook" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- 2018 -->
@@ -535,7 +557,11 @@
                         <p>L'entreprise s'ouvre au multiplex avec son premier &eacute;v&eacute;nement r&eacute;unissant 4 villes en France.</p>
                     </div>
                     <div class="timeline-dot"></div>
-                    <div class="timeline-img"></div>
+                    <div class="timeline-img">
+                        <div class="video-container">
+                            <iframe src="https://player.vimeo.com/video/1013489106" title="2018 - Premier multiplex" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- 2021 -->
@@ -544,6 +570,17 @@
                         <span class="timeline-year">2021</span>
                         <h3>Partenariat avec Revue Far Ouest et Grand Angle.</h3>
                         <p>L'activit&eacute; croissante de l'entreprise int&eacute;resse plusieurs des agences avec lesquelles elle travaille. Fort de l'envie de se renouveler, J&eacute;r&ocirc;me signe un partenariat avec deux d'entre elles, Grand Angle Production et la Revue Far Ouest : c'est la naissance des Ateliers du Stream.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-img"></div>
+                </div>
+
+                <!-- 2022 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2022</span>
+                        <h3>Achat de nos nouveaux locaux &agrave; Marmande.</h3>
+                        <p>C'est parti pour 3 ans de travaux !</p>
                     </div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-img"></div>
@@ -577,7 +614,9 @@
                 <div class="cta-card">
                     <div class="cta-card-icon"><img src="images/noun-location-4693998.svg" alt="Bureaux"></div>
                     <h4>Nos bureaux</h4>
-                    <p>Marmande &middot; M&eacute;rignac &middot; Issy-les-Moulineaux</p>
+                    <p style="color:#7dcef5;">39 bis rue Robert Creuzet, 47200 Marmande</p>
+                    <p>22 rue Marcelin Berthelot, 33700 M&eacute;rignac</p>
+                    <p>108 Bd Gallieni, 92130 Issy-les-Moulineaux</p>
                 </div>
             </div>
         </div>
