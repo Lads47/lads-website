@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos solutions - Les Ateliers du Stream</title>
+    <meta name="description" content="D&eacute;couvrez nos solutions de captation multicam&eacute;ra, diffusion live, plateau web TV, chapitrage automatique et sonorisation. Des briques modulables pour chaque &eacute;v&eacute;nement.">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        /* ============================================
+           POLICES
+           ============================================ */
+        @font-face {
+            font-family: 'Butler';
+            src: url('fonts/subset-Butler.woff2') format('woff2');
+            font-weight: 400; font-style: normal; font-display: swap;
+        }
+        @font-face {
+            font-family: 'Butler';
+            src: url('fonts/Butler-Black.woff2') format('woff2');
+            font-weight: 900; font-style: normal; font-display: swap;
+        }
+        @font-face {
+            font-family: 'Open Sans';
+            src: url('fonts/OpenSans-VariableFont_wght.woff2') format('woff2');
+            font-weight: 300 800; font-style: normal; font-display: swap;
+        }
+
+        /* ============================================
+           VARIABLES
+           ============================================ */
+        :root {
+            --primary: #1f2244;
+            --secondary: #727485;
+            --accent: #7dcef5;
+            --at-primary: #7dcff5;
+            --at-secondary: #c9b840;
+            --blanc: #ffffff;
+            --off-white: #f7f8fa;
+            --gris-clair: #e9e9ed;
+            --gris-moyen: #d3d3da;
+            --dark-1: #363957;
+            --dark-2: #4c4f6a;
+            --light-1: #a6a7b5;
+            --font-titre: 'Butler', Georgia, serif;
+            --font-texte: 'Open Sans', sans-serif;
+            --max-width: 1200px;
+            --t: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius: 6px;
+        }
+
+        /* ============================================
+           RESET
+           ============================================ */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-texte); color: var(--primary); line-height: 1.6; background: var(--blanc); }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 40px; }
+
+        /* ============================================
+           HEADER
+           ============================================ */
+        header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 1px 20px rgba(31,34,68,0.08);
+        }
+        .header-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 18px 40px; max-width: var(--max-width); margin: 0 auto;
+        }
+        .logo img { height: 84px; transition: var(--t); }
+
+        nav ul { display: flex; list-style: none; gap: 28px; align-items: center; }
+        nav a {
+            font-family: var(--font-texte); font-size: 0.82rem; font-weight: 600;
+            color: var(--primary); text-transform: uppercase; letter-spacing: 0.8px;
+            transition: var(--t); position: relative;
+        }
+        nav a:hover { color: var(--accent); }
+        nav a::after {
+            content: ''; position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%);
+            width: 0; height: 2px; background: var(--at-primary); transition: var(--t);
+        }
+        nav a:hover::after { width: 100%; }
+        nav a.active { color: var(--at-primary); }
+        nav a.active::after { width: 100%; }
+
+        .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 5px; }
+        .menu-toggle span { width: 24px; height: 2px; background: var(--primary); border-radius: 2px; transition: var(--t); }
+
+        /* ============================================
+           PAGE HERO
+           ============================================ */
+        .page-hero {
+            padding: 180px 0 120px;
+            background: var(--primary);
+            color: var(--blanc);
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: url('photo/20220717_194319.jpg') center/cover no-repeat;
+            opacity: 0.3;
+        }
+        .page-hero-content {
+            position: relative; z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .page-hero-content .section-tag { color: var(--accent); }
+        .page-hero-content h1 {
+            font-family: var(--font-titre); font-size: 3rem; font-weight: 900;
+            line-height: 1.15; margin-bottom: 20px;
+        }
+        .page-hero-content p {
+            font-size: 1.05rem; color: var(--light-1); line-height: 1.8;
+        }
+
+        /* ============================================
+           SECTIONS COMMUNES
+           ============================================ */
+        .section { padding: 90px 0; }
+        .section-tag {
+            display: inline-block; font-size: 0.72rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 3px; color: var(--at-primary);
+            margin-bottom: 16px;
+        }
+        .section-title {
+            font-family: var(--font-titre); font-size: 2.4rem; font-weight: 900;
+            line-height: 1.2; margin-bottom: 20px; color: var(--primary);
+        }
+        .section-desc {
+            font-size: 1rem; color: var(--secondary); line-height: 1.8;
+            max-width: 600px;
+        }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header .section-desc { margin: 0 auto; }
+
+        .divider {
+            width: 50px; height: 3px; background: var(--at-primary);
+            margin: 20px auto 0; border: none;
+        }
+
+        .btn {
+            display: inline-block; padding: 15px 38px;
+            font-family: var(--font-texte); font-size: 0.82rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1.5px;
+            border: none; cursor: pointer; transition: var(--t);
+            border-radius: var(--radius);
+        }
+        .btn-primary { background: #E8834A; color: var(--blanc); }
+        .btn-primary:hover { background: #d4733c; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(232,131,74,0.3); }
+
+        /* ============================================
+           SOLUTIONS GRID — Cartes immersives
+           ============================================ */
+        .solutions-section {
+            background: var(--blanc);
+        }
+        .solutions-section.alt {
+            background: var(--off-white);
+        }
+        .solutions-section.dark {
+            background: var(--primary);
+        }
+        .solutions-section.dark .section-title { color: var(--blanc); }
+        .solutions-section.dark .section-tag { color: var(--accent); }
+        .solutions-section.dark .section-desc { color: var(--light-1); }
+        .solutions-section.dark .divider { background: var(--accent); }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        .solutions-grid.three-col {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        /* ============================================
+           SOLUTION CARD
+           ============================================ */
+        .solution-card {
+            position: relative;
+            min-height: 380px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            cursor: pointer;
+            display: block;
+        }
+        .solution-card-bg {
+            position: absolute; inset: 0;
+            background: var(--primary);
+            transition: transform 0.5s ease;
+        }
+        .solution-card:hover .solution-card-bg {
+            transform: scale(1.08);
+        }
+        .solution-card::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(0deg, rgba(31,34,68,0.95) 0%, rgba(31,34,68,0.6) 50%, rgba(31,34,68,0.3) 100%);
+            transition: var(--t);
+        }
+        .solution-card:hover::after {
+            background: linear-gradient(0deg, rgba(31,34,68,0.97) 0%, rgba(31,34,68,0.65) 55%, rgba(31,34,68,0.35) 100%);
+        }
+        .solution-card-content {
+            position: relative; z-index: 1;
+            display: flex; flex-direction: column; justify-content: flex-end;
+            height: 100%; padding: 35px 30px; color: var(--blanc);
+        }
+        .solution-tag {
+            display: inline-block; padding: 4px 14px; font-size: 0.68rem;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px;
+            background: rgba(125,206,245,0.2); color: var(--accent);
+            border-radius: 20px; margin-bottom: 14px; width: fit-content;
+        }
+        .solution-card h3 {
+            font-family: var(--font-titre); font-size: 1.5rem; font-weight: 900;
+            margin-bottom: 10px; line-height: 1.2;
+        }
+        .solution-card p {
+            font-size: 0.85rem; line-height: 1.7; opacity: 0.85;
+        }
+        .solution-card .discover-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1px; color: var(--accent); margin-top: 16px;
+            transition: var(--t);
+        }
+        .solution-card:hover .discover-link { gap: 12px; color: var(--blanc); }
+        .solution-card .discover-link svg {
+            width: 16px; height: 16px; stroke: currentColor; stroke-width: 2;
+            fill: none; transition: var(--t);
+        }
+
+        /* Solution card large (pleine largeur) */
+        .solution-card.wide {
+            grid-column: span 2;
+            min-height: 340px;
+        }
+        .solution-card.wide .solution-card-content {
+            max-width: 550px;
+        }
+        .solutions-grid.three-col .solution-card.wide {
+            grid-column: span 3;
+        }
+
+        /* ============================================
+           SOLUTION FEATURE — layout horizontal
+           ============================================ */
+        .feature-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        .feature-row:last-child { margin-bottom: 0; }
+        .feature-row.reverse { direction: rtl; }
+        .feature-row.reverse > * { direction: ltr; }
+
+        .feature-visual {
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+        .feature-visual img {
+            width: 100%; aspect-ratio: 16/10; object-fit: cover;
+            border-radius: var(--radius);
+            transition: transform 0.5s ease;
+        }
+        .feature-visual:hover img { transform: scale(1.03); }
+
+        .feature-text .section-desc { margin-bottom: 15px; }
+        .feature-text .highlight-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        .feature-text .highlight-list li {
+            position: relative;
+            padding-left: 22px;
+            font-size: 0.9rem;
+            color: var(--secondary);
+            line-height: 2;
+        }
+        .feature-text .highlight-list li::before {
+            content: '';
+            position: absolute; left: 0; top: 11px;
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: var(--at-primary);
+        }
+
+        /* ============================================
+           EVA SECTION — mise en avant
+           ============================================ */
+        .eva-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 6px 18px; font-size: 0.72rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 2px;
+            background: rgba(125,206,245,0.12); color: var(--at-primary);
+            border-radius: 20px; margin-bottom: 20px;
+        }
+        .eva-badge svg {
+            width: 16px; height: 16px; stroke: var(--at-primary);
+            stroke-width: 2; fill: none;
+        }
+
+        /* ============================================
+           TECH SPECS — petites cartes
+           ============================================ */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        .tech-grid.four-col {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .tech-grid.two-col {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .tech-card {
+            background: var(--blanc);
+            padding: 35px 28px;
+            border-radius: var(--radius);
+            border: 1px solid var(--gris-clair);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: var(--t);
+        }
+        .tech-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+        .tech-icon {
+            width: 48px; height: 48px; margin-bottom: 20px;
+        }
+        .tech-icon svg {
+            width: 100%; height: 100%;
+            stroke: var(--at-primary); stroke-width: 1.5;
+            fill: none; stroke-linecap: round; stroke-linejoin: round;
+        }
+        .tech-card h3 {
+            font-family: var(--font-titre); font-size: 1.15rem; font-weight: 900;
+            margin-bottom: 10px; color: var(--primary);
+        }
+        .tech-card p {
+            font-size: 0.85rem; color: var(--secondary); line-height: 1.7;
+        }
+        .tech-spec {
+            display: inline-block; margin-top: 12px;
+            font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1px; color: var(--at-primary);
+        }
+        a.tech-card { display: block; }
+        a.tech-card .discover-link-sm {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1px; color: var(--at-primary); margin-top: 14px;
+            transition: var(--t);
+        }
+        a.tech-card:hover .discover-link-sm { gap: 12px; }
+        a.tech-card .discover-link-sm svg {
+            width: 14px; height: 14px; stroke: currentColor; stroke-width: 2;
+            fill: none; transition: var(--t);
+        }
+
+        /* ============================================
+           CTA CONTACT
+           ============================================ */
+        .cta-contact {
+            background: var(--primary);
+            color: var(--blanc);
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-contact::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(125,206,245,0.1) 0%, transparent 60%);
+        }
+        .cta-contact .section-title { color: var(--blanc); }
+        .cta-contact .section-desc { color: var(--light-1); margin: 0 auto 40px; text-align: center; }
+        .cta-contact .divider { background: var(--accent); }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+            position: relative; z-index: 1;
+        }
+        .cta-card {
+            padding: 40px 30px;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            transition: var(--t);
+            text-align: center;
+        }
+        .cta-card:hover {
+            border-color: rgba(125,206,245,0.3);
+            background: rgba(255,255,255,0.03);
+            transform: translateY(-4px);
+        }
+        .cta-card-icon { width: 50px; height: 50px; margin: 0 auto 20px; }
+        .cta-card-icon img {
+            width: 100%; height: 100%;
+            filter: brightness(0) saturate(100%) invert(78%) sepia(18%) saturate(1200%) hue-rotate(160deg) brightness(100%) contrast(94%);
+        }
+        .cta-card h4 {
+            font-family: var(--font-titre); font-size: 1.05rem; font-weight: 900;
+            margin-bottom: 8px;
+        }
+        .cta-card p { font-size: 0.85rem; color: var(--light-1); line-height: 1.6; }
+        .cta-card a { color: var(--accent); transition: var(--t); }
+        .cta-card a:hover { color: var(--blanc); }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            background: #181a33;
+            color: var(--light-1);
+            padding: 50px 0 25px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand img.footer-logo { height: 84px; }
+        .footer-brand p { font-size: 0.85rem; line-height: 1.7; color: var(--blanc); max-width: 280px; }
+        .footer-col h5 {
+            font-family: var(--font-titre); font-size: 0.95rem; font-weight: 900;
+            color: var(--blanc); margin-bottom: 18px;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-col a { font-size: 0.85rem; color: var(--blanc); transition: var(--t); }
+        .footer-col a:hover { color: var(--accent); }
+        .footer-social-row { display: flex; gap: 12px; }
+        .footer-social-row a { display: flex; align-items: center; justify-content: center; }
+        .footer-social-row a img { width: 28px; height: 28px; filter: brightness(0) invert(1); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 20px; text-align: center;
+            font-size: 0.78rem; color: var(--blanc);
+        }
+
+        /* ============================================
+           BACK TO TOP
+           ============================================ */
+        .back-to-top {
+            position: fixed; bottom: 30px; right: 30px;
+            width: 44px; height: 44px; background: var(--at-primary);
+            border: none; border-radius: 50%; cursor: pointer;
+            display: none; align-items: center; justify-content: center;
+            z-index: 999; transition: var(--t);
+            box-shadow: 0 4px 15px rgba(43,191,202,0.3);
+        }
+        .back-to-top:hover { background: var(--accent); transform: translateY(-3px); }
+        .back-to-top img { width: 18px; height: 18px; }
+        .back-to-top.visible { display: flex; }
+
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        .reveal {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible-anim { opacity: 1; transform: translateY(0); }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            .solutions-grid { grid-template-columns: 1fr; }
+            .solutions-grid.three-col { grid-template-columns: 1fr; }
+            .solution-card.wide { grid-column: span 1; }
+            .solutions-grid.three-col .solution-card.wide { grid-column: span 1; }
+            .feature-row { grid-template-columns: 1fr; gap: 40px; }
+            .feature-row.reverse { direction: ltr; }
+            .tech-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+            .tech-grid.four-col { grid-template-columns: 1fr 1fr; max-width: 100%; }
+            .tech-grid.two-col { grid-template-columns: 1fr; max-width: 500px; }
+            .cta-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            nav ul { gap: 18px; }
+            nav a { font-size: 0.78rem; }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            .header-inner { padding: 14px 20px; }
+            .menu-toggle { display: flex; }
+            nav ul {
+                display: none; position: absolute; top: 100%; left: 0; right: 0;
+                background: var(--blanc); flex-direction: column;
+                padding: 20px; gap: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            }
+            nav ul.active { display: flex; }
+            .page-hero { padding: 140px 0 60px; }
+            .page-hero-content h1 { font-size: 2rem; }
+            .section { padding: 70px 0; }
+            .section-title { font-size: 1.8rem; }
+            .solution-card { min-height: 300px; }
+            .solution-card h3 { font-size: 1.3rem; }
+            .tech-grid.four-col { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-brand p { max-width: 100%; }
+            .footer-social-row { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         HEADER
+         ============================================ -->
+    <header id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="images/LOGO_fonce.svg" alt="Les Ateliers du Stream">
+            </a>
+            <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">
+                <span></span><span></span><span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="nos-solutions.html" class="active">Nos solutions</a></li>
+                    <li><a href="nos-realisations.html">Nos r&eacute;alisations</a></li>
+                    <li><a href="index.html#process">Notre approche</a></li>
+                    <li><a href="nos-formations.html">Nos formations</a></li>
+                    <li><a href="notre-histoire.html">Notre histoire</a></li>
+                    <li><a href="#contact">Nous contacter</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================
+         PAGE HERO
+         ============================================ -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <span class="section-tag">Captation &amp; diffusion</span>
+                <h1>Nos solutions</h1>
+                <p>
+                    Parce que chaque &eacute;v&eacute;nement est unique, nous avons con&ccedil;u nos solutions comme des briques modulables&nbsp;: elles s'utilisent seules ou se combinent pour b&acirc;tir un projet sur mesure.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BLOC 1 — CAPTATION MULTICAM
+         4 tech-cards
+         ============================================ -->
+    <section id="captation" class="section solutions-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Captation vid&eacute;o</span>
+                <h2 class="section-title">Captation multicam&eacute;ra</h2>
+                <p class="section-desc">
+                    Nous d&eacute;ployons des r&eacute;gies ultra-mobiles de 2 &agrave; 8 cam&eacute;ras pour la captation et la diffusion en direct ou en replay, avec un habillage personnalis&eacute; aux couleurs de votre &eacute;v&eacute;nement.
+                </p>
+                <hr class="divider">
+            </div>
+
+            <div class="tech-grid four-col reveal">
+                <!-- Captation multicam -->
+                <a href="solutions/captation-multicam.html" class="tech-card">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                        </svg>
+                    </div>
+                    <h3>Captation multicam</h3>
+                    <p>R&eacute;gies ultra-mobiles de 2 &agrave; 8 cam&eacute;ras. Diffusion en direct ou en replay, avec un habillage personnalis&eacute; aux couleurs de votre &eacute;v&eacute;nement.</p>
+                    <span class="tech-spec">2 &agrave; 8 cam&eacute;ras</span>
+                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <!-- Captation &eacute;v&eacute;nementielle -->
+                <a href="solutions/captation-evenementielle.html" class="tech-card">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Captation &eacute;v&eacute;nementielle</h3>
+                    <p>Pour vos congr&egrave;s et &eacute;v&eacute;nements, nous assurons la captation multicam&eacute;ra et la diffusion fluide de tous vos m&eacute;dias.</p>
+                    <span class="tech-spec">Congr&egrave;s &middot; &Eacute;v&eacute;nements</span>
+                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <!-- Multiplex -->
+                <a href="solutions/multiplex.html" class="tech-card">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                            <line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
+                        </svg>
+                    </div>
+                    <h3>Multiplex</h3>
+                    <p>Connectez tous vos sites en temps r&eacute;el pour des interventions simultan&eacute;es, fluides et synchronis&eacute;es.</p>
+                    <span class="tech-spec">Fibre optique &middot; 5G</span>
+                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <!-- Plateau Web TV -->
+                <a href="solutions/plateau-web-tv.html" class="tech-card">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3>Plateau Web TV</h3>
+                    <p>Un plateau web TV au c&oelig;ur de votre &eacute;v&eacute;nement pour produire des contenus dynamiques et prolonger sa visibilit&eacute;.</p>
+                    <span class="tech-spec">Interviews &middot; Tables rondes</span>
+                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <!-- Cam&eacute;ras tourelle 100% HF -->
+                <a href="solutions/cameras-tourelle-hf.html" class="tech-card">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.5 16.5a5 5 0 0 1 0-9"/><path d="M2 12a10 10 0 0 1 4-8"/>
+                            <path d="M15.5 16.5a5 5 0 0 0 0-9"/><path d="M22 12a10 10 0 0 0-4-8"/>
+                            <circle cx="12" cy="12" r="2"/>
+                        </svg>
+                    </div>
+                    <h3>4 cam&eacute;ras tourelle 100% HF</h3>
+                    <p>Dispositif id&eacute;al pour les installations en ext&eacute;rieur avec du public. Chaque cam&eacute;ra dispose de son propre &eacute;metteur, le tout aliment&eacute; par batterie.</p>
+                    <span class="tech-spec">Liaison sans fil &middot; Ext&eacute;rieur</span>
+                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <!-- 8 r&eacute;gies simultan&eacute;es -->
+                <a href="solutions/captation-multi-regies.html" class="tech-card">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1" y="3" width="9" height="7" rx="1"/><rect x="14" y="3" width="9" height="7" rx="1"/>
+                            <rect x="1" y="14" width="9" height="7" rx="1"/><rect x="14" y="14" width="9" height="7" rx="1"/>
+                        </svg>
+                    </div>
+                    <h3>8 r&eacute;gies en simultan&eacute;</h3>
+                    <p>Jusqu'&agrave; 8 r&eacute;gies de 3 cam&eacute;ras d&eacute;ploy&eacute;es en simultan&eacute;. Id&eacute;al pour les &eacute;v&eacute;nements multi-salles&nbsp;: chaque conf&eacute;rence dispose de sa propre captation.</p>
+                    <span class="tech-spec">Multi-salles &middot; En simultan&eacute;</span>
+                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BLOC 2 — EVA (Intelligence artificielle)
+         ============================================ -->
+    <section id="eva" class="section solutions-section alt">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="eva-badge">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    EVA
+                </span>
+                <h2 class="section-title">Intelligence artificielle int&eacute;gr&eacute;e</h2>
+                <p class="section-desc">
+                    Nos outils d'intelligence artificielle enrichissent vos captations en automatisant le chapitrage et la retranscription de vos conf&eacute;rences.
+                </p>
+                <hr class="divider">
+            </div>
+
+            <div class="tech-grid two-col reveal">
+                <!-- Chapitrage automatique -->
+                <a href="solutions/chapitrage-automatique.html" class="tech-card">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3>Chapitrage automatique</h3>
+                    <p>Chapitrage automatique de vos lives pour structurer vos &eacute;v&eacute;nements, faciliter la navigation et int&eacute;grer vos vid&eacute;os dans un player personnalisable sur votre site.</p>
+                    <span class="tech-spec">IA &middot; Timecodes &middot; Player</span>
+                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <!-- Retranscription et synth&egrave;se -->
+                <a href="solutions/retranscription-synthese.html" class="tech-card">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                    </div>
+                    <h3>Retranscription et synth&egrave;se</h3>
+                    <p>EVA retranscrit et synth&eacute;tise vos conf&eacute;rences en temps r&eacute;el, selon votre programme. Modifiez et validez les r&eacute;sum&eacute;s via une interface d&eacute;di&eacute;e et alimentez-les de photos.</p>
+                    <span class="tech-spec">Temps r&eacute;el &middot; Serveur local</span>
+                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BLOC 3 — DIFFUSION & SONORISATION
+         3 cartes techniques
+         ============================================ -->
+    <section id="diffusion" class="section solutions-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Technique &amp; logistique</span>
+                <h2 class="section-title">Diffusion et sonorisation</h2>
+                <p class="section-desc">
+                    Compl&eacute;tez votre dispositif de captation avec nos solutions de diffusion, sonorisation et gestion des m&eacute;dias.
+                </p>
+                <hr class="divider">
+            </div>
+
+            <div class="tech-grid reveal">
+                <!-- Vid&eacute;oprojection -->
+                <a href="solutions/videoprojection.html" class="tech-card">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3>Vid&eacute;oprojection</h3>
+                    <p>Vid&eacute;oprojecteur 5&nbsp;000 lumens avec &eacute;cran 16:9 pour une visibilit&eacute; parfaite de vos pr&eacute;sentations et contenus vid&eacute;o en salle.</p>
+                    <span class="tech-spec">5 000 lumens &middot; 16:9</span>
+                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <!-- Sonorisation -->
+                <a href="solutions/sonorisation.html" class="tech-card">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                        </svg>
+                    </div>
+                    <h3>Sonorisation</h3>
+                    <p>Sonorisation professionnelle pour vos &eacute;v&eacute;nements de 50 &agrave; 200 personnes, qualit&eacute; audio claire et homog&egrave;ne, avec possibilit&eacute; d'enregistrement pour le replay.</p>
+                    <span class="tech-spec">50 &agrave; 200 personnes</span>
+                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <!-- Gestion des m&eacute;dias -->
+                <a href="solutions/diffusion-gestion-medias.html" class="tech-card">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                        </svg>
+                    </div>
+                    <h3>Diffusion et gestion des m&eacute;dias</h3>
+                    <p>Nous g&eacute;rons l'ensemble de vos contenus &eacute;v&eacute;nementiels&nbsp;: PowerPoint, vid&eacute;os et intervenants en visio, pour une diffusion fluide et professionnelle.</p>
+                    <span class="tech-spec">PowerPoint &middot; Vid&eacute;os &middot; Visio</span>
+                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CTA / CONTACT
+         ============================================ -->
+    <section id="contact" class="cta-contact">
+        <div class="container reveal">
+            <span class="section-tag" style="color: var(--accent);">Parlons de votre projet</span>
+            <h2 class="section-title">Et si on travaillait ensemble ?</h2>
+            <p class="section-desc">
+                Un projet en construction, un &eacute;v&eacute;nement qui approche que vous envisagez
+                de filmer et diffuser ? Parlons-en.
+            </p>
+            <hr class="divider" style="background: var(--accent);">
+
+            <div class="cta-grid">
+                <div class="cta-card">
+                    <div class="cta-card-icon"><img src="images/noun-email-5456693.svg" alt="Email"></div>
+                    <h4>Email</h4>
+                    <p><a href="mailto:prod@lesateliersdustream.fr">prod@lesateliersdustream.fr</a></p>
+                </div>
+                <div class="cta-card">
+                    <div class="cta-card-icon"><img src="images/noun-call-5456677.svg" alt="T&eacute;l&eacute;phone"></div>
+                    <h4>T&eacute;l&eacute;phone</h4>
+                    <p><a href="tel:+33661968858">06 61 96 88 58</a></p>
+                </div>
+                <div class="cta-card">
+                    <div class="cta-card-icon"><img src="images/noun-location-4693998.svg" alt="Nos bureaux"></div>
+                    <h4>Nos bureaux</h4>
+                    <p>Marmande &middot; M&eacute;rignac &middot; Issy-les-Moulineaux</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img class="footer-logo" src="images/LOGO_clair.svg" alt="Les Ateliers du Stream">
+                </div>
+                <div class="footer-col">
+                    <h5>Navigation</h5>
+                    <ul>
+                        <li><a href="nos-solutions.html">Nos solutions</a></li>
+                        <li><a href="nos-realisations.html">R&eacute;alisations</a></li>
+                        <li><a href="index.html#process">Notre approche</a></li>
+                        <li><a href="nos-formations.html">Nos formations</a></li>
+                        <li><a href="notre-histoire.html">Notre histoire</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Contact</h5>
+                    <ul>
+                        <li><a href="mailto:prod@lesateliersdustream.fr">prod@lesateliersdustream.fr</a></li>
+                        <li><a href="tel:+33661968858">06 61 96 88 58</a></li>
+                    </ul>
+                    <div class="footer-social-row" style="margin-top: 15px;">
+                        <a href="https://www.instagram.com/lesateliersdustream/" target="_blank" rel="noopener"><img src="images/instagram.svg" alt="Instagram"></a>
+                        <a href="https://www.linkedin.com/company/les-ateliers-du-stream/" target="_blank" rel="noopener"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>L&eacute;gal</h5>
+                    <ul>
+                        <li><a href="#">Mentions l&eacute;gales</a></li>
+                        <li><a href="#">Politique de confidentialit&eacute;</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Les Ateliers du Stream. Tous droits r&eacute;serv&eacute;s.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <img src="images/noun-up-arrow-1136566.svg" alt="Haut" style="filter: brightness(0) invert(1);">
+    </button>
+
+    <!-- ============================================
+         JS
+         ============================================ -->
+    <script>
+        // Back to top
+        var backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 80) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Scroll reveal
+        var reveals = document.querySelectorAll('.reveal');
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible-anim');
+                }
+            });
+        }, { threshold: 0.15 });
+        reveals.forEach(function(el) { observer.observe(el); });
+    </script>
+
+</body>
+</html>
