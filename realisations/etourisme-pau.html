@@ -72,7 +72,7 @@
         }
         .page-hero::before {
             content: ''; position: absolute; inset: 0;
-            background: var(--primary) url('../photo/etourisme.png') center/cover no-repeat;
+            background: var(--primary) url('../photo/20251016_085347.jpg') center/cover no-repeat;
             opacity: 0.3;
         }
         .page-hero-content {
@@ -167,6 +167,12 @@
             border-radius: var(--radius);
             object-fit: cover;
         }
+        .real-photos { margin-top: 60px; display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .real-photos.has-two { grid-template-columns: 1fr 1fr; }
+        .real-photos.has-three { grid-template-columns: 1fr 1fr 1fr; }
+        .real-photo-item { border-radius: var(--radius); overflow: hidden; cursor: pointer; }
+        .real-photo-item img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--radius); transition: transform 0.3s ease; }
+        .real-photo-item:hover img { transform: scale(1.03); }
         .real-photo-caption {
             text-align: center;
             font-size: 0.82rem;
@@ -174,6 +180,24 @@
             margin-top: 12px;
             font-style: italic;
         }
+
+        /* Lightbox */
+        .lightbox {
+            display: none; position: fixed; inset: 0; z-index: 9999;
+            background: rgba(0,0,0,0.9); align-items: center; justify-content: center;
+            cursor: zoom-out;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox img {
+            max-width: 92vw; max-height: 90vh; object-fit: contain;
+            border-radius: var(--radius); box-shadow: 0 10px 60px rgba(0,0,0,0.5);
+        }
+        .lightbox-close {
+            position: absolute; top: 25px; right: 30px;
+            background: none; border: none; color: #fff; font-size: 2.2rem;
+            cursor: pointer; opacity: 0.7; transition: opacity 0.2s;
+        }
+        .lightbox-close:hover { opacity: 1; }
 
         /* BREADCRUMB BACK */
         .breadcrumb-back {
@@ -235,7 +259,7 @@
         <div class="container">
             <div class="page-hero-content">
                 <span class="section-tag">&Eacute;v&eacute;nementiel</span>
-                <h1>Rencontres nationales de l'etourisme &mdash; Palais Beaumont de Pau &mdash; 2023</h1>
+                <h1>Rencontres nationales de l'Etourisme &mdash; Palais Beaumont de Pau &mdash; 2025</h1>
             </div>
         </div>
     </section>
@@ -260,10 +284,10 @@
                     <hr class="divider">
                     <br>
                     <p class="section-desc">
-                        Grande messe du tourisme national, les ET nous demandent le d&eacute;ploiement de 5 r&eacute;gies dans des salles diff&eacute;rentes, soit 12 cam&eacute;ras diss&eacute;min&eacute;es dans les murs du Palais Beaumont.
+                        Grande messe du tourisme national, les ET nous confient le d&eacute;ploiement de 5 r&eacute;gies dans 5 salles diff&eacute;rentes, soit 12 cam&eacute;ras r&eacute;parties dans l'ensemble du Palais Beaumont. Nous diffusons dans l'auditorium de Vigny, salle principale de l'&eacute;v&eacute;nement, les images de nos cam&eacute;ras sur les &eacute;crans g&eacute;ants, ainsi que les interventions de conf&eacute;renciers en duplex.
                     </p>
                     <p class="section-desc">
-                        Nous diffusons dans l'auditorium, salle principale de l'&eacute;v&eacute;nement, les images de nos cam&eacute;ras sur les &eacute;crans g&eacute;ants, ou encore des intervenants &agrave; distance.
+                        Pr&eacute;sents depuis les ET7, nous filmions en 2025 les ET21. Notre client UNITEC nous renouvelle sa confiance depuis toutes ces ann&eacute;es, preuve de notre engagement et de notre s&eacute;rieux pour la r&eacute;ussite de cet &eacute;v&eacute;nement au fil du temps.
                     </p>
                 </div>
                 <div class="real-meta">
@@ -271,14 +295,14 @@
                         <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
                         <div>
                             <span class="meta-label">Client</span>
-                            <span class="meta-value">Rencontres nationales de l'etourisme</span>
+                            <span class="meta-value">UNITEC</span>
                         </div>
                     </div>
                     <div class="real-meta-item">
                         <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                         <div>
                             <span class="meta-label">Ann&eacute;e</span>
-                            <span class="meta-value">2023</span>
+                            <span class="meta-value">2025</span>
                         </div>
                     </div>
                     <div class="real-meta-item">
@@ -291,10 +315,20 @@
                 </div>
             </div>
 
-            <!-- Photo -->
-            <div class="real-photo-section reveal">
-                <img src="../photo/etourisme.png" alt="Bandeau partenaire de l'&eacute;v&eacute;nement">
-                <p class="real-photo-caption">Bandeau partenaire de l'&eacute;v&eacute;nement</p>
+            <!-- Photos -->
+            <div class="real-photos reveal">
+                <div class="real-photo-item">
+                    <img src="../photo/20251014_174544.jpg" alt="R&eacute;gie principale des Rencontres Nationales du Etourisme">
+                    <p class="real-photo-caption">R&eacute;gie principale des Rencontres Nationales du Etourisme</p>
+                </div>
+                <div class="real-photo-item">
+                    <img src="../photo/20251016_085347.jpg" alt="Auditorium Alfred de Vigny du Palais Beaumont &agrave; Pau">
+                    <p class="real-photo-caption">Auditorium Alfred de Vigny du Palais Beaumont &agrave; Pau</p>
+                </div>
+                <div class="real-photo-item">
+                    <img src="../photo/DSC_0115.JPG" alt="Auditorium de Vigny avec &eacute;cran central et vid&eacute;oprojecteurs">
+                    <p class="real-photo-caption">Auditorium de Vigny : &eacute;cran central pour les m&eacute;dias et PowerPoint, reprise des cam&eacute;ras sur 4 vid&eacute;oprojecteurs (2 visibles sur cette image)</p>
+                </div>
             </div>
 
             <!-- Retour -->

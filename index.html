@@ -243,6 +243,30 @@
             margin-bottom: 0;
         }
 
+        .specificite-text ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto 20px;
+            display: inline-block;
+            text-align: left;
+        }
+        .specificite-text ul li {
+            font-size: 1rem;
+            color: var(--secondary);
+            line-height: 1.9;
+            padding-left: 20px;
+            position: relative;
+        }
+        .specificite-text ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 8px;
+            height: 2px;
+            background: var(--at-primary);
+        }
+
         /* ============================================
            SECTION — CHIFFRES
            Minimaliste, grandes typo
@@ -434,7 +458,26 @@
             transition: var(--t);
         }
 
+        .equipe-photo-card { cursor: zoom-in; }
         .equipe-photo-card:hover img { transform: scale(1.03); }
+
+        /* Lightbox */
+        .lightbox {
+            display: none; position: fixed; inset: 0; z-index: 9999;
+            background: rgba(0,0,0,0.9); align-items: center; justify-content: center;
+            cursor: zoom-out;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox img {
+            max-width: 92vw; max-height: 90vh; object-fit: contain;
+            border-radius: var(--radius); box-shadow: 0 10px 60px rgba(0,0,0,0.5);
+        }
+        .lightbox-close {
+            position: absolute; top: 25px; right: 30px;
+            background: none; border: none; color: #fff; font-size: 2.2rem;
+            cursor: pointer; opacity: 0.7; transition: opacity 0.2s;
+        }
+        .lightbox-close:hover { opacity: 1; }
 
         .equipe-photo-info {
             position: absolute; bottom: 0; left: 0; right: 0;
@@ -508,9 +551,9 @@
     <section id="possibilites" class="section possibilities">
         <div class="container possibilities-intro reveal">
             <span class="section-tag">Nos solutions multicam&eacute;ra</span>
-            <h2 class="section-title">Un &eacute;v&eacute;nement, une solution adapt&eacute;e</h2>
+            <h2 class="section-title">Un &eacute;v&eacute;nement, une organisation adapt&eacute;e</h2>
             <p class="section-desc" style="margin: 0 auto;">
-                Depuis plus de 25 ans, nous apportons une r&eacute;ponse &agrave; vos besoins de captation multicam&eacute;ra. Nos &eacute;quipements nous permettent de nous adapter &agrave; chaque &eacute;v&eacute;nement. D'un syst&egrave;me compact &agrave; la configuration la plus ambitieuse, d'une &agrave; huit r&eacute;gies, en passant par des cam&eacute;ras HF, nous saurons d&eacute;ployer la solution la plus appropri&eacute;e &agrave; votre demande. Le tout avec un accompagnement sur mesure, de Bordeaux &agrave; Paris et dans toute la France.
+                Depuis plus de 25 ans, nous r&eacute;alisons des dispositifs de captation multicam&eacute;ra et de production live pour tout type d'&eacute;v&eacute;nement. Conf&eacute;rences, &eacute;v&eacute;nements institutionnels, festivals, assembl&eacute;es g&eacute;n&eacute;rales ou &eacute;missions en direct : nous adaptons notre organisation technique aux contraintes du lieu et du format. De la r&eacute;gie mobile compacte &agrave; des configurations multicam&eacute;ra plus &eacute;tendues (jusqu'&agrave; huit r&eacute;gies), avec cam&eacute;ras HF et solutions de diffusion en streaming, nous mettons en place un dispositif fiable et dimensionn&eacute; avec pr&eacute;cision. Nous intervenons &agrave; Bordeaux, Paris et partout en France pour vos projets de captation &eacute;v&eacute;nementielle.
             </p>
             <hr class="divider">
         </div>
@@ -566,22 +609,24 @@
         <div class="container reveal">
             <div class="section-header">
                 <span class="section-tag">Notre sp&eacute;cificit&eacute;</span>
-                <h2 class="section-title">La captation multicam&eacute;ra, c'est notre m&eacute;tier !</h2>
+                <h2 class="section-title">Une expertise construite dans la dur&eacute;e</h2>
                 <hr class="divider">
             </div>
             <div class="specificite-text">
                 <p>
-                    Nous &eacute;voluons dans ce domaine depuis de nombreuses ann&eacute;es et nous en avons fait notre sp&eacute;cialit&eacute;.
+                    La captation multicam&eacute;ra est notre c&oelig;ur de m&eacute;tier depuis de nombreuses ann&eacute;es. Nous avons d&eacute;velopp&eacute; nos r&eacute;gies et nos m&eacute;thodes au fil des projets afin de garantir :
+                </p>
+                <ul>
+                    <li>une mise en &oelig;uvre rapide</li>
+                    <li>une organisation claire</li>
+                    <li>une fiabilit&eacute; technique</li>
+                    <li>une &eacute;quipe exp&eacute;riment&eacute;e</li>
+                </ul>
+                <p>
+                    Nous assurons une veille constante sur les outils de production audiovisuelle et de diffusion live, afin d'offrir des solutions adapt&eacute;es aux &eacute;volutions du secteur, sans complexifier inutilement les dispositifs.
                 </p>
                 <p>
-                    C'est pour cette raison que nous faisons la diff&eacute;rence : des r&eacute;gies compactes pens&eacute;es
-                    en amont et perfectionn&eacute;es au fil des ann&eacute;es, op&eacute;rationnelles et d&eacute;ployables rapidement
-                    par une &eacute;quipe l&eacute;g&egrave;re et exp&eacute;riment&eacute;e. Une veille technologique permanente
-                    et la ma&icirc;trise des nouveaux outils de production nous permettent d'offrir toujours plus de qualit&eacute;
-                    tout en optimisant les co&ucirc;ts d'exploitation.
-                </p>
-                <p>
-                    Faire appel &agrave; un sp&eacute;cialiste, c'est faire le choix de la s&eacute;r&eacute;nit&eacute; &mdash; avant, pendant et apr&egrave;s votre &eacute;v&eacute;nement.
+                    Notre approche repose avant tout sur la pr&eacute;paration et l'anticipation.
                 </p>
             </div>
         </div>
@@ -651,19 +696,16 @@
     <section id="realisations" class="section possibilities">
         <div class="container possibilities-intro reveal">
             <span class="section-tag">Nos r&eacute;alisations</span>
-            <h2 class="section-title">L'exp&eacute;rience au service de vos projets</h2>
+            <h2 class="section-title">Une exp&eacute;rience au service de vos projets</h2>
             <p class="section-desc" style="margin: 0 auto;">
-                Depuis toutes ces ann&eacute;es et &agrave; l'&eacute;coute de nos clients, nous avons &eacute;t&eacute; amen&eacute;s
-                &agrave; construire des dispositifs techniques adapt&eacute;s aux diff&eacute;rents &eacute;v&eacute;nements et &agrave; leurs contraintes.
-                De la configuration la plus simple &agrave; la plus complexe, c'est cette exp&eacute;rience
-                que nous mettons au service de vos futurs projets.
+                Depuis 1998, nous accompagnons des &eacute;v&eacute;nements aux formats et contraintes vari&eacute;s. Chaque r&eacute;alisation nous permet d'affiner nos pratiques et de renforcer notre capacit&eacute; d'adaptation. De la captation simple &agrave; la production multicam&eacute;ra plus technique, nous mettons notre exp&eacute;rience au service de vos projets, avec la m&ecirc;me exigence de rigueur et de continuit&eacute;.
             </p>
             <hr class="divider">
         </div>
 
         <div class="poss-grid reveal">
                 <a href="realisations/etourisme-pau.html" class="poss-card" style="text-decoration: none; color: inherit;">
-                    <div class="poss-card-bg" style="background: url('photo/etourisme.png') center/cover no-repeat;"></div>
+                    <div class="poss-card-bg" style="background: url('photo/20251016_085347.jpg') center/cover no-repeat;"></div>
                     <div class="poss-card-content">
                         <span class="poss-tag">&Eacute;v&eacute;nementiel</span>
                         <h3>Rencontres nationales de l'etourisme</h3>
@@ -743,10 +785,10 @@
                     <hr class="divider divider-left">
                     <br>
                     <p class="section-desc">
-                        N&eacute;s de la rencontre entre Web Vid&eacute;o Production, Grand Angle Productions et Revue Far Ouest, Les Ateliers du Stream rassemblent plus de 25 ans de savoir-faire en captation multicam&eacute;ra. Notre force&nbsp;: une &eacute;quipe resserr&eacute;e, agile, passionn&eacute;e et comp&eacute;tente, capable de se d&eacute;ployer partout en France.
+                        Les Ateliers du Stream sont issus de la collaboration entre Web Vid&eacute;o Production, Grand Angle Productions et Revue Far Ouest. Nous r&eacute;unissons plus de 25 ans d'exp&eacute;rience en captation multicam&eacute;ra, production live et r&eacute;alisation vid&eacute;o &eacute;v&eacute;nementielle.
                     </p>
                     <p class="section-desc" style="margin-top: 15px;">
-                        Implant&eacute;s &agrave; Marmande avec des points d'attache &agrave; Bordeaux et Paris, nous intervenons dans toute la France sur tout type d'&eacute;v&eacute;nement. Chaque projet b&eacute;n&eacute;ficie d'un accompagnement sur mesure, de la conception technique &agrave; la livraison finale.
+                        Bas&eacute;s &agrave; Marmande, avec des implantations &agrave; Bordeaux et Paris, nous intervenons sur l'ensemble du territoire. Chaque projet est accompagn&eacute; de la conception technique &agrave; la livraison finale, avec une attention constante port&eacute;e &agrave; la qualit&eacute; et &agrave; la coordination.
                     </p>
                     <div style="display: flex; gap: 40px; margin-top: 30px;">
                         <img src="images/logo-web-video-production.png" alt="Web Vid&eacute;o Production" style="height: 40px; opacity: 0.7;">
@@ -756,19 +798,18 @@
                 </div>
                 <div class="equipe-photos">
                     <div class="equipe-photo-card">
-                        <img src="photo/20251114_155704.jpg" alt="J&eacute;r&ocirc;me Garin">
+                        <img src="photo/historique.jpg" alt="Les Ateliers du Stream - Historique">
                         <div class="equipe-photo-info">
-                            <h4>J&eacute;r&ocirc;me Garin</h4>
-                            <p>Co-fondateur</p>
+                            <h4>Notre r&eacute;gie dans les ann&eacute;es 2000</h4>
                         </div>
                     </div>
                     <div class="equipe-photo-card">
-                        <img src="images/DSC_0163-1.jpg" alt="Laurent Garin">
+                        <img src="photo/2024.png" alt="Les Ateliers du Stream - 2024">
                         <div class="equipe-photo-info">
-                            <h4>Laurent Garin</h4>
-                            <p>Co-fondateur</p>
+                            <h4>Nos r&eacute;gies dans les ann&eacute;es 2020</h4>
                         </div>
                     </div>
+                    <p class="equipe-caption" style="grid-column: 1 / -1; text-align: center; font-style: italic; color: var(--gris-texte); margin-top: 5px; font-size: 0.95rem;">Le live a &eacute;volu&eacute;. Les r&eacute;gies aussi&hellip; enfin, pas toutes.</p>
                 </div>
             </div>
         </div>
@@ -825,6 +866,31 @@
                 heroVideo.pause();
                 heroPause.innerHTML = '<svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>';
             }
+        });
+    </script>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <img src="" alt="">
+    </div>
+
+    <script>
+        // Lightbox photos équipe
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = lightbox.querySelector('img');
+        document.querySelectorAll('.equipe-photo-card img').forEach(function(img) {
+            img.addEventListener('click', function() {
+                lightboxImg.src = this.src;
+                lightboxImg.alt = this.alt;
+                lightbox.classList.add('active');
+            });
+        });
+        lightbox.addEventListener('click', function() {
+            lightbox.classList.remove('active');
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') lightbox.classList.remove('active');
         });
     </script>
 

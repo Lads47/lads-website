@@ -117,26 +117,31 @@
            ============================================ */
         .real-detail-layout {
             display: grid;
-            grid-template-columns: 1.4fr 0.6fr;
-            gap: 60px;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 80px;
             align-items: start;
         }
         .real-detail-text .section-desc {
-            margin-bottom: 18px;
+            margin-bottom: 20px;
+        }
+        .real-tag-inline {
+            display: inline-block; padding: 4px 14px; font-size: 0.68rem;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px;
+            background: rgba(125,206,245,0.12); color: var(--at-primary);
+            border-radius: 20px; margin-bottom: 20px;
         }
 
         /* META SIDEBAR */
         .real-meta {
+            display: flex; flex-direction: column; gap: 20px;
+            padding: 35px;
             background: var(--off-white);
             border-radius: var(--radius);
-            padding: 35px 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 22px;
+            border: 1px solid var(--gris-clair);
         }
         .real-meta-item {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 14px;
         }
         .real-meta-item svg {
@@ -146,35 +151,51 @@
             margin-top: 2px;
         }
         .meta-label {
-            display: block;
-            font-size: 0.72rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1.5px;
-            color: var(--light-1);
-            margin-bottom: 2px;
+            display: block; font-size: 0.7rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1px;
+            color: var(--light-1); margin-bottom: 2px;
         }
         .meta-value {
-            display: block;
-            font-size: 0.95rem; font-weight: 600;
+            display: block; font-size: 0.95rem; font-weight: 600;
             color: var(--primary);
         }
 
         /* PHOTO SECTION */
-        .real-photo-section {
+        .real-photos {
             margin-top: 60px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
-        .real-photo-section img {
-            width: 100%;
+        .real-photos.has-two { grid-template-columns: 1fr 1fr; }
+        .real-photos.has-three { grid-template-columns: 1fr 1fr 1fr; }
+        .real-photos.has-four { grid-template-columns: 1fr 1fr 1fr 1fr; }
+        .real-photo-item {
             border-radius: var(--radius);
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .real-photo-item img {
+            width: 100%;
             aspect-ratio: 16/9;
             object-fit: cover;
+            border-radius: var(--radius);
+            transition: transform 0.3s ease;
+        }
+        .real-photo-item:hover img {
+            transform: scale(1.03);
         }
         .real-photo-caption {
-            text-align: center;
             font-size: 0.82rem;
             color: var(--secondary);
-            margin-top: 12px;
             font-style: italic;
+            margin-top: 10px;
+            text-align: center;
         }
+
+        /* Video */
+        .video-container { margin-top: 20px; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: var(--radius); }
 
         /* BREADCRUMB BACK */
         .breadcrumb-back {
@@ -191,21 +212,15 @@
 
         /* BACK LINK */
         .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.82rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--at-primary);
-            transition: var(--t);
+            display: inline-flex; align-items: center; gap: 10px;
+            font-size: 0.82rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1px; color: var(--at-primary); transition: var(--t);
             margin-top: 50px;
         }
-        .back-link:hover { color: var(--accent); gap: 12px; }
+        .back-link:hover { color: var(--accent); gap: 14px; }
         .back-link svg {
-            width: 16px; height: 16px;
-            stroke: currentColor; stroke-width: 2; fill: none;
+            width: 18px; height: 18px; stroke: currentColor; stroke-width: 2;
+            fill: none; transition: var(--t);
         }
 
         /* ============================================
@@ -256,8 +271,8 @@
         <div class="container">
             <div class="real-detail-layout reveal">
                 <div class="real-detail-text">
-                    <span class="section-tag">Plateau TV</span>
-                    <h2 class="section-title">Salon de l'Agriculture de Bordeaux</h2>
+                    <span class="real-tag-inline">Plateau TV</span>
+                    <h2 class="section-title" style="text-align: left;">Salon de l'Agriculture de Bordeaux &mdash; 2024</h2>
                     <hr class="divider">
                     <br>
                     <p class="section-desc">
@@ -292,14 +307,16 @@
                 </div>
             </div>
 
-            <!-- Photo -->
-            <div class="real-photo-section reveal">
-                <img src="../photo/agri1.webp" alt="Le plateau AgriWebTV">
-                <p class="real-photo-caption">Le plateau AgriWebTV</p>
+            <!-- Photos -->
+            <div class="real-photos reveal">
+                <div class="real-photo-item">
+                    <img src="../photo/agri1.webp" alt="Le plateau AgriWebTV">
+                    <p class="real-photo-caption">Le plateau AgriWebTV</p>
+                </div>
             </div>
 
-            <!-- Retour -->
-            <a href="../nos-realisations.html" class="back-link">
+            <!-- Back link -->
+            <a href="../nos-realisations.html" class="back-link reveal">
                 <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
                 Retour aux r&eacute;alisations
             </a>
