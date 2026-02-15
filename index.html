@@ -6,6 +6,8 @@
     <title>Les Ateliers du Stream - Captation vid&eacute;o multicam&eacute;ras</title>
     <meta name="description" content="Les Ateliers du Stream - Votre partenaire de captation vid&eacute;o multicam&eacute;ras depuis 1998.">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
     <style>
         /* ============================================
            POLICES
@@ -65,47 +67,6 @@
         a { text-decoration: none; color: inherit; }
 
         .container { max-width: var(--max-width); margin: 0 auto; padding: 0 40px; }
-
-        /* ============================================
-           HEADER
-           ============================================ */
-        header {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            background: transparent;
-            transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
-        }
-        header.scrolled {
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 1px 20px rgba(31,34,68,0.08);
-        }
-        .header-inner {
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 18px 40px; max-width: var(--max-width); margin: 0 auto;
-        }
-        .logo img { height: 84px; transition: var(--t); }
-        .logo .logo-dark { display: none; }
-        .logo .logo-light { display: block; }
-        header.scrolled .logo .logo-dark { display: block; }
-        header.scrolled .logo .logo-light { display: none; }
-
-        nav ul { display: flex; list-style: none; gap: 28px; align-items: center; }
-        nav a {
-            font-family: var(--font-texte); font-size: 0.82rem; font-weight: 600;
-            color: var(--blanc); text-transform: uppercase; letter-spacing: 0.8px;
-            transition: var(--t); position: relative;
-        }
-        header.scrolled nav a { color: var(--primary); }
-        nav a:hover { color: var(--accent); }
-        nav a::after {
-            content: ''; position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%);
-            width: 0; height: 2px; background: var(--at-primary); transition: var(--t);
-        }
-        nav a:hover::after { width: 100%; }
-
-        .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 5px; }
-        .menu-toggle span { width: 24px; height: 2px; background: var(--blanc); border-radius: 2px; transition: var(--t); }
-        header.scrolled .menu-toggle span { background: var(--primary); }
 
         /* ============================================
            HERO (INCHANGE)
@@ -251,101 +212,6 @@
             font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
             background: rgba(125,206,245,0.2); color: var(--accent);
             border-radius: 20px; margin-bottom: 12px; width: fit-content;
-        }
-
-        /* ============================================
-           SECTION — COMMENT CA MARCHE (ex Prestations)
-           Timeline verticale moderne
-           ============================================ */
-        .process {
-            background: var(--blanc);
-        }
-
-        .process-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: stretch;
-        }
-
-        .process-visual {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .process-visual img {
-            width: 100%;
-            flex: 1;
-            object-fit: cover;
-            border-radius: var(--radius);
-        }
-
-        .process-photo {
-            position: relative;
-            flex: 1;
-            display: flex;
-            border-radius: var(--radius);
-            overflow: hidden;
-        }
-
-        .process-photo img {
-            flex: 1;
-        }
-
-        .process-photo-caption {
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            padding: 10px 16px;
-            background: linear-gradient(0deg, rgba(0,0,0,0.55) 0%, transparent 100%);
-            color: var(--blanc);
-            font-size: 0.82rem;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-        }
-
-        .timeline {
-            position: relative;
-            padding-left: 40px;
-        }
-
-        .timeline::before {
-            content: ''; position: absolute;
-            left: 12px; top: 8px; bottom: 8px;
-            width: 2px; background: var(--gris-clair);
-        }
-
-        .timeline-step {
-            position: relative;
-            margin-bottom: 35px;
-            padding-left: 20px;
-        }
-
-        .timeline-step:last-child { margin-bottom: 0; }
-
-        .timeline-step::before {
-            content: ''; position: absolute;
-            left: -40px; top: 6px;
-            width: 24px; height: 24px;
-            border-radius: 50%;
-            background: var(--blanc);
-            border: 3px solid var(--at-primary);
-            transition: var(--t);
-            z-index: 1;
-        }
-
-        .timeline-step:hover::before {
-            background: var(--at-primary);
-            box-shadow: 0 0 0 6px rgba(43,191,202,0.15);
-        }
-
-        .timeline-step h4 {
-            font-size: 1.1rem; font-weight: 700;
-            margin-bottom: 6px; color: var(--primary);
-        }
-
-        .timeline-step p {
-            font-size: 0.88rem; color: var(--secondary); line-height: 1.7;
         }
 
         /* ============================================
@@ -583,160 +449,16 @@
         .equipe-photo-info p { font-size: 0.78rem; opacity: 0.8; }
 
         /* ============================================
-           SECTION — CTA CONTACT
-           ============================================ */
-        .cta-contact {
-            background: var(--primary);
-            color: var(--blanc);
-            text-align: center;
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-contact::before {
-            content: ''; position: absolute; inset: 0;
-            background: radial-gradient(ellipse at 30% 50%, rgba(125,206,245,0.1) 0%, transparent 60%);
-        }
-
-        .cta-contact .section-title { color: var(--blanc); }
-        .cta-contact .section-desc { color: var(--light-1); margin: 0 auto 40px; text-align: center; }
-        .cta-contact .divider { background: var(--accent); }
-
-        .cta-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 50px;
-            position: relative; z-index: 1;
-        }
-
-        .cta-card {
-            padding: 40px 30px;
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: var(--radius);
-            transition: var(--t);
-            text-align: center;
-        }
-
-        .cta-card:hover {
-            border-color: rgba(125,206,245,0.3);
-            background: rgba(255,255,255,0.03);
-            transform: translateY(-4px);
-        }
-
-        .cta-card-icon {
-            width: 50px; height: 50px; margin: 0 auto 20px;
-        }
-
-        .cta-card-icon img {
-            width: 100%; height: 100%;
-            filter: brightness(0) saturate(100%) invert(78%) sepia(18%) saturate(1200%) hue-rotate(160deg) brightness(100%) contrast(94%);
-        }
-
-        .cta-card h4 {
-            font-family: var(--font-titre); font-size: 1.05rem; font-weight: 900;
-            margin-bottom: 8px;
-        }
-
-        .cta-card p { font-size: 0.85rem; color: var(--light-1); line-height: 1.6; }
-        .cta-card a { color: var(--accent); transition: var(--t); }
-        .cta-card a:hover { color: var(--blanc); }
-
-        /* ============================================
-           FOOTER
-           ============================================ */
-        footer {
-            background: #181a33;
-            color: var(--light-1);
-            padding: 50px 0 25px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-brand { }
-        .footer-brand img.footer-logo { height: 84px; }
-        .footer-brand p { font-size: 0.85rem; line-height: 1.7; color: var(--blanc); max-width: 280px; }
-
-        .footer-col h5 {
-            font-family: var(--font-titre); font-size: 0.95rem; font-weight: 900;
-            color: var(--blanc); margin-bottom: 18px;
-        }
-
-        .footer-col ul { list-style: none; }
-        .footer-col li { margin-bottom: 10px; }
-        .footer-col a { font-size: 0.85rem; color: var(--blanc); transition: var(--t); }
-        .footer-col a:hover { color: var(--accent); }
-        .footer-col li { font-size: 0.85rem; color: var(--blanc); }
-
-        .footer-social-row { display: flex; gap: 12px; }
-        .footer-social-row a {
-            display: flex; align-items: center; justify-content: center;
-        }
-        .footer-social-row a img { width: 28px; height: 28px; filter: brightness(0) invert(1); }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.06);
-            padding-top: 20px; text-align: center;
-            font-size: 0.78rem; color: var(--blanc);
-        }
-
-        /* ============================================
-           BACK TO TOP
-           ============================================ */
-        .back-to-top {
-            position: fixed; bottom: 30px; right: 30px;
-            width: 44px; height: 44px; background: var(--at-primary);
-            border: none; border-radius: 50%; cursor: pointer;
-            display: none; align-items: center; justify-content: center;
-            z-index: 999; transition: var(--t);
-            box-shadow: 0 4px 15px rgba(43,191,202,0.3);
-        }
-        .back-to-top:hover { background: var(--accent); transform: translateY(-3px); }
-        .back-to-top img { width: 18px; height: 18px; }
-        .back-to-top.visible { display: flex; }
-
-        /* ============================================
-           ANIMATIONS (scroll reveal)
-           ============================================ */
-        .reveal {
-            opacity: 0; transform: translateY(30px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-        .reveal.visible-anim {
-            opacity: 1; transform: translateY(0);
-        }
-
-        /* ============================================
            RESPONSIVE
            ============================================ */
         @media (max-width: 1024px) {
             .poss-grid { grid-template-columns: repeat(2, 1fr); }
-            .process-layout { grid-template-columns: 1fr; gap: 50px; }
             .equipe-layout { grid-template-columns: 1fr; gap: 40px; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .cta-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
-            nav ul { gap: 18px; }
-            nav a { font-size: 0.78rem; }
         }
 
         @media (max-width: 768px) {
             .container { padding: 0 20px; }
-            .header-inner { padding: 14px 20px; }
-            .menu-toggle { display: flex; }
-            nav ul {
-                display: none; position: absolute; top: 100%; left: 0; right: 0;
-                background: var(--blanc); flex-direction: column;
-                padding: 20px; gap: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            }
-            nav ul.active { display: flex; }
-            nav ul.active a { color: var(--primary); }
             .hero-content h1 { font-size: 2.2rem; }
             .hero-content .subtitle { font-size: 0.9rem; }
             .section { padding: 70px 0; }
@@ -750,39 +472,16 @@
             .stat-nombre { font-size: 2.8rem; }
             .ref-wall { grid-template-columns: repeat(3, 1fr); gap: 15px; }
             .ref-item { padding: 20px; }
-            .footer-grid { grid-template-columns: 1fr; text-align: center; }
-            .footer-brand p { max-width: 100%; }
-            .footer-social-row { justify-content: center; }
-            .adresses-row { grid-template-columns: 1fr; }
         }
     </style>
 </head>
-<body>
+<body class="home">
 
     <!-- ============================================
          HEADER
          ============================================ -->
-    <header id="header">
-        <div class="header-inner">
-            <a href="#" class="logo">
-                <img src="images/LOGO_clair.svg" alt="Les Ateliers du Stream" class="logo-light">
-                <img src="images/LOGO_fonce.svg" alt="Les Ateliers du Stream" class="logo-dark">
-            </a>
-            <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">
-                <span></span><span></span><span></span>
-            </button>
-            <nav>
-                <ul>
-                    <li><a href="nos-solutions.html">Nos solutions</a></li>
-                    <li><a href="nos-realisations.html">Nos r&eacute;alisations</a></li>
-                    <li><a href="#process">Notre approche</a></li>
-                    <li><a href="nos-formations.html">Nos formations</a></li>
-                    <li><a href="notre-histoire.html">Notre histoire</a></li>
-                    <li><a href="#contact">Nous contacter</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <header id="header"></header>
+    <script src="header.js"></script>
 
     <!-- ============================================
          HERO (INCHANGE)
@@ -963,38 +662,38 @@
         </div>
 
         <div class="poss-grid reveal">
-                <div class="poss-card">
-                    <div class="poss-card-bg" style="background: url('images/habillage_graphique.avif') center/cover no-repeat;"></div>
+                <a href="realisations/etourisme-pau.html" class="poss-card" style="text-decoration: none; color: inherit;">
+                    <div class="poss-card-bg" style="background: url('photo/etourisme.png') center/cover no-repeat;"></div>
                     <div class="poss-card-content">
-                        <span class="poss-tag">Essentiel</span>
-                        <h3>Captation multicam simple</h3>
-                        <p>2 &agrave; 3 cam&eacute;ras op&eacute;r&eacute;es, id&eacute;al pour conf&eacute;rences, interviews et tables rondes. R&eacute;gie compacte, r&eacute;sultat professionnel.</p>
+                        <span class="poss-tag">&Eacute;v&eacute;nementiel</span>
+                        <h3>Rencontres nationales de l'etourisme</h3>
+                        <p>5 r&eacute;gies, 12 cam&eacute;ras diss&eacute;min&eacute;es dans les murs du Palais Beaumont de Pau pour la grande messe du tourisme national.</p>
                     </div>
-                </div>
-                <div class="poss-card">
-                    <div class="poss-card-bg" style="background: url('images/20260120_092608.webp') center/cover no-repeat;"></div>
+                </a>
+                <a href="realisations/universite-ete-ceca.html" class="poss-card" style="text-decoration: none; color: inherit;">
+                    <div class="poss-card-bg" style="background: url('photo/20241127_104924.jpg') center/cover no-repeat;"></div>
                     <div class="poss-card-content">
-                        <span class="poss-tag">Autonomie totale</span>
-                        <h3>4 cam&eacute;ras tourelle 100% HF</h3>
-                        <p>Dispositif sans fil int&eacute;gral avec cam&eacute;ras PTZ pilot&eacute;es &agrave; distance. Z&eacute;ro c&acirc;ble, flexibilit&eacute; maximale, d&eacute;ploiement rapide.</p>
+                        <span class="poss-tag">Corporate</span>
+                        <h3>Universit&eacute; d'&Eacute;t&eacute; du CECA</h3>
+                        <p>Captation et diffusion en direct au Ch&acirc;teau Smith Haut Lafitte, avec duplex pour des intervenants &agrave; distance et gestion des m&eacute;dias sur vid&eacute;oprojecteur.</p>
                     </div>
-                </div>
-                <div class="poss-card">
-                    <div class="poss-card-bg" style="background: url('photo/agri1.webp') center/cover no-repeat;"></div>
+                </a>
+                <a href="realisations/ceremonie-docteurs-bordeaux.html" class="poss-card" style="text-decoration: none; color: inherit;">
+                    <div class="poss-card-bg" style="background: url('photo/ceremonie-docteurs.webp') center/cover no-repeat;"></div>
                     <div class="poss-card-content">
-                        <span class="poss-tag">Grande envergure</span>
-                        <h3>Jusqu'&agrave; 8 cam&eacute;ras</h3>
-                        <p>Captation multicam avanc&eacute;e pour spectacles, &eacute;v&eacute;nements sportifs et grands formats. R&eacute;gie compl&egrave;te avec r&eacute;alisateur et &eacute;quipe d&eacute;di&eacute;e.</p>
+                        <span class="poss-tag">Universit&eacute; de Bordeaux</span>
+                        <h3>C&eacute;r&eacute;monie des docteurs</h3>
+                        <p>L'Universit&eacute; de Bordeaux organise chaque ann&eacute;e la remise de dipl&ocirc;mes de ses doctorants au Pin Galant, salle de 1&nbsp;400 places &agrave; M&eacute;rignac.</p>
                     </div>
-                </div>
-                <div class="poss-card">
+                </a>
+                <a href="realisations/peer-gynt.html" class="poss-card" style="text-decoration: none; color: inherit;">
                     <div class="poss-card-bg" style="background: url('photo/peer gynt.webp') center/cover no-repeat;"></div>
                     <div class="poss-card-content">
                         <span class="poss-tag">Peer Gynt</span>
                         <h3>Op&eacute;ra de Limoges</h3>
                         <p>Six cam&eacute;ras diss&eacute;min&eacute;es sur le plateau, manipulables par les acteurs et une trentaine de vid&eacute;os, le tout diffus&eacute; sur le mur du d&eacute;cor d'une maison.</p>
                     </div>
-                </div>
+                </a>
             </div>
         <div class="container" style="text-align: center; padding: 90px 0;">
             <a href="nos-realisations.html" class="btn btn-primary reveal">Nos r&eacute;alisations</a>
@@ -1028,55 +727,6 @@
                 <div class="ref-item"><img src="logos-clients/apacom.svg" alt="APACOM"></div>
                 <div class="ref-item"><img src="logos-clients/unitec.svg" alt="Unitec"></div>
                 <div class="ref-item"><img src="logos-clients/adina.svg" alt="ADINA"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         COMMENT CA MARCHE (Process)
-         ============================================ -->
-    <section id="process" class="section process">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">Notre approche</span>
-                <h2 class="section-title">De l'&eacute;coute &agrave; la r&eacute;alisation</h2>
-                <hr class="divider">
-            </div>
-            <div class="process-layout reveal">
-                <div class="process-visual">
-                    <div class="process-photo">
-                        <img src="images/visite-technique.avif" alt="Visite technique">
-                        <span class="process-photo-caption">Visite technique avant l'&eacute;v&eacute;nement</span>
-                    </div>
-                    <div class="process-photo">
-                        <img src="images/habillage_graphique.avif" alt="Habillage graphique">
-                        <span class="process-photo-caption">Cr&eacute;ation d'un habillage vid&eacute;o</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="timeline">
-                        <div class="timeline-step">
-                            <h4>&Eacute;change &amp; cadrage</h4>
-                            <p>Nous parlons ensemble de votre &eacute;v&eacute;nement, de ses besoins et de ses enjeux pour dimensionner le dispositif id&eacute;al.</p>
-                        </div>
-                        <div class="timeline-step">
-                            <h4>Coordination technique</h4>
-                            <p>Nous prenons en charge la relation avec le lieu de l'&eacute;v&eacute;nement pour garantir la bonne connexion des &eacute;quipements et ne rien laisser au hasard.</p>
-                        </div>
-                        <div class="timeline-step">
-                            <h4>Habillage &agrave; vos couleurs</h4>
-                            <p>Cr&eacute;ation d'habillages graphiques personnalis&eacute;s et, si besoin, d'une page web de diffusion du direct &agrave; votre charte graphique.</p>
-                        </div>
-                        <div class="timeline-step">
-                            <h4>Le jour J, on g&egrave;re</h4>
-                            <p>Flexibilit&eacute; totale face aux impr&eacute;vus : modification d'un PowerPoint, intervenant en duplex, diffusion d'un film &agrave; la derni&egrave;re minute &mdash; nous nous adaptons.</p>
-                        </div>
-                        <div class="timeline-step">
-                            <h4>Livraison des replays</h4>
-                            <p>Nous vous livrons vos vid&eacute;os habill&eacute;es avec le d&eacute;coupage th&eacute;matique de votre choix, avec la possibilit&eacute; d'une livraison d&egrave;s le lendemain.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1159,85 +809,12 @@
         </div>
     </section>
 
-    <!-- ============================================
-         FOOTER
-         ============================================ -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <img class="footer-logo" src="images/LOGO_clair.svg" alt="Les Ateliers du Stream">
-                </div>
-                <div class="footer-col">
-                    <h5>Navigation</h5>
-                    <ul>
-                        <li><a href="nos-solutions.html">Nos solutions</a></li>
-                        <li><a href="nos-realisations.html">R&eacute;alisations</a></li>
-                        <li><a href="#process">Notre approche</a></li>
-                        <li><a href="nos-formations.html">Nos formations</a></li>
-                        <li><a href="notre-histoire.html">Notre histoire</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h5>Contact</h5>
-                    <ul>
-                        <li><a href="mailto:prod@lesateliersdustream.fr">prod@lesateliersdustream.fr</a></li>
-                        <li><a href="tel:+33661968858">06 61 96 88 58</a></li>
-                    </ul>
-                    <div class="footer-social-row" style="margin-top: 15px;">
-                        <a href="https://www.instagram.com/lesateliersdustream/" target="_blank" rel="noopener"><img src="images/instagram.svg" alt="Instagram"></a>
-                        <a href="https://www.linkedin.com/company/les-ateliers-du-stream/" target="_blank" rel="noopener"><img src="images/linkedin.svg" alt="LinkedIn"></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h5>L&eacute;gal</h5>
-                    <ul>
-                        <li><a href="#">Mentions l&eacute;gales</a></li>
-                        <li><a href="#">Politique de confidentialit&eacute;</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                &copy; 2025 Les Ateliers du Stream. Tous droits r&eacute;serv&eacute;s.
-            </div>
-        </div>
-    </footer>
+    <!-- Footer -->
+    <div id="footer"></div>
+    <script src="footer.js"></script>
 
-    <!-- Back to top -->
-    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-        <img src="images/noun-up-arrow-1136566.svg" alt="Haut" style="filter: brightness(0) invert(1);">
-    </button>
-
-    <!-- ============================================
-         JS
-         ============================================ -->
+    <!-- Hero video pause/play -->
     <script>
-        // Header scroll
-        var header = document.getElementById('header');
-        var backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 80) {
-                header.classList.add('scrolled');
-                backToTop.classList.add('visible');
-            } else {
-                header.classList.remove('scrolled');
-                backToTop.classList.remove('visible');
-            }
-        });
-
-        // Scroll reveal animation
-        var reveals = document.querySelectorAll('.reveal');
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible-anim');
-                }
-            });
-        }, { threshold: 0.15 });
-
-        reveals.forEach(function(el) { observer.observe(el); });
-
-        // Hero video pause/play
         var heroPause = document.getElementById('heroPause');
         var heroVideo = document.querySelector('.hero-video');
         heroPause.addEventListener('click', function() {

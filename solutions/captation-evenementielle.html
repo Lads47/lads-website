@@ -6,6 +6,8 @@
     <title>Captation &eacute;v&eacute;nementielle - Les Ateliers du Stream</title>
     <meta name="description" content="Captation &eacute;v&eacute;nementielle : captation multicam&eacute;ra et gestion compl&egrave;te des m&eacute;dias pour vos congr&egrave;s et &eacute;v&eacute;nements professionnels.">
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="../footer.css">
     <style>
         /* ============================================
            POLICES
@@ -57,39 +59,6 @@
         img { max-width: 100%; height: auto; display: block; }
         a { text-decoration: none; color: inherit; }
         .container { max-width: var(--max-width); margin: 0 auto; padding: 0 40px; }
-
-        /* ============================================
-           HEADER
-           ============================================ */
-        header {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 1px 20px rgba(31,34,68,0.08);
-        }
-        .header-inner {
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 18px 40px; max-width: var(--max-width); margin: 0 auto;
-        }
-        .logo img { height: 84px; transition: var(--t); }
-
-        nav ul { display: flex; list-style: none; gap: 28px; align-items: center; }
-        nav a {
-            font-family: var(--font-texte); font-size: 0.82rem; font-weight: 600;
-            color: var(--primary); text-transform: uppercase; letter-spacing: 0.8px;
-            transition: var(--t); position: relative;
-        }
-        nav a:hover { color: var(--accent); }
-        nav a::after {
-            content: ''; position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%);
-            width: 0; height: 2px; background: var(--at-primary); transition: var(--t);
-        }
-        nav a:hover::after { width: 100%; }
-        nav a.active { color: var(--at-primary); }
-        nav a.active::after { width: 100%; }
-
-        .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 5px; }
-        .menu-toggle span { width: 24px; height: 2px; background: var(--primary); border-radius: 2px; transition: var(--t); }
 
         /* ============================================
            PAGE HERO
@@ -250,141 +219,18 @@
         }
 
         /* ============================================
-           CTA CONTACT
-           ============================================ */
-        .cta-contact {
-            background: var(--primary);
-            color: var(--blanc);
-            text-align: center;
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        .cta-contact::before {
-            content: ''; position: absolute; inset: 0;
-            background: radial-gradient(ellipse at 30% 50%, rgba(125,206,245,0.1) 0%, transparent 60%);
-        }
-        .cta-contact .section-title { color: var(--blanc); }
-        .cta-contact .section-desc { color: var(--light-1); margin: 0 auto 40px; text-align: center; max-width: 600px; }
-        .cta-contact .divider { background: var(--accent); margin: 20px auto 0; }
-
-        .cta-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 50px;
-            position: relative; z-index: 1;
-        }
-        .cta-card {
-            padding: 40px 30px;
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: var(--radius);
-            transition: var(--t);
-            text-align: center;
-        }
-        .cta-card:hover {
-            border-color: rgba(125,206,245,0.3);
-            background: rgba(255,255,255,0.03);
-            transform: translateY(-4px);
-        }
-        .cta-card-icon { width: 50px; height: 50px; margin: 0 auto 20px; }
-        .cta-card-icon img {
-            width: 100%; height: 100%;
-            filter: brightness(0) saturate(100%) invert(78%) sepia(18%) saturate(1200%) hue-rotate(160deg) brightness(100%) contrast(94%);
-        }
-        .cta-card h4 {
-            font-family: var(--font-titre); font-size: 1.05rem; font-weight: 900;
-            margin-bottom: 8px;
-        }
-        .cta-card p { font-size: 0.85rem; color: var(--light-1); line-height: 1.6; }
-        .cta-card a { color: var(--accent); transition: var(--t); }
-        .cta-card a:hover { color: var(--blanc); }
-
-        /* ============================================
-           FOOTER
-           ============================================ */
-        footer {
-            background: #181a33;
-            color: var(--light-1);
-            padding: 50px 0 25px;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        .footer-brand img.footer-logo { height: 84px; }
-        .footer-brand p { font-size: 0.85rem; line-height: 1.7; color: var(--blanc); max-width: 280px; }
-        .footer-col h5 {
-            font-family: var(--font-titre); font-size: 0.95rem; font-weight: 900;
-            color: var(--blanc); margin-bottom: 18px;
-        }
-        .footer-col ul { list-style: none; }
-        .footer-col li { margin-bottom: 10px; }
-        .footer-col a { font-size: 0.85rem; color: var(--blanc); transition: var(--t); }
-        .footer-col a:hover { color: var(--accent); }
-        .footer-social-row { display: flex; gap: 12px; }
-        .footer-social-row a { display: flex; align-items: center; justify-content: center; }
-        .footer-social-row a img { width: 28px; height: 28px; filter: brightness(0) invert(1); }
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.06);
-            padding-top: 20px; text-align: center;
-            font-size: 0.78rem; color: var(--blanc);
-        }
-
-        /* ============================================
-           BACK TO TOP
-           ============================================ */
-        .back-to-top {
-            position: fixed; bottom: 30px; right: 30px;
-            width: 44px; height: 44px; background: var(--at-primary);
-            border: none; border-radius: 50%; cursor: pointer;
-            display: none; align-items: center; justify-content: center;
-            z-index: 999; transition: var(--t);
-            box-shadow: 0 4px 15px rgba(43,191,202,0.3);
-        }
-        .back-to-top:hover { background: var(--accent); transform: translateY(-3px); }
-        .back-to-top img { width: 18px; height: 18px; }
-        .back-to-top.visible { display: flex; }
-
-        /* ============================================
-           ANIMATIONS
-           ============================================ */
-        .reveal {
-            opacity: 0; transform: translateY(30px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-        .reveal.visible-anim { opacity: 1; transform: translateY(0); }
-
-        /* ============================================
            RESPONSIVE
            ============================================ */
         @media (max-width: 1024px) {
             .real-detail-layout { grid-template-columns: 1fr; gap: 40px; }
-            .cta-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-            nav ul { gap: 18px; }
-            nav a { font-size: 0.78rem; }
         }
 
         @media (max-width: 768px) {
             .container { padding: 0 20px; }
-            .header-inner { padding: 14px 20px; }
-            .menu-toggle { display: flex; }
-            nav ul {
-                display: none; position: absolute; top: 100%; left: 0; right: 0;
-                background: var(--blanc); flex-direction: column;
-                padding: 20px; gap: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            }
-            nav ul.active { display: flex; }
             .page-hero { padding: 140px 0 60px; }
             .page-hero-content h1 { font-size: 2rem; }
             .section { padding: 70px 0; }
             .section-title { font-size: 1.8rem; }
-            .footer-grid { grid-template-columns: 1fr; text-align: center; }
-            .footer-brand p { max-width: 100%; }
-            .footer-social-row { justify-content: center; }
         }
     </style>
 </head>
@@ -393,26 +239,8 @@
     <!-- ============================================
          HEADER
          ============================================ -->
-    <header id="header">
-        <div class="header-inner">
-            <a href="../index.html" class="logo">
-                <img src="../images/LOGO_fonce.svg" alt="Les Ateliers du Stream">
-            </a>
-            <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">
-                <span></span><span></span><span></span>
-            </button>
-            <nav>
-                <ul>
-                    <li><a href="../nos-solutions.html" class="active">Nos solutions</a></li>
-                    <li><a href="../nos-realisations.html">Nos r&eacute;alisations</a></li>
-                    <li><a href="../index.html#process">Notre approche</a></li>
-                    <li><a href="../nos-formations.html">Nos formations</a></li>
-                    <li><a href="../notre-histoire.html">Notre histoire</a></li>
-                    <li><a href="#contact">Nous contacter</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <header id="header"></header>
+    <script src="../header.js"></script>
 
     <!-- ============================================
          PAGE HERO
@@ -500,9 +328,6 @@
         </div>
     </section>
 
-    <!-- ============================================
-         CTA / CONTACT
-         ============================================ -->
     <section id="contact" class="cta-contact">
         <div class="container reveal">
             <span class="section-tag" style="color: var(--accent);">Vous avez un projet similaire ?</span>
@@ -534,86 +359,17 @@
         </div>
     </section>
 
-    <!-- ============================================
-         FOOTER
-         ============================================ -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <img class="footer-logo" src="../images/LOGO_clair.svg" alt="Les Ateliers du Stream">
-                </div>
-                <div class="footer-col">
-                    <h5>Navigation</h5>
-                    <ul>
-                        <li><a href="../nos-solutions.html">Nos solutions</a></li>
-                        <li><a href="../nos-realisations.html">R&eacute;alisations</a></li>
-                        <li><a href="../index.html#process">Notre approche</a></li>
-                        <li><a href="../nos-formations.html">Nos formations</a></li>
-                        <li><a href="../notre-histoire.html">Notre histoire</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h5>Contact</h5>
-                    <ul>
-                        <li><a href="mailto:prod@lesateliersdustream.fr">prod@lesateliersdustream.fr</a></li>
-                        <li><a href="tel:+33661968858">06 61 96 88 58</a></li>
-                    </ul>
-                    <div class="footer-social-row" style="margin-top: 15px;">
-                        <a href="https://www.instagram.com/lesateliersdustream/" target="_blank" rel="noopener"><img src="../images/instagram.svg" alt="Instagram"></a>
-                        <a href="https://www.linkedin.com/company/les-ateliers-du-stream/" target="_blank" rel="noopener"><img src="../images/linkedin.svg" alt="LinkedIn"></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h5>L&eacute;gal</h5>
-                    <ul>
-                        <li><a href="#">Mentions l&eacute;gales</a></li>
-                        <li><a href="#">Politique de confidentialit&eacute;</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                &copy; 2025 Les Ateliers du Stream. Tous droits r&eacute;serv&eacute;s.
-            </div>
-        </div>
-    </footer>
-
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close">&times;</button>
         <img src="" alt="">
     </div>
 
-    <!-- Back to top -->
-    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-        <img src="../images/noun-up-arrow-1136566.svg" alt="Haut" style="filter: brightness(0) invert(1);">
-    </button>
+    <!-- Footer -->
+    <div id="footer"></div>
+    <script src="../footer.js"></script>
 
-    <!-- ============================================
-         JS
-         ============================================ -->
     <script>
-        // Back to top
-        var backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 80) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
-
-        // Scroll reveal
-        var reveals = document.querySelectorAll('.reveal');
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible-anim');
-                }
-            });
-        }, { threshold: 0.15 });
-        reveals.forEach(function(el) { observer.observe(el); });
-
         // Photo grid auto-detect
         document.querySelectorAll('.real-photos').forEach(function(grid) {
             var count = grid.querySelectorAll('.real-photo-item').length;
