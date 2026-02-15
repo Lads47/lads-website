@@ -61,6 +61,24 @@
             .page-hero { padding: 140px 0 60px; } .page-hero-content h1 { font-size: 2rem; }
             .section { padding: 70px 0; } .section-title { font-size: 1.8rem; }
         }
+
+        /* Lightbox */
+        .lightbox {
+            display: none; position: fixed; inset: 0; z-index: 9999;
+            background: rgba(0,0,0,0.9); align-items: center; justify-content: center;
+            cursor: zoom-out;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox img {
+            max-width: 92vw; max-height: 90vh; object-fit: contain;
+            border-radius: var(--radius); box-shadow: 0 10px 60px rgba(0,0,0,0.5);
+        }
+        .lightbox-close {
+            position: absolute; top: 25px; right: 30px;
+            background: none; border: none; color: #fff; font-size: 2.2rem;
+            cursor: pointer; opacity: 0.7; transition: opacity 0.2s;
+        }
+        .lightbox-close:hover { opacity: 1; }
     </style>
 </head>
 <body>

@@ -72,7 +72,7 @@
         }
         .page-hero::before {
             content: ''; position: absolute; inset: 0;
-            background: url('../photo/inova-e.png') center/cover no-repeat;
+            background: url('../photo/20240621_152608.jpg') center/cover no-repeat;
             opacity: 0.3;
         }
         .page-hero-content {
@@ -193,6 +193,24 @@
             text-align: center;
         }
 
+        /* Lightbox */
+        .lightbox {
+            display: none; position: fixed; inset: 0; z-index: 9999;
+            background: rgba(0,0,0,0.9); align-items: center; justify-content: center;
+            cursor: zoom-out;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox img {
+            max-width: 92vw; max-height: 90vh; object-fit: contain;
+            border-radius: var(--radius); box-shadow: 0 10px 60px rgba(0,0,0,0.5);
+        }
+        .lightbox-close {
+            position: absolute; top: 25px; right: 30px;
+            background: none; border: none; color: #fff; font-size: 2.2rem;
+            cursor: pointer; opacity: 0.7; transition: opacity 0.2s;
+        }
+        .lightbox-close:hover { opacity: 1; }
+
         /* Video */
         .video-container { margin-top: 20px; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: var(--radius); }
@@ -279,7 +297,7 @@
                         INOVA-&eacute; est un &eacute;v&eacute;nement hybride avec des conf&eacute;rences r&eacute;parties sur trois H&ocirc;tels de R&eacute;gion de Nouvelle-Aquitaine. Pour assurer la couverture compl&egrave;te, nous avons d&eacute;ploy&eacute; une r&eacute;gie comprenant trois cam&eacute;ras par site, connect&eacute;es &agrave; une r&eacute;gie finale bas&eacute;e &agrave; Marmande.
                     </p>
                     <p class="section-desc">
-                        Les op&eacute;rateurs sur site assuraient la qualit&eacute; audio et le cadrage des cam&eacute;ras, tandis que la r&eacute;gie finale m&eacute;langeait les flux vid&eacute;os et g&eacute;rait le mixage audio avec enregistrement de l'&eacute;v&eacute;nement.
+                        Les op&eacute;rateurs sur site assuraient la qualit&eacute; audio et le cadrage des cam&eacute;ras, tandis que la r&eacute;gie finale m&eacute;langeait les flux vid&eacute;os, g&eacute;rait les affichages sur les vid&eacute;oprojecteurs des trois villes et le mixage audio avec l'enregistrement de l'&eacute;v&eacute;nement.
                     </p>
                 </div>
                 <div class="real-meta">
@@ -310,8 +328,20 @@
             <!-- Photos -->
             <div class="real-photos reveal">
                 <div class="real-photo-item">
-                    <img src="../photo/inova-e.png" alt="Sch&eacute;ma du dispositif multi-sites">
-                    <p class="real-photo-caption">Sch&eacute;ma du dispositif multi-sites</p>
+                    <img src="../photo/ino%2024%201.png" alt="Sc&egrave;ne Bordeaux avec Limoges et Poitiers">
+                    <p class="real-photo-caption">Sc&egrave;ne avec Bordeaux au premier plan et Limoges et Poitiers sur le c&ocirc;t&eacute; et sur le vid&eacute;oprojecteur pour le public de Bordeaux</p>
+                </div>
+                <div class="real-photo-item">
+                    <img src="../photo/ino%2024%204.png" alt="Pr&eacute;sentation de Poitiers sur les &eacute;crans">
+                    <p class="real-photo-caption">Pr&eacute;sentation de Poitiers diffus&eacute;e sur les &eacute;crans de Bordeaux et Limoges</p>
+                </div>
+                <div class="real-photo-item">
+                    <img src="../photo/20240621_152608.jpg" alt="Cam&eacute;ras tourelles &agrave; Bordeaux">
+                    <p class="real-photo-caption">2 des 3 cam&eacute;ras tourelles &agrave; Bordeaux</p>
+                </div>
+                <div class="real-photo-item">
+                    <img src="../photo/ino%2024%202.png" alt="Les 3 villes connect&eacute;es en simultan&eacute;">
+                    <p class="real-photo-caption">Les trois villes connect&eacute;es en simultan&eacute; : Limoges prend la parole, son intervenante appara&icirc;t en gros plan sur les vid&eacute;oprojecteurs de Bordeaux et Poitiers, tandis qu'&agrave; Poitiers l'&eacute;cran affiche Bordeaux et Limoges &agrave; l'&eacute;coute</p>
                 </div>
             </div>
 

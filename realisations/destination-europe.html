@@ -72,7 +72,7 @@
         }
         .page-hero::before {
             content: ''; position: absolute; inset: 0;
-            background: url('../photo/destination-europe.webp') center/cover no-repeat;
+            background: url('../photo/20210601_144731.jpg') center/cover no-repeat;
             opacity: 0.3;
         }
         .page-hero-content {
@@ -193,6 +193,24 @@
             text-align: center;
         }
 
+        /* Lightbox */
+        .lightbox {
+            display: none; position: fixed; inset: 0; z-index: 9999;
+            background: rgba(0,0,0,0.9); align-items: center; justify-content: center;
+            cursor: zoom-out;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox img {
+            max-width: 92vw; max-height: 90vh; object-fit: contain;
+            border-radius: var(--radius); box-shadow: 0 10px 60px rgba(0,0,0,0.5);
+        }
+        .lightbox-close {
+            position: absolute; top: 25px; right: 30px;
+            background: none; border: none; color: #fff; font-size: 2.2rem;
+            cursor: pointer; opacity: 0.7; transition: opacity 0.2s;
+        }
+        .lightbox-close:hover { opacity: 1; }
+
         /* Video */
         .video-container { margin-top: 20px; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: var(--radius); }
@@ -276,10 +294,10 @@
                     <hr class="divider">
                     <br>
                     <p class="section-desc">
-                        L'ADI Nouvelle-Aquitaine souhaitait communiquer les nouvelles directives europ&eacute;ennes sur les march&eacute;s publics &agrave; ses membres r&eacute;partis sur l'ensemble de la R&eacute;gion. Pour r&eacute;pondre &agrave; ce besoin, nous avons con&ccedil;u un plateau TV virtuel avec un fond vert de 12 m&egrave;tres de large.
+                        L'ADI Nouvelle-Aquitaine souhaitait communiquer les nouvelles directives europ&eacute;ennes sur les march&eacute;s publics &agrave; ses membres r&eacute;partis sur l'ensemble de la R&eacute;gion. Pour r&eacute;pondre &agrave; ce besoin, nous avons con&ccedil;u un plateau TV virtuel avec un fond vert de 12 m&egrave;tres de long.
                     </p>
                     <p class="section-desc">
-                        Le dispositif permettait d'accueillir des intervenants en duplex et d'int&eacute;grer un affichage dynamique de mots-cl&eacute;s synchronis&eacute; avec les propos des intervenants. Les &eacute;l&eacute;ments de d&eacute;cor anim&eacute;s enrichissaient la production en direct.
+                        Le dispositif permettait d'accueillir des intervenants en plateau mais aussi en duplex, et d'int&eacute;grer un affichage dynamique de mots-cl&eacute;s synchronis&eacute; avec les propos des intervenants. Des &eacute;l&eacute;ments de d&eacute;cor anim&eacute;s venaient enrichir la production, le tout diffus&eacute; en direct.
                     </p>
                 </div>
                 <div class="real-meta">
@@ -310,8 +328,11 @@
             <!-- Photos -->
             <div class="real-photos reveal">
                 <div class="real-photo-item">
-                    <img src="../photo/destination-europe.webp" alt="Le plateau TV virtuel">
+                    <img src="../photo/20210601_144731.jpg" alt="Le plateau TV virtuel">
                     <p class="real-photo-caption">Le plateau TV virtuel</p>
+                </div>
+                <div class="real-photo-item">
+                    <img src="../photo/20210406_151153.jpg" alt="destiNAtion Europe">
                 </div>
             </div>
 
