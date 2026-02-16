@@ -1,8 +1,4 @@
 (function() {
-    // 0. Email obfuscation
-    var _e = ['prod','lesateliersdustream','fr'];
-    var _email = _e[0] + '@' + _e[1] + '.' + _e[2];
-
     // 1. Detect path prefix
     var scripts = document.getElementsByTagName('script');
     var thisScript = scripts[scripts.length - 1];
@@ -28,7 +24,7 @@
             '<div class="footer-col">' +
                 '<h5>Contact</h5>' +
                 '<ul>' +
-                    '<li><a href="mailto:' + _email + '">' + _email + '</a></li>' +
+                    '<li><a href="mailto:prod@lesateliersdustream.fr">prod@lesateliersdustream.fr</a></li>' +
                     '<li><a href="tel:+33661968858">06 61 96 88 58</a></li>' +
                 '</ul>' +
                 '<div class="footer-social-row" style="margin-top:15px">' +
@@ -56,13 +52,6 @@
         footer.innerHTML = footerHtml;
         footerEl.parentNode.replaceChild(footer, footerEl);
     }
-
-    // 5b. Deobfuscate emails on page
-    var emailLinks = document.querySelectorAll('.email-protect');
-    emailLinks.forEach(function(el) {
-        el.href = 'mailto:' + _email;
-        el.textContent = _email;
-    });
 
     // 6. Create back-to-top button
     var btn = document.createElement('button');
