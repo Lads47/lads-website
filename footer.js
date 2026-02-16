@@ -35,7 +35,7 @@
             '<div class="footer-col">' +
                 '<h5>L\u00e9gal</h5>' +
                 '<ul>' +
-                    '<li><a href="#">Mentions l\u00e9gales</a></li>' +
+                    '<li><a href="' + prefix + 'mentions-legales">Mentions l\u00e9gales</a></li>' +
                     '<li><a href="#">Politique de confidentialit\u00e9</a></li>' +
                 '</ul>' +
             '</div>' +

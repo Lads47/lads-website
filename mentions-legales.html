@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions l&eacute;gales - Les Ateliers du Stream</title>
+    <meta name="description" content="Mentions l&eacute;gales du site lesateliersdustream.fr - Web Vid&eacute;o Production - Les Ateliers du Stream.">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <style>
+        /* ============================================
+           POLICES
+           ============================================ */
+        @font-face {
+            font-family: 'Butler';
+            src: url('fonts/subset-Butler.woff2') format('woff2');
+            font-weight: 400; font-style: normal; font-display: swap;
+        }
+        @font-face {
+            font-family: 'Butler';
+            src: url('fonts/Butler-Black.woff2') format('woff2');
+            font-weight: 900; font-style: normal; font-display: swap;
+        }
+        @font-face {
+            font-family: 'Open Sans';
+            src: url('fonts/OpenSans-VariableFont_wght.woff2') format('woff2');
+            font-weight: 300 800; font-style: normal; font-display: swap;
+        }
+
+        /* ============================================
+           VARIABLES
+           ============================================ */
+        :root {
+            --primary: #1f2244;
+            --secondary: #727485;
+            --accent: #7dcef5;
+            --at-primary: #7dcff5;
+            --blanc: #ffffff;
+            --off-white: #f7f8fa;
+            --gris-clair: #e9e9ed;
+            --gris-moyen: #d3d3da;
+            --dark-1: #363957;
+            --dark-2: #4c4f6a;
+            --light-1: #a6a7b5;
+            --font-titre: 'Butler', Georgia, serif;
+            --font-texte: 'Open Sans', sans-serif;
+            --max-width: 1200px;
+            --t: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius: 6px;
+        }
+
+        /* ============================================
+           RESET
+           ============================================ */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-texte); color: var(--primary); line-height: 1.6; background: var(--blanc); }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 40px; }
+
+        /* ============================================
+           PAGE HERO
+           ============================================ */
+        .page-hero {
+            padding: 180px 0 120px;
+            background: var(--primary);
+            color: var(--blanc);
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero-content {
+            position: relative; z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .page-hero-content .section-tag { color: var(--accent); }
+        .page-hero-content h1 {
+            font-family: var(--font-titre); font-size: 3rem; font-weight: 900;
+            line-height: 1.15; margin-bottom: 20px;
+        }
+
+        /* ============================================
+           SECTIONS
+           ============================================ */
+        .section { padding: 90px 0; }
+        .section-tag {
+            display: inline-block; font-size: 0.72rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 3px; color: var(--at-primary);
+            margin-bottom: 16px;
+        }
+
+        /* ============================================
+           MENTIONS LEGALES
+           ============================================ */
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .legal-content h2 {
+            font-family: var(--font-titre);
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 16px;
+            margin-top: 50px;
+        }
+        .legal-content h2:first-child {
+            margin-top: 0;
+        }
+        .legal-content p {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            .page-hero { padding: 140px 0 60px; }
+            .page-hero-content h1 { font-size: 2rem; }
+            .section { padding: 70px 0; }
+            .legal-content h2 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         HEADER
+         ============================================ -->
+    <header id="header"></header>
+    <script src="header.js"></script>
+
+    <!-- ============================================
+         PAGE HERO
+         ============================================ -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <span class="section-tag">L&eacute;gal</span>
+                <h1>Mentions l&eacute;gales</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONTENU
+         ============================================ -->
+    <section class="section">
+        <div class="container">
+            <div class="legal-content reveal">
+
+                <h2>1. &Eacute;diteur du site</h2>
+                <p>Nom de l'entreprise : Web Vid&eacute;o Production - Les Ateliers du Stream</p>
+                <p>Forme juridique : SAS</p>
+                <p>Si&egrave;ge social : 39 bis rue Robert Creuzet, 47200 Marmande</p>
+                <p>Capital social : 6 600 &euro;</p>
+                <p>SIREN : 819502238</p>
+                <p>Immatricul&eacute;e au RNE.</p>
+                <p>Directeur de publication : No&eacute;mie Marphay</p>
+
+                <h2>2. H&eacute;bergement du site</h2>
+                <p>H&eacute;bergeur : OVH</p>
+                <p>Adresse : 2 rue Kellermann, 59100 Roubaix, France</p>
+                <p>T&eacute;l&eacute;phone : +33 9 72 10 10 07</p>
+
+                <h2>3. Protection des donn&eacute;es personnelles</h2>
+                <p>Aucune donn&eacute;e personnelle n'est collect&eacute;e via ce site.</p>
+
+                <h2>4. Cookies</h2>
+                <p>Le site n'utilise pas de cookies.</p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <script src="footer.js"></script>
+
+</body>
+</html>
