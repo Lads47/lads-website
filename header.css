@@ -16,7 +16,8 @@ header {
 }
 .logo img { height: 84px; transition: var(--t); }
 
-nav ul { display: flex; list-style: none; gap: 28px; align-items: center; }
+nav { flex: 1; text-align: center; }
+nav ul { display: inline-flex; list-style: none; gap: 28px; align-items: center; justify-content: center; }
 nav a {
     font-family: var(--font-texte); font-size: 0.82rem; font-weight: 600;
     color: var(--primary); text-transform: uppercase; letter-spacing: 0.8px;
