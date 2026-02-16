@@ -14,11 +14,11 @@
             '<div class="footer-col">' +
                 '<h5>Navigation</h5>' +
                 '<ul>' +
-                    '<li><a href="' + prefix + 'solutions">Nos solutions</a></li>' +
-                    '<li><a href="' + prefix + 'realisations">R\u00e9alisations</a></li>' +
-                    '<li><a href="' + prefix + 'approche">Notre accompagnement</a></li>' +
-                    '<li><a href="' + prefix + 'formations">Nos formations</a></li>' +
-                    '<li><a href="' + prefix + 'histoire">Notre histoire</a></li>' +
+                    '<li><a href="' + prefix + 'solutions.html">Nos solutions</a></li>' +
+                    '<li><a href="' + prefix + 'realisations.html">R\u00e9alisations</a></li>' +
+                    '<li><a href="' + prefix + 'approche.html">Notre accompagnement</a></li>' +
+                    '<li><a href="' + prefix + 'formations.html">Nos formations</a></li>' +
+                    '<li><a href="' + prefix + 'histoire.html">Notre histoire</a></li>' +
                 '</ul>' +
             '</div>' +
             '<div class="footer-col">' +
@@ -35,7 +35,7 @@
             '<div class="footer-col">' +
                 '<h5>L\u00e9gal</h5>' +
                 '<ul>' +
-                    '<li><a href="' + prefix + 'mentions-legales">Mentions l\u00e9gales</a></li>' +
+                    '<li><a href="' + prefix + 'mentions-legales.html">Mentions l\u00e9gales</a></li>' +
                     '<li><a href="#">Politique de confidentialit\u00e9</a></li>' +
                 '</ul>' +
             '</div>' +
