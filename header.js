@@ -62,7 +62,7 @@
         // Menu toggle
         var toggle = headerEl.querySelector('.menu-toggle');
         toggle.addEventListener('click', function() {
-            headerEl.querySelector('nav ul').classList.toggle('active');
+            headerEl.querySelector('nav').classList.toggle('active');
         });
     }
 

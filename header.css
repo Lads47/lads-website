@@ -69,11 +69,15 @@ body.home header.scrolled .menu-toggle span { background: var(--primary); }
 @media (max-width: 768px) {
     .header-inner { padding: 14px 20px; }
     .menu-toggle { display: flex; }
-    nav ul {
+    nav {
         display: none; position: absolute; top: 100%; left: 0; right: 0;
-        background: var(--blanc); flex-direction: column;
-        padding: 20px; gap: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        background: var(--blanc);
+        padding: 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     }
-    nav ul.active { display: flex; }
-    nav ul.active a { color: var(--primary); }
+    nav.active { display: block; }
+    nav.active a { color: var(--primary) !important; }
+    nav ul {
+        display: flex; flex-direction: column; gap: 14px;
+        text-align: center;
+    }
 }
