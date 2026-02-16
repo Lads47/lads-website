@@ -15,17 +15,17 @@
     var parentDir = parts.length >= 2 ? parts[parts.length - 2] : '';
 
     var activeFile = filename;
-    if (parentDir === 'solutions') activeFile = 'nos-solutions';
-    else if (parentDir === 'realisations') activeFile = 'nos-realisations';
-    else if (parentDir === 'formations') activeFile = 'nos-formations';
+    if (parentDir === 'solutions') activeFile = 'solutions';
+    else if (parentDir === 'realisations') activeFile = 'realisations';
+    else if (parentDir === 'formations') activeFile = 'formations';
 
     // 5. Build nav
     var navItems = [
-        { href: prefix + 'nos-solutions',    text: 'Nos solutions',       file: 'nos-solutions' },
-        { href: prefix + 'nos-realisations',  text: 'Nos r\u00e9alisations', file: 'nos-realisations' },
-        { href: prefix + 'notre-approche', text: 'Notre accompagnement', file: 'notre-approche' },
-        { href: prefix + 'nos-formations',    text: 'Nos formations',      file: 'nos-formations' },
-        { href: prefix + 'notre-histoire',    text: 'Notre histoire',      file: 'notre-histoire' },
+        { href: prefix + 'solutions',    text: 'Nos solutions',       file: 'solutions' },
+        { href: prefix + 'realisations',  text: 'Nos r\u00e9alisations', file: 'realisations' },
+        { href: prefix + 'approche', text: 'Notre accompagnement', file: 'approche' },
+        { href: prefix + 'formations',    text: 'Nos formations',      file: 'formations' },
+        { href: prefix + 'histoire',    text: 'Notre histoire',      file: 'histoire' },
         { href: '#contact',                         text: 'Nous contacter',      file: null }
     ];
 
