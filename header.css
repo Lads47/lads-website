@@ -66,8 +66,8 @@ body.home header.scrolled .menu-toggle span { background: var(--primary); }
     nav a { font-size: 0.78rem; }
 }
 
-/* --- Responsive 768px --- */
-@media (max-width: 768px) {
+/* --- Responsive 815px --- */
+@media (max-width: 815px) {
     .header-inner { padding: 14px 20px; }
     .menu-toggle { display: flex; }
     nav {
