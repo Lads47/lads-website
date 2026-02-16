@@ -10,22 +10,22 @@
 
     // 4. Detect active page
     var path = window.location.pathname.replace(/\\/g, '/');
-    var filename = path.split('/').pop() || 'index.html';
+    var filename = path.split('/').pop() || 'index';
     var parts = path.split('/').filter(function(p) { return p; });
     var parentDir = parts.length >= 2 ? parts[parts.length - 2] : '';
 
     var activeFile = filename;
-    if (parentDir === 'solutions') activeFile = 'nos-solutions.html';
-    else if (parentDir === 'realisations') activeFile = 'nos-realisations.html';
-    else if (parentDir === 'formations') activeFile = 'nos-formations.html';
+    if (parentDir === 'solutions') activeFile = 'nos-solutions';
+    else if (parentDir === 'realisations') activeFile = 'nos-realisations';
+    else if (parentDir === 'formations') activeFile = 'nos-formations';
 
     // 5. Build nav
     var navItems = [
-        { href: prefix + 'nos-solutions.html',    text: 'Nos solutions',       file: 'nos-solutions.html' },
-        { href: prefix + 'nos-realisations.html',  text: 'Nos r\u00e9alisations', file: 'nos-realisations.html' },
-        { href: prefix + 'notre-approche.html', text: 'Notre accompagnement', file: 'notre-approche.html' },
-        { href: prefix + 'nos-formations.html',    text: 'Nos formations',      file: 'nos-formations.html' },
-        { href: prefix + 'notre-histoire.html',    text: 'Notre histoire',      file: 'notre-histoire.html' },
+        { href: prefix + 'nos-solutions',    text: 'Nos solutions',       file: 'nos-solutions' },
+        { href: prefix + 'nos-realisations',  text: 'Nos r\u00e9alisations', file: 'nos-realisations' },
+        { href: prefix + 'notre-approche', text: 'Notre accompagnement', file: 'notre-approche' },
+        { href: prefix + 'nos-formations',    text: 'Nos formations',      file: 'nos-formations' },
+        { href: prefix + 'notre-histoire',    text: 'Notre histoire',      file: 'notre-histoire' },
         { href: '#contact',                         text: 'Nous contacter',      file: null }
     ];
 
@@ -45,7 +45,7 @@
             '<img src="images/LOGO_fonce.svg" alt="Les Ateliers du Stream" class="logo-dark">' +
             '</a>';
     } else {
-        logoHtml = '<a href="' + prefix + 'index.html" class="logo">' +
+        logoHtml = '<a href="' + prefix + './" class="logo">' +
             '<img src="' + prefix + 'images/LOGO_fonce.svg" alt="Les Ateliers du Stream">' +
             '</a>';
     }

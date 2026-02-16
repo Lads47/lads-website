@@ -14,11 +14,11 @@
             '<div class="footer-col">' +
                 '<h5>Navigation</h5>' +
                 '<ul>' +
-                    '<li><a href="' + prefix + 'nos-solutions.html">Nos solutions</a></li>' +
-                    '<li><a href="' + prefix + 'nos-realisations.html">R\u00e9alisations</a></li>' +
-                    '<li><a href="' + prefix + 'notre-approche.html">Notre accompagnement</a></li>' +
-                    '<li><a href="' + prefix + 'nos-formations.html">Nos formations</a></li>' +
-                    '<li><a href="' + prefix + 'notre-histoire.html">Notre histoire</a></li>' +
+                    '<li><a href="' + prefix + 'nos-solutions">Nos solutions</a></li>' +
+                    '<li><a href="' + prefix + 'nos-realisations">R\u00e9alisations</a></li>' +
+                    '<li><a href="' + prefix + 'notre-approche">Notre accompagnement</a></li>' +
+                    '<li><a href="' + prefix + 'nos-formations">Nos formations</a></li>' +
+                    '<li><a href="' + prefix + 'notre-histoire">Notre histoire</a></li>' +
                 '</ul>' +
             '</div>' +
             '<div class="footer-col">' +
