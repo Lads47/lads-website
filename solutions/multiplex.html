@@ -72,7 +72,7 @@
         }
         .page-hero::before {
             content: ''; position: absolute; inset: 0;
-            background: url('../photo/ino0.jpg') center calc(50% + 100px)/cover no-repeat;
+            background: url('../photo/ino0.webp') center calc(50% + 100px)/cover no-repeat;
             opacity: 0.3;
         }
         .page-hero-content {
@@ -330,20 +330,28 @@
             <!-- Photos -->
             <div class="real-photos reveal">
                 <div class="real-photo-item">
-                    <img src="../photo/ino0.jpg" alt="R&eacute;alisation en Remote Production">
+                    <img src="../photo/ino0.webp" alt="R&eacute;alisation en Remote Production">
                     <p class="photo-caption">R&eacute;alisation en Remote Production avec la r&eacute;ception des cam&eacute;ras de Bordeaux, Poitiers et Limoges</p>
                 </div>
                 <div class="real-photo-item">
-                    <img src="../photo/ino1.png" alt="Les 3 villes en sc&egrave;ne">
+                    <img src="../photo/ino1.webp" alt="Les 3 villes en sc&egrave;ne">
                     <p class="photo-caption">Une des sc&egrave;nes avec les 3 villes de cette r&eacute;alisation</p>
                 </div>
                 <div class="real-photo-item">
-                    <img src="../photo/ino3.jpg" alt="La r&eacute;gie de Bordeaux">
+                    <img src="../photo/ino3.webp" alt="La r&eacute;gie de Bordeaux">
                     <p class="photo-caption">La r&eacute;gie de Bordeaux avec sur le vid&eacute;oprojecteur en miniature le plan large de Limoges et le plan large de Poitiers pour le public de Bordeaux</p>
                 </div>
             </div>
 
-            <section id="contact" class="cta-contact">
+            <!-- Back link -->
+            <a href="../solutions.html" class="back-link reveal">
+                <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                Retour aux solutions
+            </a>
+        </div>
+    </section>
+
+    <section id="contact" class="cta-contact">
         <div class="container reveal">
             <span class="section-tag" style="color: var(--accent);">Vous avez un projet similaire ?</span>
             <h2 class="section-title">Et si on travaillait ensemble ?</h2>
@@ -351,7 +359,6 @@
                 Un projet en construction, un &eacute;v&eacute;nement qui approche que vous envisagez de filmer et diffuser ? Parlons-en.
             </p>
             <hr class="divider" style="background: var(--accent);">
-
             <div class="cta-grid">
                 <div class="cta-card">
                     <div class="cta-card-icon"><img src="../images/noun-email-5456693.svg" alt="Email"></div>
@@ -375,17 +382,9 @@
     </section>
 
     <!-- Lightbox -->
-            <div class="lightbox-overlay" id="lightbox">
-                <img src="" alt="">
-            </div>
-
-            <!-- Back link -->
-            <a href="../solutions.html" class="back-link reveal">
-                <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-                Retour aux solutions
-            </a>
-        </div>
-    </section>
+    <div class="lightbox-overlay" id="lightbox">
+        <img src="" alt="">
+    </div>
 
     <!-- Footer -->
     <div id="footer"></div>
