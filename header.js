@@ -45,7 +45,7 @@
             '<img src="images/LOGO_fonce.svg" alt="Les Ateliers du Stream" class="logo-dark">' +
             '</a>';
     } else {
-        logoHtml = '<a href="' + prefix + 'index.html" class="logo">' +
+        logoHtml = '<a href="' + prefix + './" class="logo">' +
             '<img src="' + prefix + 'images/LOGO_fonce.svg" alt="Les Ateliers du Stream">' +
             '</a>';
     }
