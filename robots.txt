@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /server.py
+
+Sitemap: https://lesateliersdustream.fr/sitemap.xml
