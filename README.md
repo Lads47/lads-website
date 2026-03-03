@@ -25,7 +25,7 @@ lads-website/
 │
 ├── solutions/                  # 12 sous-pages solutions
 │   ├── captation-multicam.html
-│   ├── captation-evenementielle.html
+│   ├── captation-video.html
 │   ├── captation-multi-regies.html
 │   ├── cameras-tourelle-hf.html
 │   ├── multiplex.html
