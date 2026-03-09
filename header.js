@@ -21,11 +21,11 @@
 
     // 5. Build nav
     var navItems = [
-        { href: prefix + 'solutions.html',    text: 'Nos solutions',       file: 'solutions' },
-        { href: prefix + 'realisations.html',  text: 'Nos r\u00e9alisations', file: 'realisations' },
-        { href: prefix + 'approche.html', text: 'Notre accompagnement', file: 'approche' },
-        { href: prefix + 'formations.html',    text: 'Nos formations',      file: 'formations' },
-        { href: prefix + 'histoire.html',    text: 'Notre histoire',      file: 'histoire' },
+        { href: prefix + 'solutions',    text: 'Nos solutions',       file: 'solutions' },
+        { href: prefix + 'realisations',  text: 'Nos r\u00e9alisations', file: 'realisations' },
+        { href: prefix + 'approche', text: 'Notre accompagnement', file: 'approche' },
+        { href: prefix + 'formations',    text: 'Nos formations',      file: 'formations' },
+        { href: prefix + 'histoire',    text: 'Notre histoire',      file: 'histoire' },
         { href: '#contact',                         text: 'Nous contacter',      file: null }
     ];
 
