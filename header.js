@@ -61,9 +61,19 @@
 
         // Menu toggle
         var toggle = headerEl.querySelector('.menu-toggle');
+        var nav = headerEl.querySelector('nav');
         toggle.addEventListener('click', function() {
-            headerEl.querySelector('nav').classList.toggle('active');
+            toggle.classList.toggle('open');
+            nav.classList.toggle('active');
         });
+
+        // Close menu on scroll
+        window.addEventListener('scroll', function() {
+            if (nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                toggle.classList.remove('open');
+            }
+        }, { passive: true });
     }
 
     // 8. Home page scroll behavior
