@@ -33,14 +33,6 @@
         "address": [
             {
                 "@type": "PostalAddress",
-                "streetAddress": "39 bis rue Robert Creuzet",
-                "addressLocality": "Marmande",
-                "postalCode": "47200",
-                "addressRegion": "Nouvelle-Aquitaine",
-                "addressCountry": "FR"
-            },
-            {
-                "@type": "PostalAddress",
                 "streetAddress": "22 rue Marcelin Berthelot",
                 "addressLocality": "M\u00e9rignac",
                 "postalCode": "33700",

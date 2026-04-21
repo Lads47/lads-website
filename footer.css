@@ -20,13 +20,15 @@
 .cta-contact .divider { background: var(--accent); margin: 20px auto 0; }
 
 .cta-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
     margin-top: 50px;
     position: relative; z-index: 1;
 }
 .cta-card {
+    flex: 0 1 calc((100% - 60px) / 3);
     padding: 40px 30px;
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: var(--radius);
@@ -107,7 +109,8 @@ footer {
 
 /* --- Responsive 1024px --- */
 @media (max-width: 1024px) {
-    .cta-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+    .cta-grid { max-width: 400px; margin-left: auto; margin-right: auto; }
+    .cta-card { flex: 1 1 100%; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
