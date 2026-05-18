@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Concevoir et piloter une r&eacute;gie vid&eacute;o virtuelle avec vMix - Les Ateliers du Stream</title>
-    <meta name="description" content="Formation Concevoir et piloter une r&eacute;gie vid&eacute;o virtuelle avec vMix : d&eacute;veloppez vos comp&eacute;tences sur vMix pour produire, habiller et diffuser des contenus live professionnels.">
-    <link rel="canonical" href="https://lesateliersdustream.fr/formations/vmix">
+    <title>Initiation et acculturation &agrave; l'IA - Les Ateliers du Stream</title>
+    <meta name="description" content="Formation d'initiation et d'acculturation &agrave; l'intelligence artificielle : comprenez, explorez et int&eacute;grez l'IA dans vos m&eacute;thodes de travail.">
+    <link rel="canonical" href="https://lesateliersdustream.fr/formations/initiation-ia">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://lesateliersdustream.fr/formations/vmix">
-    <meta property="og:title" content="Concevoir et piloter une r&eacute;gie vid&eacute;o virtuelle avec vMix - Les Ateliers du Stream">
-    <meta property="og:description" content="Formation Concevoir et piloter une r&eacute;gie vid&eacute;o virtuelle avec vMix : d&eacute;veloppez vos comp&eacute;tences sur vMix pour produire, habiller et diffuser des contenus live professionnels.">
-    <meta property="og:image" content="https://lesateliersdustream.fr/photo/vmix.jpg">
+    <meta property="og:url" content="https://lesateliersdustream.fr/formations/initiation-ia">
+    <meta property="og:title" content="Initiation et acculturation &agrave; l'IA - Les Ateliers du Stream">
+    <meta property="og:description" content="Formation d'initiation et d'acculturation &agrave; l'intelligence artificielle : comprenez, explorez et int&eacute;grez l'IA dans vos m&eacute;thodes de travail.">
+    <meta property="og:image" content="https://lesateliersdustream.fr/images/logo-lads.svg">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:site_name" content="Les Ateliers du Stream">
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
@@ -78,11 +78,7 @@
             position: relative;
             overflow: hidden;
         }
-        .page-hero::before {
-            content: ''; position: absolute; inset: 0;
-            background: url('../photo/vmix.jpg') center/cover no-repeat;
-            opacity: 0.3;
-        }
+        /* TODO image hero : ajouter ::before avec background-image quand l'image sera disponible */
         .page-hero-content {
             position: relative; z-index: 1;
             text-align: center;
@@ -167,31 +163,6 @@
         .meta-dates-list {
             display: flex; flex-wrap: wrap; gap: 6px;
             margin-top: 4px;
-        }
-        .meta-list {
-            list-style: none;
-            margin-top: 6px;
-        }
-        .meta-list li {
-            position: relative;
-            padding-left: 16px;
-            font-size: 0.82rem;
-            color: var(--primary);
-            font-weight: 500;
-            line-height: 1.6;
-            margin-bottom: 4px;
-        }
-        .meta-list li::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 9px;
-            width: 5px; height: 5px;
-            border-radius: 50%;
-            background: var(--at-primary);
-        }
-        .formation-meta-sidebar .formation-meta-item:has(.meta-list),
-        .formation-meta-sidebar .formation-meta-item:has(.meta-dates-list) {
-            align-items: flex-start;
         }
         .meta-date-chip {
             display: inline-block;
@@ -306,6 +277,11 @@
             width: 6px; height: 6px; border-radius: 50%;
             background: var(--at-primary);
         }
+        .programme-note {
+            margin-top: 30px; text-align: center;
+            font-size: 0.9rem; color: var(--secondary);
+            font-style: italic;
+        }
 
         /* ============================================
            MODALIT&Eacute;S PRATIQUES
@@ -328,18 +304,6 @@
         }
         .modalite-card p {
             font-size: 0.88rem; color: var(--secondary); line-height: 1.7;
-        }
-        .modalite-card ul {
-            list-style: none;
-        }
-        .modalite-card li {
-            position: relative; padding-left: 18px;
-            font-size: 0.85rem; color: var(--secondary); line-height: 1.9;
-        }
-        .modalite-card li::before {
-            content: ''; position: absolute; left: 0; top: 11px;
-            width: 6px; height: 6px; border-radius: 50%;
-            background: var(--at-primary);
         }
 
         /* ============================================
@@ -391,53 +355,6 @@
         }
 
         /* ============================================
-           PROGRAMME — BLOCS PAR JOUR
-           ============================================ */
-        .programme-days {
-            display: flex; flex-direction: column;
-            gap: 25px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .programme-day {
-            background: var(--blanc);
-            border-radius: var(--radius);
-            border: 1px solid var(--gris-clair);
-            padding: 35px 40px;
-            transition: var(--t);
-        }
-        .programme-day:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-        }
-        .programme-day h3 {
-            font-family: var(--font-titre);
-            font-size: 1.3rem; font-weight: 900;
-            color: var(--primary);
-            margin-bottom: 20px;
-            padding-bottom: 14px;
-            border-bottom: 2px solid var(--at-primary);
-        }
-        .programme-day ul {
-            list-style: none;
-        }
-        .programme-day li {
-            position: relative;
-            padding-left: 22px;
-            font-size: 0.95rem;
-            color: var(--secondary);
-            line-height: 2;
-        }
-        .programme-day li::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 14px;
-            width: 8px; height: 8px;
-            border-radius: 50%;
-            background: var(--at-primary);
-        }
-
-        /* ============================================
            RESPONSIVE
            ============================================ */
         @media (max-width: 1024px) {
@@ -462,13 +379,14 @@
 
     <!-- ============================================
          PAGE HERO
+         TODO : ajouter image de fond quand elle sera disponible
          ============================================ -->
     <section class="page-hero">
         <div class="container">
             <div class="page-hero-content">
-                <span class="section-tag">Formation professionnelle</span>
-                <h1>Concevoir et piloter une r&eacute;gie vid&eacute;o virtuelle avec vMix</h1>
-                <p>D&eacute;veloppez vos comp&eacute;tences sur vMix pour produire, habiller et diffuser des contenus live professionnels.</p>
+                <span class="section-tag">Formation professionnelle &mdash; Niveau 1</span>
+                <h1>Initiation et acculturation &agrave; l'IA</h1>
+                <p>Initiez-vous &agrave; l'IA &agrave; travers une acculturation qui vous permettra de suivre les nouveaut&eacute;s du secteur et adapter vos m&eacute;thodes de travail.</p>
             </div>
         </div>
     </section>
@@ -488,31 +406,23 @@
         <div class="container">
             <div class="formation-detail-layout reveal">
                 <div class="formation-detail-text">
-                    <span class="formation-tag-inline">Pr&eacute;sentiel &middot; 5 jours</span>
-                    <h2 class="section-title" style="text-align: left;">Concevoir et piloter une r&eacute;gie vid&eacute;o virtuelle avec vMix</h2>
+                    <span class="formation-tag-inline">Pr&eacute;sentiel &middot; 1 jour</span>
+                    <h2 class="section-title" style="text-align: left;">Initiation et acculturation &agrave; l'IA</h2>
                     <hr class="divider">
                     <br>
                     <p class="section-desc">
-                        D&eacute;veloppez vos comp&eacute;tences sur vMix pour produire, habiller et diffuser des contenus live professionnels.
+                        Initiez-vous &agrave; l'IA &agrave; travers une acculturation qui vous permettra de suivre les nouveaut&eacute;s du secteur et adapter vos m&eacute;thodes de travail.
                     </p>
 
                     <h3 style="font-family: var(--font-titre); font-size: 1.2rem; font-weight: 900; margin-top: 40px; margin-bottom: 16px; color: var(--primary);">Objectifs p&eacute;dagogiques</h3>
-                    <ul class="objectifs-list">
-                        <li>Identifier les fonctionnalit&eacute;s principales du logiciel vMix et leur usage dans une production audiovisuelle live</li>
-                        <li>Configurer un projet vMix en fonction d'un besoin de r&eacute;alisation et de diffusion</li>
-                        <li>Int&eacute;grer et organiser des sources vid&eacute;o, audio et m&eacute;dias dans une r&eacute;gie virtuelle</li>
-                        <li>Param&eacute;trer les entr&eacute;es, sorties et routings audio d'une production live</li>
-                        <li>R&eacute;aliser une production multicam&eacute;ra avec transitions, overlays et multiviews</li>
-                        <li>Configurer un enregistrement et une diffusion en streaming</li>
-                        <li>Mettre en &oelig;uvre des outils d'automatisation via les shortcuts et triggers</li>
-                        <li>Exploiter les fonctionnalit&eacute;s avanc&eacute;es de vMix : PTZ, vMix Call, replay, outils web et social</li>
-                        <li>Cr&eacute;er et int&eacute;grer des habillages graphiques dynamiques et personnalis&eacute;s</li>
-                        <li>Produire et diffuser un projet live complet r&eacute;pondant &agrave; un cahier des charges</li>
-                    </ul>
+                    <p class="section-desc" style="font-style: italic;">
+                        <!-- À COMPLÉTER : objectifs pédagogiques en attente -->
+                        Objectifs p&eacute;dagogiques en cours de r&eacute;daction.
+                    </p>
 
                     <h3 style="font-family: var(--font-titre); font-size: 1.2rem; font-weight: 900; margin-top: 40px; margin-bottom: 16px; color: var(--primary);">Public &amp; pr&eacute;-requis</h3>
                     <p class="section-desc">
-                        <strong>Public vis&eacute; :</strong> techniciens vid&eacute;o, responsables production, organisateurs d'&eacute;v&eacute;nements, r&eacute;gisseurs live, ou toute personne souhaitant acqu&eacute;rir une expertise en production live &amp; streaming.
+                        <strong>Public vis&eacute; :</strong> toute personne souhaitant se former &agrave; l'IA.
                     </p>
                     <p class="section-desc" style="margin-top: 10px;">
                         <strong>Pr&eacute;-requis :</strong> aucun
@@ -525,7 +435,7 @@
                         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                         <div>
                             <span class="meta-label">Dur&eacute;e</span>
-                            <span class="meta-value">5 jours (35h)</span>
+                            <span class="meta-value">1 jour (7h)</span>
                         </div>
                     </div>
                     <div class="formation-meta-item">
@@ -546,15 +456,21 @@
                         <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                         <div>
                             <span class="meta-label">Tarif</span>
-                            <span class="meta-value">2800 &euro; HT</span>
+                            <span class="meta-value">890 &euro; HT</span>
                         </div>
                     </div>
                     <div class="formation-meta-item">
                         <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                         <div>
-                            <span class="meta-label">D&eacute;lais d'acc&egrave;s</span>
-                            <div class="meta-dates-list" data-formation-code="vMixV1">
-                                <span class="meta-date-chip">07/12/2026 &ndash; 11/12/2026</span>
+                            <span class="meta-label">Prochaines sessions</span>
+                            <div class="meta-dates-list" data-formation-code="INITIA">
+                                <span class="meta-date-chip">02/06/2026</span>
+                                <span class="meta-date-chip">07/07/2026</span>
+                                <span class="meta-date-chip">04/08/2026</span>
+                                <span class="meta-date-chip">01/09/2026</span>
+                                <span class="meta-date-chip">06/10/2026</span>
+                                <span class="meta-date-chip">03/11/2026</span>
+                                <span class="meta-date-chip">08/12/2026</span>
                             </div>
                         </div>
                     </div>
@@ -562,16 +478,11 @@
                         <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                         <div>
                             <span class="meta-label">&Eacute;valuation</span>
-                            <ul class="meta-list">
-                                <li>Exercices pratiques tout au long de la formation</li>
-                                <li>Observation des mises en situation</li>
-                                <li>Mise en place d'une production live compl&egrave;te en fin de formation</li>
-                                <li>Validation des comp&eacute;tences techniques et organisationnelles</li>
-                            </ul>
+                            <span class="meta-value">Exercices pratiques avec grille d'&eacute;valuation</span>
                         </div>
                     </div>
                     <a href="#contact" class="btn-contact-sidebar">Nous contacter</a>
-                    <a href="formulaire-reclamation.pdf" target="_blank" rel="noopener" class="btn-reclamation-sidebar">Réclamation</a>
+                    <a href="formulaire-reclamation.pdf" target="_blank" rel="noopener" class="btn-reclamation-sidebar">R&eacute;clamation</a>
                     <div class="qualiopi-sidebar">
                         <img loading="lazy" src="../images/LogoQualiopi-150dpi-AvecMarianne.png" alt="Certification Qualiopi">
                         <p>La certification qualit&eacute; a &eacute;t&eacute; d&eacute;livr&eacute;e au titre de la cat&eacute;gorie d'actions suivante : <strong>Actions de formation</strong>.</p>
@@ -591,65 +502,99 @@
                 <h2 class="section-title">Programme de la formation</h2>
                 <hr class="divider" style="margin: 20px auto 0;">
             </div>
-            <div class="programme-days reveal">
+            <div class="programme-grid reveal">
 
-                <div class="programme-day">
-                    <h3>Jour 1 &mdash; Fondamentaux et prise en main de vMix</h3>
+                <div class="programme-card">
+                    <span class="time">9:00 &ndash; 9:30</span>
+                    <h4>Accueil &amp; brise-glace</h4>
                     <ul>
-                        <li>Introduction aux workflows de production vid&eacute;o live</li>
-                        <li>Prise en main de l'interface vMix et configuration initiale</li>
-                        <li>Gestion des sources vid&eacute;o, audio et m&eacute;dias</li>
-                        <li>Organisation et structuration d'un projet</li>
-                        <li>Introduction au routing audio et &agrave; la gestion des bus</li>
-                        <li>Mise en pratique : cr&eacute;ation d'un projet multicam&eacute;ra simple avec gestion audio</li>
+                        <li>S&eacute;ance de pr&eacute;sentation suivie de questions pour comprendre le public et lib&eacute;rer la parole</li>
+                        <li>Qu'est-ce que l'IA pour vous ?</li>
+                        <li>Utilisez-vous d&eacute;j&agrave; de l'IA, si oui pour quoi ?</li>
+                        <li>Attentes / craintes</li>
                     </ul>
                 </div>
 
-                <div class="programme-day">
-                    <h3>Jour 2 &mdash; Production live et diffusion</h3>
+                <div class="programme-card">
+                    <span class="time">9:30 &ndash; 10:30</span>
+                    <h4>D&eacute;finition et vulgarisation de l'IA</h4>
                     <ul>
-                        <li>Techniques de r&eacute;alisation multicam&eacute;ra (transitions, overlays, multiview)</li>
-                        <li>Configuration de l'enregistrement et du multicorder</li>
-                        <li>Mise en place d'un streaming live</li>
-                        <li>Automatisation des actions (shortcuts et triggers)</li>
-                        <li>Utilisation des sorties externes et fullscreen</li>
-                        <li>Mise en pratique : r&eacute;alisation et diffusion d'une production live</li>
+                        <li>Introduction &agrave; l'intelligence artificielle : vulgarisation pour comprendre et d&eacute;mystifier</li>
+                        <li>Entre innovation et adoption</li>
+                        <li>Exemples d'applications bien &eacute;prouv&eacute;es</li>
+                        <li>IA pour votre performance au travail</li>
+                        <li>Comparatif IA &laquo; traditionnelle &raquo; et IA g&eacute;n&eacute;rative</li>
+                        <li>Point sur l'IA g&eacute;n&eacute;rative et l'acc&eacute;l&eacute;ration des innovations et performances</li>
                     </ul>
                 </div>
 
-                <div class="programme-day">
-                    <h3>Jour 3 &mdash; Fonctionnalit&eacute;s avanc&eacute;es de production</h3>
+                <div class="programme-card">
+                    <span class="time">10:45 &ndash; 12:30</span>
+                    <h4>Panorama des outils &mdash; d&eacute;monstrations m&eacute;tier et pratique</h4>
                     <ul>
-                        <li>Param&eacute;trage avanc&eacute; des inputs (couleur, effets, organisation)</li>
-                        <li>Int&eacute;gration de cam&eacute;ras PTZ et contr&ocirc;le &agrave; distance</li>
-                        <li>Utilisation de vMix Call et outils de visioconf&eacute;rence</li>
-                        <li>Exploitation des outils web (controller, telestrator)</li>
-                        <li>Replay instantan&eacute; et outils de production live avanc&eacute;s</li>
-                        <li>Mise en pratique : production avec sources distantes et contr&ocirc;le PTZ</li>
+                        <li>R&eacute;daction / reformulation / r&eacute;sum&eacute;</li>
+                        <li>Analyse de documents / extraction d'informations</li>
+                        <li>G&eacute;n&eacute;ration d'id&eacute;es / brainstorming</li>
+                        <li>Pr&eacute;paration de r&eacute;unions, emails, rapports</li>
+                        <li>G&eacute;n&eacute;ration d'images et de vid&eacute;os</li>
+                        <li>Appel &agrave; un agent IA</li>
                     </ul>
                 </div>
 
-                <div class="programme-day">
-                    <h3>Jour 4 &mdash; Habillage graphique et automatisation</h3>
+                <div class="programme-card">
+                    <span class="time">13:30 &ndash; 13:45</span>
+                    <h4>L'&egrave;re des agents IA</h4>
                     <ul>
-                        <li>Cr&eacute;ation et utilisation de titres avec GT Title Designer</li>
-                        <li>Int&eacute;gration de donn&eacute;es dynamiques (CSV, timers, datasources)</li>
-                        <li>Effets visuels sur les sources (LUT, masques, flou, incrustation)</li>
-                        <li>Gestion des stingers et transitions avanc&eacute;es</li>
-                        <li>Incrustation chromatique (fond vert)</li>
-                        <li>Mise en pratique : cr&eacute;ation d'un habillage complet d'&eacute;mission</li>
+                        <li>Point sur les agents IA : ce qu'ils sont et comment ils fonctionnent</li>
+                        <li>R&eacute;flexion sur les &eacute;volutions d'un monde avec des agents IA toujours plus performants</li>
                     </ul>
                 </div>
 
-                <div class="programme-day">
-                    <h3>Jour 5 &mdash; Projet final de production live</h3>
+                <div class="programme-card">
+                    <span class="time">13:45 &ndash; 14:00</span>
+                    <h4>Agents IA &mdash; formation</h4>
                     <ul>
-                        <li>Analyse d'un cahier des charges de production</li>
-                        <li>Pr&eacute;paration et organisation d'une r&eacute;gie compl&egrave;te</li>
-                        <li>R&eacute;alisation d'une &eacute;mission live multicam&eacute;ra</li>
-                        <li>Int&eacute;gration des outils avanc&eacute;s (audio, vid&eacute;o, habillage, automatisation)</li>
-                        <li>Diffusion en direct sur plateforme de streaming</li>
-                        <li>Restitution et analyse des productions</li>
+                        <li>Explication &laquo; qu'est-ce qu'un agent IA &raquo;</li>
+                        <li>Histoires</li>
+                    </ul>
+                </div>
+
+                <div class="programme-card">
+                    <span class="time">14:00 &ndash; 14:30</span>
+                    <h4>Mon premier agent IA</h4>
+                    <ul>
+                        <li>Cr&eacute;ation d'un agent IA sur plateforme</li>
+                    </ul>
+                </div>
+
+                <div class="programme-card">
+                    <span class="time">14:30 &ndash; 16:30</span>
+                    <h4>Atelier &laquo; Use Case Mapping &raquo;</h4>
+                    <ul>
+                        <li>Chaque participant liste 5 t&acirc;ches r&eacute;p&eacute;titives de son poste &rarr; on identifie lesquelles l'IA peut prendre en charge</li>
+                        <li>Mise en pratique individuelle sur un cas r&eacute;el apport&eacute; par le participant</li>
+                        <li>Pause : 15:15 &ndash; 15:30</li>
+                    </ul>
+                </div>
+
+                <div class="programme-card">
+                    <span class="time">16:30 &ndash; 17:00</span>
+                    <h4>IA responsable et limites</h4>
+                    <ul>
+                        <li>Hallucinations : pourquoi l'IA invente et comment d&eacute;tecter</li>
+                        <li>Confidentialit&eacute; et donn&eacute;es sensibles : ce qu'on ne soumet pas &agrave; un outil IA</li>
+                        <li>Biais algorithmiques et pens&eacute;e critique</li>
+                        <li>Questions &eacute;thiques : plagiat, transparence, d&eacute;pendance</li>
+                        <li>Cadre l&eacute;gal simplifi&eacute; : RGPD et AI Act europ&eacute;en en 3 points cl&eacute;s</li>
+                    </ul>
+                </div>
+
+                <div class="programme-card">
+                    <span class="time">17:00 &ndash; 17:15</span>
+                    <h4>Cl&ocirc;ture</h4>
+                    <ul>
+                        <li>Atelier &laquo; Mon plan d'action personnel &raquo; : 3 outils &agrave; tester, 3 t&acirc;ches &agrave; d&eacute;l&eacute;guer &agrave; l'IA cette semaine</li>
+                        <li>Partage en groupe : chaque personne annonce son engagement</li>
                     </ul>
                 </div>
 
@@ -671,19 +616,12 @@
 
                 <div class="modalite-card">
                     <h4>M&eacute;thode p&eacute;dagogique</h4>
-                    <ul>
-                        <li>Apports th&eacute;oriques et techniques</li>
-                        <li>D&eacute;monstrations en direct</li>
-                        <li>Exercices pratiques individuels et en groupe</li>
-                        <li>&Eacute;tudes de cas</li>
-                        <li>Mise en situation professionnelle</li>
-                        <li>R&eacute;alisation d'un projet final</li>
-                    </ul>
+                    <p>Formation en pr&eacute;sentiel, bas&eacute;e sur une m&eacute;thode active avec mises en situation professionnelles concr&egrave;tes.</p>
                 </div>
 
                 <div class="modalite-card">
                     <h4>Ressources mat&eacute;rielles</h4>
-                    <p>Mise &agrave; disposition d'ordinateurs &eacute;quip&eacute;s de licences vMix (PRO et 4K) et de tous les &eacute;quipements audiovisuels n&eacute;cessaires (cam&eacute;ras, micros, m&eacute;dias mp4, mp3, jpeg, p&eacute;riph&eacute;riques informatiques, moniteurs vid&eacute;os, etc.)</p>
+                    <p>Mise &agrave; disposition d'ordinateurs &eacute;quip&eacute;s d'outils IA, ressources gratuites pour r&eacute;aliser des automatisations.</p>
                 </div>
 
                 <div class="modalite-card">
@@ -721,11 +659,11 @@
                 <hr class="divider" style="margin: 20px auto 0;">
             </div>
             <ul class="points-forts-list reveal">
-                <li>Approche 100 % pratique, avec mat&eacute;riel professionnel &amp; cas r&eacute;els.</li>
-                <li>Effectif r&eacute;duit : accompagnement individualis&eacute;.</li>
-                <li>Formateur expert en production live &amp; streaming.</li>
+                <li>Formateur expert dans les actualit&eacute;s IA et son utilisation en entreprise.</li>
                 <li>Possibilit&eacute; d'adapter le contenu en intra-entreprise.</li>
                 <li>Programme structur&eacute; pour vous rendre autonome dans un contexte professionnel.</li>
+                <li>Approche 100 % pratique, avec mat&eacute;riel professionnel &amp; cas r&eacute;els.</li>
+                <li>Effectif r&eacute;duit : accompagnement individualis&eacute;.</li>
             </ul>
 
             <!-- Back link -->
@@ -746,7 +684,7 @@
             <span class="section-tag" style="color: var(--accent);">Envie de vous former ?</span>
             <h2 class="section-title">Parlons de votre projet de formation</h2>
             <p class="section-desc">
-                Vous souhaitez monter en comp&eacute;tences sur la captation multicam&eacute;ra ou le live streaming ? Contactez-nous pour &eacute;changer sur vos besoins.
+                Vous souhaitez vous initier &agrave; l'IA et comprendre comment l'int&eacute;grer &agrave; votre activit&eacute; ? Contactez-nous pour &eacute;changer sur vos besoins.
             </p>
             <hr class="divider" style="background: var(--accent);">
 
@@ -775,7 +713,6 @@
     <script src="../footer.js?v=2"></script>
     <script src="../schema.js"></script>
     <script src="../formations-sessions.js?v=1"></script>
-
 
 </body>
 </html>
