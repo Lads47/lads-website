@@ -180,6 +180,31 @@
             display: flex; flex-wrap: wrap; gap: 6px;
             margin-top: 4px;
         }
+        .meta-list {
+            list-style: none;
+            margin-top: 6px;
+        }
+        .meta-list li {
+            position: relative;
+            padding-left: 16px;
+            font-size: 0.82rem;
+            color: var(--primary);
+            font-weight: 500;
+            line-height: 1.6;
+            margin-bottom: 4px;
+        }
+        .meta-list li::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 9px;
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: var(--at-primary);
+        }
+        .formation-meta-sidebar .formation-meta-item:has(.meta-list),
+        .formation-meta-sidebar .formation-meta-item:has(.meta-dates-list) {
+            align-items: flex-start;
+        }
         .meta-date-chip {
             display: inline-block;
             padding: 4px 10px;
@@ -517,7 +542,12 @@
                         <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                         <div>
                             <span class="meta-label">&Eacute;valuation</span>
-                            <span class="meta-value">- Exercices pratiques<br>- Mises en situation<br>Grille 3 niveaux&nbsp;: acquis / en cours / non acquis</span>
+                            <ul class="meta-list">
+                                <li>Exercices pratiques tout au long de la formation</li>
+                                <li>Observation des mises en situation</li>
+                                <li>Cr&eacute;ation d'un agent IA fonctionnel en fin de formation</li>
+                                <li>Validation des comp&eacute;tences acquises</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="formation-meta-item">
