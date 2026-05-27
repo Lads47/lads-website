@@ -321,6 +321,18 @@
         .modalite-card p {
             font-size: 0.88rem; color: var(--secondary); line-height: 1.7;
         }
+        .modalite-card ul {
+            list-style: none;
+        }
+        .modalite-card li {
+            position: relative; padding-left: 18px;
+            font-size: 0.85rem; color: var(--secondary); line-height: 1.9;
+        }
+        .modalite-card li::before {
+            content: ''; position: absolute; left: 0; top: 11px;
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--at-primary);
+        }
 
         /* ============================================
            POINTS FORTS
@@ -505,7 +517,7 @@
                         <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                         <div>
                             <span class="meta-label">&Eacute;valuation</span>
-                            <span class="meta-value">Exercices pratiques &amp; mises en situation, &eacute;valu&eacute;s selon une grille &agrave; 3 niveaux (acquis / en cours / non acquis).</span>
+                            <span class="meta-value">- Exercices pratiques<br>- Mises en situation<br>Grille 3 niveaux&nbsp;: acquis / en cours / non acquis</span>
                         </div>
                     </div>
                     <div class="formation-meta-item">
@@ -541,7 +553,6 @@
                 <div class="programme-card">
                     <span class="time">9:00 &ndash; 9:30 &middot; 30 min</span>
                     <h4>Accueil et tour de table</h4>
-                    <p><em>On part de vous, pas de la th&eacute;orie.</em></p>
                     <ul>
                         <li>Quelle est votre vision de l'IA aujourd'hui&nbsp;?</li>
                         <li>Vos usages actuels, vos questions, vos appr&eacute;hensions.</li>
@@ -552,7 +563,6 @@
                 <div class="programme-card">
                     <span class="time">9:30 &ndash; 10:30 &middot; 1h</span>
                     <h4>Comprendre l'IA sans jargon</h4>
-                    <p><em>D&eacute;mystifier pour mieux d&eacute;cider.</em></p>
                     <ul>
                         <li>Les fondamentaux expliqu&eacute;s simplement, sans jargon ni simplification trompeuse.</li>
                         <li>Innovation et adoption&nbsp;: o&ugrave; en est-on vraiment&nbsp;?</li>
@@ -565,7 +575,6 @@
                 <div class="programme-card">
                     <span class="time">10:45 &ndash; 12:30 &middot; 1h45</span>
                     <h4>Panorama des outils &mdash; d&eacute;monstrations m&eacute;tier</h4>
-                    <p><em>Voir l'IA &agrave; l'&oelig;uvre sur vos vrais besoins.</em></p>
                     <ul>
                         <li>R&eacute;diger, reformuler, r&eacute;sumer en quelques secondes.</li>
                         <li>Analyser un document long et en extraire l'essentiel.</li>
@@ -585,7 +594,6 @@
                 <div class="programme-card">
                     <span class="time">13:30 &ndash; 14:00 &middot; 30 min</span>
                     <h4>L'&egrave;re des agents IA</h4>
-                    <p><em>Le prochain saut, d&eacute;j&agrave; commenc&eacute;.</em></p>
                     <ul>
                         <li>Ce que sont r&eacute;ellement les agents IA et comment ils fonctionnent.</li>
                         <li>Vers un monde o&ugrave; l'IA n'assiste plus seulement, mais agit&nbsp;: quelles cons&eacute;quences pour vos m&eacute;tiers&nbsp;?</li>
@@ -595,7 +603,6 @@
                 <div class="programme-card">
                     <span class="time">14:00 &ndash; 14:30 &middot; 30 min</span>
                     <h4>Mon premier agent IA</h4>
-                    <p><em>De la th&eacute;orie &agrave; la cr&eacute;ation, en direct.</em></p>
                     <ul>
                         <li>Cr&eacute;ation guid&eacute;e de votre propre agent IA sur une plateforme d&eacute;di&eacute;e.</li>
                         <li>Vous repartez avec un agent fonctionnel, cr&eacute;&eacute; de vos mains.</li>
@@ -606,7 +613,6 @@
                 <div class="programme-card">
                     <span class="time">14:30 &ndash; 16:30 &middot; 2h (pause incluse)</span>
                     <h4>Atelier &laquo;&nbsp;Cartographier vos cas d'usage&nbsp;&raquo;</h4>
-                    <p><em>Le moment o&ugrave; l'IA rencontre votre quotidien.</em></p>
                     <ul>
                         <li>Listez 5 t&acirc;ches r&eacute;p&eacute;titives de votre poste.</li>
                         <li>Identifiez ensemble lesquelles l'IA peut prendre en charge d&egrave;s demain.</li>
@@ -624,7 +630,6 @@
                 <div class="programme-card">
                     <span class="time">16:30 &ndash; 17:00 &middot; 30 min</span>
                     <h4>IA responsable &mdash; les angles morts &agrave; conna&icirc;tre</h4>
-                    <p><em>Utiliser l'IA en connaissance de cause.</em></p>
                     <ul>
                         <li>Hallucinations&nbsp;: pourquoi l'IA invente, comment les d&eacute;tecter.</li>
                         <li>Confidentialit&eacute;&nbsp;: ce qu'il ne faut jamais soumettre &agrave; un outil IA.</li>
@@ -637,7 +642,6 @@
                 <div class="programme-card">
                     <span class="time">17:00 &ndash; 17:15 &middot; 15 min</span>
                     <h4>Cl&ocirc;ture et plan d'action</h4>
-                    <p><em>Repartir avec un cap, pas seulement des notes.</em></p>
                     <ul>
                         <li>Atelier &laquo;&nbsp;Mon plan d'action personnel&nbsp;&raquo;&nbsp;: 3 outils &agrave; tester, 3 t&acirc;ches &agrave; d&eacute;l&eacute;guer &agrave; l'IA d&egrave;s cette semaine.</li>
                         <li>Partage en groupe&nbsp;: chacun annonce son engagement.</li>
@@ -673,19 +677,19 @@
 
                 <div class="modalite-card">
                     <h4>M&eacute;thode p&eacute;dagogique</h4>
-                    <p>Formation en pr&eacute;sentiel, fond&eacute;e sur une m&eacute;thode active&nbsp;:</p>
                     <ul>
                         <li>Apports th&eacute;oriques et techniques</li>
                         <li>D&eacute;monstrations en direct</li>
                         <li>Exercices pratiques individuels et en groupe</li>
-                        <li>&Eacute;tudes de cas &amp; mises en situation professionnelles</li>
-                        <li>R&eacute;alisation d'un projet final (agent IA op&eacute;rationnel)</li>
+                        <li>&Eacute;tudes de cas</li>
+                        <li>Mise en situation professionnelle</li>
+                        <li>R&eacute;alisation d'un projet final</li>
                     </ul>
                 </div>
 
                 <div class="modalite-card">
                     <h4>Ressources mat&eacute;rielles</h4>
-                    <p>Mise &agrave; disposition d'ordinateurs &eacute;quip&eacute;s d'outils IA, ressources gratuites pour r&eacute;aliser des automatisations.</p>
+                    <p>Nous recommandons aux stagiaires d'apporter leur propre ordinateur de travail, afin de repartir avec leurs configurations et historiques d'usage IA. &Agrave; d&eacute;faut, nous mettons &agrave; disposition nos ordinateurs &eacute;quip&eacute;s des outils n&eacute;cessaires.</p>
                 </div>
 
                 <div class="modalite-card">
