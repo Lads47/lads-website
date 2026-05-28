@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Page introuvable (404) - Les Ateliers du Stream</title>
+    <style>
+        @font-face {
+            font-family: 'Butler';
+            src: url('/fonts/Butler-Black.woff2') format('woff2');
+            font-weight: 900; font-style: normal; font-display: swap;
+        }
+        @font-face {
+            font-family: 'Open Sans';
+            src: url('/fonts/OpenSans-VariableFont_wght.woff2') format('woff2');
+            font-weight: 300 800; font-style: normal; font-display: swap;
+        }
+        :root {
+            --primary: #1f2244;
+            --accent: #7dcef5;
+            --blanc: #ffffff;
+            --light-1: #a6a7b5;
+            --font-titre: 'Butler', Georgia, serif;
+            --font-texte: 'Open Sans', sans-serif;
+            --radius: 6px;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-texte);
+            background: var(--primary);
+            color: var(--blanc);
+            min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .e404-wrap { max-width: 620px; }
+        .e404-logo { height: 70px; width: auto; margin: 0 auto 50px; display: block; }
+        .e404-code {
+            font-family: var(--font-titre);
+            font-size: 6rem; font-weight: 900;
+            color: var(--accent); line-height: 1;
+        }
+        .e404-title {
+            font-family: var(--font-titre);
+            font-size: 2rem; font-weight: 900;
+            margin: 10px 0 20px;
+        }
+        .e404-text {
+            font-size: 1rem; color: var(--light-1);
+            line-height: 1.8; margin-bottom: 35px;
+        }
+        .e404-btn {
+            display: inline-block;
+            padding: 15px 38px;
+            font-family: var(--font-texte);
+            font-size: 0.82rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1.5px;
+            background: #E8834A; color: var(--blanc);
+            border-radius: var(--radius); text-decoration: none;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .e404-btn:hover { background: #d4733c; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(232,131,74,0.3); }
+        .e404-links { margin-top: 35px; font-size: 0.85rem; }
+        .e404-links a {
+            color: var(--accent); text-decoration: none;
+            margin: 0 10px; transition: color 0.35s;
+            display: inline-block; line-height: 2;
+        }
+        .e404-links a:hover { color: var(--blanc); }
+        @media (max-width: 600px) {
+            .e404-code { font-size: 4.5rem; }
+            .e404-title { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="e404-wrap">
+        <img class="e404-logo" src="/images/LOGO_clair.svg" alt="Les Ateliers du Stream">
+        <div class="e404-code">404</div>
+        <h1 class="e404-title">Page introuvable</h1>
+        <p class="e404-text">La page que vous recherchez n'existe pas ou a &eacute;t&eacute; d&eacute;plac&eacute;e.</p>
+        <a href="/" class="e404-btn">Retour &agrave; l'accueil</a>
+        <div class="e404-links">
+            <a href="/solutions">Solutions</a>
+            <a href="/realisations">R&eacute;alisations</a>
+            <a href="/formations">Formations</a>
+            <a href="/approche">Accompagnement</a>
+            <a href="/histoire">Histoire</a>
+        </div>
+    </div>
+</body>
+</html>
