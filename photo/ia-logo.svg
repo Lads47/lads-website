@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Logo formation IA - puce électronique">
+  <g fill="none" stroke="#1f2244" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Corps de la puce -->
+    <rect x="176" y="176" width="160" height="160" rx="18"/>
+
+    <!-- Pins droits : haut -->
+    <line x1="216" y1="176" x2="216" y2="138"/>
+    <line x1="256" y1="176" x2="256" y2="138"/>
+    <line x1="296" y1="176" x2="296" y2="138"/>
+    <!-- Pins droits : bas -->
+    <line x1="216" y1="336" x2="216" y2="374"/>
+    <line x1="256" y1="336" x2="256" y2="374"/>
+    <line x1="296" y1="336" x2="296" y2="374"/>
+    <!-- Pins droits : gauche -->
+    <line x1="176" y1="216" x2="138" y2="216"/>
+    <line x1="176" y1="256" x2="138" y2="256"/>
+    <line x1="176" y1="296" x2="138" y2="296"/>
+    <!-- Pins droits : droite -->
+    <line x1="336" y1="216" x2="374" y2="216"/>
+    <line x1="336" y1="256" x2="374" y2="256"/>
+    <line x1="336" y1="296" x2="374" y2="296"/>
+
+    <!-- Traces coudées vers nœuds (4 coins) -->
+    <polyline points="196,176 196,146 165,146"/>
+    <polyline points="316,176 316,146 347,146"/>
+    <polyline points="196,336 196,366 165,366"/>
+    <polyline points="316,336 316,366 347,366"/>
+    <circle cx="150" cy="146" r="13"/>
+    <circle cx="362" cy="146" r="13"/>
+    <circle cx="150" cy="366" r="13"/>
+    <circle cx="362" cy="366" r="13"/>
+  </g>
+  <!-- Texte AI -->
+  <text x="256" y="258" text-anchor="middle" dominant-baseline="central" font-family="Georgia, 'Times New Roman', serif" font-size="86" font-weight="900" fill="#1f2244">AI</text>
+</svg>
