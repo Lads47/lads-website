@@ -72,9 +72,21 @@
 
   function renderEmpty(container) {
     container.innerHTML =
-      '<span class="meta-date-chip" style="background:#f0f0f0;color:#666;font-weight:500;">' +
+      '<span class="meta-date-chip meta-date-chip--empty">' +
       "Prochaines dates à venir — nous contacter" +
       "</span>";
+    setHint(container, false);
+  }
+
+  // La micro-instruction "Cliquez sur une date pour vous inscrire" n'est
+  // révélée que lorsque les pastilles sont réellement cliquables (sessions
+  // ouvertes récupérées depuis EVA). Sinon elle reste masquée pour ne pas
+  // promettre une action qui n'aboutit pas.
+  function setHint(container, visible) {
+    var parent = container.parentNode;
+    if (!parent) return;
+    var hint = parent.querySelector(".meta-dates-hint");
+    if (hint) hint.style.display = visible ? "block" : "none";
   }
 
   function loadFor(container) {
@@ -91,10 +103,12 @@
           return;
         }
         renderChips(container, data.sessions);
+        setHint(container, true);
       })
       .catch(function () {
-        // En cas d'échec, on laisse le contenu HTML d'origine (dates statiques).
-        // Ne rien faire = résilience maximale.
+        // En cas d'échec, on laisse le contenu HTML d'origine (dates statiques)
+        // et on garde la micro-instruction masquée (dates non cliquables).
+        setHint(container, false);
       });
   }
 
