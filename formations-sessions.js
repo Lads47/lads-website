@@ -47,7 +47,14 @@
     container.innerHTML = "";
     sessions.forEach(function (s) {
       var a = document.createElement("a");
-      a.href = s.inscriptionUrl;
+      // On transmet la page formation courante pour que le formulaire d'EVA
+      // propose un "retour sur le site" vers cette page après inscription.
+      var retour = window.location.origin + window.location.pathname;
+      a.href =
+        s.inscriptionUrl +
+        (s.inscriptionUrl.indexOf("?") >= 0 ? "&" : "?") +
+        "retour=" +
+        encodeURIComponent(retour);
       a.className = "meta-date-chip";
       a.style.textDecoration = "none";
       a.style.cursor = "pointer";
