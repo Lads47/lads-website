@@ -52,6 +52,9 @@
         .real-meta-item svg { width: 22px; height: 22px; flex-shrink: 0; stroke: var(--at-primary); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
         .meta-label { display: block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--light-1); margin-bottom: 2px; }
         .meta-value { display: block; font-size: 0.95rem; font-weight: 600; color: var(--primary); }
+        .lien-formation { margin-top: 26px; font-size: 0.9rem; color: var(--secondary); line-height: 1.8; }
+        .lien-formation a { color: var(--primary); font-weight: 600; border-bottom: 1px solid var(--at-primary); transition: var(--t); }
+        .lien-formation a:hover { color: var(--at-primary); }
         .feature-list { list-style: none; margin-top: 20px; }
         .feature-list li { position: relative; padding-left: 22px; font-size: 0.9rem; color: var(--secondary); line-height: 2.2; }
         .feature-list li::before { content: ''; position: absolute; left: 0; top: 12px; width: 10px; height: 10px; border-radius: 50%; background: var(--at-primary); }
@@ -120,6 +123,9 @@
                         <li>Player personnalisable et int&eacute;grable</li>
                         <li>Navigation facilit&eacute;e dans les vid&eacute;os</li>
                     </ul>
+                    <p class="lien-formation">
+                        Vous souhaitez comprendre et exploiter ces technologies par vous-m&ecirc;me&nbsp;? Nous animons une <a href="../formations/ia">formation IA &agrave; Marmande</a>, sur une journ&eacute;e, consacr&eacute;e &agrave; l'IA g&eacute;n&eacute;rative et aux agents IA.
+                    </p>
                 </div>
                 <div class="real-meta">
                     <div class="real-meta-item">
@@ -173,7 +179,7 @@
 
     <!-- Footer -->
     <div id="footer"></div>
-    <script src="../footer.js?v=2"></script>
+    <script src="../footer.js?v=3"></script>
     <script src="../schema.js?v=2"></script>
 </body>
 </html>

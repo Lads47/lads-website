@@ -483,6 +483,17 @@
         /* ============================================
            BACK LINK
            ============================================ */
+        /* Passerelle vers l'autre formation du catalogue */
+        .autre-formation {
+            text-align: center; margin-top: 45px;
+            font-size: 0.95rem; color: var(--secondary);
+        }
+        .autre-formation a {
+            color: var(--primary); font-weight: 600;
+            border-bottom: 1px solid var(--at-primary);
+            transition: var(--t);
+        }
+        .autre-formation a:hover { color: var(--at-primary); }
         .back-link {
             display: inline-flex; align-items: center; gap: 10px;
             font-size: 0.82rem; font-weight: 700; text-transform: uppercase;
@@ -867,6 +878,12 @@
                 <li>Effectif r&eacute;duit : accompagnement individualis&eacute;.</li>
             </ul>
 
+            <!-- Passerelle vers l'autre formation du catalogue -->
+            <p class="autre-formation reveal">
+                Vous cherchez plut&ocirc;t &agrave; ma&icirc;triser la r&eacute;gie vid&eacute;o&nbsp;? D&eacute;couvrez notre
+                <a href="vmix">formation vMix &agrave; Marmande</a>, sur cinq jours.
+            </p>
+
             <!-- Back link -->
             <div style="text-align: center;">
                 <a href="../formations" class="back-link reveal">
@@ -911,7 +928,7 @@
 
     <!-- Footer -->
     <div id="footer"></div>
-    <script src="../footer.js?v=2"></script>
+    <script src="../footer.js?v=3"></script>
     <script src="../schema.js?v=2"></script>
     <script src="../formations-sessions.js?v=2"></script>
     <script src="../formations-results.js?v=1"></script>
