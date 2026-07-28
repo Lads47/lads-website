@@ -168,6 +168,9 @@
             font-weight: 700;
             color: var(--primary);
             margin-top: 25px;
+            /* garantit un ecart minimal avec la carte Qualiopi : le margin-top:auto
+               de celle-ci tombe a zero des que la colonne est pleine */
+            margin-bottom: 40px;
             padding-left: 20px;
             border-left: 3px solid var(--at-primary);
             line-height: 1.7;
@@ -245,7 +248,10 @@
             height: auto;
             flex-shrink: 0;
         }
-        .qualiopi-intro-text strong {
+        /* Seul le titre passe en bloc. Sans le ">", le "Actions de formation"
+           du paragraphe devenait un bloc lui aussi et rejetait le point final
+           tout seul sur la ligne suivante. */
+        .qualiopi-intro-text > strong {
             display: block;
             font-family: var(--font-titre); font-size: 1rem; font-weight: 900;
             color: var(--primary); margin-bottom: 4px;
