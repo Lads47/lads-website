@@ -21,7 +21,7 @@
   </url>
   <url>
     <loc>https://lesateliersdustream.fr/formations</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -39,7 +39,7 @@
   </url>
   <url>
     <loc>https://lesateliersdustream.fr/mentions-legales</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -183,13 +183,13 @@
   <!-- Formations -->
   <url>
     <loc>https://lesateliersdustream.fr/formations/vmix</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lesateliersdustream.fr/formations/ia</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
