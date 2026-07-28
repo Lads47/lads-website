@@ -152,7 +152,13 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
-            align-items: center;
+            align-items: stretch;
+        }
+        /* La colonne texte s'etire sur toute la hauteur pour que le bloc
+           Qualiopi (margin-top:auto) vienne s'aligner sur le bas de la photo. */
+        .intro-text {
+            display: flex;
+            flex-direction: column;
         }
         .intro-text .section-desc {
             margin-bottom: 20px;
@@ -173,7 +179,8 @@
         }
         .intro-visual img {
             width: 100%;
-            aspect-ratio: 4/3;
+            height: 100%;
+            min-height: 420px;
             object-fit: cover;
             border-radius: var(--radius);
         }
@@ -225,12 +232,16 @@
             display: flex;
             align-items: center;
             gap: 22px;
-            margin-top: 30px;
-            padding-top: 28px;
-            border-top: 1px solid var(--gris-clair);
+            /* pousse le bloc en bas de colonne : son bord inferieur s'aligne
+               alors exactement sur celui de la photo */
+            margin-top: auto;
+            padding: 24px 26px;
+            background: var(--blanc);
+            border: 1px solid var(--gris-clair);
+            border-radius: var(--radius);
         }
         .qualiopi-intro img {
-            max-width: 150px;
+            max-width: 120px;
             height: auto;
             flex-shrink: 0;
         }
@@ -321,7 +332,10 @@
            RESPONSIVE
            ============================================ */
         @media (max-width: 1024px) {
-            .intro-layout { grid-template-columns: 1fr; gap: 50px; }
+            .intro-layout { grid-template-columns: 1fr; gap: 40px; }
+            /* une fois empile, plus rien a aligner : le bloc reprend une marge normale */
+            .qualiopi-intro { margin-top: 10px; }
+            .intro-visual img { min-height: 260px; }
             .atouts-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
             .formation-grid { grid-template-columns: 1fr 1fr; }
         }
@@ -369,13 +383,10 @@
                     <hr class="divider divider-left">
                     <br>
                     <p class="section-desc">
-                        Les Ateliers du Stream mettent leur savoir-faire au service de votre mont&eacute;e en comp&eacute;tences.
-                    </p>
-                    <p class="section-desc" style="margin-top: 15px;">
-                        Bas&eacute; en Nouvelle-Aquitaine, notre organisme de formation vous accueille dans un espace technique de pointe pour des sessions intensives en pr&eacute;sentiel. Nous privil&eacute;gions une approche concr&egrave;te, h&eacute;rit&eacute;e de notre exp&eacute;rience quotidienne sur le terrain, pour vous transmettre la ma&icirc;trise des outils de pointe.
+                        Les Ateliers du Stream transmettent leur expertise &agrave; travers des formations en pr&eacute;sentiel, bas&eacute;es sur une approche pratique et l'exp&eacute;rience du terrain. Dans notre espace technique &agrave; Marmande, vous d&eacute;veloppez rapidement vos comp&eacute;tences sur des outils professionnels de derni&egrave;re g&eacute;n&eacute;ration.
                     </p>
                     <p class="highlight">
-                        Vous apprenez avec des professionnels en activit&eacute;, sur du mat&eacute;riel de derni&egrave;re g&eacute;n&eacute;ration, tout en d&eacute;couvrant les derni&egrave;res innovations de chaque domaine.
+                        Vous apprenez avec des professionnels en activit&eacute;, sur du mat&eacute;riel professionnel.
                     </p>
                     <div class="qualiopi-intro">
                         <img loading="lazy" src="images/LogoQualiopi-150dpi-AvecMarianne.png" alt="Certification Qualiopi">
