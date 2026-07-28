@@ -77,6 +77,81 @@
       ]
     }
     </script>
+
+    <!-- JSON-LD : FAQ. Le texte doit rester identique à celui affiché dans la
+         section FAQ de la page, sinon Google invalide le balisage. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Où se déroule la formation IA ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La formation se déroule en présentiel dans nos locaux, au 39 bis rue Robert Creuzet, 47200 Marmande (Lot-et-Garonne). La gare de Marmande est à dix minutes à pied. Marmande est facilement accessible depuis Agen, Villeneuve-sur-Lot, Tonneins et Bordeaux."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de temps dure la formation et quel est son tarif ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La formation dure une journée, soit 7 heures, pour un tarif de 790 € HT par participant. Le groupe est limité à 8 personnes afin de garantir un accompagnement individualisé."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il des connaissances techniques pour y participer ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aucun prérequis n'est demandé. La formation s'adresse à toute personne souhaitant se former à l'intelligence artificielle, quel que soit son métier. Le vocabulaire technique est systématiquement expliqué."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels financements sont possibles ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Notre certification Qualiopi ouvre plusieurs modes de prise en charge : l'AFDAS pour les intermittents du spectacle et de l'audiovisuel, votre OPCO si vous êtes salarié, l'aide individuelle à la formation de France Travail si vous êtes demandeur d'emploi, ou le financement sur fonds propres. Nous vous accompagnons dans le montage du dossier."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "La formation est-elle centrée sur un outil en particulier ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Nous parcourons volontairement un large panel de solutions — Claude, ChatGPT, Gemini, Mistral, plateformes d'agents, outils sans code — pour que vous repartiez avec une vision d'ensemble plutôt qu'avec la maîtrise d'un seul logiciel, et avec une méthode de veille qui reste valable dans le temps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que je repars avec à la fin de la journée ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vous aurez conçu, déployé et testé votre premier agent IA répondant à un besoin concret, cartographié les cas d'usage pertinents dans votre propre contexte professionnel, et établi un plan d'action pour la suite."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on organiser la formation en intra-entreprise ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Le contenu peut être adapté à votre secteur et à vos cas d'usage, et la formation peut être organisée pour vos seules équipes. Contactez-nous pour en définir le format."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "La formation est-elle accessible aux personnes en situation de handicap ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La salle de cours et l'espace de vie sont compatibles avec l'accueil de personnes à mobilité réduite. Nous étudions et mettons en œuvre les adaptations nécessaires : contactez Noémie Marphay en amont à formation@lesateliersdustream.fr pour toute demande spécifique."
+          }
+        }
+      ]
+    }
+    </script>
     <meta property="og:image" content="https://lesateliersdustream.fr/images/og-formation-ia.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -483,6 +558,53 @@
         /* ============================================
            BACK LINK
            ============================================ */
+        /* ============================================
+           FAQ (accordeon natif <details>)
+           ============================================ */
+        .faq-list {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--gris-clair);
+        }
+        .faq-item:first-child { border-top: 1px solid var(--gris-clair); }
+        .faq-item summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 22px 44px 22px 0;
+            position: relative;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.5;
+            transition: var(--t);
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary:hover { color: var(--at-primary); }
+        /* Chevron */
+        .faq-item summary::after {
+            content: '';
+            position: absolute; right: 8px; top: 50%;
+            width: 9px; height: 9px;
+            border-right: 2px solid var(--at-primary);
+            border-bottom: 2px solid var(--at-primary);
+            transform: translateY(-70%) rotate(45deg);
+            transition: transform 0.3s ease;
+        }
+        .faq-item[open] summary::after {
+            transform: translateY(-30%) rotate(-135deg);
+        }
+        .faq-item[open] summary { color: var(--at-primary); }
+        .faq-answer {
+            padding: 0 44px 24px 0;
+        }
+        .faq-answer p {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            line-height: 1.9;
+        }
+
         /* Passerelle vers l'autre formation du catalogue */
         .autre-formation {
             text-align: center; margin-top: 45px;
@@ -877,6 +999,82 @@
                 <li>Approche 100 % pratique, avec mat&eacute;riel professionnel &amp; cas r&eacute;els.</li>
                 <li>Effectif r&eacute;duit : accompagnement individualis&eacute;.</li>
             </ul>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FAQ
+         Les reponses sont dans le HTML des le chargement (balise <details>) :
+         c'est la condition pour que Google les lise et pour que le balisage
+         FAQPage soit valide. Rien n'est charge au clic.
+         ============================================ -->
+    <section class="section" style="background: var(--blanc);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Questions fr&eacute;quentes</span>
+                <h2 class="section-title">Vos questions sur la formation IA &agrave; Marmande</h2>
+                <hr class="divider" style="margin: 20px auto 0;">
+            </div>
+
+            <div class="faq-list reveal">
+
+                <details class="faq-item" open>
+                    <summary>O&ugrave; se d&eacute;roule la formation IA&nbsp;?</summary>
+                    <div class="faq-answer">
+                        <p>La formation se d&eacute;roule en pr&eacute;sentiel dans nos locaux, au 39 bis rue Robert Creuzet, 47200 Marmande (Lot-et-Garonne). La gare de Marmande est &agrave; dix minutes &agrave; pied. Marmande est facilement accessible depuis Agen, Villeneuve-sur-Lot, Tonneins et Bordeaux.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Combien de temps dure la formation et quel est son tarif&nbsp;?</summary>
+                    <div class="faq-answer">
+                        <p>La formation dure une journ&eacute;e, soit 7 heures, pour un tarif de 790 &euro; HT par participant. Le groupe est limit&eacute; &agrave; 8 personnes afin de garantir un accompagnement individualis&eacute;.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Faut-il des connaissances techniques pour y participer&nbsp;?</summary>
+                    <div class="faq-answer">
+                        <p>Aucun pr&eacute;requis n'est demand&eacute;. La formation s'adresse &agrave; toute personne souhaitant se former &agrave; l'intelligence artificielle, quel que soit son m&eacute;tier. Le vocabulaire technique est syst&eacute;matiquement expliqu&eacute;.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Quels financements sont possibles&nbsp;?</summary>
+                    <div class="faq-answer">
+                        <p>Notre certification Qualiopi ouvre plusieurs modes de prise en charge&nbsp;: l'AFDAS pour les intermittents du spectacle et de l'audiovisuel, votre OPCO si vous &ecirc;tes salari&eacute;, l'aide individuelle &agrave; la formation de France Travail si vous &ecirc;tes demandeur d'emploi, ou le financement sur fonds propres. Nous vous accompagnons dans le montage du dossier.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>La formation est-elle centr&eacute;e sur un outil en particulier&nbsp;?</summary>
+                    <div class="faq-answer">
+                        <p>Non. Nous parcourons volontairement un large panel de solutions &mdash; Claude, ChatGPT, Gemini, Mistral, plateformes d'agents, outils sans code &mdash; pour que vous repartiez avec une vision d'ensemble plut&ocirc;t qu'avec la ma&icirc;trise d'un seul logiciel, et avec une m&eacute;thode de veille qui reste valable dans le temps.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Qu'est-ce que je repars avec &agrave; la fin de la journ&eacute;e&nbsp;?</summary>
+                    <div class="faq-answer">
+                        <p>Vous aurez con&ccedil;u, d&eacute;ploy&eacute; et test&eacute; votre premier agent IA r&eacute;pondant &agrave; un besoin concret, cartographi&eacute; les cas d'usage pertinents dans votre propre contexte professionnel, et &eacute;tabli un plan d'action pour la suite.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Peut-on organiser la formation en intra-entreprise&nbsp;?</summary>
+                    <div class="faq-answer">
+                        <p>Oui. Le contenu peut &ecirc;tre adapt&eacute; &agrave; votre secteur et &agrave; vos cas d'usage, et la formation peut &ecirc;tre organis&eacute;e pour vos seules &eacute;quipes. Contactez-nous pour en d&eacute;finir le format.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>La formation est-elle accessible aux personnes en situation de handicap&nbsp;?</summary>
+                    <div class="faq-answer">
+                        <p>La salle de cours et l'espace de vie sont compatibles avec l'accueil de personnes &agrave; mobilit&eacute; r&eacute;duite. Nous &eacute;tudions et mettons en &oelig;uvre les adaptations n&eacute;cessaires&nbsp;: contactez No&eacute;mie Marphay en amont &agrave; formation@lesateliersdustream.fr pour toute demande sp&eacute;cifique.</p>
+                    </div>
+                </details>
+
+            </div>
 
             <!-- Passerelle vers l'autre formation du catalogue -->
             <p class="autre-formation reveal">
