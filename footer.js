@@ -18,6 +18,8 @@
                     '<li><a href="' + prefix + 'realisations">R\u00e9alisations</a></li>' +
                     '<li><a href="' + prefix + 'approche">Notre accompagnement</a></li>' +
                     '<li><a href="' + prefix + 'formations">Nos formations</a></li>' +
+                    '<li><a href="' + prefix + 'formations/ia">Formation IA à Marmande</a></li>' +
+                    '<li><a href="' + prefix + 'formations/vmix">Formation vMix à Marmande</a></li>' +
                     '<li><a href="' + prefix + 'histoire">Notre histoire</a></li>' +
                 '</ul>' +
             '</div>' +
@@ -36,7 +38,7 @@
                 '<h5>L\u00e9gal</h5>' +
                 '<ul>' +
                     '<li><a href="' + prefix + 'mentions-legales">Mentions l\u00e9gales</a></li>' +
-                    '<li><a href="#">Politique de confidentialit\u00e9</a></li>' +
+                    '<li><a href="' + prefix + 'politique-confidentialite">Politique de confidentialit\u00e9</a></li>' +
                 '</ul>' +
             '</div>' +
         '</div>' +

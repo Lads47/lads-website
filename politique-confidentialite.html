@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de confidentialit&eacute; - Les Ateliers du Stream</title>
+    <meta name="description" content="Politique de confidentialit&eacute; du site lesateliersdustream.fr : donn&eacute;es collect&eacute;es, cookies, services tiers et exercice de vos droits.">
+    <link rel="canonical" href="https://lesateliersdustream.fr/politique-confidentialite">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lesateliersdustream.fr/politique-confidentialite">
+    <meta property="og:title" content="Politique de confidentialit&eacute; - Les Ateliers du Stream">
+    <meta property="og:description" content="Politique de confidentialit&eacute; du site lesateliersdustream.fr : donn&eacute;es collect&eacute;es, cookies, services tiers et exercice de vos droits.">
+    <meta property="og:image" content="https://lesateliersdustream.fr/images/og-default.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Les Ateliers du Stream">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css?v=3">
+    <style>
+        /* ============================================
+           POLICES
+           ============================================ */
+        @font-face {
+            font-family: 'Butler';
+            src: url('fonts/subset-Butler.woff2') format('woff2');
+            font-weight: 400; font-style: normal; font-display: swap;
+        }
+        @font-face {
+            font-family: 'Butler';
+            src: url('fonts/Butler-Black.woff2') format('woff2');
+            font-weight: 900; font-style: normal; font-display: swap;
+        }
+        @font-face {
+            font-family: 'Open Sans';
+            src: url('fonts/OpenSans-VariableFont_wght.woff2') format('woff2');
+            font-weight: 300 800; font-style: normal; font-display: swap;
+        }
+
+        /* ============================================
+           VARIABLES
+           ============================================ */
+        :root {
+            --primary: #1f2244;
+            --secondary: #727485;
+            --accent: #7dcef5;
+            --at-primary: #7dcff5;
+            --blanc: #ffffff;
+            --off-white: #f7f8fa;
+            --gris-clair: #e9e9ed;
+            --gris-moyen: #d3d3da;
+            --dark-1: #363957;
+            --dark-2: #4c4f6a;
+            --light-1: #a6a7b5;
+            --font-titre: 'Butler', Georgia, serif;
+            --font-texte: 'Open Sans', sans-serif;
+            --max-width: 1200px;
+            --t: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius: 6px;
+        }
+
+        /* ============================================
+           RESET
+           ============================================ */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-texte); color: var(--primary); line-height: 1.6; background: var(--blanc); }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 40px; }
+
+        /* ============================================
+           PAGE HERO
+           ============================================ */
+        .page-hero {
+            padding: 180px 0 120px;
+            background: var(--primary);
+            color: var(--blanc);
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero-content {
+            position: relative; z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .page-hero-content .section-tag { color: var(--accent); }
+        .page-hero-content h1 {
+            font-family: var(--font-titre); font-size: 3rem; font-weight: 900;
+            line-height: 1.15; margin-bottom: 20px;
+        }
+
+        /* ============================================
+           SECTIONS
+           ============================================ */
+        .section { padding: 90px 0; }
+        .section-tag {
+            display: inline-block; font-size: 0.72rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 3px; color: var(--at-primary);
+            margin-bottom: 16px;
+        }
+
+        /* ============================================
+           CONTENU LEGAL
+           ============================================ */
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .legal-content h2 {
+            font-family: var(--font-titre);
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 16px;
+            margin-top: 50px;
+        }
+        .legal-content h2:first-child {
+            margin-top: 0;
+        }
+        .legal-content p {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+        .legal-content ul {
+            list-style: none;
+            margin: 12px 0 8px;
+        }
+        .legal-content li {
+            position: relative;
+            padding-left: 22px;
+            font-size: 0.95rem;
+            color: var(--secondary);
+            line-height: 1.9;
+        }
+        .legal-content li::before {
+            content: ''; position: absolute; left: 0; top: 12px;
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--at-primary);
+        }
+        .legal-content a {
+            color: var(--primary); font-weight: 600;
+            border-bottom: 1px solid var(--at-primary);
+            transition: var(--t);
+        }
+        .legal-content a:hover { color: var(--at-primary); }
+        .legal-date {
+            font-size: 0.85rem;
+            color: var(--light-1);
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gris-clair);
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            .page-hero { padding: 140px 0 60px; }
+            .page-hero-content h1 { font-size: 2rem; }
+            .section { padding: 70px 0; }
+            .legal-content h2 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         HEADER
+         ============================================ -->
+    <header id="header"></header>
+    <script src="header.js?v=2"></script>
+
+    <!-- ============================================
+         PAGE HERO
+         ============================================ -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <span class="section-tag">L&eacute;gal</span>
+                <h1>Politique de confidentialit&eacute;</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONTENU
+         ============================================ -->
+    <section class="section">
+        <div class="container">
+            <div class="legal-content reveal">
+
+                <h2>1. Responsable du traitement</h2>
+                <p>Le responsable du traitement des donn&eacute;es est la soci&eacute;t&eacute; Web Vid&eacute;o Production - Les Ateliers du Stream, SAS au capital de 6 600 &euro;, dont le si&egrave;ge social est situ&eacute; 39 bis rue Robert Creuzet, 47200 Marmande (SIREN 819502238).</p>
+                <p>Contact : <a href="mailto:prod@lesateliersdustream.fr">prod@lesateliersdustream.fr</a> &mdash; 06 61 96 88 58</p>
+
+                <h2>2. Donn&eacute;es collect&eacute;es sur ce site</h2>
+                <p>Le site lesateliersdustream.fr est un site vitrine. Il ne comporte aucun formulaire, aucun espace de connexion et aucun outil de mesure d'audience.</p>
+                <p>En cons&eacute;quence, <strong>aucune donn&eacute;e personnelle n'est collect&eacute;e directement par ce site</strong>. La prise de contact s'effectue par courriel ou par t&eacute;l&eacute;phone, &agrave; votre seule initiative.</p>
+
+                <h2>3. Cookies et traceurs</h2>
+                <p>Le site ne d&eacute;pose aucun cookie de sa propre initiative : ni cookie de mesure d'audience, ni cookie publicitaire, ni cookie de personnalisation.</p>
+                <p>En revanche, certaines pages de la rubrique R&eacute;alisations int&egrave;grent des lecteurs vid&eacute;o Vimeo. &Agrave; la lecture d'une vid&eacute;o, Vimeo est susceptible de d&eacute;poser ses propres cookies et de collecter des donn&eacute;es de navigation, sur lesquelles nous n'avons pas la main. Ces traitements rel&egrave;vent de la politique de confidentialit&eacute; de Vimeo, consultable sur <a href="https://vimeo.com/privacy" target="_blank" rel="noopener">vimeo.com/privacy</a>.</p>
+                <p>Vous pouvez &agrave; tout moment configurer votre navigateur pour bloquer ou supprimer ces cookies.</p>
+
+                <h2>4. Services tiers</h2>
+                <p>Les services suivants interviennent dans le fonctionnement du site :</p>
+                <ul>
+                    <li>Vimeo &mdash; h&eacute;bergement et lecture des vid&eacute;os int&eacute;gr&eacute;es</li>
+                    <li>Amazon Web Services &mdash; h&eacute;bergement de la vid&eacute;o de la page d'accueil</li>
+                    <li>evaremote.com &mdash; plateforme des Ateliers du Stream, qui fournit les dates de sessions et les indicateurs de r&eacute;sultats affich&eacute;s sur les pages formation</li>
+                </ul>
+                <p>Les appels &agrave; evaremote.com ne transmettent aucune information vous concernant : ils ne font que r&eacute;cup&eacute;rer des donn&eacute;es publiques d'affichage.</p>
+
+                <h2>5. Inscription &agrave; une formation</h2>
+                <p>Les formulaires d'inscription et de r&eacute;clamation ne sont pas h&eacute;berg&eacute;s sur ce site : ils vous redirigent vers notre plateforme evaremote.com. Les donn&eacute;es que vous y saisissez sont collect&eacute;es dans le cadre de la gestion de votre dossier de formation, conform&eacute;ment &agrave; nos obligations d'organisme certifi&eacute; Qualiopi.</p>
+                <p>Ces donn&eacute;es sont destin&eacute;es aux seules personnes en charge du suivi des formations et, le cas &eacute;ch&eacute;ant, &agrave; votre organisme financeur. Elles ne font l'objet d'aucune cession ni d'aucune exploitation commerciale.</p>
+
+                <h2>6. Dur&eacute;e de conservation</h2>
+                <p>Les donn&eacute;es li&eacute;es &agrave; une demande de contact sont conserv&eacute;es le temps n&eacute;cessaire au traitement de votre demande, puis supprim&eacute;es.</p>
+                <p>Les donn&eacute;es li&eacute;es &agrave; une action de formation sont conserv&eacute;es pendant la dur&eacute;e impos&eacute;e par nos obligations l&eacute;gales, comptables et de certification.</p>
+
+                <h2>7. Vos droits</h2>
+                <p>Conform&eacute;ment au R&egrave;glement g&eacute;n&eacute;ral sur la protection des donn&eacute;es (RGPD) et &agrave; la loi Informatique et Libert&eacute;s, vous disposez des droits suivants :</p>
+                <ul>
+                    <li>droit d'acc&egrave;s &agrave; vos donn&eacute;es</li>
+                    <li>droit de rectification</li>
+                    <li>droit &agrave; l'effacement</li>
+                    <li>droit &agrave; la limitation du traitement</li>
+                    <li>droit &agrave; la portabilit&eacute;</li>
+                    <li>droit d'opposition</li>
+                </ul>
+                <p>Pour exercer ces droits, &eacute;crivez &agrave; <a href="mailto:prod@lesateliersdustream.fr">prod@lesateliersdustream.fr</a>. Une r&eacute;ponse vous sera apport&eacute;e dans un d&eacute;lai d'un mois.</p>
+                <p>Si vous estimez, apr&egrave;s nous avoir contact&eacute;s, que vos droits ne sont pas respect&eacute;s, vous pouvez adresser une r&eacute;clamation &agrave; la CNIL : <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>.</p>
+
+                <h2>8. S&eacute;curit&eacute;</h2>
+                <p>Le site est servi int&eacute;gralement en HTTPS. Nous mettons en &oelig;uvre les mesures techniques raisonnables pour prot&eacute;ger les donn&eacute;es qui nous sont confi&eacute;es contre toute perte, acc&egrave;s non autoris&eacute; ou divulgation.</p>
+
+                <h2>9. Modification de la pr&eacute;sente politique</h2>
+                <p>Cette politique peut &ecirc;tre amen&eacute;e &agrave; &eacute;voluer, notamment en cas d'ajout d'un service ou d'un outil sur le site. La date de derni&egrave;re mise &agrave; jour figure ci-dessous.</p>
+                <p>Pour les informations relatives &agrave; l'&eacute;diteur et &agrave; l'h&eacute;bergeur du site, consultez les <a href="mentions-legales">mentions l&eacute;gales</a>.</p>
+
+                <p class="legal-date">Derni&egrave;re mise &agrave; jour : 28 juillet 2026</p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <script src="footer.js?v=4"></script>
+    <script src="schema.js?v=2"></script>
+
+</body>
+</html>
