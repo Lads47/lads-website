@@ -37,11 +37,20 @@
             "addressCountry": "FR"
         },
         // Les deux autres bureaux, rattaches a l'entite principale.
+        // image / priceRange / url sont repetes ici : ce sont des champs
+        // recommandes par Google pour chaque LocalBusiness, y compris les
+        // etablissements rattaches (sinon "problemes non critiques" au test
+        // des resultats enrichis).
         "department": [
             {
                 "@type": "LocalBusiness",
                 "name": "Les Ateliers du Stream — Mérignac",
                 "telephone": "+33661968858",
+                "email": "prod@lesateliersdustream.fr",
+                "url": "https://lesateliersdustream.fr",
+                "image": "https://lesateliersdustream.fr/photo/20260429_113309.webp",
+                "priceRange": "$$",
+                "parentOrganization": { "@id": ORG_ID },
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "22 rue Marcelin Berthelot",
@@ -55,6 +64,11 @@
                 "@type": "LocalBusiness",
                 "name": "Les Ateliers du Stream — Issy-les-Moulineaux",
                 "telephone": "+33661968858",
+                "email": "prod@lesateliersdustream.fr",
+                "url": "https://lesateliersdustream.fr",
+                "image": "https://lesateliersdustream.fr/photo/20260429_113309.webp",
+                "priceRange": "$$",
+                "parentOrganization": { "@id": ORG_ID },
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "108 Bd Gallieni",
