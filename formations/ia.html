@@ -352,13 +352,16 @@
             align-items: flex-start;
         }
         .meta-dates-hint {
-            display: none;
-            font-size: 0.72rem; color: var(--secondary);
-            line-height: 1.4; margin: 2px 0 8px;
+            display: none;             /* révélé par formations-sessions.js si dates cliquables */
+            font-size: 0.8rem; font-weight: 700; color: var(--primary);
+            line-height: 1.4; margin: 8px 0 10px;
+            padding: 9px 12px;
+            background: rgba(125,206,245,0.18);
+            border-left: 3px solid var(--at-primary);
+            border-radius: 4px;
         }
         .meta-dates-hint::before {
-            content: '\2192'; color: var(--at-primary);
-            font-weight: 700; margin-right: 5px;
+            content: '\2192'; margin-right: 6px;
         }
         .meta-date-chip {
             display: inline-block;
@@ -377,22 +380,38 @@
             background: #f0f0f0; color: #666;
             font-weight: 500; cursor: default;
         }
-        .btn-contact-sidebar {
+        .sidebar-actions {
+            display: flex; flex-direction: column; gap: 8px;
+        }
+        .btn-inscription-sidebar {
             display: block; text-align: center;
-            padding: 14px 30px; margin-top: 10px;
+            padding: 14px 30px;
             font-family: var(--font-texte); font-size: 0.82rem; font-weight: 700;
             text-transform: uppercase; letter-spacing: 1.5px;
             background: #E8834A; color: var(--blanc);
             border: none; border-radius: var(--radius); cursor: pointer;
             transition: var(--t);
         }
-        .btn-contact-sidebar:hover {
+        .btn-inscription-sidebar:hover {
             background: #d4733c; transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(232,131,74,0.3);
         }
+        .btn-contact-sidebar {
+            display: block; text-align: center;
+            padding: 14px 30px;
+            font-family: var(--font-texte); font-size: 0.82rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1.5px;
+            background: var(--at-primary); color: var(--primary);
+            border: none; border-radius: var(--radius); cursor: pointer;
+            transition: var(--t);
+        }
+        .btn-contact-sidebar:hover {
+            background: #6cbfe9; transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(125,206,245,0.35);
+        }
         .btn-reclamation-sidebar {
             display: block; text-align: center;
-            padding: 8px 20px; margin-top: 6px;
+            padding: 8px 20px;
             font-family: var(--font-texte); font-size: 0.68rem; font-weight: 600;
             letter-spacing: 0.5px;
             background: transparent; color: var(--light-1);
@@ -781,8 +800,11 @@
                             <span class="meta-value">Attestation de fin de formation + certificat de r&eacute;alisation d&eacute;livr&eacute;s &agrave; l'issue.</span>
                         </div>
                     </div>
-                    <a href="#contact" class="btn-contact-sidebar">Nous contacter</a>
-                    <a href="https://evaremote.com/reclamation" target="_blank" rel="noopener" class="btn-reclamation-sidebar">R&eacute;clamation</a>
+                    <div class="sidebar-actions">
+                        <a href="https://evaremote.com/formations/IAN1/inscription" class="btn-inscription-sidebar">S'inscrire</a>
+                        <a href="#contact" class="btn-contact-sidebar">Nous contacter</a>
+                        <a href="https://evaremote.com/reclamation" target="_blank" rel="noopener" class="btn-reclamation-sidebar">R&eacute;clamation</a>
+                    </div>
                     <div class="qualiopi-sidebar">
                         <img loading="lazy" src="../images/LogoQualiopi-150dpi-AvecMarianne.png" alt="Certification Qualiopi">
                         <p>La certification qualit&eacute; a &eacute;t&eacute; d&eacute;livr&eacute;e au titre de la cat&eacute;gorie d'actions suivante : <strong>Actions de formation</strong>.</p>
