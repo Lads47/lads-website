@@ -111,6 +111,13 @@
       '</div>';
   }
 
+  // Masque toute la <section> hôte (et donc son padding), pas seulement le
+  // conteneur : sinon une section vide laisse ~180px de blanc dans la page.
+  function hide(container) {
+    var section = container.closest ? container.closest("section") : null;
+    (section || container).style.display = "none";
+  }
+
   function loadFor(container) {
     var code = container.getAttribute("data-formation-results-code");
     if (!code) return;
@@ -121,15 +128,15 @@
       })
       .then(function (data) {
         if (!data.hasEnoughData) {
-          // Pas assez de stagiaires formés (< 5) → on masque
-          container.style.display = "none";
+          // Pas assez de stagiaires formés (< 5) → on masque la section
+          hide(container);
           return;
         }
         renderResults(container, data);
       })
       .catch(function () {
         // Erreur réseau → masquer plutôt qu'afficher du vide
-        container.style.display = "none";
+        hide(container);
       });
   }
 

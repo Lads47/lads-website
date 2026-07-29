@@ -264,6 +264,8 @@
             width: 50px; height: 3px; background: var(--at-primary);
             margin: 20px 0 0 0; border: none;
         }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header .section-desc { margin: 0 auto; }
 
         /* ============================================
            FORMATION DETAIL LAYOUT
@@ -513,7 +515,6 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
-            margin-top: 40px;
         }
         .modalite-card {
             background: var(--blanc);
@@ -542,12 +543,55 @@
         }
 
         /* ============================================
+           VOTRE FORMATEUR
+           ============================================ */
+        .formateur-card {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            max-width: 640px;
+            margin: 0 auto;
+            background: var(--blanc);
+            border: 1px solid var(--gris-clair);
+            border-radius: var(--radius);
+            padding: 30px 36px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        }
+        .formateur-photo {
+            flex: 0 0 165px;
+        }
+        .formateur-photo img {
+            width: 165px;
+            aspect-ratio: 3 / 4;
+            object-fit: cover; object-position: center top;
+            border-radius: 8px;
+            display: block;
+        }
+        .formateur-info h3 {
+            font-family: var(--font-titre); font-size: 1.6rem; font-weight: 900;
+            color: var(--primary); line-height: 1.1; margin-bottom: 5px;
+        }
+        .formateur-role {
+            display: block;
+            font-size: 0.9rem; font-weight: 700; color: var(--at-primary);
+            letter-spacing: 0.5px; margin-bottom: 14px;
+        }
+        .formateur-info p {
+            font-size: 0.9rem; color: var(--secondary); line-height: 1.75;
+        }
+        @media (max-width: 640px) {
+            .formateur-card { flex-direction: column; text-align: center; gap: 22px; padding: 30px; }
+            .formateur-photo { flex: 0 0 auto; }
+            .formateur-photo img { margin: 0 auto; }
+        }
+
+        /* ============================================
            POINTS FORTS
            ============================================ */
         .points-forts-list {
             list-style: none;
             max-width: 700px;
-            margin: 30px auto 0;
+            margin: 0 auto;
         }
         .points-forts-list li {
             position: relative; padding-left: 30px;
@@ -1005,9 +1049,32 @@
     </section>
 
     <!-- ============================================
-         POINTS FORTS
+         VOTRE FORMATEUR
          ============================================ -->
     <section class="section" style="background: var(--off-white);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">L'&eacute;quipe</span>
+                <h2 class="section-title">Votre formateur</h2>
+                <hr class="divider" style="margin: 20px auto 0;">
+            </div>
+            <div class="formateur-card reveal">
+                <div class="formateur-photo">
+                    <img loading="lazy" src="../photo/anthony_formateur.webp" alt="Anthony, ing&eacute;nieur IA et formateur">
+                </div>
+                <div class="formateur-info">
+                    <h3>Anthony</h3>
+                    <span class="formateur-role">Ing&eacute;nieur IA</span>
+                    <p>Ing&eacute;nieur en activit&eacute;, Anthony con&ccedil;oit et d&eacute;ploie des solutions d'intelligence artificielle au quotidien. Il anime cette formation avec une approche concr&egrave;te et une vision &agrave; jour d'un domaine qui &eacute;volue chaque semaine.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         POINTS FORTS
+         ============================================ -->
+    <section class="section" style="background: var(--blanc);">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">Avantages</span>
@@ -1030,7 +1097,7 @@
          c'est la condition pour que Google les lise et pour que le balisage
          FAQPage soit valide. Rien n'est charge au clic.
          ============================================ -->
-    <section class="section" style="background: var(--blanc);">
+    <section class="section" style="background: var(--off-white);">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">Questions fr&eacute;quentes</span>
@@ -1151,7 +1218,7 @@
     <script src="../footer.js?v=4"></script>
     <script src="../schema.js?v=3"></script>
     <script src="../formations-sessions.js?v=2"></script>
-    <script src="../formations-results.js?v=1"></script>
+    <script src="../formations-results.js?v=2"></script>
 
 </body>
 </html>
