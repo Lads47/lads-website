@@ -126,6 +126,18 @@
 
   <!-- Realisations -->
   <url>
+    <loc>https://lesateliersdustream.fr/realisations/open-cote-de-beaute</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lesateliersdustream.fr/realisations/tcg</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://lesateliersdustream.fr/realisations/ceremonie-docteurs-bordeaux</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>yearly</changefreq>
