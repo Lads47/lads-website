@@ -183,6 +183,31 @@
         }
 
         /* ============================================
+           VIDEO SECTION
+           ============================================ */
+        .real-video {
+            margin-top: 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+        .real-video-wrap {
+            position: relative;
+            padding-top: 56.25%;
+        }
+        .real-video-wrap iframe {
+            position: absolute; inset: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+        .real-video-caption {
+            font-size: 0.82rem;
+            color: var(--secondary);
+            font-style: italic;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* ============================================
            PHOTO SECTION
            ============================================ */
         .real-photos {
@@ -382,6 +407,14 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Vidéo : finale (YouTube) -->
+            <div class="real-video reveal">
+                <div class="real-video-wrap">
+                    <iframe src="https://www.youtube-nocookie.com/embed/O-w1Etv32Uw" title="Finale de l'Open International de la C&ocirc;te de Beaut&eacute; &mdash; beach tennis" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            <p class="real-video-caption reveal">La finale, r&eacute;alis&eacute;e en direct depuis notre r&eacute;gie de Marmande.</p>
 
             <!-- Photos -->
             <div class="real-photos reveal">
