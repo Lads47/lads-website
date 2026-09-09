@@ -191,6 +191,14 @@
             border-radius: 50%;
             background: var(--at-primary);
         }
+        /* Bloc mis en avant : la reassurance, juste avant le choix d'une date. */
+        .engagement-card {
+            padding: 18px 20px;
+            background: rgba(125, 206, 245, 0.12);
+            border-radius: var(--radius);
+        }
+        .engagement-card .meta-label { color: var(--at-primary); }
+
         /* Ligne secondaire d'un item de la sidebar : meme DA que .meta-list,
            poids allege pour un paragraphe explicatif. */
         .meta-note {
@@ -205,13 +213,9 @@
             align-items: flex-start;
         }
         .meta-dates-hint {
-            display: none;
-            font-size: 0.72rem; color: var(--secondary);
-            line-height: 1.4; margin: 2px 0 8px;
-        }
-        .meta-dates-hint::before {
-            content: '\2192'; color: var(--at-primary);
-            font-weight: 700; margin-right: 5px;
+            display: none;             /* revele par formations-sessions.js si dates cliquables */
+            font-size: 0.78rem; color: var(--secondary);
+            line-height: 1.45; margin: 4px 0 10px;
         }
         .meta-date-chip {
             display: inline-block;
@@ -597,7 +601,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="formation-meta-item">
+                    <div class="formation-meta-item engagement-card">
                         <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
                         <div>
                             <span class="meta-label">Inscription sans engagement</span>
@@ -609,7 +613,7 @@
                         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                         <div>
                             <span class="meta-label">D&eacute;lais d'acc&egrave;s</span>
-                            <span class="meta-value">Inscription jusqu'&agrave; 11 jours ouvr&eacute;s avant le d&eacute;marrage de la session.</span>
+                            <span class="meta-value">Inscription jusqu'&agrave; 11 jours ouvr&eacute;s avant le d&eacute;but de la formation.</span>
                         </div>
                     </div>
                     <div class="formation-meta-item">
