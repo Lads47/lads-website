@@ -167,6 +167,7 @@
             .legal-content h2 { font-size: 1.3rem; }
         }
     </style>
+    <script defer src="https://evaremote.com/e.js" data-site="lads"></script>
 </head>
 <body>
 
@@ -200,11 +201,37 @@
                 <p>Contact : <a href="mailto:prod@lesateliersdustream.fr">prod@lesateliersdustream.fr</a> &mdash; 06 61 96 88 58</p>
 
                 <h2>2. Donn&eacute;es collect&eacute;es sur ce site</h2>
-                <p>Le site lesateliersdustream.fr est un site vitrine. Il ne comporte aucun formulaire, aucun espace de connexion et aucun outil de mesure d'audience.</p>
-                <p>En cons&eacute;quence, <strong>aucune donn&eacute;e personnelle n'est collect&eacute;e directement par ce site</strong>. La prise de contact s'effectue par courriel ou par t&eacute;l&eacute;phone, &agrave; votre seule initiative.</p>
+                <p>Le site lesateliersdustream.fr est un site vitrine. Il ne comporte aucun formulaire ni espace de connexion. Il utilise un outil de mesure d'audience interne, d&eacute;crit &agrave; la section 3.</p>
+                <p>Hormis cette mesure d'audience, <strong>aucune donn&eacute;e personnelle n'est collect&eacute;e directement par ce site</strong>. La prise de contact s'effectue par courriel ou par t&eacute;l&eacute;phone, &agrave; votre seule initiative.</p>
 
                 <h2>3. Cookies et traceurs</h2>
-                <p>Le site ne d&eacute;pose aucun cookie de sa propre initiative : ni cookie de mesure d'audience, ni cookie publicitaire, ni cookie de personnalisation.</p>
+                <p>Le site ne d&eacute;pose aucun cookie de sa propre initiative : ni cookie publicitaire, ni cookie de personnalisation.</p>
+                <p><strong>Mesure d'audience.</strong> Pour savoir quelles pages sont consult&eacute;es et am&eacute;liorer le site, nous utilisons EVA Stat, notre propre outil de mesure d'audience, h&eacute;berg&eacute; sur notre plateforme evaremote.com. Il enregistre dans votre navigateur un identifiant al&eacute;atoire propre &agrave; ce site, renouvel&eacute; au plus tard apr&egrave;s 13 mois, et collecte les pages consult&eacute;es, le temps pass&eacute;, le site de provenance, le type d'appareil et de navigateur, la langue et une localisation approximative (ville) d&eacute;duite de votre adresse IP. Cette adresse est tronqu&eacute;e avant tout enregistrement et n'est jamais conserv&eacute;e en entier.</p>
+                <p>Ces donn&eacute;es servent uniquement &agrave; produire nos statistiques de fr&eacute;quentation. Elles ne sont ni crois&eacute;es avec d'autres sites, ni transmises &agrave; des tiers, et sont supprim&eacute;es au bout de 13 mois ; au-del&agrave;, nous ne gardons que des totaux anonymes. Conform&eacute;ment aux recommandations de la CNIL, cette mesure d'audience est dispens&eacute;e de consentement, et les r&eacute;glages &laquo; Do Not Track &raquo; et &laquo; Global Privacy Control &raquo; de votre navigateur sont respect&eacute;s. Vous pouvez aussi vous y opposer &agrave; tout moment, votre choix &eacute;tant m&eacute;moris&eacute; dans ce navigateur :</p>
+                <p>
+                    <button type="button" id="eva-stat-choix" style="font: inherit; font-weight: 600; color: var(--blanc); background: var(--primary); border: 0; border-radius: var(--radius); padding: 0.6em 1.2em; cursor: pointer;">Ne plus &ecirc;tre mesur&eacute;</button>
+                    <span id="eva-stat-etat" style="display: block; margin-top: 0.5em; font-size: 0.95em;"></span>
+                </p>
+                <script>
+                    (function () {
+                        var bouton = document.getElementById('eva-stat-choix');
+                        var etat = document.getElementById('eva-stat-etat');
+                        function refuse() { try { return localStorage.getItem('evaStat_off') === '1'; } catch (e) { return false; } }
+                        function afficher() {
+                            var r = refuse();
+                            bouton.textContent = r ? 'Accepter à nouveau la mesure d’audience' : 'Ne plus être mesuré';
+                            etat.textContent = r ? 'La mesure d’audience est désactivée dans ce navigateur.' : 'La mesure d’audience est active dans ce navigateur.';
+                        }
+                        bouton.addEventListener('click', function () {
+                            try {
+                                if (refuse()) localStorage.removeItem('evaStat_off');
+                                else localStorage.setItem('evaStat_off', '1');
+                            } catch (e) {}
+                            afficher();
+                        });
+                        afficher();
+                    })();
+                </script>
                 <p>En revanche, certaines pages de la rubrique R&eacute;alisations int&egrave;grent des lecteurs vid&eacute;o Vimeo. &Agrave; la lecture d'une vid&eacute;o, Vimeo est susceptible de d&eacute;poser ses propres cookies et de collecter des donn&eacute;es de navigation, sur lesquelles nous n'avons pas la main. Ces traitements rel&egrave;vent de la politique de confidentialit&eacute; de Vimeo, consultable sur <a href="https://vimeo.com/privacy" target="_blank" rel="noopener">vimeo.com/privacy</a>.</p>
                 <p>Vous pouvez &agrave; tout moment configurer votre navigateur pour bloquer ou supprimer ces cookies.</p>
 
@@ -213,9 +240,9 @@
                 <ul>
                     <li>Vimeo &mdash; h&eacute;bergement et lecture des vid&eacute;os int&eacute;gr&eacute;es</li>
                     <li>Amazon Web Services &mdash; h&eacute;bergement de la vid&eacute;o de la page d'accueil</li>
-                    <li>evaremote.com &mdash; plateforme des Ateliers du Stream, qui fournit les dates de sessions et les indicateurs de r&eacute;sultats affich&eacute;s sur les pages formation</li>
+                    <li>evaremote.com &mdash; plateforme des Ateliers du Stream, qui fournit les dates de sessions et les indicateurs de r&eacute;sultats affich&eacute;s sur les pages formation, et qui h&eacute;berge la mesure d'audience EVA Stat</li>
                 </ul>
-                <p>Les appels &agrave; evaremote.com ne transmettent aucune information vous concernant : ils ne font que r&eacute;cup&eacute;rer des donn&eacute;es publiques d'affichage.</p>
+                <p>Les appels servant &agrave; afficher les dates et les indicateurs ne transmettent aucune information vous concernant : ils ne font que r&eacute;cup&eacute;rer des donn&eacute;es publiques d'affichage. La mesure d'audience est d&eacute;crite &agrave; la section 3.</p>
 
                 <h2>5. Inscription &agrave; une formation</h2>
                 <p>Les formulaires d'inscription et de r&eacute;clamation ne sont pas h&eacute;berg&eacute;s sur ce site : ils vous redirigent vers notre plateforme evaremote.com. Les donn&eacute;es que vous y saisissez sont collect&eacute;es dans le cadre de la gestion de votre dossier de formation, conform&eacute;ment &agrave; nos obligations d'organisme certifi&eacute; Qualiopi.</p>
@@ -245,7 +272,7 @@
                 <p>Cette politique peut &ecirc;tre amen&eacute;e &agrave; &eacute;voluer, notamment en cas d'ajout d'un service ou d'un outil sur le site. La date de derni&egrave;re mise &agrave; jour figure ci-dessous.</p>
                 <p>Pour les informations relatives &agrave; l'&eacute;diteur et &agrave; l'h&eacute;bergeur du site, consultez les <a href="mentions-legales">mentions l&eacute;gales</a>.</p>
 
-                <p class="legal-date">Derni&egrave;re mise &agrave; jour : 28 juillet 2026</p>
+                <p class="legal-date">Derni&egrave;re mise &agrave; jour : 25 octobre 2026</p>
 
             </div>
         </div>
