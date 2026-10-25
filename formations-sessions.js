@@ -56,6 +56,9 @@
         "retour=" +
         encodeURIComponent(retour);
       a.className = "meta-date-chip";
+      // Mesure d'audience EVA Stat : le clic compte comme une inscription commencée.
+      a.setAttribute("data-eva-event", "inscription_formation");
+      a.setAttribute("data-eva-props", JSON.stringify({ formation: container.getAttribute("data-formation-code") }));
       a.style.textDecoration = "none";
       a.style.cursor = "pointer";
       a.style.transition = "transform 0.15s, box-shadow 0.15s";
