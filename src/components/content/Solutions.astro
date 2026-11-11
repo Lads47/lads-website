@@ -1,6 +1,14 @@
 ---
+import Button from '../Button.astro';
+import Img from '../media/Img.astro';
 import ContactSection from './ContactSection.astro';
+import Section from '../wrapper/Section.astro';
+import ContentWrapper from '../wrapper/ContentWrapper.astro';
+import Eyebrow from '../typography/Eyebrow.astro';
 import Heading from '../typography/Heading.astro';
+import Paragraph from '../typography/Paragraph.astro';
+import Grid from '../wrapper/Grid.astro';
+import Card from '../item/Card.astro';
 ---
 <!-- ============================================
          HEADER
@@ -11,87 +19,88 @@ import Heading from '../typography/Heading.astro';
     <!-- ============================================
          PAGE HERO
          ============================================ -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="page-hero-content">
-                <span class="section-tag">Captation &amp; diffusion</span>
-                <Heading tag="h1" variant="inherit">Nos solutions</Heading>
-                <p>
+    <Section theme="dark" paddingTop="navoverlap" paddingBottom="small" align="center">
+<Img slot="background" src="/photo/20241113_182041.webp" alt="" loading="eager" style={"opacity:var(--hero-image-opacity);object-position:center var(--hero-position-solutions)"} />
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">Captation &amp; diffusion</Eyebrow>
+                <Heading tag="h1" variant="h1">Nos solutions</Heading>
+                <Paragraph variant="large">
                     Parce que chaque &eacute;v&eacute;nement est unique, nous avons con&ccedil;u nos solutions comme des briques modulables&nbsp;: elles s'utilisent seules ou se combinent pour b&acirc;tir un projet sur mesure.
-                </p>
-            </div>
-        </div>
-    </section>
+                </Paragraph>
+            </ContentWrapper>
+
+    </Section>
 
     <!-- ============================================
          BLOC 1 — CAPTATION MULTICAM
          4 tech-cards
          ============================================ -->
-    <section id="captation" class="section solutions-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">Captation vid&eacute;o</span>
-                <Heading tag="h2" variant="inherit" class="section-title">Captation multicam&eacute;ra</Heading>
-                <p class="section-desc">
-                    D&eacute;couvrez l'ensemble de nos solutions pour la captation de vos &eacute;v&eacute;nements, ainsi que l'&eacute;tendue de notre parc mat&eacute;riel. Tous nos syst&egrave;mes sont imbricables et adaptables pour r&eacute;pondre au mieux &agrave; vos besoins &mdash; am&eacute;lior&eacute;s, perfectionn&eacute;s et compl&eacute;t&eacute;s au fil du temps, vous y trouverez la solution id&eacute;ale.
-                </p>
-                <hr class="divider">
-            </div>
+    <Section id="captation" theme="light">
 
-            <div class="tech-grid four-col reveal">
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">Captation vid&eacute;o</Eyebrow>
+                <Heading tag="h2" variant="h2">Captation multicam&eacute;ra</Heading>
+                <Paragraph variant="large" class="color-muted" maxWidth={70}>
+                    D&eacute;couvrez l'ensemble de nos solutions pour la captation de vos &eacute;v&eacute;nements, ainsi que l'&eacute;tendue de notre parc mat&eacute;riel. Tous nos syst&egrave;mes sont imbricables et adaptables pour r&eacute;pondre au mieux &agrave; vos besoins &mdash; am&eacute;lior&eacute;s, perfectionn&eacute;s et compl&eacute;t&eacute;s au fil du temps, vous y trouverez la solution id&eacute;ale.
+                </Paragraph>
+                <hr class="divider">
+            </ContentWrapper>
+
+            <Grid xsmall={1} small={1} medium={2} large={3} gap="4">
                 <!-- Captation multicam -->
-                <a href="/solutions/captation-multicam" class="tech-card">
+                <Card variant="panel" href={"/solutions/captation-multicam"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
                         </svg>
                     </div>
-                    <Heading tag="h3" variant="inherit">Captation multicam</Heading>
-                    <p>R&eacute;gies vid&eacute;os de 3 &agrave; 4 cam&eacute;ras. Diffusion en direct ou en replay, avec un habillage personnalis&eacute; aux couleurs de votre &eacute;v&eacute;nement.</p>
+                    <Heading tag="h3" variant="h3">Captation multicam</Heading>
+                    <Paragraph variant="main">R&eacute;gies vid&eacute;os de 3 &agrave; 4 cam&eacute;ras. Diffusion en direct ou en replay, avec un habillage personnalis&eacute; aux couleurs de votre &eacute;v&eacute;nement.</Paragraph>
                     <span class="tech-spec">3 &agrave; 4 cam&eacute;ras</span>
-                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-                </a>
+                    <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
+                </Card>
                 <!-- Captation &eacute;v&eacute;nementielle -->
-                <a href="/solutions/captation-video" class="tech-card">
+                <Card variant="panel" href={"/solutions/captation-video"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
                             <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                         </svg>
                     </div>
-                    <Heading tag="h3" variant="inherit">Captation vid&eacute;o &eacute;v&eacute;nementielle</Heading>
-                    <p>Pour vos congr&egrave;s et &eacute;v&eacute;nements, nous assurons la captation multicam&eacute;ra et la diffusion fluide de tous vos m&eacute;dias.</p>
+                    <Heading tag="h3" variant="h3">Captation vid&eacute;o &eacute;v&eacute;nementielle</Heading>
+                    <Paragraph variant="main">Pour vos congr&egrave;s et &eacute;v&eacute;nements, nous assurons la captation multicam&eacute;ra et la diffusion fluide de tous vos m&eacute;dias.</Paragraph>
                     <span class="tech-spec">Congr&egrave;s &middot; &Eacute;v&eacute;nements</span>
-                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-                </a>
+                    <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
+                </Card>
                 <!-- Multiplex -->
-                <a href="/solutions/multiplex" class="tech-card">
+                <Card variant="panel" href={"/solutions/multiplex"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
                             <line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
                         </svg>
                     </div>
-                    <Heading tag="h3" variant="inherit">Multiplex</Heading>
-                    <p>Connectez tous vos sites en temps r&eacute;el pour des interventions simultan&eacute;es, fluides et synchronis&eacute;es.</p>
+                    <Heading tag="h3" variant="h3">Multiplex</Heading>
+                    <Paragraph variant="main">Connectez tous vos sites en temps r&eacute;el pour des interventions simultan&eacute;es, fluides et synchronis&eacute;es.</Paragraph>
                     <span class="tech-spec">Fibre optique &middot; 5G</span>
-                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-                </a>
+                    <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
+                </Card>
                 <!-- Plateau Web TV -->
-                <a href="/solutions/plateau-web-tv" class="tech-card">
+                <Card variant="panel" href={"/solutions/plateau-web-tv"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
                             <line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
                         </svg>
                     </div>
-                    <Heading tag="h3" variant="inherit">Plateau Web TV</Heading>
-                    <p>Un plateau web TV au c&oelig;ur de votre &eacute;v&eacute;nement pour produire des contenus dynamiques et prolonger sa visibilit&eacute;.</p>
+                    <Heading tag="h3" variant="h3">Plateau Web TV</Heading>
+                    <Paragraph variant="main">Un plateau web TV au c&oelig;ur de votre &eacute;v&eacute;nement pour produire des contenus dynamiques et prolonger sa visibilit&eacute;.</Paragraph>
                     <span class="tech-spec">Interviews &middot; Tables rondes</span>
-                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-                </a>
+                    <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
+                </Card>
                 <!-- Cam&eacute;ras tourelle 100% HF -->
-                <a href="/solutions/cameras-tourelle-hf" class="tech-card">
+                <Card variant="panel" href={"/solutions/cameras-tourelle-hf"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8.5 16.5a5 5 0 0 1 0-9"/><path d="M2 12a10 10 0 0 1 4-8"/>
@@ -99,105 +108,105 @@ import Heading from '../typography/Heading.astro';
                             <circle cx="12" cy="12" r="2"/>
                         </svg>
                     </div>
-                    <Heading tag="h3" variant="inherit">4 cam&eacute;ras tourelle 100% HF</Heading>
-                    <p>Dispositif id&eacute;al pour les installations en ext&eacute;rieur avec du public. Chaque cam&eacute;ra dispose de son propre &eacute;metteur, le tout aliment&eacute; par batterie.</p>
+                    <Heading tag="h3" variant="h3">4 cam&eacute;ras tourelle 100% HF</Heading>
+                    <Paragraph variant="main">Dispositif id&eacute;al pour les installations en ext&eacute;rieur avec du public. Chaque cam&eacute;ra dispose de son propre &eacute;metteur, le tout aliment&eacute; par batterie.</Paragraph>
                     <span class="tech-spec">Liaison sans fil &middot; Ext&eacute;rieur</span>
-                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-                </a>
+                    <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
+                </Card>
                 <!-- 8 r&eacute;gies simultan&eacute;es -->
-                <a href="/solutions/captation-multi-regies" class="tech-card">
+                <Card variant="panel" href={"/solutions/captation-multi-regies"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <rect x="1" y="3" width="9" height="7" rx="1"/><rect x="14" y="3" width="9" height="7" rx="1"/>
                             <rect x="1" y="14" width="9" height="7" rx="1"/><rect x="14" y="14" width="9" height="7" rx="1"/>
                         </svg>
                     </div>
-                    <Heading tag="h3" variant="inherit">8 r&eacute;gies en simultan&eacute;</Heading>
-                    <p>Jusqu'&agrave; 8 r&eacute;gies de 3 cam&eacute;ras d&eacute;ploy&eacute;es en simultan&eacute;. Id&eacute;al pour les &eacute;v&eacute;nements multi-salles&nbsp;: chaque conf&eacute;rence dispose de sa propre captation.</p>
+                    <Heading tag="h3" variant="h3">8 r&eacute;gies en simultan&eacute;</Heading>
+                    <Paragraph variant="main">Jusqu'&agrave; 8 r&eacute;gies de 3 cam&eacute;ras d&eacute;ploy&eacute;es en simultan&eacute;. Id&eacute;al pour les &eacute;v&eacute;nements multi-salles&nbsp;: chaque conf&eacute;rence dispose de sa propre captation.</Paragraph>
                     <span class="tech-spec">Multi-salles &middot; En simultan&eacute;</span>
-                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-                </a>
+                    <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
+                </Card>
                 <!-- Fond vert -->
-                <a href="/solutions/fond-vert" class="tech-card">
+                <Card variant="panel" href={"/solutions/fond-vert"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><circle cx="12" cy="10" r="3"/>
                         </svg>
                     </div>
-                    <Heading tag="h3" variant="inherit">Fond vert</Heading>
-                    <p>Studio virtuel sur fond vert de 4 &agrave; 12&nbsp;m&egrave;tres de long et 2,20&nbsp;m&egrave;tres de haut pour r&eacute;aliser des productions immersives avec incrustation de d&eacute;cors virtuels en temps r&eacute;el.</p>
+                    <Heading tag="h3" variant="h3">Fond vert</Heading>
+                    <Paragraph variant="main">Studio virtuel sur fond vert de 4 &agrave; 12&nbsp;m&egrave;tres de long et 2,20&nbsp;m&egrave;tres de haut pour r&eacute;aliser des productions immersives avec incrustation de d&eacute;cors virtuels en temps r&eacute;el.</Paragraph>
                     <span class="tech-spec">Studio virtuel &middot; 4 &agrave; 12 m &middot; 2,20 m haut</span>
-                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-                </a>
-            </div>
-        </div>
-    </section>
+                    <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
+                </Card>
+            </Grid>
+
+    </Section>
 
     <!-- ============================================
          BLOC 2 — EVA (Intelligence artificielle)
          ============================================ -->
-    <section id="eva" class="section solutions-section alt">
-        <div class="container">
-            <div class="section-header reveal">
+    <Section id="eva" theme="light" tone="muted">
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
                 <span class="eva-badge">
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
                     EVA
                 </span>
-                <Heading tag="h2" variant="inherit" class="section-title">Electronic Virtual Assistant</Heading>
-                <p class="section-desc">
+                <Heading tag="h2" variant="h2">Electronic Virtual Assistant</Heading>
+                <Paragraph variant="large" class="color-muted" maxWidth={70}>
                     Nous d&eacute;veloppons nos propres solutions d'automatisation et d'int&eacute;gration d'intelligence artificielle pour enrichir et augmenter vos &eacute;v&eacute;nements, sous la banni&egrave;re EVA &mdash; Electronic Virtual Assistant.
-                </p>
+                </Paragraph>
                 <hr class="divider">
-            </div>
+            </ContentWrapper>
 
-            <div class="tech-grid two-col reveal">
+            <Grid xsmall={1} small={1} medium={2} large={3} gap="4">
                 <!-- Retranscription et synth&egrave;se -->
-                <a href="/solutions/retranscription-synthese" class="tech-card">
+                <Card variant="panel" href={"/solutions/retranscription-synthese"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                             <polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
                         </svg>
                     </div>
-                    <Heading tag="h3" variant="inherit">Retranscription et synth&egrave;se</Heading>
-                    <p>EVA retranscrit et synth&eacute;tise vos conf&eacute;rences en temps r&eacute;el, selon votre programme. Modifiez et validez les r&eacute;sum&eacute;s via une interface d&eacute;di&eacute;e et alimentez-les de photos.</p>
+                    <Heading tag="h3" variant="h3">Retranscription et synth&egrave;se</Heading>
+                    <Paragraph variant="main">EVA retranscrit et synth&eacute;tise vos conf&eacute;rences en temps r&eacute;el, selon votre programme. Modifiez et validez les r&eacute;sum&eacute;s via une interface d&eacute;di&eacute;e et alimentez-les de photos.</Paragraph>
                     <span class="tech-spec">Temps r&eacute;el &middot; Serveur local</span>
-                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-                </a>
+                    <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
+                </Card>
                 <!-- Chapitrage automatique -->
-                <a href="/solutions/chapitrage-automatique" class="tech-card">
+                <Card variant="panel" href={"/solutions/chapitrage-automatique"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
                         </svg>
                     </div>
-                    <Heading tag="h3" variant="inherit">Chapitrage automatique</Heading>
-                    <p>Chapitrage automatique de vos lives pour structurer vos &eacute;v&eacute;nements, faciliter la navigation et int&eacute;grer vos vid&eacute;os dans un player personnalisable sur votre site.</p>
+                    <Heading tag="h3" variant="h3">Chapitrage automatique</Heading>
+                    <Paragraph variant="main">Chapitrage automatique de vos lives pour structurer vos &eacute;v&eacute;nements, faciliter la navigation et int&eacute;grer vos vid&eacute;os dans un player personnalisable sur votre site.</Paragraph>
                     <span class="tech-spec">IA &middot; Timecodes &middot; Player</span>
-                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-                </a>
-            </div>
-        </div>
-    </section>
+                    <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
+                </Card>
+            </Grid>
+
+    </Section>
 
     <!-- ============================================
          BLOC 3 — DIFFUSION & SONORISATION
          3 cartes techniques
          ============================================ -->
-    <section id="diffusion" class="section solutions-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">Sonorisation &amp; vid&eacute;oprotection</span>
-                <Heading tag="h2" variant="inherit" class="section-title">Diffusion et sonorisation</Heading>
-                <p class="section-desc">
-                    Compl&eacute;tez votre dispositif de captation avec nos solutions de diffusion, sonorisation et gestion des m&eacute;dias.
-                </p>
-                <hr class="divider">
-            </div>
+    <Section id="diffusion" theme="light">
 
-            <div class="tech-grid reveal">
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">Sonorisation &amp; vid&eacute;oprotection</Eyebrow>
+                <Heading tag="h2" variant="h2">Diffusion et sonorisation</Heading>
+                <Paragraph variant="large" class="color-muted" maxWidth={70}>
+                    Compl&eacute;tez votre dispositif de captation avec nos solutions de diffusion, sonorisation et gestion des m&eacute;dias.
+                </Paragraph>
+                <hr class="divider">
+            </ContentWrapper>
+
+            <Grid xsmall={1} small={1} medium={2} large={3} gap="4">
                 <!-- Vid&eacute;oprojection -->
-                <a href="/solutions/videoprojection" class="tech-card">
+                <Card variant="panel" href={"/solutions/videoprojection"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
@@ -205,13 +214,13 @@ import Heading from '../typography/Heading.astro';
                             <line x1="12" y1="17" x2="12" y2="21"/>
                         </svg>
                     </div>
-                    <Heading tag="h3" variant="inherit">Vid&eacute;oprojection</Heading>
-                    <p>Vid&eacute;oprojecteur 5&nbsp;000 lumens avec &eacute;cran 16:9 pour une visibilit&eacute; parfaite de vos pr&eacute;sentations et contenus vid&eacute;o en salle.</p>
+                    <Heading tag="h3" variant="h3">Vid&eacute;oprojection</Heading>
+                    <Paragraph variant="main">Vid&eacute;oprojecteur 5&nbsp;000 lumens avec &eacute;cran 16:9 pour une visibilit&eacute; parfaite de vos pr&eacute;sentations et contenus vid&eacute;o en salle.</Paragraph>
                     <span class="tech-spec">5 000 lumens &middot; 16:9</span>
-                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-                </a>
+                    <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
+                </Card>
                 <!-- Sonorisation -->
-                <a href="/solutions/sonorisation" class="tech-card">
+                <Card variant="panel" href={"/solutions/sonorisation"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
@@ -219,26 +228,26 @@ import Heading from '../typography/Heading.astro';
                             <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
                         </svg>
                     </div>
-                    <Heading tag="h3" variant="inherit">Sonorisation</Heading>
-                    <p>Sonorisation professionnelle pour vos &eacute;v&eacute;nements de 50 &agrave; 200 personnes, qualit&eacute; audio claire et homog&egrave;ne, avec possibilit&eacute; d'enregistrement audio.</p>
+                    <Heading tag="h3" variant="h3">Sonorisation</Heading>
+                    <Paragraph variant="main">Sonorisation professionnelle pour vos &eacute;v&eacute;nements de 50 &agrave; 200 personnes, qualit&eacute; audio claire et homog&egrave;ne, avec possibilit&eacute; d'enregistrement audio.</Paragraph>
                     <span class="tech-spec">50 &agrave; 200 personnes</span>
-                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-                </a>
+                    <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
+                </Card>
                 <!-- Gestion des m&eacute;dias -->
-                <a href="/solutions/diffusion-gestion-medias" class="tech-card">
+                <Card variant="panel" href={"/solutions/diffusion-gestion-medias"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
                         </svg>
                     </div>
-                    <Heading tag="h3" variant="inherit">Diffusion et gestion des m&eacute;dias</Heading>
-                    <p>Nous g&eacute;rons l'ensemble de vos contenus &eacute;v&eacute;nementiels&nbsp;: PowerPoint, vid&eacute;os et intervenants en visio, pour une diffusion fluide et professionnelle.</p>
+                    <Heading tag="h3" variant="h3">Diffusion et gestion des m&eacute;dias</Heading>
+                    <Paragraph variant="main">Nous g&eacute;rons l'ensemble de vos contenus &eacute;v&eacute;nementiels&nbsp;: PowerPoint, vid&eacute;os et intervenants en visio, pour une diffusion fluide et professionnelle.</Paragraph>
                     <span class="tech-spec">PowerPoint &middot; Vid&eacute;os &middot; Visio</span>
-                    <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-                </a>
-            </div>
-        </div>
-    </section>
+                    <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
+                </Card>
+            </Grid>
+
+    </Section>
 
     <!-- ============================================
          CTA / CONTACT
@@ -247,148 +256,57 @@ import Heading from '../typography/Heading.astro';
 
     <!-- Footer -->
 
+
+
 <style is:global>
+@layer components {
+
 /* ============================================
            POLICES
            ============================================ */
-        @font-face {
-            font-family: 'Butler';
-            src: url('/fonts/subset-Butler.woff2') format('woff2');
-            font-weight: 400; font-style: normal; font-display: swap;
-        }
-        @font-face {
-            font-family: 'Butler';
-            src: url('/fonts/Butler-Black.woff2') format('woff2');
-            font-weight: 900; font-style: normal; font-display: swap;
-        }
-        @font-face {
-            font-family: 'Open Sans';
-            src: url('/fonts/OpenSans-VariableFont_wght.woff2') format('woff2');
-            font-weight: 300 800; font-style: normal; font-display: swap;
-        }
 
         /* ============================================
            VARIABLES
            ============================================ */
-        :root {
-            --primary: #1f2244;
-            --secondary: #727485;
-            --accent: #7dcef5;
-            --at-primary: #7dcff5;
-            --at-secondary: #c9b840;
-            --blanc: #ffffff;
-            --off-white: #f7f8fa;
-            --gris-clair: #e9e9ed;
-            --gris-moyen: #d3d3da;
-            --dark-1: #363957;
-            --dark-2: #4c4f6a;
-            --light-1: #a6a7b5;
-            --font-titre: 'Butler', Georgia, serif;
-            --font-texte: 'Open Sans', sans-serif;
-            --max-width: 1200px;
-            --t: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            --radius: 6px;
-        }
 
         /* ============================================
            RESET
            ============================================ */
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: var(--font-texte); color: var(--primary); line-height: 1.6; background: var(--blanc); }
-        img { max-width: 100%; height: auto; display: block; }
-        a { text-decoration: none; color: inherit; }
-        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 40px; }
 
         /* ============================================
            PAGE HERO
            ============================================ */
-        .page-hero {
-            padding: 180px 0 120px;
-            background: var(--primary);
-            color: var(--blanc);
-            position: relative;
-            overflow: hidden;
-        }
-        .page-hero::before {
-            content: ''; position: absolute; inset: 0;
-            background: url('/photo/20241113_182041.webp') center calc(50% + 50px)/cover no-repeat;
-            opacity: 0.3;
-        }
-        .page-hero-content {
-            position: relative; z-index: 1;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .page-hero-content .section-tag { color: var(--accent); }
-        .page-hero-content h1 {
-            font-family: var(--font-titre); font-size: 3rem; font-weight: 900;
-            line-height: 1.15; margin-bottom: 20px;
-        }
-        .page-hero-content p {
-            font-size: 1.05rem; color: var(--light-1); line-height: 1.8;
-        }
 
         /* ============================================
            SECTIONS COMMUNES
            ============================================ */
-        .section { padding: 90px 0; }
-        .section-tag {
-            display: inline-block; font-size: 0.72rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 3px; color: var(--at-primary);
-            margin-bottom: 16px;
-        }
-        .section-title {
-            font-family: var(--font-titre); font-size: 2.4rem; font-weight: 900;
-            line-height: 1.2; margin-bottom: 20px; color: var(--primary);
-        }
-        .section-desc {
-            font-size: 1rem; color: var(--secondary); line-height: 1.8;
-            max-width: 600px;
-        }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header .section-desc { margin: 0 auto; }
 
         .divider {
-            width: 50px; height: 3px; background: var(--at-primary);
-            margin: 20px auto 0; border: none;
+            width: var(--size-3-125rem); height: var(--size-0-1875rem); background: var(--brand-500);
+            margin: var(--space-4) auto var(--size-zero); border: none;
         }
 
         .btn {
-            display: inline-block; padding: 15px 38px;
-            font-family: var(--font-texte); font-size: 0.82rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1.5px;
-            border: none; cursor: pointer; transition: var(--t);
-            border-radius: var(--radius);
+            display: inline-block; padding: var(--size-0-9375rem) var(--size-2-375rem);
+            font-family: var(--primary-family); font-size: var(--size-0-82rem); font-weight: var(--primary-bold);
+            text-transform: uppercase; letter-spacing: var(--size-0-09375rem);
+            border: none; cursor: pointer; transition: var(--motion-transition);
+            border-radius: var(--radius-small);
         }
-        .btn-primary { background: #E8834A; color: var(--blanc); }
-        .btn-primary:hover { background: #d4733c; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(232,131,74,0.3); }
+        .btn-primary { background: var(--action-500); color: var(--light-100); }
+        .btn-primary:hover { background: var(--action-600); transform: translateY(var(--size-minus-0-125rem)); box-shadow: var(--shadow-btn-primary-hover); }
 
         /* ============================================
            SOLUTIONS GRID — Cartes immersives
            ============================================ */
-        .solutions-section {
-            background: var(--blanc);
-        }
-        .solutions-section.alt {
-            background: var(--off-white);
-        }
-        .solutions-section.dark {
-            background: var(--primary);
-        }
-        .solutions-section.dark .section-title { color: var(--blanc); }
-        .solutions-section.dark .section-tag { color: var(--accent); }
-        .solutions-section.dark .section-desc { color: var(--light-1); }
-        .solutions-section.dark .divider { background: var(--accent); }
 
         .solutions-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+            grid-template-columns: repeat(var(--number-two), var(--size-1fr));
+            gap: var(--size-1-5625rem);
         }
         .solutions-grid.three-col {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(var(--number-3), var(--size-1fr));
         }
 
         /* ============================================
@@ -396,68 +314,61 @@ import Heading from '../typography/Heading.astro';
            ============================================ */
         .solution-card {
             position: relative;
-            min-height: 380px;
-            border-radius: var(--radius);
+            min-height: var(--size-23-75rem);
+            border-radius: var(--radius-small);
             overflow: hidden;
             cursor: pointer;
             display: block;
         }
         .solution-card-bg {
-            position: absolute; inset: 0;
-            background: var(--primary);
-            transition: transform 0.5s ease;
+            position: absolute; inset: var(--size-zero);
+            background: var(--dark-900);
+            transition: transform var(--duration-0-5s) ease;
         }
         .solution-card:hover .solution-card-bg {
-            transform: scale(1.08);
+            transform: scale(var(--number-1-08));
         }
         .solution-card::after {
-            content: ''; position: absolute; inset: 0;
-            background: linear-gradient(0deg, rgba(31,34,68,0.95) 0%, rgba(31,34,68,0.6) 50%, rgba(31,34,68,0.3) 100%);
-            transition: var(--t);
+            content: var(--content-timeline-before); position: absolute; inset: var(--size-zero);
+            background: linear-gradient(var(--angle-0deg), var(--overlay-card-bottom) var(--percentage-0), var(--overlay-card-middle) var(--percentage-50), var(--overlay-card-top) var(--size-full));
+            transition: var(--motion-transition);
         }
         .solution-card:hover::after {
-            background: linear-gradient(0deg, rgba(31,34,68,0.97) 0%, rgba(31,34,68,0.65) 55%, rgba(31,34,68,0.35) 100%);
+            background: linear-gradient(var(--angle-0deg), var(--overlay-card-bottom-hover) var(--percentage-0), var(--overlay-card-middle-hover) var(--percentage-55), var(--overlay-card-top-hover) var(--size-full));
         }
         .solution-card-content {
-            position: relative; z-index: 1;
-            display: flex; flex-direction: column; justify-content: flex-end;
-            height: 100%; padding: 35px 30px; color: var(--blanc);
+            position: relative; z-index: var(--number-one);
+            display: flex; flex-direction: column; justify-content: var(--justify-content-solution-card-content);
+            height: var(--size-full); padding: var(--size-2-1875rem) var(--space-5); color: var(--light-100);
         }
         .solution-tag {
-            display: inline-block; padding: 4px 14px; font-size: 0.68rem;
-            font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px;
-            background: rgba(125,206,245,0.2); color: var(--accent);
-            border-radius: 20px; margin-bottom: 14px; width: fit-content;
-        }
-        .solution-card h3 {
-            font-family: var(--font-titre); font-size: 1.5rem; font-weight: 900;
-            margin-bottom: 10px; line-height: 1.2;
-        }
-        .solution-card p {
-            font-size: 0.85rem; line-height: 1.7; opacity: 0.85;
+            display: inline-block; padding: var(--space-1) var(--size-0-875rem); font-size: var(--size-0-68rem);
+            font-weight: var(--primary-bold); text-transform: uppercase; letter-spacing: var(--size-0-075rem);
+            background: var(--tag-background); color: var(--brand-500);
+            border-radius: var(--size-1-25rem); margin-bottom: var(--size-0-875rem); width: fit-content;
         }
         .solution-card .discover-link {
-            display: inline-flex; align-items: center; gap: 8px;
-            font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 1px; color: var(--accent); margin-top: 16px;
-            transition: var(--t);
+            display: inline-flex; align-items: center; gap: var(--space-2);
+            font-size: var(--size-0-78rem); font-weight: var(--primary-bold); text-transform: uppercase;
+            letter-spacing: var(--size-0-0625rem); color: var(--brand-500); margin-top: var(--size-1rem);
+            transition: var(--motion-transition);
         }
-        .solution-card:hover .discover-link { gap: 12px; color: var(--blanc); }
+        .solution-card:hover .discover-link { gap: var(--space-3); color: var(--light-100); }
         .solution-card .discover-link svg {
-            width: 16px; height: 16px; stroke: currentColor; stroke-width: 2;
-            fill: none; transition: var(--t);
+            width: var(--size-1rem); height: var(--size-1rem); stroke: currentColor; stroke-width: var(--number-two);
+            fill: none; transition: var(--motion-transition);
         }
 
         /* Solution card large (pleine largeur) */
         .solution-card.wide {
-            grid-column: span 2;
-            min-height: 340px;
+            grid-column: span var(--number-two);
+            min-height: var(--size-21-25rem);
         }
         .solution-card.wide .solution-card-content {
-            max-width: 550px;
+            max-width: var(--size-34-375rem);
         }
         .solutions-grid.three-col .solution-card.wide {
-            grid-column: span 3;
+            grid-column: span var(--number-3);
         }
 
         /* ============================================
@@ -465,143 +376,85 @@ import Heading from '../typography/Heading.astro';
            ============================================ */
         .feature-row {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            grid-template-columns: var(--size-1fr) var(--size-1fr);
+            gap: var(--space-7);
             align-items: center;
-            margin-bottom: 80px;
+            margin-bottom: var(--space-8);
         }
-        .feature-row:last-child { margin-bottom: 0; }
+        .feature-row:last-child { margin-bottom: var(--size-zero); }
         .feature-row.reverse { direction: rtl; }
         .feature-row.reverse > * { direction: ltr; }
 
         .feature-visual {
-            border-radius: var(--radius);
+            border-radius: var(--radius-small);
             overflow: hidden;
         }
-        .feature-visual img {
-            width: 100%; aspect-ratio: 16/10; object-fit: cover;
-            border-radius: var(--radius);
-            transition: transform 0.5s ease;
-        }
-        .feature-visual:hover img { transform: scale(1.03); }
-
-        .feature-text .section-desc { margin-bottom: 15px; }
         .feature-text .highlight-list {
             list-style: none;
-            margin-top: 20px;
+            margin-top: var(--space-4);
         }
         .feature-text .highlight-list li {
             position: relative;
-            padding-left: 22px;
-            font-size: 0.9rem;
-            color: var(--secondary);
-            line-height: 2;
+            padding-left: var(--size-1-375rem);
+            font-size: var(--size-0-9rem);
+            color: var(--text-2);
+            line-height: var(--number-two);
         }
         .feature-text .highlight-list li::before {
-            content: '';
-            position: absolute; left: 0; top: 11px;
-            width: 10px; height: 10px;
-            border-radius: 50%;
-            background: var(--at-primary);
+            content: var(--content-timeline-before);
+            position: absolute; left: var(--size-zero); top: var(--size-0-6875rem);
+            width: var(--size-0-625rem); height: var(--size-0-625rem);
+            border-radius: var(--percentage-50);
+            background: var(--brand-500);
         }
 
         /* ============================================
            EVA SECTION — mise en avant
            ============================================ */
         .eva-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 6px 18px; font-size: 0.72rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 2px;
-            background: rgba(125,206,245,0.12); color: var(--at-primary);
-            border-radius: 20px; margin-bottom: 20px;
+            display: inline-flex; align-items: center; gap: var(--space-2);
+            padding: var(--size-0-375rem) var(--size-1-125rem); font-size: var(--size-0-72rem); font-weight: var(--primary-bold);
+            text-transform: uppercase; letter-spacing: var(--size-0-125rem);
+            background: var(--tag-background-subtle); color: var(--brand-500);
+            border-radius: var(--size-1-25rem); margin-bottom: var(--space-4);
         }
         .eva-badge svg {
-            width: 16px; height: 16px; stroke: var(--at-primary);
-            stroke-width: 2; fill: none;
+            width: var(--size-1rem); height: var(--size-1rem); stroke: var(--brand-500);
+            stroke-width: var(--number-two); fill: none;
         }
 
         /* ============================================
            TECH SPECS — petites cartes
            ============================================ */
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-        .tech-grid.four-col {
-            grid-template-columns: repeat(4, 1fr);
-        }
-        .tech-grid.two-col {
-            grid-template-columns: repeat(2, 1fr);
-        }
-        .tech-card {
-            background: var(--blanc);
-            padding: 35px 28px;
-            border-radius: var(--radius);
-            border: 1px solid var(--gris-clair);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            transition: var(--t);
-        }
-        .tech-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-        }
         .tech-icon {
-            width: 48px; height: 48px; margin-bottom: 20px;
+            width: var(--size-3rem); height: var(--size-3rem); margin-bottom: var(--space-4);
         }
         .tech-icon svg {
-            width: 100%; height: 100%;
-            stroke: var(--at-primary); stroke-width: 1.5;
+            width: var(--size-full); height: var(--size-full);
+            stroke: var(--brand-500); stroke-width: var(--number-1-5);
             fill: none; stroke-linecap: round; stroke-linejoin: round;
         }
-        .tech-card h3 {
-            font-family: var(--font-titre); font-size: 1.15rem; font-weight: 900;
-            margin-bottom: 10px; color: var(--primary);
-        }
-        .tech-card p {
-            font-size: 0.85rem; color: var(--secondary); line-height: 1.7;
-        }
         .tech-spec {
-            display: inline-block; margin-top: 12px;
-            font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 1px; color: var(--at-primary);
-        }
-        a.tech-card { display: block; }
-        a.tech-card .discover-link-sm {
-            display: inline-flex; align-items: center; gap: 8px;
-            font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 1px; color: var(--at-primary); margin-top: 14px;
-            transition: var(--t);
-        }
-        a.tech-card:hover .discover-link-sm { gap: 12px; }
-        a.tech-card .discover-link-sm svg {
-            width: 14px; height: 14px; stroke: currentColor; stroke-width: 2;
-            fill: none; transition: var(--t);
+            display: inline-block; margin-top: var(--space-3);
+            font-size: var(--size-0-72rem); font-weight: var(--primary-bold); text-transform: uppercase;
+            letter-spacing: var(--size-0-0625rem); color: var(--brand-500);
         }
 
         /* ============================================
            RESPONSIVE
            ============================================ */
-        @media (max-width: 1024px) {
-            .solutions-grid { grid-template-columns: 1fr; }
-            .solutions-grid.three-col { grid-template-columns: 1fr; }
-            .solution-card.wide { grid-column: span 1; }
-            .solutions-grid.three-col .solution-card.wide { grid-column: span 1; }
-            .feature-row { grid-template-columns: 1fr; gap: 40px; }
+        @media (--mq-max-width-64rem) {
+            .solutions-grid { grid-template-columns: var(--size-1fr); }
+            .solutions-grid.three-col { grid-template-columns: var(--size-1fr); }
+            .solution-card.wide { grid-column: span var(--number-one); }
+            .solutions-grid.three-col .solution-card.wide { grid-column: span var(--number-one); }
+            .feature-row { grid-template-columns: var(--size-1fr); gap: var(--space-6); }
             .feature-row.reverse { direction: ltr; }
-            .tech-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
-            .tech-grid.four-col { grid-template-columns: 1fr 1fr; max-width: 100%; }
-            .tech-grid.two-col { grid-template-columns: 1fr; max-width: 500px; }
         }
 
-        @media (max-width: 768px) {
-            .container { padding: 0 20px; }
-            .page-hero { padding: 140px 0 60px; }
-            .page-hero-content h1 { font-size: 2rem; }
-            .section { padding: 70px 0; }
-            .section-title { font-size: 1.8rem; }
-            .solution-card { min-height: 300px; }
-            .solution-card h3 { font-size: 1.3rem; }
-            .tech-grid.four-col { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+        @media (--mq-max-width-48rem) {
+            .solution-card { min-height: var(--size-18-75rem); }
         }
+
+}
 </style>

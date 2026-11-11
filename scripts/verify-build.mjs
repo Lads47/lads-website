@@ -6,6 +6,7 @@ import { document, contentText, hash, metadata, all, attr } from './html-tools.m
 
 const routes = JSON.parse(await readFile('tests/fixtures/routes.json', 'utf8'));
 const baseline = JSON.parse(await readFile('tests/fixtures/source.json', 'utf8'));
+const backgrounds = JSON.parse(await readFile('tests/fixtures/backgrounds.json', 'utf8'));
 let links = 0, scripts = 0;
 const idsByPath = new Map();
 for (const route of routes) {
@@ -27,7 +28,16 @@ for (const route of routes) {
   }
   const bodyImages = all(tree, (n) => n.tagName === 'main')[0];
   const images = all(bodyImages, (n) => n.tagName === 'img' && attr(n, 'src')).map((n) => [new URL(attr(n, 'src'), 'https://lesateliersdustream.fr'+route.route).pathname, attr(n, 'alt') || '']);
-  assert.deepEqual(images, baseline[route.route].images, `Image ou texte alternatif modifié : ${route.route}`);
+  for (const background of backgrounds[route.route]) {
+    assert.ok(images.some(([src]) => decodeURIComponent(src) === decodeURIComponent(background)), `Photo de fond perdue : ${route.route} ${background}`);
+  }
+  let expectedImage = 0;
+  for (const image of images) {
+    const expected = baseline[route.route].images[expectedImage];
+    if (expected && image[0] === expected[0] && image[1] === expected[1]) expectedImage++;
+    else assert.equal(image[1], '', `Image ou texte alternatif inattendu : ${route.route} ${JSON.stringify(image)}`);
+  }
+  assert.equal(expectedImage, baseline[route.route].images.length, `Image source absente ou déplacée : ${route.route}`);
   for (const node of all(tree, (n) => ['a', 'img', 'script', 'link', 'source', 'iframe'].includes(n.tagName))) {
     const ref = attr(node, node.tagName === 'a' || node.tagName === 'link' ? 'href' : 'src');
     if (!ref || /^(?:https?:|mailto:|tel:|data:)/.test(ref)) continue;

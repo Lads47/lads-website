@@ -1,7 +1,6 @@
 ---
-import Icon from "@/components/media/Icon.astro";
 import NavLink from "@/components/global/NavLink.astro";
-import logo from "@/assets/logo/logo.svg";
+import Img from "@/components/media/Img.astro";
 import { SITE_NAME } from "@/consts.ts";
 
 interface Props {
@@ -9,31 +8,37 @@ interface Props {
   render?: boolean;
   /** Fix the nav over the page. */
   overlap?: boolean;
+  /** Transparent navigation over the homepage video. */
+  home?: boolean;
 }
 
-const { render = true, overlap = false } = Astro.props;
+const { render = true, overlap = false, home = false } = Astro.props;
+const path = Astro.url.pathname.replace(/\.html$/, '');
+const contactHref = ['/mentions-legales','/politique-confidentialite'].includes(path) ? '/#contact' : '#contact';
+const links = [['/solutions','Nos solutions'],['/realisations','Nos réalisations'],['/approche','Notre accompagnement'],['/formations','Nos formations'],['/histoire','Notre histoire']];
 ---
 
 {render && (
-  <header class:list={["nav_wrap", overlap && "overlap"]}>
+  <header id="header" class:list={["nav_wrap", overlap && "overlap", home && "home"]}>
     <div class="nav_inner">
-      <a class="nav_logo" href="/" aria-label={SITE_NAME}>
-        <Icon src={logo} variant="full-width" />
+      <a class="nav_logo" href={home ? '#' : '/'} aria-label={SITE_NAME + ' — accueil'}>
+        {home && <Img src="/images/LOGO_clair.svg" alt={SITE_NAME} appearance="logo" data-mode="light" loading="eager" transparent />}
+        <Img src="/images/LOGO_fonce.svg" alt={SITE_NAME} appearance="logo" data-mode="dark" loading="eager" transparent />
       </a>
       <button
         class="nav_toggle"
         type="button"
         aria-label="Menu"
         aria-expanded="false"
-        aria-controls="nav-menu"
+        aria-controls="site-navigation"
       >
         <span class="nav_toggle_icon" />
       </button>
-      <nav class="nav_menu" id="nav-menu" aria-label="Main">
+      <nav class="nav_menu" id="site-navigation" aria-label="Navigation principale">
         <div class="nav_menu_inner">
           <ul class="nav_links">
-            <NavLink href="/">Home</NavLink>
-            <NavLink href="/example-components">Example Components</NavLink>
+            {links.map(([href,label]) => <NavLink href={href!}>{label}</NavLink>)}
+            <NavLink href={contactHref}>Nous contacter</NavLink>
           </ul>
         </div>
       </nav>
@@ -48,16 +53,17 @@ const { render = true, overlap = false } = Astro.props;
       display: none;
     }
     .nav_menu {
-      grid-template-rows: 1fr;
+      grid-template-rows: var(--size-1fr);
       visibility: visible;
     }
     .nav_menu_inner {
-      opacity: 1;
+      opacity: var(--opacity-1);
     }
   </style>
 </noscript>
 
 <script>
+  import mediaTokens from '@/styles/media-tokens.json';
   const nav = document.querySelector<HTMLElement>(".nav_wrap");
   const toggle = nav?.querySelector<HTMLButtonElement>(".nav_toggle");
 
@@ -89,7 +95,7 @@ const { render = true, overlap = false } = Astro.props;
     });
 
     window
-      .matchMedia("(width >= 48rem)")
+      .matchMedia(mediaTokens['--mq-navigation-desktop'])
       .addEventListener("change", (event) => {
         if (event.matches) setOpen(false);
       });
@@ -100,10 +106,10 @@ const { render = true, overlap = false } = Astro.props;
   @layer components {
     .nav_wrap {
       position: sticky;
-      top: 0;
-      z-index: 100;
+      top: var(--size-zero);
+      z-index: var(--layer-100);
       display: flex;
-      justify-content: center;
+      justify-content: var(--justify-content-button-wrap);
       padding-inline: var(--site-margin);
       background-color: var(--background);
       color: var(--text);
@@ -111,17 +117,17 @@ const { render = true, overlap = false } = Astro.props;
 
       &.overlap {
         position: fixed;
-        inset-inline: 0;
+        inset-inline: var(--size-zero);
       }
     }
 
     .nav_inner {
-      width: 100%;
+      width: var(--size-full);
       max-width: var(--max-width-main);
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 0 var(--space-6);
+      justify-content: var(--justify-content-nav-inner);
+      gap: var(--size-zero) var(--space-6);
     }
 
     /* Bar height */
@@ -133,29 +139,29 @@ const { render = true, overlap = false } = Astro.props;
     .nav_logo {
       display: flex;
       align-items: center;
-      width: 6.5rem;
+      width: var(--size-6-5rem);
       transition: opacity var(--hover-duration) var(--hover-ease);
-      @media (hover: hover) {
+      @media (--mq-hover) {
         &:hover {
-          opacity: 0.6;
+          opacity: var(--opacity-0-6);
         }
       }
     }
 
     .nav_toggle {
-      --_icon-width: 1.5rem;
-      --_bar-gap: 0.5rem;
+      --_icon-width: var(--size-1-5rem);
+      --_bar-gap: var(--size-0-5rem);
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      min-width: 2.75rem;
-      margin-right: calc((2.75rem - var(--_icon-width)) / -2);
+      justify-content: var(--justify-content-button-wrap);
+      min-width: var(--size-2-75rem);
+      margin-right: calc((var(--size-2-75rem) - var(--_icon-width)) / var(--number-minus-2));
       color: inherit;
       border-radius: var(--radius-small);
       transition: opacity var(--hover-duration) var(--hover-ease);
-      @media (hover: hover) {
+      @media (--mq-hover) {
         &:hover {
-          opacity: 0.6;
+          opacity: var(--opacity-0-6);
         }
       }
     }
@@ -167,15 +173,15 @@ const { render = true, overlap = false } = Astro.props;
       height: calc(var(--_bar-gap) + var(--border-width));
       &::before,
       &::after {
-        content: "";
+        content: var(--content-form-choice-mark-after);
         position: absolute;
-        inset-inline: 0;
+        inset-inline: var(--size-zero);
         height: var(--border-width);
         background-color: currentcolor;
         transition: transform var(--open-duration) var(--open-ease);
       }
       &::before {
-        top: 0;
+        top: var(--size-zero);
       }
       &::after {
         top: var(--_bar-gap);
@@ -184,44 +190,42 @@ const { render = true, overlap = false } = Astro.props;
 
     .nav_wrap.open .nav_toggle_icon {
       &::before {
-        transform: translateY(calc(var(--_bar-gap) / 2)) rotate(45deg);
+        transform: translateY(calc(var(--_bar-gap) / var(--number-two))) rotate(var(--angle-45deg));
       }
       &::after {
-        transform: translateY(calc(var(--_bar-gap) / -2)) rotate(-45deg);
+        transform: translateY(calc(var(--_bar-gap) / var(--number-minus-2))) rotate(var(--angle-minus-45deg));
       }
     }
 
     .nav_menu {
       position: absolute;
-      top: 100%;
-      inset-inline: 0;
+      top: var(--size-full);
+      inset-inline: var(--size-zero);
       display: grid;
-      grid-template-rows: 0fr;
+      grid-template-rows: var(--size-0fr);
       visibility: hidden;
-      max-height: calc(100svh - var(--nav-height));
+      max-height: calc(var(--size-100svh) - var(--nav-height));
       overflow-x: clip;
       overflow-y: auto;
       overscroll-behavior: contain;
       background-color: var(--background);
       border-bottom: var(--border-width) solid var(--border);
-      transition:
-        grid-template-rows var(--open-duration) var(--open-ease),
-        visibility var(--open-duration) var(--open-ease);
+      transition: grid-template-rows var(--open-duration) var(--open-ease);
     }
 
     .nav_menu_inner {
       overflow: hidden;
-      opacity: 0;
+      opacity: var(--opacity-0);
       transition: opacity var(--open-duration) var(--open-ease);
     }
 
     .nav_wrap.open .nav_menu {
-      grid-template-rows: 1fr;
+      grid-template-rows: var(--size-1fr);
       visibility: visible;
     }
 
     .nav_wrap.open .nav_menu_inner {
-      opacity: 1;
+      opacity: var(--opacity-1);
       overflow-y: auto;
     }
 
@@ -239,22 +243,22 @@ const { render = true, overlap = false } = Astro.props;
     .nav_link {
       display: block;
       padding-block: var(--space-3);
-      color: color-mix(in lab, currentcolor 60%, transparent);
+      color: color-mix(in lab, currentcolor var(--percentage-60), var(--color-transparent));
       text-decoration: none;
-      text-underline-offset: 0.4em;
+      text-underline-offset: var(--size-0-4em);
       text-decoration-thickness: var(--border-width);
       transition: color var(--hover-duration) var(--hover-ease);
       &[aria-current="page"] {
         color: var(--text);
       }
-      @media (hover: hover) {
+      @media (--mq-hover) {
         &:hover {
           color: var(--text);
         }
       }
     }
 
-    @media (width >= 48rem) {
+    @media (--mq-navigation-desktop) {
       .nav_toggle {
         display: none;
       }
@@ -263,33 +267,50 @@ const { render = true, overlap = false } = Astro.props;
         position: static;
         display: block;
         visibility: visible;
-        background-color: transparent;
-        border-bottom: 0;
+        background-color: var(--color-transparent);
+        border-bottom: var(--size-zero);
       }
 
       .nav_menu_inner {
         overflow: visible;
-        opacity: 1;
+        opacity: var(--opacity-1);
       }
 
       .nav_links {
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
-        padding: 0;
+        padding: var(--size-zero);
         gap: var(--space-4);
         font-size: var(--text-small);
         & > li + li {
-          border-top: 0;
+          border-top: var(--size-zero);
         }
       }
 
       .nav_link {
-        padding-block: 0;
+        padding-block: var(--size-zero);
         &[aria-current="page"] {
           text-decoration: underline;
         }
       }
     }
   }
+</style>
+
+<style is:global>
+@layer components {
+  .nav_wrap { box-shadow: var(--shadow-nav-wrap); }
+  .nav_logo { width: var(--size-6-5rem); }
+  .nav_wrap.home:not(.scrolled) { background: var(--color-transparent); color: var(--light-100); border-color: var(--color-transparent); }
+  .nav_logo [data-mode="light"] { display: none; }
+  .nav_wrap.home:not(.scrolled) .nav_logo [data-mode="light"] { display: block; }
+  .nav_wrap.home:not(.scrolled) .nav_logo [data-mode="dark"] { display: none; }
+  .nav_wrap.scrolled { background: var(--light-100); color: var(--dark-900); }
+  .nav_links { font-size: var(--text-small); text-transform: uppercase; letter-spacing: var(--size-0-05em); font-weight: var(--primary-bold); }
+  .nav_link { color: inherit; }
+  .nav_link[data-active="true"], .nav_link:hover { color: var(--brand-500); }
+  @media (--mq-navigation-desktop) { .nav_links { gap: var(--space-5); } .nav_link { padding-inline: var(--size-zero); } }
+  @media (--mq-navigation-mobile) { .nav_menu { background: var(--light-100); color: var(--dark-900); } }
+}
 </style>

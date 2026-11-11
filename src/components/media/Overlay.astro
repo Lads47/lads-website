@@ -5,7 +5,7 @@ interface Props extends HTMLAttributes<"div"> {
   /** Set to `false` to omit the component. */
   render?: boolean;
   /** Overlay style. */
-  variant?: "solid" | "gradient";
+  variant?: "solid" | "gradient" | "ambient";
   /**
    * Tint strength as a percentage.
    *
@@ -37,32 +37,33 @@ const {
   @layer components {
     .overlay {
       position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
+      inset: var(--size-zero);
+      width: var(--size-full);
+      height: var(--size-full);
       background-color: color-mix(
         in srgb,
-        black calc(var(--_strength, 50) / 100 * 80%),
-        transparent
+        var(--color-black) calc(var(--_strength, 50) / var(--number-100) * var(--percentage-80)),
+        var(--color-transparent)
       );
 
       &.gradient {
         background-color: color-mix(
           in srgb,
-          black calc(var(--_strength, 50) / 100 * 60%),
-          transparent
+          var(--color-black) calc(var(--_strength, 50) / var(--number-100) * var(--percentage-60)),
+          var(--color-transparent)
         );
         background-image: linear-gradient(
           to bottom,
-          transparent,
+          var(--color-transparent),
           color-mix(
               in srgb,
-              black calc(var(--_strength, 50) / 100 * 62%),
-              transparent
+              var(--color-black) calc(var(--_strength, 50) / var(--number-100) * var(--percentage-62)),
+              var(--color-transparent)
             )
-            84%
+            var(--percentage-84)
         );
       }
+      &.ambient { background: var(--contact-gradient); }
     }
   }
 </style>

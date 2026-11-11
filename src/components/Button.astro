@@ -25,7 +25,8 @@ type Tag =
       href?: string;
       type?: never;
       disabled?: never;
-    });
+    })
+  | (HTMLAttributes<"span"> & { element: "text"; href?: never; type?: never; disabled?: never });
 
 type Kind =
   | {
@@ -69,7 +70,7 @@ type Kind =
       label?: string;
       pressed?: never;
       /** Arrow direction. */
-      direction?: "forward" | "back";
+      direction?: "forward" | "back" | "up";
     };
 
 type Props = {
@@ -85,8 +86,8 @@ type AllProps = HTMLAttributes<"button"> &
     emphasis?: Emphasis;
     label?: string;
     pressed?: boolean;
-    direction?: "forward" | "back";
-    element?: "button" | "link";
+    direction?: "forward" | "back" | "up";
+    element?: "button" | "link" | "text";
     href?: string;
     type?: "button" | "submit" | "reset";
   };
@@ -106,10 +107,10 @@ const {
 } = Astro.props as AllProps;
 
 const isLink = element === "link";
-const Tag = isLink ? "a" : "button";
+const Tag = isLink ? "a" : element === "text" ? "span" : "button";
 const tagAttrs = isLink
   ? { href: href || "#" }
-  : { type: type === "submit" ? undefined : type };
+  : element === "text" ? {} : { type: type === "submit" ? undefined : type };
 
 const marks = { play, close, arrow };
 /* main and link are written, the rest are marks with a label. */
@@ -130,6 +131,7 @@ const named = {
       emphasis !== "primary" && emphasis,
       variant !== "main" && variant,
       variant === "arrow" && direction === "back" && "back",
+      variant === "arrow" && direction === "up" && "up",
       className,
     ]}
     aria-label={isWritten ? undefined : (label ?? named[variant])}
@@ -161,22 +163,22 @@ const named = {
   @layer components {
     .button_wrap {
       display: inline-flex;
-      justify-content: center;
+      justify-content: var(--justify-content-button-wrap);
       align-items: center;
-      gap: 0.5em;
-      padding: 0.75em 1.5em;
+      gap: var(--size-0-5em);
+      padding: var(--size-0-75em) var(--size-1-5em);
       background-color: var(--button-background);
       color: var(--button-text);
       border: var(--border-width) solid var(--button-border);
-      border-radius: 0.5em;
-      line-height: 1.2;
+      border-radius: var(--size-0-5em);
+      line-height: var(--number-1-2);
       text-decoration: none;
       text-align: center;
       transition:
         background-color var(--hover-duration) var(--hover-ease),
         color var(--hover-duration) var(--hover-ease),
         border-color var(--hover-duration) var(--hover-ease);
-      @media (hover: hover) {
+      @media (--mq-hover) {
         &:hover:not(:disabled) {
           background-color: var(--button-background-hover);
           color: var(--button-text-hover);
@@ -192,43 +194,43 @@ const named = {
         --button-border-hover: var(--button-2-border-hover);
       }
       &.link {
-        --button-background: transparent;
+        --button-background: var(--color-transparent);
         --button-text: var(--link-text);
         --button-border: var(--link-border);
-        --button-background-hover: transparent;
+        --button-background-hover: var(--color-transparent);
         --button-text-hover: var(--link-text-hover);
         --button-border-hover: var(--link-border);
 
-        padding: 0.4em 0;
-        border: 0;
+        padding: var(--size-0-4em) var(--size-zero);
+        border: var(--size-zero);
         border-bottom: var(--border-width) solid var(--button-border);
-        border-radius: 0;
+        border-radius: var(--size-zero);
         background-image: linear-gradient(
           var(--link-border-hover),
           var(--link-border-hover)
         );
         background-repeat: no-repeat;
         background-origin: border-box;
-        background-position: 100% 100%;
-        background-size: 0 var(--border-width);
+        background-position: var(--size-full) var(--size-full);
+        background-size: var(--size-zero) var(--border-width);
         transition:
-          background-size calc(var(--hover-duration) * 2) var(--hover-ease),
+          background-size calc(var(--hover-duration) * var(--number-two)) var(--hover-ease),
           color var(--hover-duration) var(--hover-ease),
           border-color var(--hover-duration) var(--hover-ease);
-        @media (hover: hover) {
+        @media (--mq-hover) {
           &:hover:not(:disabled) {
-            background-position: 0 100%;
-            background-size: 100% var(--border-width);
+            background-position: var(--size-zero) var(--size-full);
+            background-size: var(--size-full) var(--border-width);
           }
         }
       }
       &:is(.play, .close, .arrow) {
-        gap: 0;
-        padding: 0.75em;
+        gap: var(--size-zero);
+        padding: var(--size-0-75em);
         border-radius: var(--radius-round);
       }
       &.back .button_mark {
-        rotate: 180deg;
+        rotate: var(--angle-180deg);
       }
       &.play .button_pause {
         display: none;
@@ -243,8 +245,17 @@ const named = {
       }
       &:disabled {
         cursor: not-allowed;
-        opacity: 0.5;
+        opacity: var(--opacity-0-5);
       }
     }
   }
+</style>
+
+<style is:global>
+@layer components {
+  .button_wrap { font-size: var(--text-small); font-weight: var(--primary-bold); text-transform: uppercase; letter-spacing: var(--size-0-1em); padding: var(--space-4) var(--space-6); border-radius: var(--radius-small); }
+  .button_wrap.up .button_mark { rotate: var(--angle-minus-90deg); }
+  .button_text { display: inline-flex; align-items: center; gap: var(--space-2); }
+  .button_text > svg { width: var(--size-1-125rem); height: var(--size-1-125rem); stroke: currentColor; stroke-width: var(--number-two); fill: none; }
+}
 </style>

@@ -22,6 +22,10 @@ type ContainerGap =
 interface Props extends HTMLAttributes<"section"> {
   /** Set to `false` to omit the component. */
   render?: boolean;
+  /** Container width. Full width is useful for immersive card strips. */
+  width?: "main" | "full";
+  /** Alternate surface within the selected theme. */
+  tone?: "default" | "muted";
   /** Color theme of element and its children. */
   theme?: "inherit" | "light" | "dark" | "brand";
   /** Top padding. */
@@ -42,6 +46,8 @@ interface Props extends HTMLAttributes<"section"> {
 
 const {
   render = true,
+  width = "main",
+  tone = "default",
   theme = "inherit",
   paddingTop = "medium",
   paddingBottom = "medium",
@@ -74,6 +80,7 @@ const background = await slotContent(Astro.slots, "background");
   <section
     class:list={[
       "section",
+      tone === "muted" && "muted",
       padClass("top", paddingTop),
       padClass("bottom", paddingBottom),
       fullHeight && "min-height-screen",
@@ -88,6 +95,7 @@ const background = await slotContent(Astro.slots, "background");
       <div
         class:list={[
           "container",
+          width === "full" && "full",
           gap !== "8" && `gap-${gap}`,
           containerClass,
           containerAttrsClass,
@@ -99,3 +107,7 @@ const background = await slotContent(Astro.slots, "background");
     )}
   </section>
 )}
+
+<style is:global>
+@layer components { .section.muted { background-color: var(--background-2); } .container.full { width: var(--size-full); max-width: none; } }
+</style>

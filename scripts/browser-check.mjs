@@ -15,6 +15,7 @@ if (!executablePath && process.platform === 'win32') {
 const browser = await chromium.launch({ executablePath, headless: true });
 const routes = JSON.parse(await readFile('tests/fixtures/routes.json', 'utf8'));
 const results = [], errors = [], screenshots = [];
+const visualReportName = process.env.ROUTE_FILTER ? 'filtered-visual-report' : 'visual-report';
 await mkdir('test-results', { recursive: true });
 
 async function contextFor(viewport, scenario = 'empty', javascript = true) {
@@ -73,7 +74,7 @@ try {
         } else difference = { source: [before.width, before.height], target: [after.width, after.height] };
       }
       screenshots.push({ route: route.route, viewport: viewport.width, height: dimensions.height, difference });
-      await writeFile('test-results/visual-report.json', JSON.stringify(screenshots, null, 2));
+      await writeFile(`test-results/${visualReportName}.json`, JSON.stringify(screenshots, null, 2));
       console.log(`Page ${viewport.width} ${route.route} ${typeof difference === 'number' ? (100*difference).toFixed(3)+' % écart' : difference ? JSON.stringify(difference) : 'OK'}`);
     }
     await context.close();
@@ -92,7 +93,7 @@ try {
   assert.equal(await toggle.getAttribute('aria-expanded'), 'false');
   await toggle.click(); assert.equal(await toggle.getAttribute('aria-expanded'), 'true');
   await page.keyboard.press('Tab');
-  assert.equal(await page.evaluate(() => document.activeElement.textContent), 'Nos solutions');
+  assert.equal(await page.evaluate(() => document.activeElement.textContent.trim()), 'Nos solutions');
   await page.keyboard.press('Escape'); assert.equal(await toggle.getAttribute('aria-expanded'), 'false');
   assert.equal(await toggle.evaluate((el) => document.activeElement === el), true);
   await toggle.click();
@@ -137,8 +138,31 @@ try {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto(base+'/', { waitUntil: 'networkidle' });
   assert.equal(await page.locator('video').evaluate((el) => el.paused), true);
-  assert.equal(await page.locator('.hero-content').evaluate((el) => getComputedStyle(el).opacity), '1');
+  assert.equal(await page.locator('h1').evaluate((el) => getComputedStyle(el).opacity), '1');
   results.push('Réduction des animations : vidéo en pause et titre visible');
+  const tokensBefore = await page.evaluate(() => {
+    const root = document.documentElement;
+    const eyebrow = document.querySelector('#possibilites .eyebrow_wrap');
+    const card = document.querySelector('#possibilites .card_content');
+    const before = { color: getComputedStyle(eyebrow).color, padding: getComputedStyle(card).paddingTop };
+    root.style.setProperty('--brand-500', 'rgb(1 2 3)');
+    root.style.setProperty('--space-5', '48px');
+    return before;
+  });
+  await page.waitForFunction(() =>
+    getComputedStyle(document.querySelector('#possibilites .eyebrow_wrap')).color === 'rgb(1, 2, 3)' &&
+    getComputedStyle(document.querySelector('#possibilites .card_content')).paddingTop === '48px');
+  const tokensAfter = await page.evaluate(() => {
+    const root = document.documentElement;
+    const after = { color: getComputedStyle(document.querySelector('#possibilites .eyebrow_wrap')).color, padding: getComputedStyle(document.querySelector('#possibilites .card_content')).paddingTop };
+    root.style.removeProperty('--brand-500'); root.style.removeProperty('--space-5');
+    return after;
+  });
+  assert.notEqual(tokensBefore.color, tokensAfter.color);
+  assert.equal(tokensAfter.color, 'rgb(1, 2, 3)');
+  assert.notEqual(tokensBefore.padding, tokensAfter.padding);
+  assert.equal(tokensAfter.padding, '48px');
+  results.push('Lumos actif : les tokens de couleur et d’espacement modifient réellement les composants natifs');
   await tablet.close();
 
   for (const scenario of ['sessions','empty','error','results']) {

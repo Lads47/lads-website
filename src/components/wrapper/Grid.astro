@@ -5,6 +5,10 @@ import { slotContent } from "@/utils/slots.ts";
 type Base = HTMLAttributes<"div"> & {
   /** Set to `false` to omit the component. */
   render?: boolean;
+  /** Desktop track proportions; smaller screens use the column counts. */
+  tracks?: string;
+  /** Gap from the shared spacing scale. */
+  gap?: "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8";
 };
 
 type Props = Base &
@@ -80,6 +84,8 @@ type AllProps = Base & {
 
 const {
   render = true,
+  tracks,
+  gap,
   variant = "columns",
   xsmall = 1,
   small,
@@ -108,7 +114,7 @@ if (
   );
 }
 
-const columns =
+const columnStyles =
   (variant !== "columns"
     ? [
         maxColumnCount !== undefined && `--_max-cols: ${maxColumnCount}`,
@@ -128,7 +134,7 @@ const columns =
 {render && content && (
   <div
     class:list={["grid", variant !== "columns" && variant, className]}
-    style={columns}
+    style={[columnStyles, tracks && `--_tracks-lg: ${tracks}`, gap && `--_gap-size: var(--space-${gap})`].filter(Boolean).join("; ")}
     {...rest}
   >
     <Fragment set:html={content} />
@@ -139,41 +145,42 @@ const columns =
   @layer components {
     .grid {
       --_cols: var(--_cols-xs);
-      --_cols-xs: 1;
+      --_cols-xs: var(--number-one);
       --_cols-sm: var(--_cols-xs);
       --_cols-md: var(--_cols-sm);
       --_cols-lg: var(--_cols-md);
       --_gap-size: var(--site-gutter);
-      width: 100%;
+      width: var(--size-full);
       display: grid;
       grid-column-gap: var(--_gap-size);
       grid-row-gap: var(--_gap-size);
-      grid-template-columns: repeat(var(--_cols), minmax(0, 1fr));
-      @media (width >= 30rem) {
+      grid-template-columns: repeat(var(--_cols), minmax(var(--size-zero), var(--size-1fr)));
+      @media (--mq-small-min) {
         --_cols: var(--_cols-sm);
       }
-      @media (width >= 48rem) {
+      @media (--mq-medium-min) {
         --_cols: var(--_cols-md);
       }
-      @media (width >= 64rem) {
+      @media (--mq-large-min) {
         --_cols: var(--_cols-lg);
+        grid-template-columns: var(--_tracks-lg, repeat(var(--_cols), minmax(var(--size-zero), var(--size-1fr))));
       }
       &:is(.autofit, .autofill) {
-        --_max-cols: 12;
-        --_min-col-width: 12;
+        --_max-cols: var(--number-12);
+        --_min-col-width: var(--number-12);
         --_fit: calc(
-          (100% - (var(--_max-cols) - 1) * var(--_gap-size)) / var(--_max-cols)
+          (var(--size-full) - (var(--_max-cols) - var(--number-one)) * var(--_gap-size)) / var(--_max-cols)
         );
         --_track: min(
-          max(calc(var(--_min-col-width) * 1rem), var(--_fit)),
-          100%
+          max(calc(var(--_min-col-width) * var(--size-1rem)), var(--_fit)),
+          var(--size-full)
         );
       }
       &.autofit {
-        grid-template-columns: repeat(auto-fit, minmax(var(--_track), 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(var(--_track), var(--size-1fr)));
       }
       &.autofill {
-        grid-template-columns: repeat(auto-fill, minmax(var(--_track), 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(var(--_track), var(--size-1fr)));
       }
     }
   }

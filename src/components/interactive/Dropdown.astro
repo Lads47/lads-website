@@ -93,10 +93,10 @@ const content = await slotContent(Astro.slots);
 <style is:global>
   @layer components {
     .dropdown_wrap {
-      --_control-pad: 0.75em;
-      --_leaving: calc(var(--open-duration) * 0.7);
+      --_control-pad: var(--size-0-75em);
+      --_leaving: calc(var(--open-duration) * var(--opacity-0-7));
       position: relative;
-      z-index: 10;
+      z-index: var(--layer-10);
       display: inline-block;
     }
 
@@ -106,8 +106,8 @@ const content = await slotContent(Astro.slots);
     .dropdown_toggle {
       display: flex;
       align-items: center;
-      gap: 0.5em;
-      padding: var(--_control-pad) 0;
+      gap: var(--size-0-5em);
+      padding: var(--_control-pad) var(--size-zero);
       color: inherit;
       list-style: none;
       cursor: pointer;
@@ -115,16 +115,16 @@ const content = await slotContent(Astro.slots);
       &::-webkit-details-marker {
         display: none;
       }
-      @media (hover: hover) {
+      @media (--mq-hover) {
         &:hover {
-          color: color-mix(in lab, currentcolor 60%, transparent);
+          color: color-mix(in lab, currentcolor var(--percentage-60), var(--color-transparent));
         }
       }
     }
 
     .dropdown_icon {
       flex: none;
-      rotate: 90deg;
+      rotate: var(--angle-90deg);
       transition: rotate var(--open-duration) var(--open-ease);
     }
 
@@ -132,12 +132,12 @@ const content = await slotContent(Astro.slots);
        the control as open alongside it, as `Modal` does. */
     .dropdown_wrap:is([open], .stacki-opened) .dropdown_icon,
     .stacki-designer .dropdown_wrap.preview .dropdown_icon {
-      rotate: -90deg;
+      rotate: var(--angle-minus-90deg);
     }
 
     .dropdown_wrap::details-content {
-      opacity: 0;
-      content-visibility: hidden;
+      opacity: var(--opacity-0);
+      content-visibility: var(--content-visibility-accordion-item-details-content);
       transition:
         opacity var(--_leaving) var(--open-ease),
         content-visibility var(--_leaving) var(--open-ease) allow-discrete;
@@ -145,8 +145,8 @@ const content = await slotContent(Astro.slots);
 
     .dropdown_wrap:is([open], .stacki-opened)::details-content,
     .stacki-designer .dropdown_wrap.preview::details-content {
-      opacity: 1;
-      content-visibility: visible;
+      opacity: var(--opacity-1);
+      content-visibility: var(--content-visibility-accordion-item-is-open-stacki-opened-details-content-sta);
       transition:
         opacity var(--open-duration) var(--open-ease),
         content-visibility var(--open-duration) var(--open-ease) allow-discrete;
@@ -154,16 +154,16 @@ const content = await slotContent(Astro.slots);
 
     .dropdown_content {
       position: absolute;
-      top: calc(100% - var(--_control-pad) + var(--space-2));
-      inset-inline-start: 0;
+      top: calc(var(--size-full) - var(--_control-pad) + var(--space-2));
+      inset-inline-start: var(--size-zero);
       width: max-content;
-      min-width: 100%;
-      max-width: min(22rem, calc(100vw - var(--site-margin) * 2));
+      min-width: var(--size-full);
+      max-width: min(var(--size-22rem), calc(var(--size-100vw) - var(--site-margin) * var(--number-two)));
       background-color: var(--background-2);
       border-radius: var(--radius-small);
       transform-origin: top left;
-      translate: 0 -0.5rem;
-      scale: 0.98;
+      translate: var(--size-zero) var(--size-minus-0-5rem);
+      scale: var(--number-0-98);
       transition:
         translate var(--_leaving) var(--open-ease),
         scale var(--_leaving) var(--open-ease);
@@ -171,8 +171,8 @@ const content = await slotContent(Astro.slots);
 
     .dropdown_wrap:is([open], .stacki-opened) .dropdown_content,
     .stacki-designer .dropdown_wrap.preview .dropdown_content {
-      translate: 0 0;
-      scale: 1;
+      translate: var(--size-zero) var(--size-zero);
+      scale: var(--number-one);
       transition:
         translate var(--open-duration) var(--open-ease),
         scale var(--open-duration) var(--open-ease);

@@ -153,16 +153,16 @@ const column2 = await slotContent(Astro.slots, "column2");
   @layer components {
     .layout {
       /* layout defaults */
-      --_visual-ratio: 3 / 2;
+      --_visual-ratio: var(--number-3) / var(--number-two);
       --_alignment: start;
-      --_column-count: 1;
-      width: 100%;
+      --_column-count: var(--number-one);
+      width: var(--size-full);
       display: flex;
       flex-direction: column;
       column-gap: var(--site-gutter);
       row-gap: var(--space-8);
       align-items: stretch;
-      grid-template-columns: repeat(var(--_column-count), minmax(0, 1fr));
+      grid-template-columns: repeat(var(--_column-count), minmax(var(--size-zero), var(--size-1fr)));
 
       /* column defaults */
       & > * {
@@ -170,8 +170,8 @@ const column2 = await slotContent(Astro.slots, "column2");
         flex-direction: column;
         align-items: var(--_alignment, start);
         text-align: var(--_alignment, start);
-        width: 100%;
-        max-width: 100%;
+        width: var(--size-full);
+        max-width: var(--size-full);
       }
       & > :first-child {
         align-self: center;
@@ -185,9 +185,9 @@ const column2 = await slotContent(Astro.slots, "column2");
         & > :is(.image, .video, .overlay) {
           border-radius: inherit;
           position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
+          inset: var(--size-zero);
+          width: var(--size-full);
+          height: var(--size-full);
         }
       }
 
@@ -198,7 +198,7 @@ const column2 = await slotContent(Astro.slots, "column2");
       &.auto-width {
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: var(--justify-content-nav-inner);
         align-items: end;
         row-gap: var(--space-6);
         & > * {
@@ -206,26 +206,26 @@ const column2 = await slotContent(Astro.slots, "column2");
           align-self: unset;
         }
         & > :last-child {
-          min-width: min(4rem, 100%);
+          min-width: min(var(--size-4rem), var(--size-full));
         }
       }
       &.columns {
         display: grid;
         column-gap: var(--section-space-small);
-        @media (width >= 64rem) {
-          --_column-count: 2;
+        @media (--mq-large-min) {
+          --_column-count: var(--number-two);
           &.reversed {
             & > :last-child {
-              order: -1;
+              order: var(--number-minus-one);
             }
           }
         }
       }
       &.sticky-content {
-        --_visual-ratio: 1 / 1;
+        --_visual-ratio: var(--number-one) / var(--number-one);
         display: grid;
-        @media (width >= 64rem) {
-          --_column-count: 2;
+        @media (--mq-large-min) {
+          --_column-count: var(--number-two);
           & > :first-child {
             align-self: start;
             position: sticky;
@@ -234,10 +234,10 @@ const column2 = await slotContent(Astro.slots, "column2");
         }
       }
       &.sticky-visual {
-        --_visual-ratio: 1 / 1;
+        --_visual-ratio: var(--number-one) / var(--number-one);
         display: grid;
-        @media (width >= 64rem) {
-          --_column-count: 2;
+        @media (--mq-large-min) {
+          --_column-count: var(--number-two);
           & > :first-child {
             align-self: start;
           }
@@ -246,30 +246,30 @@ const column2 = await slotContent(Astro.slots, "column2");
             position: sticky;
             top: calc(var(--site-margin) + var(--nav-height));
             max-height: calc(
-              100svh - var(--nav-height) - var(--site-margin) * 2
+              var(--size-100svh) - var(--nav-height) - var(--site-margin) * var(--number-two)
             );
           }
         }
       }
       &.breakout {
         display: grid;
-        width: 100cqi;
-        flex-shrink: 0;
+        width: var(--size-100cqi);
+        flex-shrink: var(--size-zero);
         align-self: center;
-        column-gap: 0;
-        row-gap: 0;
+        column-gap: var(--size-zero);
+        row-gap: var(--size-zero);
         & > :first-child {
           margin-inline: auto;
           width: var(--site-width);
           padding-block: var(--section-space-medium);
         }
         & > :last-child {
-          border-radius: 0;
+          border-radius: var(--size-zero);
         }
-        @media (width >= 64rem) {
-          --_column-count: 2;
+        @media (--mq-large-min) {
+          --_column-count: var(--number-two);
           & > :first-child {
-            max-width: calc(var(--max-width-main) / 2);
+            max-width: calc(var(--max-width-main) / var(--number-two));
           }
           & > :last-child {
             border-top-left-radius: var(--radius-small);
@@ -277,9 +277,9 @@ const column2 = await slotContent(Astro.slots, "column2");
           }
           &.reversed {
             & > :last-child {
-              order: -1;
-              border-top-left-radius: 0;
-              border-bottom-left-radius: 0;
+              order: var(--number-minus-one);
+              border-top-left-radius: var(--size-zero);
+              border-bottom-left-radius: var(--size-zero);
               border-top-right-radius: var(--radius-small);
               border-bottom-right-radius: var(--radius-small);
             }
@@ -288,8 +288,8 @@ const column2 = await slotContent(Astro.slots, "column2");
       }
       &.contain {
         display: grid;
-        column-gap: 0;
-        row-gap: 0;
+        column-gap: var(--size-zero);
+        row-gap: var(--size-zero);
         background-color: var(--background-2);
         border-radius: var(--radius-main);
         position: relative;
@@ -298,13 +298,13 @@ const column2 = await slotContent(Astro.slots, "column2");
           padding: var(--space-6);
         }
         & > :last-child {
-          border-radius: 0;
+          border-radius: var(--size-zero);
         }
-        @media (width >= 64rem) {
-          --_column-count: 2;
+        @media (--mq-large-min) {
+          --_column-count: var(--number-two);
           &.reversed {
             & > :last-child {
-              order: -1;
+              order: var(--number-minus-one);
             }
           }
         }
@@ -313,8 +313,8 @@ const column2 = await slotContent(Astro.slots, "column2");
         border-radius: var(--radius-main);
         position: relative;
         overflow: clip;
-        min-height: 26rem;
-        justify-content: center;
+        min-height: var(--size-26rem);
+        justify-content: var(--justify-content-button-wrap);
         & > :first-child {
           padding: var(--space-6);
         }
@@ -322,16 +322,16 @@ const column2 = await slotContent(Astro.slots, "column2");
           padding-block: var(--section-space-medium);
           padding-inline: var(--space-5);
           position: relative;
-          z-index: 1;
+          z-index: var(--number-one);
           --_alignment: center;
         }
         & > :last-child {
           position: absolute;
-          inset: 0;
-          border-radius: 0;
-          width: 100%;
-          height: 100%;
-          opacity: calc(var(--_media-opacity, 70) / 100);
+          inset: var(--size-zero);
+          border-radius: var(--size-zero);
+          width: var(--size-full);
+          height: var(--size-full);
+          opacity: calc(var(--_media-opacity, 70) / var(--opacity-100));
           pointer-events: none;
         }
       }

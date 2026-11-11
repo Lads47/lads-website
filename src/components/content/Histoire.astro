@@ -1,6 +1,11 @@
 ---
 import ContactSection from './ContactSection.astro';
+import Section from '../wrapper/Section.astro';
+import ContentWrapper from '../wrapper/ContentWrapper.astro';
+import Eyebrow from '../typography/Eyebrow.astro';
 import Heading from '../typography/Heading.astro';
+import Paragraph from '../typography/Paragraph.astro';
+import Img from '../media/Img.astro';
 ---
 <!-- ============================================
          HEADER
@@ -11,74 +16,75 @@ import Heading from '../typography/Heading.astro';
     <!-- ============================================
          PAGE HERO
          ============================================ -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="page-hero-content">
-                <span class="section-tag">Depuis 1998</span>
-                <Heading tag="h1" variant="inherit">Notre histoire</Heading>
-                <p>Les Ateliers du Stream en quelques dates</p>
-            </div>
-        </div>
-    </section>
+    <Section theme="dark" paddingTop="navoverlap" paddingBottom="small" align="center">
+<Img slot="background" src="/photo/historique.webp" alt="" loading="eager" style={"opacity:var(--hero-image-opacity);object-position:center var(--hero-position-histoire)"} />
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">Depuis 1998</Eyebrow>
+                <Heading tag="h1" variant="h1">Notre histoire</Heading>
+                <Paragraph variant="large">Les Ateliers du Stream en quelques dates</Paragraph>
+            </ContentWrapper>
+
+    </Section>
 
     <!-- ============================================
          TIMELINE
          ============================================ -->
-    <section class="section" style="background: var(--blanc);">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">Parcours</span>
-                <Heading tag="h2" variant="inherit" class="section-title">Les Ateliers du Stream en quelques dates</Heading>
+    <Section theme="light">
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">Parcours</Eyebrow>
+                <Heading tag="h2" variant="h2">Les Ateliers du Stream en quelques dates</Heading>
                 <hr class="divider">
-            </div>
+            </ContentWrapper>
 
             <div class="timeline">
 
                 <!-- 1998 -->
-                <div class="timeline-item reveal">
+                <div class="timeline-item ">
                     <div class="timeline-content">
                         <span class="timeline-year">1998</span>
-                        <Heading tag="h3" variant="inherit">Cr&eacute;ation de l'entreprise.</Heading>
-                        <p>D'abord tourn&eacute;e vers la production audiovisuelle, l'entreprise s'oriente tr&egrave;s t&ocirc;t vers la captation multicam&eacute;ra, qui deviendra sa sp&eacute;cialit&eacute;.</p>
+                        <Heading tag="h3" variant="h3">Cr&eacute;ation de l'entreprise.</Heading>
+                        <Paragraph variant="main">D'abord tourn&eacute;e vers la production audiovisuelle, l'entreprise s'oriente tr&egrave;s t&ocirc;t vers la captation multicam&eacute;ra, qui deviendra sa sp&eacute;cialit&eacute;.</Paragraph>
                     </div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-img">
-                        <img loading="lazy"src="/photo/1998.webp" alt="1998 - Cr&eacute;ation de l'entreprise">
+                        <Img loading={"lazy"} src={"/photo/1998.webp"} alt={"1998 - Création de l'entreprise"} />
                     </div>
                 </div>
 
                 <!-- 2008 -->
-                <div class="timeline-item reveal">
+                <div class="timeline-item ">
                     <div class="timeline-content">
                         <span class="timeline-year">2008</span>
-                        <Heading tag="h3" variant="inherit">Sp&eacute;cialisation dans la captation multicam.</Heading>
-                        <p>Forte de premi&egrave;res exp&eacute;riences r&eacute;ussies et apr&egrave;s avoir approfondi son savoir-faire et investi dans du mat&eacute;riel d&eacute;di&eacute;, l'entreprise se sp&eacute;cialise exclusivement dans la captation multicam&eacute;ra.</p>
+                        <Heading tag="h3" variant="h3">Sp&eacute;cialisation dans la captation multicam.</Heading>
+                        <Paragraph variant="main">Forte de premi&egrave;res exp&eacute;riences r&eacute;ussies et apr&egrave;s avoir approfondi son savoir-faire et investi dans du mat&eacute;riel d&eacute;di&eacute;, l'entreprise se sp&eacute;cialise exclusivement dans la captation multicam&eacute;ra.</Paragraph>
                     </div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-img">
-                        <img loading="lazy"src="/photo/2008.webp" alt="2008 - Sp&eacute;cialisation multicam">
+                        <Img loading={"lazy"} src={"/photo/2008.webp"} alt={"2008 - Spécialisation multicam"} />
                     </div>
                 </div>
 
                 <!-- 2014 -->
-                <div class="timeline-item reveal">
+                <div class="timeline-item ">
                     <div class="timeline-content">
                         <span class="timeline-year">2014</span>
-                        <Heading tag="h3" variant="inherit">Adoption du logiciel vMix.</Heading>
-                        <p>Toujours en veille sur les nouvelles technologies, l'entreprise s'adapte et s'approprie les derni&egrave;res innovations afin de proposer des services adapt&eacute;s, fiables et de qualit&eacute;.</p>
+                        <Heading tag="h3" variant="h3">Adoption du logiciel vMix.</Heading>
+                        <Paragraph variant="main">Toujours en veille sur les nouvelles technologies, l'entreprise s'adapte et s'approprie les derni&egrave;res innovations afin de proposer des services adapt&eacute;s, fiables et de qualit&eacute;.</Paragraph>
                     </div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-img">
-                        <img loading="lazy"src="/photo/2014.webp" alt="2014 - Adoption de vMix">
+                        <Img loading={"lazy"} src={"/photo/2014.webp"} alt={"2014 - Adoption de vMix"} />
                     </div>
                 </div>
 
                 <!-- 2016 -->
-                <div class="timeline-item reveal">
+                <div class="timeline-item ">
                     <div class="timeline-content">
                         <span class="timeline-year">2016</span>
-                        <Heading tag="h3" variant="inherit">En direct sur Facebook.</Heading>
-                        <p>Facebook ouvre l'option de streaming live en France sur sa plateforme. Deux jours apr&egrave;s cette annonce, nous sommes parmi les tout premiers &agrave; l'utiliser en retransmettant Les Signaux du Num&eacute;rique en direct sur le r&eacute;seau social.</p>
+                        <Heading tag="h3" variant="h3">En direct sur Facebook.</Heading>
+                        <Paragraph variant="main">Facebook ouvre l'option de streaming live en France sur sa plateforme. Deux jours apr&egrave;s cette annonce, nous sommes parmi les tout premiers &agrave; l'utiliser en retransmettant Les Signaux du Num&eacute;rique en direct sur le r&eacute;seau social.</Paragraph>
                     </div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-img">
@@ -89,11 +95,11 @@ import Heading from '../typography/Heading.astro';
                 </div>
 
                 <!-- 2018 -->
-                <div class="timeline-item reveal">
+                <div class="timeline-item ">
                     <div class="timeline-content">
                         <span class="timeline-year">2018</span>
-                        <Heading tag="h3" variant="inherit">Multiplex r&eacute;unissant 4 villes lors d'un &eacute;v&eacute;nement.</Heading>
-                        <p>Notre structure &eacute;tait d&eacute;sormais capable de d&eacute;ployer 4 &eacute;quipes dans 4 villes pour les connecter autour d'un seul et m&ecirc;me &eacute;v&eacute;nement &mdash; le d&eacute;but d'une longue s&eacute;rie de multiplex.</p>
+                        <Heading tag="h3" variant="h3">Multiplex r&eacute;unissant 4 villes lors d'un &eacute;v&eacute;nement.</Heading>
+                        <Paragraph variant="main">Notre structure &eacute;tait d&eacute;sormais capable de d&eacute;ployer 4 &eacute;quipes dans 4 villes pour les connecter autour d'un seul et m&ecirc;me &eacute;v&eacute;nement &mdash; le d&eacute;but d'une longue s&eacute;rie de multiplex.</Paragraph>
                     </div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-img">
@@ -104,47 +110,47 @@ import Heading from '../typography/Heading.astro';
                 </div>
 
                 <!-- 2022 -->
-                <div class="timeline-item reveal">
+                <div class="timeline-item ">
                     <div class="timeline-content">
                         <span class="timeline-year">2022</span>
-                        <Heading tag="h3" variant="inherit">Achat de nos nouveaux locaux.</Heading>
-                        <p>L'entreprise ne cesse de grandir et le besoin d'espace pour le mat&eacute;riel et l'&eacute;quipe se fait ressentir. D'o&ugrave; l'acquisition d'un b&acirc;timent de 300&nbsp;m&sup2;. C'est parti pour 2 ans de travaux&nbsp;!</p>
+                        <Heading tag="h3" variant="h3">Achat de nos nouveaux locaux.</Heading>
+                        <Paragraph variant="main">L'entreprise ne cesse de grandir et le besoin d'espace pour le mat&eacute;riel et l'&eacute;quipe se fait ressentir. D'o&ugrave; l'acquisition d'un b&acirc;timent de 300&nbsp;m&sup2;. C'est parti pour 2 ans de travaux&nbsp;!</Paragraph>
                     </div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-img">
-                        <img loading="lazy"src="/photo/20230830_192536.webp" alt="2022 - Nouveaux locaux">
+                        <Img loading={"lazy"} src={"/photo/20230830_192536.webp"} alt={"2022 - Nouveaux locaux"} />
                     </div>
                 </div>
 
                 <!-- 2024 -->
-                <div class="timeline-item reveal">
+                <div class="timeline-item ">
                     <div class="timeline-content">
                         <span class="timeline-year">2024</span>
-                        <Heading tag="h3" variant="inherit">Emm&eacute;nagement dans les nouveaux locaux.</Heading>
-                        <p>Apr&egrave;s deux ans de travaux, nous int&eacute;grons enfin nos nouveaux locaux. Plus d'espace pour la pr&eacute;paration des prestations, et surtout un environnement propice &agrave; la recherche et au d&eacute;veloppement de nos solutions.</p>
+                        <Heading tag="h3" variant="h3">Emm&eacute;nagement dans les nouveaux locaux.</Heading>
+                        <Paragraph variant="main">Apr&egrave;s deux ans de travaux, nous int&eacute;grons enfin nos nouveaux locaux. Plus d'espace pour la pr&eacute;paration des prestations, et surtout un environnement propice &agrave; la recherche et au d&eacute;veloppement de nos solutions.</Paragraph>
                     </div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-img">
-                        <img loading="lazy"src="/photo/20250226_185612.webp" alt="2024 - Nouveaux locaux">
+                        <Img loading={"lazy"} src={"/photo/20250226_185612.webp"} alt={"2024 - Nouveaux locaux"} />
                     </div>
                 </div>
 
                 <!-- 2025 -->
-                <div class="timeline-item reveal">
+                <div class="timeline-item ">
                     <div class="timeline-content">
                         <span class="timeline-year">2025</span>
-                        <Heading tag="h3" variant="inherit">Naissance d'EVA &mdash; Electronic Virtual Assistant.</Heading>
-                        <p>Dans un environnement propice et port&eacute;e par la mont&eacute;e en puissance de l'intelligence artificielle, notre R&amp;D porte ses fruits avec le d&eacute;veloppement de solutions in&eacute;dites sous la banni&egrave;re EVA &mdash; Electronic Virtual Assistant. Encore beaucoup de travail, mais c'est en marche et les r&eacute;sultats sont concrets.</p>
+                        <Heading tag="h3" variant="h3">Naissance d'EVA &mdash; Electronic Virtual Assistant.</Heading>
+                        <Paragraph variant="main">Dans un environnement propice et port&eacute;e par la mont&eacute;e en puissance de l'intelligence artificielle, notre R&amp;D porte ses fruits avec le d&eacute;veloppement de solutions in&eacute;dites sous la banni&egrave;re EVA &mdash; Electronic Virtual Assistant. Encore beaucoup de travail, mais c'est en marche et les r&eacute;sultats sont concrets.</Paragraph>
                     </div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-img">
-                        <img loading="lazy"src="/photo/accueil eva.webp" alt="2025 - EVA Electronic Virtual Assistant">
+                        <Img loading={"lazy"} src={"/photo/accueil eva.webp"} alt={"2025 - EVA Electronic Virtual Assistant"} />
                     </div>
                 </div>
 
             </div>
-        </div>
-    </section>
+
+    </Section>
 
     <!-- ============================================
          CTA / CONTACT
@@ -153,110 +159,33 @@ import Heading from '../typography/Heading.astro';
 
     <!-- Footer -->
 
+
+
 <style is:global>
+@layer components {
+
 /* ============================================
            POLICES
            ============================================ */
-        @font-face {
-            font-family: 'Butler';
-            src: url('/fonts/subset-Butler.woff2') format('woff2');
-            font-weight: 400; font-style: normal; font-display: swap;
-        }
-        @font-face {
-            font-family: 'Butler';
-            src: url('/fonts/Butler-Black.woff2') format('woff2');
-            font-weight: 900; font-style: normal; font-display: swap;
-        }
-        @font-face {
-            font-family: 'Open Sans';
-            src: url('/fonts/OpenSans-VariableFont_wght.woff2') format('woff2');
-            font-weight: 300 800; font-style: normal; font-display: swap;
-        }
 
         /* ============================================
            VARIABLES
            ============================================ */
-        :root {
-            --primary: #1f2244;
-            --secondary: #727485;
-            --accent: #7dcef5;
-            --at-primary: #7dcff5;
-            --blanc: #ffffff;
-            --off-white: #f7f8fa;
-            --gris-clair: #e9e9ed;
-            --gris-moyen: #d3d3da;
-            --dark-1: #363957;
-            --dark-2: #4c4f6a;
-            --light-1: #a6a7b5;
-            --font-titre: 'Butler', Georgia, serif;
-            --font-texte: 'Open Sans', sans-serif;
-            --max-width: 1200px;
-            --t: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            --radius: 6px;
-        }
 
         /* ============================================
            RESET
            ============================================ */
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: var(--font-texte); color: var(--primary); line-height: 1.6; background: var(--blanc); }
-        img { max-width: 100%; height: auto; display: block; }
-        a { text-decoration: none; color: inherit; }
-        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 40px; }
 
         /* ============================================
            PAGE HERO
            ============================================ */
-        .page-hero {
-            padding: 180px 0 120px;
-            background: var(--primary);
-            color: var(--blanc);
-            position: relative;
-            overflow: hidden;
-        }
-        .page-hero::before {
-            content: ''; position: absolute; inset: 0;
-            background: url('/photo/historique.webp') center calc(50% - 100px)/cover no-repeat;
-            opacity: 0.3;
-        }
-        .page-hero-content {
-            position: relative; z-index: 1;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .page-hero-content .section-tag { color: var(--accent); }
-        .page-hero-content h1 {
-            font-family: var(--font-titre); font-size: 3rem; font-weight: 900;
-            line-height: 1.15; margin-bottom: 20px;
-        }
-        .page-hero-content p {
-            font-size: 1.05rem; color: var(--light-1); line-height: 1.8;
-        }
 
         /* ============================================
            SECTIONS COMMUNES
            ============================================ */
-        .section { padding: 90px 0; }
-        .section-tag {
-            display: inline-block; font-size: 0.72rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 3px; color: var(--at-primary);
-            margin-bottom: 16px;
-        }
-        .section-title {
-            font-family: var(--font-titre); font-size: 2.4rem; font-weight: 900;
-            line-height: 1.2; margin-bottom: 20px; color: var(--primary);
-        }
-        .section-desc {
-            font-size: 1rem; color: var(--secondary); line-height: 1.8;
-            max-width: 600px;
-        }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header .section-desc { margin: 0 auto; }
         .divider {
-            width: 50px; height: 3px; background: var(--at-primary);
-            margin: 20px auto 0; border: none;
+            width: var(--size-3-125rem); height: var(--size-0-1875rem); background: var(--brand-500);
+            margin: var(--space-4) auto var(--size-zero); border: none;
         }
 
         /* ============================================
@@ -264,29 +193,29 @@ import Heading from '../typography/Heading.astro';
            ============================================ */
         .timeline {
             position: relative;
-            max-width: 900px;
-            margin: 0 auto;
+            max-width: var(--size-56-25rem);
+            margin: var(--size-zero) auto;
         }
         /* Ligne verticale centrale */
         .timeline::before {
-            content: '';
+            content: var(--content-timeline-before);
             position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: var(--gris-clair);
-            transform: translateX(-50%);
+            left: var(--percentage-50);
+            top: var(--size-zero);
+            bottom: var(--size-zero);
+            width: var(--size-0-1875rem);
+            background: var(--light-300);
+            transform: translateX(var(--percentage-minus-50));
         }
 
         .timeline-item {
             display: flex;
             align-items: flex-start;
             position: relative;
-            margin-bottom: 70px;
+            margin-bottom: var(--size-4-375rem);
         }
         .timeline-item:last-child {
-            margin-bottom: 0;
+            margin-bottom: var(--size-zero);
         }
 
         /* Alternance gauche / droite */
@@ -299,17 +228,17 @@ import Heading from '../typography/Heading.astro';
 
         /* Contenu texte */
         .timeline-content {
-            width: calc(50% - 50px);
-            background: var(--blanc);
-            border: 1px solid var(--gris-clair);
-            border-radius: var(--radius);
-            padding: 30px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            transition: var(--t);
+            width: calc(var(--percentage-50) - var(--size-3-125rem));
+            background: var(--light-100);
+            border: var(--size-0-0625rem) solid var(--light-300);
+            border-radius: var(--radius-small);
+            padding: var(--space-5);
+            box-shadow: var(--shadow-timeline-content);
+            transition: var(--motion-transition);
         }
         .timeline-content:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transform: translateY(var(--size-minus-0-1875rem));
+            box-shadow: var(--shadow-timeline-content-hover);
         }
         .timeline-item:nth-child(odd) .timeline-content {
             text-align: right;
@@ -320,116 +249,89 @@ import Heading from '../typography/Heading.astro';
 
         /* Image */
         .timeline-img {
-            width: calc(50% - 50px);
+            width: calc(var(--percentage-50) - var(--size-3-125rem));
             display: flex;
             align-items: center;
-            justify-content: center;
-        }
-        .timeline-img img {
-            width: 100%;
-            max-width: 360px;
-            border-radius: var(--radius);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            justify-content: var(--justify-content-button-wrap);
         }
         .timeline-img .video-container {
             position: relative;
-            width: 100%;
-            max-width: 360px;
-            padding-bottom: 202px;
-            height: 0;
+            width: var(--size-full);
+            max-width: var(--size-22-5rem);
+            padding-bottom: var(--size-12-625rem);
+            height: var(--size-zero);
             overflow: hidden;
-            border-radius: var(--radius);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-radius: var(--radius-small);
+            box-shadow: var(--shadow-timeline-img-video-container);
         }
         .timeline-img .video-container iframe {
             position: absolute;
-            top: 0; left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-            border-radius: var(--radius);
+            top: var(--size-zero); left: var(--size-zero);
+            width: var(--size-full);
+            height: var(--size-full);
+            border: var(--size-zero);
+            border-radius: var(--radius-small);
         }
 
         /* Point central sur la ligne */
         .timeline-dot {
             position: absolute;
-            left: 50%;
-            top: 30px;
-            width: 18px;
-            height: 18px;
-            background: var(--at-primary);
-            border: 4px solid var(--blanc);
-            border-radius: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-            box-shadow: 0 0 0 4px rgba(125,207,245,0.2);
+            left: var(--percentage-50);
+            top: var(--size-1-875rem);
+            width: var(--size-1-125rem);
+            height: var(--size-1-125rem);
+            background: var(--brand-500);
+            border: var(--size-0-25rem) solid var(--light-100);
+            border-radius: var(--percentage-50);
+            transform: translateX(var(--percentage-minus-50));
+            z-index: var(--number-two);
+            box-shadow: var(--shadow-timeline-dot);
         }
 
         /* Ann&eacute;e */
         .timeline-year {
             display: inline-block;
-            font-family: var(--font-titre);
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--at-primary);
-            margin-bottom: 8px;
-            line-height: 1;
-        }
-        .timeline-content h3 {
-            font-family: var(--font-titre);
-            font-size: 1.15rem;
-            font-weight: 900;
-            color: var(--primary);
-            margin-bottom: 10px;
-            line-height: 1.3;
-        }
-        .timeline-content p {
-            font-size: 0.9rem;
-            color: var(--secondary);
-            line-height: 1.7;
+            font-family: var(--heading-family);
+            font-size: var(--size-2rem);
+            font-weight: var(--weight-900);
+            color: var(--brand-500);
+            margin-bottom: var(--space-2);
+            line-height: var(--number-one);
         }
 
         /* ============================================
            RESPONSIVE
            ============================================ */
-        @media (max-width: 1024px) {
-        }
 
-        @media (max-width: 768px) {
-            .container { padding: 0 20px; }
-            .page-hero { padding: 140px 0 60px; }
-            .page-hero-content h1 { font-size: 2rem; }
-            .section { padding: 70px 0; }
-            .section-title { font-size: 1.8rem; }
+        @media (--mq-max-width-48rem) {
 
             /* Timeline mobile : tout empil&eacute; &agrave; gauche */
             .timeline::before {
-                left: 20px;
+                left: var(--size-1-25rem);
             }
             .timeline-item,
             .timeline-item:nth-child(odd),
             .timeline-item:nth-child(even) {
                 flex-direction: column;
-                padding-left: 50px;
+                padding-left: var(--size-3-125rem);
             }
             .timeline-content,
             .timeline-img {
-                width: 100%;
+                width: var(--size-full);
             }
             .timeline-item:nth-child(odd) .timeline-content,
             .timeline-item:nth-child(even) .timeline-content {
                 text-align: left;
             }
             .timeline-dot {
-                left: 20px;
-                top: 0;
+                left: var(--size-1-25rem);
+                top: var(--size-zero);
             }
             .timeline-img {
-                margin-top: 20px;
-            }
-            .timeline-img img {
-                max-width: 100%;
+                margin-top: var(--space-4);
             }
 
         }
+
+}
 </style>

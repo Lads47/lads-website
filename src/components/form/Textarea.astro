@@ -71,12 +71,12 @@ const {
     .form-textarea_field {
       field-sizing: content;
       min-height: calc(
-        var(--_min-lines, 3) * 1lh + var(--_field-pad-block) * 2 +
-          var(--border-width) * 2
+        var(--_min-lines, 3) * var(--size-1lh) + var(--_field-pad-block) * var(--number-two) +
+          var(--border-width) * var(--number-two)
       );
       max-height: calc(
-        var(--_max-lines, 12) * 1lh + var(--_field-pad-block) * 2 +
-          var(--border-width) * 2
+        var(--_max-lines, 12) * var(--size-1lh) + var(--_field-pad-block) * var(--number-two) +
+          var(--border-width) * var(--number-two)
       );
       resize: vertical;
     }

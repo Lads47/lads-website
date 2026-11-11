@@ -1,0 +1,14 @@
+{
+  "--mq-hover": "(hover: hover)",
+  "--mq-max-width-64rem": "(max-width: 64rem)",
+  "--mq-max-width-31-25rem": "(max-width: 31.25rem)",
+  "--mq-max-width-40rem": "(max-width: 40rem)",
+  "--mq-max-width-48rem": "(max-width: 48rem)",
+  "--mq-medium-min": "(width >= 48rem)",
+  "--mq-navigation-desktop": "(width >= 75rem)",
+  "--mq-navigation-mobile": "(width < 75rem)",
+  "--mq-motion-reduced": "(prefers-reduced-motion: reduce)",
+  "--mq-small-min": "(width >= 30rem)",
+  "--mq-large-min": "(width >= 64rem)",
+  "--mq-max-width-600px": "(max-width:600px)"
+}

@@ -14,6 +14,8 @@ type Base = Omit<
 > & {
   /** Set to `false` to omit the component. */
   render?: boolean;
+  /** Media sizing role within the site. */
+  appearance?: "default" | "logo" | "icon" | "photo";
   /** Image source. Imports are optimized; `public/` files are served as-is. */
   src: ImageMetadata | string;
   /** Alt text. Omit for decorative images. */
@@ -62,6 +64,7 @@ type AllProps = Base & {
 
 const {
   render = true,
+  appearance = "default",
   src,
   alt: altProp,
   variant = "full-width",
@@ -193,6 +196,7 @@ const srcset =
 
 const classes = [
   "image",
+  appearance !== "default" && appearance,
   variant === "densities" && "densities",
   transparent && "transparent",
   className,
@@ -225,3 +229,7 @@ const shared = {
   ) : (
     <Image {...shared} />
   ))}
+
+<style is:global>
+@layer components { .image.logo { width: auto; max-width: var(--size-full); max-height: var(--size-6-25rem); object-fit: contain; } .image.icon { width: var(--size-2rem); height: var(--size-2rem); object-fit: contain; } .image.photo, .image[data-lightbox] { width: var(--size-full); aspect-ratio: var(--photo-ratio); height: auto; object-fit: cover; } }
+</style>

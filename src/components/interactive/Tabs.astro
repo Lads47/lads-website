@@ -99,7 +99,7 @@ const panels = await slotContent(Astro.slots);
     }
     .tabs_panels > * {
       grid-area: auto;
-      opacity: 1;
+      opacity: var(--opacity-1);
       visibility: visible;
       translate: none;
     }
@@ -107,6 +107,7 @@ const panels = await slotContent(Astro.slots);
 </noscript>
 
 <script>
+  import mediaTokens from "@/styles/media-tokens.json";
   const INTERVAL = 6000;
   const SLIDE = 500;
 
@@ -245,7 +246,7 @@ const panels = await slotContent(Astro.slots);
       setPaused(!paused);
     });
 
-    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const motion = window.matchMedia(mediaTokens["--mq-motion-reduced"]);
     const holds = {
       motion: motion.matches,
       focus: false,
@@ -279,16 +280,16 @@ const panels = await slotContent(Astro.slots);
 <style is:global>
   @layer components {
     .tabs_wrap {
-      --_dir: 1;
-      --_interval: 6s;
-      --_slide: 500ms;
+      --_dir: var(--number-one);
+      --_interval: var(--duration-6s);
+      --_slide: var(--duration-500ms);
       display: grid;
       gap: var(--space-6);
-      width: 100%;
+      width: var(--size-full);
 
       &.side {
-        @media (width >= 48rem) {
-          grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+        @media (--mq-medium-min) {
+          grid-template-columns: minmax(var(--size-zero), var(--size-1fr)) minmax(var(--size-zero), var(--size-2fr));
           align-items: start;
         }
       }
@@ -297,12 +298,12 @@ const panels = await slotContent(Astro.slots);
     .tabs_bar {
       display: flex;
       flex-direction: column;
-      min-width: 0;
+      min-width: var(--size-zero);
     }
 
     .tabs_links {
       display: flex;
-      min-width: 0;
+      min-width: var(--size-zero);
       overflow-x: auto;
       scrollbar-width: none;
       .tabs_wrap.side & {
@@ -313,12 +314,12 @@ const panels = await slotContent(Astro.slots);
     }
 
     .tabs_link {
-      flex: 1;
-      min-width: 8rem;
+      flex: var(--number-one);
+      min-width: var(--size-8rem);
       padding-block: var(--space-3);
       background: none;
       border-bottom: var(--border-width) solid var(--border);
-      color: color-mix(in lab, currentcolor 60%, transparent);
+      color: color-mix(in lab, currentcolor var(--percentage-60), var(--color-transparent));
       text-align: center;
       transition:
         color var(--hover-duration) var(--hover-ease),
@@ -327,14 +328,14 @@ const panels = await slotContent(Astro.slots);
         border-bottom-color: var(--text);
         color: var(--text);
       }
-      @media (hover: hover) {
+      @media (--mq-hover) {
         &:hover {
           color: var(--text);
         }
       }
       .tabs_wrap.side & {
         flex: none;
-        min-width: 0;
+        min-width: var(--size-zero);
         padding: var(--space-3) var(--space-5);
         border: var(--border-width) solid var(--border);
         border-radius: var(--radius-round);
@@ -350,14 +351,14 @@ const panels = await slotContent(Astro.slots);
       & .tabs_link.is-active {
         position: relative;
         &::after {
-          content: "";
+          content: var(--content-form-choice-mark-after);
           position: absolute;
-          inset-inline: 0;
-          bottom: calc(var(--border-width) * -1);
+          inset-inline: var(--size-zero);
+          bottom: calc(var(--border-width) * var(--number-minus-one));
           height: var(--border-width);
           background-color: var(--text);
           transform-origin: left;
-          scale: 0 1;
+          scale: var(--size-zero) var(--number-one);
         }
       }
       &.running:not(.is-paused) .tabs_link.is-active {
@@ -370,30 +371,30 @@ const panels = await slotContent(Astro.slots);
 
     @keyframes tabs-progress {
       from {
-        scale: 0 1;
+        scale: var(--size-zero) var(--number-one);
       }
       to {
-        scale: 1 1;
+        scale: var(--number-one) var(--number-one);
       }
     }
 
     .tabs_panels {
       display: grid;
-      min-width: 0;
+      min-width: var(--size-zero);
       overflow: clip;
     }
 
     .tabs_panels > * {
-      grid-area: 1 / 1;
-      min-width: 0;
-      opacity: 0;
+      grid-area: var(--number-one) / var(--number-one);
+      min-width: var(--size-zero);
+      opacity: var(--opacity-0);
       visibility: hidden;
       transition:
         opacity var(--open-duration) var(--open-ease),
         visibility var(--open-duration) var(--open-ease);
       .tabs_wrap:not(.is-ready) &:first-child,
       &.is-active {
-        opacity: 1;
+        opacity: var(--opacity-1);
         visibility: visible;
       }
     }
@@ -408,7 +409,7 @@ const panels = await slotContent(Astro.slots);
 
     .stacki-designer .tabs_wrap.preview .tabs_panels > * {
       grid-area: auto;
-      opacity: 1;
+      opacity: var(--opacity-1);
       visibility: visible;
       translate: none;
       animation: none;
@@ -426,30 +427,30 @@ const panels = await slotContent(Astro.slots);
 
     @keyframes tabs-in {
       from {
-        translate: calc(var(--_dir) * 100%) 0;
-        opacity: 0;
+        translate: calc(var(--_dir) * var(--size-full)) var(--size-zero);
+        opacity: var(--opacity-0);
       }
       to {
-        translate: 0 0;
-        opacity: 1;
+        translate: var(--size-zero) var(--size-zero);
+        opacity: var(--opacity-1);
       }
     }
 
     @keyframes tabs-out {
       from {
-        translate: 0 0;
-        opacity: 1;
+        translate: var(--size-zero) var(--size-zero);
+        opacity: var(--opacity-1);
       }
       to {
-        translate: calc(var(--_dir) * -100%) 0;
-        opacity: 0;
+        translate: calc(var(--_dir) * var(--percentage-minus-100)) var(--size-zero);
+        opacity: var(--opacity-0);
       }
     }
 
     .tabs_controls {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: var(--justify-content-nav-inner);
       gap: var(--space-4);
     }
 

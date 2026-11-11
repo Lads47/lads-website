@@ -1,123 +1,55 @@
 ---
-import Icon from "@/components/media/Icon.astro";
-import logo from "@/assets/logo/logo.svg";
-import { SITE_NAME } from "@/consts.ts";
-
-interface Props {
-  /** Set to `false` to omit the component. */
-  render?: boolean;
-}
-
-const { render = true } = Astro.props;
+import Grid from '../wrapper/Grid.astro';
+import Heading from '../typography/Heading.astro';
+import Paragraph from '../typography/Paragraph.astro';
+import Img from '../media/Img.astro';
+import Button from '../Button.astro';
 ---
-
-{render && (
-  <footer class="footer_wrap">
-    <div class="footer_inner">
-      <div class="footer_top">
-        <a class="footer_logo" href="/" aria-label={SITE_NAME}>
-          <Icon src={logo} variant="full-width" />
-        </a>
-        <nav aria-label="Footer">
-          <ul class="footer_links">
-            <li>
-              <a class="footer_link" href="/">
-                Home
-              </a>
-            </li>
-            <li>
-              <a class="footer_link" href="/example-components">
-                Example Components
-              </a>
-            </li>
-          </ul>
-        </nav>
+<footer class="footer_wrap theme-dark">
+  <div class="footer_inner">
+    <Grid large={4} medium={2} gap="6" tracks="var(--tracks-footer)">
+      <div><Img src="/images/LOGO_clair.svg" alt="Les Ateliers du Stream" appearance="logo" transparent /></div>
+      <div class="footer_column">
+        <Heading tag="h5" variant="h6">Navigation</Heading>
+        <ul>
+          <li><a href="/solutions">Nos solutions</a></li>
+          <li><a href="/realisations">Réalisations</a></li>
+          <li><a href="/approche">Notre accompagnement</a></li>
+          <li><a href="/formations">Nos formations</a></li>
+          <li><a href="/formations/ia">Formation IA à Marmande</a></li>
+          <li><a href="/formations/vmix">Formation vMix à Marmande</a></li>
+          <li><a href="/histoire">Notre histoire</a></li>
+        </ul>
       </div>
-      <div class="footer_bottom">
-        <p class="footer_copyright text-style-small">
-          &copy; <span id="year">{new Date().getFullYear()}</span>&#160;
-          {SITE_NAME}
-        </p>
+      <div class="footer_column">
+        <Heading tag="h5" variant="h6">Contact</Heading>
+        <ul><li><a href="mailto:prod@lesateliersdustream.fr">prod@lesateliersdustream.fr</a></li><li><a href="tel:+33661968858">06 61 96 88 58</a></li></ul>
+        <div class="footer_social">
+          <a href="https://www.instagram.com/lesateliersdustream/" target="_blank" rel="noopener"><Img src="/images/instagram.svg" alt="Instagram" appearance="icon" transparent /></a>
+          <a href="https://www.linkedin.com/company/les-ateliers-du-stream/" target="_blank" rel="noopener"><Img src="/images/linkedin.svg" alt="LinkedIn" appearance="icon" transparent /></a>
+        </div>
       </div>
-    </div>
-  </footer>
-)}
-
-<script>
-  const year = document.querySelector<HTMLSpanElement>("#year");
-
-  if (year) {
-    year.textContent = new Date().getFullYear().toString();
-  }
-</script>
-
+      <div class="footer_column">
+        <Heading tag="h5" variant="h6">Légal</Heading>
+        <ul><li><a href="/mentions-legales">Mentions légales</a></li><li><a href="/politique-confidentialite">Politique de confidentialité</a></li></ul>
+      </div>
+    </Grid>
+    <div class="footer_bottom"><Paragraph variant="small">© 2025 Les Ateliers du Stream. Tous droits réservés.</Paragraph></div>
+  </div>
+</footer>
+<div class="back-to-top_wrap"><Button id="backToTop" variant="arrow" direction="up" label="Retour en haut" /></div>
 <style is:global>
-  @layer components {
-    .footer_wrap {
-      display: flex;
-      justify-content: center;
-      padding-block: var(--section-space-small);
-      padding-inline: var(--site-margin);
-      background-color: var(--background);
-      color: var(--text);
-      border-top: var(--border-width) solid var(--border);
-    }
-
-    .footer_inner {
-      width: 100%;
-      max-width: var(--max-width-main);
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-6);
-    }
-
-    .footer_top {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-4) var(--space-6);
-    }
-
-    .footer_logo {
-      display: block;
-      width: 7.5rem;
-      max-width: 100%;
-      transition: opacity var(--hover-duration) var(--hover-ease);
-      @media (hover: hover) {
-        &:hover {
-          opacity: 0.6;
-        }
-      }
-    }
-
-    .footer_links {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: var(--space-4);
-      font-size: var(--text-small);
-      font-weight: var(--primary-medium);
-    }
-
-    .footer_link {
-      color: var(--text-2);
-      text-decoration: none;
-      transition: color var(--hover-duration) var(--hover-ease);
-      @media (hover: hover) {
-        &:hover {
-          color: var(--text);
-        }
-      }
-    }
-
-    .footer_bottom {
-      padding-top: var(--space-4);
-      border-top: var(--border-width) solid var(--border);
-    }
-
-    .footer_copyright {
-      color: var(--text-2);
-    }
-  }
+@layer components {
+  .footer_wrap { --background: var(--dark-800); padding-block: var(--section-space-small) var(--space-5); }
+  .footer_inner { width: var(--site-width); max-width: var(--max-width-main); margin-inline: auto; }
+  .footer_column { display: flex; flex-direction: column; gap: var(--space-4); }
+  .footer_column ul { display: flex; flex-direction: column; gap: var(--space-2); }
+  .footer_column a { font-size: var(--text-small); text-decoration: none; color: inherit; }
+  .footer_column a:hover { color: var(--brand-500); }
+  .footer_social { display: flex; gap: var(--space-3); }
+  .footer_social .image { filter: var(--filter-icon-light); }
+  .footer_bottom { border-top: var(--border-width) solid var(--border); padding-top: var(--space-5); margin-top: var(--space-7); text-align: center; }
+  .back-to-top_wrap { position: fixed; right: var(--space-5); bottom: var(--space-5); z-index: var(--layer-90); opacity: var(--opacity-0); pointer-events: none; transition: opacity var(--hover-duration); }
+  .back-to-top_wrap:has(.visible) { opacity: var(--opacity-1); pointer-events: auto; }
+}
 </style>

@@ -208,7 +208,7 @@ const text = label ?? wording.label;
 
     .form-select_field {
       appearance: none;
-      padding-inline-end: 3em;
+      padding-inline-end: var(--size-3em);
       &:has(option[value=""]:checked) {
         color: var(--text-2);
       }
@@ -216,10 +216,10 @@ const text = label ?? wording.label;
 
     .form-select_mark {
       position: absolute;
-      inset-inline-end: 1em;
-      top: 50%;
-      translate: 0 -50%;
-      rotate: 90deg;
+      inset-inline-end: var(--size-1em);
+      top: var(--percentage-50);
+      translate: var(--size-zero) var(--percentage-minus-50);
+      rotate: var(--angle-90deg);
       pointer-events: none;
       color: var(--text-2);
     }
@@ -249,28 +249,28 @@ const text = label ?? wording.label;
       }
 
       .form-select_field:open ~ .form-select_mark {
-        rotate: -90deg;
+        rotate: var(--angle-minus-90deg);
       }
 
       .form-select_field:open {
         background-color: var(--background-3);
-        border-end-start-radius: 0;
-        border-end-end-radius: 0;
+        border-end-start-radius: var(--size-zero);
+        border-end-end-radius: var(--size-zero);
       }
 
       .form-select_field::picker(select) {
-        margin-block: 0;
+        margin-block: var(--size-zero);
         padding: var(--space-1);
-        max-height: min(18rem, calc(100dvh - 6rem));
+        max-height: min(var(--size-18rem), calc(var(--size-100dvh) - var(--size-6rem)));
         position-try-order: normal;
         overscroll-behavior: contain;
         background-color: var(--background-3);
-        border: 0;
+        border: var(--size-zero);
         border-radius: var(--radius-small);
-        border-start-start-radius: 0;
-        border-start-end-radius: 0;
-        opacity: 0;
-        scale: 0.98;
+        border-start-start-radius: var(--size-zero);
+        border-start-end-radius: var(--size-zero);
+        opacity: var(--opacity-0);
+        scale: var(--number-0-98);
         transition:
           opacity var(--open-duration) var(--open-ease),
           scale var(--open-duration) var(--open-ease),
@@ -279,14 +279,14 @@ const text = label ?? wording.label;
       }
 
       .form-select_field:open::picker(select) {
-        opacity: 1;
-        scale: 1;
+        opacity: var(--opacity-1);
+        scale: var(--number-one);
       }
 
       @starting-style {
         .form-select_field:open::picker(select) {
-          opacity: 0;
-          scale: 0.98;
+          opacity: var(--opacity-0);
+          scale: var(--number-0-98);
         }
       }
 
@@ -298,14 +298,14 @@ const text = label ?? wording.label;
         font-size: var(--text-small);
         line-height: var(--line-height-large);
         color: var(--text);
-        background-color: transparent;
+        background-color: var(--color-transparent);
         border-radius: var(--radius-small);
         cursor: pointer;
         transition: background-color var(--hover-duration) var(--hover-ease);
         &:hover,
         &:focus {
           background-color: var(--background-2);
-          outline: 0;
+          outline: var(--size-zero);
         }
       }
 
@@ -314,7 +314,7 @@ const text = label ?? wording.label;
       }
 
       .form-select_field option::checkmark {
-        order: 1;
+        order: var(--number-one);
         margin-inline-start: auto;
         color: var(--text-2);
       }

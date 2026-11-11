@@ -59,23 +59,12 @@
       // Mesure d'audience EVA Stat : le clic compte comme une inscription commencée.
       a.setAttribute("data-eva-event", "inscription_formation");
       a.setAttribute("data-eva-props", JSON.stringify({ formation: container.getAttribute("data-formation-code") }));
-      a.style.textDecoration = "none";
-      a.style.cursor = "pointer";
-      a.style.transition = "transform 0.15s, box-shadow 0.15s";
       a.textContent = fmtRange(s.dateDebut, s.dateFin);
       var placesLabel =
         s.placesRestantes > 0 && s.placesRestantes <= 3
           ? " · " + s.placesRestantes + " place" + (s.placesRestantes > 1 ? "s" : "")
           : "";
       a.title = "S'inscrire à la session du " + fmtRange(s.dateDebut, s.dateFin) + placesLabel;
-      a.addEventListener("mouseenter", function () {
-        a.style.transform = "translateY(-2px)";
-        a.style.boxShadow = "0 4px 12px rgba(0,0,0,0.12)";
-      });
-      a.addEventListener("mouseleave", function () {
-        a.style.transform = "";
-        a.style.boxShadow = "";
-      });
       container.appendChild(a);
     });
   }

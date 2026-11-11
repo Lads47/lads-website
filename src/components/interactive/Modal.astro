@@ -10,8 +10,10 @@ type Props = HTMLAttributes<"dialog"> & {
   id?: string;
   /** Accessible label. */
   label?: string;
+  /** Accessible label for the close control. */
+  closeLabel?: string;
   /** Modal style. */
-  variant?: "small" | "side-panel" | "full-screen";
+  variant?: "small" | "side-panel" | "full-screen" | "photo";
   /** Keep open in design mode. */
   preview?: boolean;
 };
@@ -20,6 +22,7 @@ const {
   render = true,
   id,
   label,
+  closeLabel = "Fermer",
   variant = "small",
   preview = false,
   class: className,
@@ -51,7 +54,9 @@ if (import.meta.env.DEV && render && content && !id) {
       <Button
         class="modal_close"
         variant="close"
+        label={closeLabel}
         emphasis="secondary"
+        autofocus
         data-modal-close
       />
       <div class="modal_scroll" data-modal-scroll>
@@ -121,21 +126,21 @@ if (import.meta.env.DEV && render && content && !id) {
     }
 
     .modal_wrap {
-      --_leaving: calc(var(--open-duration) * 0.7);
-      --_from: 0 2rem;
-      --_body: 0 0;
-      --_backdrop: color-mix(in lab, black 60%, transparent);
-      --_close: calc(2.75em + var(--space-4) * 2);
-      width: 100%;
+      --_leaving: calc(var(--open-duration) * var(--opacity-0-7));
+      --_from: var(--size-zero) var(--size-2rem);
+      --_body: var(--size-zero) var(--size-zero);
+      --_backdrop: color-mix(in lab, var(--color-black) var(--percentage-60), var(--color-transparent));
+      --_close: calc(var(--size-2-75em) + var(--space-4) * var(--number-two));
+      width: var(--size-full);
       max-width: none;
-      height: 100%;
+      height: var(--size-full);
       max-height: none;
-      margin: 0;
+      margin: var(--size-zero);
       padding: var(--site-margin);
       align-items: center;
-      justify-content: center;
+      justify-content: var(--justify-content-button-wrap);
       background: none;
-      border: 0;
+      border: var(--size-zero);
       color: var(--text);
       overflow: clip;
       transition:
@@ -153,40 +158,40 @@ if (import.meta.env.DEV && render && content && !id) {
       &.stacki-opened {
         display: flex;
         position: fixed;
-        inset: 0;
-        z-index: 100;
+        inset: var(--size-zero);
+        z-index: var(--layer-100);
         background-color: var(--_backdrop);
       }
 
       &::backdrop {
         background-color: var(--_backdrop);
-        opacity: 0;
+        opacity: var(--opacity-0);
         transition: opacity var(--_leaving) var(--open-ease);
       }
 
       &[open]::backdrop {
-        opacity: 1;
+        opacity: var(--opacity-1);
         transition: opacity var(--open-duration) var(--open-ease);
       }
 
       @starting-style {
         &[open]::backdrop {
-          opacity: 0;
+          opacity: var(--opacity-0);
         }
       }
 
       &.side-panel {
-        --_panel: 28rem;
-        --_from: var(--_panel) 0;
-        padding: 0;
+        --_panel: var(--size-28rem);
+        --_from: var(--_panel) var(--size-zero);
+        padding: var(--size-zero);
         align-items: stretch;
-        justify-content: end;
+        justify-content: var(--justify-content-side-panel);
       }
 
       &.full-screen {
-        --_from: 0 0;
-        --_body: 0 2rem;
-        padding: 0;
+        --_from: var(--size-zero) var(--size-zero);
+        --_body: var(--size-zero) var(--size-2rem);
+        padding: var(--size-zero);
         align-items: stretch;
       }
     }
@@ -195,13 +200,13 @@ if (import.meta.env.DEV && render && content && !id) {
       position: relative;
       display: flex;
       flex-direction: column;
-      width: 100%;
-      max-width: 34rem;
-      max-height: 100%;
+      width: var(--size-full);
+      max-width: var(--size-34rem);
+      max-height: var(--size-full);
       background-color: var(--background);
       border-radius: var(--radius-main);
       overflow: hidden;
-      opacity: 0;
+      opacity: var(--opacity-0);
       translate: var(--_from);
       transition:
         opacity var(--_leaving) var(--open-ease),
@@ -210,19 +215,19 @@ if (import.meta.env.DEV && render && content && !id) {
       .modal_wrap.side-panel & {
         max-width: var(--_panel);
         max-height: none;
-        border-radius: 0;
+        border-radius: var(--size-zero);
       }
 
       .modal_wrap.full-screen & {
         max-width: none;
         max-height: none;
-        border-radius: 0;
+        border-radius: var(--size-zero);
       }
 
       .modal_wrap:is([open], .stacki-opened) &,
       .stacki-designer .modal_wrap.preview & {
-        opacity: 1;
-        translate: 0 0;
+        opacity: var(--opacity-1);
+        translate: var(--size-zero) var(--size-zero);
         transition:
           opacity var(--open-duration) var(--open-ease),
           translate var(--open-duration) var(--open-ease);
@@ -230,7 +235,7 @@ if (import.meta.env.DEV && render && content && !id) {
 
       @starting-style {
         .modal_wrap[open] & {
-          opacity: 0;
+          opacity: var(--opacity-0);
           translate: var(--_from);
         }
       }
@@ -240,17 +245,17 @@ if (import.meta.env.DEV && render && content && !id) {
       position: absolute;
       top: var(--space-4);
       inset-inline-end: var(--space-4);
-      z-index: 1;
+      z-index: var(--number-one);
     }
 
     .modal_scroll {
-      flex: 1;
-      min-height: 0;
+      flex: var(--number-one);
+      min-height: var(--size-zero);
       overflow-y: auto;
       overscroll-behavior: contain;
 
       .modal_wrap.full-screen & {
-        height: 100%;
+        height: var(--size-full);
       }
     }
 
@@ -260,14 +265,14 @@ if (import.meta.env.DEV && render && content && !id) {
       transition: translate var(--_leaving) var(--open-ease);
 
       .modal_wrap.full-screen & {
-        min-height: 100%;
+        min-height: var(--size-full);
         display: grid;
-        align-content: center;
+        align-content: var(--align-content-modal-wrap-full-screen);
       }
 
       .modal_wrap:is([open], .stacki-opened) &,
       .stacki-designer .modal_wrap.preview & {
-        translate: 0 0;
+        translate: var(--size-zero) var(--size-zero);
         transition: translate var(--open-duration) var(--open-ease);
       }
 
@@ -278,4 +283,14 @@ if (import.meta.env.DEV && render && content && !id) {
       }
     }
   }
+</style>
+
+<style is:global>
+@layer components {
+  .modal_wrap.photo { padding: var(--size-5vh) var(--size-5vw); --_body: var(--size-zero); }
+  .modal_wrap.photo .modal_content { width: auto; max-width: var(--size-90vw); max-height: var(--size-90vh); background: var(--color-transparent); overflow: visible; }
+  .modal_wrap.photo .modal_body { padding: var(--size-zero); }
+  .modal_wrap.photo img { max-width: var(--size-90vw); max-height: var(--size-85vh); width: auto; height: auto; object-fit: contain; }
+  .modal_wrap.photo .modal_close { position: fixed; top: var(--space-4); right: var(--space-5); z-index: var(--number-one); }
+}
 </style>

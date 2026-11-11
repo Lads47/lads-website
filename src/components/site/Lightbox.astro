@@ -1,17 +1,12 @@
-<dialog id="photo-lightbox" class="photo-lightbox" aria-label="Photographie agrandie" closedby="any">
-  <form method="dialog"><button class="photo-lightbox-close" aria-label="Fermer la photographie" autofocus>×</button></form>
+---
+import Modal from '../interactive/Modal.astro';
+---
+<Modal id="photo-lightbox" label="Photographie agrandie" closeLabel="Fermer la photographie" variant="photo" class="theme-dark" closedby="any">
   <img alt="" />
-</dialog>
+</Modal>
 <style is:global>
-  .photo-lightbox {
-    padding: 0; border: 0; margin: auto; background: transparent;
-    max-width: 90vw; max-height: 90vh; overflow: visible;
-    overscroll-behavior: contain;
-  }
-  .photo-lightbox[open] { display: block; }
-  .photo-lightbox::backdrop { background: rgba(0,0,0,.92); overflow: hidden; overscroll-behavior: contain; }
-  .photo-lightbox img { display: block; max-width: 90vw; max-height: 90vh; width: auto; height: auto; object-fit: contain; border-radius: .25rem; }
-  .photo-lightbox-close { position: fixed; top: 1.25rem; right: 1.875rem; background: none; border: 0; color: white; font-size: 2.5rem; cursor: pointer; }
-  .photo-trigger { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; text-align: inherit; }
-  .photo-trigger img { width: 100%; }
+@layer components {
+  .photo-trigger { display: block; width: var(--size-full); padding: var(--size-zero); border: var(--size-zero); background: var(--color-transparent); cursor: zoom-in; text-align: inherit; }
+  .photo-trigger img { width: var(--size-full); }
+}
 </style>

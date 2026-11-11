@@ -105,6 +105,7 @@ const locals = `--_count: ${count}`;
 )}
 
 <script>
+  import mediaTokens from "@/styles/media-tokens.json";
   for (const marquee of document.querySelectorAll<HTMLElement>(
     ".marquee_wrap",
   )) {
@@ -113,7 +114,7 @@ const locals = `--_count: ${count}`;
     );
     if (!toggle) continue;
 
-    const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+    const reduced = matchMedia(mediaTokens["--mq-motion-reduced"]);
 
     const setPlaying = (playing: boolean) => {
       marquee.dataset.state = playing ? "playing" : "paused";
@@ -135,32 +136,32 @@ const locals = `--_count: ${count}`;
   @layer components {
     .marquee_wrap {
       --_gap-size: var(--space-6);
-      --_item-height: 3rem;
+      --_item-height: var(--size-3rem);
       /* Seconds spent on each item, so a strip keeps its pace however many it
          holds — the count comes in on the element. */
-      --_speed: 4s;
-      --_count: 1;
+      --_speed: var(--duration-4s);
+      --_count: var(--number-one);
       --_duration: calc(var(--_count) * var(--_speed));
       display: flex;
       align-items: center;
       gap: var(--space-4);
-      width: 100%;
+      width: var(--size-full);
     }
 
     /* Clips the strip without swallowing the toggle beside it, and fades what
        is arriving and leaving rather than cutting it off. */
     .marquee_viewport {
-      flex: 1 1 auto;
-      min-width: 0;
+      flex: var(--number-one) var(--number-one) auto;
+      min-width: var(--size-zero);
       overflow: clip;
       /* The width the track measures itself against. */
       container-type: inline-size;
       mask-image: linear-gradient(
         to right,
-        transparent,
-        black 3%,
-        black 97%,
-        transparent
+        var(--color-transparent),
+        var(--color-black) var(--percentage-3),
+        var(--color-black) var(--percentage-97),
+        var(--color-transparent)
       );
     }
 
@@ -195,15 +196,15 @@ const locals = `--_count: ${count}`;
          the loop full: the track travels one panel and one gap, so the copy has
          to be wide enough to still cover the strip when the original has left
          it. A short set spreads across rather than bunching at the start. */
-      min-width: 100cqw;
-      justify-content: space-around;
+      min-width: var(--size-100cqw);
+      justify-content: var(--justify-content-marquee-panel);
       align-items: center;
       gap: var(--_gap-size);
 
       /* The type patterns carry block margins that mean nothing in a row. */
       > * {
         flex: none;
-        margin-block: 0;
+        margin-block: var(--size-zero);
       }
 
       /* Media fills its container by default, which here is the whole strip.
@@ -223,14 +224,14 @@ const locals = `--_count: ${count}`;
 
     @keyframes marquee {
       to {
-        translate: calc(-50% - var(--_gap-size) / 2) 0;
+        translate: calc(var(--percentage-minus-50) - var(--_gap-size) / var(--number-two)) var(--size-zero);
       }
     }
 
     /* The reset collapses every animation to a moment, which would snap the
        track to its end. It holds still instead, and runs its full length only
        for someone who starts it themselves. */
-    @media (prefers-reduced-motion: reduce) {
+    @media (--mq-motion-reduced) {
       .marquee_track {
         animation-name: none;
       }

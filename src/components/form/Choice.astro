@@ -87,15 +87,15 @@ const {
     .form-choice {
       display: inline-flex;
       align-items: center;
-      gap: 0.75em;
+      gap: var(--size-0-75em);
       cursor: pointer;
     }
 
     .form-choice_input {
       position: absolute;
-      width: 1px;
-      height: 1px;
-      opacity: 0;
+      width: var(--size-1px);
+      height: var(--size-1px);
+      opacity: var(--opacity-0);
       pointer-events: none;
     }
 
@@ -108,10 +108,10 @@ const {
       flex: none;
       display: grid;
       place-items: center;
-      width: 1.5em;
-      height: 1.5em;
+      width: var(--size-1-5em);
+      height: var(--size-1-5em);
       background-color: var(--_mark);
-      border: var(--border-width) solid transparent;
+      border: var(--border-width) solid var(--color-transparent);
       border-radius: var(--radius-small);
       transition:
         background-color var(--hover-duration) var(--hover-ease),
@@ -124,16 +124,16 @@ const {
 
     .form-choice_tick {
       color: var(--_ink);
-      opacity: 0;
+      opacity: var(--opacity-0);
       transition: opacity var(--hover-duration) var(--hover-ease);
     }
 
     .form-choice_dot {
-      width: 1.1em;
-      height: 1.1em;
+      width: var(--size-1-1em);
+      height: var(--size-1-1em);
       background-color: var(--_ink);
       border-radius: var(--radius-round);
-      scale: 0;
+      scale: var(--size-zero);
       transition: scale var(--hover-duration) var(--hover-ease);
     }
 
@@ -142,14 +142,14 @@ const {
         background-color: var(--_mark-chosen);
       }
       & .form-choice_tick {
-        opacity: 1;
+        opacity: var(--opacity-1);
       }
       & .form-choice_dot {
-        scale: 1;
+        scale: var(--number-one);
       }
     }
 
-    @media (hover: hover) {
+    @media (--mq-hover) {
       .form-choice:hover .form-choice_input:not(:checked) ~ .form-choice_mark {
         background-color: var(--_mark-hover);
       }
@@ -163,19 +163,19 @@ const {
     /* Toggle */
     .form-choice.toggle {
       & .form-choice_mark {
-        width: 2.75em;
-        height: 1.5em;
+        width: var(--size-2-75em);
+        height: var(--size-1-5em);
         border-radius: var(--radius-round);
         place-items: center start;
-        padding: 0.15em;
+        padding: var(--size-0-15em);
       }
       & :is(.form-choice_tick, .form-choice_dot) {
         display: none;
       }
       & .form-choice_mark::after {
-        content: "";
-        width: 1.1em;
-        height: 1.1em;
+        content: var(--content-form-choice-mark-after);
+        width: var(--size-1-1em);
+        height: var(--size-1-1em);
         border-radius: var(--radius-round);
         background-color: var(--text);
         transition:
@@ -183,16 +183,16 @@ const {
           background-color var(--hover-duration) var(--hover-ease);
       }
       &:has(:checked) .form-choice_mark::after {
-        translate: 1.2em 0;
+        translate: var(--size-1-2em) var(--size-zero);
         background-color: var(--_ink);
       }
     }
 
     /* Chip */
     .form-choice.chip {
-      padding: 0.75em 1.5em;
+      padding: var(--size-0-75em) var(--size-1-5em);
       background-color: var(--background-2);
-      border: var(--border-width) solid transparent;
+      border: var(--border-width) solid var(--color-transparent);
       border-radius: var(--radius-round);
       transition:
         background-color var(--hover-duration) var(--hover-ease),
@@ -204,7 +204,7 @@ const {
         --_mark-chosen: var(--background);
         --_ink: var(--text);
       }
-      @media (hover: hover) {
+      @media (--mq-hover) {
         &:hover:not(:has(:checked)) {
           background-color: var(--background-3);
         }
@@ -214,7 +214,7 @@ const {
         color: var(--background);
       }
       & .form-choice_input:focus-visible ~ .form-choice_mark {
-        outline: 0;
+        outline: var(--size-zero);
       }
       &:has(.form-choice_input:focus-visible) {
         outline: var(--focus-width) solid var(--text);

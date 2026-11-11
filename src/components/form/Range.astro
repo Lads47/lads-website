@@ -119,13 +119,13 @@ const fieldId = id ?? `range-${label ? slug(label) : "field"}`;
 <style is:global>
   @layer components {
     .form-range {
-      --_handle: 1.75rem;
+      --_handle: var(--size-1-75rem);
       --_handle-face: currentColor;
-      --_rail: 0.25rem;
+      --_rail: var(--size-0-25rem);
     }
 
     .form-range.is-drawn {
-      --_handle-face: transparent;
+      --_handle-face: var(--color-transparent);
     }
 
     .form-range:not(.is-drawn) :is(.form-range_fill, .form-range_handle) {
@@ -142,10 +142,10 @@ const fieldId = id ?? `range-${label ? slug(label) : "field"}`;
     .form-range_input {
       appearance: none;
       position: relative;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      margin: 0;
+      z-index: var(--number-one);
+      width: var(--size-full);
+      height: var(--size-full);
+      margin: var(--size-zero);
       background: none;
       cursor: grab;
       &:active {
@@ -161,7 +161,7 @@ const fieldId = id ?? `range-${label ? slug(label) : "field"}`;
       &::-moz-range-thumb {
         width: var(--_handle);
         height: var(--_handle);
-        border: 0;
+        border: var(--size-zero);
         border-radius: var(--radius-round);
         background: var(--_handle-face);
       }
@@ -174,20 +174,20 @@ const fieldId = id ?? `range-${label ? slug(label) : "field"}`;
     .form-range_track,
     .form-range_fill {
       position: absolute;
-      inset-inline-start: 0;
+      inset-inline-start: var(--size-zero);
       height: var(--_rail);
       border-radius: var(--radius-round);
       pointer-events: none;
     }
 
     .form-range_track {
-      inset-inline-end: 0;
+      inset-inline-end: var(--size-zero);
       background-color: var(--border);
     }
 
     .form-range_fill {
       width: calc(
-        var(--_progress, 0) * (100% - var(--_handle)) + var(--_handle) / 2
+        var(--_progress, 0) * (var(--size-full) - var(--_handle)) + var(--_handle) / var(--number-two)
       );
       background-color: var(--text);
     }
@@ -195,12 +195,12 @@ const fieldId = id ?? `range-${label ? slug(label) : "field"}`;
     .form-range_handle {
       position: absolute;
       inset-inline-start: calc(
-        var(--_progress, 0) * (100% - var(--_handle)) + var(--_handle) / 2
+        var(--_progress, 0) * (var(--size-full) - var(--_handle)) + var(--_handle) / var(--number-two)
       );
-      translate: -50% 0;
+      translate: var(--percentage-minus-50) var(--size-zero);
       width: var(--_handle);
       height: var(--_handle);
-      border: calc(var(--border-width) * 2) solid var(--text);
+      border: calc(var(--border-width) * var(--number-two)) solid var(--text);
       border-radius: var(--radius-round);
       background-color: var(--background);
       pointer-events: none;
@@ -210,9 +210,9 @@ const fieldId = id ?? `range-${label ? slug(label) : "field"}`;
       display: flex;
       align-self: start;
       margin-inline-start: calc(
-        var(--_progress, 0) * (100% - var(--_handle)) + var(--_handle) / 2
+        var(--_progress, 0) * (var(--size-full) - var(--_handle)) + var(--_handle) / var(--number-two)
       );
-      translate: -50% 0;
+      translate: var(--percentage-minus-50) var(--size-zero);
       padding: var(--space-1) var(--space-3);
       background-color: var(--background-2);
       border-radius: var(--radius-small);

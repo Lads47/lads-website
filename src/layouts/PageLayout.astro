@@ -1,8 +1,8 @@
 ---
 import '../styles/global.css';
 import '../styles/site.css';
-import SiteHeader from '../components/site/SiteHeader.astro';
-import SiteFooter from '../components/site/SiteFooter.astro';
+import Nav from '../components/global/Nav.astro';
+import Footer from '../components/global/Footer.astro';
 import Lightbox from '../components/site/Lightbox.astro';
 
 interface Props { shell?: boolean; home?: boolean; schema?: boolean; lightbox?: boolean }
@@ -13,20 +13,16 @@ const { shell = true, home = false, schema = true, lightbox = false } = Astro.pr
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {shell && <>
-      <link rel="stylesheet" href="/header.css" />
-      <link rel="stylesheet" href="/footer.css" />
-    </>}
     <slot name="head" />
     <script is:inline defer src="https://evaremote.com/e.js" data-site="lads" data-liens></script>
   </head>
-  <body class:list={[home && 'home', !shell && 'standalone']}>
+  <body class:list={['theme-light', home && 'home', !shell && 'standalone']}>
     {shell && <>
       <a href="#main-content" class="skip-link">Aller au contenu</a>
-      <SiteHeader home={home} />
+      <Nav overlap home={home} />
     </>}
     <main id="main-content"><slot /></main>
-    {shell && <SiteFooter />}
+    {shell && <Footer />}
     {lightbox && <Lightbox />}
     {schema && <script is:inline src="/schema.js"></script>}
     <script>

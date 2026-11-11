@@ -1,9 +1,9 @@
 .flex-grow {
-  flex: 1;
+  flex: var(--number-one);
 }
 
 .flex-shrink {
-  flex: 0 auto;
+  flex: var(--size-zero) auto;
 }
 
 .flex-noshrink {
@@ -12,7 +12,7 @@
 
 /* Padding — all sides */
 .padding-0 {
-  padding: 0;
+  padding: var(--size-zero);
 }
 
 .padding-1 {
@@ -69,7 +69,7 @@
 
 /* Padding — block (top + bottom) */
 .padding-block-0 {
-  padding-block: 0;
+  padding-block: var(--size-zero);
 }
 
 .padding-block-1 {
@@ -126,7 +126,7 @@
 
 /* Padding — inline (left + right) */
 .padding-inline-0 {
-  padding-inline: 0;
+  padding-inline: var(--size-zero);
 }
 
 .padding-inline-1 {
@@ -171,7 +171,7 @@
 
 /* Padding — top */
 .padding-top-0 {
-  padding-top: 0;
+  padding-top: var(--size-zero);
 }
 
 .padding-top-1 {
@@ -232,7 +232,7 @@
 
 /* Padding — bottom */
 .padding-bottom-0 {
-  padding-bottom: 0;
+  padding-bottom: var(--size-zero);
 }
 
 .padding-bottom-1 {
@@ -293,7 +293,7 @@
 
 /* Padding — left */
 .padding-left-0 {
-  padding-left: 0;
+  padding-left: var(--size-zero);
 }
 
 .padding-left-1 {
@@ -338,7 +338,7 @@
 
 /* Padding — right */
 .padding-right-0 {
-  padding-right: 0;
+  padding-right: var(--size-zero);
 }
 
 .padding-right-1 {
@@ -387,7 +387,7 @@
 }
 
 .margin-top-0 {
-  margin-top: 0;
+  margin-top: var(--size-zero);
 }
 
 .margin-top-1 {
@@ -435,7 +435,7 @@
 }
 
 .margin-bottom-0 {
-  margin-bottom: 0;
+  margin-bottom: var(--size-zero);
 }
 
 .margin-bottom-1 {
@@ -483,7 +483,7 @@
 }
 
 .margin-block-0 {
-  margin-block: 0;
+  margin-block: var(--size-zero);
 }
 
 .margin-block-1 {
@@ -531,18 +531,18 @@
 }
 
 .line-clamp-2 {
-  line-clamp: 2;
-  -webkit-line-clamp: 2;
+  line-clamp: var(--number-two);
+  -webkit-line-clamp: var(--number-two);
 }
 
 .line-clamp-3 {
-  line-clamp: 3;
-  -webkit-line-clamp: 3;
+  line-clamp: var(--number-3);
+  -webkit-line-clamp: var(--number-3);
 }
 
 .line-clamp-4 {
-  line-clamp: 4;
-  -webkit-line-clamp: 4;
+  line-clamp: var(--number-4);
+  -webkit-line-clamp: var(--number-4);
 }
 
 /* Gap */
@@ -554,7 +554,7 @@
 .gap-0 {
   grid-column-gap: var(--_gap-size);
   grid-row-gap: var(--_gap-size);
-  --_gap-size: 0rem;
+  --_gap-size: var(--size-0rem);
 }
 
 .gap-1 {
@@ -634,7 +634,7 @@
 }
 
 .gap-row-0 {
-  grid-row-gap: 0rem;
+  grid-row-gap: var(--size-0rem);
 }
 
 .gap-row-1 {
@@ -730,23 +730,23 @@
 }
 
 .justify-content-start {
-  justify-content: flex-start;
+  justify-content: var(--justify-content-justify-content-start);
 }
 
 .justify-content-center {
-  justify-content: center;
+  justify-content: var(--justify-content-button-wrap);
 }
 
 .justify-content-end {
-  justify-content: flex-end;
+  justify-content: var(--justify-content-solution-card-content);
 }
 
 .justify-content-between {
-  justify-content: space-between;
+  justify-content: var(--justify-content-nav-inner);
 }
 
 .justify-content-around {
-  justify-content: space-around;
+  justify-content: var(--justify-content-marquee-panel);
 }
 
 .justify-content-inherit {
@@ -755,7 +755,7 @@
 
 /* Sizing */
 .width-full {
-  width: 100%;
+  width: var(--size-full);
 }
 
 .width-auto {
@@ -767,7 +767,7 @@
 }
 
 .height-full {
-  height: 100%;
+  height: var(--size-full);
 }
 
 .height-auto {
@@ -775,8 +775,8 @@
 }
 
 .cover {
-  width: 100%;
-  height: 100%;
+  width: var(--size-full);
+  height: var(--size-full);
 }
 
 .max-width-none {
@@ -792,7 +792,7 @@
 }
 
 .min-height-screen {
-  min-height: 100svh;
+  min-height: var(--size-100svh);
 }
 
 /* Aspect ratio & object fit */
@@ -801,31 +801,31 @@
 }
 
 .ratio-1-1 {
-  aspect-ratio: 1;
+  aspect-ratio: var(--number-one);
 }
 
 .ratio-16-9 {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: var(--number-16) / var(--number-9);
 }
 
 .ratio-3-2 {
-  aspect-ratio: 3 / 2;
+  aspect-ratio: var(--number-3) / var(--number-two);
 }
 
 .ratio-2-3 {
-  aspect-ratio: 2 / 3;
+  aspect-ratio: var(--number-two) / var(--number-3);
 }
 
 .ratio-2-1 {
-  aspect-ratio: 2;
+  aspect-ratio: var(--number-two);
 }
 
 .ratio-5-4 {
-  aspect-ratio: 5 / 4;
+  aspect-ratio: var(--number-5) / var(--number-4);
 }
 
 .ratio-4-5 {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: var(--number-4) / var(--number-5);
 }
 
 .object-fit-cover {
@@ -909,12 +909,12 @@
 }
 
 .color-faded {
-  color: color-mix(in srgb, currentColor 70%, transparent);
+  color: color-mix(in srgb, currentColor var(--percentage-70), var(--color-transparent));
 }
 
 /* Background & radius */
 .background-transparent {
-  background-color: transparent;
+  background-color: var(--color-transparent);
 }
 
 .background-1 {
@@ -930,7 +930,7 @@
 }
 
 .radius-none {
-  border-radius: 0;
+  border-radius: var(--size-zero);
 }
 
 .radius-inherit {
@@ -996,7 +996,7 @@
 }
 
 .overflow-hidden-left {
-  clip-path: polygon(0 0, calc(100% + 100vw) 0, calc(100% + 100vw) 100%, 0% 100%);
+  clip-path: polygon(var(--size-zero) var(--size-zero), calc(var(--size-full) + var(--size-100vw)) var(--size-zero), calc(var(--size-full) + var(--size-100vw)) var(--size-full), var(--percentage-0) var(--size-full));
 }
 
 /* Position & z-index */
@@ -1014,7 +1014,7 @@
 
 .position-sticky {
   position: sticky;
-  top: 0;
+  top: var(--size-zero);
 }
 
 .position-fixed {
@@ -1022,12 +1022,12 @@
 }
 
 .zindex-negative {
-  z-index: -1;
+  z-index: var(--number-minus-one);
   position: relative;
 }
 
 .zindex-0 {
-  z-index: 0;
+  z-index: var(--size-zero);
   position: relative;
 }
 
@@ -1037,17 +1037,17 @@
 }
 
 .zindex-1 {
-  z-index: 1;
+  z-index: var(--number-one);
   position: relative;
 }
 
 .zindex-2 {
-  z-index: 2;
+  z-index: var(--number-two);
   position: relative;
 }
 
 .zindex-3 {
-  z-index: 3;
+  z-index: var(--layer-3);
   position: relative;
 }
 
@@ -1061,23 +1061,23 @@
 }
 
 .order-first {
-  order: -1;
+  order: var(--number-minus-one);
 }
 
 .order-last {
-  order: 1;
+  order: var(--number-one);
 }
 
 /* Accessibility */
 .sr-only {
   white-space: nowrap;
-  clip: rect(0, 0, 0, 0);
-  border-width: 0;
-  width: 1px;
-  height: 1px;
+  clip: rect(var(--size-zero), var(--size-zero), var(--size-zero), var(--size-zero));
+  border-width: var(--size-zero);
+  width: var(--size-1px);
+  height: var(--size-1px);
   margin-inline: auto;
-  padding: 0;
+  padding: var(--size-zero);
   position: absolute;
-  inset: 0% 0% auto;
+  inset: var(--percentage-0) var(--percentage-0) auto;
   overflow: hidden;
 }

@@ -1,36 +1,25 @@
-/* A fidelity layer preserves the original browser defaults under the source CSS.
-   Lumos tokens, utilities and native components remain available for future work. */
-@layer source-reset {
-  :where(html, body, main, a, img, picture, video, canvas, svg, button, input, textarea, select, ul, ol, p, h1, h2, h3, h4, h5, h6, .container, .section, .heading, .section > :not(.container)) {
-    all: revert;
-  }
+@layer components {
+  .skip-link { position: fixed; top: var(--space-2); left: var(--space-2); z-index: var(--layer-2000); padding: var(--space-3) var(--space-4); background: var(--dark-900); color: var(--light-100); transform: translateY(var(--percentage-minus-200)); }
+  .skip-link:focus { transform: translateY(var(--size-zero)); }
+  :target { scroll-margin-top: var(--nav-height); }
+  iframe { border: var(--size-zero); }
+  .site-container { width: var(--site-width); max-width: var(--max-width-main); margin-inline: auto; }
+  .hero-control_wrap { position: absolute; inset: auto var(--space-4) var(--space-4) auto; width: auto; height: auto; pointer-events: auto; z-index: var(--number-two); }
+  .divider { width: var(--size-3-125rem); height: var(--size-0-1875rem); background: var(--brand-500); border: var(--size-zero); margin: var(--size-zero); }
+  .formation-meta-sidebar .meta-date-chip--empty { white-space: normal; max-width: var(--size-full); }
+  .grid > * { min-width: var(--size-zero); }
+  .text + .text { margin-top: var(--space-4); }
+  .text + .heading { margin-top: var(--space-6); }
+  .standalone > main { min-height: var(--size-100svh); }
 }
-:root {
-  --primary-family: 'Open Sans', sans-serif;
-  --brand-500: #7dcef5;
-  --dark-900: #1f2244;
+@layer utilities {
+  .width-site { width: var(--site-width); }
+  .color-muted { color: var(--text-2); }
+  .color-brand { color: var(--brand-500); }
+  .icon-light { filter: var(--filter-icon-light); }
+  .letter-spacing-wide { letter-spacing: var(--size-0-12em); }
 }
-main { display: block; }
-iframe { border: 0; }
-body.standalone > main { display: contents; }
-.skip-link { position: fixed; top: .5rem; left: .5rem; z-index: 2000; padding: .75rem 1rem; background: #1f2244; color: white; transform: translateY(-200%); }
-.skip-link:focus { transform: translateY(0); }
-:focus-visible { outline: .1875rem solid #3377a3; outline-offset: .25rem; }
-:target { scroll-margin-top: 8rem; }
-.formation-meta-sidebar .meta-date-chip--empty { white-space: normal; max-width: 100%; }
-/* Content stays readable if JS is unavailable or motion is reduced. */
-.reveal { opacity: 1 !important; transform: none !important; }
-@media (max-width: 815px) {
-  #site-navigation:not(.active) { visibility: hidden; }
-  html:not(.has-js) #site-navigation { visibility: visible; max-height: none; opacity: 1; position: static; padding: 1rem; }
-  html:not(.has-js) #site-navigation li { opacity: 1; transform: none; }
-  html:not(.has-js) #site-navigation a { color: #1f2244; }
-  html:not(.has-js) .header-inner { flex-wrap: wrap; }
-  html:not(.has-js) .menu-toggle { display: none; }
-  html:not(.has-js) body.home header { position: relative; background: #1f2244; }
-  html:not(.has-js) body:not(.home) header { position: relative; }
-}
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-delay: 0ms !important; transition-duration: .01ms !important; }
-  .hero-content { opacity: 1 !important; transform: none !important; }
-}
+
+@layer components { .lads-results-bar-fill { width: var(--result-progress); } a.meta-date-chip:hover { transform: translateY(var(--size-minus-0-125rem)); box-shadow: var(--shadow-a-meta-date-chip-hover); } }
+
+@layer utilities { .icon-brand { width: var(--size-3-125rem); height: var(--size-3-125rem); filter: var(--filter-icon-brand); } }

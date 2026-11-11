@@ -1,6 +1,13 @@
 ---
 import ContactSection from './ContactSection.astro';
+import Section from '../wrapper/Section.astro';
+import ContentWrapper from '../wrapper/ContentWrapper.astro';
+import Eyebrow from '../typography/Eyebrow.astro';
 import Heading from '../typography/Heading.astro';
+import Paragraph from '../typography/Paragraph.astro';
+import Grid from '../wrapper/Grid.astro';
+import Img from '../media/Img.astro';
+import Button from '../Button.astro';
 ---
 <!-- ============================================
          HEADER
@@ -11,18 +18,19 @@ import Heading from '../typography/Heading.astro';
     <!-- ============================================
          PAGE HERO
          ============================================ -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="page-hero-content">
-                <span class="section-tag">En simultan&eacute;</span>
-                <Heading tag="h1" variant="inherit">8 r&eacute;gies en simultan&eacute;</Heading>
-                <p>Jusqu'&agrave; 8 r&eacute;gies de 3 cam&eacute;ras d&eacute;ploy&eacute;es en m&ecirc;me temps pour vos &eacute;v&eacute;nements multi-salles</p>
-            </div>
-        </div>
-    </section>
+    <Section theme="dark" paddingTop="navoverlap" paddingBottom="small" align="center">
+<Img slot="background" src="/photo/20251031_162920 (1).webp" alt="" loading="eager" style={"opacity:var(--hero-image-opacity)"} />
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">En simultan&eacute;</Eyebrow>
+                <Heading tag="h1" variant="h1">8 r&eacute;gies en simultan&eacute;</Heading>
+                <Paragraph variant="large">Jusqu'&agrave; 8 r&eacute;gies de 3 cam&eacute;ras d&eacute;ploy&eacute;es en m&ecirc;me temps pour vos &eacute;v&eacute;nements multi-salles</Paragraph>
+            </ContentWrapper>
+
+    </Section>
 
     <!-- Breadcrumb retour -->
-    <div class="container">
+    <div class="site-container">
         <a href="/solutions" class="breadcrumb-back">
             <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
             Retour nos solutions
@@ -32,20 +40,20 @@ import Heading from '../typography/Heading.astro';
     <!-- ============================================
          DETAIL
          ============================================ -->
-    <section class="section" style="background: var(--blanc);">
-        <div class="container">
-            <div class="real-detail-layout reveal">
+    <Section theme="light">
+
+            <Grid xsmall={1} small={1} medium={1} large={2} gap="8" tracks="var(--tracks-content-sidebar)">
                 <div class="real-detail-text">
-                    <span class="real-tag-inline">En simultan&eacute;</span>
-                    <Heading tag="h2" variant="inherit" class="section-title" style="text-align: left;">8 r&eacute;gies de 3 cam&eacute;ras chacune</Heading>
+                    <Eyebrow tag="span" variant="tag">En simultan&eacute;</Eyebrow>
+                    <Heading tag="h2" variant="h2" class="alignment-start">8 r&eacute;gies de 3 cam&eacute;ras chacune</Heading>
                     <hr class="divider">
                     <br>
-                    <p class="section-desc">
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>
                         Nous sommes en mesure de d&eacute;ployer jusqu'&agrave; 8 r&eacute;gies de 3 cam&eacute;ras en simultan&eacute;. Id&eacute;al pour les &eacute;v&eacute;nements multi-salles&nbsp;: chaque conf&eacute;rence dispose de sa propre captation, en live ou en enregistrement.
-                    </p>
-                    <p class="section-desc">
+                    </Paragraph>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>
                         Ce dispositif est pens&eacute; pour les grands &eacute;v&eacute;nements professionnels o&ugrave; plusieurs sessions se d&eacute;roulent en parall&egrave;le. Chaque salle b&eacute;n&eacute;ficie d'une r&eacute;gie autonome avec son propre r&eacute;alisateur, assurant une captation ind&eacute;pendante et de qualit&eacute; homog&egrave;ne sur l'ensemble de l'&eacute;v&eacute;nement.
-                    </p>
+                    </Paragraph>
                     <ul class="feature-list">
                         <li>Jusqu'&agrave; 8 r&eacute;gies d&eacute;ploy&eacute;es en simultan&eacute;</li>
                         <li>3 cam&eacute;ras par r&eacute;gie</li>
@@ -85,27 +93,27 @@ import Heading from '../typography/Heading.astro';
                         </div>
                     </div>
                 </div>
-            </div>
+            </Grid>
 
             <!-- Photo -->
-            <div class="real-photos reveal">
+            <Grid xsmall={1} small={1} medium={2} large={2} gap="4">
                 <div class="real-photo-item">
-                    <img loading="lazy" src="/photo/20251031_162920 (1).webp" alt="Dispositif 8 r&eacute;gies en simultan&eacute;">
+                    <Img loading={"lazy"} src={"/photo/20251031_162920 (1).webp"} alt={"Dispositif 8 régies en simultané"} appearance="photo" />
                     <p class="real-photo-caption">Pr&eacute;paration de 6 r&eacute;gies pour la captation en simultan&eacute; des 6 ateliers de BDX/IO (une 7i&egrave;me r&eacute;gie sera &eacute;galement utilis&eacute;e pour les pl&eacute;ni&egrave;res)</p>
                 </div>
                 <div class="real-photo-item">
-                    <img loading="lazy" src="/photo/20251107_172009.webp" alt="Les 7 r&eacute;gies en live sur Youtube BDX/IO">
+                    <Img loading={"lazy"} src={"/photo/20251107_172009.webp"} alt={"Les 7 régies en live sur Youtube BDX/IO"} appearance="photo" />
                     <p class="real-photo-caption">Sur l'&eacute;cran du haut &agrave; droite vous pouvez voir les 7 r&eacute;gies en live sur la cha&icirc;ne Youtube de BDX/IO</p>
                 </div>
-            </div>
+            </Grid>
 
             <!-- Back link -->
-            <a href="/solutions" class="back-link reveal">
+            <Button element="link" variant="link" href={"/solutions"}>
                 <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
                 Retour aux solutions
-            </a>
-        </div>
-    </section>
+            </Button>
+
+    </Section>
 
     <ContactSection eyebrow={"Vous avez un projet similaire ?"} title={"Et si on travaillait ensemble ?"} description={"Un projet en construction, un événement qui approche que vous envisagez de filmer et diffuser ? Parlons-en."} email={"prod@lesateliersdustream.fr"} phoneHref={"tel:+33661968858"} phone={"06 61 96 88 58"} locationAlt={"Nos bureaux"} training={false} />
 
@@ -114,224 +122,105 @@ import Heading from '../typography/Heading.astro';
 
     <!-- Footer -->
 
+
+
 <style is:global>
+@layer components {
+
 /* ============================================
            POLICES
            ============================================ */
-        @font-face {
-            font-family: 'Butler';
-            src: url('/fonts/subset-Butler.woff2') format('woff2');
-            font-weight: 400; font-style: normal; font-display: swap;
-        }
-        @font-face {
-            font-family: 'Butler';
-            src: url('/fonts/Butler-Black.woff2') format('woff2');
-            font-weight: 900; font-style: normal; font-display: swap;
-        }
-        @font-face {
-            font-family: 'Open Sans';
-            src: url('/fonts/OpenSans-VariableFont_wght.woff2') format('woff2');
-            font-weight: 300 800; font-style: normal; font-display: swap;
-        }
 
         /* ============================================
            VARIABLES
            ============================================ */
-        :root {
-            --primary: #1f2244;
-            --secondary: #727485;
-            --accent: #7dcef5;
-            --at-primary: #7dcff5;
-            --blanc: #ffffff;
-            --off-white: #f7f8fa;
-            --gris-clair: #e9e9ed;
-            --gris-moyen: #d3d3da;
-            --dark-1: #363957;
-            --dark-2: #4c4f6a;
-            --light-1: #a6a7b5;
-            --font-titre: 'Butler', Georgia, serif;
-            --font-texte: 'Open Sans', sans-serif;
-            --max-width: 1200px;
-            --t: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            --radius: 6px;
-        }
 
         /* ============================================
            RESET
            ============================================ */
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: var(--font-texte); color: var(--primary); line-height: 1.6; background: var(--blanc); }
-        img { max-width: 100%; height: auto; display: block; }
-        a { text-decoration: none; color: inherit; }
-        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 40px; }
 
         /* ============================================
            PAGE HERO
            ============================================ */
-        .page-hero {
-            padding: 180px 0 120px;
-            background: var(--primary);
-            color: var(--blanc);
-            position: relative;
-            overflow: hidden;
-        }
-        .page-hero::before {
-            content: ''; position: absolute; inset: 0;
-            background: url('/photo/20251031_162920 (1).webp') center/cover no-repeat;
-            opacity: 0.3;
-        }
-        .page-hero-content {
-            position: relative; z-index: 1;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .page-hero-content .section-tag { color: var(--accent); }
-        .page-hero-content h1 {
-            font-family: var(--font-titre); font-size: 3rem; font-weight: 900;
-            line-height: 1.15; margin-bottom: 20px;
-        }
-        .page-hero-content p {
-            font-size: 1.05rem; color: var(--light-1); line-height: 1.8;
-        }
 
         /* ============================================
            SECTIONS COMMUNES
            ============================================ */
-        .section { padding: 90px 0; }
-        .section-tag {
-            display: inline-block; font-size: 0.72rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 3px; color: var(--at-primary);
-            margin-bottom: 16px;
-        }
-        .section-title {
-            font-family: var(--font-titre); font-size: 2.4rem; font-weight: 900;
-            line-height: 1.2; margin-bottom: 20px; color: var(--primary);
-        }
-        .section-desc {
-            font-size: 1rem; color: var(--secondary); line-height: 1.8;
-            max-width: 600px;
-        }
         .divider {
-            width: 50px; height: 3px; background: var(--at-primary);
-            margin: 20px 0 0 0; border: none;
+            width: var(--size-3-125rem); height: var(--size-0-1875rem); background: var(--brand-500);
+            margin: var(--space-4) var(--size-zero) var(--size-zero) var(--size-zero); border: none;
         }
 
         /* ============================================
            SOLUTION DETAIL
            ============================================ */
-        .real-detail-layout {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 80px;
-            align-items: start;
-        }
-        .real-detail-text .section-desc { margin-bottom: 20px; }
-        .real-tag-inline {
-            display: inline-block; padding: 4px 14px; font-size: 0.68rem;
-            font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px;
-            background: rgba(125,206,245,0.12); color: var(--at-primary);
-            border-radius: 20px; margin-bottom: 20px;
-        }
         .real-meta {
-            display: flex; flex-direction: column; gap: 20px;
-            padding: 35px;
-            background: var(--off-white);
-            border-radius: var(--radius);
-            border: 1px solid var(--gris-clair);
+            display: flex; flex-direction: column; gap: var(--space-4);
+            padding: var(--size-2-1875rem);
+            background: var(--light-200);
+            border-radius: var(--radius-small);
+            border: var(--size-0-0625rem) solid var(--light-300);
         }
-        .real-meta-item { display: flex; align-items: center; gap: 14px; }
+        .real-meta-item { display: flex; align-items: center; gap: var(--size-0-875rem); }
         .real-meta-item svg {
-            width: 22px; height: 22px; flex-shrink: 0;
-            stroke: var(--at-primary); stroke-width: 2;
+            width: var(--size-1-375rem); height: var(--size-1-375rem); flex-shrink: var(--size-zero);
+            stroke: var(--brand-500); stroke-width: var(--number-two);
             fill: none; stroke-linecap: round; stroke-linejoin: round;
         }
         .meta-label {
-            display: block; font-size: 0.7rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1px;
-            color: var(--light-1); margin-bottom: 2px;
+            display: block; font-size: var(--size-0-7rem); font-weight: var(--primary-bold);
+            text-transform: uppercase; letter-spacing: var(--size-0-0625rem);
+            color: var(--text-2); margin-bottom: var(--size-0-125rem);
         }
         .meta-value {
-            display: block; font-size: 0.95rem; font-weight: 600;
-            color: var(--primary);
+            display: block; font-size: var(--size-0-95rem); font-weight: var(--primary-medium);
+            color: var(--dark-900);
         }
 
         /* ============================================
            FEATURE LIST
            ============================================ */
-        .feature-list { list-style: none; margin-top: 20px; }
+        .feature-list { list-style: none; margin-top: var(--space-4); }
         .feature-list li {
-            position: relative; padding-left: 22px;
-            font-size: 0.9rem; color: var(--secondary); line-height: 2.2;
+            position: relative; padding-left: var(--size-1-375rem);
+            font-size: var(--size-0-9rem); color: var(--text-2); line-height: var(--number-2-2);
         }
         .feature-list li::before {
-            content: ''; position: absolute; left: 0; top: 12px;
-            width: 10px; height: 10px; border-radius: 50%;
-            background: var(--at-primary);
+            content: var(--content-timeline-before); position: absolute; left: var(--size-zero); top: var(--size-0-75rem);
+            width: var(--size-0-625rem); height: var(--size-0-625rem); border-radius: var(--percentage-50);
+            background: var(--brand-500);
         }
 
         /* ============================================
            PHOTO SECTION
            ============================================ */
-        .real-photos { margin-top: 60px; display: grid; grid-template-columns: 1fr; gap: 20px; }
-        .real-photos.has-two { grid-template-columns: 1fr 1fr; }
-        .real-photos.has-three { grid-template-columns: 1fr 1fr 1fr; }
-        .real-photos.has-four { grid-template-columns: 1fr 1fr 1fr 1fr; }
-        .real-photo-item { border-radius: var(--radius); overflow: hidden; cursor: pointer; }
-        .real-photo-item img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--radius); transition: transform 0.3s ease; }
-        .real-photo-item:hover img { transform: scale(1.03); }
-        .real-photo-caption { font-size: 0.82rem; color: var(--secondary); font-style: italic; margin-top: 10px; text-align: center; }
+        .real-photo-item { border-radius: var(--radius-small); overflow: hidden; cursor: pointer; }
+        .real-photo-caption { font-size: var(--size-0-82rem); color: var(--text-2); font-style: italic; margin-top: var(--size-0-625rem); text-align: center; }
 
         /* Lightbox */
-        .lightbox { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; cursor: zoom-out; }
-        .lightbox.active { display: flex; }
-        .lightbox img { max-width: 92vw; max-height: 90vh; object-fit: contain; border-radius: var(--radius); box-shadow: 0 10px 60px rgba(0,0,0,0.5); }
-        .lightbox-close { position: absolute; top: 25px; right: 30px; background: none; border: none; color: #fff; font-size: 2.2rem; cursor: pointer; opacity: 0.7; transition: opacity 0.2s; }
-        .lightbox-close:hover { opacity: 1; }
 
         /* ============================================
            BREADCRUMB BACK
            ============================================ */
         .breadcrumb-back {
-            display: inline-flex; align-items: center; gap: 8px;
-            font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
-            letter-spacing: 1px; color: var(--secondary); transition: var(--t);
-            padding: 30px 0 0;
+            display: inline-flex; align-items: center; gap: var(--space-2);
+            font-size: var(--size-0-78rem); font-weight: var(--primary-medium); text-transform: uppercase;
+            letter-spacing: var(--size-0-0625rem); color: var(--text-2); transition: var(--motion-transition);
+            padding: var(--space-5) var(--size-zero) var(--size-zero);
         }
-        .breadcrumb-back:hover { color: var(--at-primary); }
+        .breadcrumb-back:hover { color: var(--brand-500); }
         .breadcrumb-back svg {
-            width: 16px; height: 16px; stroke: currentColor; stroke-width: 2;
-            fill: none; transition: var(--t);
+            width: var(--size-1rem); height: var(--size-1rem); stroke: currentColor; stroke-width: var(--number-two);
+            fill: none; transition: var(--motion-transition);
         }
 
         /* ============================================
            BACK LINK
            ============================================ */
-        .back-link {
-            display: inline-flex; align-items: center; gap: 10px;
-            font-size: 0.82rem; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 1px; color: var(--at-primary); transition: var(--t);
-            margin-top: 50px;
-        }
-        .back-link:hover { color: var(--accent); gap: 14px; }
-        .back-link svg {
-            width: 18px; height: 18px; stroke: currentColor; stroke-width: 2;
-            fill: none; transition: var(--t);
-        }
 
         /* ============================================
            RESPONSIVE
            ============================================ */
-        @media (max-width: 1024px) {
-            .real-detail-layout { grid-template-columns: 1fr; gap: 40px; }
-        }
 
-        @media (max-width: 768px) {
-            .container { padding: 0 20px; }
-            .page-hero { padding: 140px 0 60px; }
-            .page-hero-content h1 { font-size: 2rem; }
-            .section { padding: 70px 0; }
-            .section-title { font-size: 1.8rem; }
-        }
+}
 </style>

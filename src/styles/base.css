@@ -353,20 +353,20 @@
 }
 
 * {
-  margin: 0;
+  margin: var(--size-zero);
 }
 
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100svh;
+  min-height: var(--size-100svh);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: clip;
   > main {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    flex-grow: var(--number-one);
   }
 }
 
@@ -384,12 +384,12 @@ video,
 canvas,
 svg {
   display: block;
-  max-width: 100%;
+  max-width: var(--size-full);
 }
 
 img,
 video {
-  width: 100%;
+  width: var(--size-full);
   object-fit: cover;
 }
 
@@ -400,10 +400,10 @@ img {
 }
 
 button {
-  background-color: transparent;
+  background-color: var(--color-transparent);
   text-align: inherit;
-  padding: 0;
-  border: 0;
+  padding: var(--size-zero);
+  border: var(--size-zero);
 }
 button:not(:disabled) {
   cursor: pointer;
@@ -423,7 +423,7 @@ select {
 
 ul,
 ol {
-  padding: 0;
+  padding: var(--size-zero);
   list-style: none;
   list-style-type: "";
 }
@@ -447,11 +447,11 @@ label {
 }
 
 select:has(option[value=""]:checked) {
-  color: color-mix(in lab, currentcolor 60%, transparent);
+  color: color-mix(in lab, currentcolor var(--percentage-60), var(--color-transparent));
 }
 
 :target {
-  scroll-margin-block: 2rem;
+  scroll-margin-block: var(--size-2rem);
 }
 
 :focus-visible {
@@ -466,13 +466,13 @@ select:has(option[value=""]:checked) {
   color: var(--selection-text);
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media (--mq-motion-reduced) {
   *,
   ::before,
   ::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    animation-duration: var(--duration-0-01ms) !important;
+    animation-iteration-count: var(--number-one) !important;
+    transition-duration: var(--duration-0-01ms) !important;
     scroll-behavior: auto !important;
   }
 }
@@ -614,5 +614,5 @@ h5,
 h6,
 p,
 [class*="text-style-"] {
-  text-box: trim-both cap alphabetic;
+  text-box: var(--text-trim, normal);
 }

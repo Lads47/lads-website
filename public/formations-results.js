@@ -18,42 +18,6 @@
   "use strict";
   var API_BASE = "https://evaremote.com/api/public/formations";
 
-  // Injection du CSS au load — autonome, pas besoin de toucher footer.css
-  var STYLE_ID = "lads-results-style";
-  function injectStyles() {
-    if (document.getElementById(STYLE_ID)) return;
-    var style = document.createElement("style");
-    style.id = STYLE_ID;
-    style.textContent =
-      ".lads-results-block{background:linear-gradient(180deg,#fafbff 0%,#f0f4ff 100%);" +
-      "border:1px solid #e0e7ff;border-radius:16px;padding:28px 32px;margin:32px 0;}" +
-      ".lads-results-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;}" +
-      ".lads-results-icon{font-size:24px;}" +
-      ".lads-results-title{margin:0;font-size:18px;font-weight:600;color:#1f2244;" +
-      "letter-spacing:0.5px;text-transform:uppercase;}" +
-      ".lads-results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));" +
-      "gap:16px;margin-bottom:20px;}" +
-      ".lads-results-card{background:#fff;border-radius:12px;padding:18px 16px;text-align:center;" +
-      "box-shadow:0 1px 3px rgba(31,34,68,0.06);}" +
-      ".lads-results-value{font-size:32px;font-weight:700;color:#1f2244;line-height:1;" +
-      "font-family:'JetBrains Mono',monospace;}" +
-      ".lads-results-unit{font-size:18px;color:#727485;margin-left:2px;}" +
-      ".lads-results-label{font-size:12px;color:#727485;margin-top:6px;" +
-      "text-transform:uppercase;letter-spacing:0.3px;}" +
-      ".lads-results-bar-wrap{margin:18px 0 12px;}" +
-      ".lads-results-bar-label{display:flex;justify-content:space-between;font-size:13px;" +
-      "color:#1f2244;margin-bottom:8px;}" +
-      ".lads-results-bar-label strong{font-family:'JetBrains Mono',monospace;color:#166534;}" +
-      ".lads-results-bar-track{height:8px;background:#e5e7eb;border-radius:8px;overflow:hidden;}" +
-      ".lads-results-bar-fill{height:100%;background:linear-gradient(90deg,#7dcef5,#166534);" +
-      "border-radius:8px;transition:width 1s ease;}" +
-      ".lads-results-footer{font-size:11px;color:#9ca3af;text-align:center;margin-top:16px;" +
-      "padding-top:14px;border-top:1px solid #e0e7ff;font-family:'JetBrains Mono',monospace;}" +
-      "@media(max-width:600px){.lads-results-block{padding:20px 18px;}" +
-      ".lads-results-value{font-size:26px;}}";
-    document.head.appendChild(style);
-  }
-
   function renderResults(container, data) {
     var hasSat = data.satisfactionAverage !== null;
     var hasNps = data.npsScore !== null;
@@ -98,7 +62,7 @@
                 '<strong>' + data.objectifsAtteintsRate + ' %</strong>' +
               '</div>' +
               '<div class="lads-results-bar-track">' +
-                '<div class="lads-results-bar-fill" style="width:' + data.objectifsAtteintsRate + '%"></div>' +
+                '<div class="lads-results-bar-fill" style="--result-progress:' + data.objectifsAtteintsRate + '%"></div>' +
               '</div>' +
             '</div>'
           : '') +
@@ -143,7 +107,7 @@
   function init() {
     var nodes = document.querySelectorAll("[data-formation-results-code]");
     if (nodes.length === 0) return;
-    injectStyles();
+
     Array.prototype.forEach.call(nodes, loadFor);
   }
 
