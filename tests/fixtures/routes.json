@@ -1,0 +1,402 @@
+[
+  {
+    "file": "404.html",
+    "route": "/404",
+    "kind": "404",
+    "canonical": null,
+    "destination": null,
+    "shell": false,
+    "lightbox": false,
+    "sourceSha256": "69be6aa49640305e1815c831d092419040330e7e6d1927c35f23bda538ed6975"
+  },
+  {
+    "file": "approche.html",
+    "route": "/approche",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/approche",
+    "destination": null,
+    "shell": true,
+    "lightbox": false,
+    "sourceSha256": "7048c5a19f626726f458b6485afcaac9b777303b6408b3d1374335bc052616d8"
+  },
+  {
+    "file": "contact.html",
+    "route": "/contact",
+    "kind": "redirect",
+    "canonical": "https://lesateliersdustream.fr/",
+    "destination": "/#contact",
+    "shell": false,
+    "lightbox": false,
+    "sourceSha256": "53e4b2178801373ce62bff4b5ce715f037847ec3d414aa826038e0130a0cab31"
+  },
+  {
+    "file": "formation-vmix.html",
+    "route": "/formation-vmix",
+    "kind": "redirect",
+    "canonical": "https://lesateliersdustream.fr/formations/vmix",
+    "destination": "/formations/vmix",
+    "shell": false,
+    "lightbox": false,
+    "sourceSha256": "31f89cd1392de9ce9e0db8add64fede5f75a00d65f8d21f07c920c01a6472b63"
+  },
+  {
+    "file": "formation.html",
+    "route": "/formation",
+    "kind": "redirect",
+    "canonical": "https://lesateliersdustream.fr/formations",
+    "destination": "/formations",
+    "shell": false,
+    "lightbox": false,
+    "sourceSha256": "cde82dc2f2531147510c4f0aeaf5aa70d4b9914269aede7a65bfee70980555cf"
+  },
+  {
+    "file": "formations/ia.html",
+    "route": "/formations/ia",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/formations/ia",
+    "destination": null,
+    "shell": true,
+    "lightbox": false,
+    "sourceSha256": "ea5b4bb77d81a67cbbf0368d6d6f8c3097a8ae979560033060f67943c4b9d856"
+  },
+  {
+    "file": "formations/vmix.html",
+    "route": "/formations/vmix",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/formations/vmix",
+    "destination": null,
+    "shell": true,
+    "lightbox": false,
+    "sourceSha256": "d3d4e49a534a658fa0a274b91f3df022a057a048857906d97d1717f77d2ef297"
+  },
+  {
+    "file": "formations.html",
+    "route": "/formations",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/formations",
+    "destination": null,
+    "shell": true,
+    "lightbox": false,
+    "sourceSha256": "42c3e67f7e1bf2d902a8f4d2c73a8b214c8e98f6cf034a55410c2fe106c530b9"
+  },
+  {
+    "file": "histoire.html",
+    "route": "/histoire",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/histoire",
+    "destination": null,
+    "shell": true,
+    "lightbox": false,
+    "sourceSha256": "026479047c3f5066e1cc4c2f0e77f4ce856501bf24a71e13f30bc426b0315b16"
+  },
+  {
+    "file": "index.html",
+    "route": "/",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "02df42865cd578a85786c1a1271592def997727bdde9b426e76d097e3e502e3d"
+  },
+  {
+    "file": "mentions-legales.html",
+    "route": "/mentions-legales",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/mentions-legales",
+    "destination": null,
+    "shell": true,
+    "lightbox": false,
+    "sourceSha256": "c0fc9c7ef3c7c547c53c35cd3390141d7637021860f2cdd51a30ca738c2700e9"
+  },
+  {
+    "file": "multiplex.html",
+    "route": "/multiplex",
+    "kind": "redirect",
+    "canonical": "https://lesateliersdustream.fr/solutions/multiplex",
+    "destination": "/solutions/multiplex",
+    "shell": false,
+    "lightbox": false,
+    "sourceSha256": "6bafc76ef37d7538a90a268fff0d28e303967ff25b472a6238a4646d1fc173e9"
+  },
+  {
+    "file": "politique-confidentialite.html",
+    "route": "/politique-confidentialite",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/politique-confidentialite",
+    "destination": null,
+    "shell": true,
+    "lightbox": false,
+    "sourceSha256": "b3c0c746818e0c24b8715ef9c49b4ee3df938683955cf99f888eaf5aff1b749c"
+  },
+  {
+    "file": "realisations/ceremonie-docteurs-bordeaux.html",
+    "route": "/realisations/ceremonie-docteurs-bordeaux",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/realisations/ceremonie-docteurs-bordeaux",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "2503393d5d64b140484bb3e9a1e41a2a91589bfb69fec6c685cbd4c53bf5c7ca"
+  },
+  {
+    "file": "realisations/destination-europe.html",
+    "route": "/realisations/destination-europe",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/realisations/destination-europe",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "7137485ebc7d16e0055e045c33cb44f908efc94d786146446e6990a1a6adfb0a"
+  },
+  {
+    "file": "realisations/etourisme-pau.html",
+    "route": "/realisations/etourisme-pau",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/realisations/etourisme-pau",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "c8acecdc7b58df136fbb97d4908a6531f61ea23f8566651d467b106feab26249"
+  },
+  {
+    "file": "realisations/festival-imprime.html",
+    "route": "/realisations/festival-imprime",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/realisations/festival-imprime",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "7852588c6a5a217be5733befed24774c4464a506413946e2dbc6600d7bf3a51f"
+  },
+  {
+    "file": "realisations/festival-journalisme-couthures.html",
+    "route": "/realisations/festival-journalisme-couthures",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/realisations/festival-journalisme-couthures",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "eae60c08038ea4ee56e828ccaa351256e71fdc757bb04685a7b2340a2010212f"
+  },
+  {
+    "file": "realisations/inova-e.html",
+    "route": "/realisations/inova-e",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/realisations/inova-e",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "8a41756a741b575876555c62c7d2fe26f00852af1ac1df8366f3b39047bdf2e8"
+  },
+  {
+    "file": "realisations/jeu-de-role.html",
+    "route": "/realisations/jeu-de-role",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/realisations/jeu-de-role",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "5faa2fc5f26b11a6bb79c299041a2e72a72406f7492a2917d56ff77bfce45008"
+  },
+  {
+    "file": "realisations/open-cote-de-beaute.html",
+    "route": "/realisations/open-cote-de-beaute",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/realisations/open-cote-de-beaute",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "f88c962f73a61c1dd9d4cf44d2e081ff8ef328d5a926f0e191de5116f491794f"
+  },
+  {
+    "file": "realisations/peer-gynt.html",
+    "route": "/realisations/peer-gynt",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/realisations/peer-gynt",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "64abb1afac6c5ac79b57e91d0e8d4ef23758451ec568ee67d3c807dcad8470c3"
+  },
+  {
+    "file": "realisations/salon-agriculture-bordeaux.html",
+    "route": "/realisations/salon-agriculture-bordeaux",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/realisations/salon-agriculture-bordeaux",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "1c05886602bee52e5fd47ddb3be33334b136a8c385ddf5caba911d5484ab77a5"
+  },
+  {
+    "file": "realisations/tcg.html",
+    "route": "/realisations/tcg",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/realisations/tcg",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "8cea6d1eeb09769ded6fc9940de0a23c0d893b77d5e5d3948d478ab71ee60b79"
+  },
+  {
+    "file": "realisations/universite-dete-du-ceca-chateau-smith-haut-lafitte.html",
+    "route": "/realisations/universite-dete-du-ceca-chateau-smith-haut-lafitte",
+    "kind": "redirect",
+    "canonical": "https://lesateliersdustream.fr/realisations/universite-ete-ceca",
+    "destination": "/realisations/universite-ete-ceca",
+    "shell": false,
+    "lightbox": false,
+    "sourceSha256": "aa36d3c18907a47ffd9cbdf4684f14880e774089221762a3b8e74076326c5fa7"
+  },
+  {
+    "file": "realisations/universite-ete-ceca.html",
+    "route": "/realisations/universite-ete-ceca",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/realisations/universite-ete-ceca",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "dc591b154ddd360c96076bbcde4c7fcf31ed06bbebc961c80c3393ec3e737f8e"
+  },
+  {
+    "file": "realisations.html",
+    "route": "/realisations",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/realisations",
+    "destination": null,
+    "shell": true,
+    "lightbox": false,
+    "sourceSha256": "d93c6e5dabec973e3c1bb55b1f07b40f546c1b09f735f72eb5db022a9d63c887"
+  },
+  {
+    "file": "solutions/cameras-tourelle-hf.html",
+    "route": "/solutions/cameras-tourelle-hf",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/solutions/cameras-tourelle-hf",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "d3709433c15c7a6838d39fcd5f1b0a563f77136f35b07c981856f03a1518e116"
+  },
+  {
+    "file": "solutions/captation-multi-regies.html",
+    "route": "/solutions/captation-multi-regies",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/solutions/captation-multi-regies",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "d8246743ee18199e8e8164a16640ea70487371f5948030354969dee8b3e0b721"
+  },
+  {
+    "file": "solutions/captation-multicam.html",
+    "route": "/solutions/captation-multicam",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/solutions/captation-multicam",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "c5514be47bbfeaf58bfb24d785ef6abbf5beca455e56cebd4e423e56621c629e"
+  },
+  {
+    "file": "solutions/captation-video.html",
+    "route": "/solutions/captation-video",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/solutions/captation-video",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "5e23b226b7a17c1b625acb2a1c28cd04fdada0218100b49f809f57d675fb00f3"
+  },
+  {
+    "file": "solutions/chapitrage-automatique.html",
+    "route": "/solutions/chapitrage-automatique",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/solutions/chapitrage-automatique",
+    "destination": null,
+    "shell": true,
+    "lightbox": false,
+    "sourceSha256": "aa40306ec458f0a461f62d95c106d441f261d90b375fc1c11c9fcfb469715e2d"
+  },
+  {
+    "file": "solutions/diffusion-gestion-medias.html",
+    "route": "/solutions/diffusion-gestion-medias",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/solutions/diffusion-gestion-medias",
+    "destination": null,
+    "shell": true,
+    "lightbox": false,
+    "sourceSha256": "184ac2159167fb3f8463da074c7d598967e14804c18492e4a0a6fc12a83a0d25"
+  },
+  {
+    "file": "solutions/fond-vert.html",
+    "route": "/solutions/fond-vert",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/solutions/fond-vert",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "1b37467fb1dabb5a165f5b59f67b3b5ffb1f198fdc775dc93d1303f64a41677c"
+  },
+  {
+    "file": "solutions/multiplex.html",
+    "route": "/solutions/multiplex",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/solutions/multiplex",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "4f90fa63ccc1369687f06b3cb3e4e1eb9c9c2b272b28653d0db7f6502b97f70d"
+  },
+  {
+    "file": "solutions/plateau-web-tv.html",
+    "route": "/solutions/plateau-web-tv",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/solutions/plateau-web-tv",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "bb2aa4da3a8953d3b06b4e456491cb307ef15bcec4aaefc793e9a923e6289c51"
+  },
+  {
+    "file": "solutions/retranscription-synthese.html",
+    "route": "/solutions/retranscription-synthese",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/solutions/retranscription-synthese",
+    "destination": null,
+    "shell": true,
+    "lightbox": true,
+    "sourceSha256": "cfd54d09bba954d50ca7cacfd93c5e077e3f809db73be286b6ce03f491db8fc1"
+  },
+  {
+    "file": "solutions/sonorisation.html",
+    "route": "/solutions/sonorisation",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/solutions/sonorisation",
+    "destination": null,
+    "shell": true,
+    "lightbox": false,
+    "sourceSha256": "9c67d3fa050f8bb272b741783c252d9949bd4ac8271f7ee4d9a4f41b0ef803e5"
+  },
+  {
+    "file": "solutions/videoprojection.html",
+    "route": "/solutions/videoprojection",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/solutions/videoprojection",
+    "destination": null,
+    "shell": true,
+    "lightbox": false,
+    "sourceSha256": "5ff34d6be65b9285a1be9b16f8dcc8b816a7966aec80e6027e751f6dcc0511aa"
+  },
+  {
+    "file": "solutions.html",
+    "route": "/solutions",
+    "kind": "content",
+    "canonical": "https://lesateliersdustream.fr/solutions",
+    "destination": null,
+    "shell": true,
+    "lightbox": false,
+    "sourceSha256": "2741c7e689fbc2b54a62a38be1b314a2e6a15d680fc22a4c78692c7576ce7046"
+  }
+]

@@ -1,0 +1,17 @@
+<dialog id="photo-lightbox" class="photo-lightbox" aria-label="Photographie agrandie" closedby="any">
+  <form method="dialog"><button class="photo-lightbox-close" aria-label="Fermer la photographie" autofocus>×</button></form>
+  <img alt="" />
+</dialog>
+<style is:global>
+  .photo-lightbox {
+    padding: 0; border: 0; margin: auto; background: transparent;
+    max-width: 90vw; max-height: 90vh; overflow: visible;
+    overscroll-behavior: contain;
+  }
+  .photo-lightbox[open] { display: block; }
+  .photo-lightbox::backdrop { background: rgba(0,0,0,.92); overflow: hidden; overscroll-behavior: contain; }
+  .photo-lightbox img { display: block; max-width: 90vw; max-height: 90vh; width: auto; height: auto; object-fit: contain; border-radius: .25rem; }
+  .photo-lightbox-close { position: fixed; top: 1.25rem; right: 1.875rem; background: none; border: 0; color: white; font-size: 2.5rem; cursor: pointer; }
+  .photo-trigger { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; text-align: inherit; }
+  .photo-trigger img { width: 100%; }
+</style>

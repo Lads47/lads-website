@@ -1,0 +1,42 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  description: string;
+  email: string;
+  phoneHref: string;
+  phone: string;
+  locationAlt: string;
+  training: boolean;
+}
+const { eyebrow, title, description, email, phoneHref, phone, locationAlt, training } = Astro.props;
+---
+<section id="contact" class="cta-contact">
+  <div class="container reveal">
+    <span class="section-tag" style="color: var(--accent);">{eyebrow}</span>
+    <h2 class="section-title">{title}</h2>
+    <p class="section-desc">{description}</p>
+    <hr class="divider" style="background: var(--accent);" />
+    <div class="cta-grid">
+      <div class="cta-card">
+        <div class="cta-card-icon"><img loading="lazy" src="/images/noun-email-5456693.svg" alt="Email" /></div>
+        <h4>Email</h4>
+        <p><a href={`mailto:${email}`}>{email}</a></p>
+      </div>
+      <div class="cta-card">
+        <div class="cta-card-icon"><img loading="lazy" src="/images/noun-call-5456677.svg" alt="Téléphone" /></div>
+        <h4>Téléphone</h4>
+        <p><a href={phoneHref}>{phone}</a></p>
+      </div>
+      <div class="cta-card">
+        <div class="cta-card-icon"><img loading="lazy" src="/images/noun-location-4693998.svg" alt={locationAlt} /></div>
+        <h4>{training ? 'Lieu de formation' : 'Nos bureaux'}</h4>
+        {training ? <p>39 bis rue Robert Creuzet<br />47200 Marmande</p> : <>
+          <p style="color:#7dcef5;">39 bis rue Robert Creuzet, 47200 Marmande</p>
+          <p>22 rue Marcelin Berthelot, 33700 Mérignac</p>
+          <p>108 Bd Gallieni, 92130 Issy-les-Moulineaux</p>
+        </>}
+      </div>
+    </div>
+  </div>
+</section>

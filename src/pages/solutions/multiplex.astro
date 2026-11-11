@@ -1,0 +1,18 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import Content from '@/components/content/SolutionsMultiplex.astro';
+---
+<PageLayout shell={true} home={false} schema={true} lightbox={true}>
+  <Fragment slot="head"><title>Multiplex - Les Ateliers du Stream</title>
+    <meta name="description" content="Solution multiplex : connectez plusieurs sites en temps r&eacute;el gr&acirc;ce &agrave; la fibre optique et la 5G pour des interventions simultan&eacute;es et fluides.">
+    <link rel="canonical" href="https://lesateliersdustream.fr/solutions/multiplex">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://lesateliersdustream.fr/solutions/multiplex">
+    <meta property="og:title" content="Multiplex - Les Ateliers du Stream">
+    <meta property="og:description" content="Solution multiplex : connectez plusieurs sites en temps r&eacute;el gr&acirc;ce &agrave; la fibre optique et la 5G pour des interventions simultan&eacute;es et fluides.">
+    <meta property="og:image" content="https://lesateliersdustream.fr/photo/ino0.webp">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Les Ateliers du Stream">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon"></Fragment>
+  <Content />
+</PageLayout>

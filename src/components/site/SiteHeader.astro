@@ -1,0 +1,33 @@
+---
+interface Props { home?: boolean }
+const { home = false } = Astro.props;
+const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+const section = path.split('/')[1];
+const items = [
+  ['/solutions', 'Nos solutions', 'solutions'],
+  ['/realisations', 'Nos réalisations', 'realisations'],
+  ['/approche', 'Notre accompagnement', 'approche'],
+  ['/formations', 'Nos formations', 'formations'],
+  ['/histoire', 'Notre histoire', 'histoire'],
+];
+const legal = ['/mentions-legales', '/politique-confidentialite'].includes(path);
+---
+<header id="header">
+  <div class="header-inner">
+    <a href={home ? '#' : '/'} class="logo" aria-label="Les Ateliers du Stream — accueil">
+      {home ? <>
+        <img src="/images/LOGO_clair.svg" alt="Les Ateliers du Stream" class="logo-light" />
+        <img src="/images/LOGO_fonce.svg" alt="Les Ateliers du Stream" class="logo-dark" />
+      </> : <img src="/images/LOGO_fonce.svg" alt="Les Ateliers du Stream" />}
+    </a>
+    <button type="button" class="menu-toggle" aria-label="Menu" aria-controls="site-navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-navigation" aria-label="Navigation principale">
+      <ul>
+        {items.map(([href, text, key]) => <li><a href={href} class:list={[!home && section === key && 'active']} aria-current={!home && path === href ? 'page' : undefined}>{text}</a></li>)}
+        <li><a href={legal ? '/#contact' : '#contact'}>Nous contacter</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

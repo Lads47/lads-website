@@ -1,0 +1,20 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import Content from '@/components/content/PolitiqueConfidentialite.astro';
+---
+<PageLayout shell={true} home={false} schema={true} lightbox={false}>
+  <Fragment slot="head"><title>Politique de confidentialit&eacute; - Les Ateliers du Stream</title>
+    <meta name="description" content="Politique de confidentialit&eacute; du site lesateliersdustream.fr : donn&eacute;es collect&eacute;es, cookies, services tiers et exercice de vos droits.">
+    <link rel="canonical" href="https://lesateliersdustream.fr/politique-confidentialite">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lesateliersdustream.fr/politique-confidentialite">
+    <meta property="og:title" content="Politique de confidentialit&eacute; - Les Ateliers du Stream">
+    <meta property="og:description" content="Politique de confidentialit&eacute; du site lesateliersdustream.fr : donn&eacute;es collect&eacute;es, cookies, services tiers et exercice de vos droits.">
+    <meta property="og:image" content="https://lesateliersdustream.fr/images/og-default.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Les Ateliers du Stream">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon"></Fragment>
+  <Content />
+</PageLayout>

@@ -1,0 +1,167 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import Content from '@/components/content/FormationsIa.astro';
+---
+<PageLayout shell={true} home={false} schema={true} lightbox={false}>
+  <Fragment slot="head"><title>Formation IA &agrave; Marmande (47) &mdash; Initiation &amp; agents IA</title>
+    <meta name="description" content="Formation IA &agrave; Marmande (47)&nbsp;: une journ&eacute;e en pr&eacute;sentiel pour comprendre l'IA g&eacute;n&eacute;rative et cr&eacute;er vos premiers agents IA. 8 places max, 790&nbsp;&euro; HT.">
+    <meta name="keywords" content="formation IA Marmande, formation intelligence artificielle Marmande, formation IA Lot-et-Garonne, formation agents IA, formation IA g&eacute;n&eacute;rative Nouvelle-Aquitaine">
+    <link rel="canonical" href="https://lesateliersdustream.fr/formations/ia">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://lesateliersdustream.fr/formations/ia">
+    <meta property="og:title" content="Formation IA &agrave; Marmande (47) &mdash; Initiation &amp; agents IA">
+    <meta property="og:description" content="Une journ&eacute;e en pr&eacute;sentiel &agrave; Marmande pour ma&icirc;triser l'intelligence artificielle g&eacute;n&eacute;rative et cr&eacute;er vos premiers agents IA. Anim&eacute;e par un ing&eacute;nieur en activit&eacute;.">
+
+    <!-- JSON-LD : formation IA localisée à Marmande -->
+    <script is:inline type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Formation IA — Initiation et acculturation à l'intelligence artificielle",
+      "description": "Formation d'une journée en présentiel à Marmande pour comprendre l'IA générative et les agents IA, et lancer ses premiers cas d'usage.",
+      "url": "https://lesateliersdustream.fr/formations/ia",
+      "inLanguage": "fr",
+      "provider": {
+        "@id": "https://lesateliersdustream.fr/#organization"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "onsite",
+        "courseWorkload": "PT7H",
+        "location": {
+          "@type": "Place",
+          "name": "Les Ateliers du Stream — Marmande",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "39 bis rue Robert Creuzet",
+            "addressLocality": "Marmande",
+            "postalCode": "47200",
+            "addressCountry": "FR"
+          }
+        }
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "790",
+        "priceCurrency": "EUR",
+        "category": "Formation professionnelle",
+        "availability": "https://schema.org/InStock",
+        "url": "https://lesateliersdustream.fr/formations/ia"
+      }
+    }
+    </script>
+
+    <!-- JSON-LD : fil d'Ariane Accueil > Formations > Formation IA -->
+    <script is:inline type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://lesateliersdustream.fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Nos formations",
+          "item": "https://lesateliersdustream.fr/formations"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Formation IA à Marmande"
+        }
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD : FAQ. Le texte doit rester identique à celui affiché dans la
+         section FAQ de la page, sinon Google invalide le balisage. -->
+    <script is:inline type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Où se déroule la formation IA ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La formation se déroule en présentiel dans nos locaux, au 39 bis rue Robert Creuzet, 47200 Marmande (Lot-et-Garonne). La gare de Marmande est à dix minutes à pied. Marmande est facilement accessible depuis Agen, Villeneuve-sur-Lot, Tonneins et Bordeaux."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de temps dure la formation et quel est son tarif ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La formation dure une journée, soit 7 heures, pour un tarif de 790 € HT par participant. Le groupe est limité à 8 personnes afin de garantir un accompagnement individualisé."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il des connaissances techniques pour y participer ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aucun prérequis n'est demandé. La formation s'adresse à toute personne souhaitant se former à l'intelligence artificielle, quel que soit son métier. Le vocabulaire technique est systématiquement expliqué."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels financements sont possibles ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Notre certification Qualiopi ouvre plusieurs modes de prise en charge : l'AFDAS pour les intermittents du spectacle et de l'audiovisuel, votre OPCO si vous êtes salarié, l'aide individuelle à la formation de France Travail si vous êtes demandeur d'emploi, ou le financement sur fonds propres. Nous vous accompagnons dans le montage du dossier."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "La formation est-elle centrée sur un outil en particulier ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Nous parcourons volontairement un large panel de solutions — Claude, ChatGPT, Gemini, Mistral, plateformes d'agents, outils sans code — pour que vous repartiez avec une vision d'ensemble plutôt qu'avec la maîtrise d'un seul logiciel, et avec une méthode de veille qui reste valable dans le temps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que je repars avec à la fin de la journée ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vous aurez conçu, déployé et testé votre premier agent IA répondant à un besoin concret, cartographié les cas d'usage pertinents dans votre propre contexte professionnel, et établi un plan d'action pour la suite."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on organiser la formation en intra-entreprise ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Le contenu peut être adapté à votre secteur et à vos cas d'usage, et la formation peut être organisée pour vos seules équipes. Contactez-nous pour en définir le format."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "La formation est-elle accessible aux personnes en situation de handicap ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La salle de cours et l'espace de vie sont compatibles avec l'accueil de personnes à mobilité réduite. Nous étudions et mettons en œuvre les adaptations nécessaires : contactez Noémie Marphay en amont à formation@lesateliersdustream.fr pour toute demande spécifique."
+          }
+        }
+      ]
+    }
+    </script>
+    <meta property="og:image" content="https://lesateliersdustream.fr/images/og-formation-ia.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Salle de formation des Ateliers du Stream à Marmande">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Les Ateliers du Stream">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Formation IA &agrave; Marmande (47) &mdash; Initiation &amp; agents IA">
+    <meta name="twitter:description" content="Une journ&eacute;e en pr&eacute;sentiel &agrave; Marmande pour ma&icirc;triser l'IA g&eacute;n&eacute;rative et cr&eacute;er vos premiers agents IA.">
+    <meta name="twitter:image" content="https://lesateliersdustream.fr/images/og-formation-ia.jpg">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon"></Fragment>
+  <Content />
+</PageLayout>

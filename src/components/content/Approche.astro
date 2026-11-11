@@ -1,0 +1,318 @@
+---
+import ContactSection from './ContactSection.astro';
+import Heading from '../typography/Heading.astro';
+---
+<!-- ============================================
+         PAGE HERO
+         ============================================ -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <span class="section-tag">Notre accompagnement</span>
+                <Heading tag="h1" variant="inherit">Comment pr&eacute;parons-nous votre &eacute;v&eacute;nement ?</Heading>
+                <p>
+                    Chaque projet est unique et a ses sp&eacute;cificit&eacute;s. Conscients de cela, nous nous employons
+                    &agrave; une &eacute;coute active de vos besoins pour vous proposer le meilleur service possible
+                    avant, pendant et apr&egrave;s votre &eacute;v&eacute;nement.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         NOTRE APPROCHE — TIMELINE
+         ============================================ -->
+    <section class="section process">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Notre approche</span>
+                <Heading tag="h2" variant="inherit" class="section-title">De l'&eacute;coute &agrave; la r&eacute;alisation</Heading>
+                <hr class="divider">
+            </div>
+            <div class="process-layout reveal">
+                <div class="process-visual">
+                    <div class="process-photo">
+                        <img loading="lazy"src="/images/visite-technique.avif" alt="Visite technique">
+                        <span class="process-photo-caption">Visite technique avant l'&eacute;v&eacute;nement</span>
+                    </div>
+                    <div class="process-photo">
+                        <img loading="lazy"src="/images/habillage_graphique.avif" alt="Habillage graphique">
+                        <span class="process-photo-caption">Cr&eacute;ation d'un habillage vid&eacute;o</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="timeline">
+                        <div class="timeline-step">
+                            <Heading tag="h4" variant="inherit">&Eacute;change &amp; cadrage</Heading>
+                            <p>Nous parlons ensemble de votre &eacute;v&eacute;nement, de ses besoins et de ses enjeux pour dimensionner le dispositif id&eacute;al.</p>
+                        </div>
+                        <div class="timeline-step">
+                            <Heading tag="h4" variant="inherit">Coordination technique</Heading>
+                            <p>Nous prenons en charge la relation avec le lieu de l'&eacute;v&eacute;nement pour garantir la bonne connexion des &eacute;quipements et ne rien laisser au hasard.</p>
+                        </div>
+                        <div class="timeline-step">
+                            <Heading tag="h4" variant="inherit">Habillage &agrave; vos couleurs</Heading>
+                            <p>Cr&eacute;ation d'habillages graphiques personnalis&eacute;s et, si besoin, d'une page web de diffusion du direct &agrave; votre charte graphique.</p>
+                        </div>
+                        <div class="timeline-step">
+                            <Heading tag="h4" variant="inherit">Le jour J, on g&egrave;re</Heading>
+                            <p>Flexibilit&eacute; totale face aux impr&eacute;vus : modification d'un PowerPoint, intervenant en duplex, diffusion d'un film &agrave; la derni&egrave;re minute &mdash; nous nous adaptons.</p>
+                        </div>
+                        <div class="timeline-step">
+                            <Heading tag="h4" variant="inherit">Livraison des replays</Heading>
+                            <p>Nous vous livrons vos vid&eacute;os habill&eacute;es avec le d&eacute;coupage th&eacute;matique de votre choix, avec la possibilit&eacute; d'une livraison d&egrave;s le lendemain.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         CTA / CONTACT
+         ============================================ -->
+    <ContactSection eyebrow={"Parlons de votre projet"} title={"On passe à votre événement ?"} description={"Un projet en construction, un événement qui approche que vous envisagez de filmer et diffuser ? Parlons-en."} email={"prod@lesateliersdustream.fr"} phoneHref={"tel:+33661968858"} phone={"06 61 96 88 58"} locationAlt={"Nos bureaux"} training={false} />
+
+    <!-- Footer -->
+
+<style is:global>
+/* ============================================
+           POLICES
+           ============================================ */
+        @font-face {
+            font-family: 'Butler';
+            src: url('/fonts/subset-Butler.woff2') format('woff2');
+            font-weight: 400; font-style: normal; font-display: swap;
+        }
+        @font-face {
+            font-family: 'Butler';
+            src: url('/fonts/Butler-Black.woff2') format('woff2');
+            font-weight: 900; font-style: normal; font-display: swap;
+        }
+        @font-face {
+            font-family: 'Open Sans';
+            src: url('/fonts/OpenSans-VariableFont_wght.woff2') format('woff2');
+            font-weight: 300 800; font-style: normal; font-display: swap;
+        }
+
+        /* ============================================
+           VARIABLES
+           ============================================ */
+        :root {
+            --primary: #1f2244;
+            --secondary: #727485;
+            --accent: #7dcef5;
+            --at-primary: #7dcff5;
+            --blanc: #ffffff;
+            --off-white: #f7f8fa;
+            --gris-clair: #e9e9ed;
+            --gris-moyen: #d3d3da;
+            --dark-1: #363957;
+            --dark-2: #4c4f6a;
+            --light-1: #a6a7b5;
+            --font-titre: 'Butler', Georgia, serif;
+            --font-texte: 'Open Sans', sans-serif;
+            --max-width: 1200px;
+            --t: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius: 6px;
+        }
+
+        /* ============================================
+           RESET
+           ============================================ */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-texte); color: var(--primary); line-height: 1.6; background: var(--blanc); }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; }
+
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 40px; }
+
+        /* ============================================
+           PAGE HERO
+           ============================================ */
+        .page-hero {
+            background: var(--primary); color: var(--blanc);
+            padding: 180px 0 80px; text-align: center;
+        }
+        .page-hero-content .section-tag { color: var(--accent); }
+        .page-hero-content h1 {
+            font-family: var(--font-titre); font-size: 3rem; font-weight: 900;
+            line-height: 1.15; margin: 12px 0 20px;
+        }
+        .page-hero-content p {
+            font-size: 1.05rem; color: var(--light-1); max-width: 650px;
+            margin: 0 auto; line-height: 1.8;
+        }
+
+        /* ============================================
+           SECTIONS COMMUNES
+           ============================================ */
+        .section { padding: 90px 0; }
+        .section-tag {
+            display: inline-block; font-size: 0.72rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 3px; color: var(--at-primary);
+            margin-bottom: 16px;
+        }
+        .section-title {
+            font-family: var(--font-titre); font-size: 2.4rem; font-weight: 900;
+            line-height: 1.2; margin-bottom: 20px; color: var(--primary);
+        }
+        .section-desc {
+            font-size: 1rem; color: var(--secondary); line-height: 1.8;
+            max-width: 600px;
+        }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header .section-desc { margin: 0 auto; }
+        .divider {
+            width: 50px; height: 3px; background: var(--at-primary);
+            margin: 20px auto 0; border: none;
+        }
+
+        /* ============================================
+           SECTION — TIMELINE (depuis index.html)
+           ============================================ */
+        .process { background: var(--blanc); }
+
+        .process-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: stretch;
+        }
+
+        .process-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .process-photo {
+            position: relative;
+            flex: 1;
+            display: flex;
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .process-photo img {
+            width: 100%;
+            flex: 1;
+            object-fit: cover;
+            border-radius: var(--radius);
+        }
+
+        .process-photo-caption {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 10px 16px;
+            background: linear-gradient(0deg, rgba(0,0,0,0.55) 0%, transparent 100%);
+            color: var(--blanc);
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: ''; position: absolute;
+            left: 12px; top: 8px; bottom: 8px;
+            width: 2px; background: var(--gris-clair);
+        }
+
+        .timeline-step {
+            position: relative;
+            margin-bottom: 35px;
+            padding-left: 20px;
+        }
+
+        .timeline-step:last-child { margin-bottom: 0; }
+
+        .timeline-step::before {
+            content: ''; position: absolute;
+            left: -40px; top: 6px;
+            width: 24px; height: 24px;
+            border-radius: 50%;
+            background: var(--blanc);
+            border: 3px solid var(--at-primary);
+            transition: var(--t);
+            z-index: 1;
+        }
+
+        .timeline-step:hover::before {
+            background: var(--at-primary);
+            box-shadow: 0 0 0 6px rgba(43,191,202,0.15);
+        }
+
+        .timeline-step h4 {
+            font-size: 1.1rem; font-weight: 700;
+            margin-bottom: 6px; color: var(--primary);
+        }
+
+        .timeline-step p {
+            font-size: 0.88rem; color: var(--secondary); line-height: 1.7;
+        }
+
+        /* ============================================
+           SECTION — 3 PHASES (Avant / Pendant / Apr&egrave;s)
+           ============================================ */
+        .phases { background: var(--off-white); }
+
+        .phase-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        .phase-row:last-child { margin-bottom: 0; }
+        .phase-row.reverse { direction: rtl; }
+        .phase-row.reverse > * { direction: ltr; }
+
+        .phase-visual {
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+        .phase-visual img {
+            width: 100%;
+            border-radius: var(--radius);
+        }
+
+        .phase-number {
+            display: inline-block; font-size: 0.72rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 2px;
+            color: var(--at-primary); margin-bottom: 10px;
+        }
+
+        .phase-content h3 {
+            font-family: var(--font-titre); font-size: 1.8rem; font-weight: 900;
+            line-height: 1.2; margin-bottom: 16px; color: var(--primary);
+        }
+
+        .phase-content p {
+            font-size: 0.95rem; color: var(--secondary); line-height: 1.8;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            .process-layout { grid-template-columns: 1fr; gap: 50px; }
+            .phase-row { grid-template-columns: 1fr; gap: 40px; }
+            .phase-row.reverse { direction: ltr; }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            .page-hero { padding: 140px 0 60px; }
+            .page-hero-content h1 { font-size: 2rem; }
+            .section { padding: 70px 0; }
+            .section-title { font-size: 1.8rem; }
+            .phase-content h3 { font-size: 1.4rem; }
+        }
+</style>
