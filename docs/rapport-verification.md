@@ -4,21 +4,23 @@
 
 - Adresse : <http://127.0.0.1:4321>.
 - Branche locale : `feat/refonte-astro-lumos`.
-- Source historique : `a4a264380f80e3570bcb3d01a6776bb582439527` de `Lads47/lads-website`, inchangée au démarrage de l'implémentation.
+- Commit applicatif présenté : `7caaa1f` ; aucun envoi distant.
+- Source historique : `a4a264380f80e3570bcb3d01a6776bb582439527` de `Lads47/lads-website`. Le pointeur GitHub `main` a été revérifié inchangé ; les 40 HTML publiés correspondent à la référence après normalisation des seules fins de ligne. Aucune modification publiée absente de cette source n'a été détectée dans ces HTML.
 - Astro **7.4.7**, Lumos for Astro **1.0.3**, dépendances exactes et lockfile vérifiés par une installation propre `npm ci`.
+- Reprise native Lumos : suppression du reset de neutralisation, migration des composants, noms de couleurs corrigés et valeurs visuelles déplacées dans les tokens. Voir `docs/lumos.md`.
 - **Aucun push, aucune PR, aucune fusion, aucune mise en ligne.** La version locale attend la validation de l'utilisateur.
 
 ## Contrôles réussis
 
 | Contrôle | Résultat |
 | --- | --- |
-| Astro / TypeScript | 123 fichiers, aucune erreur, aucun avertissement ni hint |
+| Astro / TypeScript | 122 fichiers, aucune erreur, aucun avertissement ni hint |
 | Build statique | 40 fichiers HTML : 34 pages de contenu, 5 anciennes routes, 404 |
 | Contenus | Empreintes des textes identiques pour les 40 pages après normalisation des espaces et entités HTML |
 | Référencement | Titres, descriptions, canoniques et autres métadonnées conservés ; JSON-LD de la formation IA identique ; sitemap contenant les 34 pages |
-| Ressources et navigation | Images et textes alternatifs conservés ; 1 256 références locales et leurs ancres contrôlées ; aucun identifiant HTML dupliqué |
+| Ressources et navigation | Images et textes alternatifs conservés ; 1 303 références locales et leurs ancres contrôlées ; aucun identifiant HTML dupliqué |
 | Comparaisons visuelles | 35 pages × bureau 1440 px et mobile 390 px ; aucun débordement horizontal ni image cassée |
-| Résultat des comparaisons | 68 paires de captures identiques selon le comparateur ; les 2 autres correspondent aux formations mobiles dont le débordement est corrigé |
+| Résultat des comparaisons | Tailles et espacements adaptés aux composants natifs Lumos ; compositions, textes, photos et identité conservés. Les captures ne sont plus revendiquées identiques au pixel |
 | Tablette | Accueil, catalogue solutions, réalisation, formation IA et mentions légales contrôlés à 768 px |
 | Menu | Ouverture, navigation clavier, Échap, retour du focus et lien actif |
 | Photos | Accueil, réalisation et solution : ouverture par souris/clavier, fermeture par bouton/Échap/clic extérieur et retour du focus |
@@ -27,11 +29,14 @@
 | Vidéo locale | Chargement réel du MP4 local, lecture, pause et reprise ; vidéo en pause avec réduction des animations |
 | Sans JavaScript | Navigation et contenu accessibles sur mobile |
 | Anciennes URL | 5 destinations de redirection conservées, vraie réponse 404 pour une page inexistante |
-| Sensibilité des tests | Une condition du menu a été inversée dans une copie isolée du build : le test a détecté la régression. La version présentée n'a pas été modifiée par cet essai |
+| Lumos et tokens actifs | 89 sections, 64 grilles et 65 cartes dans les sources de contenu ; 4 677 déclarations CSS contrôlées ; le test navigateur confirme qu'un changement des tokens de couleur et d'espacement modifie les composants |
+| Photos de fond | 36 références d'origine vérifiées, désormais rendues par des composants `Img` Lumos |
 
 Les captures automatisées fixent les réponses EVA et neutralisent visuellement les zones vidéo/iframe pour obtenir des comparaisons reproductibles. Les images différées sont chargées avant capture et les animations sont figées. Les résultats ne constituent donc pas un visionnage exhaustif des vidéos Vimeo/YouTube ni un contrôle du rendu dynamique de Wisio. Leurs intégrations d'origine sont conservées ; aucune inscription ni réclamation réelle n'a été transmise.
 
 Les rapports et captures détaillés sont conservés localement dans `test-results/`. `npm test` vérifie le contenu de `dist/` ; `npm run test:browser` vérifie la prévisualisation ouverte. `COMPARE_SOURCE_URL=http://127.0.0.1:4320` active la comparaison avec la référence locale historique, si ce serveur temporaire est démarré.
+
+Le rapport final `browser-report.json` contient les 70 comparaisons et aucune erreur JavaScript. Après explicitation du token d'espacement zéro et du défaut de `Section`, l'accueil a été revérifié aux deux tailles : aucun pixel différent par rapport à la passe complète. Les interactions ont été relancées avec succès sur ce build final. La capture de présentation est `test-results/presentation-lumos-locale.png`.
 
 ## Vidéo rapatriée
 
@@ -49,7 +54,9 @@ La demande complémentaire de l'utilisateur est réalisée : `public/videos/demo
 - Script tronqué de l'accueil remplacé par un dialogue photo partagé et accessible.
 - Affichage des contenus indépendant du déclenchement des animations de défilement.
 - Retour à la ligne du message EVA sans session : le site source débordait jusqu'à 403 px dans une fenêtre de 390 px ; les deux formations restent désormais dans la fenêtre.
-- Bordures d'iframes et espaces HTML conservés pour retrouver le rendu source.
+- Bordures d'iframes et espaces HTML conservés ; tous les titres et paragraphes utilisent désormais les styles Lumos actifs.
+- Réservation de l'espace des images de cartes par ratio ; icônes des formations et cadrages des photos préservés.
+- Plus de CSS visuel injecté par les scripts EVA : styles externalisés et tokens partagés. Les mots-clés CSS structurels, définitions de tokens, paramètres de composants et données SVG restent natifs.
 - L'image CSS vMix absente du dépôt et du site publié n'est plus demandée inutilement ; le même fond uni reste affiché.
 
 ## Textes et incohérences conservés
