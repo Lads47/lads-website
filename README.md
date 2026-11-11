@@ -1,80 +1,37 @@
-# Les Ateliers du Stream - Site Web
+# Les Ateliers du Stream — Astro et Lumos
 
-Site vitrine de **Les Ateliers du Stream**, entreprise de captation multicam et de production audiovisuelle en direct.
+Migration fidèle du site vitrine vers Astro et Lumos for Astro 1.0.3. Les prestations audiovisuelles restent prioritaires ; les formations, leurs informations et leurs intégrations EVA sont conservées. Aucun CMS ni formulaire local n'est ajouté.
 
-## Stack technique
+## Démarrage local
 
-- **HTML5** / **CSS3** / **JavaScript** vanilla (aucun framework)
-- Polices : Butler (serif) et Open Sans (variable)
-- Formats d'images : WebP, SVG, AVIF
-- Header et footer dynamiques via JS (`header.js`, `footer.js`)
-- Lightbox photo intégrée
-- Design responsive (breakpoints : 1024px, 768px, 480px)
-
-## Arborescence
-
-```
-lads-website/
-├── index.html                  # Page d'accueil
-├── solutions.html              # Nos solutions
-├── realisations.html           # Nos réalisations
-├── formations.html             # Nos formations
-├── approche.html               # Notre accompagnement
-├── histoire.html               # Notre histoire
-├── mentions-legales.html       # Mentions légales
-│
-├── solutions/                  # 12 sous-pages solutions
-│   ├── captation-multicam.html
-│   ├── captation-video.html
-│   ├── captation-multi-regies.html
-│   ├── cameras-tourelle-hf.html
-│   ├── multiplex.html
-│   ├── plateau-web-tv.html
-│   ├── fond-vert.html
-│   ├── retranscription-synthese.html
-│   ├── chapitrage-automatique.html
-│   ├── videoprojection.html
-│   ├── sonorisation.html
-│   └── diffusion-gestion-medias.html
-│
-├── realisations/               # 10 sous-pages réalisations
-│   ├── peer-gynt.html
-│   ├── jeu-de-role.html
-│   ├── ceremonie-docteurs-bordeaux.html
-│   ├── festival-imprime.html
-│   ├── universite-ete-ceca.html
-│   ├── destination-europe.html
-│   ├── salon-agriculture-bordeaux.html
-│   ├── inova-e.html
-│   ├── etourisme-pau.html
-│   └── festival-journalisme-couthures.html
-│
-├── formations/                 # Sous-pages formations
-│   └── vmix.html
-│
-├── header.js / header.css      # Navigation dynamique
-├── footer.js / footer.css      # Footer dynamique + scroll reveal
-│
-├── fonts/                      # Polices (woff2)
-├── images/                     # Logos, icônes, favicon
-├── logos-clients/              # Logos des clients (SVG + WebP)
-└── photo/                      # Photos du site (WebP)
+```powershell
+npm ci
+npm run check
+npm run build
+npm test
+npm run preview
 ```
 
-## Navigation
+Prévisualisation du site construit : <http://127.0.0.1:4321>. Les routes sans extension sont résolues vers les fichiers HTML comme sur le serveur actuel. Pour modifier les composants avec rechargement automatique : `npm run dev`.
 
-Le header et le footer sont générés dynamiquement par `header.js` et `footer.js` avec détection automatique du préfixe de chemin (`../` pour les sous-dossiers).
+Dans un second terminal, avec la prévisualisation ouverte : `npm run test:browser`. La suite contrôle les rendus mobile/bureau, les principaux gabarits tablette, le menu, les lightboxes, les redirections, l'opposition EVA et les états des formations. Elle simule les services externes ; les vidéos et iframes sont neutralisées dans les captures de comparaison. Les rapports et captures sont dans `test-results/`, ignoré par Git. Définir `BROWSER_PATH` pour utiliser un navigateur spécifique ; hors Windows, installer Chromium avec `npx playwright install chromium`.
 
-## Développement local
+## Organisation
 
-Ouvrir directement `index.html` dans un navigateur (`file://`). Tous les liens internes incluent l'extension `.html` pour la compatibilité en navigation locale.
+- `src/pages/` : les 40 routes et leurs métadonnées originales ; `src/components/content/` : leurs contenus et styles, avec un bloc contact partagé.
+- `src/components/site/` : navigation rendue en HTML, pied de page et dialogue photo. Les composants Lumos officiels sont dans les autres dossiers de composants.
+- `public/` : médias, polices, PDF, scripts EVA, données structurées, robots et sitemap conservés.
+- `tests/fixtures/` : inventaire des routes, empreintes des textes et métadonnées de référence.
+- `scripts/` : prévisualisation compatible avec les URL de production et contrôles statiques/navigateur.
 
-## Déploiement
+Le site est construit en HTML statique dans `dist/`. Aucun serveur Node n'est nécessaire sur l'hébergement. La provenance de Lumos et l'exception de fidélité au CSS historique sont documentées dans `docs/lumos.md`.
 
-Site statique hébergé sur **Hostinger**. Aucun build nécessaire : les fichiers sont déployés tels quels.
+La vidéo d'accueil est incluse dans `public/videos/` et servie par le site, sans appel à Amazon S3. Le serveur de prévisualisation prend en charge son type MP4 et les requêtes partielles.
 
-## Contact
+## Validation et livraison
 
-- **Email** : prod@lesateliersdustream.fr
-- **Téléphone** : 06 61 96 88 58
-- **Bureaux** : Marmande (47) | Mérignac (33) | Issy-les-Moulineaux (92)
+**Présentation et validation locales avant tout push ou pull request de la refonte.** La fusion et la mise en ligne sont des étapes séparées. Voir `docs/suivi-refonte.md`, `docs/rapport-verification.md` et `docs/livraison.md`.
+
+Tous les textes sont conservés selon le choix de l'utilisateur. Les contradictions éditoriales et les limites d'intégrations externes sont signalées dans le rapport, sans correction éditoriale automatique.
+
+Source historique : `Lads47/lads-website`, commit `a4a264380f80e3570bcb3d01a6776bb582439527`. Les anciens fichiers restent disponibles dans l'historique Git.

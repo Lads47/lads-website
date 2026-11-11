@@ -2,6 +2,8 @@
 
 Les tickets et spécifications de cette refonte vivent dans GitHub Issues : <https://github.com/Lads47/lads-website/issues>.
 
+Pendant la phase de présentation locale, utiliser `docs/suivi-refonte.md` pour le suivi. La consigne actuelle de l'utilisateur impose une validation locale avant publication de la refonte sur GitHub : aucun push ni PR avant cet accord.
+
 ## Cible et outils
 
 - Dépôt autorisé par l'utilisateur : `Lads47/lads-website` ; remote `origin` : `https://github.com/Lads47/lads-website.git`.

@@ -6,6 +6,12 @@
 
 Le projet consiste à refondre le site de `Lads47/lads-website` avec Astro et Lumos. Le propriétaire souhaite déléguer la conduite du projet aux agents, sans gérer les choix techniques ni le suivi quotidien.
 
+### Présentation locale obligatoire
+
+Présenter la version construite en local et attendre la validation explicite de l'utilisateur avant tout push ou pull request de la refonte. La mise en ligne est une étape séparée. Pendant cette phase, tenir le suivi dans `docs/suivi-refonte.md`.
+
+La migration conserve fidèlement le rendu et **tous les textes**, y compris les contradictions éditoriales. Signaler les incohérences dans le rapport, sans les harmoniser. Les réparations de fonctionnement et d'accessibilité sont incluses.
+
 - Examiner le code, les ressources du projet et les sources officielles avant de choisir une solution. Vérifier le socle Lumos adapté à Astro avant son installation.
 - Prendre les décisions courantes, documenter les hypothèses utiles et avancer par étapes vérifiables. Consulter l'utilisateur seulement lorsqu'une information indispensable reste introuvable ou qu'une action engageante dépasse le mandat reçu.
 - Prendre en charge le découpage en tickets, leur mise à jour, l'implémentation, les contrôles et les corrections. Reprendre le travail à partir des tickets ouverts et de leurs dépendances.
