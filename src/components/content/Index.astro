@@ -25,7 +25,7 @@ import Img from '../media/Img.astro';
 <Video id="heroVideo" slot="background" src="/videos/demo-ateliers-du-stream.mp4" mobileSrc="/videos/demo-ateliers-du-stream-mobile.mp4" poster="/videos/demo-ateliers-du-stream.webp" autoplay={false} preload="none" variant="auto" style="opacity:var(--hero-image-opacity)" />
 <div slot="background" class="hero-control_wrap"><Button id="heroPause" variant="play" label="Mettre la vidéo en pause" pressed={true} emphasis="secondary" class="padding-2" /></div>
 <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
-<Paragraph variant="small" class="color-brand text-transform-uppercase letter-spacing-wide">Captation vid&eacute;o &eacute;v&eacute;nementielle &agrave; Bordeaux, Paris et partout en France</Paragraph>
+<Paragraph variant="small" class="hero-subtitle color-brand text-transform-uppercase letter-spacing-wide">Captation vid&eacute;o &eacute;v&eacute;nementielle &agrave; Bordeaux, Paris et partout en France</Paragraph>
 <Heading tag="h1" variant="display">Captation Vidéo multicam&eacute;ra et diffusion en direct</Heading>
 <ButtonWrapper class="justify-center" data-review-addition="home-actions">
   <Button element="link" href="#possibilites">Nos solutions</Button>
@@ -520,6 +520,10 @@ import Img from '../media/Img.astro';
         /* ============================================
            RESPONSIVE
            ============================================ */
+
+        @media (--mq-large-min) {
+            .hero-subtitle { font-size: var(--text-main); }
+        }
 
         @media (--mq-medium-max) {
             .hero-content .subtitle { font-size: var(--text-small); }
