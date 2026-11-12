@@ -28,3 +28,5 @@ Preuves et limites : `docs/rapport-verification.md`. Publication et retour arri�
 12 novembre 2026 — Défilement doux activé sur html avec scroll-behavior: smooth. Les ancres et le bouton de retour en haut suivent ce réglage CSS. La préférence de réduction des animations active le défilement immédiat. Vérification du défilement progressif avec et sans JavaScript, de l’arrivée sous le header et du retour en haut. Check Astro, build et contrôles des 40 routes réussis.
 
 12 novembre 2026 — Les trois adresses de « Nos bureaux » sont regroupées dans un seul bloc de petit texte Lumos. L’écart entre les lignes passe d’environ 34 à 22 px sur bureau. Vérification du rendu à 1 440 et 390 px, des couleurs et de la conservation des textes sur les 40 routes. Check Astro et build réussis.
+
+12 novembre 2026 — Année du copyright calculée à la construction puis actualisée dans le navigateur à chaque chargement. Les 34 pieds de page affichent l’année courante. Les années 2027 et 2030 ont été simulées sur le même build pour vérifier la mise à jour, avec vérification du contenu disponible sans JavaScript. Check Astro, build et contrôles statiques réussis.

@@ -80,7 +80,7 @@ Le choix explicite est de conserver **tous les textes**, sans harmonisation édi
 
 - CECA 2024 dans le catalogue et Ekivia 2025 dans d'autres présentations de la même réalisation ; l'URL historique CECA reste en place.
 - Captation légère annoncée à 2–3 caméras sur l'accueil et 3–4 dans certaines fiches.
-- Compteur fixe de 27 ans malgré l'historique commençant en 1998 ; copyright du pied de page toujours daté de 2025.
+- Compteur fixe de 27 ans malgré l'historique commençant en 1998. L’année du copyright est désormais dynamique, à la demande de l’utilisateur.
 - Numéro de production dans le contact du catalogue formations, distinct du numéro formation présent dans les fiches détaillées.
 - Dates statiques de repli IA dont certaines sont passées : elles restent visibles en cas de panne EVA, comme dans la source.
 - Mention d'Amazon Web Services dans la politique de confidentialité, désormais obsolète depuis le rapatriement de la vidéo. Ce texte n'a pas été modifié, conformément à la consigne de conservation.

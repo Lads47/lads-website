@@ -4,6 +4,8 @@ import Heading from '../typography/Heading.astro';
 import Paragraph from '../typography/Paragraph.astro';
 import Img from '../media/Img.astro';
 import Button from '../Button.astro';
+
+const currentYear = new Date().getFullYear();
 ---
 <footer class="footer_wrap theme-dark">
   <div class="footer_inner">
@@ -34,10 +36,14 @@ import Button from '../Button.astro';
         <ul><li><a href="/mentions-legales">Mentions légales</a></li><li><a href="/politique-confidentialite">Politique de confidentialité</a></li></ul>
       </div>
     </Grid>
-    <div class="footer_bottom"><Paragraph variant="small">© 2025 Les Ateliers du Stream. Tous droits réservés.</Paragraph></div>
+    <div class="footer_bottom"><Paragraph variant="small">© <span data-current-year>{currentYear}</span> Les Ateliers du Stream. Tous droits réservés.</Paragraph></div>
   </div>
 </footer>
 <div class="back-to-top_wrap"><Button id="backToTop" variant="arrow" direction="up" label="Retour en haut" /></div>
+<script>
+  const year = document.querySelector('[data-current-year]');
+  if (year) year.textContent = String(new Date().getFullYear());
+</script>
 <style is:global>
 @layer components {
   .footer_wrap { --background: var(--dark-800); padding-block: var(--section-space-small) var(--space-5); }
