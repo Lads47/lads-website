@@ -24,15 +24,19 @@ import Img from '../media/Img.astro';
     <Section theme="dark" fullHeight paddingTop="none" paddingBottom="none" gap="0" align="center">
 <Video id="heroVideo" slot="background" src="/videos/demo-ateliers-du-stream.mp4" mobileSrc="/videos/demo-ateliers-du-stream-mobile.mp4" poster="/videos/demo-ateliers-du-stream.webp" autoplay={false} preload="none" variant="auto" style="opacity:var(--hero-image-opacity)" />
 <div slot="background" class="hero-control_wrap"><Button id="heroPause" variant="play" label="Mettre la vidéo en pause" pressed={true} emphasis="secondary" class="padding-2" /></div>
-<ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+<ContentWrapper centered class="hero-intro width-site margin-inline-auto">
 <Paragraph variant="small" class="hero-subtitle color-brand text-transform-uppercase letter-spacing-wide">Captation vid&eacute;o &eacute;v&eacute;nementielle &agrave; Bordeaux, Paris et partout en France</Paragraph>
-<Heading tag="h1" variant="display">Captation Vidéo multicam&eacute;ra et diffusion en direct</Heading>
+<Heading tag="h1" variant="display">Captation Vidéo multicam&eacute;ra<br /> et diffusion en direct</Heading>
 <ButtonWrapper class="justify-center" data-review-addition="home-actions">
   <Button element="link" href="#possibilites">Nos solutions</Button>
   <Button element="link" emphasis="secondary" href="#contact">Nous contacter</Button>
 </ButtonWrapper>
 </ContentWrapper>
 </Section>
+
+<script>
+  import '../../scripts/hero-intro';
+</script>
 
     <!-- ============================================
          NOS POSSIBILITES
@@ -358,21 +362,6 @@ import Img from '../media/Img.astro';
         /* ============================================
            HERO (INCHANGE)
            ============================================ */
-        .hero-video {
-            position: absolute; inset: 0;
-            width: 100%; height: 100%;
-            object-fit: cover;
-            opacity: 0.25;
-        }
-        @keyframes heroFadeIn {
-            from { opacity: 0; transform: translateY(1.25rem); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .hero-content { position: relative; z-index: 1; max-width: 43.75rem; padding: var(--space-8) 0; margin: 0 auto; text-align: center; opacity: 0; animation: heroFadeIn 2s ease-out 0.5s forwards; }
-        .hero-content .subtitle {
-            font-family: var(--primary-family); font-size: var(--text-large); font-weight: var(--primary-regular);
-            margin-bottom: var(--space-4); color: var(--heading-accent); text-transform: uppercase; letter-spacing: var(--letter-spacing-normal);
-        }
 
         /* ============================================
            SECTION COMMUNE
@@ -526,7 +515,6 @@ import Img from '../media/Img.astro';
         }
 
         @media (--mq-medium-max) {
-            .hero-content .subtitle { font-size: var(--text-small); }
             .gallery-grid { grid-template-columns: 1fr; }
             .stat-nombre { font-size: var(--display); }
             .ref-item { padding: var(--space-4); }
