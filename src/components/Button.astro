@@ -177,7 +177,9 @@ const named = {
       transition:
         background-color var(--hover-duration) var(--hover-ease),
         color var(--hover-duration) var(--hover-ease),
-        border-color var(--hover-duration) var(--hover-ease);
+        border-color var(--hover-duration) var(--hover-ease),
+        translate var(--hover-duration) var(--hover-ease),
+        scale calc(var(--hover-duration) * 0.6) ease-out;
       @media (--mq-hover) {
         &:hover:not(:disabled) {
           background-color: var(--button-background-hover);
@@ -248,6 +250,18 @@ const named = {
       &:disabled {
         cursor: not-allowed;
         opacity: 0.5;
+      }
+    }
+
+    @media (--mq-motion-full) {
+      .button_wrap:is(a, button):not(.link):not(:disabled):not([aria-disabled="true"]) {
+        @media (--mq-hover-fine) {
+          &:hover { translate: 0 calc(var(--space-1) / -2); }
+        }
+        &:active {
+          translate: 0;
+          scale: 0.97;
+        }
       }
     }
   }
