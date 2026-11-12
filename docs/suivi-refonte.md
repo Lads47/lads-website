@@ -15,7 +15,7 @@ Mandat validé le 11 novembre 2026 : migration fidèle Astro et Lumos, prestatio
 | Recommandations Impeccable autorisées | Terminé localement | 70 captures avant/après, cinq gabarits tablette, cinq largeurs ciblées ; contrastes, cartes, formation mobile, clavier et médias ; bilan dans `docs/audit-impeccable.md` |
 | Vérification et présentation locales | Terminées | 70 rendus mobile/bureau et 5 gabarits tablette ; http://127.0.0.1:4321 |
 | Validation utilisateur | Acquise le 12 novembre 2026 | Version locale validée ; branche et PR autorisées, sans fusion ni mise en ligne |
-| Proposition GitHub | Autorisée | Une PR en brouillon pendant les contrôles, puis prête à relire ; dossier dans `docs/revue-github.md` |
+| Proposition GitHub | PR créée | [PR #4](https://github.com/Lads47/lads-website/pull/4) ; contrôles GitHub avant passage en prête à relire, sans fusion ; dossier dans `docs/revue-github.md` |
 
 Source de référence : `Lads47/lads-website`, commit `a4a264380f80e3570bcb3d01a6776bb582439527`. `main` distant revérifié inchangé après la reprise native Lumos ; les 40 HTML publiés correspondent toujours à cette source après normalisation des fins de ligne.
 

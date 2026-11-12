@@ -35,7 +35,7 @@ Commandes exécutées sur Windows avec Node 26 : `npm ci`, `npm run check`, `npm
 | Frise | Huit étapes à sept largeurs, texte à 200 %, contraste et proportions ; 64 franchissements aller/retour, restauration et redimensionnement |
 | Anciennes URL | Cinq redirections et réponse 404 vérifiées |
 
-Les tests navigateur neutralisent les services tiers et masquent les lecteurs dans les captures exhaustives pour assurer leur reproductibilité. Ils ne certifient pas la lecture réelle de chaque vidéo externe ni le rendu dynamique de Wisio. Les rapports et captures complets sont dans `test-results/` ; le workflow GitHub les conserve en artefacts pendant 14 jours. Les résultats Linux doivent être lus sur la PR, distinctement des résultats locaux Windows.
+Les tests navigateur neutralisent les services tiers et masquent les lecteurs dans les captures exhaustives pour assurer leur reproductibilité. Ils ne certifient pas la lecture réelle de chaque vidéo externe ni le rendu dynamique de Wisio. Les rapports et captures complets sont dans `test-results/` ; le workflow GitHub les conserve en artefacts pendant 14 jours. Les résultats Linux doivent être lus sur la PR, distinctement des résultats locaux Windows. Le runner est fixé à Ubuntu 24.04, pris en charge par Playwright 1.56.1 verrouillé : le premier essai sur `ubuntu-latest` utilisait Ubuntu 26.04 et échouait à installer Chromium, après réussite des contrôles statiques.
 
 ## Captures représentatives
 
