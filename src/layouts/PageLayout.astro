@@ -13,6 +13,7 @@ const { shell = true, home = false, schema = true, lightbox = false } = Astro.pr
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {home && <link rel="preload" as="image" href="/videos/demo-ateliers-du-stream.webp" fetchpriority="high" />}
     <slot name="head" />
     <script is:inline defer src="https://evaremote.com/e.js" data-site="lads" data-liens></script>
   </head>

@@ -1,8 +1,9 @@
 ---
-interface Props { highlighted?: boolean }
-const { highlighted = false } = Astro.props;
+import type { HTMLAttributes } from 'astro/types';
+interface Props extends HTMLAttributes<'div'> { highlighted?: boolean }
+const { highlighted = false, class: className, ...attrs } = Astro.props;
 ---
-<div class:list={['training-meta', highlighted && 'highlighted']}><slot /></div>
+<div class:list={['training-meta', highlighted && 'highlighted', className]} {...attrs}><slot /></div>
 <style is:global>
 @layer components {
   .training-meta { display: flex; align-items: start; gap: var(--space-3); }

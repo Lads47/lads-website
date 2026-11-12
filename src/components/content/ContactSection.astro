@@ -34,17 +34,17 @@ const { eyebrow, title, description, email, phoneHref, phone, locationAlt, train
   <Grid large={3} gap="5" class="alignment-center">
       <Card variant="panel">
         <Icon src={emailIcon} role="img" aria-label="Email" class="icon-brand align-self-center" />
-        <Heading tag="h4" variant="h5">Email</Heading>
+        <Heading tag="h3" variant="h5">Email</Heading>
         <Paragraph variant="small"><a class="color-brand" href={`mailto:${email}`}>{email}</a></Paragraph>
       </Card>
       <Card variant="panel">
         <Icon src={phoneIcon} role="img" aria-label="Téléphone" class="icon-brand align-self-center" />
-        <Heading tag="h4" variant="h5">Téléphone</Heading>
+        <Heading tag="h3" variant="h5">Téléphone</Heading>
         <Paragraph variant="small"><a class="color-brand" href={phoneHref}>{phone}</a></Paragraph>
       </Card>
       <Card variant="panel">
         <Icon src={locationIcon} role="img" aria-label={locationAlt} class="icon-brand align-self-center" />
-        <Heading tag="h4" variant="h5">{training ? 'Lieu de formation' : 'Nos bureaux'}</Heading>
+        <Heading tag="h3" variant="h5">{training ? 'Lieu de formation' : 'Nos bureaux'}</Heading>
         {training ? <Paragraph variant="small">39 bis rue Robert Creuzet<br />47200 Marmande</Paragraph> :
           <Paragraph variant="small">
             <span class="color-brand">39 bis rue Robert Creuzet, 47200 Marmande</span><br />

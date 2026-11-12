@@ -89,3 +89,7 @@ Le choix explicite est de conserver **tous les textes**, sans harmonisation édi
 - Hébergement exact et procédure d'accès non déterminés : indications historiques Hostinger/OVH contradictoires. Aucun accès serveur n'est nécessaire pour la revue locale.
 
 La procédure de remplacement et de retour arrière est préparée dans `docs/livraison.md`. La configuration GitHub Actions est uniquement locale et ne contient aucun déploiement automatique.
+
+## Ajustements autorisés après l’audit Impeccable
+
+Les améliorations de contraste, de typographie, de composition, d’accès aux sessions et de médias sont détaillées dans [audit-impeccable.md](audit-impeccable.md). Ce compte rendu plus récent complète les mesures historiques ci-dessus : 1 145 références locales, nouveaux contrôles des titres HTML et des images rendues, texte préservé malgré les déplacements explicitement autorisés. La version précédente est conservée localement pour les captures avant/après. La validation locale avant GitHub reste obligatoire.

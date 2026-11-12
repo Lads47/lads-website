@@ -213,7 +213,7 @@ if (import.meta.env.DEV && render) {
 
     /* Buttons closing a card sit on its floor, however tall the row around it
        grows. This outranks the margin `.button-wrapper` sets for itself. */
-    .card_content > .button-wrapper:last-child {
+    .card_content > :is(.button-wrapper, .button_wrap):last-child {
       margin-top: auto;
       padding-top: var(--space-6);
     }
@@ -272,9 +272,9 @@ if (import.meta.env.DEV && render) {
   .card_wrap.cover .heading { color: var(--light-100); }
   .card_content > .heading:has(+ .text) { margin-bottom: 0; }
   .card_content > .text + .text { margin-top: 0; }
-  .card_wrap.stacked .heading { width: 100%; text-align: center; }
-  .card_wrap.stacked .text { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-  .card_wrap.stacked .button_wrap { color: var(--brand-500); align-self: start; }
+  .card_wrap.stacked .heading { width: 100%; text-align: start; }
+
+  .card_wrap.stacked .button_wrap { color: var(--link-text); align-self: start; }
 }
 </style>
 

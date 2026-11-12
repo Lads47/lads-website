@@ -62,9 +62,9 @@ const content = await slotContent(Astro.slots);
 
 <style is:global>
 @layer components {
-  .eyebrow_wrap { color: var(--brand-500); font-weight: var(--primary-bold); text-transform: uppercase; letter-spacing: var(--label-tracking); margin-bottom: var(--space-3); }
+  .eyebrow_wrap { color: var(--heading-accent); font-weight: var(--primary-bold); text-transform: uppercase; letter-spacing: var(--label-tracking); margin-bottom: var(--space-3); }
   .eyebrow_marker { display: none; }
   .eyebrow_text { font-weight: inherit; text-transform: inherit; letter-spacing: inherit; }
-  .eyebrow_wrap.tag { background: color-mix(in srgb, var(--brand-500) 20%, transparent); color: var(--brand-500); border-radius: var(--radius-round); }
+  .eyebrow_wrap.tag { background: color-mix(in srgb, var(--brand-500) 20%, transparent); color: var(--heading-accent); border-radius: var(--radius-round); }
 }
 </style>

@@ -2,6 +2,7 @@
 import { Image, imageConfig } from "astro:assets";
 import type { LocalImageProps, RemoteImageProps } from "astro:assets";
 import { isRemoteAllowed } from "astro/assets/utils";
+import responsiveImages from '@/data/responsive-images.json';
 import type { HTMLAttributes } from "astro/types";
 
 type ImageVariant = "full-width" | "constrained" | "densities";
@@ -16,7 +17,7 @@ type Base = Omit<
   render?: boolean;
   /** Media sizing role within the site. */
   appearance?: "default" | "logo" | "icon" | "photo";
-  /** Image source. Imports are optimized; `public/` files are served as-is. */
+  /** Image source. Imports use Astro; public photos use the generated responsive manifest. */
   src: ImageMetadata | string;
   /** Alt text. Omit for decorative images. */
   alt?: string;
@@ -104,7 +105,7 @@ const isPublicPath = typeof src === "string" && !isFetchable;
 if (import.meta.env.DEV && src && (isPublicPath || isSvg)) {
   const inert: string[] = [];
   if ((Astro.props as AllProps).quality !== undefined) inert.push("quality");
-  if (sizes !== undefined) inert.push("sizes");
+  if (sizes !== undefined && isSvg) inert.push("sizes");
   if (inert.length) {
     const why = isPublicPath
       ? `files in public/ are served as-is — import from src/assets to optimize`
@@ -202,6 +203,14 @@ const classes = [
   className,
 ];
 
+const publicImage = isPublicPath ? (responsiveImages as Record<string, {
+  width: number; height: number; candidates: { src: string; width: number }[];
+}>)[decodeURIComponent(src as string)] : undefined;
+const publicSrcset = publicImage?.candidates.length
+  ? [...publicImage.candidates, { src: src as string, width: publicImage.width }]
+      .map(candidate => `${encodeURI(decodeURIComponent(candidate.src))} ${candidate.width}w`).join(', ')
+  : undefined;
+
 const shared = {
   src,
   alt,
@@ -221,8 +230,13 @@ const shared = {
   (isPublicPath ? (
     <img
       src={src as string}
-      {...{ alt, width, height, loading }}
-      fetchpriority={fetchPriority === "auto" ? undefined : fetchPriority}
+      alt={alt}
+      width={width ?? publicImage?.width}
+      height={height ?? publicImage?.height}
+      loading={loading}
+      srcset={publicSrcset}
+      sizes={publicSrcset ? (sizes ?? (loading === 'lazy' ? 'auto, 100vw' : '100vw')) : undefined}
+      fetchpriority={fetchPriority === "auto" ? (loading === 'eager' && appearance === 'default' ? 'high' : undefined) : fetchPriority}
       {...attrs}
       class:list={classes}
     />

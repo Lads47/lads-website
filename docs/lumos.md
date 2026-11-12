@@ -10,7 +10,7 @@ Source officielle : <https://github.com/lumosframework/lumos-for-astro/tree/v1.0
 
 Les pages utilisent les composants du starter officiel : `Section`, `ContentWrapper`, `Grid`, `Card`, `Heading`, `Paragraph`, `Eyebrow`, `Img`, `Video`, `Overlay` et `Button`. Le menu, le pied de page et les photos utilisent `Nav`, `NavLink`, `Footer` et `Modal`. La couche de reset qui neutralisait Lumos a été supprimée, ainsi que les anciennes implémentations de navigation et de pied de page.
 
-Les fichiers de contenu contiennent 89 occurrences de `Section`, 64 de `Grid`, 65 de `Card`, 190 de `Heading`, 222 de `Paragraph`, 111 de `Img` et 62 de `Button`. Ce sont des occurrences dans les sources, avant répétition du contact partagé dans les pages construites. Les variantes typographiques sont actives ; aucun titre de contenu n'utilise le style hérité.
+Les fichiers de contenu contiennent 89 occurrences de `Section`, 62 de `Grid`, 65 de `Card`, 190 de `Heading`, 220 de `Paragraph`, 111 de `Img` et 66 de `Button`. Ce sont des occurrences dans les sources, avant répétition du contact partagé dans les pages construites. Les variantes typographiques sont actives ; aucun titre de contenu n'utilise le style hérité.
 
 Les extensions restent dans les composants qui possèdent leur rendu : largeur et surface de `Section`, proportions et espacement de `Grid`, variantes panel/profile et lien global de `Card`, rôles de taille de `Img`, variante photo de `Modal` et rendu textuel de `Button` dans une carte déjà cliquable. Les variantes existantes sont conservées. `TrainingMeta` mutualise les informations des deux formations ; `ContactSection` reçoit les textes et coordonnées propres à chaque page.
 
@@ -18,7 +18,11 @@ Les détails spécifiques conservés, comme la frise historique, les légendes e
 
 ## Échelle native et réglages du site
 
-Pour composer une section, choisir les variantes de `Section`, `Grid`, `Heading` et `Paragraph`. Les cartes du portfolio utilisent un titre HTML h3 présenté avec la variante h5 et un résumé en texte petit. Les cartes immersives de l’accueil emploient la variante h4. Les légendes utilisent le texte petit et l’approche emploie l’interlettrage normal.
+Pour composer une section, choisir les variantes de `Section`, `Grid`, `Heading` et `Paragraph`. Les cartes du portfolio utilisent un titre HTML h2 présenté avec la variante h4 et un résumé en texte principal. Les cartes des formations utilisent également la variante h4 et le texte principal. Les titres longs sont alignés à gauche ; les résumés ne sont plus tronqués. Les cartes immersives de l’accueil emploient la variante h4. Les légendes utilisent le texte petit et l’approche emploie l’interlettrage normal.
+
+Le rôle natif `--heading-accent` mélange le bleu et le marine sur fond clair, et reprend le bleu clair sur fond sombre. Les liens utilisent `--link-text` ; les boutons orange utilisent le marine avec `--button-text`. Les couleurs sources de la marque sont conservées. Le texte secondaire clair utilise `--text-2`, ajusté pour rester lisible aussi sur les fonds gris du site. Le texte petit utilise les bornes natives à 14 px ; les interlignes h4/h5 reprennent `--line-height-large`.
+
+`TrainingLayout` compose trois zones avec `Grid` : résumé pratique et accès aux sessions, contenu pédagogique, informations complémentaires. Sur mobile, cet ordre suit aussi le DOM. Sur bureau, le contenu reste à gauche et les deux blocs pratiques occupent la colonne de droite. Les anciennes coordonnées et tous les textes restent présents. `TrainingMeta` transmet les attributs HTML, dont l’identifiant de l’ancre des sessions.
 
 Lumos définit les rôles et les échelles dans `src/styles/base.css`. Le thème les personnalise dans `src/styles/brand.css`. Pour modifier le rythme des pages, régler les bornes fluides des paliers `--space-1` à `--space-8`, puis celles des espacements de section. Les grilles utilisent les utilitaires d’espacement du starter. Les valeurs structurelles comme `0`, `100%`, `1fr` et les proportions d’image s’écrivent directement en CSS.
 
@@ -41,3 +45,11 @@ Les trois icônes du contact sont importées depuis `src/assets/icons/contact-*.
 ## Vérifications
 
 `npm test` vérifie les noms de variables, les références, les conditions responsive et l’utilisation des composants Lumos dans les pages construites. Le contrôle accepte le CSS structurel et refuse une déclaration telle que `--size-0-01875rem`. Le test navigateur change temporairement la couleur de marque et le palier d’espacement d’une carte puis vérifie leurs valeurs calculées.
+
+## Médias responsive
+
+`npm run media:prepare` utilise Sharp 0.35.5, verrouillé dans les dépendances de développement, pour préparer 184 déclinaisons des 63 photos raster de `public/photo`. Les fichiers sont générés dans `public/media/responsive`, ignoré par Git, et référencés par `src/data/responsive-images.json`. Cette étape précède automatiquement `dev` et `build`. Les noms dépendent du contenu source ; aucune image n’est agrandie et une déclinaison plus lourde que l’original n’est pas conservée.
+
+Le composant `Img` conserve son URL source et son texte alternatif. Il ajoute les dimensions intrinsèques, le `srcset` et `sizes="auto, 100vw"` pour les photos différées. Les images de bandeau chargées immédiatement ont une priorité haute. La lightbox ouvre toujours l’URL originale, même si la vignette utilise une petite déclinaison.
+
+La vidéo originale reste dans `public/videos`. Sa version mobile complète, `demo-ateliers-du-stream-mobile.mp4`, pèse 2 494 220 octets et conserve une durée de 83,8 secondes. `Video` sélectionne cette source sous le seuil partagé `--mq-compact-max`. Le poster local pèse 57 018 octets. En préférence de mouvement réduit, `preload="none"` conserve le poster et le téléchargement vidéo ne commence qu’après une demande de lecture. Les fichiers vidéo sont livrés dans le dépôt ; FFmpeg n’est pas nécessaire au build.

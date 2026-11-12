@@ -102,6 +102,8 @@
   --h1-line-height: 1.2;
   --h2-line-height: 1.2;
   --h3-line-height: 1.3;
+  --h4-line-height: var(--line-height-large);
+  --h5-line-height: var(--line-height-large);
   --display-margin-top: 0rem;
   --display-margin-bottom: var(--space-4);
   --h1-margin-top: 0rem;
@@ -121,8 +123,8 @@
   --text-main-line-height: 1.8;
   --text-main-margin-top: 0rem;
   --text-main-margin-bottom: var(--space-4);
-  --text-small-min: 12.8;
-  --text-small-max: 13.6;
+  --text-small-min: 14;
+  --text-small-max: 14;
   --text-small-line-height: 1.65;
   --text-small-margin-top: 0rem;
   --text-small-margin-bottom: var(--space-3);
@@ -132,27 +134,33 @@
 }
 
 :root, .theme-light {
+  --heading-accent: color-mix(in srgb, var(--brand-500) 40%, var(--dark-900));
+  --link-text: var(--heading-accent);
+  --link-text-hover: var(--text);
   --background: var(--light-100);
   --background-2: var(--light-200);
   --background-3: var(--light-300);
-  --text-2: #727485;
+  --text-2: #686b7b;
   --border: var(--light-300);
   --button-background: var(--action-500);
   --button-border: var(--action-500);
-  --button-text: var(--light-100);
+  --button-text: var(--dark-900);
   --button-background-hover: var(--action-600);
   --button-border-hover: var(--action-600);
-  --button-text-hover: var(--light-100);
+  --button-text-hover: var(--dark-900);
 }
 
 .theme-dark {
+  --heading-accent: var(--brand-500);
+  --link-text: var(--heading-accent);
+  --link-text-hover: var(--text);
   --text-2: #a6a7b5;
   --button-background: var(--action-500);
   --button-border: var(--action-500);
-  --button-text: var(--light-100);
+  --button-text: var(--dark-900);
   --button-background-hover: var(--action-600);
   --button-border-hover: var(--action-600);
-  --button-text-hover: var(--light-100);
+  --button-text-hover: var(--dark-900);
 }
 
 :root {
@@ -161,4 +169,8 @@
   --label-tracking: .08em;
   --tag-background: color-mix(in srgb, var(--brand-500) 15%, transparent);
   --shadow-surface: 0 .25rem 1rem color-mix(in srgb, var(--dark-900) 8%, transparent);
+}
+
+@media (--mq-navigation-mobile) {
+  :root { --nav-height: calc(var(--space-6) * 2 + var(--space-4)); }
 }

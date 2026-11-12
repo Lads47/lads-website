@@ -12,7 +12,7 @@ const currentYear = new Date().getFullYear();
     <Grid large={4} medium={2} gap="6" tracks="1.6fr 1fr 1fr 1fr">
       <div><Img src="/images/LOGO_clair.svg" alt="Les Ateliers du Stream" appearance="logo" transparent /></div>
       <div class="footer_column">
-        <Heading tag="h5" variant="h6">Navigation</Heading>
+        <Heading tag="h2" variant="h6">Navigation</Heading>
         <ul>
           <li><a href="/solutions">Nos solutions</a></li>
           <li><a href="/realisations">Réalisations</a></li>
@@ -24,7 +24,7 @@ const currentYear = new Date().getFullYear();
         </ul>
       </div>
       <div class="footer_column">
-        <Heading tag="h5" variant="h6">Contact</Heading>
+        <Heading tag="h2" variant="h6">Contact</Heading>
         <ul><li><a href="mailto:prod@lesateliersdustream.fr">prod@lesateliersdustream.fr</a></li><li><a href="tel:+33661968858">06 61 96 88 58</a></li></ul>
         <div class="footer_social">
           <a href="https://www.instagram.com/lesateliersdustream/" target="_blank" rel="noopener"><Img src="/images/instagram.svg" alt="Instagram" appearance="icon" transparent /></a>
@@ -32,14 +32,14 @@ const currentYear = new Date().getFullYear();
         </div>
       </div>
       <div class="footer_column">
-        <Heading tag="h5" variant="h6">Légal</Heading>
+        <Heading tag="h2" variant="h6">Légal</Heading>
         <ul><li><a href="/mentions-legales">Mentions légales</a></li><li><a href="/politique-confidentialite">Politique de confidentialité</a></li></ul>
       </div>
     </Grid>
     <div class="footer_bottom"><Paragraph variant="small">© <span data-current-year>{currentYear}</span> Les Ateliers du Stream. Tous droits réservés.</Paragraph></div>
   </div>
 </footer>
-<div class="back-to-top_wrap"><Button id="backToTop" variant="arrow" direction="up" label="Retour en haut" /></div>
+<div class="back-to-top_wrap" inert><Button id="backToTop" variant="arrow" direction="up" label="Retour en haut" /></div>
 <script>
   const year = document.querySelector('[data-current-year]');
   if (year) year.textContent = String(new Date().getFullYear());
@@ -51,11 +51,12 @@ const currentYear = new Date().getFullYear();
   .footer_column { display: flex; flex-direction: column; gap: var(--space-4); }
   .footer_column ul { display: flex; flex-direction: column; gap: var(--space-2); }
   .footer_column a { font-size: var(--text-small); text-decoration: none; color: inherit; }
-  .footer_column a:hover { color: var(--brand-500); }
+  .footer_column a:hover { color: var(--heading-accent); }
+  .footer_social a { display: inline-flex; align-items: center; justify-content: center; min-width: calc(var(--space-5) * 2); min-height: calc(var(--space-5) * 2); }
   .footer_social { display: flex; gap: var(--space-3); }
   .footer_social .image { filter: brightness(0) invert(1); }
   .footer_bottom { border-top: var(--border-width) solid var(--border); padding-top: var(--space-5); margin-top: var(--space-7); text-align: center; }
-  .back-to-top_wrap { position: fixed; right: var(--space-5); bottom: var(--space-5); z-index: 90; opacity: 0; pointer-events: none; transition: opacity var(--hover-duration); }
-  .back-to-top_wrap:has(.visible) { opacity: 1; pointer-events: auto; }
+  .back-to-top_wrap { position: fixed; right: var(--space-5); bottom: var(--space-5); z-index: 90; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity var(--hover-duration), visibility var(--hover-duration); }
+  .back-to-top_wrap:has(.visible) { opacity: 1; visibility: visible; pointer-events: auto; }
 }
 </style>

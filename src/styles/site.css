@@ -4,7 +4,8 @@
   :target { scroll-margin-top: var(--nav-height); }
   iframe { border: 0; }
   .site-container { width: var(--site-width); max-width: var(--max-width-main); margin-inline: auto; }
-  .hero-control_wrap { position: absolute; inset: auto var(--space-4) var(--space-4) auto; width: auto; height: auto; pointer-events: auto; z-index: 2; }
+  .hero-control_wrap { position: absolute; inset: auto var(--space-4) var(--space-4) auto; width: auto; height: auto; pointer-events: auto; z-index: 2; visibility: hidden; }
+  .has-js .hero-control_wrap { visibility: visible; }
   .divider { width: 3.125rem; height: 0.1875rem; background: var(--brand-500); border: 0; margin: 0; }
   .formation-meta-sidebar .meta-date-chip--empty { white-space: normal; max-width: 100%; }
   .grid > * { min-width: 0; }
@@ -15,7 +16,7 @@
 @layer utilities {
   .width-site { width: var(--site-width); }
   .color-muted { color: var(--text-2); }
-  .color-brand { color: var(--brand-500); }
+  .color-brand { color: var(--heading-accent); }
   .icon-light { filter: brightness(0) invert(1); }
   .letter-spacing-wide { letter-spacing: var(--letter-spacing-normal); }
 }

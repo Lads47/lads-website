@@ -12,6 +12,7 @@ Mandat validé le 11 novembre 2026 : migration fidèle Astro et Lumos, prestatio
 | Formations | Terminé | 8 scénarios EVA ; débordement mobile réparé |
 | Pages légales, anciennes routes et 404 | Terminé | Textes conservés, destinations et 404 contrôlées |
 | Vidéo d'accueil rapatriée | Terminé | MP4 local de 9,8 Mo ; lecture, pause/reprise et HTTP 206 vérifiés |
+| Recommandations Impeccable autorisées | Terminé localement | 70 captures avant/après, cinq gabarits tablette, cinq largeurs ciblées ; contrastes, cartes, formation mobile, clavier et médias ; bilan dans `docs/audit-impeccable.md` |
 | Vérification et présentation locales | Prêt pour revue | 70 rendus mobile/bureau et 5 gabarits tablette ; http://127.0.0.1:4321 |
 | Validation utilisateur | En attente | Aucun push ni PR avant validation locale explicite |
 
@@ -30,3 +31,5 @@ Preuves et limites : `docs/rapport-verification.md`. Publication et retour arri�
 12 novembre 2026 — Les trois adresses de « Nos bureaux » sont regroupées dans un seul bloc de petit texte Lumos. L’écart entre les lignes passe d’environ 34 à 22 px sur bureau. Vérification du rendu à 1 440 et 390 px, des couleurs et de la conservation des textes sur les 40 routes. Check Astro et build réussis.
 
 12 novembre 2026 — Année du copyright calculée à la construction puis actualisée dans le navigateur à chaque chargement. Les 34 pieds de page affichent l’année courante. Les années 2027 et 2030 ont été simulées sur le même build pour vérifier la mise à jour, avec vérification du contenu disponible sans JavaScript. Check Astro, build et contrôles statiques réussis.
+
+12 novembre 2026 — Application autorisée des dix recommandations de l’audit Impeccable : rôles de couleurs accessibles, cartes lisibles, deux colonnes pour les formations avec logo IA visible, accès aux sessions dès le bandeau et résumé pratique prioritaire sur mobile, header compact et commandes tactiles, masquage accessible du retour en haut, niveaux HTML consécutifs et médias responsive. La vidéo mobile complète passe de 9,82 à 2,49 Mo ; le poster et les originaux restent locaux. Les textes métier sont conservés, avec contrôle explicite des trois groupes de commandes ajoutées et des réorganisations de contenu. Installation propre, check Astro, build statique et contrôles de contenu réussis ; détails dans `docs/audit-impeccable.md`. Présentation locale et validation utilisateur toujours requises avant GitHub.

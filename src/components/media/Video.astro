@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import mediaTokens from '@/styles/media-tokens.json';
 
 type VideoRatio = "2-1" | "16-9" | "3-2" | "5-4" | "1-1" | "4-5" | "2-3";
 
@@ -13,6 +14,8 @@ type Head = Omit<
   src?: string;
   /** Poster image URL. */
   poster?: string;
+  /** Smaller version of the same complete video, selected on narrow screens. */
+  mobileSrc?: string;
 };
 
 type Tail = {
@@ -55,6 +58,7 @@ const {
   render = true,
   src,
   poster,
+  mobileSrc,
   variant = "16-9",
   ratio,
   loop = true,
@@ -88,7 +92,7 @@ const isCustom = variant === "custom";
 
 {render && src && (
   <video
-    src={src}
+    src={mobileSrc ? undefined : src}
     poster={poster}
     class:list={[
       "video",
@@ -102,5 +106,10 @@ const isCustom = variant === "custom";
     muted={muted}
     playsinline
     {...rest}
-  />
+  >
+    {mobileSrc && <>
+      <source src={mobileSrc} media={mediaTokens['--mq-compact-max']} type="video/mp4" />
+      <source src={src} type="video/mp4" />
+    </>}
+  </video>
 )}

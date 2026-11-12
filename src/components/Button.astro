@@ -226,7 +226,9 @@ const named = {
       }
       &:is(.play, .close, .arrow) {
         gap: 0;
-        padding: 0.75em;
+        min-width: calc(var(--space-5) * 2);
+        min-height: calc(var(--space-5) * 2);
+        padding: var(--space-3);
         border-radius: var(--radius-round);
       }
       &.back .button_mark {

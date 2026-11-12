@@ -72,14 +72,14 @@ import Card from '../item/Card.astro';
                 <Heading tag="h2" variant="h2">Nos formations</Heading>
                 <hr class="divider">
             </ContentWrapper>
-            <Grid xsmall={1} small={1} medium={2} large={3} gap="4">
+            <Grid xsmall={1} small={1} medium={2} large={2} gap="6">
 
                 <!-- Formation vMix -->
                 <Card variant="panel" href={"/formations/vmix"}>
                     <div class="formation-card-logo-wrap"><Img loading={"lazy"} src={"/photo/vmix-logo.png"} alt={"Logo vMix"} appearance="logo" transparent /></div>
 
-                        <Heading tag="h3" variant="h5">Concevoir et piloter une r&eacute;gie vid&eacute;o virtuelle avec vMix</Heading>
-                        <Paragraph variant="small">D&eacute;veloppez vos comp&eacute;tences sur vMix pour produire, habiller et diffuser des contenus live professionnels.</Paragraph>
+                        <Heading tag="h3" variant="h4">Concevoir et piloter une r&eacute;gie vid&eacute;o virtuelle avec vMix</Heading>
+                        <Paragraph variant="main">D&eacute;veloppez vos comp&eacute;tences sur vMix pour produire, habiller et diffuser des contenus live professionnels.</Paragraph>
                         <div class="tech-spec">
                             <span>5 jours (35h)</span>
                             <span>Pr&eacute;sentiel</span>
@@ -93,8 +93,8 @@ import Card from '../item/Card.astro';
                 <Card variant="panel" href={"/formations/ia"}>
                     <div class="formation-card-logo-wrap"><Img loading={"lazy"} src={"/photo/ia-logo.svg"} alt={"Logo Formation IA"} appearance="logo" transparent /></div>
 
-                        <Heading tag="h3" variant="h5">De l'IA aux agents autonomes</Heading>
-                        <Paragraph variant="small">L'IA &eacute;volue &agrave; un rythme in&eacute;dit, et les agents IA transforment d&eacute;j&agrave; la fa&ccedil;on dont les entreprises fonctionnent. Une journ&eacute;e pour faire le tri et passer &agrave; l'action.</Paragraph>
+                        <Heading tag="h3" variant="h4">De l'IA aux agents autonomes</Heading>
+                        <Paragraph variant="main">L'IA &eacute;volue &agrave; un rythme in&eacute;dit, et les agents IA transforment d&eacute;j&agrave; la fa&ccedil;on dont les entreprises fonctionnent. Une journ&eacute;e pour faire le tri et passer &agrave; l'action.</Paragraph>
                         <div class="tech-spec">
                             <span>1 jour (7h)</span>
                             <span>Pr&eacute;sentiel</span>
@@ -201,7 +201,7 @@ import Card from '../item/Card.astro';
             border-radius: var(--radius-small);
         }
         .btn-outline {
-            background: transparent; color: var(--brand-500);
+            background: transparent; color: var(--heading-accent);
             border: var(--border-width) solid var(--brand-500);
         }
         .btn-outline:hover { background: var(--brand-500); color: var(--dark-900); }
@@ -277,6 +277,8 @@ import Card from '../item/Card.astro';
            CATALOGUE – TECH-CARDS (photo-card style)
            ============================================ */
         .formation-card-logo-wrap {
+            width: 100%;
+            min-height: calc(var(--space-8) * 2 + var(--space-5));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -284,10 +286,11 @@ import Card from '../item/Card.astro';
             background: var(--light-200);
             border-bottom: var(--border-width) solid var(--light-300);
         }
+        .formation-card-logo-wrap .image { width: 100%; height: var(--space-8); }
         .discover-link-sm {
             display: inline-flex; align-items: center; gap: var(--space-2);
             font-size: var(--text-small); font-weight: var(--primary-bold); text-transform: uppercase;
-            letter-spacing: var(--letter-spacing-normal); color: var(--brand-500); margin-top: var(--space-3); transition: all var(--hover-duration) var(--hover-ease);
+            letter-spacing: var(--letter-spacing-normal); color: var(--heading-accent); margin-top: var(--space-3); transition: all var(--hover-duration) var(--hover-ease);
         }
         .discover-link-sm svg {
             width: 0.875rem; height: 0.875rem; stroke: currentColor; stroke-width: 2; fill: none; transition: all var(--hover-duration) var(--hover-ease);

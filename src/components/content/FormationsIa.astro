@@ -1,5 +1,7 @@
 ---
 import TrainingMeta from '../site/TrainingMeta.astro';
+import TrainingLayout from '../site/TrainingLayout.astro';
+import ButtonWrapper from '../wrapper/ButtonWrapper.astro';
 import ContactSection from './ContactSection.astro';
 import Section from '../wrapper/Section.astro';
 import ContentWrapper from '../wrapper/ContentWrapper.astro';
@@ -21,6 +23,7 @@ import Img from '../media/Img.astro';
                 <Eyebrow tag="span">Pr&eacute;sentiel &middot; 1 jour &middot; Niveau 1</Eyebrow>
                 <Heading tag="h1" variant="h1">Formation IA &agrave; Marmande&nbsp;: de l'IA aux agents autonomes</Heading>
                 <Paragraph variant="large">L'IA &eacute;volue &agrave; un rythme in&eacute;dit, et les agents IA transforment d&eacute;j&agrave; la fa&ccedil;on dont les entreprises fonctionnent. Une journ&eacute;e pour faire le tri et passer &agrave; l'action.</Paragraph>
+            <ButtonWrapper class="justify-center" data-review-addition="training-session-access"><Button element="link" href="#formation-sessions">Prochaines sessions</Button></ButtonWrapper>
             </ContentWrapper>
 
     </Section>
@@ -38,7 +41,57 @@ import Img from '../media/Img.astro';
          ============================================ -->
     <Section theme="light">
 
-            <Grid xsmall={1} small={1} medium={1} large={2} gap="8" tracks="var(--tracks-content-sidebar)">
+            <TrainingLayout>
+                <Fragment slot="summary">
+                    <TrainingMeta>
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <div>
+                            <span class="meta-label">Dur&eacute;e</span>
+                            <span class="meta-value">1 jour (7h)</span>
+                        </div>
+                    </TrainingMeta>
+                    <TrainingMeta>
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <div>
+                            <span class="meta-label">Lieu</span>
+                            <span class="meta-value">39 bis rue Robert Creuzet, 47200 Marmande</span>
+                        </div>
+                    </TrainingMeta>
+                    <TrainingMeta>
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                        <div>
+                            <span class="meta-label">Participants</span>
+                            <span class="meta-value">Limit&eacute; &agrave; 8 personnes</span>
+                        </div>
+                    </TrainingMeta>
+                    <TrainingMeta>
+                        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        <div>
+                            <span class="meta-label">Tarif</span>
+                            <span class="meta-value">790 &euro; HT</span>
+                        </div>
+                    </TrainingMeta>
+                    <TrainingMeta id="formation-sessions">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        <div>
+                            <span class="meta-label">Prochaines sessions</span>
+                            <span class="meta-dates-hint">Cliquez sur une date pour vous inscrire</span>
+                            <div class="meta-dates-list" data-formation-code="IAN1">
+                                <span class="meta-date-chip">02/06/2026</span>
+                                <span class="meta-date-chip">07/07/2026</span>
+                                <span class="meta-date-chip">04/08/2026</span>
+                                <span class="meta-date-chip">01/09/2026</span>
+                                <span class="meta-date-chip">06/10/2026</span>
+                                <span class="meta-date-chip">03/11/2026</span>
+                                <span class="meta-date-chip">08/12/2026</span>
+                            </div>
+                        </div>
+                    </TrainingMeta>
+                    <ButtonWrapper marginTop="0">
+                        <Button element="link" class="width-full" href={"https://evaremote.com/formations/IAN1/inscription"}>S'inscrire</Button>
+                        <Button emphasis="secondary" element="link" class="width-full" href={"#contact"}>Nous contacter</Button>
+                    </ButtonWrapper>
+                </Fragment>
                 <div class="formation-detail-text">
                     <span class="formation-tag-inline">Pr&eacute;sentiel &agrave; Marmande &middot; 1 jour</span>
                     <Heading tag="h2" variant="h2" class="alignment-start">De l'IA aux agents autonomes&nbsp;: comprendre l'acc&eacute;l&eacute;ration, lancer vos premiers cas d'usage</Heading>
@@ -68,53 +121,7 @@ import Img from '../media/Img.astro';
                         <strong>Pr&eacute;-requis :</strong> aucun
                     </Paragraph>
                 </div>
-
-                <!-- Sidebar m&eacute;ta -->
-                <div class="formation-meta-sidebar">
-                    <TrainingMeta>
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        <div>
-                            <span class="meta-label">Dur&eacute;e</span>
-                            <span class="meta-value">1 jour (7h)</span>
-                        </div>
-                    </TrainingMeta>
-                    <TrainingMeta>
-                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        <div>
-                            <span class="meta-label">Lieu</span>
-                            <span class="meta-value">39 bis rue Robert Creuzet, 47200 Marmande</span>
-                        </div>
-                    </TrainingMeta>
-                    <TrainingMeta>
-                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-                        <div>
-                            <span class="meta-label">Participants</span>
-                            <span class="meta-value">Limit&eacute; &agrave; 8 personnes</span>
-                        </div>
-                    </TrainingMeta>
-                    <TrainingMeta>
-                        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                        <div>
-                            <span class="meta-label">Tarif</span>
-                            <span class="meta-value">790 &euro; HT</span>
-                        </div>
-                    </TrainingMeta>
-                    <TrainingMeta>
-                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                        <div>
-                            <span class="meta-label">Prochaines sessions</span>
-                            <span class="meta-dates-hint">Cliquez sur une date pour vous inscrire</span>
-                            <div class="meta-dates-list" data-formation-code="IAN1">
-                                <span class="meta-date-chip">02/06/2026</span>
-                                <span class="meta-date-chip">07/07/2026</span>
-                                <span class="meta-date-chip">04/08/2026</span>
-                                <span class="meta-date-chip">01/09/2026</span>
-                                <span class="meta-date-chip">06/10/2026</span>
-                                <span class="meta-date-chip">03/11/2026</span>
-                                <span class="meta-date-chip">08/12/2026</span>
-                            </div>
-                        </div>
-                    </TrainingMeta>
+                <Fragment slot="details">
                     <TrainingMeta highlighted>
                         <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
                         <div>
@@ -149,17 +156,13 @@ import Img from '../media/Img.astro';
                             <span class="meta-value">Attestation de fin de formation + certificat de r&eacute;alisation d&eacute;livr&eacute;s &agrave; l'issue.</span>
                         </div>
                     </TrainingMeta>
-                    <div class="sidebar-actions">
-                        <Button element="link" class="width-full" href={"https://evaremote.com/formations/IAN1/inscription"}>S'inscrire</Button>
-                        <Button element="link" class="width-full" href={"#contact"}>Nous contacter</Button>
-                        <Button element="link" class="width-full" href={"https://evaremote.com/reclamation"} target={"_blank"} rel={"noopener"}>R&eacute;clamation</Button>
-                    </div>
+                        <Button element="link" variant="link" href={"https://evaremote.com/reclamation"} target={"_blank"} rel={"noopener"}>R&eacute;clamation</Button>
                     <div class="qualiopi-sidebar">
                         <Img loading={"lazy"} src={"/images/LogoQualiopi-150dpi-AvecMarianne.png"} alt={"Certification Qualiopi"} appearance="logo" transparent />
                         <Paragraph variant="main">La certification qualit&eacute; a &eacute;t&eacute; d&eacute;livr&eacute;e au titre de la cat&eacute;gorie d'actions suivante : <strong>Actions de formation</strong>.</Paragraph>
                     </div>
-                </div>
-            </Grid>
+                </Fragment>
+            </TrainingLayout>
 
     </Section>
 
@@ -177,7 +180,7 @@ import Img from '../media/Img.astro';
 
                 <Card variant="panel">
                     <span class="time">9:00 &ndash; 9:30 &middot; 30 min</span>
-                    <Heading tag="h4" variant="h4">Accueil et tour de table</Heading>
+                    <Heading tag="h3" variant="h4">Accueil et tour de table</Heading>
                     <ul>
                         <li>Quelle est votre vision de l'IA aujourd'hui&nbsp;?</li>
                         <li>Vos usages actuels, vos questions, vos appr&eacute;hensions.</li>
@@ -187,7 +190,7 @@ import Img from '../media/Img.astro';
 
                 <Card variant="panel">
                     <span class="time">9:30 &ndash; 10:30 &middot; 1h</span>
-                    <Heading tag="h4" variant="h4">Comprendre l'IA sans jargon</Heading>
+                    <Heading tag="h3" variant="h4">Comprendre l'IA sans jargon</Heading>
                     <ul>
                         <li>Les fondamentaux expliqu&eacute;s simplement, sans jargon ni simplification trompeuse.</li>
                         <li>Innovation et adoption&nbsp;: o&ugrave; en est-on vraiment&nbsp;?</li>
@@ -199,7 +202,7 @@ import Img from '../media/Img.astro';
 
                 <Card variant="panel">
                     <span class="time">10:45 &ndash; 12:30 &middot; 1h45</span>
-                    <Heading tag="h4" variant="h4">Panorama des outils &mdash; d&eacute;monstrations m&eacute;tier</Heading>
+                    <Heading tag="h3" variant="h4">Panorama des outils &mdash; d&eacute;monstrations m&eacute;tier</Heading>
                     <ul>
                         <li>R&eacute;diger, reformuler, r&eacute;sumer en quelques secondes.</li>
                         <li>Analyser un document long et en extraire l'essentiel.</li>
@@ -218,7 +221,7 @@ import Img from '../media/Img.astro';
 
                 <Card variant="panel">
                     <span class="time">13:30 &ndash; 14:00 &middot; 30 min</span>
-                    <Heading tag="h4" variant="h4">L'&egrave;re des agents IA</Heading>
+                    <Heading tag="h3" variant="h4">L'&egrave;re des agents IA</Heading>
                     <ul>
                         <li>Ce que sont r&eacute;ellement les agents IA et comment ils fonctionnent.</li>
                         <li>Vers un monde o&ugrave; l'IA n'assiste plus seulement, mais agit&nbsp;: quelles cons&eacute;quences pour vos m&eacute;tiers&nbsp;?</li>
@@ -227,7 +230,7 @@ import Img from '../media/Img.astro';
 
                 <Card variant="panel">
                     <span class="time">14:00 &ndash; 14:30 &middot; 30 min</span>
-                    <Heading tag="h4" variant="h4">Mon premier agent IA</Heading>
+                    <Heading tag="h3" variant="h4">Mon premier agent IA</Heading>
                     <ul>
                         <li>Cr&eacute;ation guid&eacute;e de votre propre agent IA sur une plateforme d&eacute;di&eacute;e.</li>
                         <li>Vous repartez avec un agent fonctionnel, cr&eacute;&eacute; de vos mains.</li>
@@ -237,7 +240,7 @@ import Img from '../media/Img.astro';
 
                 <Card variant="panel">
                     <span class="time">14:30 &ndash; 16:30 &middot; 2h (pause incluse)</span>
-                    <Heading tag="h4" variant="h4">Atelier &laquo;&nbsp;Cartographier vos cas d'usage&nbsp;&raquo;</Heading>
+                    <Heading tag="h3" variant="h4">Atelier &laquo;&nbsp;Cartographier vos cas d'usage&nbsp;&raquo;</Heading>
                     <ul>
                         <li>Listez 5 t&acirc;ches r&eacute;p&eacute;titives de votre poste.</li>
                         <li>Identifiez ensemble lesquelles l'IA peut prendre en charge d&egrave;s demain.</li>
@@ -254,7 +257,7 @@ import Img from '../media/Img.astro';
 
                 <Card variant="panel">
                     <span class="time">16:30 &ndash; 17:00 &middot; 30 min</span>
-                    <Heading tag="h4" variant="h4">IA responsable &mdash; les angles morts &agrave; conna&icirc;tre</Heading>
+                    <Heading tag="h3" variant="h4">IA responsable &mdash; les angles morts &agrave; conna&icirc;tre</Heading>
                     <ul>
                         <li>Hallucinations&nbsp;: pourquoi l'IA invente, comment les d&eacute;tecter.</li>
                         <li>Confidentialit&eacute;&nbsp;: ce qu'il ne faut jamais soumettre &agrave; un outil IA.</li>
@@ -266,7 +269,7 @@ import Img from '../media/Img.astro';
 
                 <Card variant="panel">
                     <span class="time">17:00 &ndash; 17:15 &middot; 15 min</span>
-                    <Heading tag="h4" variant="h4">Cl&ocirc;ture et plan d'action</Heading>
+                    <Heading tag="h3" variant="h4">Cl&ocirc;ture et plan d'action</Heading>
                     <ul>
                         <li>Atelier &laquo;&nbsp;Mon plan d'action personnel&nbsp;&raquo;&nbsp;: 3 outils &agrave; tester, 3 t&acirc;ches &agrave; d&eacute;l&eacute;guer &agrave; l'IA d&egrave;s cette semaine.</li>
                         <li>Partage en groupe&nbsp;: chacun annonce son engagement.</li>
@@ -301,7 +304,7 @@ import Img from '../media/Img.astro';
             <Grid xsmall={1} small={1} medium={2} large={3} gap="4">
 
                 <Card variant="panel">
-                    <Heading tag="h4" variant="h4">M&eacute;thode p&eacute;dagogique</Heading>
+                    <Heading tag="h3" variant="h4">M&eacute;thode p&eacute;dagogique</Heading>
                     <ul>
                         <li>Apports th&eacute;oriques et d&eacute;mystification</li>
                         <li>D&eacute;monstrations en direct</li>
@@ -313,27 +316,27 @@ import Img from '../media/Img.astro';
                 </Card>
 
                 <Card variant="panel">
-                    <Heading tag="h4" variant="h4">Ressources mat&eacute;rielles</Heading>
+                    <Heading tag="h3" variant="h4">Ressources mat&eacute;rielles</Heading>
                     <Paragraph variant="main">Nous recommandons aux stagiaires d'apporter leur propre ordinateur de travail, afin de repartir avec leurs configurations et historiques d'usage IA. &Agrave; d&eacute;faut, nous mettons &agrave; disposition nos ordinateurs &eacute;quip&eacute;s des outils n&eacute;cessaires.</Paragraph>
                 </Card>
 
                 <Card variant="panel">
-                    <Heading tag="h4" variant="h4">Modalit&eacute;s d'acc&egrave;s</Heading>
+                    <Heading tag="h3" variant="h4">Modalit&eacute;s d'acc&egrave;s</Heading>
                     <Paragraph variant="main">Remplir un formulaire de demande de formation, entretien t&eacute;l&eacute;phonique, formation en pr&eacute;sentiel.</Paragraph>
                 </Card>
 
                 <Card variant="panel">
-                    <Heading tag="h4" variant="h4">Acc&egrave;s &amp; situation</Heading>
+                    <Heading tag="h3" variant="h4">Acc&egrave;s &amp; situation</Heading>
                     <Paragraph variant="main">39 bis rue Robert Creuzet, 47200 Marmande (Lot-et-Garonne). 10 minutes &agrave; pied depuis la gare de Marmande.</Paragraph>
                 </Card>
 
                 <Card variant="panel">
-                    <Heading tag="h4" variant="h4">Accessibilit&eacute; PMR et dispositions relatives &agrave; l'accessibilit&eacute;</Heading>
+                    <Heading tag="h3" variant="h4">Accessibilit&eacute; PMR et dispositions relatives &agrave; l'accessibilit&eacute;</Heading>
                     <Paragraph variant="main">Salle de cours et espace de vie compatibles. L'organisme de formation s'engage &agrave; &eacute;tudier et &agrave; mettre en &oelig;uvre les adaptations n&eacute;cessaires pour l'accueil de personnes en situation de handicap, conform&eacute;ment &agrave; la l&eacute;gislation en vigueur. Pour toute demande sp&eacute;cifique, le stagiaire est invit&eacute; &agrave; contacter l'organisme de formation en amont.</Paragraph>
                 </Card>
 
                 <Card variant="panel">
-                    <Heading tag="h4" variant="h4">Financement de la formation</Heading>
+                    <Heading tag="h3" variant="h4">Financement de la formation</Heading>
                     <Paragraph variant="main">Plusieurs modes de prise en charge sont possibles gr&acirc;ce &agrave; notre certification Qualiopi&nbsp;:</Paragraph>
                     <ul>
                         <li><strong>AFDAS</strong> &mdash; pour les intermittents du spectacle et de l'audiovisuel</li>
@@ -345,8 +348,8 @@ import Img from '../media/Img.astro';
                 </Card>
 
                 <Card variant="panel">
-                    <Heading tag="h4" variant="h4">Contact &amp; Contact pour situation de PSH</Heading>
-                    <Paragraph variant="main">No&eacute;mie Marphay<br><a href="mailto:formation@lesateliersdustream.fr" style={"color: var(--brand-500);"}>formation@lesateliersdustream.fr</a><br><a href="tel:+33646656577" style={"color: var(--brand-500);"}>06 46 65 65 77</a></Paragraph>
+                    <Heading tag="h3" variant="h4">Contact &amp; Contact pour situation de PSH</Heading>
+                    <Paragraph variant="main">No&eacute;mie Marphay<br><a href="mailto:formation@lesateliersdustream.fr" style={"color: var(--heading-accent);"}>formation@lesateliersdustream.fr</a><br><a href="tel:+33646656577" style={"color: var(--heading-accent);"}>06 46 65 65 77</a></Paragraph>
                 </Card>
 
             </Grid>
@@ -546,7 +549,7 @@ import Img from '../media/Img.astro';
         .formation-tag-inline {
             display: inline-block; padding: var(--space-1) var(--space-3); font-size: var(--text-small);
             font-weight: var(--primary-bold); text-transform: uppercase; letter-spacing: var(--letter-spacing-normal);
-            background: var(--tag-background); color: var(--brand-500);
+            background: var(--tag-background); color: var(--heading-accent);
             border-radius: var(--radius-round); margin-bottom: var(--space-4);
         }
 
@@ -676,7 +679,7 @@ import Img from '../media/Img.astro';
         }
         .formateur-role {
             display: block;
-            font-size: var(--text-small); font-weight: var(--primary-bold); color: var(--brand-500);
+            font-size: var(--text-small); font-weight: var(--primary-bold); color: var(--heading-accent);
             letter-spacing: var(--letter-spacing-normal); margin-bottom: var(--space-3);
         }
         @media (--mq-compact-max) {
@@ -710,7 +713,7 @@ import Img from '../media/Img.astro';
             letter-spacing: var(--letter-spacing-normal); color: var(--text-2); transition: all var(--hover-duration) var(--hover-ease);
             padding: var(--space-5) 0 0;
         }
-        .breadcrumb-back:hover { color: var(--brand-500); }
+        .breadcrumb-back:hover { color: var(--heading-accent); }
         .breadcrumb-back svg {
             width: 1rem; height: 1rem; stroke: currentColor; stroke-width: 2;
             fill: none; transition: all var(--hover-duration) var(--hover-ease);
@@ -742,7 +745,7 @@ import Img from '../media/Img.astro';
             transition: all var(--hover-duration) var(--hover-ease);
         }
         .faq-item summary::-webkit-details-marker { display: none; }
-        .faq-item summary:hover { color: var(--brand-500); }
+        .faq-item summary:hover { color: var(--heading-accent); }
         /* Chevron */
         .faq-item summary::after {
             content: '';
@@ -756,7 +759,7 @@ import Img from '../media/Img.astro';
         .faq-item[open] summary::after {
             transform: translateY(-30%) rotate(-135deg);
         }
-        .faq-item[open] summary { color: var(--brand-500); }
+        .faq-item[open] summary { color: var(--heading-accent); }
         .faq-answer {
             padding: 0 var(--space-6) var(--space-4) 0;
         }
@@ -771,7 +774,7 @@ import Img from '../media/Img.astro';
             border-bottom: var(--border-width) solid var(--brand-500);
             transition: all var(--hover-duration) var(--hover-ease);
         }
-        .autre-formation a:hover { color: var(--brand-500); }
+        .autre-formation a:hover { color: var(--heading-accent); }
 
         /* ============================================
            RESPONSIVE

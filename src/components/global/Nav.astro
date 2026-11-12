@@ -307,8 +307,8 @@ const links = [['/solutions','Nos solutions'],['/realisations','Nos réalisation
       color var(--hover-duration) var(--hover-ease),
       border-color var(--hover-duration) var(--hover-ease);
   }
-  .nav_logo { position: relative; width: 6.5rem; }
-  .nav_wrap.home:not(.scrolled) { background: transparent; color: var(--light-100); border-color: transparent; }
+  .nav_logo { position: relative; width: calc(var(--space-8) + var(--space-5)); }
+  .nav_wrap.home:not(.scrolled) { --heading-accent: var(--brand-500); background: transparent; color: var(--light-100); border-color: transparent; }
   .nav_logo [data-mode] { transition: opacity var(--hover-duration) var(--hover-ease); }
   .nav_logo [data-mode="light"] {
     position: absolute;
@@ -323,8 +323,8 @@ const links = [['/solutions','Nos solutions'],['/realisations','Nos réalisation
   .nav_wrap.scrolled { background: var(--light-100); color: var(--dark-900); }
   .nav_links { font-size: var(--text-small); text-transform: uppercase; letter-spacing: var(--label-tracking); font-weight: var(--primary-bold); }
   .nav_link { color: inherit; }
-  .nav_link[data-active="true"], .nav_link:hover { color: var(--brand-500); }
-  @media (--mq-navigation-desktop) { .nav_links { gap: var(--space-5); } .nav_link { padding-inline: 0; } }
-  @media (--mq-navigation-mobile) { .nav_menu { background: var(--light-100); color: var(--dark-900); } }
+  .nav_link[data-active="true"], .nav_link:hover { color: var(--heading-accent); }
+  @media (--mq-navigation-desktop) { .nav_inner { gap: var(--space-4); } .nav_menu { flex: 1; } .nav_links { gap: var(--space-3); justify-content: space-between; } .nav_link { padding-inline: 0; } }
+  @media (--mq-navigation-mobile) { .nav_menu { --heading-accent: var(--link-text); background: var(--light-100); color: var(--dark-900); } }
 }
 </style>

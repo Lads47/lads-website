@@ -7,6 +7,8 @@ function onScroll() {
   const scrolled = window.scrollY > 80;
   header?.classList.toggle('scrolled', scrolled);
   backToTop?.classList.toggle('visible', scrolled);
+  const wrapper = backToTop?.parentElement;
+  if (wrapper) wrapper.inert = !scrolled;
 }
 addEventListener('scroll', onScroll, { passive: true });
 onScroll();
@@ -22,7 +24,7 @@ if (dialog) {
     image.before(button);
     button.append(image);
     button.addEventListener('click', () => {
-      largeImage.src = image.currentSrc || image.src;
+      largeImage.src = image.src;
       largeImage.alt = image.alt;
       dialog.showModal();
     });
@@ -46,7 +48,7 @@ if (video && pause) {
     pause.setAttribute('aria-label', video.paused ? 'Lire la vidéo' : 'Mettre la vidéo en pause');
     pause.setAttribute('aria-pressed', String(!video.paused));
   };
-  if (reducedMotion.matches) video.pause();
+  if (!reducedMotion.matches) void video.play().catch(updatePause);
   reducedMotion.addEventListener('change',()=>{if(reducedMotion.matches)video.pause();});
   video.addEventListener('play',updatePause);
   video.addEventListener('pause',updatePause);

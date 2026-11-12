@@ -17,7 +17,10 @@
     "build": "astro build",
     "preview": "node scripts/preview.mjs",
     "test": "node scripts/verify-build.mjs && node scripts/verify-design-tokens.mjs",
-    "test:browser": "node scripts/browser-check.mjs"
+    "test:browser": "node scripts/browser-check.mjs",
+    "media:prepare": "node scripts/prepare-media.mjs",
+    "prebuild": "npm run media:prepare",
+    "predev": "npm run media:prepare"
   },
   "dependencies": {
     "@astrojs/check": "0.9.12",
@@ -29,6 +32,7 @@
     "pixelmatch": "7.1.0",
     "playwright": "1.56.1",
     "pngjs": "7.0.0",
-    "postcss": "8.5.32"
+    "postcss": "8.5.32",
+    "sharp": "0.35.5"
   }
 }
