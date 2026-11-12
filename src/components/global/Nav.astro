@@ -21,7 +21,7 @@ const links = [['/','Accueil'],['/solutions','Nos solutions'],['/realisations','
 {render && (
   <header id="header" class:list={["nav_wrap", overlap && "overlap", home && "home"]}>
     <div class="nav_inner">
-      <a class="nav_logo" href={home ? '#' : '/'} aria-label={SITE_NAME + ' — accueil'}>
+      <a class="nav_logo" href="/" aria-label={SITE_NAME + ' — accueil'}>
         {home && <Img src="/images/LOGO_clair.svg" alt={SITE_NAME} appearance="logo" data-mode="light" loading="eager" transparent />}
         <Img src="/images/LOGO_fonce.svg" alt={SITE_NAME} appearance="logo" data-mode="dark" loading="eager" transparent />
       </a>
@@ -74,6 +74,18 @@ const links = [['/','Accueil'],['/solutions','Nos solutions'],['/realisations','
   import mediaTokens from '@/styles/media-tokens.json';
   const nav = document.querySelector<HTMLElement>(".nav_wrap");
   const toggle = nav?.querySelector<HTMLButtonElement>(".nav_toggle");
+  const logo = nav?.querySelector<HTMLAnchorElement>(".nav_logo");
+
+  if (nav?.classList.contains("home") && logo) {
+    logo.addEventListener("click", event => {
+      if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      const destination = new URL(logo.href);
+      destination.search = window.location.search;
+      history.replaceState(history.state, "", destination);
+      window.scrollTo({ top: 0 });
+    });
+  }
 
   if (nav && toggle) {
     const setOpen = (open: boolean) => {
