@@ -10,7 +10,7 @@ function onScroll() {
 }
 addEventListener('scroll', onScroll, { passive: true });
 onScroll();
-backToTop?.addEventListener('click', () => window.scrollTo({top: 0, behavior: reducedMotion.matches ? 'instant' : 'smooth'}));
+backToTop?.addEventListener('click', () => window.scrollTo({top: 0}));
 const dialog = document.querySelector<HTMLDialogElement>('#photo-lightbox');
 if (dialog) {
   const largeImage = dialog.querySelector<HTMLImageElement>('img')!;
