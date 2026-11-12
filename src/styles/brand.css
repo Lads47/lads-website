@@ -23,7 +23,6 @@
 }
 
 :root {
-  --space-0: var(--size-zero);
   --primary-family: 'Open Sans', sans-serif;
   --heading-family: Butler, Georgia, serif;
   --primary-regular: 400;
@@ -39,7 +38,6 @@
   --action-500: #e8834a;
   --action-600: #d4733c;
   --brand-text: var(--dark-900);
-  --motion-transition: all calc(var(--hover-duration) * 1.75) cubic-bezier(.4, 0, .2, 1);
   --letter-spacing-tight: 0em;
   --radius-small: .375rem;
   --radius-main: .5rem;
@@ -137,12 +135,6 @@
   --background: var(--light-100);
   --background-2: var(--light-200);
   --background-3: var(--light-300);
-  --text-trim: normal;
-  --meta-icon-size: 1.375rem;
-  --profile-width: 40rem;
-  --profile-photo-width: 10.3125rem;
-  --profile-photo-ratio: 3 / 4;
-  --photo-ratio: 4 / 3;
   --text-2: #727485;
   --border: var(--light-300);
   --button-background: var(--action-500);
@@ -165,24 +157,8 @@
 
 :root {
   --tracks-content-sidebar: 1.5fr 1fr;
-  --tracks-content-sidebar-wide: 1.4fr 0.6fr;
-  --tracks-footer: 1.6fr 1fr 1fr 1fr;
-  --size-100cqi: 100cqi;
-}
-
-:root {
   --hero-image-opacity: .3;
-  --ratio-catalogue: 8 / 5;
-  --hero-position-histoire: calc(50% - 6.25rem);
-  --hero-position-realisations-ceremonie-docteurs-bordeaux: calc(50% - 1.25rem);
-  --hero-position-realisations-festival-journalisme-couthures: calc(50% + 6.25rem);
-  --hero-position-solutions: calc(50% + 3.125rem);
-  --hero-position-solutions-fond-vert: calc(50% + 8.125rem);
-  --hero-position-solutions-multiplex: calc(50% + 6.25rem);
-  --hero-position-solutions-plateau-web-tv: calc(50% + 3.75rem);
-}
-
-:root {
-  --filter-icon-brand: brightness(0) saturate(100%) invert(78%) sepia(18%) saturate(1200%) hue-rotate(160deg) brightness(100%) contrast(94%);
-  --contact-gradient: radial-gradient(ellipse at 30% 50%, rgb(125 206 245 / .1) 0%, transparent 60%);
+  --label-tracking: .08em;
+  --tag-background: color-mix(in srgb, var(--brand-500) 15%, transparent);
+  --shadow-surface: 0 .25rem 1rem color-mix(in srgb, var(--dark-900) 8%, transparent);
 }

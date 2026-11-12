@@ -53,11 +53,11 @@ const links = [['/solutions','Nos solutions'],['/realisations','Nos réalisation
       display: none;
     }
     .nav_menu {
-      grid-template-rows: var(--size-1fr);
+      grid-template-rows: 1fr;
       visibility: visible;
     }
     .nav_menu_inner {
-      opacity: var(--opacity-1);
+      opacity: 1;
     }
   </style>
 </noscript>
@@ -106,10 +106,10 @@ const links = [['/solutions','Nos solutions'],['/realisations','Nos réalisation
   @layer components {
     .nav_wrap {
       position: sticky;
-      top: var(--size-zero);
-      z-index: var(--layer-100);
+      top: 0;
+      z-index: 100;
       display: flex;
-      justify-content: var(--justify-content-button-wrap);
+      justify-content: center;
       padding-inline: var(--site-margin);
       background-color: var(--background);
       color: var(--text);
@@ -117,17 +117,17 @@ const links = [['/solutions','Nos solutions'],['/realisations','Nos réalisation
 
       &.overlap {
         position: fixed;
-        inset-inline: var(--size-zero);
+        inset-inline: 0;
       }
     }
 
     .nav_inner {
-      width: var(--size-full);
+      width: 100%;
       max-width: var(--max-width-main);
       display: flex;
       align-items: center;
-      justify-content: var(--justify-content-nav-inner);
-      gap: var(--size-zero) var(--space-6);
+      justify-content: space-between;
+      gap: 0 var(--space-6);
     }
 
     /* Bar height */
@@ -139,29 +139,29 @@ const links = [['/solutions','Nos solutions'],['/realisations','Nos réalisation
     .nav_logo {
       display: flex;
       align-items: center;
-      width: var(--size-6-5rem);
+      width: 6.5rem;
       transition: opacity var(--hover-duration) var(--hover-ease);
       @media (--mq-hover) {
         &:hover {
-          opacity: var(--opacity-0-6);
+          opacity: 0.6;
         }
       }
     }
 
     .nav_toggle {
-      --_icon-width: var(--size-1-5rem);
-      --_bar-gap: var(--size-0-5rem);
+      --_icon-width: 1.5rem;
+      --_bar-gap: 0.5rem;
       display: inline-flex;
       align-items: center;
-      justify-content: var(--justify-content-button-wrap);
-      min-width: var(--size-2-75rem);
-      margin-right: calc((var(--size-2-75rem) - var(--_icon-width)) / var(--number-minus-2));
+      justify-content: center;
+      min-width: 2.75rem;
+      margin-right: calc((2.75rem - var(--_icon-width)) / -2);
       color: inherit;
       border-radius: var(--radius-small);
       transition: opacity var(--hover-duration) var(--hover-ease);
       @media (--mq-hover) {
         &:hover {
-          opacity: var(--opacity-0-6);
+          opacity: 0.6;
         }
       }
     }
@@ -173,15 +173,15 @@ const links = [['/solutions','Nos solutions'],['/realisations','Nos réalisation
       height: calc(var(--_bar-gap) + var(--border-width));
       &::before,
       &::after {
-        content: var(--content-form-choice-mark-after);
+        content: "";
         position: absolute;
-        inset-inline: var(--size-zero);
+        inset-inline: 0;
         height: var(--border-width);
         background-color: currentcolor;
         transition: transform var(--open-duration) var(--open-ease);
       }
       &::before {
-        top: var(--size-zero);
+        top: 0;
       }
       &::after {
         top: var(--_bar-gap);
@@ -190,21 +190,21 @@ const links = [['/solutions','Nos solutions'],['/realisations','Nos réalisation
 
     .nav_wrap.open .nav_toggle_icon {
       &::before {
-        transform: translateY(calc(var(--_bar-gap) / var(--number-two))) rotate(var(--angle-45deg));
+        transform: translateY(calc(var(--_bar-gap) / 2)) rotate(45deg);
       }
       &::after {
-        transform: translateY(calc(var(--_bar-gap) / var(--number-minus-2))) rotate(var(--angle-minus-45deg));
+        transform: translateY(calc(var(--_bar-gap) / -2)) rotate(-45deg);
       }
     }
 
     .nav_menu {
       position: absolute;
-      top: var(--size-full);
-      inset-inline: var(--size-zero);
+      top: 100%;
+      inset-inline: 0;
       display: grid;
-      grid-template-rows: var(--size-0fr);
+      grid-template-rows: 0fr;
       visibility: hidden;
-      max-height: calc(var(--size-100svh) - var(--nav-height));
+      max-height: calc(100svh - var(--nav-height));
       overflow-x: clip;
       overflow-y: auto;
       overscroll-behavior: contain;
@@ -215,17 +215,17 @@ const links = [['/solutions','Nos solutions'],['/realisations','Nos réalisation
 
     .nav_menu_inner {
       overflow: hidden;
-      opacity: var(--opacity-0);
+      opacity: 0;
       transition: opacity var(--open-duration) var(--open-ease);
     }
 
     .nav_wrap.open .nav_menu {
-      grid-template-rows: var(--size-1fr);
+      grid-template-rows: 1fr;
       visibility: visible;
     }
 
     .nav_wrap.open .nav_menu_inner {
-      opacity: var(--opacity-1);
+      opacity: 1;
       overflow-y: auto;
     }
 
@@ -243,9 +243,9 @@ const links = [['/solutions','Nos solutions'],['/realisations','Nos réalisation
     .nav_link {
       display: block;
       padding-block: var(--space-3);
-      color: color-mix(in lab, currentcolor var(--percentage-60), var(--color-transparent));
+      color: color-mix(in lab, currentcolor 60%, transparent);
       text-decoration: none;
-      text-underline-offset: var(--size-0-4em);
+      text-underline-offset: 0.4em;
       text-decoration-thickness: var(--border-width);
       transition: color var(--hover-duration) var(--hover-ease);
       &[aria-current="page"] {
@@ -267,29 +267,29 @@ const links = [['/solutions','Nos solutions'],['/realisations','Nos réalisation
         position: static;
         display: block;
         visibility: visible;
-        background-color: var(--color-transparent);
-        border-bottom: var(--size-zero);
+        background-color: transparent;
+        border-bottom: 0;
       }
 
       .nav_menu_inner {
         overflow: visible;
-        opacity: var(--opacity-1);
+        opacity: 1;
       }
 
       .nav_links {
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
-        padding: var(--size-zero);
+        padding: 0;
         gap: var(--space-4);
         font-size: var(--text-small);
         & > li + li {
-          border-top: var(--size-zero);
+          border-top: 0;
         }
       }
 
       .nav_link {
-        padding-block: var(--size-zero);
+        padding-block: 0;
         &[aria-current="page"] {
           text-decoration: underline;
         }
@@ -300,17 +300,17 @@ const links = [['/solutions','Nos solutions'],['/realisations','Nos réalisation
 
 <style is:global>
 @layer components {
-  .nav_wrap { box-shadow: var(--shadow-nav-wrap); }
-  .nav_logo { width: var(--size-6-5rem); }
-  .nav_wrap.home:not(.scrolled) { background: var(--color-transparent); color: var(--light-100); border-color: var(--color-transparent); }
+  .nav_wrap { box-shadow: var(--shadow-surface); }
+  .nav_logo { width: 6.5rem; }
+  .nav_wrap.home:not(.scrolled) { background: transparent; color: var(--light-100); border-color: transparent; }
   .nav_logo [data-mode="light"] { display: none; }
   .nav_wrap.home:not(.scrolled) .nav_logo [data-mode="light"] { display: block; }
   .nav_wrap.home:not(.scrolled) .nav_logo [data-mode="dark"] { display: none; }
   .nav_wrap.scrolled { background: var(--light-100); color: var(--dark-900); }
-  .nav_links { font-size: var(--text-small); text-transform: uppercase; letter-spacing: var(--size-0-05em); font-weight: var(--primary-bold); }
+  .nav_links { font-size: var(--text-small); text-transform: uppercase; letter-spacing: var(--label-tracking); font-weight: var(--primary-bold); }
   .nav_link { color: inherit; }
   .nav_link[data-active="true"], .nav_link:hover { color: var(--brand-500); }
-  @media (--mq-navigation-desktop) { .nav_links { gap: var(--space-5); } .nav_link { padding-inline: var(--size-zero); } }
+  @media (--mq-navigation-desktop) { .nav_links { gap: var(--space-5); } .nav_link { padding-inline: 0; } }
   @media (--mq-navigation-mobile) { .nav_menu { background: var(--light-100); color: var(--dark-900); } }
 }
 </style>

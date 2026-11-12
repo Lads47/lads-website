@@ -36,24 +36,24 @@ if (import.meta.env.DEV && render && !Svg) {
 <style is:global>
   @layer components {
     .icon {
-      --_size: var(--size-1-5em);
+      --_size: 1.5em;
       flex: none;
       display: block;
       width: var(--_size);
       height: auto;
-      aspect-ratio: var(--number-one) / var(--number-one);
-      max-width: var(--size-full);
+      aspect-ratio: 1 / 1;
+      max-width: 100%;
 
       &.small {
-        --_size: var(--size-1em);
+        --_size: 1em;
       }
 
       &.large {
-        --_size: var(--size-2em);
+        --_size: 2em;
       }
 
       &.full-width {
-        width: var(--size-full);
+        width: 100%;
         aspect-ratio: unset;
       }
     }

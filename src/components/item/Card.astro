@@ -161,9 +161,9 @@ if (import.meta.env.DEV && render) {
   @layer components {
     .card_wrap {
       --_padding: var(--space-5);
-      --_min-height: var(--size-25rem);
-      --_visual-ratio: var(--number-3) / var(--number-two);
-      width: var(--size-full);
+      --_min-height: 25rem;
+      --_visual-ratio: 3 / 2;
+      width: 100%;
       display: flex;
       flex-direction: column;
       gap: var(--_padding);
@@ -176,14 +176,16 @@ if (import.meta.env.DEV && render) {
         min-height: var(--_min-height);
       }
       &.stacked {
-        background-color: var(--color-transparent);
-        overflow: visible;
+        --_visual-ratio: 8 / 5;
+        background-color: var(--background);
+        box-shadow: var(--shadow-surface);
+        gap: 0;
       }
     }
 
     .card_visual {
       position: relative;
-      width: var(--size-full);
+      width: 100%;
       flex: none;
       border-radius: inherit;
       overflow: clip;
@@ -194,23 +196,15 @@ if (import.meta.env.DEV && render) {
 
       .cover > & {
         position: absolute;
-        inset: var(--size-zero);
-        height: var(--size-full);
+        inset: 0;
+        height: 100%;
         pointer-events: none;
       }
 
       > :is(.image, .video) {
-        width: var(--size-full);
-        height: var(--size-full);
+        width: 100%;
+        height: 100%;
       }
-    }
-
-    /* Media fills its box, be that the whole card or the band across its top.
-       The component layer puts this above the `height: auto` every image and
-       video starts from. */
-    .card_visual > :is(.image, .video) {
-      width: var(--size-full);
-      height: var(--size-full);
     }
 
     /* Buttons closing a card sit on its floor, however tall the row around it
@@ -225,40 +219,36 @@ if (import.meta.env.DEV && render) {
       flex-direction: column;
       align-items: var(--_alignment, start);
       text-align: var(--_alignment, start);
-      flex-grow: var(--number-one);
-      width: var(--size-full);
-      max-width: var(--size-full);
+      flex-grow: 1;
+      width: 100%;
+      max-width: 100%;
       padding: var(--_padding);
 
       .cover > & {
-        z-index: var(--number-one);
+        z-index: 1;
       }
 
-      .stacked > & {
-        padding-inline: var(--size-zero);
-        padding-top: var(--size-zero);
-      }
     }
 
     .card_wrap:has(.button_wrap), .card_wrap[href] {
       .button_wrap::after {
-        content: var(--content-form-choice-mark-after);
+        content: "";
         position: absolute;
-        inset: var(--size-zero);
+        inset: 0;
       }
 
       .card_content a:not(.button_wrap) {
         position: relative;
-        z-index: var(--number-one);
+        z-index: 1;
       }
 
       .image {
-        transition: scale calc(var(--hover-duration) * var(--number-two)) var(--hover-ease);
+        transition: scale calc(var(--hover-duration) * 2) var(--hover-ease);
       }
 
       @media (--mq-hover) {
         &:hover .image {
-          scale: var(--number-1-04);
+          scale: 1.04;
         }
       }
     }
@@ -268,29 +258,27 @@ if (import.meta.env.DEV && render) {
 <style is:global>
 @layer components {
   .card_wrap { border: var(--border-width) solid var(--border); color: inherit; text-decoration: none; }
-  .card_wrap.cover { border: var(--size-zero); border-radius: var(--size-zero); --h3: var(--h4); --text-main: var(--text-small); }
-  .card_wrap.cover > .card_content { justify-content: var(--justify-content-side-panel); }
-  .card_wrap.stacked { --h3: var(--h5); --text-main: var(--text-small); --_visual-ratio: var(--ratio-catalogue); background: var(--background); overflow: clip; box-shadow: var(--shadow-card-wrap-stacked); gap: var(--size-zero); }
-  .card_wrap.stacked > .card_content { padding: var(--_padding); }
-  .card_wrap.stacked > .card_visual > .image { position: absolute; inset: var(--size-zero); }
+  .card_wrap.cover { border: 0; border-radius: 0; }
+  .card_wrap.cover > .card_content { justify-content: end; }
+  .card_wrap.stacked > .card_visual > .image { position: absolute; inset: 0; }
   .card_wrap.panel { background: var(--background); }
-  .card_content { gap: var(--space-3); min-width: var(--size-zero); }
+  .card_content { gap: var(--space-3); min-width: 0; }
   .card_content > .text { color: var(--text-2); }
   .card_wrap.cover .heading { color: var(--light-100); }
-  .card_content > .heading:has(+ .text) { margin-bottom: var(--size-zero); }
-  .card_content > .text + .text { margin-top: var(--size-zero); }
-  .card_wrap.stacked .heading { width: var(--size-full); text-align: center; }
-  .card_wrap.stacked .text { display: -webkit-box; -webkit-line-clamp: var(--number-3); -webkit-box-orient: vertical; overflow: hidden; }
+  .card_content > .heading:has(+ .text) { margin-bottom: 0; }
+  .card_content > .text + .text { margin-top: 0; }
+  .card_wrap.stacked .heading { width: 100%; text-align: center; }
+  .card_wrap.stacked .text { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
   .card_wrap.stacked .button_wrap { color: var(--brand-500); align-self: start; }
 }
 </style>
 
 <style is:global>
 @layer components {
-.card_wrap.profile { max-width: var(--profile-width); margin-inline: auto; }
+.card_wrap.profile { max-width: 40rem; margin-inline: auto; }
 .card_wrap.profile > .card_content { flex-direction: row; align-items: center; gap: var(--space-5); }
-.card_wrap.profile .formateur-photo { flex: none; width: var(--profile-photo-width); }
-.card_wrap.profile .formateur-photo .image { width: var(--size-full); aspect-ratio: var(--profile-photo-ratio); object-position: top; border-radius: var(--radius-small); }
-@media (--mq-max-width-40rem) { .card_wrap.profile > .card_content { flex-direction: column; text-align: center; } }
+.card_wrap.profile .formateur-photo { flex: none; width: 10.3125rem; }
+.card_wrap.profile .formateur-photo .image { width: 100%; aspect-ratio: 3 / 4; object-position: top; border-radius: var(--radius-small); }
+@media (--mq-compact-max) { .card_wrap.profile > .card_content { flex-direction: column; text-align: center; } }
 }
 </style>

@@ -353,20 +353,20 @@
 }
 
 * {
-  margin: var(--size-zero);
+  margin: 0;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  min-height: var(--size-100svh);
+  min-height: 100svh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: clip;
   > main {
     display: flex;
     flex-direction: column;
-    flex-grow: var(--number-one);
+    flex-grow: 1;
   }
 }
 
@@ -384,12 +384,12 @@ video,
 canvas,
 svg {
   display: block;
-  max-width: var(--size-full);
+  max-width: 100%;
 }
 
 img,
 video {
-  width: var(--size-full);
+  width: 100%;
   object-fit: cover;
 }
 
@@ -400,10 +400,10 @@ img {
 }
 
 button {
-  background-color: var(--color-transparent);
+  background-color: transparent;
   text-align: inherit;
-  padding: var(--size-zero);
-  border: var(--size-zero);
+  padding: 0;
+  border: 0;
 }
 button:not(:disabled) {
   cursor: pointer;
@@ -423,7 +423,7 @@ select {
 
 ul,
 ol {
-  padding: var(--size-zero);
+  padding: 0;
   list-style: none;
   list-style-type: "";
 }
@@ -447,11 +447,11 @@ label {
 }
 
 select:has(option[value=""]:checked) {
-  color: color-mix(in lab, currentcolor var(--percentage-60), var(--color-transparent));
+  color: color-mix(in lab, currentcolor 60%, transparent);
 }
 
 :target {
-  scroll-margin-block: var(--size-2rem);
+  scroll-margin-block: 2rem;
 }
 
 :focus-visible {
@@ -470,9 +470,9 @@ select:has(option[value=""]:checked) {
   *,
   ::before,
   ::after {
-    animation-duration: var(--duration-0-01ms) !important;
-    animation-iteration-count: var(--number-one) !important;
-    transition-duration: var(--duration-0-01ms) !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
@@ -614,5 +614,5 @@ h5,
 h6,
 p,
 [class*="text-style-"] {
-  text-box: var(--text-trim, normal);
+  text-box: normal;
 }

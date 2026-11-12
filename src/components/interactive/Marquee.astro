@@ -136,32 +136,32 @@ const locals = `--_count: ${count}`;
   @layer components {
     .marquee_wrap {
       --_gap-size: var(--space-6);
-      --_item-height: var(--size-3rem);
+      --_item-height: 3rem;
       /* Seconds spent on each item, so a strip keeps its pace however many it
          holds — the count comes in on the element. */
-      --_speed: var(--duration-4s);
-      --_count: var(--number-one);
+      --_speed: 4s;
+      --_count: 1;
       --_duration: calc(var(--_count) * var(--_speed));
       display: flex;
       align-items: center;
       gap: var(--space-4);
-      width: var(--size-full);
+      width: 100%;
     }
 
     /* Clips the strip without swallowing the toggle beside it, and fades what
        is arriving and leaving rather than cutting it off. */
     .marquee_viewport {
-      flex: var(--number-one) var(--number-one) auto;
-      min-width: var(--size-zero);
+      flex: 1 1 auto;
+      min-width: 0;
       overflow: clip;
       /* The width the track measures itself against. */
       container-type: inline-size;
       mask-image: linear-gradient(
         to right,
-        var(--color-transparent),
-        var(--color-black) var(--percentage-3),
-        var(--color-black) var(--percentage-97),
-        var(--color-transparent)
+        transparent,
+        #000 3%,
+        #000 97%,
+        transparent
       );
     }
 
@@ -196,15 +196,15 @@ const locals = `--_count: ${count}`;
          the loop full: the track travels one panel and one gap, so the copy has
          to be wide enough to still cover the strip when the original has left
          it. A short set spreads across rather than bunching at the start. */
-      min-width: var(--size-100cqw);
-      justify-content: var(--justify-content-marquee-panel);
+      min-width: 100cqw;
+      justify-content: space-around;
       align-items: center;
       gap: var(--_gap-size);
 
       /* The type patterns carry block margins that mean nothing in a row. */
       > * {
         flex: none;
-        margin-block: var(--size-zero);
+        margin-block: 0;
       }
 
       /* Media fills its container by default, which here is the whole strip.
@@ -224,7 +224,7 @@ const locals = `--_count: ${count}`;
 
     @keyframes marquee {
       to {
-        translate: calc(var(--percentage-minus-50) - var(--_gap-size) / var(--number-two)) var(--size-zero);
+        translate: calc(-50% - var(--_gap-size) / 2) 0;
       }
     }
 

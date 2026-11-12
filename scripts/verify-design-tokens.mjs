@@ -9,41 +9,21 @@ async function files(directory) {
   ))).flat();
 }
 
-// Ignore references and asset URLs, retaining literals in the actual CSS value.
-function withoutReferences(value) {
-  let result = '';
-  for (let i = 0; i < value.length;) {
-    const reference = /^(?:var|url)\(/.exec(value.slice(i));
-    if (!reference) { result += value[i++]; continue; }
-    let depth = 1;
-    i += reference[0].length;
-    while (i < value.length && depth) {
-      if (value[i] === '(') depth++;
-      if (value[i] === ')') depth--;
-      i++;
-    }
-  }
-  return result.replace(/(['"])[\s\S]*?\1/g, '');
-}
-
 const media = JSON.parse(await readFile('src/styles/media-tokens.json', 'utf8'));
 const failures = [], counts = {};
 const definitions = new Set(), references = new Set();
 let declarations = 0;
-function check(css, path, tokenDefinitions = false) {
+function check(css, path) {
   const root = postcss.parse(css, { from: path });
   root.walkDecls((declaration) => {
-    let parent = declaration.parent;
-    while (parent) {
-      // Font registration describes the asset's weights, not a visual style.
-      if (parent.type === 'atrule' && parent.name === 'font-face') return;
-      parent = parent.parent;
-    }
-    if (declaration.prop.startsWith('--') && tokenDefinitions) return;
     declarations++;
-    const literal = withoutReferences(declaration.value);
-    if (/(?:#[\da-f]{3,8}\b|\b(?:rgba?|hsla?)\(|\b(?:black|white|transparent)\b|(?<![\w-])[-+]?(?:\d*\.\d+|\d+))/i.test(literal)) {
-      failures.push(`${path}: ${declaration.prop}: ${declaration.value}`);
+    const name = declaration.prop;
+    if (name.startsWith('--') && (
+      /(?:^|-)\d+(?:-\d+)*(?:rem|em|px|fr|vh|vw|ms|deg|ch|cqi|s)$/.test(name) ||
+      /^--(?:size|number|weight|percentage|opacity|layer|duration|angle)-(?:minus-)?(?:\d|zero$|one$|two$|full$)/.test(name)
+    )) failures.push(path + ' : variable nommée par sa valeur ' + name);
+    if (name === 'font-size' && path.includes('/content/') && !/^(?:var\(|inherit$)/.test(declaration.value)) {
+      failures.push(path + ' : utiliser une taille de texte Lumos');
     }
   });
   root.walkAtRules((rule) => {
@@ -59,7 +39,7 @@ for (const path of await files('src')) {
   for (const match of source.matchAll(/var\((--[\w-]+)/g)) references.add(match[1]);
   assert.ok(!source.includes('--at-'), `Ancien préfixe couleur : ${path}`);
   assert.ok(!source.includes('source-reset'), `Ancien reset : ${path}`);
-  if (path.endsWith('.css')) check(source, path, /^src\/styles\/(base|brand|tokens)\.css$/.test(path));
+  if (path.endsWith('.css')) check(source, path);
   if (path.endsWith('.astro')) {
     for (const style of source.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/g)) check(style[1], path);
     if (path.startsWith('src/components/content/')) {
@@ -67,7 +47,6 @@ for (const path of await files('src')) {
         counts[tag[1]] = (counts[tag[1]] || 0) + 1;
       }
       assert.ok(!/variant="inherit"/.test(source), `Typographie Lumos neutralisée : ${path}`);
-      assert.ok(!/tracks="(?!var\()[^"]*\d/.test(source), `Pistes sans token : ${path}`);
     }
   }
 }
@@ -79,13 +58,11 @@ for (const reference of references) {
 for (const route of routes) {
   const tree = document(await readFile('dist/' + route.file, 'utf8'));
   for (const node of all(tree, (node) => !!attr(node, 'style'))) {
-    // Props such as column counts and line lengths define local Lumos tokens.
-    const css = postcss.parse(attr(node, 'style'));
-    css.walkDecls((decl) => { if (!decl.prop.startsWith('--')) check(decl.toString(), route.file); });
+    check(attr(node, 'style'), route.file);
   }
   if (route.kind !== 'redirect') assert.ok(all(tree, (node) =>
     (attr(node, 'class') || '').split(' ').includes('section')).length, `Section Lumos absente : ${route.route}`);
 }
-assert.deepEqual(failures, [], 'Valeurs de design hors tokens');
+assert.deepEqual(failures, [], 'Contrat de styles Lumos');
 assert.ok(counts.Section > 80 && counts.Grid > 60 && counts.Card > 50, 'Migration native Lumos incomplète');
-console.log(`OK : ${declarations} déclarations contrôlées, aucun littéral de design hors tokens ; ${JSON.stringify(counts)}.`);
+console.log(`OK : ${declarations} déclarations contrôlées, rôles Lumos et noms de variables vérifiés ; ${JSON.stringify(counts)}.`);

@@ -35,7 +35,7 @@ import Button from '../Button.astro';
          ============================================ -->
     <Section theme="light">
 
-            <Grid xsmall={1} small={1} medium={1} large={2} gap="7" tracks="var(--tracks-content-sidebar-wide)">
+            <Grid xsmall={1} small={1} medium={1} large={2} gap="7" tracks="1.4fr 0.6fr">
                 <div class="real-detail-text">
                     <Eyebrow tag="span">&Eacute;v&eacute;nementiel</Eyebrow>
                     <Heading tag="h2" variant="h2">Rencontres nationales de l'etourisme</Heading>
@@ -129,8 +129,7 @@ import Button from '../Button.astro';
            SECTIONS COMMUNES
            ============================================ */
         .divider {
-            width: var(--size-3-125rem); height: var(--size-0-1875rem); background: var(--brand-500);
-            margin: var(--space-4) var(--size-zero) var(--size-zero) var(--size-zero); border: none;
+            margin: var(--space-4) 0 0 0;
         }
 
         /* ============================================
@@ -141,32 +140,32 @@ import Button from '../Button.astro';
         .real-meta {
             background: var(--light-200);
             border-radius: var(--radius-small);
-            padding: var(--size-2-1875rem) var(--space-5);
+            padding: var(--space-5) var(--space-5);
             display: flex;
             flex-direction: column;
-            gap: var(--size-1-375rem);
+            gap: var(--space-4);
         }
         .real-meta-item {
             display: flex;
             align-items: flex-start;
-            gap: var(--size-0-875rem);
+            gap: var(--space-3);
         }
         .real-meta-item svg {
-            width: var(--size-1-375rem); height: var(--size-1-375rem); flex-shrink: var(--size-zero);
-            stroke: var(--brand-500); stroke-width: var(--number-two);
+            width: 1.375rem; height: 1.375rem; flex-shrink: 0;
+            stroke: var(--brand-500); stroke-width: 2;
             fill: none; stroke-linecap: round; stroke-linejoin: round;
-            margin-top: var(--size-0-125rem);
+            margin-top: var(--space-1);
         }
         .meta-label {
             display: block;
-            font-size: var(--size-0-72rem); font-weight: var(--primary-bold);
-            text-transform: uppercase; letter-spacing: var(--size-0-09375rem);
+            font-size: var(--text-small); font-weight: var(--primary-bold);
+            text-transform: uppercase; letter-spacing: var(--letter-spacing-normal);
             color: var(--text-2);
-            margin-bottom: var(--size-0-125rem);
+            margin-bottom: var(--space-1);
         }
         .meta-value {
             display: block;
-            font-size: var(--size-0-95rem); font-weight: var(--primary-medium);
+            font-size: var(--text-main); font-weight: var(--primary-medium);
             color: var(--dark-900);
         }
 
@@ -177,7 +176,7 @@ import Button from '../Button.astro';
         .real-photo-item { border-radius: var(--radius-small); overflow: hidden; cursor: pointer; }
         .real-photo-caption {
             text-align: center;
-            font-size: var(--size-0-82rem);
+            font-size: var(--text-small);
             color: var(--text-2);
             margin-top: var(--space-3);
             font-style: italic;
@@ -188,14 +187,14 @@ import Button from '../Button.astro';
         /* BREADCRUMB BACK */
         .breadcrumb-back {
             display: inline-flex; align-items: center; gap: var(--space-2);
-            font-size: var(--size-0-78rem); font-weight: var(--primary-medium); text-transform: uppercase;
-            letter-spacing: var(--size-0-0625rem); color: var(--text-2); transition: var(--motion-transition);
-            padding: var(--space-5) var(--size-zero) var(--size-zero);
+            font-size: var(--text-small); font-weight: var(--primary-medium); text-transform: uppercase;
+            letter-spacing: var(--letter-spacing-normal); color: var(--text-2); transition: all var(--hover-duration) var(--hover-ease);
+            padding: var(--space-5) 0 0;
         }
         .breadcrumb-back:hover { color: var(--brand-500); }
         .breadcrumb-back svg {
-            width: var(--size-1rem); height: var(--size-1rem); stroke: currentColor; stroke-width: var(--number-two);
-            fill: none; transition: var(--motion-transition);
+            width: 1rem; height: 1rem; stroke: currentColor; stroke-width: 2;
+            fill: none; transition: all var(--hover-duration) var(--hover-ease);
         }
 
         /* BACK LINK */

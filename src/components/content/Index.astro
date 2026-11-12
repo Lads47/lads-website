@@ -21,7 +21,7 @@ import Img from '../media/Img.astro';
          HERO (INCHANGE)
          ============================================ -->
     <Section theme="dark" fullHeight paddingTop="none" paddingBottom="none" gap="0" align="center">
-<Video id="heroVideo" slot="background" src="/videos/demo-ateliers-du-stream.mp4" variant="auto" style={"opacity:var(--opacity-0-25)"} />
+<Video id="heroVideo" slot="background" src="/videos/demo-ateliers-du-stream.mp4" variant="auto" style={"opacity:0.25"} />
 <div slot="background" class="hero-control_wrap"><Button id="heroPause" variant="play" label="Mettre la vidéo en pause" pressed={true} emphasis="secondary" class="padding-2" /></div>
 <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
 <Paragraph variant="small" class="color-brand text-transform-uppercase letter-spacing-wide">Captation vid&eacute;o &eacute;v&eacute;nementielle &agrave; Bordeaux, Paris et partout en France</Paragraph>
@@ -49,8 +49,8 @@ import Img from '../media/Img.astro';
 
 
                     <Eyebrow tag="span" variant="tag">Essentiel</Eyebrow>
-                    <Heading tag="h3" variant="h3">Captation multicam l&eacute;g&egrave;re</Heading>
-                    <Paragraph variant="main">2 &agrave; 3 cam&eacute;ras, id&eacute;ale pour les petites salles. R&eacute;gie compacte et agile pour conf&eacute;rences, interviews et tables rondes. Malgr&eacute; son format compact, elle g&egrave;re la diffusion des m&eacute;dias sur vid&eacute;oprojecteur et l'int&eacute;gration d'intervenants en visioconf&eacute;rence. Montage et d&eacute;montage rapides.</Paragraph>
+                    <Heading tag="h3" variant="h4">Captation multicam l&eacute;g&egrave;re</Heading>
+                    <Paragraph variant="small">2 &agrave; 3 cam&eacute;ras, id&eacute;ale pour les petites salles. R&eacute;gie compacte et agile pour conf&eacute;rences, interviews et tables rondes. Malgr&eacute; son format compact, elle g&egrave;re la diffusion des m&eacute;dias sur vid&eacute;oprojecteur et l'int&eacute;gration d'intervenants en visioconf&eacute;rence. Montage et d&eacute;montage rapides.</Paragraph>
 
             </Card>
             <!-- Carte 2 -->
@@ -58,8 +58,8 @@ import Img from '../media/Img.astro';
 
 
                     <Eyebrow tag="span" variant="tag">Premium</Eyebrow>
-                    <Heading tag="h3" variant="h3">Jusqu'&agrave; 8 cam&eacute;ras</Heading>
-                    <Paragraph variant="main">Pour les spectacles et grands &eacute;v&eacute;nements n&eacute;cessitant un dispositif cons&eacute;quent. Cette r&eacute;gie compl&egrave;te g&egrave;re le live stream, la diffusion sur grand &eacute;cran et l'ensemble des flux m&eacute;dias en simultan&eacute;.</Paragraph>
+                    <Heading tag="h3" variant="h4">Jusqu'&agrave; 8 cam&eacute;ras</Heading>
+                    <Paragraph variant="small">Pour les spectacles et grands &eacute;v&eacute;nements n&eacute;cessitant un dispositif cons&eacute;quent. Cette r&eacute;gie compl&egrave;te g&egrave;re le live stream, la diffusion sur grand &eacute;cran et l'ensemble des flux m&eacute;dias en simultan&eacute;.</Paragraph>
 
             </Card>
             <!-- Carte 3 -->
@@ -67,8 +67,8 @@ import Img from '../media/Img.astro';
 
 
                     <Eyebrow tag="span" variant="tag">Liaison sans fil</Eyebrow>
-                    <Heading tag="h3" variant="h3">4 cam&eacute;ras tourelle 100% HF</Heading>
-                    <Paragraph variant="main">Dispositif id&eacute;al pour les installations en ext&eacute;rieur avec du public. Chaque cam&eacute;ra dispose de son propre &eacute;metteur et le tout est aliment&eacute; par batterie. Un dispositif tr&egrave;s rare sur le march&eacute; de l'audiovisuel.</Paragraph>
+                    <Heading tag="h3" variant="h4">4 cam&eacute;ras tourelle 100% HF</Heading>
+                    <Paragraph variant="small">Dispositif id&eacute;al pour les installations en ext&eacute;rieur avec du public. Chaque cam&eacute;ra dispose de son propre &eacute;metteur et le tout est aliment&eacute; par batterie. Un dispositif tr&egrave;s rare sur le march&eacute; de l'audiovisuel.</Paragraph>
 
             </Card>
             <!-- Carte 4 -->
@@ -76,13 +76,13 @@ import Img from '../media/Img.astro';
 
 
                     <Eyebrow tag="span" variant="tag">En simultan&eacute;</Eyebrow>
-                    <Heading tag="h3" variant="h3">8 r&eacute;gies de 3 cam&eacute;ras chacune</Heading>
-                    <Paragraph variant="main">Nous sommes en mesure de d&eacute;ployer jusqu'&agrave; 8 r&eacute;gies de 3 cam&eacute;ras en simultan&eacute;. Id&eacute;al pour les &eacute;v&eacute;nements multi-salles : chaque conf&eacute;rence dispose de sa propre captation, en live ou en enregistrement.</Paragraph>
+                    <Heading tag="h3" variant="h4">8 r&eacute;gies de 3 cam&eacute;ras chacune</Heading>
+                    <Paragraph variant="small">Nous sommes en mesure de d&eacute;ployer jusqu'&agrave; 8 r&eacute;gies de 3 cam&eacute;ras en simultan&eacute;. Id&eacute;al pour les &eacute;v&eacute;nements multi-salles : chaque conf&eacute;rence dispose de sa propre captation, en live ou en enregistrement.</Paragraph>
 
             </Card>
         </Grid>
 
-        <div class="width-full" style={"text-align: center; padding: var(--size-5-625rem) var(--size-zero);"}>
+        <div class="width-full" style={"text-align: center; padding: var(--section-space-medium) 0;"}>
             <Button element="link" href={"/solutions"}>Toutes nos solutions</Button>
         </div>
     </Section>
@@ -217,32 +217,32 @@ import Img from '../media/Img.astro';
 
 
                         <Eyebrow tag="span" variant="tag">&Eacute;v&eacute;nementiel</Eyebrow>
-                        <Heading tag="h3" variant="h3">Rencontres nationales de l'etourisme</Heading>
-                        <Paragraph variant="main">5 r&eacute;gies, 12 cam&eacute;ras diss&eacute;min&eacute;es dans les murs du Palais Beaumont de Pau pour la grande messe du tourisme national.</Paragraph>
+                        <Heading tag="h3" variant="h4">Rencontres nationales de l'etourisme</Heading>
+                        <Paragraph variant="small">5 r&eacute;gies, 12 cam&eacute;ras diss&eacute;min&eacute;es dans les murs du Palais Beaumont de Pau pour la grande messe du tourisme national.</Paragraph>
 
                 </Card>
                 <Card variant="cover" theme="dark" href={"/realisations/universite-ete-ceca"} image="/photo/20240830_103011.webp" imageAlt="">
 
 
                         <Eyebrow tag="span" variant="tag">Corporate</Eyebrow>
-                        <Heading tag="h3" variant="h3">Universit&eacute; d'&Eacute;t&eacute; Ekivia</Heading>
-                        <Paragraph variant="main">Captation et diffusion en direct au Ch&acirc;teau Smith Haut Lafitte, avec duplex pour des intervenants &agrave; distance et gestion des m&eacute;dias sur vid&eacute;oprojecteur.</Paragraph>
+                        <Heading tag="h3" variant="h4">Universit&eacute; d'&Eacute;t&eacute; Ekivia</Heading>
+                        <Paragraph variant="small">Captation et diffusion en direct au Ch&acirc;teau Smith Haut Lafitte, avec duplex pour des intervenants &agrave; distance et gestion des m&eacute;dias sur vid&eacute;oprojecteur.</Paragraph>
 
                 </Card>
                 <Card variant="cover" theme="dark" href={"/realisations/ceremonie-docteurs-bordeaux"} image="/photo/20250411_165355.webp" imageAlt="">
 
 
                         <Eyebrow tag="span" variant="tag">Universit&eacute; de Bordeaux</Eyebrow>
-                        <Heading tag="h3" variant="h3">C&eacute;r&eacute;monie des docteurs</Heading>
-                        <Paragraph variant="main">L'Universit&eacute; de Bordeaux organise chaque ann&eacute;e la remise de dipl&ocirc;mes de ses doctorants au Pin Galant, salle de 1&nbsp;400 places &agrave; M&eacute;rignac.</Paragraph>
+                        <Heading tag="h3" variant="h4">C&eacute;r&eacute;monie des docteurs</Heading>
+                        <Paragraph variant="small">L'Universit&eacute; de Bordeaux organise chaque ann&eacute;e la remise de dipl&ocirc;mes de ses doctorants au Pin Galant, salle de 1&nbsp;400 places &agrave; M&eacute;rignac.</Paragraph>
 
                 </Card>
                 <Card variant="cover" theme="dark" href={"/realisations/peer-gynt"} image="/photo/peer gynt.webp" imageAlt="">
 
 
                         <Eyebrow tag="span" variant="tag">Peer Gynt</Eyebrow>
-                        <Heading tag="h3" variant="h3">Op&eacute;ra de Limoges</Heading>
-                        <Paragraph variant="main">Six cam&eacute;ras diss&eacute;min&eacute;es sur le plateau, manipulables par les acteurs et une trentaine de vid&eacute;os, le tout diffus&eacute; sur le mur du d&eacute;cor d'une maison.</Paragraph>
+                        <Heading tag="h3" variant="h4">Op&eacute;ra de Limoges</Heading>
+                        <Paragraph variant="small">Six cam&eacute;ras diss&eacute;min&eacute;es sur le plateau, manipulables par les acteurs et une trentaine de vid&eacute;os, le tout diffus&eacute; sur le mur du d&eacute;cor d'une maison.</Paragraph>
 
                 </Card>
             </Grid>
@@ -299,10 +299,10 @@ import Img from '../media/Img.astro';
                     <Paragraph variant="main" class="color-muted" maxWidth={70}>
                         Bas&eacute;s en Nouvelle-Aquitaine, avec des implantations &agrave; Bordeaux et Paris, nous intervenons sur l'ensemble du territoire. Chaque projet est accompagn&eacute; de la conception technique &agrave; la livraison finale, avec une attention constante port&eacute;e &agrave; la qualit&eacute; et &agrave; la coordination.
                     </Paragraph>
-                    <div style={"display: flex; flex-wrap: wrap; gap: var(--size-2-5rem); margin-top: var(--size-1-875rem);"}>
-                        <Img loading={"lazy"} src={"/images/logo-web-video-production.png"} alt={"Web Vidéo Production"} style={"height: var(--size-2-5rem); opacity: var(--opacity-0-7);"} appearance="logo" transparent />
-                        <Img loading={"lazy"} src={"/images/logo-grand-angle.png"} alt={"Grand Angle"} style={"height: var(--size-2-5rem); opacity: var(--opacity-0-7);"} appearance="logo" transparent />
-                        <Img loading={"lazy"} src={"/images/logo-far-ouest.png"} alt={"Far Ouest"} style={"height: var(--size-2-5rem); opacity: var(--opacity-0-7);"} appearance="logo" transparent />
+                    <div style={"display: flex; flex-wrap: wrap; gap: var(--space-6); margin-top: var(--space-5);"}>
+                        <Img loading={"lazy"} src={"/images/logo-web-video-production.png"} alt={"Web Vidéo Production"} style={"height: 2.5rem; opacity: 0.7;"} appearance="logo" transparent />
+                        <Img loading={"lazy"} src={"/images/logo-grand-angle.png"} alt={"Grand Angle"} style={"height: 2.5rem; opacity: 0.7;"} appearance="logo" transparent />
+                        <Img loading={"lazy"} src={"/images/logo-far-ouest.png"} alt={"Far Ouest"} style={"height: 2.5rem; opacity: 0.7;"} appearance="logo" transparent />
                     </div>
                 </div>
                 <Grid xsmall={1} small={1} medium={1} large={2} gap="4">
@@ -318,7 +318,7 @@ import Img from '../media/Img.astro';
                             <Heading tag="h4" variant="h4">Nos r&eacute;gies dans les ann&eacute;es 2020</Heading>
                         </div>
                     </Card>
-                    <p class="equipe-caption" style={"grid-column: var(--number-one) / var(--number-minus-one); text-align: center; font-style: italic; color: var(--text-2); margin-top: var(--size-0-3125rem); font-size: var(--size-0-95rem);"}>Le live a &eacute;volu&eacute;. Les r&eacute;gies aussi&hellip; enfin, pas toutes.</p>
+                    <p class="equipe-caption" style={"grid-column: 1 / -1; text-align: center; font-style: italic; color: var(--text-2); margin-top: var(--space-1); font-size: var(--text-main);"}>Le live a &eacute;volu&eacute;. Les r&eacute;gies aussi&hellip; enfin, pas toutes.</p>
                 </Grid>
             </Grid>
 
@@ -360,30 +360,19 @@ import Img from '../media/Img.astro';
            HERO (INCHANGE)
            ============================================ */
         .hero-video {
-            position: absolute; inset: var(--size-zero);
-            width: var(--size-full); height: var(--size-full);
+            position: absolute; inset: 0;
+            width: 100%; height: 100%;
             object-fit: cover;
-            opacity: var(--opacity-0-25);
+            opacity: 0.25;
         }
-        .hero-pause {
-            position: absolute; bottom: var(--size-1-25rem); right: var(--size-1-25rem);
-            z-index: var(--number-two);
-            background: var(--video-control-background);
-            border: none; border-radius: var(--percentage-50);
-            width: var(--size-2-5rem); height: var(--size-2-5rem);
-            display: flex; align-items: center; justify-content: var(--justify-content-button-wrap);
-            cursor: pointer; transition: var(--motion-transition);
-        }
-        .hero-pause:hover { background: var(--video-control-background-hover); }
-        .hero-pause svg { width: var(--size-1rem); height: var(--size-1rem); fill: var(--light-100); }
         @keyframes heroFadeIn {
-            from { opacity: var(--opacity-0); transform: translateY(var(--size-1-25rem)); }
-            to { opacity: var(--opacity-1); transform: translateY(var(--size-zero)); }
+            from { opacity: 0; transform: translateY(1.25rem); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .hero-content { position: relative; z-index: var(--number-one); max-width: var(--size-43-75rem); padding: var(--space-8) var(--size-zero); margin: var(--size-zero) auto; text-align: center; opacity: var(--opacity-0); animation: heroFadeIn var(--duration-2s) ease-out var(--duration-0-5s) forwards; }
+        .hero-content { position: relative; z-index: 1; max-width: 43.75rem; padding: var(--space-8) 0; margin: 0 auto; text-align: center; opacity: 0; animation: heroFadeIn 2s ease-out 0.5s forwards; }
         .hero-content .subtitle {
-            font-family: var(--primary-family); font-size: var(--size-1-05rem); font-weight: var(--weight-300);
-            margin-bottom: var(--space-4); color: var(--brand-500); text-transform: uppercase; letter-spacing: var(--size-0-125rem);
+            font-family: var(--primary-family); font-size: var(--text-large); font-weight: var(--primary-regular);
+            margin-bottom: var(--space-4); color: var(--brand-500); text-transform: uppercase; letter-spacing: var(--letter-spacing-normal);
         }
 
         /* ============================================
@@ -391,10 +380,9 @@ import Img from '../media/Img.astro';
            ============================================ */
 
         .divider {
-            width: var(--size-3-125rem); height: var(--size-0-1875rem); background: var(--brand-500);
-            margin: var(--space-4) auto var(--size-zero); border: none;
+            margin: var(--space-4) auto 0;
         }
-        .divider-left { margin: var(--space-4) var(--size-zero) var(--size-zero) var(--size-zero); }
+        .divider-left { margin: var(--space-4) 0 0 0; }
 
         /* ============================================
            SECTION — NOS POSSIBILITES
@@ -408,32 +396,32 @@ import Img from '../media/Img.astro';
            ============================================ */
 
         .specificite-text {
-            max-width: var(--size-46-875rem);
-            margin: var(--size-zero) auto;
+            max-width: 46.875rem;
+            margin: 0 auto;
             text-align: center;
         }
 
         .specificite-text ul {
             list-style: none;
-            padding: var(--size-zero);
-            margin: var(--size-zero) auto var(--space-4);
+            padding: 0;
+            margin: 0 auto var(--space-4);
             display: inline-block;
             text-align: left;
         }
         .specificite-text ul li {
-            font-size: var(--size-1rem);
+            font-size: var(--text-main);
             color: var(--text-2);
-            line-height: var(--number-1-9);
+            line-height: var(--text-main-line-height);
             padding-left: var(--space-4);
             position: relative;
         }
         .specificite-text ul li::before {
-            content: var(--content-timeline-before);
+            content: '';
             position: absolute;
-            left: var(--size-zero);
-            top: var(--size-0-75rem);
-            width: var(--size-0-5rem);
-            height: var(--size-0-125rem);
+            left: 0;
+            top: 0.75rem;
+            width: 0.5rem;
+            height: 0.125rem;
             background: var(--brand-500);
         }
 
@@ -447,26 +435,26 @@ import Img from '../media/Img.astro';
         }
 
         .stat-icon {
-            margin-bottom: var(--size-1-125rem);
+            margin-bottom: var(--space-4);
             margin-inline: auto;
             width: fit-content;
         }
 
         .stat-icon svg {
-            width: var(--size-2-75rem);
-            height: var(--size-2-75rem);
+            width: 2.75rem;
+            height: 2.75rem;
             fill: var(--light-100);
             stroke: none;
         }
 
         .stat-nombre {
-            font-family: var(--heading-family); font-size: var(--size-3-8rem); font-weight: var(--weight-900);
-            color: var(--brand-500); line-height: var(--number-one); margin-bottom: var(--space-2);
+            font-family: var(--heading-family); font-size: var(--display); font-weight: var(--h3-font-weight);
+            color: var(--brand-500); line-height: var(--line-height-large); margin-bottom: var(--space-2);
         }
 
         .stat-label {
-            font-size: var(--size-0-78rem); color: var(--text-2); text-transform: uppercase;
-            letter-spacing: var(--size-0-125rem); font-weight: var(--primary-medium);
+            font-size: var(--text-small); color: var(--text-2); text-transform: uppercase;
+            letter-spacing: var(--letter-spacing-normal); font-weight: var(--primary-medium);
         }
 
         /* ============================================
@@ -476,20 +464,20 @@ import Img from '../media/Img.astro';
 
         .ref-item {
             background: var(--light-100);
-            border-radius: var(--size-0-75rem);
-            aspect-ratio: var(--number-one);
+            border-radius: var(--radius-main);
+            aspect-ratio: 1;
             display: flex;
             align-items: center;
-            justify-content: var(--justify-content-button-wrap);
-            padding: var(--size-1-5625rem);
-            transition: var(--motion-transition);
-            box-shadow: var(--shadow-timeline-content);
-            border: var(--size-0-0625rem) solid var(--light-300);
+            justify-content: center;
+            padding: var(--space-4);
+            transition: all var(--hover-duration) var(--hover-ease);
+            box-shadow: var(--shadow-surface);
+            border: var(--border-width) solid var(--light-300);
         }
 
         .ref-item:hover {
-            box-shadow: var(--shadow-timeline-content-hover);
-            transform: translateY(var(--size-minus-0-1875rem));
+            box-shadow: var(--shadow-surface);
+            transform: translateY(-0.1875rem);
         }
 
         /* ============================================
@@ -501,47 +489,26 @@ import Img from '../media/Img.astro';
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(var(--number-3), var(--size-1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: var(--space-4);
         }
 
-        .gallery-item {
-            position: relative;
-            border-radius: var(--radius-small);
-            overflow: hidden;
-            aspect-ratio: var(--number-16)/var(--number-10);
-            cursor: pointer;
-        }
-
-        .gallery-item::after {
-            content: var(--content-timeline-before); position: absolute; inset: var(--size-zero);
-            background: linear-gradient(var(--angle-0deg), var(--overlay-gallery) var(--percentage-0), var(--color-transparent) var(--percentage-50));
-            opacity: var(--opacity-0); transition: var(--motion-transition);
-        }
-
-        .gallery-item:hover::after { opacity: var(--opacity-1); }
-
         .gallery-caption {
-            position: absolute; bottom: var(--size-zero); left: var(--size-zero); right: var(--size-zero);
-            padding: var(--space-4); color: var(--light-100); z-index: var(--number-one);
-            transform: translateY(var(--size-0-625rem)); opacity: var(--opacity-0);
-            transition: var(--motion-transition);
+            position: absolute; bottom: 0; left: 0; right: 0;
+            padding: var(--space-4); color: var(--light-100); z-index: 1;
+            transform: translateY(0.625rem); opacity: 0;
+            transition: all var(--hover-duration) var(--hover-ease);
         }
-
-        .gallery-item:hover .gallery-caption { transform: translateY(var(--size-zero)); opacity: var(--opacity-1); }
 
         /* Grand item qui prend 2 colonnes */
-        .gallery-item.wide {
-            grid-column: span var(--number-two);
-        }
 
         /* Placeholder */
         .gallery-placeholder {
-            width: var(--size-full); height: var(--size-full);
+            width: 100%; height: 100%;
             background: var(--light-300);
-            display: flex; align-items: center; justify-content: var(--justify-content-button-wrap);
-            border: var(--size-0-125rem) dashed var(--border);
-            font-size: var(--size-0-85rem); color: var(--text-2);
+            display: flex; align-items: center; justify-content: center;
+            border: var(--border-width) dashed var(--border);
+            font-size: var(--text-small); color: var(--text-2);
         }
 
         /* ============================================
@@ -551,20 +518,19 @@ import Img from '../media/Img.astro';
         /* Lightbox */
 
         .equipe-photo-info {
-            position: absolute; bottom: var(--size-zero); left: var(--size-zero); right: var(--size-zero);
+            position: absolute; bottom: 0; left: 0; right: 0;
             padding: var(--space-4); color: var(--light-100);
-            background: linear-gradient(var(--angle-0deg), var(--overlay-photo-caption) var(--percentage-0), var(--color-transparent) var(--size-full));
+            background: linear-gradient(0deg, color-mix(in srgb, var(--dark-900) 85%, transparent) 0%, transparent 100%);
         }
 
         /* ============================================
            RESPONSIVE
            ============================================ */
 
-        @media (--mq-max-width-48rem) {
-            .hero-content .subtitle { font-size: var(--size-0-9rem); }
-            .gallery-grid { grid-template-columns: var(--size-1fr); }
-            .gallery-item.wide { grid-column: span var(--number-one); }
-            .stat-nombre { font-size: var(--size-2-8rem); }
+        @media (--mq-medium-max) {
+            .hero-content .subtitle { font-size: var(--text-small); }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .stat-nombre { font-size: var(--display); }
             .ref-item { padding: var(--space-4); }
         }
 

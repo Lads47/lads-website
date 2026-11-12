@@ -4,7 +4,6 @@
 
 @import "./base.css" layer(base);
 @import "./brand.css" layer(base);
-@import "./tokens.css" layer(base);
 
 @import "./patterns.css" layer(patterns);
 @import "./utilities.css" layer(utilities);

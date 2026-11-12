@@ -29,11 +29,11 @@ const {
       position: fixed;
       top: var(--space-2);
       inset-inline-start: var(--space-2);
-      z-index: var(--layer-100);
-      translate: var(--size-zero) calc(var(--percentage-minus-100) - var(--space-2) * var(--number-two));
+      z-index: 100;
+      translate: 0 calc(-100% - var(--space-2) * 2);
 
       &:focus {
-        translate: var(--size-zero) var(--size-zero);
+        translate: 0 0;
       }
     }
   }

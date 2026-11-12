@@ -45,7 +45,7 @@ import Button from '../Button.astro';
                 <Paragraph variant="main">Ces donn&eacute;es servent uniquement &agrave; produire nos statistiques de fr&eacute;quentation. Elles ne sont ni crois&eacute;es avec d'autres sites, ni transmises &agrave; des tiers, et sont supprim&eacute;es au bout de 13 mois ; au-del&agrave;, nous ne gardons que des totaux anonymes. Conform&eacute;ment aux recommandations de la CNIL, cette mesure d'audience est dispens&eacute;e de consentement, et les r&eacute;glages &laquo; Do Not Track &raquo; et &laquo; Global Privacy Control &raquo; de votre navigateur sont respect&eacute;s. Vous pouvez aussi vous y opposer &agrave; tout moment, votre choix &eacute;tant m&eacute;moris&eacute; dans ce navigateur :</Paragraph>
                 <Paragraph variant="main">
                     <Button id={"eva-stat-choix"}>Ne plus &ecirc;tre mesur&eacute;</Button>
-                    <span id="eva-stat-etat" style={"display: block; margin-top: var(--size-0-5em); font-size: var(--size-0-95em);"}></span>
+                    <span id="eva-stat-etat" style={"display: block; margin-top: var(--space-2); font-size: var(--text-small);"}></span>
                 </Paragraph>
                 <script is:inline>
                     (function () {
@@ -144,37 +144,37 @@ import Button from '../Button.astro';
            CONTENU LEGAL
            ============================================ */
         .legal-content {
-            max-width: var(--size-50rem);
-            margin: var(--size-zero) auto;
+            max-width: 50rem;
+            margin: 0 auto;
         }
         .legal-content ul {
             list-style: none;
-            margin: var(--space-3) var(--size-zero) var(--space-2);
+            margin: var(--space-3) 0 var(--space-2);
         }
         .legal-content li {
             position: relative;
-            padding-left: var(--size-1-375rem);
-            font-size: var(--size-0-95rem);
+            padding-left: var(--space-4);
+            font-size: var(--text-main);
             color: var(--text-2);
-            line-height: var(--number-1-9);
+            line-height: var(--text-main-line-height);
         }
         .legal-content li::before {
-            content: var(--content-timeline-before); position: absolute; left: var(--size-zero); top: var(--size-0-75rem);
-            width: var(--size-0-5rem); height: var(--size-0-5rem); border-radius: var(--percentage-50);
+            content: ''; position: absolute; left: 0; top: 0.75rem;
+            width: 0.5rem; height: 0.5rem; border-radius: 50%;
             background: var(--brand-500);
         }
         .legal-content a {
             color: var(--dark-900); font-weight: var(--primary-medium);
-            border-bottom: var(--size-0-0625rem) solid var(--brand-500);
-            transition: var(--motion-transition);
+            border-bottom: var(--border-width) solid var(--brand-500);
+            transition: all var(--hover-duration) var(--hover-ease);
         }
         .legal-content a:hover { color: var(--brand-500); }
         .legal-date {
-            font-size: var(--size-0-85rem);
+            font-size: var(--text-small);
             color: var(--text-2);
             margin-top: var(--space-7);
             padding-top: var(--space-4);
-            border-top: var(--size-0-0625rem) solid var(--light-300);
+            border-top: var(--border-width) solid var(--light-300);
         }
 
         /* ============================================

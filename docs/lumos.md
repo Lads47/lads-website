@@ -10,30 +10,32 @@ Source officielle : <https://github.com/lumosframework/lumos-for-astro/tree/v1.0
 
 Les pages utilisent les composants du starter officiel : `Section`, `ContentWrapper`, `Grid`, `Card`, `Heading`, `Paragraph`, `Eyebrow`, `Img`, `Video`, `Overlay` et `Button`. Le menu, le pied de page et les photos utilisent `Nav`, `NavLink`, `Footer` et `Modal`. La couche de reset qui neutralisait Lumos a été supprimée, ainsi que les anciennes implémentations de navigation et de pied de page.
 
-Les fichiers de contenu contiennent 89 occurrences de `Section`, 64 de `Grid`, 65 de `Card`, 190 de `Heading`, 222 de `Paragraph`, 116 de `Img` et 60 de `Button`. Ce sont des occurrences dans les sources, avant répétition du contact partagé dans les pages construites. Les variantes typographiques sont actives ; aucun titre de contenu n'utilise le style hérité.
+Les fichiers de contenu contiennent 89 occurrences de `Section`, 64 de `Grid`, 65 de `Card`, 190 de `Heading`, 222 de `Paragraph`, 116 de `Img` et 62 de `Button`. Ce sont des occurrences dans les sources, avant répétition du contact partagé dans les pages construites. Les variantes typographiques sont actives ; aucun titre de contenu n'utilise le style hérité.
 
 Les extensions restent dans les composants qui possèdent leur rendu : largeur et surface de `Section`, proportions et espacement de `Grid`, variantes panel/profile et lien global de `Card`, rôles de taille de `Img`, variante photo de `Modal` et rendu textuel de `Button` dans une carte déjà cliquable. Les variantes existantes sont conservées. `TrainingMeta` mutualise les informations des deux formations ; `ContactSection` reçoit les textes et coordonnées propres à chaque page.
 
 Les détails spécifiques conservés, comme la frise historique, les légendes et les métadonnées, utilisent du CSS dans la couche `components`, avec les mêmes tokens. Les textes, images, arrière-plans et URL historiques sont vérifiés séparément du rendu.
 
-## Tokens et noms
+## Échelle native et réglages du site
 
-| Source | Responsabilité |
+Pour composer une section, choisir les variantes de `Section`, `Grid`, `Heading` et `Paragraph`. Les cartes du portfolio utilisent un titre HTML h3 présenté avec la variante h5 et un résumé en texte petit. Les cartes immersives de l’accueil emploient la variante h4. Les légendes utilisent le texte petit et l’approche emploie l’interlettrage normal.
+
+Lumos définit les rôles et les échelles dans `src/styles/base.css`. Le thème les personnalise dans `src/styles/brand.css`. Pour modifier le rythme des pages, régler les bornes fluides des paliers `--space-1` à `--space-8`, puis celles des espacements de section. Les grilles utilisent les utilitaires d’espacement du starter. Les valeurs structurelles comme `0`, `100%`, `1fr` et les proportions d’image s’écrivent directement en CSS.
+
+Les huit propriétés globales propres au site se trouvent dans `brand.css`.
+
+| Propriété | Usage partagé |
 | --- | --- |
-| `src/styles/base.css` | Contrat Lumos : échelles fluides, rôles de thème, typographie, espacement, reset |
-| `src/styles/brand.css` | Identité : Butler/Open Sans, palette, échelles, surfaces, proportions, positions des photos |
-| `src/styles/tokens.css` | Primitives : dimensions, opacités, durées, angles, ombres et effets |
-| `src/styles/media-tokens.json` | Conditions responsive, survol et réduction des animations, partagées avec JavaScript |
-| `postcss.config.mjs` | Résolution des conditions nommées vers des media queries natives au build |
+| `--heading-family` | Police Butler pour les titres et les chiffres éditoriaux |
+| `--action-500` et `--action-600` | Orange des boutons et de leur survol dans les thèmes clair et sombre |
+| `--label-tracking` | Interlettrage des libellés en capitales de la navigation, des boutons et des surtitres |
+| `--tag-background` | Fond teinté dérivé du bleu de marque pour les étiquettes |
+| `--shadow-surface` | Ombre commune aux surfaces en relief |
+| `--hero-image-opacity` | Lisibilité du texte sur les photos de bandeau |
+| `--tracks-content-sidebar` | Proportions de la grille contenu et colonne latérale des fiches |
 
-Les couleurs emploient les noms Lumos `--light-*`, `--dark-*`, `--brand-500`, les rôles d'action `--action-*`, les rôles de thème `--text`, `--text-2`, `--background`, ainsi que des rôles explicites pour les résultats, sessions et superpositions. Aucun préfixe `--at-` ni alias historique français ne reste dans les styles du site.
-
-Les couleurs, dimensions, espacements, tailles typographiques, bordures, rayons, ombres, durées et seuils responsive sont définis dans ces tokens. Les composants référencent ces valeurs, y compris dans leurs styles inline. Les nombres de colonnes, longueurs maximales de texte et pourcentages issus d'EVA sont des paramètres des composants ou des données : ils alimentent des custom properties locales. Les coordonnées et couleurs internes des fichiers SVG restent des données des médias d'origine. Les mots-clés structurels CSS et les déclarations d'enregistrement des polices restent du CSS natif.
-
-Les styles des résultats EVA ont été extraits de JavaScript vers `training-results.css`. Le script conserve son comportement et expose seulement la progression reçue dans `--result-progress`.
+Un cadrage propre à une photo reste auprès de son image. Les conditions responsive partagées avec JavaScript sont définies dans `src/styles/media-tokens.json`. Les résultats EVA gardent leur progression dynamique et leur couleur de réussite dans leur composant.
 
 ## Vérifications
 
-`npm test` contrôle aussi les tokens : absence de valeurs visuelles littérales hors définitions, absence d'anciens préfixes, conditions responsive nommées, styles inline construits et utilisation des composants dans toutes les pages. Un test navigateur modifie temporairement les tokens de couleur et d'espacement, vérifie que les composants changent réellement de couleur et de padding, puis restaure les valeurs.
-
-La refonte admet des adaptations des tailles et espacements, conformément à la demande. Les captures restent comparées à la source ; une identité pixel par pixel n'est pas revendiquée pour cette version native Lumos.
+`npm test` vérifie les noms de variables, les références, les conditions responsive et l’utilisation des composants Lumos dans les pages construites. Le contrôle accepte le CSS structurel et refuse une déclaration telle que `--size-0-01875rem`. Le test navigateur change temporairement la couleur de marque et le palier d’espacement d’une carte puis vérifie leurs valeurs calculées.

@@ -17,7 +17,7 @@ import Img from '../media/Img.astro';
          PAGE HERO
          ============================================ -->
     <Section theme="dark" paddingTop="navoverlap" paddingBottom="small" align="center">
-<Img slot="background" src="/photo/historique.webp" alt="" loading="eager" style={"opacity:var(--hero-image-opacity);object-position:center var(--hero-position-histoire)"} />
+<Img slot="background" src="/photo/historique.webp" alt="" loading="eager" style={"opacity:var(--hero-image-opacity);object-position:center calc(50% - 6.25rem)"} />
 
             <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
                 <Eyebrow tag="span">Depuis 1998</Eyebrow>
@@ -184,8 +184,7 @@ import Img from '../media/Img.astro';
            SECTIONS COMMUNES
            ============================================ */
         .divider {
-            width: var(--size-3-125rem); height: var(--size-0-1875rem); background: var(--brand-500);
-            margin: var(--space-4) auto var(--size-zero); border: none;
+            margin: var(--space-4) auto 0;
         }
 
         /* ============================================
@@ -193,29 +192,29 @@ import Img from '../media/Img.astro';
            ============================================ */
         .timeline {
             position: relative;
-            max-width: var(--size-56-25rem);
-            margin: var(--size-zero) auto;
+            max-width: 56.25rem;
+            margin: 0 auto;
         }
         /* Ligne verticale centrale */
         .timeline::before {
-            content: var(--content-timeline-before);
+            content: '';
             position: absolute;
-            left: var(--percentage-50);
-            top: var(--size-zero);
-            bottom: var(--size-zero);
-            width: var(--size-0-1875rem);
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 0.1875rem;
             background: var(--light-300);
-            transform: translateX(var(--percentage-minus-50));
+            transform: translateX(-50%);
         }
 
         .timeline-item {
             display: flex;
             align-items: flex-start;
             position: relative;
-            margin-bottom: var(--size-4-375rem);
+            margin-bottom: var(--space-7);
         }
         .timeline-item:last-child {
-            margin-bottom: var(--size-zero);
+            margin-bottom: 0;
         }
 
         /* Alternance gauche / droite */
@@ -228,17 +227,17 @@ import Img from '../media/Img.astro';
 
         /* Contenu texte */
         .timeline-content {
-            width: calc(var(--percentage-50) - var(--size-3-125rem));
+            width: calc(50% - 3.125rem);
             background: var(--light-100);
-            border: var(--size-0-0625rem) solid var(--light-300);
+            border: var(--border-width) solid var(--light-300);
             border-radius: var(--radius-small);
             padding: var(--space-5);
-            box-shadow: var(--shadow-timeline-content);
-            transition: var(--motion-transition);
+            box-shadow: var(--shadow-surface);
+            transition: all var(--hover-duration) var(--hover-ease);
         }
         .timeline-content:hover {
-            transform: translateY(var(--size-minus-0-1875rem));
-            box-shadow: var(--shadow-timeline-content-hover);
+            transform: translateY(-0.1875rem);
+            box-shadow: var(--shadow-surface);
         }
         .timeline-item:nth-child(odd) .timeline-content {
             text-align: right;
@@ -249,83 +248,83 @@ import Img from '../media/Img.astro';
 
         /* Image */
         .timeline-img {
-            width: calc(var(--percentage-50) - var(--size-3-125rem));
+            width: calc(50% - 3.125rem);
             display: flex;
             align-items: center;
-            justify-content: var(--justify-content-button-wrap);
+            justify-content: center;
         }
         .timeline-img .video-container {
             position: relative;
-            width: var(--size-full);
-            max-width: var(--size-22-5rem);
-            padding-bottom: var(--size-12-625rem);
-            height: var(--size-zero);
+            width: 100%;
+            max-width: 22.5rem;
+            padding-bottom: var(--section-space-medium);
+            height: 0;
             overflow: hidden;
             border-radius: var(--radius-small);
-            box-shadow: var(--shadow-timeline-img-video-container);
+            box-shadow: var(--shadow-surface);
         }
         .timeline-img .video-container iframe {
             position: absolute;
-            top: var(--size-zero); left: var(--size-zero);
-            width: var(--size-full);
-            height: var(--size-full);
-            border: var(--size-zero);
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
             border-radius: var(--radius-small);
         }
 
         /* Point central sur la ligne */
         .timeline-dot {
             position: absolute;
-            left: var(--percentage-50);
-            top: var(--size-1-875rem);
-            width: var(--size-1-125rem);
-            height: var(--size-1-125rem);
+            left: 50%;
+            top: 1.875rem;
+            width: 1.125rem;
+            height: 1.125rem;
             background: var(--brand-500);
-            border: var(--size-0-25rem) solid var(--light-100);
-            border-radius: var(--percentage-50);
-            transform: translateX(var(--percentage-minus-50));
-            z-index: var(--number-two);
-            box-shadow: var(--shadow-timeline-dot);
+            border: 0.25rem solid var(--light-100);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            box-shadow: 0 0 0 0.25rem rgba(125,207,245,0.2);
         }
 
         /* Ann&eacute;e */
         .timeline-year {
             display: inline-block;
             font-family: var(--heading-family);
-            font-size: var(--size-2rem);
-            font-weight: var(--weight-900);
+            font-size: var(--h2);
+            font-weight: var(--h3-font-weight);
             color: var(--brand-500);
             margin-bottom: var(--space-2);
-            line-height: var(--number-one);
+            line-height: var(--line-height-large);
         }
 
         /* ============================================
            RESPONSIVE
            ============================================ */
 
-        @media (--mq-max-width-48rem) {
+        @media (--mq-medium-max) {
 
             /* Timeline mobile : tout empil&eacute; &agrave; gauche */
             .timeline::before {
-                left: var(--size-1-25rem);
+                left: 1.25rem;
             }
             .timeline-item,
             .timeline-item:nth-child(odd),
             .timeline-item:nth-child(even) {
                 flex-direction: column;
-                padding-left: var(--size-3-125rem);
+                padding-left: var(--space-6);
             }
             .timeline-content,
             .timeline-img {
-                width: var(--size-full);
+                width: 100%;
             }
             .timeline-item:nth-child(odd) .timeline-content,
             .timeline-item:nth-child(even) .timeline-content {
                 text-align: left;
             }
             .timeline-dot {
-                left: var(--size-1-25rem);
-                top: var(--size-zero);
+                left: 1.25rem;
+                top: 0;
             }
             .timeline-img {
                 margin-top: var(--space-4);

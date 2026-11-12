@@ -1,11 +1,11 @@
-# Vérification de la refonte locale — 11 novembre 2026
+# Vérification de la refonte locale — 12 novembre 2026
 
 ## Version présentée
 
 - Adresse : <http://127.0.0.1:4321>.
 - Branche locale : `feat/refonte-astro-lumos`.
-- Commit applicatif présenté : `7caaa1f` ; aucun envoi distant.
-- Source historique : `a4a264380f80e3570bcb3d01a6776bb582439527` de `Lads47/lads-website`. Le pointeur GitHub `main` a été revérifié inchangé ; les 40 HTML publiés correspondent à la référence après normalisation des seules fins de ligne. Aucune modification publiée absente de cette source n'a été détectée dans ces HTML.
+- La référence visuelle de cette passe est le build local de la branche avant simplification (HEAD `a049c8c`).
+- Source historique : `a4a264380f80e3570bcb3d01a6776bb582439527` de `Lads47/lads-website`. Lors du contrôle du 11 novembre, le pointeur GitHub `main` a été revérifié inchangé ; les 40 HTML publiés correspondent à la référence après normalisation des seules fins de ligne. Aucune modification publiée absente de cette source n'a été détectée dans ces HTML.
 - Astro **7.4.7**, Lumos for Astro **1.0.3**, dépendances exactes et lockfile vérifiés par une installation propre `npm ci`.
 - Reprise native Lumos : suppression du reset de neutralisation, migration des composants, noms de couleurs corrigés et valeurs visuelles déplacées dans les tokens. Voir `docs/lumos.md`.
 - **Aucun push, aucune PR, aucune fusion, aucune mise en ligne.** La version locale attend la validation de l'utilisateur.
@@ -18,7 +18,7 @@
 | Build statique | 40 fichiers HTML : 34 pages de contenu, 5 anciennes routes, 404 |
 | Contenus | Empreintes des textes identiques pour les 40 pages après normalisation des espaces et entités HTML |
 | Référencement | Titres, descriptions, canoniques et autres métadonnées conservés ; JSON-LD de la formation IA identique ; sitemap contenant les 34 pages |
-| Ressources et navigation | Images et textes alternatifs conservés ; 1 303 références locales et leurs ancres contrôlées ; aucun identifiant HTML dupliqué |
+| Ressources et navigation | Images et textes alternatifs conservés ; 1 234 références locales et leurs ancres contrôlées ; aucun identifiant HTML dupliqué |
 | Comparaisons visuelles | 35 pages × bureau 1440 px et mobile 390 px ; aucun débordement horizontal ni image cassée |
 | Résultat des comparaisons | Tailles et espacements adaptés aux composants natifs Lumos ; compositions, textes, photos et identité conservés. Les captures ne sont plus revendiquées identiques au pixel |
 | Tablette | Accueil, catalogue solutions, réalisation, formation IA et mentions légales contrôlés à 768 px |
@@ -29,14 +29,29 @@
 | Vidéo locale | Chargement réel du MP4 local, lecture, pause et reprise ; vidéo en pause avec réduction des animations |
 | Sans JavaScript | Navigation et contenu accessibles sur mobile |
 | Anciennes URL | 5 destinations de redirection conservées, vraie réponse 404 pour une page inexistante |
-| Lumos et tokens actifs | 89 sections, 64 grilles et 65 cartes dans les sources de contenu ; 4 677 déclarations CSS contrôlées ; le test navigateur confirme qu'un changement des tokens de couleur et d'espacement modifie les composants |
+| Lumos et tokens actifs | 89 sections, 64 grilles et 65 cartes dans les sources de contenu ; 5 327 déclarations CSS contrôlées, y compris les styles inline ; le test navigateur confirme qu'un changement des tokens de couleur et d'espacement modifie les composants |
 | Photos de fond | 36 références d'origine vérifiées, désormais rendues par des composants `Img` Lumos |
 
 Les captures automatisées fixent les réponses EVA et neutralisent visuellement les zones vidéo/iframe pour obtenir des comparaisons reproductibles. Les images différées sont chargées avant capture et les animations sont figées. Les résultats ne constituent donc pas un visionnage exhaustif des vidéos Vimeo/YouTube ni un contrôle du rendu dynamique de Wisio. Leurs intégrations d'origine sont conservées ; aucune inscription ni réclamation réelle n'a été transmise.
 
 Les rapports et captures détaillés sont conservés localement dans `test-results/`. `npm test` vérifie le contenu de `dist/` ; `npm run test:browser` vérifie la prévisualisation ouverte. `COMPARE_SOURCE_URL=http://127.0.0.1:4320` active la comparaison avec la référence locale historique, si ce serveur temporaire est démarré.
 
-Le rapport final `browser-report.json` contient les 70 comparaisons et aucune erreur JavaScript. Après explicitation du token d'espacement zéro et du défaut de `Section`, l'accueil a été revérifié aux deux tailles : aucun pixel différent par rapport à la passe complète. Les interactions ont été relancées avec succès sur ce build final. La capture de présentation est `test-results/presentation-lumos-locale.png`.
+Le rapport navigateur contient les 70 comparaisons avec le build local précédent et aucune erreur JavaScript. Les 892 liens rendus conservent leurs destinations dans le même ordre. Les données des formations ont été simulées.
+
+## Échelle Lumos et écarts de rendu
+
+Les 245 déclarations de l’ancienne feuille de primitives ont été revues et la feuille a été supprimée. Les huit extensions globales du thème et leurs usages sont documentés dans [le contrat Lumos](lumos.md). Le contrôle de nommage a été éprouvé avec une déclaration temporaire de `--size-0-01875rem` et avec des déclarations structurelles valides.
+
+Les titres de cartes utilisent directement les variantes de titre du starter. Les légendes, les étiquettes et les métadonnées adoptent le petit texte fluide. L’interlettrage des légendes suit le réglage normal du thème. Les chiffres de l’accueil et le numéro 404 suivent désormais la taille d’affichage fluide. Les ombres des surfaces sont communes et les fiches formation regroupent leurs métadonnées plus étroitement sur mobile.
+
+Variation de la hauteur totale des quatre pages repères par rapport à la version locale précédente. Une valeur positive indique une page plus longue.
+
+| Page | Bureau (1 440 px) | Mobile (390 px) |
+| --- | ---: | ---: |
+| Accueil | 16 px | -57 px |
+| Solutions | 18 px | 6 px |
+| Réalisations | -57 px | -143 px |
+| Formation IA | 43 px | -213 px |
 
 ## Vidéo rapatriée
 

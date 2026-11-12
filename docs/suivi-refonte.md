@@ -6,7 +6,7 @@ Mandat validé le 11 novembre 2026 : migration fidèle Astro et Lumos, prestatio
 | --- | --- | --- |
 | Socle Astro et Lumos 1.0.3 | Terminé | Installation propre, check et build réussis |
 | Reprise avec composants Lumos actifs | Terminé | Sections, grilles, cartes, typographie, médias et éléments communs natifs ; reset de neutralisation supprimé |
-| Tokens et noms des couleurs | Terminé | Valeurs visuelles centralisées, aucun ancien préfixe, contrôle automatique et essai de modification des tokens |
+| Tokens et noms des couleurs | Terminé | Échelle Lumos par rôle, 245 primitives retirées, huit extensions globales documentées dans `docs/lumos.md` |
 | Accueil et éléments partagés | Terminé | Rendu comparé, navigation et lightbox testées |
 | Solutions et réalisations | Terminé | Pages, médias et liens préservés |
 | Formations | Terminé | 8 scénarios EVA ; débordement mobile réparé |

@@ -153,16 +153,16 @@ const column2 = await slotContent(Astro.slots, "column2");
   @layer components {
     .layout {
       /* layout defaults */
-      --_visual-ratio: var(--number-3) / var(--number-two);
+      --_visual-ratio: 3 / 2;
       --_alignment: start;
-      --_column-count: var(--number-one);
-      width: var(--size-full);
+      --_column-count: 1;
+      width: 100%;
       display: flex;
       flex-direction: column;
       column-gap: var(--site-gutter);
       row-gap: var(--space-8);
       align-items: stretch;
-      grid-template-columns: repeat(var(--_column-count), minmax(var(--size-zero), var(--size-1fr)));
+      grid-template-columns: repeat(var(--_column-count), minmax(0, 1fr));
 
       /* column defaults */
       & > * {
@@ -170,8 +170,8 @@ const column2 = await slotContent(Astro.slots, "column2");
         flex-direction: column;
         align-items: var(--_alignment, start);
         text-align: var(--_alignment, start);
-        width: var(--size-full);
-        max-width: var(--size-full);
+        width: 100%;
+        max-width: 100%;
       }
       & > :first-child {
         align-self: center;
@@ -185,9 +185,9 @@ const column2 = await slotContent(Astro.slots, "column2");
         & > :is(.image, .video, .overlay) {
           border-radius: inherit;
           position: absolute;
-          inset: var(--size-zero);
-          width: var(--size-full);
-          height: var(--size-full);
+          inset: 0;
+          width: 100%;
+          height: 100%;
         }
       }
 
@@ -198,7 +198,7 @@ const column2 = await slotContent(Astro.slots, "column2");
       &.auto-width {
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: var(--justify-content-nav-inner);
+        justify-content: space-between;
         align-items: end;
         row-gap: var(--space-6);
         & > * {
@@ -206,26 +206,26 @@ const column2 = await slotContent(Astro.slots, "column2");
           align-self: unset;
         }
         & > :last-child {
-          min-width: min(var(--size-4rem), var(--size-full));
+          min-width: min(4rem, 100%);
         }
       }
       &.columns {
         display: grid;
         column-gap: var(--section-space-small);
         @media (--mq-large-min) {
-          --_column-count: var(--number-two);
+          --_column-count: 2;
           &.reversed {
             & > :last-child {
-              order: var(--number-minus-one);
+              order: -1;
             }
           }
         }
       }
       &.sticky-content {
-        --_visual-ratio: var(--number-one) / var(--number-one);
+        --_visual-ratio: 1 / 1;
         display: grid;
         @media (--mq-large-min) {
-          --_column-count: var(--number-two);
+          --_column-count: 2;
           & > :first-child {
             align-self: start;
             position: sticky;
@@ -234,10 +234,10 @@ const column2 = await slotContent(Astro.slots, "column2");
         }
       }
       &.sticky-visual {
-        --_visual-ratio: var(--number-one) / var(--number-one);
+        --_visual-ratio: 1 / 1;
         display: grid;
         @media (--mq-large-min) {
-          --_column-count: var(--number-two);
+          --_column-count: 2;
           & > :first-child {
             align-self: start;
           }
@@ -246,30 +246,30 @@ const column2 = await slotContent(Astro.slots, "column2");
             position: sticky;
             top: calc(var(--site-margin) + var(--nav-height));
             max-height: calc(
-              var(--size-100svh) - var(--nav-height) - var(--site-margin) * var(--number-two)
+              100svh - var(--nav-height) - var(--site-margin) * 2
             );
           }
         }
       }
       &.breakout {
         display: grid;
-        width: var(--size-100cqi);
-        flex-shrink: var(--size-zero);
+        width: 100cqi;
+        flex-shrink: 0;
         align-self: center;
-        column-gap: var(--size-zero);
-        row-gap: var(--size-zero);
+        column-gap: 0;
+        row-gap: 0;
         & > :first-child {
           margin-inline: auto;
           width: var(--site-width);
           padding-block: var(--section-space-medium);
         }
         & > :last-child {
-          border-radius: var(--size-zero);
+          border-radius: 0;
         }
         @media (--mq-large-min) {
-          --_column-count: var(--number-two);
+          --_column-count: 2;
           & > :first-child {
-            max-width: calc(var(--max-width-main) / var(--number-two));
+            max-width: calc(var(--max-width-main) / 2);
           }
           & > :last-child {
             border-top-left-radius: var(--radius-small);
@@ -277,9 +277,9 @@ const column2 = await slotContent(Astro.slots, "column2");
           }
           &.reversed {
             & > :last-child {
-              order: var(--number-minus-one);
-              border-top-left-radius: var(--size-zero);
-              border-bottom-left-radius: var(--size-zero);
+              order: -1;
+              border-top-left-radius: 0;
+              border-bottom-left-radius: 0;
               border-top-right-radius: var(--radius-small);
               border-bottom-right-radius: var(--radius-small);
             }
@@ -288,8 +288,8 @@ const column2 = await slotContent(Astro.slots, "column2");
       }
       &.contain {
         display: grid;
-        column-gap: var(--size-zero);
-        row-gap: var(--size-zero);
+        column-gap: 0;
+        row-gap: 0;
         background-color: var(--background-2);
         border-radius: var(--radius-main);
         position: relative;
@@ -298,13 +298,13 @@ const column2 = await slotContent(Astro.slots, "column2");
           padding: var(--space-6);
         }
         & > :last-child {
-          border-radius: var(--size-zero);
+          border-radius: 0;
         }
         @media (--mq-large-min) {
-          --_column-count: var(--number-two);
+          --_column-count: 2;
           &.reversed {
             & > :last-child {
-              order: var(--number-minus-one);
+              order: -1;
             }
           }
         }
@@ -313,8 +313,8 @@ const column2 = await slotContent(Astro.slots, "column2");
         border-radius: var(--radius-main);
         position: relative;
         overflow: clip;
-        min-height: var(--size-26rem);
-        justify-content: var(--justify-content-button-wrap);
+        min-height: 26rem;
+        justify-content: center;
         & > :first-child {
           padding: var(--space-6);
         }
@@ -322,16 +322,16 @@ const column2 = await slotContent(Astro.slots, "column2");
           padding-block: var(--section-space-medium);
           padding-inline: var(--space-5);
           position: relative;
-          z-index: var(--number-one);
+          z-index: 1;
           --_alignment: center;
         }
         & > :last-child {
           position: absolute;
-          inset: var(--size-zero);
-          border-radius: var(--size-zero);
-          width: var(--size-full);
-          height: var(--size-full);
-          opacity: calc(var(--_media-opacity, 70) / var(--opacity-100));
+          inset: 0;
+          border-radius: 0;
+          width: 100%;
+          height: 100%;
+          opacity: calc(var(--_media-opacity, 70) / 100);
           pointer-events: none;
         }
       }

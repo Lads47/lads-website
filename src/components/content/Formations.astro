@@ -1,5 +1,6 @@
 ---
 import ContactSection from './ContactSection.astro';
+import Button from '../Button.astro';
 import Section from '../wrapper/Section.astro';
 import ContentWrapper from '../wrapper/ContentWrapper.astro';
 import Eyebrow from '../typography/Eyebrow.astro';
@@ -77,14 +78,14 @@ import Card from '../item/Card.astro';
                 <Card variant="panel" href={"/formations/vmix"}>
                     <div class="formation-card-logo-wrap"><Img loading={"lazy"} src={"/photo/vmix-logo.png"} alt={"Logo vMix"} appearance="logo" transparent /></div>
 
-                        <Heading tag="h3" variant="h3">Concevoir et piloter une r&eacute;gie vid&eacute;o virtuelle avec vMix</Heading>
-                        <Paragraph variant="main">D&eacute;veloppez vos comp&eacute;tences sur vMix pour produire, habiller et diffuser des contenus live professionnels.</Paragraph>
+                        <Heading tag="h3" variant="h5">Concevoir et piloter une r&eacute;gie vid&eacute;o virtuelle avec vMix</Heading>
+                        <Paragraph variant="small">D&eacute;veloppez vos comp&eacute;tences sur vMix pour produire, habiller et diffuser des contenus live professionnels.</Paragraph>
                         <div class="tech-spec">
                             <span>5 jours (35h)</span>
                             <span>Pr&eacute;sentiel</span>
                             <span>Marmande (47)</span>
                         </div>
-                        <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
 
                 </Card>
 
@@ -92,14 +93,14 @@ import Card from '../item/Card.astro';
                 <Card variant="panel" href={"/formations/ia"}>
                     <div class="formation-card-logo-wrap"><Img loading={"lazy"} src={"/photo/ia-logo.svg"} alt={"Logo Formation IA"} appearance="logo" transparent /></div>
 
-                        <Heading tag="h3" variant="h3">De l'IA aux agents autonomes</Heading>
-                        <Paragraph variant="main">L'IA &eacute;volue &agrave; un rythme in&eacute;dit, et les agents IA transforment d&eacute;j&agrave; la fa&ccedil;on dont les entreprises fonctionnent. Une journ&eacute;e pour faire le tri et passer &agrave; l'action.</Paragraph>
+                        <Heading tag="h3" variant="h5">De l'IA aux agents autonomes</Heading>
+                        <Paragraph variant="small">L'IA &eacute;volue &agrave; un rythme in&eacute;dit, et les agents IA transforment d&eacute;j&agrave; la fa&ccedil;on dont les entreprises fonctionnent. Une journ&eacute;e pour faire le tri et passer &agrave; l'action.</Paragraph>
                         <div class="tech-spec">
                             <span>1 jour (7h)</span>
                             <span>Pr&eacute;sentiel</span>
                             <span>Marmande (47)</span>
                         </div>
-                        <span class="discover-link-sm">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
 
                 </Card>
 
@@ -188,23 +189,20 @@ import Card from '../item/Card.astro';
            ============================================ */
 
         .divider {
-            width: var(--size-3-125rem); height: var(--size-0-1875rem); background: var(--brand-500);
-            margin: var(--space-4) auto var(--size-zero); border: none;
+            margin: var(--space-4) auto 0;
         }
-        .divider-left { margin: var(--space-4) var(--size-zero) var(--size-zero) var(--size-zero); }
+        .divider-left { margin: var(--space-4) 0 0 0; }
 
         .btn {
-            display: inline-block; padding: var(--size-0-9375rem) var(--size-2-375rem);
-            font-family: var(--primary-family); font-size: var(--size-0-82rem); font-weight: var(--primary-bold);
-            text-transform: uppercase; letter-spacing: var(--size-0-09375rem);
-            border: none; cursor: pointer; transition: var(--motion-transition);
+            display: inline-block; padding: var(--space-3) var(--space-6);
+            font-family: var(--primary-family); font-size: var(--text-small); font-weight: var(--primary-bold);
+            text-transform: uppercase; letter-spacing: var(--letter-spacing-normal);
+            border: none; cursor: pointer; transition: all var(--hover-duration) var(--hover-ease);
             border-radius: var(--radius-small);
         }
-        .btn-primary { background: var(--action-500); color: var(--light-100); }
-        .btn-primary:hover { background: var(--action-600); transform: translateY(var(--size-minus-0-125rem)); box-shadow: var(--shadow-btn-primary-hover); }
         .btn-outline {
-            background: var(--color-transparent); color: var(--brand-500);
-            border: var(--size-0-125rem) solid var(--brand-500);
+            background: transparent; color: var(--brand-500);
+            border: var(--border-width) solid var(--brand-500);
         }
         .btn-outline:hover { background: var(--brand-500); color: var(--dark-900); }
 
@@ -218,16 +216,16 @@ import Card from '../item/Card.astro';
             flex-direction: column;
         }
         .intro-text .highlight {
-            font-size: var(--size-1rem);
+            font-size: var(--text-main);
             font-weight: var(--primary-bold);
             color: var(--dark-900);
-            margin-top: var(--size-1-5625rem);
+            margin-top: var(--space-4);
             /* garantit un ecart minimal avec la carte Qualiopi : le margin-top:auto
                de celle-ci tombe a zero des que la colonne est pleine */
             margin-bottom: var(--space-6);
             padding-left: var(--space-4);
-            border-left: var(--size-0-1875rem) solid var(--brand-500);
-            line-height: var(--number-1-7);
+            border-left: var(--border-width) solid var(--brand-500);
+            line-height: var(--text-small-line-height);
         }
         .intro-visual {
             position: relative;
@@ -239,12 +237,12 @@ import Card from '../item/Card.astro';
            ATOUTS (3 colonnes)
            ============================================ */
         .atout-icon {
-            width: var(--size-3-125rem); height: var(--size-3-125rem);
-            margin-bottom: var(--size-1-375rem);
+            width: 3.125rem; height: 3.125rem;
+            margin-bottom: var(--space-4);
         }
         .atout-icon svg {
-            width: var(--size-full); height: var(--size-full);
-            stroke: var(--brand-500); stroke-width: var(--number-1-5);
+            width: 100%; height: 100%;
+            stroke: var(--brand-500); stroke-width: 1.5;
             fill: none; stroke-linecap: round; stroke-linejoin: round;
         }
 
@@ -254,13 +252,13 @@ import Card from '../item/Card.astro';
         .qualiopi-intro {
             display: flex;
             align-items: center;
-            gap: var(--size-1-375rem);
+            gap: var(--space-4);
             /* pousse le bloc en bas de colonne : son bord inferieur s'aligne
                alors exactement sur celui de la photo */
             margin-top: auto;
-            padding: var(--size-1-5rem) var(--size-1-625rem);
+            padding: var(--space-4) var(--space-5);
             background: var(--light-100);
-            border: var(--size-0-0625rem) solid var(--light-300);
+            border: var(--border-width) solid var(--light-300);
             border-radius: var(--radius-small);
         }
         /* Seul le titre passe en bloc. Sans le ">", le "Actions de formation"
@@ -268,11 +266,11 @@ import Card from '../item/Card.astro';
            tout seul sur la ligne suivante. */
         .qualiopi-intro-text > strong {
             display: block;
-            font-family: var(--heading-family); font-size: var(--size-1rem); font-weight: var(--weight-900);
+            font-family: var(--heading-family); font-size: var(--text-main); font-weight: var(--h3-font-weight);
             color: var(--dark-900); margin-bottom: var(--space-1);
         }
-        @media (--mq-max-width-31-25rem) {
-            .qualiopi-intro { flex-direction: column; align-items: flex-start; gap: var(--size-0-875rem); }
+        @media (--mq-training-compact) {
+            .qualiopi-intro { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
         }
 
         /* ============================================
@@ -281,26 +279,26 @@ import Card from '../item/Card.astro';
         .formation-card-logo-wrap {
             display: flex;
             align-items: center;
-            justify-content: var(--justify-content-button-wrap);
+            justify-content: center;
             padding: var(--space-6) var(--space-5);
             background: var(--light-200);
-            border-bottom: var(--size-0-0625rem) solid var(--light-300);
+            border-bottom: var(--border-width) solid var(--light-300);
         }
         .discover-link-sm {
             display: inline-flex; align-items: center; gap: var(--space-2);
-            font-size: var(--size-0-72rem); font-weight: var(--primary-bold); text-transform: uppercase;
-            letter-spacing: var(--size-0-0625rem); color: var(--brand-500); margin-top: var(--size-0-875rem); transition: var(--motion-transition);
+            font-size: var(--text-small); font-weight: var(--primary-bold); text-transform: uppercase;
+            letter-spacing: var(--letter-spacing-normal); color: var(--brand-500); margin-top: var(--space-3); transition: all var(--hover-duration) var(--hover-ease);
         }
         .discover-link-sm svg {
-            width: var(--size-0-875rem); height: var(--size-0-875rem); stroke: currentColor; stroke-width: var(--number-two); fill: none; transition: var(--motion-transition);
+            width: 0.875rem; height: 0.875rem; stroke: currentColor; stroke-width: 2; fill: none; transition: all var(--hover-duration) var(--hover-ease);
         }
 
         /* ============================================
            RESPONSIVE
            ============================================ */
-        @media (--mq-max-width-64rem) {
+        @media (--mq-large-max) {
             /* une fois empile, plus rien a aligner : le bloc reprend une marge normale */
-            .qualiopi-intro { margin-top: var(--size-0-625rem); }
+            .qualiopi-intro { margin-top: var(--space-2); }
         }
 
 }

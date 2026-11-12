@@ -87,15 +87,15 @@ const {
     .form-choice {
       display: inline-flex;
       align-items: center;
-      gap: var(--size-0-75em);
+      gap: 0.75em;
       cursor: pointer;
     }
 
     .form-choice_input {
       position: absolute;
-      width: var(--size-1px);
-      height: var(--size-1px);
-      opacity: var(--opacity-0);
+      width: 1px;
+      height: 1px;
+      opacity: 0;
       pointer-events: none;
     }
 
@@ -108,10 +108,10 @@ const {
       flex: none;
       display: grid;
       place-items: center;
-      width: var(--size-1-5em);
-      height: var(--size-1-5em);
+      width: 1.5em;
+      height: 1.5em;
       background-color: var(--_mark);
-      border: var(--border-width) solid var(--color-transparent);
+      border: var(--border-width) solid transparent;
       border-radius: var(--radius-small);
       transition:
         background-color var(--hover-duration) var(--hover-ease),
@@ -124,16 +124,16 @@ const {
 
     .form-choice_tick {
       color: var(--_ink);
-      opacity: var(--opacity-0);
+      opacity: 0;
       transition: opacity var(--hover-duration) var(--hover-ease);
     }
 
     .form-choice_dot {
-      width: var(--size-1-1em);
-      height: var(--size-1-1em);
+      width: 1.1em;
+      height: 1.1em;
       background-color: var(--_ink);
       border-radius: var(--radius-round);
-      scale: var(--size-zero);
+      scale: 0;
       transition: scale var(--hover-duration) var(--hover-ease);
     }
 
@@ -142,10 +142,10 @@ const {
         background-color: var(--_mark-chosen);
       }
       & .form-choice_tick {
-        opacity: var(--opacity-1);
+        opacity: 1;
       }
       & .form-choice_dot {
-        scale: var(--number-one);
+        scale: 1;
       }
     }
 
@@ -163,19 +163,19 @@ const {
     /* Toggle */
     .form-choice.toggle {
       & .form-choice_mark {
-        width: var(--size-2-75em);
-        height: var(--size-1-5em);
+        width: 2.75em;
+        height: 1.5em;
         border-radius: var(--radius-round);
         place-items: center start;
-        padding: var(--size-0-15em);
+        padding: 0.15em;
       }
       & :is(.form-choice_tick, .form-choice_dot) {
         display: none;
       }
       & .form-choice_mark::after {
-        content: var(--content-form-choice-mark-after);
-        width: var(--size-1-1em);
-        height: var(--size-1-1em);
+        content: "";
+        width: 1.1em;
+        height: 1.1em;
         border-radius: var(--radius-round);
         background-color: var(--text);
         transition:
@@ -183,16 +183,16 @@ const {
           background-color var(--hover-duration) var(--hover-ease);
       }
       &:has(:checked) .form-choice_mark::after {
-        translate: var(--size-1-2em) var(--size-zero);
+        translate: 1.2em 0;
         background-color: var(--_ink);
       }
     }
 
     /* Chip */
     .form-choice.chip {
-      padding: var(--size-0-75em) var(--size-1-5em);
+      padding: 0.75em 1.5em;
       background-color: var(--background-2);
-      border: var(--border-width) solid var(--color-transparent);
+      border: var(--border-width) solid transparent;
       border-radius: var(--radius-round);
       transition:
         background-color var(--hover-duration) var(--hover-ease),
@@ -214,7 +214,7 @@ const {
         color: var(--background);
       }
       & .form-choice_input:focus-visible ~ .form-choice_mark {
-        outline: var(--size-zero);
+        outline: 0;
       }
       &:has(.form-choice_input:focus-visible) {
         outline: var(--focus-width) solid var(--text);

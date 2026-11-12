@@ -163,7 +163,7 @@ import Img from '../media/Img.astro';
             <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
                 <Eyebrow tag="span">D&eacute;roul&eacute;</Eyebrow>
                 <Heading tag="h2" variant="h2">Programme de la formation</Heading>
-                <hr class="divider" style={"margin: var(--size-1-25rem) auto var(--size-zero);"}>
+                <hr class="divider" style={"margin: var(--space-4) auto 0;"}>
             </ContentWrapper>
             <div class="programme-days ">
 
@@ -250,7 +250,7 @@ import Img from '../media/Img.astro';
             <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
                 <Eyebrow tag="span">Informations</Eyebrow>
                 <Heading tag="h2" variant="h2">Modalit&eacute;s pratiques</Heading>
-                <hr class="divider" style={"margin: var(--size-1-25rem) auto var(--size-zero);"}>
+                <hr class="divider" style={"margin: var(--space-4) auto 0;"}>
             </ContentWrapper>
             <Grid xsmall={1} small={1} medium={2} large={3} gap="4">
 
@@ -315,7 +315,7 @@ import Img from '../media/Img.astro';
             <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
                 <Eyebrow tag="span">Avantages</Eyebrow>
                 <Heading tag="h2" variant="h2">Points forts de la formation</Heading>
-                <hr class="divider" style={"margin: var(--size-1-25rem) auto var(--size-zero);"}>
+                <hr class="divider" style={"margin: var(--space-4) auto 0;"}>
             </ContentWrapper>
             <ul class="points-forts-list ">
                 <li>Approche 100 % pratique, avec mat&eacute;riel professionnel &amp; cas r&eacute;els.</li>
@@ -378,60 +378,59 @@ import Img from '../media/Img.astro';
            SECTIONS COMMUNES
            ============================================ */
         .divider {
-            width: var(--size-3-125rem); height: var(--size-0-1875rem); background: var(--brand-500);
-            margin: var(--space-4) var(--size-zero) var(--size-zero) var(--size-zero); border: none;
+            margin: var(--space-4) 0 0 0;
         }
 
         /* ============================================
            FORMATION DETAIL LAYOUT
            ============================================ */
         .formation-tag-inline {
-            display: inline-block; padding: var(--space-1) var(--size-0-875rem); font-size: var(--size-0-68rem);
-            font-weight: var(--primary-bold); text-transform: uppercase; letter-spacing: var(--size-0-075rem);
-            background: var(--tag-background-subtle); color: var(--brand-500);
-            border-radius: var(--size-1-25rem); margin-bottom: var(--space-4);
+            display: inline-block; padding: var(--space-1) var(--space-3); font-size: var(--text-small);
+            font-weight: var(--primary-bold); text-transform: uppercase; letter-spacing: var(--letter-spacing-normal);
+            background: var(--tag-background); color: var(--brand-500);
+            border-radius: var(--radius-round); margin-bottom: var(--space-4);
         }
 
         /* Sidebar m&eacute;ta */
         .formation-meta-sidebar {
             display: flex; flex-direction: column; gap: var(--space-4);
-            padding: var(--size-2-1875rem);
+            padding: var(--space-5);
             background: var(--light-200);
             border-radius: var(--radius-small);
-            border: var(--size-0-0625rem) solid var(--light-300);
+            border: var(--border-width) solid var(--light-300);
         }
         .meta-label {
-            display: block; font-size: var(--size-0-7rem); font-weight: var(--primary-bold);
-            text-transform: uppercase; letter-spacing: var(--size-0-0625rem);
-            color: var(--text-2); margin-bottom: var(--size-0-125rem);
+            display: block; font-size: var(--text-small); font-weight: var(--primary-bold);
+            text-transform: uppercase; letter-spacing: var(--letter-spacing-normal);
+            color: var(--text-2); margin-bottom: var(--space-1);
         }
         .meta-value {
-            display: block; font-size: var(--size-0-95rem); font-weight: var(--primary-medium);
+            display: block; font-size: var(--text-main); font-weight: var(--primary-medium);
             color: var(--dark-900);
         }
         .meta-dates-list {
-            display: flex; flex-wrap: wrap; gap: var(--size-0-375rem);
+            display: flex; flex-wrap: wrap; gap: var(--space-1);
             margin-top: var(--space-1);
         }
         .meta-list {
             list-style: none;
-            margin-top: var(--size-0-375rem);
+            margin-top: var(--space-1);
         }
         .meta-list li {
             position: relative;
-            padding-left: var(--size-1rem);
-            font-size: var(--size-0-82rem);
+            padding-left: var(--space-3);
+            font-size: var(--text-small);
             color: var(--dark-900);
-            font-weight: var(--weight-500);
-            line-height: var(--number-1-6);
+            font-weight: var(--primary-medium);
+            line-height: var(--text-small-line-height);
             margin-bottom: var(--space-1);
         }
         .meta-list li::before {
-            content: var(--content-timeline-before);
+            content: '';
             position: absolute;
-            left: var(--size-zero); top: var(--size-0-5625rem);
-            width: var(--size-0-3125rem); height: var(--size-0-3125rem);
-            border-radius: var(--percentage-50);
+            left: 0; top: 0.5625rem;
+            width: 0.3125rem; height: 0.3125rem;
+            border-radius: 50%;
             background: var(--brand-500);
         }
         /* Bloc mis en avant : la reassurance, juste avant le choix d'une date. */
@@ -440,37 +439,37 @@ import Img from '../media/Img.astro';
            poids allege pour un paragraphe explicatif. */
         .meta-note {
             display: block;
-            font-size: var(--size-0-82rem); font-weight: var(--weight-500);
+            font-size: var(--text-small); font-weight: var(--primary-medium);
             color: var(--text-2);
-            line-height: var(--number-1-6);
-            margin-top: var(--size-0-375rem);
+            line-height: var(--text-small-line-height);
+            margin-top: var(--space-1);
         }
         .meta-dates-hint {
             display: none;             /* revele par formations-sessions.js si dates cliquables */
-            font-size: var(--size-0-78rem); color: var(--text-2);
-            line-height: var(--number-1-45); margin: var(--space-1) var(--size-zero) var(--size-0-625rem);
+            font-size: var(--text-small); color: var(--text-2);
+            line-height: var(--text-small-line-height); margin: var(--space-1) 0 var(--space-2);
         }
         .meta-date-chip {
             display: inline-block;
-            padding: var(--size-0-3125rem) var(--size-0-6875rem);
-            font-size: var(--size-0-78rem); font-weight: var(--primary-medium);
+            padding: var(--space-1) var(--space-3);
+            font-size: var(--text-small); font-weight: var(--primary-medium);
             background: var(--brand-500);
             color: var(--dark-900);
-            border-radius: var(--size-0-75rem);
+            border-radius: var(--radius-round);
             white-space: nowrap;
             cursor: pointer;
-            transition: transform var(--duration-0-15s), box-shadow var(--duration-0-15s), background var(--duration-0-15s);
+            transition: transform var(--hover-duration), box-shadow var(--hover-duration), background var(--hover-duration);
         }
         .meta-date-chip--empty {
-            background: var(--session-unavailable-background); color: var(--session-unavailable-text);
-            font-weight: var(--weight-500); cursor: default;
+            background: var(--background-2); color: var(--text-2);
+            font-weight: var(--primary-medium); cursor: default;
         }
         .qualiopi-sidebar {
             display: flex; flex-direction: column; align-items: center;
-            gap: var(--size-0-625rem); margin-top: var(--size-1-125rem);
-            padding: var(--size-1-125rem) var(--size-1rem);
+            gap: var(--space-2); margin-top: var(--space-4);
+            padding: var(--space-4) var(--space-3);
             background: var(--light-100);
-            border: var(--size-0-0625rem) solid var(--light-300);
+            border: var(--border-width) solid var(--light-300);
             border-radius: var(--radius-small);
             text-align: center;
         }
@@ -482,15 +481,15 @@ import Img from '../media/Img.astro';
            OBJECTIFS P&Eacute;DAGOGIQUES
            ============================================ */
         .objectifs-list {
-            list-style: none; margin-top: var(--size-0-625rem);
+            list-style: none; margin-top: var(--space-2);
         }
         .objectifs-list li {
-            position: relative; padding-left: var(--size-1-375rem);
-            font-size: var(--size-0-95rem); color: var(--text-2); line-height: var(--number-1-9);
+            position: relative; padding-left: var(--space-4);
+            font-size: var(--text-main); color: var(--text-2); line-height: var(--text-main-line-height);
         }
         .objectifs-list li::before {
-            content: var(--content-timeline-before); position: absolute; left: var(--size-zero); top: var(--size-0-6875rem);
-            width: var(--size-0-5rem); height: var(--size-0-5rem); border-radius: var(--percentage-50);
+            content: ''; position: absolute; left: 0; top: 0.6875rem;
+            width: 0.5rem; height: 0.5rem; border-radius: 50%;
             background: var(--brand-500);
         }
 
@@ -499,35 +498,35 @@ import Img from '../media/Img.astro';
            ============================================ */
         .programme-grid {
             display: grid;
-            grid-template-columns: var(--size-1fr) var(--size-1fr);
-            gap: var(--size-1-5625rem);
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-4);
         }
         .programme-card {
             background: var(--light-100);
             border-radius: var(--radius-small);
-            border: var(--size-0-0625rem) solid var(--light-300);
+            border: var(--border-width) solid var(--light-300);
             padding: var(--space-5);
-            transition: var(--motion-transition);
+            transition: all var(--hover-duration) var(--hover-ease);
         }
         .programme-card:hover {
-            transform: translateY(var(--size-minus-0-1875rem));
-            box-shadow: var(--shadow-programme-card-hover);
+            transform: translateY(-0.1875rem);
+            box-shadow: var(--shadow-surface);
         }
         .programme-card .time {
-            display: inline-block; font-size: var(--size-0-7rem); font-weight: var(--primary-bold);
-            text-transform: uppercase; letter-spacing: var(--size-0-0625rem);
-            color: var(--brand-500); margin-bottom: var(--size-0-625rem);
+            display: inline-block; font-size: var(--text-small); font-weight: var(--primary-bold);
+            text-transform: uppercase; letter-spacing: var(--letter-spacing-normal);
+            color: var(--brand-500); margin-bottom: var(--space-2);
         }
         .programme-card ul {
             list-style: none;
         }
         .programme-card li {
-            position: relative; padding-left: var(--size-1-125rem);
-            font-size: var(--size-0-85rem); color: var(--text-2); line-height: var(--number-1-8);
+            position: relative; padding-left: var(--space-4);
+            font-size: var(--text-small); color: var(--text-2); line-height: var(--text-main-line-height);
         }
         .programme-card li::before {
-            content: var(--content-timeline-before); position: absolute; left: var(--size-zero); top: var(--size-0-625rem);
-            width: var(--size-0-375rem); height: var(--size-0-375rem); border-radius: var(--percentage-50);
+            content: ''; position: absolute; left: 0; top: 0.625rem;
+            width: 0.375rem; height: 0.375rem; border-radius: 50%;
             background: var(--brand-500);
         }
 
@@ -540,16 +539,16 @@ import Img from '../media/Img.astro';
            ============================================ */
         .points-forts-list {
             list-style: none;
-            max-width: var(--size-43-75rem);
-            margin: var(--size-zero) auto;
+            max-width: 43.75rem;
+            margin: 0 auto;
         }
         .points-forts-list li {
             position: relative; padding-left: var(--space-5);
-            font-size: var(--size-0-95rem); color: var(--text-2); line-height: var(--number-two);
+            font-size: var(--text-main); color: var(--text-2); line-height: var(--text-main-line-height);
         }
         .points-forts-list li::before {
-            content: var(--content-timeline-before); position: absolute; left: var(--size-zero); top: var(--size-0-75rem);
-            width: var(--size-0-625rem); height: var(--size-0-625rem); border-radius: var(--percentage-50);
+            content: ''; position: absolute; left: 0; top: 0.75rem;
+            width: 0.625rem; height: 0.625rem; border-radius: 50%;
             background: var(--brand-500);
         }
 
@@ -558,14 +557,14 @@ import Img from '../media/Img.astro';
            ============================================ */
         .breadcrumb-back {
             display: inline-flex; align-items: center; gap: var(--space-2);
-            font-size: var(--size-0-78rem); font-weight: var(--primary-medium); text-transform: uppercase;
-            letter-spacing: var(--size-0-0625rem); color: var(--text-2); transition: var(--motion-transition);
-            padding: var(--space-5) var(--size-zero) var(--size-zero);
+            font-size: var(--text-small); font-weight: var(--primary-medium); text-transform: uppercase;
+            letter-spacing: var(--letter-spacing-normal); color: var(--text-2); transition: all var(--hover-duration) var(--hover-ease);
+            padding: var(--space-5) 0 0;
         }
         .breadcrumb-back:hover { color: var(--brand-500); }
         .breadcrumb-back svg {
-            width: var(--size-1rem); height: var(--size-1rem); stroke: currentColor; stroke-width: var(--number-two);
-            fill: none; transition: var(--motion-transition);
+            width: 1rem; height: 1rem; stroke: currentColor; stroke-width: 2;
+            fill: none; transition: all var(--hover-duration) var(--hover-ease);
         }
 
         /* ============================================
@@ -573,13 +572,13 @@ import Img from '../media/Img.astro';
            ============================================ */
         /* Passerelle vers l'autre formation du catalogue */
         .autre-formation {
-            text-align: center; margin-top: var(--size-2-8125rem);
-            font-size: var(--size-0-95rem); color: var(--text-2);
+            text-align: center; margin-top: var(--space-6);
+            font-size: var(--text-main); color: var(--text-2);
         }
         .autre-formation a {
             color: var(--dark-900); font-weight: var(--primary-medium);
-            border-bottom: var(--size-0-0625rem) solid var(--brand-500);
-            transition: var(--motion-transition);
+            border-bottom: var(--border-width) solid var(--brand-500);
+            transition: all var(--hover-duration) var(--hover-ease);
         }
         .autre-formation a:hover { color: var(--brand-500); }
 
@@ -588,45 +587,45 @@ import Img from '../media/Img.astro';
            ============================================ */
         .programme-days {
             display: flex; flex-direction: column;
-            gap: var(--size-1-5625rem);
-            max-width: var(--size-56-25rem);
-            margin: var(--size-zero) auto;
+            gap: var(--space-4);
+            max-width: 56.25rem;
+            margin: 0 auto;
         }
         .programme-day {
             background: var(--light-100);
             border-radius: var(--radius-small);
-            border: var(--size-0-0625rem) solid var(--light-300);
-            padding: var(--size-2-1875rem) var(--space-6);
-            transition: var(--motion-transition);
+            border: var(--border-width) solid var(--light-300);
+            padding: var(--space-5) var(--space-6);
+            transition: all var(--hover-duration) var(--hover-ease);
         }
         .programme-day:hover {
-            transform: translateY(var(--size-minus-0-1875rem));
-            box-shadow: var(--shadow-programme-card-hover);
+            transform: translateY(-0.1875rem);
+            box-shadow: var(--shadow-surface);
         }
         .programme-day ul {
             list-style: none;
         }
         .programme-day li {
             position: relative;
-            padding-left: var(--size-1-375rem);
-            font-size: var(--size-0-95rem);
+            padding-left: var(--space-4);
+            font-size: var(--text-main);
             color: var(--text-2);
-            line-height: var(--number-two);
+            line-height: var(--text-main-line-height);
         }
         .programme-day li::before {
-            content: var(--content-timeline-before);
+            content: '';
             position: absolute;
-            left: var(--size-zero); top: var(--size-0-875rem);
-            width: var(--size-0-5rem); height: var(--size-0-5rem);
-            border-radius: var(--percentage-50);
+            left: 0; top: 0.875rem;
+            width: 0.5rem; height: 0.5rem;
+            border-radius: 50%;
             background: var(--brand-500);
         }
 
         /* ============================================
            RESPONSIVE
            ============================================ */
-        @media (--mq-max-width-64rem) {
-            .programme-grid { grid-template-columns: var(--size-1fr); }
+        @media (--mq-large-max) {
+            .programme-grid { grid-template-columns: 1fr; }
         }
 
 }

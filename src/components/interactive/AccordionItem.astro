@@ -64,7 +64,7 @@ const content = await slotContent(Astro.slots);
     .accordion_toggle {
       display: flex;
       align-items: center;
-      justify-content: var(--justify-content-nav-inner);
+      justify-content: space-between;
       gap: var(--space-4);
       padding-block: var(--space-5);
       list-style: none;
@@ -75,23 +75,23 @@ const content = await slotContent(Astro.slots);
     }
 
     .accordion_title {
-      margin-block: var(--size-zero);
+      margin-block: 0;
     }
 
     .accordion_icon {
-      rotate: var(--angle-90deg);
+      rotate: 90deg;
       transition: rotate var(--open-duration) var(--open-ease);
     }
 
     .accordion_item:is([open], .stacki-opened) .accordion_icon,
     .stacki-designer .accordion_wrap.preview .accordion_icon {
-      rotate: var(--angle-minus-90deg);
+      rotate: -90deg;
     }
 
     .accordion_item::details-content {
-      block-size: var(--size-zero);
+      block-size: 0;
       overflow: hidden;
-      content-visibility: var(--content-visibility-accordion-item-details-content);
+      content-visibility: hidden;
     }
 
     @supports (interpolate-size: allow-keywords) {
@@ -106,7 +106,7 @@ const content = await slotContent(Astro.slots);
     .accordion_item:is([open], .stacki-opened)::details-content,
     .stacki-designer .accordion_wrap.preview .accordion_item::details-content {
       block-size: auto;
-      content-visibility: var(--content-visibility-accordion-item-is-open-stacki-opened-details-content-sta);
+      content-visibility: visible;
     }
 
     .accordion_body {

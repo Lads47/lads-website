@@ -74,7 +74,7 @@ import Button from '../Button.astro';
                     <p class="real-photo-caption">Captation pour le CIVB avec la station EVA</p>
                 </div>
                 <div class="real-photo-item">
-                    <Img loading={"lazy"} src={"/photo/20260120_095957.webp"} alt={"La station EVA, serveur mobile"} style={"object-position: center calc(var(--percentage-50) + var(--size-0-625rem));"} appearance="photo" />
+                    <Img loading={"lazy"} src={"/photo/20260120_095957.webp"} alt={"La station EVA, serveur mobile"} style={"object-position: center calc(50% + 0.625rem);"} appearance="photo" />
                     <p class="real-photo-caption">La station EVA, un serveur mobile pour le traitement sur site</p>
                 </div>
                 <div class="real-photo-item">
@@ -101,23 +101,23 @@ import Button from '../Button.astro';
 <style is:global>
 @layer components {
 
-.divider { width: var(--size-3-125rem); height: var(--size-0-1875rem); background: var(--brand-500); margin: var(--space-4) var(--size-zero) var(--size-zero) var(--size-zero); border: none; }
-        .real-meta { display: flex; flex-direction: column; gap: var(--space-4); padding: var(--size-2-1875rem); background: var(--light-200); border-radius: var(--radius-small); border: var(--size-0-0625rem) solid var(--light-300); }
-        .real-meta-item { display: flex; align-items: center; gap: var(--size-0-875rem); }
-        .real-meta-item svg { width: var(--size-1-375rem); height: var(--size-1-375rem); flex-shrink: var(--size-zero); stroke: var(--brand-500); stroke-width: var(--number-two); fill: none; stroke-linecap: round; stroke-linejoin: round; }
-        .meta-label { display: block; font-size: var(--size-0-7rem); font-weight: var(--primary-bold); text-transform: uppercase; letter-spacing: var(--size-0-0625rem); color: var(--text-2); margin-bottom: var(--size-0-125rem); }
-        .meta-value { display: block; font-size: var(--size-0-95rem); font-weight: var(--primary-medium); color: var(--dark-900); }
-        .lien-formation { margin-top: var(--size-1-625rem); font-size: var(--size-0-9rem); color: var(--text-2); line-height: var(--number-1-8); }
-        .lien-formation a { color: var(--dark-900); font-weight: var(--primary-medium); border-bottom: var(--size-0-0625rem) solid var(--brand-500); transition: var(--motion-transition); }
+.divider { margin: var(--space-4) 0 0 0; }
+        .real-meta { display: flex; flex-direction: column; gap: var(--space-4); padding: var(--space-5); background: var(--light-200); border-radius: var(--radius-small); border: var(--border-width) solid var(--light-300); }
+        .real-meta-item { display: flex; align-items: center; gap: var(--space-3); }
+        .real-meta-item svg { width: 1.375rem; height: 1.375rem; flex-shrink: 0; stroke: var(--brand-500); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+        .meta-label { display: block; font-size: var(--text-small); font-weight: var(--primary-bold); text-transform: uppercase; letter-spacing: var(--letter-spacing-normal); color: var(--text-2); margin-bottom: var(--space-1); }
+        .meta-value { display: block; font-size: var(--text-main); font-weight: var(--primary-medium); color: var(--dark-900); }
+        .lien-formation { margin-top: var(--space-5); font-size: var(--text-small); color: var(--text-2); line-height: var(--text-main-line-height); }
+        .lien-formation a { color: var(--dark-900); font-weight: var(--primary-medium); border-bottom: var(--border-width) solid var(--brand-500); transition: all var(--hover-duration) var(--hover-ease); }
         .lien-formation a:hover { color: var(--brand-500); }
         .feature-list { list-style: none; margin-top: var(--space-4); }
-        .feature-list li { position: relative; padding-left: var(--size-1-375rem); font-size: var(--size-0-9rem); color: var(--text-2); line-height: var(--number-2-2); }
-        .feature-list li::before { content: var(--content-timeline-before); position: absolute; left: var(--size-zero); top: var(--size-0-75rem); width: var(--size-0-625rem); height: var(--size-0-625rem); border-radius: var(--percentage-50); background: var(--brand-500); }
-        .breadcrumb-back { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--size-0-78rem); font-weight: var(--primary-medium); text-transform: uppercase; letter-spacing: var(--size-0-0625rem); color: var(--text-2); transition: var(--motion-transition); padding: var(--space-5) var(--size-zero) var(--size-zero); }
+        .feature-list li { position: relative; padding-left: var(--space-4); font-size: var(--text-small); color: var(--text-2); line-height: var(--text-main-line-height); }
+        .feature-list li::before { content: ''; position: absolute; left: 0; top: 0.75rem; width: 0.625rem; height: 0.625rem; border-radius: 50%; background: var(--brand-500); }
+        .breadcrumb-back { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--text-small); font-weight: var(--primary-medium); text-transform: uppercase; letter-spacing: var(--letter-spacing-normal); color: var(--text-2); transition: all var(--hover-duration) var(--hover-ease); padding: var(--space-5) 0 0; }
         .breadcrumb-back:hover { color: var(--brand-500); }
-        .breadcrumb-back svg { width: var(--size-1rem); height: var(--size-1rem); stroke: currentColor; stroke-width: var(--number-two); fill: none; transition: var(--motion-transition); }
+        .breadcrumb-back svg { width: 1rem; height: 1rem; stroke: currentColor; stroke-width: 2; fill: none; transition: all var(--hover-duration) var(--hover-ease); }
         .real-photo-item { border-radius: var(--radius-small); overflow: hidden; cursor: pointer; }
-        .real-photo-caption { font-size: var(--size-0-82rem); color: var(--text-2); font-style: italic; margin-top: var(--size-0-625rem); text-align: center; }
+        .real-photo-caption { font-size: var(--text-small); color: var(--text-2); font-style: italic; margin-top: var(--space-2); text-align: center; }
         /* Lightbox */
 
 }

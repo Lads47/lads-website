@@ -5,9 +5,9 @@ const { highlighted = false } = Astro.props;
 <div class:list={['training-meta', highlighted && 'highlighted']}><slot /></div>
 <style is:global>
 @layer components {
-  .training-meta { display: flex; align-items: start; gap: var(--size-0-875rem); }
-  .training-meta > svg { width: var(--meta-icon-size); height: var(--meta-icon-size); flex: none; stroke: var(--brand-500); stroke-width: var(--number-two); fill: none; stroke-linecap: round; stroke-linejoin: round; }
-  .training-meta > div { min-width: var(--size-zero); }
+  .training-meta { display: flex; align-items: start; gap: var(--space-3); }
+  .training-meta > svg { width: 1.375rem; height: 1.375rem; flex: none; stroke: var(--brand-500); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .training-meta > div { min-width: 0; }
   .training-meta.highlighted { padding: var(--space-4); background: var(--background-3); border-radius: var(--radius-small); }
 }
 </style>

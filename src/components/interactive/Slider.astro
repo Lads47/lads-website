@@ -285,15 +285,15 @@ const slides = await slotContent(Astro.slots);
   @layer components {
     .slider_wrap {
       --_gap-size: var(--site-gutter);
-      --_edge: max(var(--site-margin), (var(--size-100vw) - var(--max-width-main)) / var(--number-two));
+      --_edge: max(var(--site-margin), (100vw - var(--max-width-main)) / 2);
       --_visible: var(--_visible-xs);
-      --_visible-xs: var(--number-1-02);
+      --_visible-xs: 1.02;
       --_visible-sm: var(--_visible-xs);
       --_visible-md: var(--_visible-sm);
       --_visible-lg: var(--_visible-md);
       display: grid;
       gap: var(--space-6);
-      width: var(--size-full);
+      width: 100%;
 
       @media (--mq-small-min) {
         --_visible: var(--_visible-sm);
@@ -309,13 +309,13 @@ const slides = await slotContent(Astro.slots);
     .slider_list {
       display: flex;
       gap: var(--_gap-size);
-      min-width: var(--size-zero);
+      min-width: 0;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       overscroll-behavior-x: contain;
       scrollbar-width: none;
       cursor: grab;
-      margin-inline: calc(var(--number-minus-one) * var(--_edge));
+      margin-inline: calc(-1 * var(--_edge));
       padding-inline: var(--_edge);
       scroll-padding-inline: var(--_edge);
 
@@ -339,31 +339,31 @@ const slides = await slotContent(Astro.slots);
       }
 
       & > * {
-        flex: var(--size-zero) var(--size-zero)
+        flex: 0 0
           calc(
-            (var(--size-full) - (var(--_visible) - var(--number-one)) * var(--_gap-size)) / var(--_visible)
+            (100% - (var(--_visible) - 1) * var(--_gap-size)) / var(--_visible)
           );
-        min-width: var(--size-zero);
+        min-width: 0;
         scroll-snap-align: start;
       }
 
       .slider_wrap.crop-start & {
-        margin-inline-start: var(--size-zero);
-        padding-inline-start: var(--size-zero);
-        scroll-padding-inline-start: var(--size-zero);
+        margin-inline-start: 0;
+        padding-inline-start: 0;
+        scroll-padding-inline-start: 0;
       }
 
       .slider_wrap.contained & {
-        margin-inline: var(--size-zero);
-        padding-inline: var(--size-zero);
-        scroll-padding-inline: var(--size-zero);
+        margin-inline: 0;
+        padding-inline: 0;
+        scroll-padding-inline: 0;
       }
     }
 
     .slider_controls {
       display: flex;
       align-items: center;
-      justify-content: var(--justify-content-nav-inner);
+      justify-content: space-between;
       gap: var(--space-4);
 
       .slider_wrap:not(.is-ready) &,
@@ -379,9 +379,9 @@ const slides = await slotContent(Astro.slots);
     }
 
     .slider_marker {
-      width: var(--size-0-75rem);
-      height: var(--size-0-75rem);
-      padding: var(--size-zero);
+      width: 0.75rem;
+      height: 0.75rem;
+      padding: 0;
       border: var(--border-width) solid var(--text);
       border-radius: var(--radius-round);
       background: none;

@@ -54,14 +54,14 @@ const content = await slotContent(Astro.slots);
 <style is:global>
   @layer components {
     .form-fieldset {
-      width: var(--size-full);
-      min-width: var(--size-zero);
-      padding: var(--size-zero);
-      border: var(--size-zero);
+      width: 100%;
+      min-width: 0;
+      padding: 0;
+      border: 0;
     }
 
     .form-fieldset_legend {
-      padding: var(--size-zero);
+      padding: 0;
       margin-bottom: var(--space-2);
     }
 
@@ -84,10 +84,10 @@ const content = await slotContent(Astro.slots);
 
       @media (--mq-medium-min) {
         .form-fieldset.columns & {
-          grid-template-columns: repeat(var(--number-two), minmax(var(--size-zero), var(--size-1fr)));
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
         .form-fieldset.thirds & {
-          grid-template-columns: repeat(var(--number-3), minmax(var(--size-zero), var(--size-1fr)));
+          grid-template-columns: repeat(3, minmax(0, 1fr));
         }
       }
     }

@@ -126,21 +126,21 @@ if (import.meta.env.DEV && render && content && !id) {
     }
 
     .modal_wrap {
-      --_leaving: calc(var(--open-duration) * var(--opacity-0-7));
-      --_from: var(--size-zero) var(--size-2rem);
-      --_body: var(--size-zero) var(--size-zero);
-      --_backdrop: color-mix(in lab, var(--color-black) var(--percentage-60), var(--color-transparent));
-      --_close: calc(var(--size-2-75em) + var(--space-4) * var(--number-two));
-      width: var(--size-full);
+      --_leaving: calc(var(--open-duration) * 0.7);
+      --_from: 0 2rem;
+      --_body: 0 0;
+      --_backdrop: color-mix(in lab, #000 60%, transparent);
+      --_close: calc(2.75em + var(--space-4) * 2);
+      width: 100%;
       max-width: none;
-      height: var(--size-full);
+      height: 100%;
       max-height: none;
-      margin: var(--size-zero);
+      margin: 0;
       padding: var(--site-margin);
       align-items: center;
-      justify-content: var(--justify-content-button-wrap);
+      justify-content: center;
       background: none;
-      border: var(--size-zero);
+      border: 0;
       color: var(--text);
       overflow: clip;
       transition:
@@ -158,40 +158,40 @@ if (import.meta.env.DEV && render && content && !id) {
       &.stacki-opened {
         display: flex;
         position: fixed;
-        inset: var(--size-zero);
-        z-index: var(--layer-100);
+        inset: 0;
+        z-index: 100;
         background-color: var(--_backdrop);
       }
 
       &::backdrop {
         background-color: var(--_backdrop);
-        opacity: var(--opacity-0);
+        opacity: 0;
         transition: opacity var(--_leaving) var(--open-ease);
       }
 
       &[open]::backdrop {
-        opacity: var(--opacity-1);
+        opacity: 1;
         transition: opacity var(--open-duration) var(--open-ease);
       }
 
       @starting-style {
         &[open]::backdrop {
-          opacity: var(--opacity-0);
+          opacity: 0;
         }
       }
 
       &.side-panel {
-        --_panel: var(--size-28rem);
-        --_from: var(--_panel) var(--size-zero);
-        padding: var(--size-zero);
+        --_panel: 28rem;
+        --_from: var(--_panel) 0;
+        padding: 0;
         align-items: stretch;
-        justify-content: var(--justify-content-side-panel);
+        justify-content: end;
       }
 
       &.full-screen {
-        --_from: var(--size-zero) var(--size-zero);
-        --_body: var(--size-zero) var(--size-2rem);
-        padding: var(--size-zero);
+        --_from: 0 0;
+        --_body: 0 2rem;
+        padding: 0;
         align-items: stretch;
       }
     }
@@ -200,13 +200,13 @@ if (import.meta.env.DEV && render && content && !id) {
       position: relative;
       display: flex;
       flex-direction: column;
-      width: var(--size-full);
-      max-width: var(--size-34rem);
-      max-height: var(--size-full);
+      width: 100%;
+      max-width: 34rem;
+      max-height: 100%;
       background-color: var(--background);
       border-radius: var(--radius-main);
       overflow: hidden;
-      opacity: var(--opacity-0);
+      opacity: 0;
       translate: var(--_from);
       transition:
         opacity var(--_leaving) var(--open-ease),
@@ -215,19 +215,19 @@ if (import.meta.env.DEV && render && content && !id) {
       .modal_wrap.side-panel & {
         max-width: var(--_panel);
         max-height: none;
-        border-radius: var(--size-zero);
+        border-radius: 0;
       }
 
       .modal_wrap.full-screen & {
         max-width: none;
         max-height: none;
-        border-radius: var(--size-zero);
+        border-radius: 0;
       }
 
       .modal_wrap:is([open], .stacki-opened) &,
       .stacki-designer .modal_wrap.preview & {
-        opacity: var(--opacity-1);
-        translate: var(--size-zero) var(--size-zero);
+        opacity: 1;
+        translate: 0 0;
         transition:
           opacity var(--open-duration) var(--open-ease),
           translate var(--open-duration) var(--open-ease);
@@ -235,7 +235,7 @@ if (import.meta.env.DEV && render && content && !id) {
 
       @starting-style {
         .modal_wrap[open] & {
-          opacity: var(--opacity-0);
+          opacity: 0;
           translate: var(--_from);
         }
       }
@@ -245,17 +245,17 @@ if (import.meta.env.DEV && render && content && !id) {
       position: absolute;
       top: var(--space-4);
       inset-inline-end: var(--space-4);
-      z-index: var(--number-one);
+      z-index: 1;
     }
 
     .modal_scroll {
-      flex: var(--number-one);
-      min-height: var(--size-zero);
+      flex: 1;
+      min-height: 0;
       overflow-y: auto;
       overscroll-behavior: contain;
 
       .modal_wrap.full-screen & {
-        height: var(--size-full);
+        height: 100%;
       }
     }
 
@@ -265,14 +265,14 @@ if (import.meta.env.DEV && render && content && !id) {
       transition: translate var(--_leaving) var(--open-ease);
 
       .modal_wrap.full-screen & {
-        min-height: var(--size-full);
+        min-height: 100%;
         display: grid;
-        align-content: var(--align-content-modal-wrap-full-screen);
+        align-content: center;
       }
 
       .modal_wrap:is([open], .stacki-opened) &,
       .stacki-designer .modal_wrap.preview & {
-        translate: var(--size-zero) var(--size-zero);
+        translate: 0 0;
         transition: translate var(--open-duration) var(--open-ease);
       }
 
@@ -287,10 +287,10 @@ if (import.meta.env.DEV && render && content && !id) {
 
 <style is:global>
 @layer components {
-  .modal_wrap.photo { padding: var(--size-5vh) var(--size-5vw); --_body: var(--size-zero); }
-  .modal_wrap.photo .modal_content { width: auto; max-width: var(--size-90vw); max-height: var(--size-90vh); background: var(--color-transparent); overflow: visible; }
-  .modal_wrap.photo .modal_body { padding: var(--size-zero); }
-  .modal_wrap.photo img { max-width: var(--size-90vw); max-height: var(--size-85vh); width: auto; height: auto; object-fit: contain; }
-  .modal_wrap.photo .modal_close { position: fixed; top: var(--space-4); right: var(--space-5); z-index: var(--number-one); }
+  .modal_wrap.photo { padding: 5vh 5vw; --_body: 0; }
+  .modal_wrap.photo .modal_content { width: auto; max-width: 90vw; max-height: 90vh; background: transparent; overflow: visible; }
+  .modal_wrap.photo .modal_body { padding: 0; }
+  .modal_wrap.photo img { max-width: 90vw; max-height: 85vh; width: auto; height: auto; object-fit: contain; }
+  .modal_wrap.photo .modal_close { position: fixed; top: var(--space-4); right: var(--space-5); z-index: 1; }
 }
 </style>
