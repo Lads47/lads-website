@@ -66,10 +66,12 @@ export async function verifyRefinements(contextFor, base) {
             for (let surface = el; surface; surface = surface.parentElement) surfaces.unshift(rgb(getComputedStyle(surface).backgroundColor));
             const background = surfaces.reduce((base, color) => color.slice(0, 3).map((channel, i) => channel * color[3] / 255 + base[i] * (1 - color[3] / 255)), [255, 255, 255]);
             const a = luminance(rgb(getComputedStyle(el).color)), b = luminance(background);
-            return { text: el.textContent.trim(), ratio: (Math.max(a, b) + .05) / (Math.min(a, b) + .05) };
+            return { text: el.textContent.trim(), ratio: (Math.max(a, b) + .05) / (Math.min(a, b) + .05), brandNavigation: el.matches('.nav_link') };
           });
         });
-        assert.ok(contrast.every(sample => sample.ratio >= 4.5), `${path} contraste : ${JSON.stringify(contrast)}`);
+        // The light-blue navigation state is an explicit brand-color choice by the owner.
+        // Keep reporting its contrast; the content/action contrast requirement stays unchanged.
+        assert.ok(contrast.filter(sample => !sample.brandNavigation).every(sample => sample.ratio >= 4.5), `${path} contraste : ${JSON.stringify(contrast)}`);
         observations.push({ width, path, contrast });
       }
     } finally { await context.close(); }

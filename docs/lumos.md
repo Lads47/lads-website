@@ -32,6 +32,8 @@ La largeur principale du site utilise le token natif `--max-width-main`, réglé
 
 La navigation comporte sept liens, avec « Accueil » en premier. Les conditions partagées `--mq-navigation-desktop` et `--mq-navigation-mobile` basculent à `80rem` (1 280 px) pour garder les sept liens sur une seule ligne. `NavLink` normalise aussi le chemin de construction `/index.html` vers `/` ; le lien Accueil est actif uniquement à la racine, tandis que les catégories restent actives sur leurs sous-pages.
 
+À la demande du propriétaire, les liens actifs et survolés de la navigation utilisent directement `--brand-500`, le bleu clair du logo, et aucun lien du menu n’est souligné. L’attribut `aria-current` est conservé. Ce choix visuel remplace le rôle d’accent foncé dans ce seul composant ; sa limite de contraste sur blanc est consignée dans `audit-impeccable.md`.
+
 Les huit propriétés globales propres au site se trouvent dans `brand.css`.
 
 | Propriété | Usage partagé |

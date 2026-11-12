@@ -34,6 +34,8 @@ export async function verifyNavigation(contextFor, base, routes) {
         assert.equal((await homeLink.textContent()).trim(), 'Accueil');
         assert.equal(await homeLink.getAttribute('aria-current'), route.route === '/' ? 'page' : null);
         assert.equal(await homeLink.getAttribute('data-active'), route.route === '/' ? 'true' : null);
+        assert.ok(await page.locator('.nav_link').evaluateAll(links => links.every(link => getComputedStyle(link).textDecorationLine === 'none')), 'Aucun soulignement dans la navigation');
+        assert.ok(await page.locator('.nav_link[data-active="true"]').evaluateAll(links => links.every(link => getComputedStyle(link).color === 'rgb(125, 206, 245)')), 'État actif avec le bleu clair de marque');
         await page.evaluate(() => scrollTo({ top: 160, behavior: 'instant' }));
         await page.waitForFunction(() => document.querySelector('#header').classList.contains('scrolled') && getComputedStyle(document.querySelector('#header [data-mode="dark"]')).opacity === '1');
         const scrolled = await page.evaluate(style);
@@ -66,7 +68,7 @@ export async function verifyNavigation(contextFor, base, routes) {
     assert.equal(fallback.background, 'rgb(255, 255, 255)', 'Sans JS, le header garde un fond opaque lisible');
     assert.equal(fallback.dark, '1');
     assert.equal(fallback.light, '0');
-    assert.notEqual(await page.locator('.nav_link[data-active="true"]').evaluate(el => getComputedStyle(el).color), 'rgb(125, 206, 245)', 'Couleur active adaptée au fond blanc sans JS');
+    assert.equal(await page.locator('.nav_link[data-active="true"]').evaluate(el => getComputedStyle(el).color), 'rgb(125, 206, 245)', 'Le choix du bleu clair de marque est conservé sans JS');
   } finally { await nojs.close(); }
   return observations;
 }
