@@ -6,6 +6,7 @@ import Eyebrow from '../typography/Eyebrow.astro';
 import Heading from '../typography/Heading.astro';
 import Paragraph from '../typography/Paragraph.astro';
 import Img from '../media/Img.astro';
+import Grid from '../wrapper/Grid.astro';
 ---
 <!-- ============================================
          HEADER
@@ -38,117 +39,132 @@ import Img from '../media/Img.astro';
                 <hr class="divider">
             </ContentWrapper>
 
-            <div class="timeline">
+            <ol class="timeline" role="list">
 
-                <!-- 1998 -->
-                <div class="timeline-item ">
-                    <div class="timeline-content">
-                        <span class="timeline-year">1998</span>
+                <li class="timeline-item">
+                    <span class="timeline-rail" aria-hidden="true"></span>
+                    <Grid medium={2} large={3} gap="6" tracks="calc(var(--h1) * 3) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
+                        <Paragraph tag="span" variant="h1" class="timeline-year">1998</Paragraph>
+                        <div class="timeline-content">
                         <Heading tag="h3" variant="h3">Cr&eacute;ation de l'entreprise.</Heading>
                         <Paragraph variant="main">D'abord tourn&eacute;e vers la production audiovisuelle, l'entreprise s'oriente tr&egrave;s t&ocirc;t vers la captation multicam&eacute;ra, qui deviendra sa sp&eacute;cialit&eacute;.</Paragraph>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-img">
-                        <Img loading={"lazy"} src={"/photo/1998.webp"} alt={"1998 - Création de l'entreprise"} />
-                    </div>
-                </div>
 
-                <!-- 2008 -->
-                <div class="timeline-item ">
-                    <div class="timeline-content">
-                        <span class="timeline-year">2008</span>
+                        </div>
+                        <div class="timeline-media">
+                        <Img loading={"lazy"} src={"/photo/1998.webp"} alt={"1998 - Création de l'entreprise"} />
+                        </div>
+                    </Grid>
+                </li>
+
+                <li class="timeline-item">
+                    <span class="timeline-rail" aria-hidden="true"></span>
+                    <Grid medium={2} large={3} gap="6" tracks="calc(var(--h1) * 3) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
+                        <Paragraph tag="span" variant="h1" class="timeline-year">2008</Paragraph>
+                        <div class="timeline-content">
                         <Heading tag="h3" variant="h3">Sp&eacute;cialisation dans la captation multicam.</Heading>
                         <Paragraph variant="main">Forte de premi&egrave;res exp&eacute;riences r&eacute;ussies et apr&egrave;s avoir approfondi son savoir-faire et investi dans du mat&eacute;riel d&eacute;di&eacute;, l'entreprise se sp&eacute;cialise exclusivement dans la captation multicam&eacute;ra.</Paragraph>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-img">
-                        <Img loading={"lazy"} src={"/photo/2008.webp"} alt={"2008 - Spécialisation multicam"} />
-                    </div>
-                </div>
 
-                <!-- 2014 -->
-                <div class="timeline-item ">
-                    <div class="timeline-content">
-                        <span class="timeline-year">2014</span>
+                        </div>
+                        <div class="timeline-media">
+                        <Img loading={"lazy"} src={"/photo/2008.webp"} alt={"2008 - Spécialisation multicam"} />
+                        </div>
+                    </Grid>
+                </li>
+
+                <li class="timeline-item">
+                    <span class="timeline-rail" aria-hidden="true"></span>
+                    <Grid medium={2} large={3} gap="6" tracks="calc(var(--h1) * 3) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
+                        <Paragraph tag="span" variant="h1" class="timeline-year">2014</Paragraph>
+                        <div class="timeline-content">
                         <Heading tag="h3" variant="h3">Adoption du logiciel vMix.</Heading>
                         <Paragraph variant="main">Toujours en veille sur les nouvelles technologies, l'entreprise s'adapte et s'approprie les derni&egrave;res innovations afin de proposer des services adapt&eacute;s, fiables et de qualit&eacute;.</Paragraph>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-img">
-                        <Img loading={"lazy"} src={"/photo/2014.webp"} alt={"2014 - Adoption de vMix"} />
-                    </div>
-                </div>
 
-                <!-- 2016 -->
-                <div class="timeline-item ">
-                    <div class="timeline-content">
-                        <span class="timeline-year">2016</span>
+                        </div>
+                        <div class="timeline-media">
+                        <Img loading={"lazy"} src={"/photo/2014.webp"} alt={"2014 - Adoption de vMix"} />
+                        </div>
+                    </Grid>
+                </li>
+
+                <li class="timeline-item">
+                    <span class="timeline-rail" aria-hidden="true"></span>
+                    <Grid medium={2} large={3} gap="6" tracks="calc(var(--h1) * 3) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
+                        <Paragraph tag="span" variant="h1" class="timeline-year">2016</Paragraph>
+                        <div class="timeline-content">
                         <Heading tag="h3" variant="h3">En direct sur Facebook.</Heading>
                         <Paragraph variant="main">Facebook ouvre l'option de streaming live en France sur sa plateforme. Deux jours apr&egrave;s cette annonce, nous sommes parmi les tout premiers &agrave; l'utiliser en retransmettant Les Signaux du Num&eacute;rique en direct sur le r&eacute;seau social.</Paragraph>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-img">
+
+                        </div>
+                        <div class="timeline-media">
                         <div class="video-container">
                             <iframe src="https://player.vimeo.com/video/1006969061" title="2016 - Diffusion Facebook" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                    </div>
-                </div>
+                        </div>
+                    </Grid>
+                </li>
 
-                <!-- 2018 -->
-                <div class="timeline-item ">
-                    <div class="timeline-content">
-                        <span class="timeline-year">2018</span>
+                <li class="timeline-item">
+                    <span class="timeline-rail" aria-hidden="true"></span>
+                    <Grid medium={2} large={3} gap="6" tracks="calc(var(--h1) * 3) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
+                        <Paragraph tag="span" variant="h1" class="timeline-year">2018</Paragraph>
+                        <div class="timeline-content">
                         <Heading tag="h3" variant="h3">Multiplex r&eacute;unissant 4 villes lors d'un &eacute;v&eacute;nement.</Heading>
                         <Paragraph variant="main">Notre structure &eacute;tait d&eacute;sormais capable de d&eacute;ployer 4 &eacute;quipes dans 4 villes pour les connecter autour d'un seul et m&ecirc;me &eacute;v&eacute;nement &mdash; le d&eacute;but d'une longue s&eacute;rie de multiplex.</Paragraph>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-img">
+
+                        </div>
+                        <div class="timeline-media">
                         <div class="video-container">
                             <iframe src="https://player.vimeo.com/video/1013489106" title="2018 - Premier multiplex" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                    </div>
-                </div>
+                        </div>
+                    </Grid>
+                </li>
 
-                <!-- 2022 -->
-                <div class="timeline-item ">
-                    <div class="timeline-content">
-                        <span class="timeline-year">2022</span>
+                <li class="timeline-item">
+                    <span class="timeline-rail" aria-hidden="true"></span>
+                    <Grid medium={2} large={3} gap="6" tracks="calc(var(--h1) * 3) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
+                        <Paragraph tag="span" variant="h1" class="timeline-year">2022</Paragraph>
+                        <div class="timeline-content">
                         <Heading tag="h3" variant="h3">Achat de nos nouveaux locaux.</Heading>
                         <Paragraph variant="main">L'entreprise ne cesse de grandir et le besoin d'espace pour le mat&eacute;riel et l'&eacute;quipe se fait ressentir. D'o&ugrave; l'acquisition d'un b&acirc;timent de 300&nbsp;m&sup2;. C'est parti pour 2 ans de travaux&nbsp;!</Paragraph>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-img">
-                        <Img loading={"lazy"} src={"/photo/20230830_192536.webp"} alt={"2022 - Nouveaux locaux"} />
-                    </div>
-                </div>
 
-                <!-- 2024 -->
-                <div class="timeline-item ">
-                    <div class="timeline-content">
-                        <span class="timeline-year">2024</span>
+                        </div>
+                        <div class="timeline-media">
+                        <Img loading={"lazy"} src={"/photo/20230830_192536.webp"} alt={"2022 - Nouveaux locaux"} />
+                        </div>
+                    </Grid>
+                </li>
+
+                <li class="timeline-item">
+                    <span class="timeline-rail" aria-hidden="true"></span>
+                    <Grid medium={2} large={3} gap="6" tracks="calc(var(--h1) * 3) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
+                        <Paragraph tag="span" variant="h1" class="timeline-year">2024</Paragraph>
+                        <div class="timeline-content">
                         <Heading tag="h3" variant="h3">Emm&eacute;nagement dans les nouveaux locaux.</Heading>
                         <Paragraph variant="main">Apr&egrave;s deux ans de travaux, nous int&eacute;grons enfin nos nouveaux locaux. Plus d'espace pour la pr&eacute;paration des prestations, et surtout un environnement propice &agrave; la recherche et au d&eacute;veloppement de nos solutions.</Paragraph>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-img">
-                        <Img loading={"lazy"} src={"/photo/20250226_185612.webp"} alt={"2024 - Nouveaux locaux"} />
-                    </div>
-                </div>
 
-                <!-- 2025 -->
-                <div class="timeline-item ">
-                    <div class="timeline-content">
-                        <span class="timeline-year">2025</span>
+                        </div>
+                        <div class="timeline-media">
+                        <Img loading={"lazy"} src={"/photo/20250226_185612.webp"} alt={"2024 - Nouveaux locaux"} />
+                        </div>
+                    </Grid>
+                </li>
+
+                <li class="timeline-item">
+                    <span class="timeline-rail" aria-hidden="true"></span>
+                    <Grid medium={2} large={3} gap="6" tracks="calc(var(--h1) * 3) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
+                        <Paragraph tag="span" variant="h1" class="timeline-year">2025</Paragraph>
+                        <div class="timeline-content">
                         <Heading tag="h3" variant="h3">Naissance d'EVA &mdash; Electronic Virtual Assistant.</Heading>
                         <Paragraph variant="main">Dans un environnement propice et port&eacute;e par la mont&eacute;e en puissance de l'intelligence artificielle, notre R&amp;D porte ses fruits avec le d&eacute;veloppement de solutions in&eacute;dites sous la banni&egrave;re EVA &mdash; Electronic Virtual Assistant. Encore beaucoup de travail, mais c'est en marche et les r&eacute;sultats sont concrets.</Paragraph>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-img">
-                        <Img loading={"lazy"} src={"/photo/accueil eva.webp"} alt={"2025 - EVA Electronic Virtual Assistant"} />
-                    </div>
-                </div>
 
-            </div>
+                        </div>
+                        <div class="timeline-media">
+                        <Img loading={"lazy"} src={"/photo/accueil eva.webp"} alt={"2025 - EVA Electronic Virtual Assistant"} />
+                        </div>
+                    </Grid>
+                </li>
+            </ol>
 
     </Section>
 
@@ -161,176 +177,134 @@ import Img from '../media/Img.astro';
 
 
 
+<script>
+    import '../../scripts/history-timeline';
+</script>
+
 <style is:global>
 @layer components {
+    .divider {
+        margin: var(--space-4) auto 0;
+    }
 
-/* ============================================
-           POLICES
-           ============================================ */
+    .timeline {
+        --text-main-line-height: var(--line-height-huge);
+        margin: 0;
+        padding: 0 0 0 var(--space-6);
+        list-style: none;
+        color: var(--text);
+    }
 
-        /* ============================================
-           VARIABLES
-           ============================================ */
+    .timeline-item {
+        --_timeline-marker-position: calc(var(--h1) * var(--h1-line-height) / 2);
+        position: relative;
+    }
 
-        /* ============================================
-           RESET
-           ============================================ */
+    .timeline-item + .timeline-item {
+        margin-top: var(--section-space-large);
+    }
 
-        /* ============================================
-           PAGE HERO
-           ============================================ */
+    /* Two halves meet at the year; the preceding year colors the joining segment. */
+    .timeline-rail {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+    }
 
-        /* ============================================
-           SECTIONS COMMUNES
-           ============================================ */
-        .divider {
-            margin: var(--space-4) auto 0;
-        }
+    .timeline-rail::before,
+    .timeline-rail::after,
+    .timeline-year::before {
+        content: '';
+        position: absolute;
+        left: calc(var(--space-6) / -2);
+        background: color-mix(in srgb, var(--brand-500) 25%, transparent);
+        transform: translateX(-50%);
+        width: var(--border-width);
+        transition-property: none;
+    }
 
-        /* ============================================
-           TIMELINE
-           ============================================ */
-        .timeline {
-            position: relative;
-            max-width: 56.25rem;
-            margin: 0 auto;
-        }
-        /* Ligne verticale centrale */
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 0.1875rem;
-            background: var(--light-300);
-            transform: translateX(-50%);
-        }
+    .timeline-item:not(:first-child) .timeline-rail::before {
+        top: calc(-1 * var(--section-space-large));
+        bottom: calc(100% - var(--_timeline-marker-position));
+    }
 
-        .timeline-item {
-            display: flex;
-            align-items: flex-start;
-            position: relative;
-            margin-bottom: var(--space-7);
-        }
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
+    .timeline-item:not(:last-child) .timeline-rail::after {
+        top: var(--_timeline-marker-position);
+        bottom: 0;
+    }
 
-        /* Alternance gauche / droite */
-        .timeline-item:nth-child(odd) {
-            flex-direction: row;
-        }
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
+    .timeline-year::before {
+        top: 50%;
+        width: var(--space-3);
+        height: var(--space-3);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
 
-        /* Contenu texte */
-        .timeline-content {
-            width: calc(50% - 3.125rem);
-            background: var(--light-100);
-            border: var(--border-width) solid var(--light-300);
-            border-radius: var(--radius-small);
-            padding: var(--space-5);
-            box-shadow: var(--shadow-surface);
-            transition: all var(--hover-duration) var(--hover-ease);
-        }
-        .timeline-content:hover {
-            transform: translateY(-0.1875rem);
-            box-shadow: var(--shadow-surface);
-        }
-        .timeline-item:nth-child(odd) .timeline-content {
-            text-align: right;
-        }
-        .timeline-item:nth-child(even) .timeline-content {
-            text-align: left;
-        }
+    .timeline-item[data-reached] .timeline-rail::after,
+    .timeline-item[data-reached] + .timeline-item .timeline-rail::before,
+    .timeline-item[data-reached] .timeline-year::before {
+        background: var(--brand-500);
+    }
 
-        /* Image */
-        .timeline-img {
-            width: calc(50% - 3.125rem);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    .timeline-step {
+        align-items: start;
+        row-gap: var(--space-4);
+    }
+
+    .timeline-year {
+        position: relative;
+        display: block;
+        margin: 0;
+        color: var(--text);
+    }
+
+    .timeline-content,
+    .timeline-media {
+        min-width: 0;
+        text-align: left;
+    }
+
+    .timeline-media img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .timeline-media .video-container {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+
+    .timeline-media iframe {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    @media (--mq-medium-min) {
+        .timeline-year { grid-column: 1; grid-row: 1; }
+        .timeline-content { grid-column: 1; grid-row: 2; }
+        .timeline-media { grid-column: 2; grid-row: 1 / span 2; }
+    }
+
+    @media (--mq-large-min) {
+        .timeline-item { --_timeline-marker-position: 50%; }
+        .timeline-step { align-items: center; }
+        .timeline-content { grid-column: 2; grid-row: 1; }
+        .timeline-media { grid-column: 3; grid-row: 1; }
+    }
+
+    @media (--mq-motion-full) {
+        .timeline-rail::before,
+        .timeline-rail::after,
+        .timeline-year::before {
+            transition: background-color var(--hover-duration) var(--hover-ease);
         }
-        .timeline-img .video-container {
-            position: relative;
-            width: 100%;
-            max-width: 22.5rem;
-            padding-bottom: var(--section-space-medium);
-            height: 0;
-            overflow: hidden;
-            border-radius: var(--radius-small);
-            box-shadow: var(--shadow-surface);
-        }
-        .timeline-img .video-container iframe {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-            border-radius: var(--radius-small);
-        }
-
-        /* Point central sur la ligne */
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            top: 1.875rem;
-            width: 1.125rem;
-            height: 1.125rem;
-            background: var(--brand-500);
-            border: 0.25rem solid var(--light-100);
-            border-radius: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-            box-shadow: 0 0 0 0.25rem rgba(125,207,245,0.2);
-        }
-
-        /* Ann&eacute;e */
-        .timeline-year {
-            display: inline-block;
-            font-family: var(--heading-family);
-            font-size: var(--h2);
-            font-weight: var(--h3-font-weight);
-            color: var(--heading-accent);
-            margin-bottom: var(--space-2);
-            line-height: var(--line-height-large);
-        }
-
-        /* ============================================
-           RESPONSIVE
-           ============================================ */
-
-        @media (--mq-medium-max) {
-
-            /* Timeline mobile : tout empil&eacute; &agrave; gauche */
-            .timeline::before {
-                left: 1.25rem;
-            }
-            .timeline-item,
-            .timeline-item:nth-child(odd),
-            .timeline-item:nth-child(even) {
-                flex-direction: column;
-                padding-left: var(--space-6);
-            }
-            .timeline-content,
-            .timeline-img {
-                width: 100%;
-            }
-            .timeline-item:nth-child(odd) .timeline-content,
-            .timeline-item:nth-child(even) .timeline-content {
-                text-align: left;
-            }
-            .timeline-dot {
-                left: 1.25rem;
-                top: 0;
-            }
-            .timeline-img {
-                margin-top: var(--space-4);
-            }
-
-        }
-
+    }
 }
 </style>

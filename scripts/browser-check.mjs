@@ -6,6 +6,7 @@ import { PNG } from 'pngjs';
 import { verifyRefinements } from './verify-refinements.mjs';
 import { verifyHeroMotion } from './verify-hero-motion.mjs';
 import { verifyNavigation } from './verify-navigation.mjs';
+import { verifyHistoryTimeline } from './verify-history-timeline.mjs';
 
 const base = process.env.PREVIEW_URL || 'http://127.0.0.1:4321';
 const sourceBase = process.env.COMPARE_SOURCE_URL;
@@ -207,6 +208,9 @@ try {
 
   await verifyHeroMotion(contextFor, base);
   results.push('Animation hero GSAP : lignes et boutons, titre stable, redimensionnement, focus clavier et mouvement réduit à 390 et 1440 px');
+
+  await writeFile('test-results/history-timeline-report.json', JSON.stringify(await verifyHistoryTimeline(contextFor, base), null, 2));
+  results.push('Frise histoire : 8 étapes à 7 largeurs, texte 200 %, médias, contrastes, 64 passages aller/retour, restauration, redimensionnement et repli sans JavaScript');
 
   const navigation = await verifyNavigation(contextFor, base, routes);
   await writeFile('test-results/navigation-report.json', JSON.stringify(navigation, null, 2));
