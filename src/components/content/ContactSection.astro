@@ -45,11 +45,13 @@ const { eyebrow, title, description, email, phoneHref, phone, locationAlt, train
       <Card variant="panel">
         <Icon src={locationIcon} role="img" aria-label={locationAlt} class="icon-brand align-self-center" />
         <Heading tag="h4" variant="h5">{training ? 'Lieu de formation' : 'Nos bureaux'}</Heading>
-        {training ? <Paragraph variant="small">39 bis rue Robert Creuzet<br />47200 Marmande</Paragraph> : <>
-          <Paragraph variant="small" class="color-brand">39 bis rue Robert Creuzet, 47200 Marmande</Paragraph>
-          <Paragraph variant="small">22 rue Marcelin Berthelot, 33700 Mérignac</Paragraph>
-          <Paragraph variant="small">108 Bd Gallieni, 92130 Issy-les-Moulineaux</Paragraph>
-        </>}
+        {training ? <Paragraph variant="small">39 bis rue Robert Creuzet<br />47200 Marmande</Paragraph> :
+          <Paragraph variant="small">
+            <span class="color-brand">39 bis rue Robert Creuzet, 47200 Marmande</span><br />
+            22 rue Marcelin Berthelot, 33700 Mérignac<br />
+            108 Bd Gallieni, 92130 Issy-les-Moulineaux
+          </Paragraph>
+        }
       </Card>
   </Grid>
 </Section>
