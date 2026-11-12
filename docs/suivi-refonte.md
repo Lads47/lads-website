@@ -18,3 +18,5 @@ Mandat validé le 11 novembre 2026 : migration fidèle Astro et Lumos, prestatio
 Source de référence : `Lads47/lads-website`, commit `a4a264380f80e3570bcb3d01a6776bb582439527`. `main` distant revérifié inchangé après la reprise native Lumos ; les 40 HTML publiés correspondent toujours à cette source après normalisation des fins de ligne.
 
 Preuves et limites : `docs/rapport-verification.md`. Publication et retour arrière : `docs/livraison.md`. La mise en ligne reste hors de cette livraison.
+
+12 novembre 2026 — Le header passe au blanc avec un fondu de 200 ms utilisant les variables de transition Lumos. Les deux versions du logo se fondent progressivement. Vérification locale du défilement aller/retour, de la stabilité du logo, du mode de réduction des animations et du menu mobile. Check Astro, build et contrôles statiques réussis.
