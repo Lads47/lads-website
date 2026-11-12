@@ -6,7 +6,10 @@ import Card from '../item/Card.astro';
 import Heading from '../typography/Heading.astro';
 import Paragraph from '../typography/Paragraph.astro';
 import Eyebrow from '../typography/Eyebrow.astro';
-import Img from '../media/Img.astro';
+import Icon from '../media/Icon.astro';
+import emailIcon from '@/assets/icons/contact-email.svg';
+import phoneIcon from '@/assets/icons/contact-phone.svg';
+import locationIcon from '@/assets/icons/contact-location.svg';
 import Overlay from '../media/Overlay.astro';
 interface Props {
   eyebrow: string;
@@ -30,17 +33,17 @@ const { eyebrow, title, description, email, phoneHref, phone, locationAlt, train
   </ContentWrapper>
   <Grid large={3} gap="5" class="alignment-center">
       <Card variant="panel">
-        <Img src="/images/noun-email-5456693.svg" alt="Email" appearance="icon" class="icon-brand align-self-center" />
+        <Icon src={emailIcon} role="img" aria-label="Email" class="icon-brand align-self-center" />
         <Heading tag="h4" variant="h5">Email</Heading>
         <Paragraph variant="small"><a class="color-brand" href={`mailto:${email}`}>{email}</a></Paragraph>
       </Card>
       <Card variant="panel">
-        <Img src="/images/noun-call-5456677.svg" alt="Téléphone" appearance="icon" class="icon-brand align-self-center" />
+        <Icon src={phoneIcon} role="img" aria-label="Téléphone" class="icon-brand align-self-center" />
         <Heading tag="h4" variant="h5">Téléphone</Heading>
         <Paragraph variant="small"><a class="color-brand" href={phoneHref}>{phone}</a></Paragraph>
       </Card>
       <Card variant="panel">
-        <Img src="/images/noun-location-4693998.svg" alt={locationAlt} appearance="icon" class="icon-brand align-self-center" />
+        <Icon src={locationIcon} role="img" aria-label={locationAlt} class="icon-brand align-self-center" />
         <Heading tag="h4" variant="h5">{training ? 'Lieu de formation' : 'Nos bureaux'}</Heading>
         {training ? <Paragraph variant="small">39 bis rue Robert Creuzet<br />47200 Marmande</Paragraph> : <>
           <Paragraph variant="small" class="color-brand">39 bis rue Robert Creuzet, 47200 Marmande</Paragraph>

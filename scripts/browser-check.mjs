@@ -140,6 +140,7 @@ try {
   assert.equal(await page.locator('video').evaluate((el) => el.paused), true);
   assert.equal(await page.locator('h1').evaluate((el) => getComputedStyle(el).opacity), '1');
   results.push('Réduction des animations : vidéo en pause et titre visible');
+  assert.equal(await page.locator('#contact svg.icon-brand').count(), 3);
   const tokensBefore = await page.evaluate(() => {
     const root = document.documentElement;
     const eyebrow = document.querySelector('#possibilites .eyebrow_wrap');
@@ -151,7 +152,8 @@ try {
   });
   await page.waitForFunction(() =>
     getComputedStyle(document.querySelector('#possibilites .eyebrow_wrap')).color === 'rgb(1, 2, 3)' &&
-    getComputedStyle(document.querySelector('#possibilites .card_content')).paddingTop === '48px');
+    getComputedStyle(document.querySelector('#possibilites .card_content')).paddingTop === '48px' &&
+    [...document.querySelectorAll('#contact svg.icon-brand path')].every((path) => getComputedStyle(path).fill === 'rgb(1, 2, 3)'));
   const tokensAfter = await page.evaluate(() => {
     const root = document.documentElement;
     const after = { color: getComputedStyle(document.querySelector('#possibilites .eyebrow_wrap')).color, padding: getComputedStyle(document.querySelector('#possibilites .card_content')).paddingTop };

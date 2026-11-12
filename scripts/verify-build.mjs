@@ -7,6 +7,16 @@ import { document, contentText, hash, metadata, all, attr } from './html-tools.m
 const routes = JSON.parse(await readFile('tests/fixtures/routes.json', 'utf8'));
 const baseline = JSON.parse(await readFile('tests/fixtures/source.json', 'utf8'));
 const backgrounds = JSON.parse(await readFile('tests/fixtures/backgrounds.json', 'utf8'));
+// These source images now render inline through the Lumos Icon component.
+const inlineIcons = new Map();
+for (const file of ['noun-email-5456693', 'noun-call-5456677', 'noun-location-4693998']) {
+  const source = document(await readFile(`public/images/${file}.svg`, 'utf8'));
+  const svg = all(source, (node) => node.tagName === 'svg')[0];
+  inlineIcons.set(attr(svg, 'viewBox'), {
+    path: `/images/${file}.svg`,
+    shapes: all(svg, (node) => node.tagName === 'path').map((node) => attr(node, 'd')),
+  });
+}
 let links = 0, scripts = 0;
 const idsByPath = new Map();
 for (const route of routes) {
@@ -27,7 +37,13 @@ for (const route of routes) {
     new Script(node.childNodes.map((n) => n.value || '').join(''), { filename: route.file }); scripts++;
   }
   const bodyImages = all(tree, (n) => n.tagName === 'main')[0];
-  const images = all(bodyImages, (n) => n.tagName === 'img' && attr(n, 'src')).map((n) => [new URL(attr(n, 'src'), 'https://lesateliersdustream.fr'+route.route).pathname, attr(n, 'alt') || '']);
+  const images = all(bodyImages, (n) => n.tagName === 'img' && attr(n, 'src') || n.tagName === 'svg' && attr(n, 'role') === 'img').map((node) => {
+    if (node.tagName === 'img') return [new URL(attr(node, 'src'), 'https://lesateliersdustream.fr'+route.route).pathname, attr(node, 'alt') || ''];
+    const icon = inlineIcons.get(attr(node, 'viewBox'));
+    assert.ok(icon, `Icône inline inconnue : ${route.route}`);
+    assert.deepEqual(all(node, (shape) => shape.tagName === 'path').map((shape) => attr(shape, 'd')), icon.shapes, `Tracé de l'icône modifié : ${route.route}`);
+    return [icon.path, attr(node, 'aria-label') || ''];
+  });
   for (const background of backgrounds[route.route]) {
     assert.ok(images.some(([src]) => decodeURIComponent(src) === decodeURIComponent(background)), `Photo de fond perdue : ${route.route} ${background}`);
   }

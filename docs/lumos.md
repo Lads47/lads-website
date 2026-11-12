@@ -10,7 +10,7 @@ Source officielle : <https://github.com/lumosframework/lumos-for-astro/tree/v1.0
 
 Les pages utilisent les composants du starter officiel : `Section`, `ContentWrapper`, `Grid`, `Card`, `Heading`, `Paragraph`, `Eyebrow`, `Img`, `Video`, `Overlay` et `Button`. Le menu, le pied de page et les photos utilisent `Nav`, `NavLink`, `Footer` et `Modal`. La couche de reset qui neutralisait Lumos a été supprimée, ainsi que les anciennes implémentations de navigation et de pied de page.
 
-Les fichiers de contenu contiennent 89 occurrences de `Section`, 64 de `Grid`, 65 de `Card`, 190 de `Heading`, 222 de `Paragraph`, 116 de `Img` et 62 de `Button`. Ce sont des occurrences dans les sources, avant répétition du contact partagé dans les pages construites. Les variantes typographiques sont actives ; aucun titre de contenu n'utilise le style hérité.
+Les fichiers de contenu contiennent 89 occurrences de `Section`, 64 de `Grid`, 65 de `Card`, 190 de `Heading`, 222 de `Paragraph`, 111 de `Img` et 62 de `Button`. Ce sont des occurrences dans les sources, avant répétition du contact partagé dans les pages construites. Les variantes typographiques sont actives ; aucun titre de contenu n'utilise le style hérité.
 
 Les extensions restent dans les composants qui possèdent leur rendu : largeur et surface de `Section`, proportions et espacement de `Grid`, variantes panel/profile et lien global de `Card`, rôles de taille de `Img`, variante photo de `Modal` et rendu textuel de `Button` dans une carte déjà cliquable. Les variantes existantes sont conservées. `TrainingMeta` mutualise les informations des deux formations ; `ContactSection` reçoit les textes et coordonnées propres à chaque page.
 
@@ -35,6 +35,8 @@ Les huit propriétés globales propres au site se trouvent dans `brand.css`.
 | `--tracks-content-sidebar` | Proportions de la grille contenu et colonne latérale des fiches |
 
 Un cadrage propre à une photo reste auprès de son image. Les conditions responsive partagées avec JavaScript sont définies dans `src/styles/media-tokens.json`. Les résultats EVA gardent leur progression dynamique et leur couleur de réussite dans leur composant.
+
+Les trois icônes du contact sont importées depuis `src/assets/icons/contact-*.svg` et rendues inline par `Icon`. Leur remplissage suit `currentColor`. La règle `.icon-brand` dans `src/styles/site.css` règle leur couleur avec `var(--brand-500)`. Le contrôle statique compare leurs tracés et leurs libellés aux images SVG d’origine.
 
 ## Vérifications
 

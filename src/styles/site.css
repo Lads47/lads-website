@@ -22,4 +22,4 @@
 
 @layer components { .lads-results-bar-fill { width: var(--result-progress); } a.meta-date-chip:hover { transform: translateY(-0.125rem); box-shadow: var(--shadow-surface); } }
 
-@layer utilities { .icon-brand { width: 3.125rem; height: 3.125rem; filter: brightness(0) saturate(100%) invert(78%) sepia(18%) saturate(1200%) hue-rotate(160deg) brightness(100%) contrast(94%); } }
+@layer utilities { .icon-brand { width: 3.125rem; height: 3.125rem; color: var(--brand-500); } }
