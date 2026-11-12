@@ -13,12 +13,13 @@ Mandat validé le 11 novembre 2026 : migration fidèle Astro et Lumos, prestatio
 | Pages légales, anciennes routes et 404 | Terminé | Textes conservés, destinations et 404 contrôlées |
 | Vidéo d'accueil rapatriée | Terminé | MP4 local de 9,8 Mo ; lecture, pause/reprise et HTTP 206 vérifiés |
 | Recommandations Impeccable autorisées | Terminé localement | 70 captures avant/après, cinq gabarits tablette, cinq largeurs ciblées ; contrastes, cartes, formation mobile, clavier et médias ; bilan dans `docs/audit-impeccable.md` |
-| Vérification et présentation locales | Prêt pour revue | 70 rendus mobile/bureau et 5 gabarits tablette ; http://127.0.0.1:4321 |
-| Validation utilisateur | En attente | Aucun push ni PR avant validation locale explicite |
+| Vérification et présentation locales | Terminées | 70 rendus mobile/bureau et 5 gabarits tablette ; http://127.0.0.1:4321 |
+| Validation utilisateur | Acquise le 12 novembre 2026 | Version locale validée ; branche et PR autorisées, sans fusion ni mise en ligne |
+| Proposition GitHub | Autorisée | Une PR en brouillon pendant les contrôles, puis prête à relire ; dossier dans `docs/revue-github.md` |
 
 Source de référence : `Lads47/lads-website`, commit `a4a264380f80e3570bcb3d01a6776bb582439527`. `main` distant revérifié inchangé après la reprise native Lumos ; les 40 HTML publiés correspondent toujours à cette source après normalisation des fins de ligne.
 
-Preuves et limites : `docs/rapport-verification.md`. Publication et retour arrière : `docs/livraison.md`. La mise en ligne reste hors de cette livraison.
+Preuves actuelles et limites : `docs/revue-github.md`. Le rapport initial et le journal ci-dessous conservent les états historiques de chaque passe, notamment les mentions « aucun push ni PR » antérieures à la validation. Publication et retour arrière : `docs/livraison.md`. La mise en ligne reste hors de cette livraison.
 
 12 novembre 2026 — Le header passe au blanc avec un fondu de 200 ms utilisant les variables de transition Lumos. Les deux versions du logo se fondent progressivement. Vérification locale du défilement aller/retour, de la stabilité du logo, du mode de réduction des animations et du menu mobile. Check Astro, build et contrôles statiques réussis.
 

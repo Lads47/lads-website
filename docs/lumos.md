@@ -10,7 +10,7 @@ Source officielle : <https://github.com/lumosframework/lumos-for-astro/tree/v1.0
 
 Les pages utilisent les composants du starter officiel : `Section`, `ContentWrapper`, `Grid`, `Card`, `Heading`, `Paragraph`, `Eyebrow`, `Img`, `Video`, `Overlay` et `Button`. Le menu, le pied de page et les photos utilisent `Nav`, `NavLink`, `Footer` et `Modal`. La couche de reset qui neutralisait Lumos a été supprimée, ainsi que les anciennes implémentations de navigation et de pied de page.
 
-Les fichiers de contenu contiennent 89 occurrences de `Section`, 62 de `Grid`, 65 de `Card`, 190 de `Heading`, 220 de `Paragraph`, 111 de `Img` et 66 de `Button`. Ce sont des occurrences dans les sources, avant répétition du contact partagé dans les pages construites. Les variantes typographiques sont actives ; aucun titre de contenu n'utilise le style hérité.
+Les fichiers de contenu contiennent 89 occurrences de `Section`, 70 de `Grid`, 65 de `Card`, 190 de `Heading`, 228 de `Paragraph`, 111 de `Img` et 66 de `Button`. Ce sont des occurrences dans les sources, avant répétition du contact partagé dans les pages construites. Les variantes typographiques sont actives ; aucun titre de contenu n'utilise le style hérité.
 
 Les extensions restent dans les composants qui possèdent leur rendu : largeur et surface de `Section`, proportions et espacement de `Grid`, variantes panel/profile et lien global de `Card`, rôles de taille de `Img`, variante photo de `Modal` et rendu textuel de `Button` dans une carte déjà cliquable. Les variantes existantes sont conservées. `TrainingMeta` mutualise les informations des deux formations ; `ContactSection` reçoit les textes et coordonnées propres à chaque page.
 

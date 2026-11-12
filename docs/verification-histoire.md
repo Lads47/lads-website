@@ -1,7 +1,7 @@
 # Présentation locale de la frise « Notre histoire »
 
 12 novembre 2026. Prévisualisation du build statique : http://127.0.0.1:4321/histoire.
-Cette livraison reste locale. Aucun push, PR ni déploiement.
+État de cette présentation : aucun push, PR ni déploiement. La version locale a ensuite été validée le 12 novembre 2026 et sa proposition sur GitHub autorisée ; voir [le dossier de revue actuel](revue-github.md). Aucune fusion ni mise en ligne n’est autorisée dans ce lot.
 
 ## Résultat
 

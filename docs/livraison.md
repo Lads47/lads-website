@@ -7,7 +7,7 @@
 3. Pour la suite navigateur, conserver ce serveur ouvert et lancer `npm run test:browser`. Windows utilise Chrome ou Edge installé ; ailleurs, installer Chromium avec `npx playwright install chromium`. Les tests simulent les services externes et ne transmettent aucune inscription.
 4. Présenter l'accueil, une solution, une réalisation, les deux formations et les pages légales ; fournir le rapport de vérification. Traiter les retours en local.
 
-**Attendre la validation explicite de l'utilisateur avant tout push ou PR.** Le suivi de cette phase reste local. La configuration GitHub Actions est préparée mais ne s'exécute sur GitHub qu'après publication autorisée de la branche.
+**Validation locale obtenue le 12 novembre 2026.** L’utilisateur autorise la publication de la branche `feat/refonte-astro-lumos` et d’une seule PR vers `main`, en brouillon pendant les contrôles GitHub puis prête à relire lorsqu’ils réussissent. Voir [le dossier de revue](revue-github.md). Cette autorisation exclut la fusion et la mise en ligne. Le workflow vérifie le site et conserve les preuves ; il ne déploie rien.
 
 ## Publication ultérieure
 

@@ -1,5 +1,7 @@
 # Vérification de la refonte locale — 12 novembre 2026
 
+Ce rapport conserve les mesures historiques de la reprise native Lumos. La version locale a depuis été validée et sa proposition sur GitHub autorisée le 12 novembre 2026. Le [dossier de revue actuel](revue-github.md) rassemble les derniers résultats, captures et limites ; ses compteurs remplacent ceux de cette passe.
+
 ## Version présentée
 
 - Adresse : <http://127.0.0.1:4321>.
@@ -8,7 +10,7 @@
 - Source historique : `a4a264380f80e3570bcb3d01a6776bb582439527` de `Lads47/lads-website`. Lors du contrôle du 11 novembre, le pointeur GitHub `main` a été revérifié inchangé ; les 40 HTML publiés correspondent à la référence après normalisation des seules fins de ligne. Aucune modification publiée absente de cette source n'a été détectée dans ces HTML.
 - Astro **7.4.7**, Lumos for Astro **1.0.3**, dépendances exactes et lockfile vérifiés par une installation propre `npm ci`.
 - Reprise native Lumos : suppression du reset de neutralisation, migration des composants, noms de couleurs corrigés et valeurs visuelles déplacées dans les tokens. Voir `docs/lumos.md`.
-- **Aucun push, aucune PR, aucune fusion, aucune mise en ligne.** La version locale attend la validation de l'utilisateur.
+- **État lors de cette passe historique : aucun push, aucune PR, aucune fusion, aucune mise en ligne.** La validation locale a été obtenue ultérieurement ; la fusion et la mise en ligne restent exclues de la proposition GitHub.
 
 ## Contrôles réussis
 
