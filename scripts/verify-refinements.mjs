@@ -23,14 +23,18 @@ export async function verifyRefinements(contextFor, base) {
       assert.ok(home.pause.width >= 44 && home.pause.height >= 44, `Pause tactile à ${width}`);
       for (let index = 1; index < home.nav.length; index++) assert.ok(home.nav[index].left >= home.nav[index - 1].right, `Menu sans collision à ${width}`);
       await page.emulateMedia({ reducedMotion: 'reduce' });
+      // Isolate this navigation from range requests already queued by the prior autoplay.
+      const reducedPage = await context.newPage();
+      await reducedPage.emulateMedia({ reducedMotion: 'reduce' });
       const mediaRequests = [];
-      page.on('request', request => { if (request.url().endsWith('.mp4')) mediaRequests.push(request.url()); });
-      await page.reload({ waitUntil: 'domcontentloaded' });
-      assert.equal(await page.locator('video').evaluate(el => el.paused), true);
+      reducedPage.on('request', request => { if (request.url().endsWith('.mp4')) mediaRequests.push(request.url()); });
+      await reducedPage.goto(base + '/', { waitUntil: 'networkidle' });
+      assert.equal(await reducedPage.locator('video').evaluate(el => el.paused), true);
       assert.equal(mediaRequests.length, 0, 'Pas de téléchargement vidéo imposé en mouvement réduit');
-      await page.locator('#heroPause').click();
-      await page.waitForFunction(() => !document.querySelector('video').paused);
-      assert.match(await page.locator('video').evaluate(el => el.currentSrc), width <= 640 ? /-mobile\.mp4$/ : /demo-ateliers-du-stream\.mp4$/);
+      await reducedPage.locator('#heroPause').click();
+      await reducedPage.waitForFunction(() => !document.querySelector('video').paused);
+      assert.match(await reducedPage.locator('video').evaluate(el => el.currentSrc), width <= 640 ? /-mobile\.mp4$/ : /demo-ateliers-du-stream\.mp4$/);
+      await reducedPage.close();
       await page.goto(base + '/formations', { waitUntil: 'networkidle' });
       await page.locator('.formation-card-logo-wrap').first().scrollIntoViewIfNeeded();
       const logos = await page.locator('.formation-card-logo-wrap img').evaluateAll(images => images.map(image => [image.clientWidth, image.clientHeight]));

@@ -1,0 +1,290 @@
+[
+  {
+    "slug": "peer-gynt",
+    "variant": "desktop",
+    "frames": 6020,
+    "videoDuration": 120.4,
+    "audioDuration": 120.405,
+    "samples": [
+      {
+        "time": 12.0446667,
+        "correlation": 0.99976,
+        "offsetMs": 0
+      },
+      {
+        "time": 60.2233335,
+        "correlation": 0.9998,
+        "offsetMs": 0
+      },
+      {
+        "time": 108.40200030000001,
+        "correlation": 0.99986,
+        "offsetMs": 0
+      }
+    ]
+  },
+  {
+    "slug": "peer-gynt",
+    "variant": "mobile",
+    "frames": 6020,
+    "videoDuration": 120.4,
+    "audioDuration": 120.405,
+    "samples": [
+      {
+        "time": 12.0446667,
+        "correlation": 0.99976,
+        "offsetMs": 0
+      },
+      {
+        "time": 60.2233335,
+        "correlation": 0.9998,
+        "offsetMs": 0
+      },
+      {
+        "time": 108.40200030000001,
+        "correlation": 0.99986,
+        "offsetMs": 0
+      }
+    ]
+  },
+  {
+    "slug": "runik-tcg",
+    "variant": "desktop",
+    "frames": 817,
+    "videoDuration": 32.68,
+    "audioDuration": 32.682,
+    "samples": [
+      {
+        "time": 3.2725000000000004,
+        "correlation": 0.99959,
+        "offsetMs": 0
+      },
+      {
+        "time": 16.3625,
+        "correlation": 0.99934,
+        "offsetMs": 0
+      },
+      {
+        "time": 29.4525,
+        "correlation": 0.99945,
+        "offsetMs": 0
+      }
+    ]
+  },
+  {
+    "slug": "runik-tcg",
+    "variant": "mobile",
+    "frames": 817,
+    "videoDuration": 32.68,
+    "audioDuration": 32.682,
+    "samples": [
+      {
+        "time": 3.2725000000000004,
+        "correlation": 0.99959,
+        "offsetMs": 0
+      },
+      {
+        "time": 16.3625,
+        "correlation": 0.99934,
+        "offsetMs": 0
+      },
+      {
+        "time": 29.4525,
+        "correlation": 0.99945,
+        "offsetMs": 0
+      }
+    ]
+  },
+  {
+    "slug": "multiplex-inovae",
+    "variant": "desktop",
+    "frames": 3492,
+    "videoDuration": 139.68,
+    "audioDuration": 139.69,
+    "samples": [
+      {
+        "time": 13.9733333,
+        "correlation": 0.99947,
+        "offsetMs": 0
+      },
+      {
+        "time": 69.8666665,
+        "correlation": 0.99959,
+        "offsetMs": 0
+      },
+      {
+        "time": 125.7599997,
+        "correlation": 0.99948,
+        "offsetMs": 0
+      }
+    ]
+  },
+  {
+    "slug": "multiplex-inovae",
+    "variant": "mobile",
+    "frames": 3492,
+    "videoDuration": 139.68,
+    "audioDuration": 139.69,
+    "samples": [
+      {
+        "time": 13.9733333,
+        "correlation": 0.99947,
+        "offsetMs": 0
+      },
+      {
+        "time": 69.8666665,
+        "correlation": 0.99959,
+        "offsetMs": 0
+      },
+      {
+        "time": 125.7599997,
+        "correlation": 0.99948,
+        "offsetMs": 0
+      }
+    ]
+  },
+  {
+    "slug": "ceremonie-docteurs-bordeaux",
+    "variant": "desktop",
+    "frames": 2983,
+    "videoDuration": 119.32,
+    "audioDuration": 119.338,
+    "samples": [
+      {
+        "time": 11.938,
+        "correlation": 0.99992,
+        "offsetMs": 0
+      },
+      {
+        "time": 59.69,
+        "correlation": 0.99947,
+        "offsetMs": 0
+      },
+      {
+        "time": 107.442,
+        "correlation": 0.99981,
+        "offsetMs": 0
+      }
+    ]
+  },
+  {
+    "slug": "ceremonie-docteurs-bordeaux",
+    "variant": "mobile",
+    "frames": 2983,
+    "videoDuration": 119.32,
+    "audioDuration": 119.338,
+    "samples": [
+      {
+        "time": 11.938,
+        "correlation": 0.99992,
+        "offsetMs": 0
+      },
+      {
+        "time": 59.69,
+        "correlation": 0.99947,
+        "offsetMs": 0
+      },
+      {
+        "time": 107.442,
+        "correlation": 0.99981,
+        "offsetMs": 0
+      }
+    ]
+  },
+  {
+    "slug": "histoire-facebook-2016",
+    "variant": "desktop",
+    "frames": 466,
+    "videoDuration": 18.64,
+    "audioDuration": 18.645,
+    "samples": [
+      {
+        "time": 1.8686667000000001,
+        "correlation": 0.99985,
+        "offsetMs": 0
+      },
+      {
+        "time": 9.3433335,
+        "correlation": 0.99911,
+        "offsetMs": 0
+      },
+      {
+        "time": 16.8180003,
+        "correlation": 0.99936,
+        "offsetMs": 0
+      }
+    ]
+  },
+  {
+    "slug": "histoire-facebook-2016",
+    "variant": "mobile",
+    "frames": 466,
+    "videoDuration": 18.64,
+    "audioDuration": 18.645,
+    "samples": [
+      {
+        "time": 1.8686667000000001,
+        "correlation": 0.99985,
+        "offsetMs": 0
+      },
+      {
+        "time": 9.3433335,
+        "correlation": 0.99911,
+        "offsetMs": 0
+      },
+      {
+        "time": 16.8180003,
+        "correlation": 0.99936,
+        "offsetMs": 0
+      }
+    ]
+  },
+  {
+    "slug": "histoire-multiplex-2018",
+    "variant": "desktop",
+    "frames": 2261,
+    "videoDuration": 90.44,
+    "audioDuration": 90.453,
+    "samples": [
+      {
+        "time": 9.0495,
+        "correlation": 0.99982,
+        "offsetMs": 0
+      },
+      {
+        "time": 45.2475,
+        "correlation": 0.99948,
+        "offsetMs": 0
+      },
+      {
+        "time": 81.44550000000001,
+        "correlation": 0.99982,
+        "offsetMs": 0
+      }
+    ]
+  },
+  {
+    "slug": "histoire-multiplex-2018",
+    "variant": "mobile",
+    "frames": 2261,
+    "videoDuration": 90.44,
+    "audioDuration": 90.453,
+    "samples": [
+      {
+        "time": 9.0495,
+        "correlation": 0.99982,
+        "offsetMs": 0
+      },
+      {
+        "time": 45.2475,
+        "correlation": 0.99948,
+        "offsetMs": 0
+      },
+      {
+        "time": 81.44550000000001,
+        "correlation": 0.99982,
+        "offsetMs": 0
+      }
+    ]
+  }
+]

@@ -1,0 +1,31 @@
+---
+import Video from '../media/Video.astro';
+import videos from '../../data/local-videos.json';
+
+interface Props { name: keyof typeof videos; }
+const { name } = Astro.props;
+const video = videos[name];
+---
+<Video
+  src={video.desktop.src}
+  mobileSrc={video.mobile.src === video.desktop.src ? undefined : video.mobile.src}
+  poster={video.poster.src}
+  width={video.desktop.width}
+  height={video.desktop.height}
+  title={video.title}
+  aria-label={video.title}
+  data-local-video={name}
+  controls
+  autoplay={false}
+  loop={false}
+  muted={false}
+  transparent
+  preload="none"
+  loading="lazy"
+>
+  {video.tracks.map(track => <track src={track.src} kind={track.kind as 'captions' | 'subtitles'} srclang={track.language} label={track.label} />)}
+</Video>
+
+<script>
+  import '../../scripts/local-videos';
+</script>

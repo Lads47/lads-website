@@ -9,9 +9,13 @@
 
 **Validation locale obtenue le 12 novembre 2026.** L’utilisateur autorise la publication de la branche `feat/refonte-astro-lumos` et d’une seule PR vers `main`, en brouillon pendant les contrôles GitHub puis prête à relire lorsqu’ils réussissent. Voir [le dossier de revue](revue-github.md). Cette autorisation exclut la fusion et la mise en ligne. Le workflow vérifie le site et conserve les preuves ; il ne déploie rien.
 
+## Complément vidéo en attente
+
+Les six vidéos Vimeo ont été préparées et intégrées en local. La PR #4 est en brouillon, sans nouveau push. La validation locale précédente ne couvre pas ce complément ; voir [le bilan vidéo](videos-locales.md). Lors de la livraison ultérieure, conserver tout `dist/videos/` et vérifier MP4/WebVTT, lecture et requêtes HTTP 206 sur Hostinger. Aucun téléchargement ni réencodage pendant le build.
+
 ## Publication ultérieure
 
-La présente livraison n'autorise ni la fusion ni la mise en ligne. Une fois ces actions demandées, identifier le document root et le moyen d'accès au serveur : le README historique indique Hostinger, les mentions légales indiquent OVH et les réponses HTTP indiquent Nginx ; ces éléments ne suffisent pas à localiser l'hébergement.
+La présente livraison n'autorise ni la fusion ni la mise en ligne. Hostinger est confirmé par le propriétaire. Avant une future livraison, identifier le document root, le moyen d'accès et une éventuelle automatisation extérieure liée à GitHub ; ces paramètres ne sont pas établis par le dépôt. Les anciennes mentions légales citent encore OVH : incohérence éditoriale conservée hors de ce lot.
 
 Avant le remplacement, sauvegarder les fichiers réellement publiés, leurs droits et la configuration de résolution des routes. Construire le commit approuvé avec `npm ci` et `npm run build`, puis préparer une copie de `dist/` dans un emplacement de préproduction. Vérifier les chemins sans extension, `.html`, les ressources `/_astro/`, la 404 et les redirections anciennes avant la bascule.
 

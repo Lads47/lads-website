@@ -1,4 +1,5 @@
 ---
+import LocalVideo from '../site/LocalVideo.astro';
 import ContactSection from './ContactSection.astro';
 import Section from '../wrapper/Section.astro';
 import ContentWrapper from '../wrapper/ContentWrapper.astro';
@@ -75,7 +76,7 @@ import Button from '../Button.astro';
                 </div>
                 <!-- Video -->
                 <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/1006235909" title="C&eacute;r&eacute;monie des docteurs - Universit&eacute; de Bordeaux 2024" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <LocalVideo name="ceremonie-docteurs-bordeaux" />
                 </div>
                 </div>
             </Grid>
@@ -180,8 +181,8 @@ import Button from '../Button.astro';
         }
 
         /* Video */
-        .video-container { margin-top: var(--space-4); position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-small); }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: var(--radius-small); }
+        .video-container { margin-top: var(--space-4); position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: var(--radius-small); }
+        .video-container video { display: block; width: 100%; border-radius: var(--radius-small); }
 
         /* Lightbox */
 

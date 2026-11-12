@@ -6,6 +6,7 @@ import { PNG } from 'pngjs';
 import { verifyRefinements } from './verify-refinements.mjs';
 import { verifyHeroMotion } from './verify-hero-motion.mjs';
 import { verifyNavigation } from './verify-navigation.mjs';
+import { verifyLocalVideos } from './verify-local-videos.mjs';
 import { verifyHistoryTimeline } from './verify-history-timeline.mjs';
 
 const base = process.env.PREVIEW_URL || 'http://127.0.0.1:4321';
@@ -211,6 +212,9 @@ try {
 
   await writeFile('test-results/history-timeline-report.json', JSON.stringify(await verifyHistoryTimeline(contextFor, base), null, 2));
   results.push('Frise histoire : 8 étapes à 7 largeurs, texte 200 %, médias, contrastes, 64 passages aller/retour, restauration, redimensionnement et repli sans JavaScript');
+
+  await writeFile('test-results/local-videos-report.json', JSON.stringify(await verifyLocalVideos(contextFor, base), null, 2));
+  results.push('6 vidéos locales : 18 parcours bureau/tablette/mobile, clavier, lecture, son décodé, recherche, fin, plein écran, sous-titres, HTTP 206 ; 6 lectures sans scripts et pause mutuelle histoire');
 
   const navigation = await verifyNavigation(contextFor, base, routes);
   await writeFile('test-results/navigation-report.json', JSON.stringify(navigation, null, 2));

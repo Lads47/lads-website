@@ -1,0 +1,320 @@
+[
+  {
+    "slug": "peer-gynt",
+    "width": 390,
+    "selected": "/videos/peer-gynt-mobile.mp4",
+    "audioDecoded": true,
+    "keyboard": true,
+    "seek": true,
+    "ended": true,
+    "fullscreen": true,
+    "track": {
+      "language": "fr",
+      "label": "Français (générés automatiquement)",
+      "cues": 29
+    },
+    "range206": true
+  },
+  {
+    "slug": "runik-tcg",
+    "width": 390,
+    "selected": "/videos/runik-tcg-mobile.mp4",
+    "audioDecoded": true,
+    "keyboard": true,
+    "seek": true,
+    "ended": true,
+    "fullscreen": true,
+    "track": {
+      "language": "fr",
+      "label": "Français (générés automatiquement)",
+      "cues": 11
+    },
+    "range206": true
+  },
+  {
+    "slug": "multiplex-inovae",
+    "width": 390,
+    "selected": "/videos/multiplex-inovae-mobile.mp4",
+    "audioDecoded": true,
+    "keyboard": true,
+    "seek": true,
+    "ended": true,
+    "fullscreen": true,
+    "track": {
+      "language": "fr",
+      "label": "Français (générés automatiquement)",
+      "cues": 46
+    },
+    "range206": true
+  },
+  {
+    "slug": "ceremonie-docteurs-bordeaux",
+    "width": 390,
+    "selected": "/videos/ceremonie-docteurs-bordeaux-mobile.mp4",
+    "audioDecoded": true,
+    "keyboard": true,
+    "seek": true,
+    "ended": true,
+    "fullscreen": true,
+    "track": {
+      "language": "fr",
+      "label": "Français (générés automatiquement)",
+      "cues": 22
+    },
+    "range206": true
+  },
+  {
+    "slug": "histoire-facebook-2016",
+    "width": 390,
+    "selected": "/videos/histoire-facebook-2016-mobile.mp4",
+    "audioDecoded": true,
+    "keyboard": true,
+    "seek": true,
+    "ended": true,
+    "fullscreen": true,
+    "track": {
+      "language": "fr",
+      "label": "Français (générés automatiquement)",
+      "cues": 6
+    },
+    "range206": true
+  },
+  {
+    "slug": "histoire-multiplex-2018",
+    "width": 390,
+    "selected": "/videos/histoire-multiplex-2018-mobile.mp4",
+    "audioDecoded": true,
+    "keyboard": true,
+    "seek": true,
+    "ended": true,
+    "fullscreen": true,
+    "track": {
+      "language": "fr",
+      "label": "Français (générés automatiquement)",
+      "cues": 38
+    },
+    "range206": true
+  },
+  {
+    "slug": "peer-gynt",
+    "width": 768,
+    "selected": "/videos/peer-gynt.mp4",
+    "audioDecoded": true,
+    "keyboard": true,
+    "seek": true,
+    "ended": true,
+    "fullscreen": true,
+    "track": {
+      "language": "fr",
+      "label": "Français (générés automatiquement)",
+      "cues": 29
+    },
+    "range206": true
+  },
+  {
+    "slug": "runik-tcg",
+    "width": 768,
+    "selected": "/videos/runik-tcg.mp4",
+    "audioDecoded": true,
+    "keyboard": true,
+    "seek": true,
+    "ended": true,
+    "fullscreen": true,
+    "track": {
+      "language": "fr",
+      "label": "Français (générés automatiquement)",
+      "cues": 11
+    },
+    "range206": true
+  },
+  {
+    "slug": "multiplex-inovae",
+    "width": 768,
+    "selected": "/videos/multiplex-inovae.mp4",
+    "audioDecoded": true,
+    "keyboard": true,
+    "seek": true,
+    "ended": true,
+    "fullscreen": true,
+    "track": {
+      "language": "fr",
+      "label": "Français (générés automatiquement)",
+      "cues": 46
+    },
+    "range206": true
+  },
+  {
+    "slug": "ceremonie-docteurs-bordeaux",
+    "width": 768,
+    "selected": "/videos/ceremonie-docteurs-bordeaux.mp4",
+    "audioDecoded": true,
+    "keyboard": true,
+    "seek": true,
+    "ended": true,
+    "fullscreen": true,
+    "track": {
+      "language": "fr",
+      "label": "Français (générés automatiquement)",
+      "cues": 22
+    },
+    "range206": true
+  },
+  {
+    "slug": "histoire-facebook-2016",
+    "width": 768,
+    "selected": "/videos/histoire-facebook-2016.mp4",
+    "audioDecoded": true,
+    "keyboard": true,
+    "seek": true,
+    "ended": true,
+    "fullscreen": true,
+    "track": {
+      "language": "fr",
+      "label": "Français (générés automatiquement)",
+      "cues": 6
+    },
+    "range206": true
+  },
+  {
+    "slug": "histoire-multiplex-2018",
+    "width": 768,
+    "selected": "/videos/histoire-multiplex-2018.mp4",
+    "audioDecoded": true,
+    "keyboard": true,
+    "seek": true,
+    "ended": true,
+    "fullscreen": true,
+    "track": {
+      "language": "fr",
+      "label": "Français (générés automatiquement)",
+      "cues": 38
+    },
+    "range206": true
+  },
+  {
+    "slug": "peer-gynt",
+    "width": 1440,
+    "selected": "/videos/peer-gynt.mp4",
+    "audioDecoded": true,
+    "keyboard": true,
+    "seek": true,
+    "ended": true,
+    "fullscreen": true,
+    "track": {
+      "language": "fr",
+      "label": "Français (générés automatiquement)",
+      "cues": 29
+    },
+    "range206": true
+  },
+  {
+    "slug": "runik-tcg",
+    "width": 1440,
+    "selected": "/videos/runik-tcg.mp4",
+    "audioDecoded": true,
+    "keyboard": true,
+    "seek": true,
+    "ended": true,
+    "fullscreen": true,
+    "track": {
+      "language": "fr",
+      "label": "Français (générés automatiquement)",
+      "cues": 11
+    },
+    "range206": true
+  },
+  {
+    "slug": "multiplex-inovae",
+    "width": 1440,
+    "selected": "/videos/multiplex-inovae.mp4",
+    "audioDecoded": true,
+    "keyboard": true,
+    "seek": true,
+    "ended": true,
+    "fullscreen": true,
+    "track": {
+      "language": "fr",
+      "label": "Français (générés automatiquement)",
+      "cues": 46
+    },
+    "range206": true
+  },
+  {
+    "slug": "ceremonie-docteurs-bordeaux",
+    "width": 1440,
+    "selected": "/videos/ceremonie-docteurs-bordeaux.mp4",
+    "audioDecoded": true,
+    "keyboard": true,
+    "seek": true,
+    "ended": true,
+    "fullscreen": true,
+    "track": {
+      "language": "fr",
+      "label": "Français (générés automatiquement)",
+      "cues": 22
+    },
+    "range206": true
+  },
+  {
+    "slug": "histoire-facebook-2016",
+    "width": 1440,
+    "selected": "/videos/histoire-facebook-2016.mp4",
+    "audioDecoded": true,
+    "keyboard": true,
+    "seek": true,
+    "ended": true,
+    "fullscreen": true,
+    "track": {
+      "language": "fr",
+      "label": "Français (générés automatiquement)",
+      "cues": 6
+    },
+    "range206": true
+  },
+  {
+    "slug": "histoire-multiplex-2018",
+    "width": 1440,
+    "selected": "/videos/histoire-multiplex-2018.mp4",
+    "audioDecoded": true,
+    "keyboard": true,
+    "seek": true,
+    "ended": true,
+    "fullscreen": true,
+    "track": {
+      "language": "fr",
+      "label": "Français (générés automatiquement)",
+      "cues": 38
+    },
+    "range206": true
+  },
+  {
+    "slug": "peer-gynt",
+    "javaScript": false,
+    "nativePlayback": true
+  },
+  {
+    "slug": "runik-tcg",
+    "javaScript": false,
+    "nativePlayback": true
+  },
+  {
+    "slug": "multiplex-inovae",
+    "javaScript": false,
+    "nativePlayback": true
+  },
+  {
+    "slug": "ceremonie-docteurs-bordeaux",
+    "javaScript": false,
+    "nativePlayback": true
+  },
+  {
+    "slug": "histoire-facebook-2016",
+    "javaScript": false,
+    "nativePlayback": true
+  },
+  {
+    "slug": "histoire-multiplex-2018",
+    "javaScript": false,
+    "nativePlayback": true
+  }
+]

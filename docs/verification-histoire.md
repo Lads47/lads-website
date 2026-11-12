@@ -1,11 +1,13 @@
 # Présentation locale de la frise « Notre histoire »
 
+> **Complément vidéos du 12 novembre 2026 :** les six lecteurs Vimeo sont remplacés dans la version locale par des vidéos natives. La PR #4 est remise en brouillon ; ce complément attend sa validation locale avant tout nouveau push. Voir [le bilan des vidéos locales](videos-locales.md). Les résultats antérieurs ci-dessous concernent la première refonte validée.
+
 12 novembre 2026. Prévisualisation du build statique : http://127.0.0.1:4321/histoire.
 État de cette présentation : aucun push, PR ni déploiement. La version locale a ensuite été validée le 12 novembre 2026 et sa proposition sur GitHub autorisée ; voir [le dossier de revue actuel](revue-github.md). Aucune fusion ni mise en ligne n’est autorisée dans ce lot.
 
 ## Résultat
 
-La liste continue conserve les huit années de 1998 à 2025, leurs huit titres h3, tous les paragraphes, six photos et deux intégrations Vimeo. Les années emploient le style h1 de Lumos sur des spans ; le hero garde l’unique h1 de la page. Le conteneur conserve son plafond de 1 300 px. Les encadrés, ombres et survols du texte ont été retirés.
+La liste continue conserve les huit années de 1998 à 2025, leurs huit titres h3, tous les paragraphes, six photos et deux vidéos, désormais locales dans le complément vidéo. Les années emploient le style h1 de Lumos sur des spans ; le hero garde l’unique h1 de la page. Le conteneur conserve son plafond de 1 300 px. Les encadrés, ombres et survols du texte ont été retirés.
 
 Sur bureau, les trois colonnes sont année, texte et média, avec un rapport texte/média de 1 / 1,25. À la demande de présentation, les années et blocs de texte sont **centrés verticalement sur les médias pour les huit étapes**. Sur tablette, année et texte restent à gauche du média ; sur mobile, la lecture s’empile. L’interligne principal est de 1,5. Les photos, dont les montages d’archives, sont entières ; les lecteurs ont un cadre 16:9, y compris à 320 px. Le fil bleu clair reste à gauche et se termine au dernier repère.
 
@@ -25,8 +27,18 @@ Le hero, le menu et le contact sont conservés, ainsi que les URL, ancres et mé
 
 Preuves locales régénérables : `test-results/history-timeline-report.json`, les quatorze captures `history-{largeur}-{100|200}.png`, `history-mobile-preview.png`, `history-tablet-preview.png`, `history-centered-desktop.png` et `history-centered-2024.png`. La suite générale écrit `test-results/browser-report.json`, `visual-report.json` et `navigation-report.json`.
 
-## Limites conservées
+## Diagnostic Vimeo initial, avant remplacement local
+
+Le diagnostic ci-dessous décrit les anciens lecteurs. Ils sont désormais remplacés par des MP4 locaux avec leurs sous-titres ; voir [le bilan actuel](videos-locales.md).
+
+### Observation historique
 
 Les deux iframes affichent **« Sign in to Vimeo to watch this video »** dans la prévisualisation réelle. Les identifiants, URL, titres et permissions d’intégration sont inchangés. Une lecture publique de leur configuration renvoie HTTP 200 mais aucun fichier vidéo exploitable, aussi bien avec le référent du domaine publié qu’avec celui de localhost. Cela ne permet pas d’attribuer avec certitude la demande à un réglage de confidentialité, une restriction de contenu ou au contexte du lecteur. La lecture des vidéos n’est donc pas certifiée ; les proportions le sont. Aucun compte, cookie de connexion ou droit Vimeo n’a été modifié. Vidéos concernées : [2016](https://player.vimeo.com/video/1006969061) et [2018](https://player.vimeo.com/video/1013489106).
 
+### Limite conservée hors du lot vidéo
+
 À 200 % de texte sur les plus petits écrans, l’adresse électronique du contact/pied de page peut dépasser. Ce défaut préexistant est extérieur à la frise ; ces sections étaient explicitement hors du périmètre de modification. La frise ne déborde à aucune des largeurs testées. Les incohérences éditoriales déjà listées dans `rapport-verification.md` sont conservées.
+
+## Validation du complément vidéo local
+
+Les deux lecteurs natifs conservent les cadres 16:9 et le centrage vertical des huit étapes. Les contrôles des sept largeurs/texte à 200 %, de la progression et des médias ont été rejoués avec succès. La lecture, les sous-titres et la pause mutuelle sont maintenant vérifiés sur les deux fichiers locaux, avec lecture native sans scripts ; la connexion Vimeo décrite dans le diagnostic historique n’est plus requise. Voir [les résultats et captures](videos-locales.md). Cette version reste en attente de validation locale avant push.

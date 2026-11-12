@@ -16,6 +16,8 @@ type Head = Omit<
   poster?: string;
   /** Smaller version of the same complete video, selected on narrow screens. */
   mobileSrc?: string;
+  /** Progressive browser hint for below-the-fold media. */
+  loading?: 'lazy' | 'eager';
 };
 
 type Tail = {
@@ -111,5 +113,6 @@ const isCustom = variant === "custom";
       <source src={mobileSrc} media={mediaTokens['--mq-compact-max']} type="video/mp4" />
       <source src={src} type="video/mp4" />
     </>}
+    <slot />
   </video>
 )}

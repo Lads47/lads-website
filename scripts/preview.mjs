@@ -10,6 +10,7 @@ const project = fileURLToPath(new URL('../', import.meta.url));
 const root = resolve(project, option('--root', 'dist'));
 const port = Number(option('--port', process.env.PORT || '4321'));
 const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.xml': 'application/xml', '.json': 'application/json', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.avif': 'image/avif', '.ico': 'image/x-icon', '.pdf': 'application/pdf', '.woff2': 'font/woff2', '.txt': 'text/plain; charset=utf-8', '.mp4': 'video/mp4' };
+types['.vtt'] = 'text/vtt; charset=utf-8';
 const exists = async (file) => { try { return (await stat(file)).isFile(); } catch { return false; } };
 
 const server = createServer(async (req, res) => {

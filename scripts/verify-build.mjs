@@ -85,8 +85,8 @@ for (const route of routes) {
     else assert.equal(image[1], '', `Image ou texte alternatif inattendu : ${route.route} ${JSON.stringify(image)}`);
   }
   assert.equal(expectedImage, baseline[route.route].images.length, `Image source absente ou déplacée : ${route.route}`);
-  for (const node of all(tree, (n) => ['a', 'img', 'script', 'link', 'source', 'iframe'].includes(n.tagName))) {
-    const ref = attr(node, node.tagName === 'a' || node.tagName === 'link' ? 'href' : 'src');
+  for (const node of all(tree, (n) => ['a', 'img', 'script', 'link', 'source', 'iframe', 'video', 'track'].includes(n.tagName))) {
+    const ref = attr(node, node.tagName === 'a' || node.tagName === 'link' ? 'href' : node.tagName === 'video' ? 'poster' : 'src');
     if (!ref || /^(?:https?:|mailto:|tel:|data:)/.test(ref)) continue;
     const url = new URL(ref, 'https://lesateliersdustream.fr'+route.route);
     const pathname = decodeURIComponent(url.pathname);

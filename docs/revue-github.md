@@ -1,5 +1,7 @@
 # Refonte Astro et Lumos — dossier de revue
 
+> **Complément vidéos du 12 novembre 2026 :** les six lecteurs Vimeo sont remplacés dans la version locale par des vidéos natives. La PR #4 est remise en brouillon ; ce complément attend sa validation locale avant tout nouveau push. Voir [le bilan des vidéos locales](videos-locales.md). Les résultats antérieurs ci-dessous concernent la première refonte validée.
+
 Version locale validée par le propriétaire le **12 novembre 2026**, après présentation et ajustements, dont le centrage de la frise. Publication autorisée sur `feat/refonte-astro-lumos`, avec une seule PR vers `main`, en brouillon pendant les contrôles puis prête à relire. **La fusion et la mise en ligne ne font pas partie de cette autorisation.**
 
 ## Résultat proposé
@@ -13,7 +15,7 @@ HTML historiques et médias → Astro + composants Lumos → dist/ (40 routes HT
 - Vidéo d’accueil servie localement, sans S3, avec version mobile et poster. Réparation de la lightbox tronquée, des liens de contact et du menu clavier ; SVG de contact recolorables, année courante dynamique et défilement doux respectant la réduction des mouvements.
 - Header transparent sur l’accueil puis blanc au défilement, blanc dès le chargement sur les pages internes ; lien Accueil, états actifs bleu clair et bandeaux internes harmonisés. Animation des titres et boutons du hero, interactions des boutons et cartes de solutions plus lisibles.
 - Frise « Notre histoire » : huit étapes, trois colonnes sur bureau, textes et années centrés verticalement sur les médias, photos entières, lecteurs 16:9 et progression ScrollTrigger réversible. Contenus visibles sans JavaScript.
-- Parcours formations et intégrations EVA conservés : sessions, résultats, inscriptions externes, paramètres de retour, événements, repli réseau et opposition aux statistiques. Vimeo, YouTube et Wisio conservés. Aucun CMS ajouté.
+- Parcours formations et intégrations EVA conservés : sessions, résultats, inscriptions externes, paramètres de retour, événements, repli réseau et opposition aux statistiques. Les six lecteurs Vimeo sont remplacés dans le complément local par des MP4 natifs ; YouTube et Wisio sont conservés. Aucun CMS ajouté.
 
 Le crédit demandé dans [le ticket #3](https://github.com/Lads47/lads-website/issues/3), déjà clos, est conservé dans les mentions légales. Aucun ticket ouvert de refonte n’existait au moment de cette proposition.
 
@@ -71,7 +73,8 @@ Bilan : Standards — 0 constat bloquant ; Spec — 0 constat bloquant. Les int�
 
 ## Limites connues et livraison ultérieure
 
-- **Vimeo** : les deux vidéos de la frise demandent une connexion dans le navigateur de prévisualisation. Identifiants et droits inchangés ; lecture non certifiée. Détails dans [la vérification de la frise](verification-histoire.md).
+- **Vidéos locales** : les six lecteurs Vimeo sont remplacés dans le complément en attente de validation locale. Les droits Vimeo restent inchangés. Source, poids et contrôles dans [le bilan vidéo](videos-locales.md).
+- **Wisio** : l’ancienne URL du widget renvoie une page HTML ; défaut préexistant documenté séparément et non réparé dans ce lot.
 - **Textes** : contradictions conservées volontairement, dont les dates CECA/Ekivia, nombres de caméras, ancienneté fixe et mentions légales devenues incomplètes. Liste dans [le rapport historique](rapport-verification.md#textes-et-incohérences-conservés).
 - **Accessibilité connue** : le bleu clair actif/survol du menu sur fond blanc conserve le contraste faible demandé ; ce choix n’est pas revendiqué conforme AA. À 200 % sur petit écran, le courriel du contact/pied de page peut dépasser ; la frise ne déborde pas.
 - **Hébergement** : aucune modification ni publication. Le workflow ne déploie rien. L’existence d’une connexion extérieure entre GitHub et l’hébergeur reste à vérifier avant toute fusion ou livraison.

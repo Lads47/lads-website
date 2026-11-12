@@ -13,7 +13,7 @@ export async function verifyHistoryTimeline(contextFor, base) {
       const content = item.querySelector('.timeline-content');
       const media = item.querySelector('.timeline-media');
       const image = media.querySelector('img');
-      const frame = media.querySelector('iframe');
+      const frame = media.querySelector('video');
       const textStyle = getComputedStyle(content.querySelector('p'));
       return {
         year: year.textContent.trim(), date: rect(year), content: rect(content), media: rect(media),
@@ -56,7 +56,7 @@ export async function verifyHistoryTimeline(contextFor, base) {
       assert.equal(await page.locator('h1').count(), 1);
       assert.equal(await page.locator('.timeline h3').count(), 8);
       assert.equal(await page.locator('.timeline img').count(), 6);
-      assert.equal(await page.locator('.timeline iframe').count(), 2);
+      assert.equal(await page.locator('.timeline video[data-local-video]').count(), 2);
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
       for (const textScale of [1, 2]) {
         if (textScale === 2) await page.addStyleTag({ content: 'html{font-size:200%}' });
@@ -82,7 +82,7 @@ export async function verifyHistoryTimeline(contextFor, base) {
           }
         }
         report.push({ width, textScale, pageOverflow, rows });
-        await page.screenshot({ path: `test-results/history-${width}-${textScale * 100}.png`, fullPage: true, mask: [page.locator('iframe')] });
+        await page.screenshot({ path: `test-results/history-${width}-${textScale * 100}.png`, fullPage: true, mask: [page.locator('video')] });
       }
     } finally { await context.close(); }
   }
