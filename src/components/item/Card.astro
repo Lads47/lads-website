@@ -18,6 +18,8 @@ type Base = HTMLAttributes<"div"> & {
   href?: string;
   /** Allow the image to open in the shared photo dialog. */
   imageZoom?: boolean;
+  /** Cover-image tint strength, passed to the native Overlay component (0–100). */
+  overlayStrength?: number;
   /** Eyebrow text. Supports inline markup. */
   eyebrow?: string;
   /** Card title. Supports inline markup. */
@@ -70,6 +72,7 @@ const {
   render = true,
   href,
   imageZoom = false,
+  overlayStrength = 50,
   eyebrow,
   heading,
   headingTag = "h3",
@@ -131,7 +134,7 @@ if (import.meta.env.DEV && render) {
     {hasImage && (
       <div class="card_visual">
         <Img src={image!} alt={imageAlt} data-lightbox={imageZoom || undefined} />
-        {variant === "cover" && <Overlay variant={imageZoom ? "caption" : "gradient"} />}
+        {variant === "cover" && <Overlay variant={imageZoom ? "caption" : "gradient"} strength={overlayStrength} />}
       </div>
     )}
     {hasContent && (

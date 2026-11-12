@@ -52,9 +52,9 @@ import Img from '../media/Img.astro';
             <hr class="divider">
         </ContentWrapper>
 
-        <Grid xsmall={1} small={1} medium={2} large={4} gap="0">
+        <Grid xsmall={1} small={1} medium={2} large={4} gap="0" class="solution-cards">
             <!-- Carte 1 -->
-            <Card variant="cover" theme="dark" href={"/solutions/captation-multicam"} image="/photo/20251114_155704.webp" imageAlt="">
+            <Card variant="cover" theme="dark" overlayStrength={90} href={"/solutions/captation-multicam"} image="/photo/20251114_155704.webp" imageAlt="">
 
 
                     <Eyebrow tag="span" variant="tag">Essentiel</Eyebrow>
@@ -63,7 +63,7 @@ import Img from '../media/Img.astro';
 
             </Card>
             <!-- Carte 2 -->
-            <Card variant="cover" theme="dark" href={"/solutions/captation-video"} image="/photo/20230825_194710.webp" imageAlt="">
+            <Card variant="cover" theme="dark" overlayStrength={90} href={"/solutions/captation-video"} image="/photo/20230825_194710.webp" imageAlt="">
 
 
                     <Eyebrow tag="span" variant="tag">Premium</Eyebrow>
@@ -72,7 +72,7 @@ import Img from '../media/Img.astro';
 
             </Card>
             <!-- Carte 3 -->
-            <Card variant="cover" theme="dark" href={"/solutions/cameras-tourelle-hf"} image="/photo/20220717_194319.webp" imageAlt="">
+            <Card variant="cover" theme="dark" overlayStrength={90} href={"/solutions/cameras-tourelle-hf"} image="/photo/20220717_194319.webp" imageAlt="">
 
 
                     <Eyebrow tag="span" variant="tag">Liaison sans fil</Eyebrow>
@@ -81,7 +81,7 @@ import Img from '../media/Img.astro';
 
             </Card>
             <!-- Carte 4 -->
-            <Card variant="cover" theme="dark" href={"/solutions/captation-multi-regies"} image="/photo/20251031_162920 (1).webp" imageAlt="">
+            <Card variant="cover" theme="dark" overlayStrength={90} href={"/solutions/captation-multi-regies"} image="/photo/20251031_162920 (1).webp" imageAlt="">
 
 
                     <Eyebrow tag="span" variant="tag">En simultan&eacute;</Eyebrow>
@@ -346,6 +346,10 @@ import Img from '../media/Img.astro';
 
 <style is:global>
 @layer components {
+        .solution-cards .card_wrap {
+            --text-2: var(--text);
+            --text-main-line-height: var(--line-height-huge);
+        }
 
 /* ============================================
            POLICES

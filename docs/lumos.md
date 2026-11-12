@@ -16,6 +16,8 @@ Les extensions restent dans les composants qui possèdent leur rendu : largeur e
 
 Les détails spécifiques conservés, comme la frise historique, les légendes et les métadonnées, utilisent du CSS dans la couche `components`, avec les mêmes tokens. Les textes, images, arrière-plans et URL historiques sont vérifiés séparément du rendu.
 
+Les quatre cartes de solutions immersives de l’accueil sont regroupées par `solution-cards`. Leur texte secondaire reprend localement `--text` et leur interligne principal reprend `--line-height-huge` (1,5), sans modifier la typographie du reste du site. `Card` transmet son option `overlayStrength` au composant natif `Overlay` : 90 pour ces quatre cartes, 50 par défaut pour les autres. Aucun nouveau token global n’est ajouté.
+
 ## Échelle native et réglages du site
 
 Pour composer une section, choisir les variantes de `Section`, `Grid`, `Heading` et `Paragraph`. Les cartes du portfolio utilisent un titre HTML h2 présenté avec la variante h4 et un résumé en texte principal. Les cartes des formations utilisent également la variante h4 et le texte principal. Les titres longs sont alignés à gauche ; les résumés ne sont plus tronqués. Les cartes immersives de l’accueil emploient la variante h4. Les légendes utilisent le texte petit et l’approche emploie l’interlettrage normal.
