@@ -41,6 +41,8 @@ Les tests navigateur neutralisent les services tiers et masquent les lecteurs da
 
 Le contrôle du header attend la fin réelle de ses transitions avant de comparer les couleurs : la première exécution navigateur Linux lisait parfois un blanc transitoire sérialisé `rgba(..., 1)` au lieu du `rgb(...)` final. Les assertions de couleur et d’opacité restent strictes ; aucun style du site n’a été modifié pour ce correctif de synchronisation.
 
+Le test d’introduction du hero vérifie le déplacement sur toute la trajectoire échantillonnée : une première mesure antérieure au positionnement initial de GSAP peut être identique à la dernière, malgré un mouvement intermédiaire réel. L’amplitude doit dépasser un pixel, en complément des contrôles d’opacité, de stabilité du titre, de focus et de mouvement réduit. L’animation du site reste inchangée.
+
 Ces trois captures proviennent du build validé, sans masque de lecteur sur les zones montrées. Le mode de réduction des mouvements conserve le poster local de l’accueil et désactive les introductions ; les services externes sont neutralisés. Elles montrent l’état final des composants. Les captures exhaustives sont disponibles dans les artefacts du workflow.
 
 ### Accueil — bureau, 1 440 px

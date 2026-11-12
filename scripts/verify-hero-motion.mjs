@@ -37,7 +37,10 @@ export async function verifyHeroMotion(contextFor, base) {
       assert.ok(samples.some(sample => sample.buttonOpacities.every(opacity => Number(opacity) === 0)), 'Les deux boutons sont complètement invisibles avant leur entrée');
       assert.ok(samples.some(sample => Number(sample.buttonOpacity) < 0.9));
       assert.ok(samples.some(sample => Number(sample.buttonOpacity) > 0.9));
-      assert.notEqual(samples[0].positions[0], samples.at(-1).positions[0]);
+      // A sample can precede GSAP's initial positioning and equal the final position.
+      // Check the full sampled trajectory, not just its two endpoints.
+      const firstLinePositions = samples.map(sample => sample.positions[0]);
+      assert.ok(Math.max(...firstLinePositions) - Math.min(...firstLinePositions) > 1, 'Déplacement du titre observé pendant la séquence');
       assert.equal(await page.locator('h1').getAttribute('aria-label'), null);
 
       await page.reload({ waitUntil: 'domcontentloaded' });
