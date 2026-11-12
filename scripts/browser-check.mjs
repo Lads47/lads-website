@@ -5,6 +5,7 @@ import pixelmatch from 'pixelmatch';
 import { PNG } from 'pngjs';
 import { verifyRefinements } from './verify-refinements.mjs';
 import { verifyHeroMotion } from './verify-hero-motion.mjs';
+import { verifyNavigation } from './verify-navigation.mjs';
 
 const base = process.env.PREVIEW_URL || 'http://127.0.0.1:4321';
 const sourceBase = process.env.COMPARE_SOURCE_URL;
@@ -202,6 +203,10 @@ try {
 
   await verifyHeroMotion(contextFor, base);
   results.push('Animation hero GSAP : lignes et boutons, titre stable, redimensionnement, focus clavier et mouvement réduit à 390 et 1440 px');
+
+  const navigation = await verifyNavigation(contextFor, base, routes);
+  await writeFile('test-results/navigation-report.json', JSON.stringify(navigation, null, 2));
+  results.push(`Header : ${navigation.length} parcours haut/défilement/retour ; pages internes blanches, accueil transparent, menu mobile et repli sans JavaScript`);
 
   await writeFile('test-results/refinements-report.json', JSON.stringify(await verifyRefinements(contextFor, base), null, 2));
   results.push('Audit Impeccable : 320, 390, 768, 1200 et 1440 px ; contraste, logos, CTA, focus masqué, ancres, images responsive et vidéo adaptée');

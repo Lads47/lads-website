@@ -8,7 +8,7 @@ interface Props {
   render?: boolean;
   /** Fix the nav over the page. */
   overlap?: boolean;
-  /** Transparent navigation over the homepage video. */
+  /** Transparent navigation over the homepage hero; logo links to the top. */
   home?: boolean;
 }
 
@@ -49,6 +49,14 @@ const links = [['/solutions','Nos solutions'],['/realisations','Nos réalisation
 {/* No-JS fallback */}
 <noscript>
   <style>
+    .nav_wrap.home:not(.scrolled) {
+      --heading-accent: var(--link-text);
+      background: var(--background);
+      color: var(--text);
+      border-color: var(--border);
+    }
+    .nav_wrap .nav_logo [data-mode="light"] { opacity: 0; }
+    .nav_wrap .nav_logo [data-mode="dark"] { opacity: 1; }
     .nav_toggle {
       display: none;
     }

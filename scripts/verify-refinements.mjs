@@ -50,7 +50,11 @@ export async function verifyRefinements(contextFor, base) {
         await page.getByRole('link', { name: 'Prochaines sessions', exact: true }).click();
         await page.waitForFunction(() => {
           const target = document.querySelector('#formation-sessions').getBoundingClientRect();
-          return Math.abs(target.top - document.querySelector('header').getBoundingClientRect().bottom) < 3;
+          const header = document.querySelector('header');
+          return header.classList.contains('scrolled') && Math.abs(target.top - header.getBoundingClientRect().bottom) < 3;
+        });
+        await page.locator('#header').evaluate(async header => {
+          await Promise.all(header.getAnimations({ subtree: true }).map(animation => animation.finished.catch(() => {})));
         });
         const contrast = await page.evaluate(() => {
           const canvas = document.createElement('canvas'); canvas.width = canvas.height = 1;
