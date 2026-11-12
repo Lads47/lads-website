@@ -35,7 +35,7 @@ Commandes exécutées sur Windows avec Node 26 : `npm ci`, `npm run check`, `npm
 | Frise | Huit étapes à sept largeurs, texte à 200 %, contraste et proportions ; 64 franchissements aller/retour, restauration et redimensionnement |
 | Anciennes URL | Cinq redirections et réponse 404 vérifiées |
 
-Les tests navigateur neutralisent les services tiers et masquent les lecteurs dans les captures exhaustives pour assurer leur reproductibilité. Ils ne certifient pas la lecture réelle de chaque vidéo externe ni le rendu dynamique de Wisio. Les rapports et captures complets sont dans `test-results/` ; le workflow GitHub les conserve en artefacts pendant 14 jours. Les résultats Linux doivent être lus sur la PR, distinctement des résultats locaux Windows. Le runner est fixé à Ubuntu 24.04, pris en charge par Playwright 1.56.1 verrouillé : le premier essai sur `ubuntu-latest` utilisait Ubuntu 26.04 et échouait à installer Chromium, après réussite des contrôles statiques.
+Les tests navigateur neutralisent les services tiers et masquent les lecteurs dans les captures exhaustives pour assurer leur reproductibilité. Ils ne certifient pas la lecture réelle de chaque vidéo externe ni le rendu dynamique de Wisio. Les rapports et captures complets sont dans `test-results/` ; le workflow GitHub les conserve en artefacts pendant 14 jours. Les résultats Linux doivent être lus sur la PR, distinctement des résultats locaux Windows. La CI utilise Ubuntu 24.04 et son Chrome stable préinstallé, sélectionné explicitement via `BROWSER_PATH`, comme pour les contrôles locaux. Le premier essai sur `ubuntu-latest` utilisait Ubuntu 26.04 et échouait à installer Chromium ; l’installateur sur Ubuntu 24.04 est ensuite resté bloqué plus de cinq minutes. Le recours au navigateur déjà installé conserve toute la suite et évite cette installation supplémentaire. Le workflow journalise la version du navigateur utilisée.
 
 ## Captures représentatives
 
@@ -57,7 +57,7 @@ Ces trois captures proviennent du build validé, sans masque de lecteur sur les 
 
 ### Standards
 
-Aucune violation certaine des standards documentés, ni smell nécessitant une correction avant publication, dans la revue de la CI, de la prévisualisation, des médias, des intégrations EVA, des composants partagés, des animations et des tokens. Le premier run Linux reste nécessaire, car les tests locaux utilisent Chrome et la CI utilise Chromium.
+Aucune violation certaine des standards documentés, ni smell nécessitant une correction avant publication, dans la revue de la CI, de la prévisualisation, des médias, des intégrations EVA, des composants partagés, des animations et des tokens. La revue initiale signalait la nécessité d’une exécution Linux distincte ; la CI et le local utilisent désormais Chrome, mais leurs systèmes restent différents.
 
 ### Spec
 

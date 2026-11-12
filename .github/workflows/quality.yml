@@ -7,7 +7,7 @@ permissions:
   contents: read
 jobs:
   quality:
-    # Keep the runner compatible with the Playwright version pinned in package-lock.json.
+    # Use a stable runner image and its installed Chrome, as in the local checks.
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
@@ -20,7 +20,12 @@ jobs:
       - run: npm run check
       - run: npm run build
       - run: npm test
-      - run: npx playwright install --with-deps chromium
+      - name: Sélectionner Chrome stable du runner
+        shell: bash
+        run: |
+          lads_browser_path="$(command -v google-chrome)"
+          "$lads_browser_path" --version
+          echo "BROWSER_PATH=$lads_browser_path" >> "$GITHUB_ENV"
       - name: Vérifier le rendu et les interactions
         shell: bash
         run: |
