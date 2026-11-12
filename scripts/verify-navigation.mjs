@@ -30,6 +30,10 @@ export async function verifyNavigation(contextFor, base, routes) {
         await page.goto(base + route.route, { waitUntil: 'domcontentloaded' });
         const expected = route.route === '/' ? initial : solid;
         assert.deepEqual(await page.evaluate(style), expected, `${route.route} : accueil transparent, pages internes blanches à ${width} px`);
+        const homeLink = page.locator('#site-navigation a[href="/"]');
+        assert.equal((await homeLink.textContent()).trim(), 'Accueil');
+        assert.equal(await homeLink.getAttribute('aria-current'), route.route === '/' ? 'page' : null);
+        assert.equal(await homeLink.getAttribute('data-active'), route.route === '/' ? 'true' : null);
         await page.evaluate(() => scrollTo({ top: 160, behavior: 'instant' }));
         await page.waitForFunction(() => document.querySelector('#header').classList.contains('scrolled') && getComputedStyle(document.querySelector('#header [data-mode="dark"]')).opacity === '1');
         const scrolled = await page.evaluate(style);

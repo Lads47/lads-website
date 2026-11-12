@@ -12,10 +12,10 @@ type Props = HTMLAttributes<"a"> & {
 const { render = true, href, class: className, ...rest } = Astro.props;
 
 /** Marks the link for the page being viewed. Trailing slashes are ignored. */
-const current =
-  Astro.url.pathname.replace(/\.html$/, "").replace(/\/+$/, "") === href.replace(/\/+$/, "")
-    ? "page"
-    : undefined;
+const path = Astro.url.pathname.replace(/^\/index(?:\.html)?$/, "/").replace(/\.html$/, "").replace(/\/+$/, "");
+const destination = href.replace(/\/+$/, "");
+const current = path === destination ? "page" : undefined;
+const active = current === "page" || Boolean(destination && !href.startsWith("#") && path.startsWith(destination + "/"));
 
 const content = await slotContent(Astro.slots);
 ---
@@ -26,7 +26,7 @@ const content = await slotContent(Astro.slots);
       class:list={["nav_link", className]}
       href={href}
       aria-current={current}
-      data-active={Astro.url.pathname.replace(/\.html$/, "").startsWith(href) && href !== "#contact" ? "true" : undefined}
+      data-active={active ? "true" : undefined}
       {...rest}
     >
       <Fragment set:html={content} />

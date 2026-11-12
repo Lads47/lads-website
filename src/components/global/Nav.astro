@@ -15,7 +15,7 @@ interface Props {
 const { render = true, overlap = false, home = false } = Astro.props;
 const path = Astro.url.pathname.replace(/\.html$/, '');
 const contactHref = ['/mentions-legales','/politique-confidentialite'].includes(path) ? '/#contact' : '#contact';
-const links = [['/solutions','Nos solutions'],['/realisations','Nos réalisations'],['/approche','Notre accompagnement'],['/formations','Nos formations'],['/histoire','Notre histoire']];
+const links = [['/','Accueil'],['/solutions','Nos solutions'],['/realisations','Nos réalisations'],['/approche','Notre accompagnement'],['/formations','Nos formations'],['/histoire','Notre histoire']];
 ---
 
 {render && (
@@ -332,7 +332,7 @@ const links = [['/solutions','Nos solutions'],['/realisations','Nos réalisation
   .nav_links { font-size: var(--text-small); text-transform: uppercase; letter-spacing: var(--label-tracking); font-weight: var(--primary-bold); }
   .nav_link { color: inherit; }
   .nav_link[data-active="true"], .nav_link:hover { color: var(--heading-accent); }
-  @media (--mq-navigation-desktop) { .nav_inner { gap: var(--space-4); } .nav_menu { flex: 1; } .nav_links { gap: var(--space-3); justify-content: space-between; } .nav_link { padding-inline: 0; } }
+  @media (--mq-navigation-desktop) { .nav_menu { flex: 1; } .nav_links { gap: var(--space-3); justify-content: space-between; } .nav_link { padding-inline: 0; } }
   @media (--mq-navigation-mobile) { .nav_menu { --heading-accent: var(--link-text); background: var(--light-100); color: var(--dark-900); } }
 }
 </style>

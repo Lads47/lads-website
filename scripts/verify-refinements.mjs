@@ -18,7 +18,7 @@ export async function verifyRefinements(contextFor, base) {
         nav: [...document.querySelectorAll('.nav_link')].filter(el => getComputedStyle(el).visibility !== 'hidden').map(el => el.getBoundingClientRect().toJSON()),
         height: innerHeight,
       }));
-      if (width < 1200) assert.ok(home.header.height <= 96, `Header compact à ${width}`);
+      if (!home.nav.length) assert.ok(home.header.height <= 96, `Header compact à ${width}`);
       assert.ok(home.actions.every(rect => rect.top > home.header.bottom && rect.bottom <= home.height), `Actions dans le premier écran à ${width}`);
       assert.ok(home.pause.width >= 44 && home.pause.height >= 44, `Pause tactile à ${width}`);
       for (let index = 1; index < home.nav.length; index++) assert.ok(home.nav[index].left >= home.nav[index - 1].right, `Menu sans collision à ${width}`);

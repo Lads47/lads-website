@@ -97,13 +97,17 @@ try {
   assert.equal(await toggle.getAttribute('aria-expanded'), 'false');
   await toggle.click(); assert.equal(await toggle.getAttribute('aria-expanded'), 'true');
   await page.keyboard.press('Tab');
-  assert.equal(await page.evaluate(() => document.activeElement.textContent.trim()), 'Nos solutions');
+  assert.equal(await page.evaluate(() => document.activeElement.textContent.trim()), 'Accueil');
   await page.keyboard.press('Escape'); assert.equal(await toggle.getAttribute('aria-expanded'), 'false');
   assert.equal(await toggle.evaluate((el) => document.activeElement === el), true);
   await toggle.click();
   await page.locator('#site-navigation a[href="/solutions"]').click();
   await page.waitForURL(base+'/solutions');
   assert.equal(await page.locator('#site-navigation a[href="/solutions"]').getAttribute('aria-current'), 'page');
+  await toggle.click();
+  await page.getByRole('link', { name: 'Accueil', exact: true }).click();
+  await page.waitForURL(base+'/');
+  assert.equal(await page.locator('#site-navigation a[href="/"]').getAttribute('aria-current'), 'page');
   results.push('Menu : ouverture, clavier, Échap, retour du focus et navigation');
 
   for (const path of ['/', '/realisations/peer-gynt', '/solutions/multiplex']) {

@@ -26,6 +26,12 @@ Le rôle natif `--heading-accent` mélange le bleu et le marine sur fond clair, 
 
 Lumos définit les rôles et les échelles dans `src/styles/base.css`. Le thème les personnalise dans `src/styles/brand.css`. Pour modifier le rythme des pages, régler les bornes fluides des paliers `--space-1` à `--space-8`, puis celles des espacements de section. Les grilles utilisent les utilitaires d’espacement du starter. Les valeurs structurelles comme `0`, `100%`, `1fr` et les proportions d’image s’écrivent directement en CSS.
 
+Les 33 bandeaux internes utilisent le même cadre dans `src/styles/site.css`, sur la première `Section` avec l’espacement natif `navoverlap`. Leur hauteur minimale combine `--nav-height`, quatre espacements `--section-space-large` et `--space-6`. Le token natif `--section-space-nav-overlap` est réglé localement avec la hauteur du menu et l’espacement `--section-space-small` ; la variante native de section conserve la maîtrise du padding. Le contenu reste centré, avec une hauteur extensible sur petit écran et lorsque le texte est agrandi. L’accueil et la page 404 conservent leur présentation pleine hauteur. Aucune propriété globale supplémentaire n’est ajoutée.
+
+La largeur principale du site utilise le token natif `--max-width-main`, réglé à `81.25rem` (1 300 px à la taille de texte par défaut) dans `brand.css`. Le header et les conteneurs de section partagent ce plafond et conservent leurs marges fluides sur les écrans plus étroits. L’écart logo/navigation utilise à nouveau le réglage natif `--space-6` de `Nav`, sans surcharge desktop vers `--space-4`.
+
+La navigation comporte sept liens, avec « Accueil » en premier. Les conditions partagées `--mq-navigation-desktop` et `--mq-navigation-mobile` basculent à `80rem` (1 280 px) pour garder les sept liens sur une seule ligne. `NavLink` normalise aussi le chemin de construction `/index.html` vers `/` ; le lien Accueil est actif uniquement à la racine, tandis que les catégories restent actives sur leurs sous-pages.
+
 Les huit propriétés globales propres au site se trouvent dans `brand.css`.
 
 | Propriété | Usage partagé |

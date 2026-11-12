@@ -4,6 +4,11 @@
   :target { scroll-margin-top: var(--nav-height); }
   iframe { border: 0; }
   .site-container { width: var(--site-width); max-width: var(--max-width-main); margin-inline: auto; }
+  /* Internal heroes share a frame; narrow layouts and enlarged text can grow. */
+  main > .section.padding-top-navoverlap:first-child {
+    --section-space-nav-overlap: calc(var(--nav-height) + var(--section-space-small));
+    min-block-size: calc(var(--nav-height) + var(--section-space-large) * 4 + var(--space-6));
+  }
   .hero-control_wrap { position: absolute; inset: auto var(--space-4) var(--space-4) auto; width: auto; height: auto; pointer-events: auto; z-index: 2; visibility: hidden; }
   .has-js .hero-control_wrap { visibility: visible; }
   .divider { width: 3.125rem; height: 0.1875rem; background: var(--brand-500); border: 0; margin: 0; }
