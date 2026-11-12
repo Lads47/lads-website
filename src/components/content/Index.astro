@@ -305,18 +305,12 @@ import Img from '../media/Img.astro';
                         <Img loading={"lazy"} src={"/images/logo-far-ouest.png"} alt={"Far Ouest"} style={"height: 2.5rem; opacity: 0.7;"} appearance="logo" transparent />
                     </div>
                 </div>
-                <Grid xsmall={1} small={1} medium={1} large={2} gap="4">
-                    <Card variant="panel">
-                        <Img loading={"lazy"} src={"/photo/historique.webp"} data-lightbox alt={"Les Ateliers du Stream - Historique"} />
-                        <div class="equipe-photo-info">
+                <Grid xsmall={1} small={1} medium={1} large={2} gap="4" class="align-self-start">
+                    <Card variant="cover" theme="dark" image="/photo/historique.webp" imageAlt="Les Ateliers du Stream - Historique" imageZoom class="radius-main" style="--_min-height: 0; --_padding: var(--space-4); aspect-ratio: 3 / 4;">
                             <Heading tag="h4" variant="h4">Notre r&eacute;gie dans les ann&eacute;es 2000</Heading>
-                        </div>
                     </Card>
-                    <Card variant="panel">
-                        <Img loading={"lazy"} src={"/photo/2024.webp"} data-lightbox alt={"Les Ateliers du Stream - 2024"} />
-                        <div class="equipe-photo-info">
+                    <Card variant="cover" theme="dark" image="/photo/2024.webp" imageAlt="Les Ateliers du Stream - 2024" imageZoom class="radius-main" style="--_min-height: 0; --_padding: var(--space-4); aspect-ratio: 3 / 4;">
                             <Heading tag="h4" variant="h4">Nos r&eacute;gies dans les ann&eacute;es 2020</Heading>
-                        </div>
                     </Card>
                     <p class="equipe-caption" style={"grid-column: 1 / -1; text-align: center; font-style: italic; color: var(--text-2); margin-top: var(--space-1); font-size: var(--text-main);"}>Le live a &eacute;volu&eacute;. Les r&eacute;gies aussi&hellip; enfin, pas toutes.</p>
                 </Grid>
@@ -517,11 +511,6 @@ import Img from '../media/Img.astro';
 
         /* Lightbox */
 
-        .equipe-photo-info {
-            position: absolute; bottom: 0; left: 0; right: 0;
-            padding: var(--space-4); color: var(--light-100);
-            background: linear-gradient(0deg, color-mix(in srgb, var(--dark-900) 85%, transparent) 0%, transparent 100%);
-        }
 
         /* ============================================
            RESPONSIVE

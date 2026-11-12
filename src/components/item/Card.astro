@@ -16,6 +16,8 @@ type Base = HTMLAttributes<"div"> & {
   render?: boolean;
   /** Whole-card destination, without nested interactive links. */
   href?: string;
+  /** Allow the image to open in the shared photo dialog. */
+  imageZoom?: boolean;
   /** Eyebrow text. Supports inline markup. */
   eyebrow?: string;
   /** Card title. Supports inline markup. */
@@ -67,6 +69,7 @@ type AllProps = Base & {
 const {
   render = true,
   href,
+  imageZoom = false,
   eyebrow,
   heading,
   headingTag = "h3",
@@ -118,6 +121,7 @@ if (import.meta.env.DEV && render) {
     href={href}
     class:list={[
       "card_wrap",
+      imageZoom && "zoomable",
       variant !== "default" && variant,
       hasTheme && `theme-${theme}`,
       className,
@@ -126,8 +130,8 @@ if (import.meta.env.DEV && render) {
   >
     {hasImage && (
       <div class="card_visual">
-        <Img src={image!} alt={imageAlt} />
-        {variant === "cover" && <Overlay variant="gradient" />}
+        <Img src={image!} alt={imageAlt} data-lightbox={imageZoom || undefined} />
+        {variant === "cover" && <Overlay variant={imageZoom ? "caption" : "gradient"} />}
       </div>
     )}
     {hasContent && (
@@ -230,7 +234,7 @@ if (import.meta.env.DEV && render) {
 
     }
 
-    .card_wrap:has(.button_wrap), .card_wrap[href] {
+    .card_wrap:has(.button_wrap), .card_wrap[href], .card_wrap.zoomable {
       .button_wrap::after {
         content: "";
         position: absolute;
@@ -260,6 +264,7 @@ if (import.meta.env.DEV && render) {
   .card_wrap { border: var(--border-width) solid var(--border); color: inherit; text-decoration: none; }
   .card_wrap.cover { border: 0; border-radius: 0; }
   .card_wrap.cover > .card_content { justify-content: end; }
+  .card_wrap.zoomable > .card_content { pointer-events: none; }
   .card_wrap.stacked > .card_visual > .image { position: absolute; inset: 0; }
   .card_wrap.panel { background: var(--background); }
   .card_content { gap: var(--space-3); min-width: 0; }

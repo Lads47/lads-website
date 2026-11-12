@@ -5,7 +5,7 @@ interface Props extends HTMLAttributes<"div"> {
   /** Set to `false` to omit the component. */
   render?: boolean;
   /** Overlay style. */
-  variant?: "solid" | "gradient" | "ambient";
+  variant?: "solid" | "gradient" | "ambient" | "caption";
   /**
    * Tint strength as a percentage.
    *
@@ -64,6 +64,11 @@ const {
         );
       }
       &.ambient { background: radial-gradient(ellipse at 30% 50%, color-mix(in srgb, var(--brand-500) 10%, transparent), transparent 60%); }
+      &.caption {
+        top: auto;
+        height: 50%;
+        background: linear-gradient(to top, color-mix(in srgb, var(--dark-900) 85%, transparent), transparent);
+      }
     }
   }
 </style>
