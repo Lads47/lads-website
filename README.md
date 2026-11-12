@@ -27,13 +27,13 @@ Dans un second terminal, avec la prévisualisation ouverte : `npm run test:brows
 
 Le site est construit en HTML statique dans `dist/`. Aucun serveur Node n'est nécessaire sur l'hébergement. Les composants Lumos utilisés et le contrat des tokens sont documentés dans `docs/lumos.md`. `npm test` vérifie aussi la réutilisation des rôles Lumos et le nommage des variables.
 
-Les six anciens lecteurs Vimeo sont remplacés localement par des vidéos natives Lumos en 1080p/720p, avec sous-titres et vignettes. Ce complément attend sa validation locale avant tout nouveau push : voir [le bilan et les poids](docs/videos-locales.md). La PR #4 est en brouillon.
+Les six anciens lecteurs Vimeo sont remplacés localement par des vidéos natives Lumos en 1080p/720p, avec sous-titres et vignettes. Ce complément a été validé localement le 12 novembre 2026, et sa publication sur la même PR est autorisée : voir [le bilan et les poids](docs/videos-locales.md). La PR #4 reste en brouillon pendant les contrôles GitHub, puis peut être rendue prête à relire après leur réussite.
 
 La vidéo d'accueil est incluse dans `public/videos/` et servie par le site, sans appel à Amazon S3. Le serveur de prévisualisation prend en charge son type MP4 et les requêtes partielles.
 
 ## Validation et livraison
 
-**Version locale validée le 12 novembre 2026.** La publication de la branche et d’une PR vers `main` est autorisée ; la fusion et la mise en ligne restent des étapes séparées, non autorisées dans ce lot. Le nouveau complément vidéo attend une validation locale distincte. Le [dossier de revue GitHub](docs/revue-github.md) présente le résultat, les captures, les contrôles et les limites. La procédure de livraison et de retour arrière est dans [docs/livraison.md](docs/livraison.md).
+**Version locale validée le 12 novembre 2026.** La publication de la branche et d’une PR vers `main` est autorisée ; la fusion et la mise en ligne restent des étapes séparées, non autorisées dans ce lot. Le complément vidéo est également validé localement ; aucun accord de fusion ni de déploiement n’est donné. Le [dossier de revue GitHub](docs/revue-github.md) présente le résultat, les captures, les contrôles et les limites. La procédure de livraison et de retour arrière est dans [docs/livraison.md](docs/livraison.md).
 
 Tous les textes sont conservés selon le choix de l'utilisateur. Les contradictions éditoriales et les limites d'intégrations externes sont signalées dans le rapport, sans correction éditoriale automatique.
 

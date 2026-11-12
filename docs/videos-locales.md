@@ -1,6 +1,6 @@
 # Six vidéos Vimeo remplacées en local
 
-Complément du 12 novembre 2026, **en attente de validation locale avant tout nouveau push**. La PR #4 est remise en brouillon. Aucune fusion, publication du site ou modification des droits Vimeo.
+Complément **validé localement le 12 novembre 2026**. Le propriétaire autorise le push sur la même PR #4 et son passage en prête à relire après réussite des contrôles GitHub. La PR reste en brouillon pendant ces contrôles. Aucune fusion, publication du site ou modification des droits Vimeo.
 
 ## Fichiers et poids
 
@@ -51,7 +51,7 @@ Le script manuel `scripts/verify-video-quality.mjs`, avec les mêmes variables F
 
 `npm test` vérifie les empreintes, profils, proportions, cadence, durée, limite de poids, index de début de fichier, posters et WebVTT, en plus des 40 routes et des tokens Lumos. La suite navigateur comprend 18 parcours vidéo (six × trois largeurs), six lectures sans scripts, sélection mobile, maintien de la lecture au redimensionnement et pause mutuelle dans la frise. Elle vérifie le clavier, lecture/pause, recherche, audio effectivement décodé, volume, sous-titres chargés, fin, plein écran, MIME MP4, requêtes 206 et absence de requête Vimeo/CDN. Les services EVA restent simulés pour éviter toute inscription ou statistique de test.
 
-Les rapports de cette exécution et les captures sont dans `test-results/` ; la CI les conservera en artefacts après la validation locale et le prochain push autorisé. Les captures représentatives sont jointes au dossier de revue local : [frise bureau](revue/videos-histoire-bureau.png) et [TCG mobile](revue/videos-tcg-mobile.png). Les différences visibles sont les commandes natives du navigateur et les nouvelles vignettes extraites des films ; les textes et les cadres restent conservés. Les essais mobile/tablette sont effectués par émulation de viewport dans Chrome Windows, sans certification sur un appareil iOS/Safari.
+Les rapports de cette exécution et les captures sont dans `test-results/` ; la CI les conservera en artefacts après le push autorisé. Les captures représentatives sont jointes au dossier de revue local : [frise bureau](revue/videos-histoire-bureau.png) et [TCG mobile](revue/videos-tcg-mobile.png). Les différences visibles sont les commandes natives du navigateur et les nouvelles vignettes extraites des films ; les textes et les cadres restent conservés. Les essais mobile/tablette sont effectués par émulation de viewport dans Chrome Windows, sans certification sur un appareil iOS/Safari.
 
 ## Défaut Wisio distinct
 
@@ -61,7 +61,7 @@ L'ancienne intégration de `/solutions/chapitrage-automatique` demande `https://
 
 Prévisualisation : <http://127.0.0.1:4321/histoire> et les quatre pages `/solutions/multiplex`, `/realisations/peer-gynt`, `/realisations/ceremonie-docteurs-bordeaux`, `/realisations/tcg`.
 
-Attendre la validation explicite de ce complément. Ensuite seulement : pousser cette même branche, actualiser la PR #4, attendre les contrôles verts et la rendre prête à relire. La livraison Hostinger reste séparée : copier intégralement le `dist/` approuvé, dont `videos/`, vérifier les types MIME MP4/WebVTT et les réponses 206 sur le serveur réel, puis appliquer la procédure existante de sauvegarde/retour arrière. Aucune modification de l'hébergement n'a été faite pour ces essais locaux.
+La validation explicite du complément est obtenue. Publier sur cette même branche, actualiser la PR #4, attendre les contrôles verts et la rendre prête à relire. La livraison Hostinger reste séparée : copier intégralement le `dist/` approuvé, dont `videos/`, vérifier les types MIME MP4/WebVTT et les réponses 206 sur le serveur réel, puis appliquer la procédure existante de sauvegarde/retour arrière. Aucune modification de l'hébergement n'a été faite pour ces essais locaux.
 
 ## Résultat de l’exécution locale du 12 novembre 2026
 
@@ -77,4 +77,4 @@ Preuves conservées avec le dossier local : [24 parcours vidéo](revue/videos-na
 
 Le test du mouvement réduit de l’accueil utilise désormais une page neuve, configurée avant navigation, pour ne pas compter une requête MP4 déjà engagée sur la page précédente. L’absence de téléchargement automatique reste exigée ; le comportement de l’accueil n’a pas été modifié. L’observation du repli sans scripts interroge l’état vidéo depuis Node, car le polling par `requestAnimationFrame` dans une page dont JavaScript est désactivé ne progresse pas. La lecture elle-même est déclenchée par la commande native, et la pause par le clavier.
 
-**État de livraison : local uniquement, validation du propriétaire encore attendue.** PR #4 en brouillon ; aucun nouveau push et aucun déploiement. Les anciens problèmes Wisio, les incohérences éditoriales et le débordement du courriel à 200 % restent documentés hors de ce complément.
+**État de livraison : validation locale obtenue et publication autorisée sur la PR #4.** Elle reste en brouillon jusqu’à la réussite des contrôles GitHub. Aucun déploiement ni fusion autorisés. Les anciens problèmes Wisio, les incohérences éditoriales et le débordement du courriel à 200 % restent documentés hors de ce complément.

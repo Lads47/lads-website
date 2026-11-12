@@ -9,9 +9,9 @@
 
 **Validation locale obtenue le 12 novembre 2026.** L’utilisateur autorise la publication de la branche `feat/refonte-astro-lumos` et d’une seule PR vers `main`, en brouillon pendant les contrôles GitHub puis prête à relire lorsqu’ils réussissent. Voir [le dossier de revue](revue-github.md). Cette autorisation exclut la fusion et la mise en ligne. Le workflow vérifie le site et conserve les preuves ; il ne déploie rien.
 
-## Complément vidéo en attente
+## Complément vidéo validé localement
 
-Les six vidéos Vimeo ont été préparées et intégrées en local. La PR #4 est en brouillon, sans nouveau push. La validation locale précédente ne couvre pas ce complément ; voir [le bilan vidéo](videos-locales.md). Lors de la livraison ultérieure, conserver tout `dist/videos/` et vérifier MP4/WebVTT, lecture et requêtes HTTP 206 sur Hostinger. Aucun téléchargement ni réencodage pendant le build.
+Les six vidéos Vimeo ont été préparées, intégrées et validées localement le 12 novembre 2026. Le propriétaire autorise leur publication sur la même PR #4, maintenue en brouillon jusqu’à la réussite des contrôles GitHub ; voir [le bilan vidéo](videos-locales.md). Lors de la livraison ultérieure, conserver tout `dist/videos/` et vérifier MP4/WebVTT, lecture et requêtes HTTP 206 sur Hostinger. Aucun téléchargement ni réencodage pendant le build.
 
 ## Publication ultérieure
 

@@ -1,6 +1,6 @@
 # Présentation locale de la frise « Notre histoire »
 
-> **Complément vidéos du 12 novembre 2026 :** les six lecteurs Vimeo sont remplacés dans la version locale par des vidéos natives. La PR #4 est remise en brouillon ; ce complément attend sa validation locale avant tout nouveau push. Voir [le bilan des vidéos locales](videos-locales.md). Les résultats antérieurs ci-dessous concernent la première refonte validée.
+> **Complément vidéos validé localement le 12 novembre 2026.** Le propriétaire autorise sa publication sur la même PR #4, maintenue en brouillon pendant les contrôles GitHub puis prête à relire après leur réussite. Aucune fusion ni mise en ligne autorisée. Voir [le bilan des vidéos locales](videos-locales.md). Les résultats historiques ci-dessous concernent la première refonte.
 
 12 novembre 2026. Prévisualisation du build statique : http://127.0.0.1:4321/histoire.
 État de cette présentation : aucun push, PR ni déploiement. La version locale a ensuite été validée le 12 novembre 2026 et sa proposition sur GitHub autorisée ; voir [le dossier de revue actuel](revue-github.md). Aucune fusion ni mise en ligne n’est autorisée dans ce lot.
@@ -41,4 +41,4 @@ Les deux iframes affichent **« Sign in to Vimeo to watch this video »** dans l
 
 ## Validation du complément vidéo local
 
-Les deux lecteurs natifs conservent les cadres 16:9 et le centrage vertical des huit étapes. Les contrôles des sept largeurs/texte à 200 %, de la progression et des médias ont été rejoués avec succès. La lecture, les sous-titres et la pause mutuelle sont maintenant vérifiés sur les deux fichiers locaux, avec lecture native sans scripts ; la connexion Vimeo décrite dans le diagnostic historique n’est plus requise. Voir [les résultats et captures](videos-locales.md). Cette version reste en attente de validation locale avant push.
+Les deux lecteurs natifs conservent les cadres 16:9 et le centrage vertical des huit étapes. Les contrôles des sept largeurs/texte à 200 %, de la progression et des médias ont été rejoués avec succès. La lecture, les sous-titres et la pause mutuelle sont maintenant vérifiés sur les deux fichiers locaux, avec lecture native sans scripts ; la connexion Vimeo décrite dans le diagnostic historique n’est plus requise. Voir [les résultats et captures](videos-locales.md). Cette version est validée localement ; sa publication est autorisée sur la PR #4, sans fusion ni déploiement.

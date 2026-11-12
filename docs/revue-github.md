@@ -1,6 +1,6 @@
 # Refonte Astro et Lumos — dossier de revue
 
-> **Complément vidéos du 12 novembre 2026 :** les six lecteurs Vimeo sont remplacés dans la version locale par des vidéos natives. La PR #4 est remise en brouillon ; ce complément attend sa validation locale avant tout nouveau push. Voir [le bilan des vidéos locales](videos-locales.md). Les résultats antérieurs ci-dessous concernent la première refonte validée.
+> **Complément vidéos validé localement le 12 novembre 2026.** Le propriétaire autorise sa publication sur la même PR #4, maintenue en brouillon pendant les contrôles GitHub puis prête à relire après leur réussite. Aucune fusion ni mise en ligne autorisée. Voir [le bilan des vidéos locales](videos-locales.md). Les résultats historiques ci-dessous concernent la première refonte.
 
 Version locale validée par le propriétaire le **12 novembre 2026**, après présentation et ajustements, dont le centrage de la frise. Publication autorisée sur `feat/refonte-astro-lumos`, avec une seule PR vers `main`, en brouillon pendant les contrôles puis prête à relire. **La fusion et la mise en ligne ne font pas partie de cette autorisation.**
 
@@ -73,7 +73,7 @@ Bilan : Standards — 0 constat bloquant ; Spec — 0 constat bloquant. Les int�
 
 ## Limites connues et livraison ultérieure
 
-- **Vidéos locales** : les six lecteurs Vimeo sont remplacés dans le complément en attente de validation locale. Les droits Vimeo restent inchangés. Source, poids et contrôles dans [le bilan vidéo](videos-locales.md).
+- **Vidéos locales** : les six lecteurs Vimeo sont remplacés dans le complément validé localement. Les droits Vimeo restent inchangés. Source, poids et contrôles dans [le bilan vidéo](videos-locales.md).
 - **Wisio** : l’ancienne URL du widget renvoie une page HTML ; défaut préexistant documenté séparément et non réparé dans ce lot.
 - **Textes** : contradictions conservées volontairement, dont les dates CECA/Ekivia, nombres de caméras, ancienneté fixe et mentions légales devenues incomplètes. Liste dans [le rapport historique](rapport-verification.md#textes-et-incohérences-conservés).
 - **Accessibilité connue** : le bleu clair actif/survol du menu sur fond blanc conserve le contraste faible demandé ; ce choix n’est pas revendiqué conforme AA. À 200 % sur petit écran, le courriel du contact/pied de page peut dépasser ; la frise ne déborde pas.
