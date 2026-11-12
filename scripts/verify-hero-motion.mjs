@@ -15,6 +15,7 @@ export async function verifyHeroMotion(contextFor, base) {
           if (lines.length && button) window.heroMotionSamples.push({
             positions: lines.map(line => line.getBoundingClientRect().y),
             buttonOpacity: getComputedStyle(button).opacity,
+            buttonOpacities: [...document.querySelectorAll('.hero-intro .button-wrapper a')].map(el => getComputedStyle(el).opacity),
           });
         }, 30);
         setTimeout(() => clearInterval(timer), 2500);
@@ -33,6 +34,7 @@ export async function verifyHeroMotion(contextFor, base) {
       assert.equal(await page.locator('h1').evaluate(el => el.clientHeight), initialHeight, 'Titre stable après nettoyage');
       const samples = await page.evaluate(() => window.heroMotionSamples);
       assert.ok(samples.length > 3, 'Animation observée sur plusieurs images');
+      assert.ok(samples.some(sample => sample.buttonOpacities.every(opacity => Number(opacity) === 0)), 'Les deux boutons sont complètement invisibles avant leur entrée');
       assert.ok(samples.some(sample => Number(sample.buttonOpacity) < 0.9));
       assert.ok(samples.some(sample => Number(sample.buttonOpacity) > 0.9));
       assert.notEqual(samples[0].positions[0], samples.at(-1).positions[0]);

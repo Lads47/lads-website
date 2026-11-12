@@ -44,7 +44,7 @@ async function animateHero() {
         timeline
           .from(subtitle, { opacity: 0, y: '0.5em', duration: 0.35 }, 0)
           .from(self.lines, { yPercent: 105, opacity: 0.15, duration: 0.8, stagger: 0.1 }, 0.12)
-          .from(buttons, { opacity: 0.2, y: '1em', scale: 0.96, duration: 0.5, stagger: 0.08, clearProps: 'transform,opacity' }, 0.55);
+          .from(buttons, { opacity: 0, y: '1em', scale: 0.96, duration: 0.5, stagger: 0.08, clearProps: 'transform,opacity' }, 0.55);
         return timeline;
       },
     });
