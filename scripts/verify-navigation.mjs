@@ -2,6 +2,10 @@ import assert from 'node:assert/strict';
 
 export async function verifyNavigation(contextFor, base, routes) {
   const observations = [];
+  const settleHeader = page => page.locator('#header').evaluate(async header => {
+    // Rounded opacity can reach "1" one frame before the background transition ends.
+    await Promise.all(header.getAnimations({ subtree: true }).map(animation => animation.finished.catch(() => {})));
+  });
   const style = () => {
     const header = document.querySelector('#header');
     const computed = getComputedStyle(header);
@@ -25,6 +29,7 @@ export async function verifyNavigation(contextFor, base, routes) {
       assert.equal(initial.light, '1');
       await page.evaluate(() => scrollTo({ top: 160, behavior: 'instant' }));
       await page.waitForFunction(() => getComputedStyle(document.querySelector('#header [data-mode="dark"]')).opacity === '1');
+      await settleHeader(page);
       const solid = await page.evaluate(style);
       for (const route of routes.filter(route => route.shell)) {
         await page.goto(base + route.route, { waitUntil: 'domcontentloaded' });
@@ -38,12 +43,14 @@ export async function verifyNavigation(contextFor, base, routes) {
         assert.ok(await page.locator('.nav_link[data-active="true"]').evaluateAll(links => links.every(link => getComputedStyle(link).color === 'rgb(125, 206, 245)')), 'État actif avec le bleu clair de marque');
         await page.evaluate(() => scrollTo({ top: 160, behavior: 'instant' }));
         await page.waitForFunction(() => document.querySelector('#header').classList.contains('scrolled') && getComputedStyle(document.querySelector('#header [data-mode="dark"]')).opacity === '1');
+        await settleHeader(page);
         const scrolled = await page.evaluate(style);
         assert.equal(scrolled.background, 'rgb(255, 255, 255)');
         assert.equal(scrolled.light, '0');
         assert.equal(scrolled.top, 0, 'Header fixe sans déplacement');
         await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
         await page.waitForFunction(() => !document.querySelector('#header').classList.contains('scrolled') && getComputedStyle(document.querySelector('#header [data-mode="dark"]')).opacity === (document.querySelector('#header').classList.contains('home') ? '0' : '1'));
+        await settleHeader(page);
         assert.deepEqual(await page.evaluate(style), expected, 'Retour à l’état initial propre à chaque page');
         if (width === 390 && menuTemplates.has(route.route)) {
           const toggle = page.getByRole('button', { name: 'Menu', exact: true });

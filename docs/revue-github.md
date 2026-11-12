@@ -39,6 +39,8 @@ Les tests navigateur neutralisent les services tiers et masquent les lecteurs da
 
 ## Captures représentatives
 
+Le contrôle du header attend la fin réelle de ses transitions avant de comparer les couleurs : la première exécution navigateur Linux lisait parfois un blanc transitoire sérialisé `rgba(..., 1)` au lieu du `rgb(...)` final. Les assertions de couleur et d’opacité restent strictes ; aucun style du site n’a été modifié pour ce correctif de synchronisation.
+
 Ces trois captures proviennent du build validé, sans masque de lecteur sur les zones montrées. Le mode de réduction des mouvements conserve le poster local de l’accueil et désactive les introductions ; les services externes sont neutralisés. Elles montrent l’état final des composants. Les captures exhaustives sont disponibles dans les artefacts du workflow.
 
 ### Accueil — bureau, 1 440 px
