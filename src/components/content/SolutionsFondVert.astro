@@ -9,15 +9,11 @@ import Grid from '../wrapper/Grid.astro';
 import Img from '../media/Img.astro';
 import Button from '../Button.astro';
 ---
-<!-- ============================================
-         HEADER
-         ============================================ -->
 
 
 
-    <!-- ============================================
-         PAGE HERO
-         ============================================ -->
+
+
     <Section theme="dark" paddingTop="navoverlap" paddingBottom="small" align="center">
 <Img slot="background" src="/photo/20210406_151153.webp" alt="" loading="eager" style={"opacity:var(--hero-image-opacity);object-position:center calc(50% + 8.125rem)"} />
 
@@ -29,7 +25,7 @@ import Button from '../Button.astro';
 
     </Section>
 
-    <!-- Breadcrumb retour -->
+
     <div class="site-container">
         <a href="/solutions" class="breadcrumb-back">
             <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
@@ -37,9 +33,7 @@ import Button from '../Button.astro';
         </a>
     </div>
 
-    <!-- ============================================
-         DETAIL
-         ============================================ -->
+
     <Section theme="light">
 
             <Grid xsmall={1} small={1} medium={1} large={2} gap="8" tracks="var(--tracks-content-sidebar)">
@@ -94,7 +88,7 @@ import Button from '../Button.astro';
                 </div>
             </Grid>
 
-            <!-- Photos -->
+
             <Grid xsmall={1} small={1} medium={2} large={3} gap="4">
                 <div class="real-photo-item">
                     <Img loading={"lazy"} src={"/photo/20210601_144731.webp"} alt={"Réalisation en direct sur fond vert"} appearance="photo" />
@@ -110,7 +104,7 @@ import Button from '../Button.astro';
                 </div>
             </Grid>
 
-            <!-- Back link -->
+
             <Button element="link" variant="link" href={"/solutions"}>
                 <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
                 Retour aux solutions
@@ -120,10 +114,10 @@ import Button from '../Button.astro';
 
     <ContactSection eyebrow={"Vous avez un projet similaire ?"} title={"Et si on travaillait ensemble ?"} description={"Un projet en construction, un événement qui approche que vous envisagez de filmer et diffuser ? Parlons-en."} email={"prod@lesateliersdustream.fr"} phoneHref={"tel:+33661968858"} phone={"06 61 96 88 58"} locationAlt={"Nos bureaux"} training={false} />
 
-    <!-- Lightbox -->
 
 
-    <!-- Footer -->
+
+
 
 
 

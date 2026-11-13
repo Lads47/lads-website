@@ -12,15 +12,11 @@ import Grid from '../wrapper/Grid.astro';
 import Card from '../item/Card.astro';
 import Img from '../media/Img.astro';
 ---
-<!-- ============================================
-         HEADER
-         ============================================ -->
 
 
 
-    <!-- ============================================
-         HERO (INCHANGE)
-         ============================================ -->
+
+
     <Section theme="dark" fullHeight paddingTop="none" paddingBottom="none" gap="0" align="center">
 <Video id="heroVideo" slot="background" src="/videos/demo-ateliers-du-stream.mp4" mobileSrc="/videos/demo-ateliers-du-stream-mobile.mp4" poster="/videos/demo-ateliers-du-stream.webp" autoplay={false} preload="none" variant="auto" style="opacity:var(--hero-image-opacity)" />
 <div slot="background" class="hero-control_wrap"><Button id="heroPause" variant="play" label="Mettre la vidéo en pause" pressed={true} emphasis="secondary" class="padding-2" /></div>
@@ -38,10 +34,7 @@ import Img from '../media/Img.astro';
   import '../../scripts/hero-intro';
 </script>
 
-    <!-- ============================================
-         NOS POSSIBILITES
-         4 cartes immersives plein largeur
-         ============================================ -->
+
     <Section id="possibilites" theme="light" tone="muted" width="full" gap="8">
         <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
             <Eyebrow tag="span">Nos solutions multicam&eacute;ra</Eyebrow>
@@ -53,7 +46,7 @@ import Img from '../media/Img.astro';
         </ContentWrapper>
 
         <Grid xsmall={1} small={1} medium={2} large={4} gap="0" class="home-cover-cards">
-            <!-- Carte 1 -->
+
             <Card variant="cover" theme="dark" overlayStrength={90} href={"/solutions/captation-multicam"} image="/photo/20251114_155704.webp" imageAlt="">
 
 
@@ -62,7 +55,7 @@ import Img from '../media/Img.astro';
                     <Paragraph variant="main">2 &agrave; 3 cam&eacute;ras, id&eacute;ale pour les petites salles. R&eacute;gie compacte et agile pour conf&eacute;rences, interviews et tables rondes. Malgr&eacute; son format compact, elle g&egrave;re la diffusion des m&eacute;dias sur vid&eacute;oprojecteur et l'int&eacute;gration d'intervenants en visioconf&eacute;rence. Montage et d&eacute;montage rapides.</Paragraph>
 
             </Card>
-            <!-- Carte 2 -->
+
             <Card variant="cover" theme="dark" overlayStrength={90} href={"/solutions/captation-video"} image="/photo/20230825_194710.webp" imageAlt="">
 
 
@@ -71,7 +64,7 @@ import Img from '../media/Img.astro';
                     <Paragraph variant="main">Pour les spectacles et grands &eacute;v&eacute;nements n&eacute;cessitant un dispositif cons&eacute;quent. Cette r&eacute;gie compl&egrave;te g&egrave;re le live stream, la diffusion sur grand &eacute;cran et l'ensemble des flux m&eacute;dias en simultan&eacute;.</Paragraph>
 
             </Card>
-            <!-- Carte 3 -->
+
             <Card variant="cover" theme="dark" overlayStrength={90} href={"/solutions/cameras-tourelle-hf"} image="/photo/20220717_194319.webp" imageAlt="">
 
 
@@ -80,7 +73,7 @@ import Img from '../media/Img.astro';
                     <Paragraph variant="main">Dispositif id&eacute;al pour les installations en ext&eacute;rieur avec du public. Chaque cam&eacute;ra dispose de son propre &eacute;metteur et le tout est aliment&eacute; par batterie. Un dispositif tr&egrave;s rare sur le march&eacute; de l'audiovisuel.</Paragraph>
 
             </Card>
-            <!-- Carte 4 -->
+
             <Card variant="cover" theme="dark" overlayStrength={90} href={"/solutions/captation-multi-regies"} image="/photo/20251031_162920 (1).webp" imageAlt="">
 
 
@@ -96,9 +89,7 @@ import Img from '../media/Img.astro';
         </div>
     </Section>
 
-    <!-- ============================================
-         NOTRE SPECIFICITE
-         ============================================ -->
+
     <Section theme="light">
 
             <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
@@ -126,9 +117,7 @@ import Img from '../media/Img.astro';
 
     </Section>
 
-    <!-- ============================================
-         CHIFFRES CLES
-         ============================================ -->
+
     <Section theme="dark">
 
             <Grid xsmall={1} small={2} medium={2} large={4} gap="6" class="alignment-center">
@@ -208,9 +197,7 @@ import Img from '../media/Img.astro';
 
     </Section>
 
-    <!-- ============================================
-         REALISATIONS (Galerie)
-         ============================================ -->
+
     <Section id="realisations" theme="light" tone="muted" width="full" gap="8">
         <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
             <Eyebrow tag="span">Nos r&eacute;alisations</Eyebrow>
@@ -260,9 +247,7 @@ import Img from '../media/Img.astro';
 
     </Section>
 
-    <!-- ============================================
-         REFERENCES
-         ============================================ -->
+
     <Section theme="light">
 
             <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
@@ -291,9 +276,7 @@ import Img from '../media/Img.astro';
 
     </Section>
 
-    <!-- ============================================
-         EQUIPE
-         ============================================ -->
+
     <Section id="equipe" theme="light" tone="muted">
 
             <Grid xsmall={1} small={1} medium={1} large={2} gap="7">
@@ -327,20 +310,18 @@ import Img from '../media/Img.astro';
 
     </Section>
 
-    <!-- ============================================
-         CTA / CONTACT
-         ============================================ -->
+
     <ContactSection eyebrow={"Parlons de votre projet"} title={"On passe à votre événement ?"} description={"Un projet en construction, un événement qui approche que vous envisagez de filmer et diffuser sur les réseaux ? Parlons-en."} email={"prod@lesateliersdustream.fr"} phoneHref={"tel:+33661968858"} phone={"06 61 96 88 58"} locationAlt={"Nos bureaux"} training={false} />
 
-    <!-- Footer -->
 
 
 
 
-    <!-- Hero video pause/play -->
 
 
-    <!-- Lightbox -->
+
+
+
 
 
 

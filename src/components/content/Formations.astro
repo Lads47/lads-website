@@ -10,15 +10,11 @@ import Grid from '../wrapper/Grid.astro';
 import Img from '../media/Img.astro';
 import Card from '../item/Card.astro';
 ---
-<!-- ============================================
-         HEADER
-         ============================================ -->
 
 
 
-    <!-- ============================================
-         PAGE HERO
-         ============================================ -->
+
+
     <Section theme="dark" paddingTop="navoverlap" paddingBottom="small" align="center">
 <Img slot="background" src="/photo/20260429_113309.webp" alt="" loading="eager" style={"opacity:var(--hero-image-opacity)"} />
 
@@ -30,9 +26,7 @@ import Card from '../item/Card.astro';
 
     </Section>
 
-    <!-- ============================================
-         INTRO
-         ============================================ -->
+
     <Section theme="light">
 
             <Grid xsmall={1} small={1} medium={1} large={2} gap="8">
@@ -62,9 +56,7 @@ import Card from '../item/Card.astro';
 
     </Section>
 
-    <!-- ============================================
-         CATALOGUE
-         ============================================ -->
+
     <Section theme="light">
 
             <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
@@ -74,7 +66,7 @@ import Card from '../item/Card.astro';
             </ContentWrapper>
             <Grid xsmall={1} small={1} medium={2} large={2} gap="6">
 
-                <!-- Formation vMix -->
+
                 <Card variant="panel" href={"/formations/vmix"}>
                     <div class="formation-card-logo-wrap"><Img loading={"lazy"} src={"/photo/vmix-logo.png"} alt={"Logo vMix"} appearance="logo" transparent /></div>
 
@@ -89,7 +81,7 @@ import Card from '../item/Card.astro';
 
                 </Card>
 
-                <!-- Formation IA -->
+
                 <Card variant="panel" href={"/formations/ia"}>
                     <div class="formation-card-logo-wrap"><Img loading={"lazy"} src={"/photo/ia-logo.svg"} alt={"Logo Formation IA"} appearance="logo" transparent /></div>
 
@@ -108,9 +100,7 @@ import Card from '../item/Card.astro';
 
     </Section>
 
-    <!-- ============================================
-         ATOUTS
-         ============================================ -->
+
     <Section theme="light">
 
             <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
@@ -156,12 +146,10 @@ import Card from '../item/Card.astro';
 
     </Section>
 
-    <!-- ============================================
-         CTA / CONTACT
-         ============================================ -->
+
     <ContactSection eyebrow={"Envie de vous former ?"} title={"Parlons de votre projet de formation"} description={"Vous souhaitez monter en compétences ? Contactez-nous pour échanger sur vos besoins."} email={"formation@lesateliersdustream.fr"} phoneHref={"tel:+33661968858"} phone={"06 61 96 88 58"} locationAlt={"Nos bureaux"} training={true} />
 
-    <!-- Footer -->
+
 
 
 

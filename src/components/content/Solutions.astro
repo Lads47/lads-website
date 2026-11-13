@@ -10,15 +10,11 @@ import Paragraph from '../typography/Paragraph.astro';
 import Grid from '../wrapper/Grid.astro';
 import Card from '../item/Card.astro';
 ---
-<!-- ============================================
-         HEADER
-         ============================================ -->
 
 
 
-    <!-- ============================================
-         PAGE HERO
-         ============================================ -->
+
+
     <Section theme="dark" paddingTop="navoverlap" paddingBottom="small" align="center">
 <Img slot="background" src="/photo/20241113_182041.webp" alt="" loading="eager" style={"opacity:var(--hero-image-opacity);object-position:center calc(50% + 3.125rem)"} />
 
@@ -32,10 +28,7 @@ import Card from '../item/Card.astro';
 
     </Section>
 
-    <!-- ============================================
-         BLOC 1 — CAPTATION MULTICAM
-         4 tech-cards
-         ============================================ -->
+
     <Section id="captation" theme="light">
 
             <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
@@ -48,7 +41,7 @@ import Card from '../item/Card.astro';
             </ContentWrapper>
 
             <Grid xsmall={1} small={1} medium={2} large={3} gap="4">
-                <!-- Captation multicam -->
+
                 <Card variant="panel" href={"/solutions/captation-multicam"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +53,7 @@ import Card from '../item/Card.astro';
                     <span class="tech-spec">3 &agrave; 4 cam&eacute;ras</span>
                     <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
                 </Card>
-                <!-- Captation &eacute;v&eacute;nementielle -->
+
                 <Card variant="panel" href={"/solutions/captation-video"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -73,7 +66,7 @@ import Card from '../item/Card.astro';
                     <span class="tech-spec">Congr&egrave;s &middot; &Eacute;v&eacute;nements</span>
                     <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
                 </Card>
-                <!-- Multiplex -->
+
                 <Card variant="panel" href={"/solutions/multiplex"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -86,7 +79,7 @@ import Card from '../item/Card.astro';
                     <span class="tech-spec">Fibre optique &middot; 5G</span>
                     <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
                 </Card>
-                <!-- Plateau Web TV -->
+
                 <Card variant="panel" href={"/solutions/plateau-web-tv"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -99,7 +92,7 @@ import Card from '../item/Card.astro';
                     <span class="tech-spec">Interviews &middot; Tables rondes</span>
                     <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
                 </Card>
-                <!-- Cam&eacute;ras tourelle 100% HF -->
+
                 <Card variant="panel" href={"/solutions/cameras-tourelle-hf"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -113,7 +106,7 @@ import Card from '../item/Card.astro';
                     <span class="tech-spec">Liaison sans fil &middot; Ext&eacute;rieur</span>
                     <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
                 </Card>
-                <!-- 8 r&eacute;gies simultan&eacute;es -->
+
                 <Card variant="panel" href={"/solutions/captation-multi-regies"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -126,7 +119,7 @@ import Card from '../item/Card.astro';
                     <span class="tech-spec">Multi-salles &middot; En simultan&eacute;</span>
                     <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
                 </Card>
-                <!-- Fond vert -->
+
                 <Card variant="panel" href={"/solutions/fond-vert"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -142,9 +135,7 @@ import Card from '../item/Card.astro';
 
     </Section>
 
-    <!-- ============================================
-         BLOC 2 — EVA (Intelligence artificielle)
-         ============================================ -->
+
     <Section id="eva" theme="light" tone="muted">
 
             <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
@@ -160,7 +151,7 @@ import Card from '../item/Card.astro';
             </ContentWrapper>
 
             <Grid xsmall={1} small={1} medium={2} large={3} gap="4">
-                <!-- Retranscription et synth&egrave;se -->
+
                 <Card variant="panel" href={"/solutions/retranscription-synthese"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -173,7 +164,7 @@ import Card from '../item/Card.astro';
                     <span class="tech-spec">Temps r&eacute;el &middot; Serveur local</span>
                     <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
                 </Card>
-                <!-- Chapitrage automatique -->
+
                 <Card variant="panel" href={"/solutions/chapitrage-automatique"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -189,10 +180,7 @@ import Card from '../item/Card.astro';
 
     </Section>
 
-    <!-- ============================================
-         BLOC 3 — DIFFUSION & SONORISATION
-         3 cartes techniques
-         ============================================ -->
+
     <Section id="diffusion" theme="light">
 
             <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
@@ -205,7 +193,7 @@ import Card from '../item/Card.astro';
             </ContentWrapper>
 
             <Grid xsmall={1} small={1} medium={2} large={3} gap="4">
-                <!-- Vid&eacute;oprojection -->
+
                 <Card variant="panel" href={"/solutions/videoprojection"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -219,7 +207,7 @@ import Card from '../item/Card.astro';
                     <span class="tech-spec">5 000 lumens &middot; 16:9</span>
                     <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
                 </Card>
-                <!-- Sonorisation -->
+
                 <Card variant="panel" href={"/solutions/sonorisation"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -233,7 +221,7 @@ import Card from '../item/Card.astro';
                     <span class="tech-spec">50 &agrave; 200 personnes</span>
                     <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
                 </Card>
-                <!-- Gestion des m&eacute;dias -->
+
                 <Card variant="panel" href={"/solutions/diffusion-gestion-medias"}>
                     <div class="tech-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -249,12 +237,10 @@ import Card from '../item/Card.astro';
 
     </Section>
 
-    <!-- ============================================
-         CTA / CONTACT
-         ============================================ -->
+
     <ContactSection eyebrow={"Parlons de votre projet"} title={"Et si on travaillait ensemble ?"} description={"Un projet en construction, un événement qui approche que vous envisagez de filmer et diffuser ? Parlons-en."} email={"prod@lesateliersdustream.fr"} phoneHref={"tel:+33661968858"} phone={"06 61 96 88 58"} locationAlt={"Nos bureaux"} training={false} />
 
-    <!-- Footer -->
+
 
 
 

@@ -9,9 +9,7 @@ import Grid from '../wrapper/Grid.astro';
 import Img from '../media/Img.astro';
 import Button from '../Button.astro';
 ---
-<!-- ============================================
-         PAGE HERO
-         ============================================ -->
+
     <Section theme="dark" paddingTop="navoverlap" paddingBottom="small" align="center">
 <Img slot="background" src="/photo/IMG_2801.webp" alt="" loading="eager" style={"opacity:var(--hero-image-opacity)"} />
 
@@ -23,7 +21,7 @@ import Button from '../Button.astro';
 
     </Section>
 
-    <!-- Breadcrumb retour -->
+
     <div class="site-container">
         <a href="/realisations" class="breadcrumb-back">
             <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
@@ -31,9 +29,7 @@ import Button from '../Button.astro';
         </a>
     </div>
 
-    <!-- ============================================
-         DETAIL
-         ============================================ -->
+
     <Section theme="light">
 
             <Grid xsmall={1} small={1} medium={1} large={2} gap="8" tracks="var(--tracks-content-sidebar)">
@@ -107,7 +103,7 @@ import Button from '../Button.astro';
                 </div>
             </Grid>
 
-            <!-- Vidéo : finale (YouTube) -->
+
             <div class="real-video ">
                 <div class="real-video-wrap">
                     <iframe src="https://www.youtube-nocookie.com/embed/O-w1Etv32Uw" title="Finale de l'Open International de la C&ocirc;te de Beaut&eacute; &mdash; beach tennis" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -115,7 +111,7 @@ import Button from '../Button.astro';
             </div>
             <p class="real-video-caption ">La finale, r&eacute;alis&eacute;e en direct depuis notre r&eacute;gie de Marmande.</p>
 
-            <!-- Photos -->
+
             <Grid xsmall={1} small={1} medium={2} large={4} gap="4">
                 <div class="real-photo-item">
                     <Img loading={"lazy"} src={"/photo/IMG_1550.webp"} alt={"Installation des caméras sur le terrain de beach tennis à Saint-Georges-de-Didonne"} appearance="photo" />
@@ -135,7 +131,7 @@ import Button from '../Button.astro';
                 </div>
             </Grid>
 
-            <!-- Back link -->
+
             <Button element="link" variant="link" href={"/realisations"}>
                 <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
                 Retour aux r&eacute;alisations
@@ -145,10 +141,10 @@ import Button from '../Button.astro';
 
     <ContactSection eyebrow={"Vous avez un projet similaire ?"} title={"On ajoute votre événement ?"} description={"Un projet en construction, un événement qui approche que vous envisagez de filmer et diffuser ? Parlons-en."} email={"prod@lesateliersdustream.fr"} phoneHref={"tel:+33661968858"} phone={"06 61 96 88 58"} locationAlt={"Nos bureaux"} training={false} />
 
-    <!-- Lightbox -->
 
 
-    <!-- Footer -->
+
+
 
 
 
