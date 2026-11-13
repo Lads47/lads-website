@@ -346,6 +346,8 @@ import Img from '../media/Img.astro';
 
 <style is:global>
 @layer components {
+        .hero-intro .hero-line,
+        .hero-intro .hero-line-mask { display: block; }
         .home-cover-cards .card_wrap {
             --text-2: var(--text);
             --text-main-line-height: var(--line-height-huge);
@@ -516,6 +518,16 @@ import Img from '../media/Img.astro';
 
         @media (--mq-large-min) {
             .hero-subtitle { font-size: var(--text-main); }
+        }
+
+        @media (--mq-compact-max) {
+            .hero-intro .button-wrapper {
+                width: min(80vw, 100%);
+                flex-direction: column;
+                flex-wrap: nowrap;
+                row-gap: var(--space-4);
+            }
+            .hero-intro .button-wrapper > .button_wrap { width: 100%; }
         }
 
         @media (--mq-medium-max) {
