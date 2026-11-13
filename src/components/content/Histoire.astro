@@ -44,7 +44,7 @@ import Grid from '../wrapper/Grid.astro';
 
                 <li class="timeline-item">
                     <span class="timeline-rail" aria-hidden="true"></span>
-                    <Grid medium={2} large={3} gap="6" tracks="calc(var(--h1) * 3) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
+                    <Grid medium={2} large={3} gap="6" tracks="var(--_timeline-year-width) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
                         <Paragraph tag="span" variant="h1" class="timeline-year">1998</Paragraph>
                         <div class="timeline-content">
                         <Heading tag="h3" variant="h3">Cr&eacute;ation de l'entreprise.</Heading>
@@ -59,7 +59,7 @@ import Grid from '../wrapper/Grid.astro';
 
                 <li class="timeline-item">
                     <span class="timeline-rail" aria-hidden="true"></span>
-                    <Grid medium={2} large={3} gap="6" tracks="calc(var(--h1) * 3) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
+                    <Grid medium={2} large={3} gap="6" tracks="var(--_timeline-year-width) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
                         <Paragraph tag="span" variant="h1" class="timeline-year">2008</Paragraph>
                         <div class="timeline-content">
                         <Heading tag="h3" variant="h3">Sp&eacute;cialisation dans la captation multicam.</Heading>
@@ -74,7 +74,7 @@ import Grid from '../wrapper/Grid.astro';
 
                 <li class="timeline-item">
                     <span class="timeline-rail" aria-hidden="true"></span>
-                    <Grid medium={2} large={3} gap="6" tracks="calc(var(--h1) * 3) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
+                    <Grid medium={2} large={3} gap="6" tracks="var(--_timeline-year-width) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
                         <Paragraph tag="span" variant="h1" class="timeline-year">2014</Paragraph>
                         <div class="timeline-content">
                         <Heading tag="h3" variant="h3">Adoption du logiciel vMix.</Heading>
@@ -89,7 +89,7 @@ import Grid from '../wrapper/Grid.astro';
 
                 <li class="timeline-item">
                     <span class="timeline-rail" aria-hidden="true"></span>
-                    <Grid medium={2} large={3} gap="6" tracks="calc(var(--h1) * 3) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
+                    <Grid medium={2} large={3} gap="6" tracks="var(--_timeline-year-width) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
                         <Paragraph tag="span" variant="h1" class="timeline-year">2016</Paragraph>
                         <div class="timeline-content">
                         <Heading tag="h3" variant="h3">En direct sur Facebook.</Heading>
@@ -106,7 +106,7 @@ import Grid from '../wrapper/Grid.astro';
 
                 <li class="timeline-item">
                     <span class="timeline-rail" aria-hidden="true"></span>
-                    <Grid medium={2} large={3} gap="6" tracks="calc(var(--h1) * 3) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
+                    <Grid medium={2} large={3} gap="6" tracks="var(--_timeline-year-width) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
                         <Paragraph tag="span" variant="h1" class="timeline-year">2018</Paragraph>
                         <div class="timeline-content">
                         <Heading tag="h3" variant="h3">Multiplex r&eacute;unissant 4 villes lors d'un &eacute;v&eacute;nement.</Heading>
@@ -123,7 +123,7 @@ import Grid from '../wrapper/Grid.astro';
 
                 <li class="timeline-item">
                     <span class="timeline-rail" aria-hidden="true"></span>
-                    <Grid medium={2} large={3} gap="6" tracks="calc(var(--h1) * 3) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
+                    <Grid medium={2} large={3} gap="6" tracks="var(--_timeline-year-width) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
                         <Paragraph tag="span" variant="h1" class="timeline-year">2022</Paragraph>
                         <div class="timeline-content">
                         <Heading tag="h3" variant="h3">Achat de nos nouveaux locaux.</Heading>
@@ -138,7 +138,7 @@ import Grid from '../wrapper/Grid.astro';
 
                 <li class="timeline-item">
                     <span class="timeline-rail" aria-hidden="true"></span>
-                    <Grid medium={2} large={3} gap="6" tracks="calc(var(--h1) * 3) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
+                    <Grid medium={2} large={3} gap="6" tracks="var(--_timeline-year-width) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
                         <Paragraph tag="span" variant="h1" class="timeline-year">2024</Paragraph>
                         <div class="timeline-content">
                         <Heading tag="h3" variant="h3">Emm&eacute;nagement dans les nouveaux locaux.</Heading>
@@ -153,7 +153,7 @@ import Grid from '../wrapper/Grid.astro';
 
                 <li class="timeline-item">
                     <span class="timeline-rail" aria-hidden="true"></span>
-                    <Grid medium={2} large={3} gap="6" tracks="calc(var(--h1) * 3) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
+                    <Grid medium={2} large={3} gap="6" tracks="var(--_timeline-year-width) minmax(0, 1fr) minmax(0, 1.25fr)" class="timeline-step">
                         <Paragraph tag="span" variant="h1" class="timeline-year">2025</Paragraph>
                         <div class="timeline-content">
                         <Heading tag="h3" variant="h3">Naissance d'EVA &mdash; Electronic Virtual Assistant.</Heading>
@@ -189,6 +189,8 @@ import Grid from '../wrapper/Grid.astro';
     }
 
     .timeline {
+        --_timeline-year-width: calc(var(--h1) * 3);
+        --_timeline-rail-position: calc(var(--space-6) / -2);
         --text-main-line-height: var(--line-height-huge);
         margin: 0;
         padding: 0 0 0 var(--space-6);
@@ -217,7 +219,7 @@ import Grid from '../wrapper/Grid.astro';
     .timeline-year::before {
         content: '';
         position: absolute;
-        left: calc(var(--space-6) / -2);
+        inset-inline-start: var(--_timeline-rail-position);
         background: color-mix(in srgb, var(--brand-500) 25%, transparent);
         transform: translateX(-50%);
         width: var(--border-width);
@@ -292,7 +294,10 @@ import Grid from '../wrapper/Grid.astro';
     }
 
     @media (--mq-large-min) {
-        .timeline-item { --_timeline-marker-position: 50%; }
+        .timeline-item {
+            --_timeline-marker-position: 50%;
+            --_timeline-rail-position: calc(var(--_timeline-year-width) + var(--space-6) / 2);
+        }
         .timeline-step { align-items: center; }
         .timeline-content { grid-column: 2; grid-row: 1; }
         .timeline-media { grid-column: 3; grid-row: 1; }
