@@ -16,7 +16,7 @@ Les extensions restent dans les composants qui possèdent leur rendu : largeur e
 
 Les détails spécifiques conservés, comme la frise historique, les légendes et les métadonnées, utilisent du CSS dans la couche `components`, avec les mêmes tokens. Les textes, images, arrière-plans et URL historiques sont vérifiés séparément du rendu.
 
-Les quatre cartes de solutions immersives de l’accueil sont regroupées par `solution-cards`. Leur texte secondaire reprend localement `--text` et leur interligne principal reprend `--line-height-huge` (1,5), sans modifier la typographie du reste du site. `Card` transmet son option `overlayStrength` au composant natif `Overlay` : 90 pour ces quatre cartes, 50 par défaut pour les autres. Aucun nouveau token global n’est ajouté.
+Les huit cartes immersives de l’accueil, réparties entre « Nos solutions » et « Nos réalisations », sont regroupées par `home-cover-cards`. Leur texte secondaire reprend localement `--text` et leur interligne principal reprend `--line-height-huge` (1,5), sans modifier la typographie du reste du site. `Card` transmet son option `overlayStrength` au composant natif `Overlay` : 90 pour ces huit cartes, 50 par défaut pour les autres. Photos, textes, liens, dispositions responsive et interactions sont conservés. Aucun nouveau token global n’est ajouté.
 
 ## Échelle native et réglages du site
 
