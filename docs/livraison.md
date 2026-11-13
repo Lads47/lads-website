@@ -13,12 +13,33 @@
 
 Les six vidéos Vimeo ont été préparées, intégrées et validées localement le 12 novembre 2026. Le propriétaire autorise leur publication sur la même PR #4, maintenue en brouillon jusqu’à la réussite des contrôles GitHub ; voir [le bilan vidéo](videos-locales.md). Lors de la livraison ultérieure, conserver tout `dist/videos/` et vérifier MP4/WebVTT, lecture et requêtes HTTP 206 sur Hostinger. Aucun téléchargement ni réencodage pendant le build.
 
-## Publication ultérieure
+## Mise en ligne
 
-La présente livraison n'autorise ni la fusion ni la mise en ligne. Hostinger est confirmé par le propriétaire. Avant une future livraison, identifier le document root, le moyen d'accès et une éventuelle automatisation extérieure liée à GitHub ; ces paramètres ne sont pas établis par le dépôt. Les anciennes mentions légales citent encore OVH : incohérence éditoriale conservée hors de ce lot.
+**Refonte mise en ligne le 13 novembre 2026** (PR #4 fusionnée, commit `fafa1ba`), avec l'accord explicite du propriétaire.
 
-Avant le remplacement, sauvegarder les fichiers réellement publiés, leurs droits et la configuration de résolution des routes. Construire le commit approuvé avec `npm ci` et `npm run build`, puis préparer une copie de `dist/` dans un emplacement de préproduction. Vérifier les chemins sans extension, `.html`, les ressources `/_astro/`, la 404 et les redirections anciennes avant la bascule.
+### Hébergement réel
 
-Publier uniquement `dist/`, avec ses sous-dossiers et ses fichiers racine. Le serveur de prévisualisation Node et les sources Astro ne sont pas nécessaires en production. Préserver la configuration serveur existante, les droits et les éventuels fichiers d'exploitation absents du dépôt. Ne pas utiliser de synchronisation destructive qui supprimerait des fichiers inconnus du serveur.
+- VPS Hostinger `82.112.240.219` (accès `ssh root@…`), partagé avec d'autres services : **ne jamais y compiler**, on construit sur le poste.
+- Conteneur `lads-website` (`nginx:alpine`) derrière Traefik, défini dans `/docker/lads-website/docker-compose.yml`.
+- Fichiers servis : `/docker/lads-website/site` (monté en lecture seule). Configuration : `/docker/lads-website/nginx.conf`, copie versionnée dans [`deploy/nginx.conf`](../deploy/nginx.conf).
+- Aucune automatisation GitHub → serveur : fusionner sur `main` ne change rien au site en ligne. Avant la refonte, le dossier servi était un clone Git mis à jour à la main par `git pull` (et exposait `.git/`) ; ce n'est plus le cas.
+- `public/google4b1cbe2c20a1fb09.html` est la vérification Google Search Console : ne pas le supprimer.
 
-Après bascule, contrôler les pages principales, les deux formations, les liens EVA, la vidéo, Wisio, les pages légales, le sitemap et les codes HTTP. En cas de régression, restaurer la sauvegarde complète de la version précédente avec la configuration et les droits d'origine, puis vérifier de nouveau les routes publiques. Conserver la sauvegarde jusqu'à validation de la publication.
+### Procédure de publication
+
+1. Sur le poste, depuis `main` à jour : `npm ci`, `npm run check`, `npm run build`, `npm test` ; CI verte sur le commit.
+2. Envoyer `dist/` dans un dossier neuf, sans toucher au site servi :
+   `tar -C dist -cf - . | ssh root@82.112.240.219 'mkdir -p /docker/lads-website/site-new && tar -C /docker/lads-website/site-new -xf -'`
+   puis droits `755` (dossiers) / `644` (fichiers).
+3. Sauvegarder l'existant : `tar -czf /root/backups/lads-website-AAAAMMJJ.tgz site nginx.conf docker-compose.yml`.
+4. Préproduction sur le serveur : conteneur temporaire `nginx:alpine` publié sur `127.0.0.1:8099` avec `site-new` et la configuration, `nginx -t`, puis `curl -H Host:lesateliersdustream.fr` sur les routes, redirections, 404, `.vtt`, MP4 (206) et `/_astro/`.
+5. Bascule : `mv site site-old-AAAAMMJJ && mv site-new site && docker restart lads-website` (le redémarrage est nécessaire : les montages suivent le dossier d'origine).
+6. Contrôler en HTTPS les pages principales, les deux formations (sessions EVA), les vidéos, la 404, le sitemap ; garder `site-old-…` jusqu'à validation.
+
+**Retour arrière** : `mv site site-casse && mv site-old-AAAAMMJJ site && docker restart lads-website` (et restaurer `nginx.conf.bak-…` si la configuration a changé). Sauvegarde complète de l'ancien site HTML : `/root/backups/lads-website-avant-astro-20261113.tgz` et dossier `/docker/lads-website/site-html-20261113`.
+
+### Configuration nginx ajoutée lors de la refonte
+
+Reprise de la configuration précédente (routes sans extension, redirections `.html` et anciennes URL, 404, caches) avec : type `text/vtt` pour les sous-titres (absent de `mime.types`), cache d'un an `immutable` pour `/_astro/`, AVIF dans le cache long, fichiers cachés (`/.git`, `/.env`…) en 404, gzip étendu à JSON/XML/VTT. L'ancienne configuration est conservée dans `nginx.conf.bak-20261113-avant-astro`.
+
+Les anciennes mentions légales citent encore OVH alors que l'hébergeur est Hostinger : incohérence éditoriale conservée hors de ce lot.

@@ -33,7 +33,7 @@ La vidéo d'accueil est incluse dans `public/videos/` et servie par le site, san
 
 ## Validation et livraison
 
-**Version locale validée le 12 novembre 2026.** La publication de la branche et d’une PR vers `main` est autorisée ; la fusion et la mise en ligne restent des étapes séparées, non autorisées dans ce lot. Le complément vidéo est également validé localement ; aucun accord de fusion ni de déploiement n’est donné. Le [dossier de revue GitHub](docs/revue-github.md) présente le résultat, les captures, les contrôles et les limites. La procédure de livraison et de retour arrière est dans [docs/livraison.md](docs/livraison.md).
+**En ligne depuis le 13 novembre 2026** sur lesateliersdustream.fr (PR #4 fusionnée). Le site publié est le `dist/` construit sur le poste, servi par nginx sur le VPS Hostinger : fusionner sur `main` ne publie rien, chaque mise en ligne suit [la procédure de livraison](docs/livraison.md). Le [dossier de revue GitHub](docs/revue-github.md) présente le résultat, les captures, les contrôles et les limites. La procédure de livraison et de retour arrière est dans [docs/livraison.md](docs/livraison.md).
 
 Tous les textes sont conservés selon le choix de l'utilisateur. Les contradictions éditoriales et les limites d'intégrations externes sont signalées dans le rapport, sans correction éditoriale automatique.
 
