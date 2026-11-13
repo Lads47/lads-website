@@ -103,19 +103,23 @@ export async function verifyLocalVideos(contextFor, base) {
       await players.nth(0).evaluate(v => v.play());
       await page.waitForFunction(() => document.querySelectorAll('.timeline video')[1].paused);
     } catch (error) {
-      const state = await page.evaluate(() => ({
-        width: innerWidth, screen: screen.width, mobile: matchMedia('(max-width: 40rem)').matches,
-        events: window.videoSourceEvents,
-        players: [...document.querySelectorAll('video[data-local-video]')].map(video => ({
-          name: video.dataset.localVideo, src: video.currentSrc, code: video.error?.code, readyState: video.readyState,
-          sources: [...video.querySelectorAll('source')].map(source => ({ src: source.src, media: source.media, matches: !source.media || matchMedia(source.media).matches })),
-        })),
-      })).catch(() => null);
-      const diagnostic = { width, viewportBeforeNavigation, chrome: context.browser()?.version(), error: String(error), state, mediaRequests };
-      await mkdir('test-results', { recursive: true });
-      await writeFile(`test-results/video-failure-${width}.json`, JSON.stringify(diagnostic, null, 2));
-      await page.screenshot({ path: `test-results/video-failure-${width}.png` }).catch(() => {});
-      console.error(JSON.stringify(diagnostic));
+      try {
+        const state = await page.evaluate(() => ({
+          width: innerWidth, screen: screen.width, mobile: matchMedia('(max-width: 40rem)').matches,
+          events: window.videoSourceEvents,
+          players: [...document.querySelectorAll('video[data-local-video]')].map(video => ({
+            name: video.dataset.localVideo, src: video.currentSrc, code: video.error?.code, readyState: video.readyState,
+            sources: [...video.querySelectorAll('source')].map(source => ({ src: source.src, media: source.media, matches: !source.media || matchMedia(source.media).matches })),
+          })),
+        })).catch(() => null);
+        const diagnostic = { width, viewportBeforeNavigation, chrome: context.browser()?.version(), error: String(error), state, mediaRequests };
+        console.error(JSON.stringify(diagnostic));
+        await mkdir('test-results', { recursive: true });
+        await writeFile(`test-results/video-failure-${width}.json`, JSON.stringify(diagnostic, null, 2));
+        await page.screenshot({ path: `test-results/video-failure-${width}.png` }).catch(() => {});
+      } catch (diagnosticError) {
+        console.error(`Diagnostic vidéo indisponible : ${diagnosticError}`);
+      }
       throw error;
     } finally { await context.close(); }
   }
