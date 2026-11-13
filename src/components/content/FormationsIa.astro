@@ -13,10 +13,7 @@ import Card from '../item/Card.astro';
 import Button from '../Button.astro';
 import Img from '../media/Img.astro';
 ---
-<!-- ============================================
-         PAGE HERO
-         TODO : ajouter image de fond quand elle sera disponible
-         ============================================ -->
+
     <Section theme="dark" paddingTop="navoverlap" paddingBottom="small" align="center">
 
             <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
@@ -28,7 +25,7 @@ import Img from '../media/Img.astro';
 
     </Section>
 
-    <!-- Breadcrumb retour -->
+    
     <div class="site-container">
         <a href="/formations" class="breadcrumb-back">
             <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
@@ -36,9 +33,7 @@ import Img from '../media/Img.astro';
         </a>
     </div>
 
-    <!-- ============================================
-         DETAIL : Objectifs + M&eacute;ta sidebar
-         ============================================ -->
+    
     <Section theme="light">
 
             <TrainingLayout>
@@ -166,9 +161,7 @@ import Img from '../media/Img.astro';
 
     </Section>
 
-    <!-- ============================================
-         PROGRAMME DE LA FORMATION
-         ============================================ -->
+    
     <Section theme="light">
 
             <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
@@ -280,20 +273,14 @@ import Img from '../media/Img.astro';
 
     </Section>
 
-    <!-- ============================================
-         NOS R&Eacute;SULTATS (rempli auto depuis EVA Remote)
-         Bloc masqu&eacute; auto si &lt; 5 stagiaires form&eacute;s
-         Couvre Qualiopi indicateur 1
-         ============================================ -->
+    
     <Section theme="light">
 
             <div data-formation-results-code="IAN1"></div>
 
     </Section>
 
-    <!-- ============================================
-         MODALIT&Eacute;S PRATIQUES
-         ============================================ -->
+    
     <Section theme="light">
 
             <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
@@ -356,9 +343,7 @@ import Img from '../media/Img.astro';
 
     </Section>
 
-    <!-- ============================================
-         VOTRE FORMATEUR
-         ============================================ -->
+    
     <Section theme="light" tone="muted">
 
             <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
@@ -379,9 +364,7 @@ import Img from '../media/Img.astro';
 
     </Section>
 
-    <!-- ============================================
-         POINTS FORTS
-         ============================================ -->
+    
     <Section theme="light">
 
             <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
@@ -399,12 +382,7 @@ import Img from '../media/Img.astro';
 
     </Section>
 
-    <!-- ============================================
-         FAQ
-         Les reponses sont dans le HTML des le chargement (balise <details>) :
-         c'est la condition pour que Google les lise et pour que le balisage
-         FAQPage soit valide. Rien n'est charge au clic.
-         ============================================ -->
+    
     <Section theme="light" tone="muted">
 
             <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
@@ -473,13 +451,13 @@ import Img from '../media/Img.astro';
 
             </div>
 
-            <!-- Passerelle vers l'autre formation du catalogue -->
+            
             <p class="autre-formation ">
                 Vous cherchez plut&ocirc;t &agrave; ma&icirc;triser la r&eacute;gie vid&eacute;o&nbsp;? D&eacute;couvrez notre
                 <a href="/formations/vmix">formation vMix &agrave; Marmande</a>, sur cinq jours.
             </p>
 
-            <!-- Back link -->
+            
             <div style={"text-align: center;"}>
                 <Button element="link" variant="link" href={"/formations"}>
                     <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
@@ -489,12 +467,10 @@ import Img from '../media/Img.astro';
 
     </Section>
 
-    <!-- ============================================
-         CTA / CONTACT
-         ============================================ -->
+    
     <ContactSection eyebrow={"Envie de vous former ?"} title={"Parlons de votre projet de formation"} description={"Vous souhaitez comprendre où en est l'IA en 2026 et lancer vos premiers cas d'usage ? Contactez-nous pour échanger sur vos besoins."} email={"formation@lesateliersdustream.fr"} phoneHref={"tel:+33646656577"} phone={"06 46 65 65 77"} locationAlt={"Lieu"} training={true} />
 
-    <!-- Footer -->
+    
 
 
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Pages principales -->
+  
   <url>
     <loc>https://lesateliersdustream.fr/</loc>
     <lastmod>2026-07-28</lastmod>
@@ -50,7 +50,7 @@
     <priority>0.3</priority>
   </url>
 
-  <!-- Solutions -->
+  
   <url>
     <loc>https://lesateliersdustream.fr/solutions/captation-video</loc>
     <lastmod>2026-07-28</lastmod>
@@ -124,7 +124,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Realisations -->
+  
   <url>
     <loc>https://lesateliersdustream.fr/realisations/open-cote-de-beaute</loc>
     <lastmod>2026-08-27</lastmod>
@@ -198,7 +198,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Formations -->
+  
   <url>
     <loc>https://lesateliersdustream.fr/formations/vmix</loc>
     <lastmod>2026-09-09</lastmod>
