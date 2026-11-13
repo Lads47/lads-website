@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { setTimeout as delay } from 'node:timers/promises';
 
 export async function verifyLocalVideos(contextFor, base) {
@@ -10,15 +10,37 @@ export async function verifyLocalVideos(contextFor, base) {
     context.setDefaultTimeout(15000);
     const page = await context.newPage();
     const forbidden = [];
+    const mediaRequests = [];
+    const viewportBeforeNavigation = await page.evaluate(() => ({ width: innerWidth, mobile: matchMedia('(max-width: 40rem)').matches }));
+    await page.addInitScript(() => {
+      window.videoSourceEvents = [];
+      for (const type of ['error', 'loadstart', 'emptied', 'loadedmetadata']) document.addEventListener(type, event => {
+        const target = event.target;
+        if (!(target instanceof HTMLVideoElement || target instanceof HTMLSourceElement)) return;
+        window.videoSourceEvents.push({ type, at: performance.now(), tag: target.tagName, src: target.currentSrc || target.src, code: target.error?.code, width: innerWidth, mobile: matchMedia('(max-width: 40rem)').matches });
+      }, true);
+    });
+    page.on('request', request => {
+      if (new URL(request.url()).pathname.endsWith('.mp4')) mediaRequests.push({ type: 'request', url: request.url(), range: request.headers().range });
+    });
+    page.on('response', response => {
+      if (new URL(response.url()).pathname.endsWith('.mp4')) mediaRequests.push({ type: 'response', url: response.url(), status: response.status(), range: response.headers()['content-range'] });
+    });
+    page.on('requestfailed', request => {
+      if (new URL(request.url()).pathname.endsWith('.mp4')) mediaRequests.push({ type: 'failure', url: request.url(), error: request.failure()?.errorText });
+    });
     page.on('request', request => {
       if (/(?:vimeo\.com|vimeocdn\.com)/i.test(new URL(request.url()).hostname)) forbidden.push(request.url());
     });
     try {
+      assert.equal(viewportBeforeNavigation.width, width, 'Viewport configuré avant navigation');
+      assert.equal(viewportBeforeNavigation.mobile, width <= 640, 'Media query configurée avant navigation');
       for (const [slug, entry] of Object.entries(videos)) {
         console.log(`Lecteur ${width}px : ${slug}`);
         await page.goto(base + entry.route, { waitUntil: 'networkidle' });
         assert.equal(await page.locator('iframe[src*="vimeo.com"]').count(), 0);
         const player = page.locator(`video[data-local-video="${slug}"]`);
+        mediaRequests.push({ type: 'before-play', slug, ...(await player.evaluate(video => ({ src: video.currentSrc, width: innerWidth, mobile: matchMedia('(max-width: 40rem)').matches }))) });
         await player.scrollIntoViewIfNeeded();
         const flags = await player.evaluate(v => ({ controls: v.controls, autoplay: v.autoplay, loop: v.loop, muted: v.muted, inline: v.playsInline, preload: v.preload, label: v.getAttribute('aria-label'), fit: getComputedStyle(v).objectFit }));
         assert.deepEqual(flags, { controls: true, autoplay: false, loop: false, muted: false, inline: true, preload: 'none', label: entry.title, fit: 'contain' });
@@ -80,6 +102,25 @@ export async function verifyLocalVideos(contextFor, base) {
       await players.nth(0).scrollIntoViewIfNeeded();
       await players.nth(0).evaluate(v => v.play());
       await page.waitForFunction(() => document.querySelectorAll('.timeline video')[1].paused);
+    } catch (error) {
+      try {
+        const state = await page.evaluate(() => ({
+          width: innerWidth, screen: screen.width, mobile: matchMedia('(max-width: 40rem)').matches,
+          events: window.videoSourceEvents,
+          players: [...document.querySelectorAll('video[data-local-video]')].map(video => ({
+            name: video.dataset.localVideo, src: video.currentSrc, code: video.error?.code, readyState: video.readyState,
+            sources: [...video.querySelectorAll('source')].map(source => ({ src: source.src, media: source.media, matches: !source.media || matchMedia(source.media).matches })),
+          })),
+        })).catch(() => null);
+        const diagnostic = { width, viewportBeforeNavigation, chrome: context.browser()?.version(), error: String(error), state, mediaRequests };
+        console.error(JSON.stringify(diagnostic));
+        await mkdir('test-results', { recursive: true });
+        await writeFile(`test-results/video-failure-${width}.json`, JSON.stringify(diagnostic, null, 2));
+        await page.screenshot({ path: `test-results/video-failure-${width}.png` }).catch(() => {});
+      } catch (diagnosticError) {
+        console.error(`Diagnostic vidéo indisponible : ${diagnosticError}`);
+      }
+      throw error;
     } finally { await context.close(); }
   }
   // No site JavaScript: click the native play control, not a scripted play() call.

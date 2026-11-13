@@ -70,6 +70,8 @@ ssh -T -i /chemin/cle -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes \
 
 Comparer `main`, le résultat du job et `https://lesateliersdustream.fr/release.json`. La copie locale et les branches de travail peuvent être en retard ; ne pas déduire la version en ligne du seul checkout local.
 
+Si le lot vidéo échoue, lire `video-failure-<largeur>.json` et sa capture dans l'artefact du lot : viewport et media query avant navigation, événements du lecteur et des sources, source avant lecture, requêtes/réponses/échecs MP4. Une source bureau à largeur mobile peut notamment suivre l'échec réseau ou de décodage de la source mobile ; les traces distinguent ce repli d'une sélection initiale incorrecte. L'assertion de source reste stricte, sans `load()`, source forcée, rechargement ou retry automatique. Le premier incident de ce type après parallélisation a bloqué le workflow avant publication ; sa cause n'a pas été établie, faute de ces traces, et reste suivie dans le ticket #14.
+
 Un job en échec avant bascule préserve la version active. Un échec après bascule doit montrer `RETOUR ARRIERE verifie`. Si la vérification de la restauration échoue également, demander une inspection administrative ciblée du site et conserver tous les fichiers et journaux.
 
 ## Retour arrière manuel
