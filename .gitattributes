@@ -4,3 +4,5 @@
 # Manifeste régénéré en LF par scripts/prepare-media.mjs à chaque build :
 # évite une modification fantôme sur les postes en CRLF.
 src/data/responsive-images.json text eol=lf
+# Vérification Google Search Console : publiée à l'identique, quel que soit le poste.
+public/google*.html text eol=lf
