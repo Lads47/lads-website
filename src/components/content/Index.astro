@@ -520,6 +520,16 @@ import Img from '../media/Img.astro';
             .hero-subtitle { font-size: var(--text-main); }
         }
 
+        @media (--mq-compact-max) {
+            .hero-intro .button-wrapper {
+                width: min(80vw, 100%);
+                flex-direction: column;
+                flex-wrap: nowrap;
+                row-gap: var(--space-4);
+            }
+            .hero-intro .button-wrapper > .button_wrap { width: 100%; }
+        }
+
         @media (--mq-medium-max) {
             .gallery-grid { grid-template-columns: 1fr; }
             .stat-nombre { font-size: var(--display); }
