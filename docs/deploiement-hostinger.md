@@ -8,6 +8,23 @@ Le propriétaire a demandé le 13 novembre 2026 la publication automatique aprè
 
 Le workflow `.github/workflows/quality.yml` construit le commit, vérifie Astro/TypeScript, les invariants de contenu et de médias, les interactions dans Chrome et les tests de déploiement. Il transmet ensuite **le même `dist/` vérifié** au job de publication. Aucun build, `npm install`, mise à jour système, redémarrage du VPS ou modification de Traefik n'est exécuté sur Hostinger.
 
+### Contrôles navigateur en parallèle
+
+Le job `build` conserve les contrôles Astro, le build, les tests statiques et les 17 tests de déploiement. Il exécute aussi les tests de la barrière CI, crée `release.json` puis conserve un artefact unique `site-<sha>-<tentative>` pendant 7 jours, sur PR comme sur `main`. Six jobs Chrome isolés téléchargent cet artefact sans reconstruire le site :
+
+| Lot | Contrôles conservés |
+| --- | --- |
+| `visual-desktop` | 35 pages à 1 440 px, captures, débordements, images et erreurs JavaScript |
+| `visual-mobile` | Les mêmes 35 pages à 390 px |
+| `interactions` | Cinq gabarits tablette, menu, lightboxes, confidentialité EVA, vidéo d'accueil, mouvement réduit, tokens Lumos, huit scénarios EVA, titre animé, sans JavaScript, redirections et 404 |
+| `content` | Frise historique et audit visuel Impeccable |
+| `videos` | 24 parcours vidéo et pause mutuelle de la frise |
+| `navigation` | 68 parcours du header et repli sans JavaScript |
+
+La matrice utilise `fail-fast: false` : un échec n'annule pas les diagnostics des autres lots. Le job final `quality` exige la réussite de `build` et de toute la matrice, puis relit les six rapports : 17 familles de contrôles, inventaire exact des couples page/largeur, 70 captures PNG présentes, absence d'erreur et même commit/tentative. Un lot manquant, incomplet, filtré, annulé ou en échec bloque la publication. Les rapports par lot et la synthèse sont conservés 14 jours sous `verification-navigateur-<lot>-<tentative>` et `verification-navigateur-<tentative>`.
+
+`npm run test:browser` reste la suite complète séquentielle en local. Pour diagnostiquer un lot : `BROWSER_SUITE=videos npm run test:browser` (ou définir `$env:BROWSER_SUITE='videos'` sous PowerShell). Les filtres `ROUTE_FILTER`, `INTERACTIONS_ONLY` et la comparaison à une autre source sont refusés dès qu'un lot est sélectionné ou en CI. L'inventaire des contrôles vit dans `scripts/browser-suites.mjs` ; `scripts/verify-browser-reports.mjs` assure la barrière finale.
+
 La publication exige un événement `push` sur `main`, un commit associé à une PR effectivement fusionnée dans `main` et encore en tête de la branche. Un push direct sans PR fusionnée et une ancienne exécution dépassée sont ignorés. Un déploiement déjà commencé se termine ; les jobs de publication et de retour arrière partagent le groupe de concurrence `hostinger-production`, sans annulation en cours. Le serveur prend aussi un verrou exclusif. Le compte actuel dispose de droits d'écriture, pas d'administration : la protection GitHub de `main` reste du ressort d'un administrateur.
 
 ## Serveur et frontières
@@ -63,7 +80,7 @@ Un job en échec avant bascule préserve la version active. Un échec après bas
 
 Équivalent SSH : `ssh … lads-deploy@82.112.240.219 'rollback IDENTIFIANT_COMPLET'`.
 
-**Le retour arrière ne réécrit pas GitHub.** Une fusion ultérieure réactive la publication du nouveau `main` si l'automatisation n'a pas été suspendue. Pour réessayer une livraison échouée du `main` courant, relancer son workflow : `run_attempt` distingue les réceptions.
+**Le retour arrière ne réécrit pas GitHub.** Une fusion ultérieure réactive la publication du nouveau `main` si l'automatisation n'a pas été suspendue. Pour réessayer une livraison échouée du `main` courant, choisir **Re-run all jobs** (ou `gh run rerun <id> --repo Lads47/lads-website`, sans `--failed`). Les relances partielles sont refusées avant transfert : le manifeste, les six rapports et le déploiement doivent appartenir à la même tentative. Chaque tentative complète crée un nom d'artefact et un identifiant de réception distincts, sans remplacer l'artefact de la précédente.
 
 ## Installation ou modification par un administrateur
 
