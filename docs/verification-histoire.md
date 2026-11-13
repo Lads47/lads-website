@@ -1,5 +1,7 @@
 # Présentation locale de la frise « Notre histoire »
 
+> **13 novembre 2026 — Fil déplacé sur bureau.** À la demande du propriétaire, le fil et ses points passent entre la colonne des années et celle des descriptions, à partir de 1 024 px. La disposition des contenus et le retrait tablette/mobile sont conservés. Voir la documentation actuelle dans [Lumos](lumos.md) et le suivi du [ticket #17](https://github.com/Lads47/lads-website/issues/17). Le bilan du 12 novembre ci-dessous reste historique.
+
 > **Complément vidéos validé localement le 12 novembre 2026.** Le propriétaire autorise sa publication sur la même PR #4, maintenue en brouillon pendant les contrôles GitHub puis prête à relire après leur réussite. Aucune fusion ni mise en ligne autorisée. Voir [le bilan des vidéos locales](videos-locales.md). Les résultats historiques ci-dessous concernent la première refonte.
 
 12 novembre 2026. Prévisualisation du build statique : http://127.0.0.1:4321/histoire.
