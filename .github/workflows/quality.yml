@@ -17,6 +17,8 @@ jobs:
           node-version: '26'
           cache: npm
       - run: npm ci
+      - name: Vérifier le déploiement et ses chemins de retour arrière
+        run: python3 -m unittest discover -s tests/deploy -v
       - run: npm run check
       - run: npm run build
       - run: npm test
@@ -35,9 +37,65 @@ jobs:
             sleep 1
           done
           npm run test:browser
+      - name: Préparer la version vérifiée
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: node scripts/package-release.mjs
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        with:
+          name: site-${{ github.sha }}
+          path: dist/
+          retention-days: 7
+          if-no-files-found: error
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: verification-navigateur
           path: test-results/
           retention-days: 14
+  deploy:
+    name: Publication Hostinger
+    needs: quality
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.HOSTINGER_AUTO_DEPLOY != 'false'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pull-requests: read
+    concurrency:
+      group: hostinger-production
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Réserver la publication aux fusions sur le main actuel
+        id: gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          head=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" --jq .object.sha)
+          merged=$(gh api "repos/$GITHUB_REPOSITORY/commits/$GITHUB_SHA/pulls" --jq '[.[] | select(.merged_at != null and .base.ref == "main")] | length')
+          if [[ $head == "$GITHUB_SHA" && $merged -gt 0 ]]; then
+            echo 'publish=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'Publication ignorée : commit dépassé ou push direct sans PR fusionnée.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/download-artifact@v4
+        if: steps.gate.outputs.publish == 'true'
+        with:
+          name: site-${{ github.sha }}
+          path: dist/
+      - name: Publier, contrôler et restaurer en cas d'échec
+        if: steps.gate.outputs.publish == 'true'
+        env:
+          HOSTINGER_SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
+        run: bash scripts/deploy.sh
+      - name: Résumer la publication
+        if: success() && steps.gate.outputs.publish == 'true'
+        env:
+          REVISION: ${{ github.sha }}
+        run: |
+          printf 'Version vérifiée et publiée sur https://lesateliersdustream.fr/ : `%s`\n' "$REVISION" >> "$GITHUB_STEP_SUMMARY"
