@@ -77,7 +77,7 @@ test('le contrôle final exige les fichiers PNG réels et refuse une capture abs
 });
 
 test('la barrière du workflow refuse échec, annulation, omission et relance partielle', async () => {
-  const workflow = await readFile('.github/workflows/quality.yml', 'utf8');
+  const workflow = (await readFile('.github/workflows/quality.yml', 'utf8')).replace(/\r\n/g, '\n');
   const block = workflow.split('      - name: Exiger tous les contrôles de cette tentative')[1].split('      - uses:')[0];
   const script = block.split('        run: |')[1].split('\n').map(line => line.replace(/^          /, '')).join('\n');
   const bash = process.platform === 'win32' ? 'C:/Program Files/Git/bin/bash.exe' : 'bash';
