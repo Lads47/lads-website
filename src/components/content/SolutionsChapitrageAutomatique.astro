@@ -1,0 +1,109 @@
+---
+import Img from '../media/Img.astro';
+import ContactSection from './ContactSection.astro';
+import Section from '../wrapper/Section.astro';
+import ContentWrapper from '../wrapper/ContentWrapper.astro';
+import Eyebrow from '../typography/Eyebrow.astro';
+import Heading from '../typography/Heading.astro';
+import Paragraph from '../typography/Paragraph.astro';
+import Grid from '../wrapper/Grid.astro';
+import Button from '../Button.astro';
+---
+<Section theme="dark" paddingTop="navoverlap" paddingBottom="small" align="center">
+<Img slot="background" src="/photo/20220717_194319.webp" alt="" loading="eager" style={"opacity:var(--hero-image-opacity)"} />
+        <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+            <Eyebrow tag="span">Intelligence artificielle</Eyebrow>
+            <Heading tag="h1" variant="h1">Chapitrage automatique</Heading>
+            <Paragraph variant="large">Structurez vos vid&eacute;os avec des chapitres g&eacute;n&eacute;r&eacute;s automatiquement</Paragraph>
+        </ContentWrapper>
+    </Section>
+    <div class="site-container">
+        <a href="/solutions" class="breadcrumb-back">
+            <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Retour nos solutions
+        </a>
+    </div>
+    <Section theme="light">
+
+            <Grid xsmall={1} small={1} medium={1} large={2} gap="8" tracks="var(--tracks-content-sidebar)">
+                <div class="real-detail-text">
+                    <Eyebrow tag="span" variant="tag">IA &mdash; EVA</Eyebrow>
+                    <Heading tag="h2" variant="h2" class="alignment-start">Chapitrage automatique</Heading>
+                    <hr class="divider"><br>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>Nous proposons une solution de chapitrage automatique pour vos &eacute;v&eacute;nements en direct ou enregistr&eacute;s. Chaque intervention ou segment de votre live est identifi&eacute; et structur&eacute;, avec timecodes pr&eacute;cis et titres de partie, pour faciliter la navigation et la consultation ult&eacute;rieure.</Paragraph>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>Ce chapitrage peut &ecirc;tre fourni sous forme de fichier pr&ecirc;t &agrave; l'usage ou directement int&eacute;gr&eacute; &agrave; un player dynamique et personnalisable sur votre site web, via un code embed. Vos visiteurs peuvent ainsi acc&eacute;der rapidement aux moments cl&eacute;s de votre &eacute;v&eacute;nement, am&eacute;liorant l'exp&eacute;rience utilisateur et la visibilit&eacute; de vos contenus en ligne.</Paragraph>
+                    <ul class="feature-list">
+                        <li>Chapitrage des vid&eacute;os en replays</li>
+                        <li>Timecodes pr&eacute;cis pour chaque intervention</li>
+                        <li>Player personnalisable et int&eacute;grable</li>
+                        <li>Navigation facilit&eacute;e dans les vid&eacute;os</li>
+                    </ul>
+                    <p class="lien-formation">
+                        Vous souhaitez comprendre et exploiter ces technologies par vous-m&ecirc;me&nbsp;? Nous animons une <a href="/formations/ia">formation IA &agrave; Marmande</a>, sur une journ&eacute;e, consacr&eacute;e &agrave; l'IA g&eacute;n&eacute;rative et aux agents IA.
+                    </p>
+                </div>
+                <div class="real-meta">
+                    <div class="real-meta-item">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                        <div>
+                            <span class="meta-label">Type de solution</span>
+                            <span class="meta-value">Chapitrage des vid&eacute;os</span>
+                        </div>
+                    </div>
+                    <div class="real-meta-item">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        <div>
+                            <span class="meta-label">Technologie</span>
+                            <span class="meta-value">Syst&egrave;me propri&eacute;taire</span>
+                        </div>
+                    </div>
+                    <div class="real-meta-item">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <div>
+                            <span class="meta-label">Usage</span>
+                            <span class="meta-value">Conf&eacute;rences, s&eacute;minaires, formations</span>
+                        </div>
+                    </div>
+                </div>
+            </Grid>
+            <!-- Widget Wisio chapitrage -->
+            <div class="wisio-embed " style={"margin-top: var(--space-7);"}>
+                <Heading tag="h3" variant="h3" class="alignment-center">D&eacute;monstration du player chapitrage</Heading>
+                <link rel="stylesheet" href="https://wisio.io/?yvc_css=1">
+                <script is:inline async src="https://wisio.io/?yvc_embed=1&seance=408"></script>
+            </div>
+            <Button element="link" variant="link" href={"/solutions"}>
+                <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                Retour aux solutions
+            </Button>
+
+    </Section>
+    <ContactSection eyebrow={"Vous avez un projet ?"} title={"Demandez un devis"} description={"Un projet en construction, un événement qui approche ? Parlons-en."} email={"prod@lesateliersdustream.fr"} phoneHref={"tel:+33661968858"} phone={"06 61 96 88 58"} locationAlt={"Nos bureaux"} training={false} />
+
+    <!-- Footer -->
+
+
+
+<style is:global>
+@layer components {
+
+.divider { margin: var(--space-4) 0 0 0; }
+        .real-meta { display: flex; flex-direction: column; gap: var(--space-4); padding: var(--space-5); background: var(--light-200); border-radius: var(--radius-small); border: var(--border-width) solid var(--light-300); }
+        .real-meta-item { display: flex; align-items: center; gap: var(--space-3); }
+        .real-meta-item svg { width: 1.375rem; height: 1.375rem; flex-shrink: 0; stroke: var(--brand-500); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+        .meta-label { display: block; font-size: var(--text-small); font-weight: var(--primary-bold); text-transform: uppercase; letter-spacing: var(--letter-spacing-normal); color: var(--text-2); margin-bottom: var(--space-1); }
+        .meta-value { display: block; font-size: var(--text-main); font-weight: var(--primary-medium); color: var(--dark-900); }
+        .lien-formation { margin-top: var(--space-5); font-size: var(--text-small); color: var(--text-2); line-height: var(--text-main-line-height); }
+        .lien-formation a { color: var(--dark-900); font-weight: var(--primary-medium); border-bottom: var(--border-width) solid var(--brand-500); transition: all var(--hover-duration) var(--hover-ease); }
+        .lien-formation a:hover { color: var(--heading-accent); }
+        .feature-list { list-style: none; margin-top: var(--space-4); }
+        .feature-list li { position: relative; padding-left: var(--space-4); font-size: var(--text-small); color: var(--text-2); line-height: var(--text-main-line-height); }
+        .feature-list li::before { content: ''; position: absolute; left: 0; top: 0.75rem; width: 0.625rem; height: 0.625rem; border-radius: 50%; background: var(--brand-500); }
+        .breadcrumb-back { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--text-small); font-weight: var(--primary-medium); text-transform: uppercase; letter-spacing: var(--letter-spacing-normal); color: var(--text-2); transition: all var(--hover-duration) var(--hover-ease); padding: var(--space-5) 0 0; }
+        .breadcrumb-back:hover { color: var(--heading-accent); }
+        .breadcrumb-back svg { width: 1rem; height: 1rem; stroke: currentColor; stroke-width: 2; fill: none; transition: all var(--hover-duration) var(--hover-ease); }
+
+        /* Lightbox */
+
+}
+</style>

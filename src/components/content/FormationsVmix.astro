@@ -1,0 +1,638 @@
+---
+import TrainingMeta from '../site/TrainingMeta.astro';
+import TrainingLayout from '../site/TrainingLayout.astro';
+import ButtonWrapper from '../wrapper/ButtonWrapper.astro';
+import ContactSection from './ContactSection.astro';
+import Section from '../wrapper/Section.astro';
+import ContentWrapper from '../wrapper/ContentWrapper.astro';
+import Eyebrow from '../typography/Eyebrow.astro';
+import Heading from '../typography/Heading.astro';
+import Paragraph from '../typography/Paragraph.astro';
+import Grid from '../wrapper/Grid.astro';
+import Card from '../item/Card.astro';
+import Button from '../Button.astro';
+import Img from '../media/Img.astro';
+---
+<!-- ============================================
+         PAGE HERO
+         ============================================ -->
+    <Section theme="dark" paddingTop="navoverlap" paddingBottom="small" align="center">
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">Formation professionnelle</Eyebrow>
+                <Heading tag="h1" variant="h1">Concevoir et piloter une r&eacute;gie vid&eacute;o virtuelle avec vMix</Heading>
+                <Paragraph variant="large">D&eacute;veloppez vos comp&eacute;tences sur vMix pour produire, habiller et diffuser des contenus live professionnels.</Paragraph>
+            <ButtonWrapper class="justify-center" data-review-addition="training-session-access"><Button element="link" href="#formation-sessions">Prochaines sessions</Button></ButtonWrapper>
+            </ContentWrapper>
+
+    </Section>
+
+    <!-- Breadcrumb retour -->
+    <div class="site-container">
+        <a href="/formations" class="breadcrumb-back">
+            <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Retour nos formations
+        </a>
+    </div>
+
+    <!-- ============================================
+         DETAIL : Objectifs + M&eacute;ta sidebar
+         ============================================ -->
+    <Section theme="light">
+
+            <TrainingLayout>
+                <Fragment slot="summary">
+                    <TrainingMeta>
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <div>
+                            <span class="meta-label">Dur&eacute;e</span>
+                            <span class="meta-value">5 jours (35h)</span>
+                        </div>
+                    </TrainingMeta>
+                    <TrainingMeta>
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <div>
+                            <span class="meta-label">Lieu</span>
+                            <span class="meta-value">39 bis rue Robert Creuzet, 47200 Marmande</span>
+                        </div>
+                    </TrainingMeta>
+                    <TrainingMeta>
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                        <div>
+                            <span class="meta-label">Participants</span>
+                            <span class="meta-value">Limit&eacute; &agrave; 8 personnes</span>
+                        </div>
+                    </TrainingMeta>
+                    <TrainingMeta>
+                        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        <div>
+                            <span class="meta-label">Tarif</span>
+                            <span class="meta-value">2800 &euro; HT</span>
+                        </div>
+                    </TrainingMeta>
+                    <TrainingMeta id="formation-sessions">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        <div>
+                            <span class="meta-label">Prochaines sessions</span>
+                            <span class="meta-dates-hint">Cliquez sur une date pour vous inscrire</span>
+                            <div class="meta-dates-list" data-formation-code="vMixV1">
+                                <span class="meta-date-chip">07/12/2026 &ndash; 11/12/2026</span>
+                            </div>
+                        </div>
+                    </TrainingMeta>
+                    <ButtonWrapper marginTop="0">
+
+                        <Button emphasis="secondary" element="link" class="width-full" href={"#contact"}>Nous contacter</Button>
+                    </ButtonWrapper>
+                </Fragment>
+                <div class="formation-detail-text">
+                    <span class="formation-tag-inline">Pr&eacute;sentiel &middot; 5 jours</span>
+                    <Heading tag="h2" variant="h2" class="alignment-start">Concevoir et piloter une r&eacute;gie vid&eacute;o virtuelle avec vMix</Heading>
+                    <hr class="divider">
+                    <br>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>
+                        D&eacute;veloppez vos comp&eacute;tences sur vMix pour produire, habiller et diffuser des contenus live professionnels.
+                    </Paragraph>
+
+                    <Heading tag="h3" variant="h3">Objectifs p&eacute;dagogiques</Heading>
+                    <ul class="objectifs-list">
+                        <li>Identifier les fonctionnalit&eacute;s principales du logiciel vMix et leur usage dans une production audiovisuelle live</li>
+                        <li>Configurer un projet vMix en fonction d'un besoin de r&eacute;alisation et de diffusion</li>
+                        <li>Int&eacute;grer et organiser des sources vid&eacute;o, audio et m&eacute;dias dans une r&eacute;gie virtuelle</li>
+                        <li>Param&eacute;trer les entr&eacute;es, sorties et routings audio d'une production live</li>
+                        <li>R&eacute;aliser une production multicam&eacute;ra avec transitions, overlays et multiviews</li>
+                        <li>Configurer un enregistrement et une diffusion en streaming</li>
+                        <li>Mettre en &oelig;uvre des outils d'automatisation via les shortcuts et triggers</li>
+                        <li>Exploiter les fonctionnalit&eacute;s avanc&eacute;es de vMix : PTZ, vMix Call, outils web et social</li>
+                        <li>Cr&eacute;er et int&eacute;grer des habillages graphiques dynamiques et personnalis&eacute;s</li>
+                        <li>Produire et diffuser un projet live complet r&eacute;pondant &agrave; un cahier des charges</li>
+                    </ul>
+
+                    <Heading tag="h3" variant="h3">Public &amp; pr&eacute;-requis</Heading>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>
+                        <strong>Public vis&eacute; :</strong> techniciens vid&eacute;o, responsables production, organisateurs d'&eacute;v&eacute;nements, r&eacute;gisseurs live, ou toute personne souhaitant acqu&eacute;rir une expertise en production live &amp; streaming.
+                    </Paragraph>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>
+                        <strong>Pr&eacute;-requis :</strong> aucun
+                    </Paragraph>
+                </div>
+                <Fragment slot="details">
+                    <TrainingMeta highlighted>
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                        <div>
+                            <span class="meta-label">Inscription sans engagement</span>
+                            <span class="meta-value">Votre demande d'inscription ne vous engage &agrave; rien.</span>
+                            <span class="meta-note">Elle nous permet de vous transmettre un devis et les informations n&eacute;cessaires pour effectuer vos d&eacute;marches de financement aupr&egrave;s de votre OPCO ou de tout autre financeur.</span>
+                        </div>
+                    </TrainingMeta>
+                    <TrainingMeta>
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <div>
+                            <span class="meta-label">D&eacute;lais d'acc&egrave;s</span>
+                            <span class="meta-value">Inscription jusqu'&agrave; 11 jours ouvr&eacute;s avant le d&eacute;but de la formation.</span>
+                        </div>
+                    </TrainingMeta>
+                    <TrainingMeta>
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <div>
+                            <span class="meta-label">&Eacute;valuation</span>
+                            <ul class="meta-list">
+                                <li>Exercices pratiques tout au long de la formation</li>
+                                <li>Observation des mises en situation</li>
+                                <li>Mise en place d'une production live compl&egrave;te en fin de formation</li>
+                                <li>Validation des comp&eacute;tences techniques et organisationnelles</li>
+                            </ul>
+                        </div>
+                    </TrainingMeta>
+                    <TrainingMeta>
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        <div>
+                            <span class="meta-label">Sanction de la formation</span>
+                            <span class="meta-value">Attestation de fin de formation + certificat de r&eacute;alisation d&eacute;livr&eacute;s &agrave; l'issue.</span>
+                        </div>
+                    </TrainingMeta>
+                        <Button element="link" variant="link" href={"https://evaremote.com/reclamation"} target={"_blank"} rel={"noopener"}>Réclamation</Button>
+                    <div class="qualiopi-sidebar">
+                        <Img loading={"lazy"} src={"/images/LogoQualiopi-150dpi-AvecMarianne.png"} alt={"Certification Qualiopi"} appearance="logo" transparent />
+                        <Paragraph variant="main">La certification qualit&eacute; a &eacute;t&eacute; d&eacute;livr&eacute;e au titre de la cat&eacute;gorie d'actions suivante : <strong>Actions de formation</strong>.</Paragraph>
+                    </div>
+                </Fragment>
+            </TrainingLayout>
+
+    </Section>
+
+    <!-- ============================================
+         PROGRAMME DE LA FORMATION
+         ============================================ -->
+    <Section theme="light">
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">D&eacute;roul&eacute;</Eyebrow>
+                <Heading tag="h2" variant="h2">Programme de la formation</Heading>
+                <hr class="divider" style={"margin: var(--space-4) auto 0;"}>
+            </ContentWrapper>
+            <div class="programme-days ">
+
+                <div class="programme-day">
+                    <Heading tag="h3" variant="h3">Jour 1 &mdash; Fondamentaux et prise en main de vMix</Heading>
+                    <ul>
+                        <li>Introduction aux workflows de production vid&eacute;o live</li>
+                        <li>Prise en main de l'interface vMix et configuration initiale</li>
+                        <li>Gestion des sources vid&eacute;o, audio et m&eacute;dias</li>
+                        <li>Organisation et structuration d'un projet</li>
+                        <li>Introduction au routing audio et &agrave; la gestion des bus</li>
+                        <li>Mise en pratique : cr&eacute;ation d'un projet multicam&eacute;ra simple avec gestion audio</li>
+                    </ul>
+                </div>
+
+                <div class="programme-day">
+                    <Heading tag="h3" variant="h3">Jour 2 &mdash; Production live et diffusion</Heading>
+                    <ul>
+                        <li>Techniques de r&eacute;alisation multicam&eacute;ra (transitions, overlays, multiview)</li>
+                        <li>Configuration de l'enregistrement et du multicorder</li>
+                        <li>Mise en place d'un streaming live</li>
+                        <li>Automatisation des actions (shortcuts et triggers)</li>
+                        <li>Utilisation des sorties externes et fullscreen</li>
+                        <li>Mise en pratique : diffusion d'une conf&eacute;rence live sur YouTube avec pr&eacute;sentation PowerPoint</li>
+                    </ul>
+                </div>
+
+                <div class="programme-day">
+                    <Heading tag="h3" variant="h3">Jour 3 &mdash; Fonctionnalit&eacute;s avanc&eacute;es de production</Heading>
+                    <ul>
+                        <li>Param&eacute;trage avanc&eacute; des inputs (couleur, effets, organisation)</li>
+                        <li>Int&eacute;gration de cam&eacute;ras PTZ et contr&ocirc;le &agrave; distance</li>
+                        <li>Utilisation de vMix Call et outils de visioconf&eacute;rence</li>
+                        <li>Exploitation des outils web (controller, telestrator)</li>
+                        <li>Replay instantan&eacute; et outils de production live avanc&eacute;s</li>
+                        <li>Mise en pratique : production avec sources distantes et contr&ocirc;le PTZ</li>
+                    </ul>
+                </div>
+
+                <div class="programme-day">
+                    <Heading tag="h3" variant="h3">Jour 4 &mdash; Habillage graphique et automatisation</Heading>
+                    <ul>
+                        <li>Cr&eacute;ation et utilisation de titres avec GT Title Designer</li>
+                        <li>Int&eacute;gration de donn&eacute;es dynamiques (CSV, timers, datasources)</li>
+                        <li>Effets visuels sur les sources (LUT, masques, flou, incrustation)</li>
+                        <li>Gestion des stingers et transitions avanc&eacute;es</li>
+                        <li>Incrustation chromatique (fond vert)</li>
+                        <li>Mise en pratique : cr&eacute;ation d'un habillage complet d'&eacute;mission</li>
+                    </ul>
+                </div>
+
+                <div class="programme-day">
+                    <Heading tag="h3" variant="h3">Jour 5 &mdash; Projet final de production live</Heading>
+                    <ul>
+                        <li>Analyse d'un cahier des charges de production</li>
+                        <li>Pr&eacute;paration et organisation d'une r&eacute;gie compl&egrave;te</li>
+                        <li>R&eacute;alisation d'une &eacute;mission live multicam&eacute;ra</li>
+                        <li>Int&eacute;gration des outils avanc&eacute;s (audio, vid&eacute;o, habillage, automatisation)</li>
+                        <li>Diffusion en direct sur plateforme de streaming</li>
+                        <li>Restitution et analyse des productions</li>
+                    </ul>
+                </div>
+
+            </div>
+
+    </Section>
+
+    <!-- ============================================
+         NOS R&Eacute;SULTATS (rempli auto depuis EVA Remote)
+         Bloc masqu&eacute; auto si &lt; 5 stagiaires form&eacute;s
+         Couvre Qualiopi indicateur 1
+         ============================================ -->
+    <Section theme="light">
+
+            <div data-formation-results-code="vMixV1"></div>
+
+    </Section>
+
+    <!-- ============================================
+         MODALIT&Eacute;S PRATIQUES
+         ============================================ -->
+    <Section theme="light">
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">Informations</Eyebrow>
+                <Heading tag="h2" variant="h2">Modalit&eacute;s pratiques</Heading>
+                <hr class="divider" style={"margin: var(--space-4) auto 0;"}>
+            </ContentWrapper>
+            <Grid xsmall={1} small={1} medium={2} large={3} gap="4">
+
+                <Card variant="panel">
+                    <Heading tag="h3" variant="h4">M&eacute;thode p&eacute;dagogique</Heading>
+                    <ul>
+                        <li>Apports th&eacute;oriques et techniques</li>
+                        <li>D&eacute;monstrations en direct</li>
+                        <li>Exercices pratiques individuels et en groupe</li>
+                        <li>&Eacute;tudes de cas</li>
+                        <li>Mise en situation professionnelle</li>
+                        <li>R&eacute;alisation d'un projet final</li>
+                    </ul>
+                </Card>
+
+                <Card variant="panel">
+                    <Heading tag="h3" variant="h4">Ressources mat&eacute;rielles</Heading>
+                    <Paragraph variant="main">Mise &agrave; disposition d'ordinateurs &eacute;quip&eacute;s de licences vMix (PRO et 4K) et de tous les &eacute;quipements audiovisuels n&eacute;cessaires (cam&eacute;ras, micros, m&eacute;dias mp4, mp3, jpeg, p&eacute;riph&eacute;riques informatiques, moniteurs vid&eacute;os, etc.)</Paragraph>
+                </Card>
+
+                <Card variant="panel">
+                    <Heading tag="h3" variant="h4">Modalit&eacute;s d'acc&egrave;s</Heading>
+                    <Paragraph variant="main">Remplir un formulaire de demande de formation, entretien t&eacute;l&eacute;phonique, formation en pr&eacute;sentiel.</Paragraph>
+                </Card>
+
+                <Card variant="panel">
+                    <Heading tag="h3" variant="h4">Acc&egrave;s &amp; situation</Heading>
+                    <Paragraph variant="main">39 bis rue Robert Creuzet, 47200 Marmande (Lot-et-Garonne). 10 minutes &agrave; pied depuis la gare de Marmande.</Paragraph>
+                </Card>
+
+                <Card variant="panel">
+                    <Heading tag="h3" variant="h4">Accessibilit&eacute; PMR et dispositions relatives &agrave; l'accessibilit&eacute;</Heading>
+                    <Paragraph variant="main">Salle de cours et espace de vie compatibles. L'organisme de formation s'engage &agrave; &eacute;tudier et &agrave; mettre en &oelig;uvre les adaptations n&eacute;cessaires pour l'accueil de personnes en situation de handicap, conform&eacute;ment &agrave; la l&eacute;gislation en vigueur. Pour toute demande sp&eacute;cifique, le stagiaire est invit&eacute; &agrave; contacter l'organisme de formation en amont.</Paragraph>
+                </Card>
+
+                <Card variant="panel">
+                    <Heading tag="h3" variant="h4">Financement de la formation</Heading>
+                    <Paragraph variant="main">Plusieurs modes de prise en charge sont possibles gr&acirc;ce &agrave; notre certification Qualiopi&nbsp;:</Paragraph>
+                    <ul>
+                        <li><strong>AFDAS</strong> &mdash; pour les intermittents du spectacle et de l'audiovisuel</li>
+                        <li><strong>OPCO</strong> &mdash; pour les salari&eacute;s via leur entreprise</li>
+                        <li><strong>France Travail (AIF)</strong> &mdash; pour les demandeurs d'emploi</li>
+                        <li><strong>Fonds propres</strong> &mdash; entreprise ou personnel</li>
+                    </ul>
+                    <Paragraph variant="main">Nous vous accompagnons dans le montage du dossier de financement. Contactez-nous pour en discuter.</Paragraph>
+                </Card>
+
+                <Card variant="panel">
+                    <Heading tag="h3" variant="h4">Contact &amp; Contact pour situation de PSH</Heading>
+                    <Paragraph variant="main">No&eacute;mie Marphay<br><a href="mailto:formation@lesateliersdustream.fr" style={"color: var(--heading-accent);"}>formation@lesateliersdustream.fr</a><br><a href="tel:+33646656577" style={"color: var(--heading-accent);"}>06 46 65 65 77</a></Paragraph>
+                </Card>
+
+            </Grid>
+
+    </Section>
+
+    <!-- ============================================
+         POINTS FORTS
+         ============================================ -->
+    <Section theme="light" tone="muted">
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">Avantages</Eyebrow>
+                <Heading tag="h2" variant="h2">Points forts de la formation</Heading>
+                <hr class="divider" style={"margin: var(--space-4) auto 0;"}>
+            </ContentWrapper>
+            <ul class="points-forts-list ">
+                <li>Approche 100 % pratique, avec mat&eacute;riel professionnel &amp; cas r&eacute;els.</li>
+                <li>Effectif r&eacute;duit : accompagnement individualis&eacute;.</li>
+                <li>Formateur expert en production live &amp; streaming.</li>
+                <li>Possibilit&eacute; d'adapter le contenu en intra-entreprise.</li>
+                <li>Programme structur&eacute; pour vous rendre autonome dans un contexte professionnel.</li>
+            </ul>
+
+            <!-- Passerelle vers l'autre formation du catalogue -->
+            <p class="autre-formation ">
+                Vous souhaitez d'abord vous acculturer &agrave; l'intelligence artificielle&nbsp;? D&eacute;couvrez notre
+                <a href="/formations/ia">formation IA &agrave; Marmande</a>, sur une journ&eacute;e.
+            </p>
+
+            <!-- Back link -->
+            <div style={"text-align: center;"}>
+                <Button element="link" variant="link" href={"/formations"}>
+                    <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    Retour aux formations
+                </Button>
+            </div>
+
+    </Section>
+
+    <!-- ============================================
+         CTA / CONTACT
+         ============================================ -->
+    <ContactSection eyebrow={"Envie de vous former ?"} title={"Parlons de votre projet de formation"} description={"Vous souhaitez monter en compétences sur la captation multicaméra ou le live streaming ? Contactez-nous pour échanger sur vos besoins."} email={"formation@lesateliersdustream.fr"} phoneHref={"tel:+33646656577"} phone={"06 46 65 65 77"} locationAlt={"Lieu"} training={true} />
+
+    <!-- Footer -->
+
+
+
+    <script is:inline src="/formations-sessions.js?v=2"></script>
+    <script is:inline src="/formations-results.js?v=2"></script>
+
+
+
+<style is:global>
+@layer components {
+
+/* ============================================
+           POLICES
+           ============================================ */
+
+        /* ============================================
+           VARIABLES
+           ============================================ */
+
+        /* ============================================
+           RESET
+           ============================================ */
+
+        /* ============================================
+           PAGE HERO
+           ============================================ */
+
+        /* ============================================
+           SECTIONS COMMUNES
+           ============================================ */
+        .divider {
+            margin: var(--space-4) 0 0 0;
+        }
+
+        /* ============================================
+           FORMATION DETAIL LAYOUT
+           ============================================ */
+        .formation-tag-inline {
+            display: inline-block; padding: var(--space-1) var(--space-3); font-size: var(--text-small);
+            font-weight: var(--primary-bold); text-transform: uppercase; letter-spacing: var(--letter-spacing-normal);
+            background: var(--tag-background); color: var(--heading-accent);
+            border-radius: var(--radius-round); margin-bottom: var(--space-4);
+        }
+
+        /* Sidebar m&eacute;ta */
+        .formation-meta-sidebar {
+            display: flex; flex-direction: column; gap: var(--space-4);
+            padding: var(--space-5);
+            background: var(--light-200);
+            border-radius: var(--radius-small);
+            border: var(--border-width) solid var(--light-300);
+        }
+        .meta-label {
+            display: block; font-size: var(--text-small); font-weight: var(--primary-bold);
+            text-transform: uppercase; letter-spacing: var(--letter-spacing-normal);
+            color: var(--text-2); margin-bottom: var(--space-1);
+        }
+        .meta-value {
+            display: block; font-size: var(--text-main); font-weight: var(--primary-medium);
+            color: var(--dark-900);
+        }
+        .meta-dates-list {
+            display: flex; flex-wrap: wrap; gap: var(--space-1);
+            margin-top: var(--space-1);
+        }
+        .meta-list {
+            list-style: none;
+            margin-top: var(--space-1);
+        }
+        .meta-list li {
+            position: relative;
+            padding-left: var(--space-3);
+            font-size: var(--text-small);
+            color: var(--dark-900);
+            font-weight: var(--primary-medium);
+            line-height: var(--text-small-line-height);
+            margin-bottom: var(--space-1);
+        }
+        .meta-list li::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0.5625rem;
+            width: 0.3125rem; height: 0.3125rem;
+            border-radius: 50%;
+            background: var(--brand-500);
+        }
+        /* Bloc mis en avant : la reassurance, juste avant le choix d'une date. */
+
+        /* Ligne secondaire d'un item de la sidebar : meme DA que .meta-list,
+           poids allege pour un paragraphe explicatif. */
+        .meta-note {
+            display: block;
+            font-size: var(--text-small); font-weight: var(--primary-medium);
+            color: var(--text-2);
+            line-height: var(--text-small-line-height);
+            margin-top: var(--space-1);
+        }
+        .meta-dates-hint {
+            display: none;             /* revele par formations-sessions.js si dates cliquables */
+            font-size: var(--text-small); color: var(--text-2);
+            line-height: var(--text-small-line-height); margin: var(--space-1) 0 var(--space-2);
+        }
+        .meta-date-chip {
+            display: inline-block;
+            padding: var(--space-1) var(--space-3);
+            font-size: var(--text-small); font-weight: var(--primary-medium);
+            background: var(--brand-500);
+            color: var(--dark-900);
+            border-radius: var(--radius-round);
+            white-space: nowrap;
+            cursor: pointer;
+            transition: transform var(--hover-duration), box-shadow var(--hover-duration), background var(--hover-duration);
+        }
+        .meta-date-chip--empty {
+            background: var(--background-2); color: var(--text-2);
+            font-weight: var(--primary-medium); cursor: default;
+        }
+        .qualiopi-sidebar {
+            display: flex; flex-direction: column; align-items: center;
+            gap: var(--space-2); margin-top: var(--space-4);
+            padding: var(--space-4) var(--space-3);
+            background: var(--light-100);
+            border: var(--border-width) solid var(--light-300);
+            border-radius: var(--radius-small);
+            text-align: center;
+        }
+        .qualiopi-sidebar strong {
+            color: var(--dark-900);
+        }
+
+        /* ============================================
+           OBJECTIFS P&Eacute;DAGOGIQUES
+           ============================================ */
+        .objectifs-list {
+            list-style: none; margin-top: var(--space-2);
+        }
+        .objectifs-list li {
+            position: relative; padding-left: var(--space-4);
+            font-size: var(--text-main); color: var(--text-2); line-height: var(--text-main-line-height);
+        }
+        .objectifs-list li::before {
+            content: ''; position: absolute; left: 0; top: 0.6875rem;
+            width: 0.5rem; height: 0.5rem; border-radius: 50%;
+            background: var(--brand-500);
+        }
+
+        /* ============================================
+           PROGRAMME
+           ============================================ */
+        .programme-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-4);
+        }
+        .programme-card {
+            background: var(--light-100);
+            border-radius: var(--radius-small);
+            border: var(--border-width) solid var(--light-300);
+            padding: var(--space-5);
+            transition: all var(--hover-duration) var(--hover-ease);
+        }
+        .programme-card:hover {
+            transform: translateY(-0.1875rem);
+            box-shadow: var(--shadow-surface);
+        }
+        .programme-card .time {
+            display: inline-block; font-size: var(--text-small); font-weight: var(--primary-bold);
+            text-transform: uppercase; letter-spacing: var(--letter-spacing-normal);
+            color: var(--heading-accent); margin-bottom: var(--space-2);
+        }
+        .programme-card ul {
+            list-style: none;
+        }
+        .programme-card li {
+            position: relative; padding-left: var(--space-4);
+            font-size: var(--text-small); color: var(--text-2); line-height: var(--text-main-line-height);
+        }
+        .programme-card li::before {
+            content: ''; position: absolute; left: 0; top: 0.625rem;
+            width: 0.375rem; height: 0.375rem; border-radius: 50%;
+            background: var(--brand-500);
+        }
+
+        /* ============================================
+           MODALIT&Eacute;S PRATIQUES
+           ============================================ */
+
+        /* ============================================
+           POINTS FORTS
+           ============================================ */
+        .points-forts-list {
+            list-style: none;
+            max-width: 43.75rem;
+            margin: 0 auto;
+        }
+        .points-forts-list li {
+            position: relative; padding-left: var(--space-5);
+            font-size: var(--text-main); color: var(--text-2); line-height: var(--text-main-line-height);
+        }
+        .points-forts-list li::before {
+            content: ''; position: absolute; left: 0; top: 0.75rem;
+            width: 0.625rem; height: 0.625rem; border-radius: 50%;
+            background: var(--brand-500);
+        }
+
+        /* ============================================
+           BREADCRUMB BACK
+           ============================================ */
+        .breadcrumb-back {
+            display: inline-flex; align-items: center; gap: var(--space-2);
+            font-size: var(--text-small); font-weight: var(--primary-medium); text-transform: uppercase;
+            letter-spacing: var(--letter-spacing-normal); color: var(--text-2); transition: all var(--hover-duration) var(--hover-ease);
+            padding: var(--space-5) 0 0;
+        }
+        .breadcrumb-back:hover { color: var(--heading-accent); }
+        .breadcrumb-back svg {
+            width: 1rem; height: 1rem; stroke: currentColor; stroke-width: 2;
+            fill: none; transition: all var(--hover-duration) var(--hover-ease);
+        }
+
+        /* ============================================
+           BACK LINK
+           ============================================ */
+        /* Passerelle vers l'autre formation du catalogue */
+        .autre-formation {
+            text-align: center; margin-top: var(--space-6);
+            font-size: var(--text-main); color: var(--text-2);
+        }
+        .autre-formation a {
+            color: var(--dark-900); font-weight: var(--primary-medium);
+            border-bottom: var(--border-width) solid var(--brand-500);
+            transition: all var(--hover-duration) var(--hover-ease);
+        }
+        .autre-formation a:hover { color: var(--heading-accent); }
+
+        /* ============================================
+           PROGRAMME — BLOCS PAR JOUR
+           ============================================ */
+        .programme-days {
+            display: flex; flex-direction: column;
+            gap: var(--space-4);
+            max-width: 56.25rem;
+            margin: 0 auto;
+        }
+        .programme-day {
+            background: var(--light-100);
+            border-radius: var(--radius-small);
+            border: var(--border-width) solid var(--light-300);
+            padding: var(--space-5) var(--space-6);
+            transition: all var(--hover-duration) var(--hover-ease);
+        }
+        .programme-day:hover {
+            transform: translateY(-0.1875rem);
+            box-shadow: var(--shadow-surface);
+        }
+        .programme-day ul {
+            list-style: none;
+        }
+        .programme-day li {
+            position: relative;
+            padding-left: var(--space-4);
+            font-size: var(--text-main);
+            color: var(--text-2);
+            line-height: var(--text-main-line-height);
+        }
+        .programme-day li::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0.875rem;
+            width: 0.5rem; height: 0.5rem;
+            border-radius: 50%;
+            background: var(--brand-500);
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (--mq-large-max) {
+            .programme-grid { grid-template-columns: 1fr; }
+        }
+
+}
+</style>

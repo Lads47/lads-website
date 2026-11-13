@@ -1,80 +1,40 @@
-# Les Ateliers du Stream - Site Web
+# Les Ateliers du Stream — Astro et Lumos
 
-Site vitrine de **Les Ateliers du Stream**, entreprise de captation multicam et de production audiovisuelle en direct.
+Migration fidèle du site vitrine vers Astro et Lumos for Astro 1.0.3. Les prestations audiovisuelles restent prioritaires ; les formations, leurs informations et leurs intégrations EVA sont conservées. Aucun CMS ni formulaire local n'est ajouté.
 
-## Stack technique
+## Démarrage local
 
-- **HTML5** / **CSS3** / **JavaScript** vanilla (aucun framework)
-- Polices : Butler (serif) et Open Sans (variable)
-- Formats d'images : WebP, SVG, AVIF
-- Header et footer dynamiques via JS (`header.js`, `footer.js`)
-- Lightbox photo intégrée
-- Design responsive (breakpoints : 1024px, 768px, 480px)
-
-## Arborescence
-
-```
-lads-website/
-├── index.html                  # Page d'accueil
-├── solutions.html              # Nos solutions
-├── realisations.html           # Nos réalisations
-├── formations.html             # Nos formations
-├── approche.html               # Notre accompagnement
-├── histoire.html               # Notre histoire
-├── mentions-legales.html       # Mentions légales
-│
-├── solutions/                  # 12 sous-pages solutions
-│   ├── captation-multicam.html
-│   ├── captation-video.html
-│   ├── captation-multi-regies.html
-│   ├── cameras-tourelle-hf.html
-│   ├── multiplex.html
-│   ├── plateau-web-tv.html
-│   ├── fond-vert.html
-│   ├── retranscription-synthese.html
-│   ├── chapitrage-automatique.html
-│   ├── videoprojection.html
-│   ├── sonorisation.html
-│   └── diffusion-gestion-medias.html
-│
-├── realisations/               # 10 sous-pages réalisations
-│   ├── peer-gynt.html
-│   ├── jeu-de-role.html
-│   ├── ceremonie-docteurs-bordeaux.html
-│   ├── festival-imprime.html
-│   ├── universite-ete-ceca.html
-│   ├── destination-europe.html
-│   ├── salon-agriculture-bordeaux.html
-│   ├── inova-e.html
-│   ├── etourisme-pau.html
-│   └── festival-journalisme-couthures.html
-│
-├── formations/                 # Sous-pages formations
-│   └── vmix.html
-│
-├── header.js / header.css      # Navigation dynamique
-├── footer.js / footer.css      # Footer dynamique + scroll reveal
-│
-├── fonts/                      # Polices (woff2)
-├── images/                     # Logos, icônes, favicon
-├── logos-clients/              # Logos des clients (SVG + WebP)
-└── photo/                      # Photos du site (WebP)
+```powershell
+npm ci
+npm run check
+npm run build
+npm test
+npm run preview
 ```
 
-## Navigation
+Prévisualisation du site construit : <http://127.0.0.1:4321>. Les routes sans extension sont résolues vers les fichiers HTML comme sur le serveur actuel. Pour modifier les composants avec rechargement automatique : `npm run dev`.
 
-Le header et le footer sont générés dynamiquement par `header.js` et `footer.js` avec détection automatique du préfixe de chemin (`../` pour les sous-dossiers).
+Dans un second terminal, avec la prévisualisation ouverte : `npm run test:browser`. La suite contrôle les rendus mobile/bureau, les principaux gabarits tablette, le menu, les lightboxes, les redirections, l'opposition EVA et les états des formations. Elle simule les services externes ; les vidéos et iframes sont neutralisées dans les captures de comparaison. Les rapports et captures sont dans `test-results/`, ignoré par Git. Définir `BROWSER_PATH` pour utiliser un navigateur spécifique ; hors Windows, installer Chromium avec `npx playwright install chromium`.
 
-## Développement local
+## Organisation
 
-Ouvrir directement `index.html` dans un navigateur (`file://`). Tous les liens internes incluent l'extension `.html` pour la compatibilité en navigation locale.
+- `src/pages/` : les 40 routes et leurs métadonnées originales ; `src/components/content/` : leurs contenus et styles, avec un bloc contact partagé.
+- `src/components/global/` : navigation et pied de page Lumos ; `src/components/site/` : dialogue photo et métadonnées de formation partagées.
+- `src/styles/` : tokens Lumos, identité visuelle et conditions responsive centralisées.
+- `public/` : médias, polices, PDF, scripts EVA, données structurées, robots et sitemap conservés.
+- `tests/fixtures/` : inventaire des routes, empreintes des textes et métadonnées de référence.
+- `scripts/` : prévisualisation compatible avec les URL de production et contrôles statiques/navigateur.
 
-## Déploiement
+Le site est construit en HTML statique dans `dist/`. Aucun serveur Node n'est nécessaire sur l'hébergement. Les composants Lumos utilisés et le contrat des tokens sont documentés dans `docs/lumos.md`. `npm test` vérifie aussi la réutilisation des rôles Lumos et le nommage des variables.
 
-Site statique hébergé sur **Hostinger**. Aucun build nécessaire : les fichiers sont déployés tels quels.
+Les six anciens lecteurs Vimeo sont remplacés localement par des vidéos natives Lumos en 1080p/720p, avec sous-titres et vignettes. Ce complément a été validé localement le 12 novembre 2026, et sa publication sur la même PR est autorisée : voir [le bilan et les poids](docs/videos-locales.md). La PR #4 reste en brouillon pendant les contrôles GitHub, puis peut être rendue prête à relire après leur réussite.
 
-## Contact
+La vidéo d'accueil est incluse dans `public/videos/` et servie par le site, sans appel à Amazon S3. Le serveur de prévisualisation prend en charge son type MP4 et les requêtes partielles.
 
-- **Email** : prod@lesateliersdustream.fr
-- **Téléphone** : 06 61 96 88 58
-- **Bureaux** : Marmande (47) | Mérignac (33) | Issy-les-Moulineaux (92)
+## Validation et livraison
+
+**Version locale validée le 12 novembre 2026.** La publication de la branche et d’une PR vers `main` est autorisée ; la fusion et la mise en ligne restent des étapes séparées, non autorisées dans ce lot. Le complément vidéo est également validé localement ; aucun accord de fusion ni de déploiement n’est donné. Le [dossier de revue GitHub](docs/revue-github.md) présente le résultat, les captures, les contrôles et les limites. La procédure de livraison et de retour arrière est dans [docs/livraison.md](docs/livraison.md).
+
+Tous les textes sont conservés selon le choix de l'utilisateur. Les contradictions éditoriales et les limites d'intégrations externes sont signalées dans le rapport, sans correction éditoriale automatique.
+
+Source historique : `Lads47/lads-website`, commit `a4a264380f80e3570bcb3d01a6776bb582439527`. Les anciens fichiers restent disponibles dans l'historique Git.

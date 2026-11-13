@@ -1,0 +1,185 @@
+---
+import Section from '../wrapper/Section.astro';
+import ContentWrapper from '../wrapper/ContentWrapper.astro';
+import Eyebrow from '../typography/Eyebrow.astro';
+import Heading from '../typography/Heading.astro';
+import Paragraph from '../typography/Paragraph.astro';
+import Button from '../Button.astro';
+---
+<!-- ============================================
+         HEADER
+         ============================================ -->
+
+
+
+    <!-- ============================================
+         PAGE HERO
+         ============================================ -->
+    <Section theme="dark" paddingTop="navoverlap" paddingBottom="small" align="center">
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">L&eacute;gal</Eyebrow>
+                <Heading tag="h1" variant="h1">Politique de confidentialit&eacute;</Heading>
+            </ContentWrapper>
+
+    </Section>
+
+    <!-- ============================================
+         CONTENU
+         ============================================ -->
+    <Section theme="light">
+
+            <div class="legal-content ">
+
+                <Heading tag="h2" variant="h4">1. Responsable du traitement</Heading>
+                <Paragraph variant="main">Le responsable du traitement des donn&eacute;es est la soci&eacute;t&eacute; Web Vid&eacute;o Production - Les Ateliers du Stream, SAS au capital de 6 600 &euro;, dont le si&egrave;ge social est situ&eacute; 39 bis rue Robert Creuzet, 47200 Marmande (SIREN 819502238).</Paragraph>
+                <Paragraph variant="main">Contact : <a href="mailto:prod@lesateliersdustream.fr">prod@lesateliersdustream.fr</a> &mdash; 06 61 96 88 58</Paragraph>
+
+                <Heading tag="h2" variant="h4">2. Donn&eacute;es collect&eacute;es sur ce site</Heading>
+                <Paragraph variant="main">Le site lesateliersdustream.fr est un site vitrine. Il ne comporte aucun formulaire ni espace de connexion. Il utilise un outil de mesure d'audience interne, d&eacute;crit &agrave; la section 3.</Paragraph>
+                <Paragraph variant="main">Hormis cette mesure d'audience, <strong>aucune donn&eacute;e personnelle n'est collect&eacute;e directement par ce site</strong>. La prise de contact s'effectue par courriel ou par t&eacute;l&eacute;phone, &agrave; votre seule initiative.</Paragraph>
+
+                <Heading tag="h2" variant="h4">3. Cookies et traceurs</Heading>
+                <Paragraph variant="main">Le site ne d&eacute;pose aucun cookie de sa propre initiative : ni cookie publicitaire, ni cookie de personnalisation.</Paragraph>
+                <Paragraph variant="main"><strong>Mesure d'audience.</strong> Pour savoir quelles pages sont consult&eacute;es et am&eacute;liorer le site, nous utilisons EVA Stat, notre propre outil de mesure d'audience, h&eacute;berg&eacute; sur notre plateforme evaremote.com. Il enregistre dans votre navigateur un identifiant al&eacute;atoire propre &agrave; ce site, renouvel&eacute; au plus tard apr&egrave;s 13 mois, et collecte les pages consult&eacute;es, le temps pass&eacute;, certains clics (sur nos coordonn&eacute;es, sur les liens vers d'autres sites et sur les dates d'inscription), le site de provenance, le type d'appareil et de navigateur, la langue et une localisation approximative (ville) d&eacute;duite de votre adresse IP. Cette adresse est tronqu&eacute;e avant tout enregistrement et n'est jamais conserv&eacute;e en entier.</Paragraph>
+                <Paragraph variant="main">Ces donn&eacute;es servent uniquement &agrave; produire nos statistiques de fr&eacute;quentation. Elles ne sont ni crois&eacute;es avec d'autres sites, ni transmises &agrave; des tiers, et sont supprim&eacute;es au bout de 13 mois ; au-del&agrave;, nous ne gardons que des totaux anonymes. Conform&eacute;ment aux recommandations de la CNIL, cette mesure d'audience est dispens&eacute;e de consentement, et les r&eacute;glages &laquo; Do Not Track &raquo; et &laquo; Global Privacy Control &raquo; de votre navigateur sont respect&eacute;s. Vous pouvez aussi vous y opposer &agrave; tout moment, votre choix &eacute;tant m&eacute;moris&eacute; dans ce navigateur :</Paragraph>
+                <Paragraph variant="main">
+                    <Button id={"eva-stat-choix"}>Ne plus &ecirc;tre mesur&eacute;</Button>
+                    <span id="eva-stat-etat" style={"display: block; margin-top: var(--space-2); font-size: var(--text-small);"}></span>
+                </Paragraph>
+                <script is:inline>
+                    (function () {
+                        var bouton = document.getElementById('eva-stat-choix');
+                        var etat = document.getElementById('eva-stat-etat');
+                        function refuse() { try { return localStorage.getItem('evaStat_off') === '1'; } catch (e) { return false; } }
+                        function afficher() {
+                            var r = refuse();
+                            (bouton.querySelector('.button_text') || bouton).textContent = r ? 'Accepter à nouveau la mesure d’audience' : 'Ne plus être mesuré';
+                            etat.textContent = r ? 'La mesure d’audience est désactivée dans ce navigateur.' : 'La mesure d’audience est active dans ce navigateur.';
+                        }
+                        bouton.addEventListener('click', function () {
+                            try {
+                                if (refuse()) localStorage.removeItem('evaStat_off');
+                                else localStorage.setItem('evaStat_off', '1');
+                            } catch (e) {}
+                            afficher();
+                        });
+                        afficher();
+                    })();
+                </script>
+                <Paragraph variant="main">Les vid&eacute;os de l'accueil, du multiplex, de notre histoire et des r&eacute;alisations Peer Gynt, C&eacute;r&eacute;monie des docteurs de Bordeaux et TCG sont h&eacute;berg&eacute;es avec le site et lues directement par votre navigateur, sans lecteur Vimeo ni appel &agrave; Amazon S3. Certaines autres pages conservent des int&eacute;grations YouTube ou Wisio : ces services tiers peuvent recevoir des donn&eacute;es de connexion et, selon leurs propres r&eacute;glages, utiliser des cookies.</Paragraph>
+                <Paragraph variant="main">Vous pouvez &agrave; tout moment configurer votre navigateur pour bloquer ou supprimer ces cookies.</Paragraph>
+
+                <Heading tag="h2" variant="h4">4. Services tiers</Heading>
+                <Paragraph variant="main">Les services suivants interviennent dans le fonctionnement du site :</Paragraph>
+                <ul>
+                    <li>YouTube &mdash; lecture de certaines vid&eacute;os int&eacute;gr&eacute;es</li>
+                    <li>Wisio &mdash; int&eacute;gration du lecteur de d&eacute;monstration du chapitrage automatique</li>
+                    <li>evaremote.com &mdash; plateforme des Ateliers du Stream, qui fournit les dates de sessions et les indicateurs de r&eacute;sultats affich&eacute;s sur les pages formation, et qui h&eacute;berge la mesure d'audience EVA Stat</li>
+                </ul>
+                <Paragraph variant="main">Les appels servant &agrave; afficher les dates et les indicateurs ne transmettent aucune information vous concernant : ils ne font que r&eacute;cup&eacute;rer des donn&eacute;es publiques d'affichage. La mesure d'audience est d&eacute;crite &agrave; la section 3.</Paragraph>
+
+                <Heading tag="h2" variant="h4">5. Inscription &agrave; une formation</Heading>
+                <Paragraph variant="main">Les formulaires d'inscription et de r&eacute;clamation ne sont pas h&eacute;berg&eacute;s sur ce site : ils vous redirigent vers notre plateforme evaremote.com. Les donn&eacute;es que vous y saisissez sont collect&eacute;es dans le cadre de la gestion de votre dossier de formation, conform&eacute;ment &agrave; nos obligations d'organisme certifi&eacute; Qualiopi.</Paragraph>
+                <Paragraph variant="main">Ces donn&eacute;es sont destin&eacute;es aux seules personnes en charge du suivi des formations et, le cas &eacute;ch&eacute;ant, &agrave; votre organisme financeur. Elles ne font l'objet d'aucune cession ni d'aucune exploitation commerciale.</Paragraph>
+
+                <Heading tag="h2" variant="h4">6. Dur&eacute;e de conservation</Heading>
+                <Paragraph variant="main">Les donn&eacute;es li&eacute;es &agrave; une demande de contact sont conserv&eacute;es le temps n&eacute;cessaire au traitement de votre demande, puis supprim&eacute;es.</Paragraph>
+                <Paragraph variant="main">Les donn&eacute;es li&eacute;es &agrave; une action de formation sont conserv&eacute;es pendant la dur&eacute;e impos&eacute;e par nos obligations l&eacute;gales, comptables et de certification.</Paragraph>
+
+                <Heading tag="h2" variant="h4">7. Vos droits</Heading>
+                <Paragraph variant="main">Conform&eacute;ment au R&egrave;glement g&eacute;n&eacute;ral sur la protection des donn&eacute;es (RGPD) et &agrave; la loi Informatique et Libert&eacute;s, vous disposez des droits suivants :</Paragraph>
+                <ul>
+                    <li>droit d'acc&egrave;s &agrave; vos donn&eacute;es</li>
+                    <li>droit de rectification</li>
+                    <li>droit &agrave; l'effacement</li>
+                    <li>droit &agrave; la limitation du traitement</li>
+                    <li>droit &agrave; la portabilit&eacute;</li>
+                    <li>droit d'opposition</li>
+                </ul>
+                <Paragraph variant="main">Pour exercer ces droits, &eacute;crivez &agrave; <a href="mailto:prod@lesateliersdustream.fr">prod@lesateliersdustream.fr</a>. Une r&eacute;ponse vous sera apport&eacute;e dans un d&eacute;lai d'un mois.</Paragraph>
+                <Paragraph variant="main">Si vous estimez, apr&egrave;s nous avoir contact&eacute;s, que vos droits ne sont pas respect&eacute;s, vous pouvez adresser une r&eacute;clamation &agrave; la CNIL : <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>.</Paragraph>
+
+                <Heading tag="h2" variant="h4">8. S&eacute;curit&eacute;</Heading>
+                <Paragraph variant="main">Le site est servi int&eacute;gralement en HTTPS. Nous mettons en &oelig;uvre les mesures techniques raisonnables pour prot&eacute;ger les donn&eacute;es qui nous sont confi&eacute;es contre toute perte, acc&egrave;s non autoris&eacute; ou divulgation.</Paragraph>
+
+                <Heading tag="h2" variant="h4">9. Modification de la pr&eacute;sente politique</Heading>
+                <Paragraph variant="main">Cette politique peut &ecirc;tre amen&eacute;e &agrave; &eacute;voluer, notamment en cas d'ajout d'un service ou d'un outil sur le site. La date de derni&egrave;re mise &agrave; jour figure ci-dessous.</Paragraph>
+                <Paragraph variant="main">Pour les informations relatives &agrave; l'&eacute;diteur et &agrave; l'h&eacute;bergeur du site, consultez les <a href="/mentions-legales">mentions l&eacute;gales</a>.</Paragraph>
+
+                <p class="legal-date">Derni&egrave;re mise &agrave; jour : 12 novembre 2026</p>
+
+            </div>
+
+    </Section>
+
+    <!-- Footer -->
+
+
+
+<style is:global>
+@layer components {
+
+/* ============================================
+           POLICES
+           ============================================ */
+
+        /* ============================================
+           VARIABLES
+           ============================================ */
+
+        /* ============================================
+           RESET
+           ============================================ */
+
+        /* ============================================
+           PAGE HERO
+           ============================================ */
+
+        /* ============================================
+           SECTIONS
+           ============================================ */
+
+        /* ============================================
+           CONTENU LEGAL
+           ============================================ */
+        .legal-content {
+            max-width: 50rem;
+            margin: 0 auto;
+        }
+        .legal-content ul {
+            list-style: none;
+            margin: var(--space-3) 0 var(--space-2);
+        }
+        .legal-content li {
+            position: relative;
+            padding-left: var(--space-4);
+            font-size: var(--text-main);
+            color: var(--text-2);
+            line-height: var(--text-main-line-height);
+        }
+        .legal-content li::before {
+            content: ''; position: absolute; left: 0; top: 0.75rem;
+            width: 0.5rem; height: 0.5rem; border-radius: 50%;
+            background: var(--brand-500);
+        }
+        .legal-content a {
+            color: var(--dark-900); font-weight: var(--primary-medium);
+            border-bottom: var(--border-width) solid var(--brand-500);
+            transition: all var(--hover-duration) var(--hover-ease);
+        }
+        .legal-content a:hover { color: var(--heading-accent); }
+        .legal-date {
+            font-size: var(--text-small);
+            color: var(--text-2);
+            margin-top: var(--space-7);
+            padding-top: var(--space-4);
+            border-top: var(--border-width) solid var(--light-300);
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+
+}
+</style>

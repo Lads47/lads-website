@@ -1,0 +1,6 @@
+# Les sous-titres sont contrôlés par empreinte SHA-256 (src/data/local-videos.json) :
+# fins de ligne LF sur tous les postes, même avec core.autocrlf=true.
+*.vtt text eol=lf
+# Manifeste régénéré en LF par scripts/prepare-media.mjs à chaque build :
+# évite une modification fantôme sur les postes en CRLF.
+src/data/responsive-images.json text eol=lf

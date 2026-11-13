@@ -1,0 +1,784 @@
+---
+import TrainingMeta from '../site/TrainingMeta.astro';
+import TrainingLayout from '../site/TrainingLayout.astro';
+import ButtonWrapper from '../wrapper/ButtonWrapper.astro';
+import ContactSection from './ContactSection.astro';
+import Section from '../wrapper/Section.astro';
+import ContentWrapper from '../wrapper/ContentWrapper.astro';
+import Eyebrow from '../typography/Eyebrow.astro';
+import Heading from '../typography/Heading.astro';
+import Paragraph from '../typography/Paragraph.astro';
+import Grid from '../wrapper/Grid.astro';
+import Card from '../item/Card.astro';
+import Button from '../Button.astro';
+import Img from '../media/Img.astro';
+---
+<!-- ============================================
+         PAGE HERO
+         TODO : ajouter image de fond quand elle sera disponible
+         ============================================ -->
+    <Section theme="dark" paddingTop="navoverlap" paddingBottom="small" align="center">
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">Pr&eacute;sentiel &middot; 1 jour &middot; Niveau 1</Eyebrow>
+                <Heading tag="h1" variant="h1">Formation IA &agrave; Marmande&nbsp;: de l'IA aux agents autonomes</Heading>
+                <Paragraph variant="large">L'IA &eacute;volue &agrave; un rythme in&eacute;dit, et les agents IA transforment d&eacute;j&agrave; la fa&ccedil;on dont les entreprises fonctionnent. Une journ&eacute;e pour faire le tri et passer &agrave; l'action.</Paragraph>
+            <ButtonWrapper class="justify-center" data-review-addition="training-session-access"><Button element="link" href="#formation-sessions">Prochaines sessions</Button></ButtonWrapper>
+            </ContentWrapper>
+
+    </Section>
+
+    <!-- Breadcrumb retour -->
+    <div class="site-container">
+        <a href="/formations" class="breadcrumb-back">
+            <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Retour nos formations
+        </a>
+    </div>
+
+    <!-- ============================================
+         DETAIL : Objectifs + M&eacute;ta sidebar
+         ============================================ -->
+    <Section theme="light">
+
+            <TrainingLayout>
+                <Fragment slot="summary">
+                    <TrainingMeta>
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <div>
+                            <span class="meta-label">Dur&eacute;e</span>
+                            <span class="meta-value">1 jour (7h)</span>
+                        </div>
+                    </TrainingMeta>
+                    <TrainingMeta>
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <div>
+                            <span class="meta-label">Lieu</span>
+                            <span class="meta-value">39 bis rue Robert Creuzet, 47200 Marmande</span>
+                        </div>
+                    </TrainingMeta>
+                    <TrainingMeta>
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                        <div>
+                            <span class="meta-label">Participants</span>
+                            <span class="meta-value">Limit&eacute; &agrave; 8 personnes</span>
+                        </div>
+                    </TrainingMeta>
+                    <TrainingMeta>
+                        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        <div>
+                            <span class="meta-label">Tarif</span>
+                            <span class="meta-value">790 &euro; HT</span>
+                        </div>
+                    </TrainingMeta>
+                    <TrainingMeta id="formation-sessions">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        <div>
+                            <span class="meta-label">Prochaines sessions</span>
+                            <span class="meta-dates-hint">Cliquez sur une date pour vous inscrire</span>
+                            <div class="meta-dates-list" data-formation-code="IAN1">
+                                <span class="meta-date-chip">02/06/2026</span>
+                                <span class="meta-date-chip">07/07/2026</span>
+                                <span class="meta-date-chip">04/08/2026</span>
+                                <span class="meta-date-chip">01/09/2026</span>
+                                <span class="meta-date-chip">06/10/2026</span>
+                                <span class="meta-date-chip">03/11/2026</span>
+                                <span class="meta-date-chip">08/12/2026</span>
+                            </div>
+                        </div>
+                    </TrainingMeta>
+                    <ButtonWrapper marginTop="0">
+                        <Button element="link" class="width-full" href={"https://evaremote.com/formations/IAN1/inscription"}>S'inscrire</Button>
+                        <Button emphasis="secondary" element="link" class="width-full" href={"#contact"}>Nous contacter</Button>
+                    </ButtonWrapper>
+                </Fragment>
+                <div class="formation-detail-text">
+                    <span class="formation-tag-inline">Pr&eacute;sentiel &agrave; Marmande &middot; 1 jour</span>
+                    <Heading tag="h2" variant="h2" class="alignment-start">De l'IA aux agents autonomes&nbsp;: comprendre l'acc&eacute;l&eacute;ration, lancer vos premiers cas d'usage</Heading>
+                    <hr class="divider">
+                    <br>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>
+                        L'IA &eacute;volue &agrave; un rythme in&eacute;dit, et les agents IA transforment d&eacute;j&agrave; la fa&ccedil;on dont les entreprises fonctionnent. Entre annonces quotidiennes, promesses commerciales et vrais signaux &agrave; retenir, comment faire le tri&nbsp;? Cette formation IA d'une journ&eacute;e, anim&eacute;e par un ing&eacute;nieur en activit&eacute;, vous donne les cl&eacute;s pour comprendre l'&eacute;tat r&eacute;el de l'IA en 2026, anticiper ses &eacute;volutions, et passer &agrave; l'action sans c&eacute;der &agrave; la peur de rater ni &agrave; l'attentisme. Elle se d&eacute;roule en pr&eacute;sentiel &agrave; Marmande (Lot-et-Garonne), en petit groupe de 8 personnes maximum.
+                    </Paragraph>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>
+                        Pas de formation centr&eacute;e sur un outil unique&nbsp;: nous parcourons un large panel de solutions (Claude, ChatGPT, Gemini, Mistral, plateformes d'agents, outils sans code&hellip;) pour que vous repartiez avec une vision d'ensemble et une m&eacute;thode de veille durable. Vous exp&eacute;rimenterez aussi concr&egrave;tement la cr&eacute;ation de vos premiers agents IA, pour passer du concept &agrave; la pratique d&egrave;s la fin de la journ&eacute;e.
+                    </Paragraph>
+
+                    <Heading tag="h3" variant="h3">Objectifs p&eacute;dagogiques</Heading>
+                    <ul class="objectifs-list">
+                        <li>Expliquer les principes de fonctionnement de l'IA g&eacute;n&eacute;rative et des agents IA avec un vocabulaire accessible et pr&eacute;cis.</li>
+                        <li>Identifier les principaux mod&egrave;les, acteurs et outils de l'&eacute;cosyst&egrave;me de l'IA g&eacute;n&eacute;rative et distinguer les &eacute;volutions structurantes des effets de mode.</li>
+                        <li>Analyser les &eacute;volutions pr&eacute;visibles de l'IA afin d'&eacute;clairer des d&eacute;cisions professionnelles.</li>
+                        <li>&Eacute;valuer la pertinence d'un outil ou d'un cas d'usage IA dans son propre contexte professionnel.</li>
+                        <li>Concevoir, d&eacute;ployer et tester un premier agent IA r&eacute;pondant &agrave; un besoin concret.</li>
+                    </ul>
+
+                    <Heading tag="h3" variant="h3">Public &amp; pr&eacute;-requis</Heading>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>
+                        <strong>Public vis&eacute; :</strong> toute personne souhaitant se former &agrave; l'IA.
+                    </Paragraph>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>
+                        <strong>Pr&eacute;-requis :</strong> aucun
+                    </Paragraph>
+                </div>
+                <Fragment slot="details">
+                    <TrainingMeta highlighted>
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                        <div>
+                            <span class="meta-label">Inscription sans engagement</span>
+                            <span class="meta-value">Votre demande d'inscription ne vous engage &agrave; rien.</span>
+                            <span class="meta-note">Elle nous permet de vous transmettre un devis et les informations n&eacute;cessaires pour effectuer vos d&eacute;marches de financement aupr&egrave;s de votre OPCO ou de tout autre financeur.</span>
+                        </div>
+                    </TrainingMeta>
+                    <TrainingMeta>
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <div>
+                            <span class="meta-label">D&eacute;lais d'acc&egrave;s</span>
+                            <span class="meta-value">Inscription jusqu'&agrave; 11 jours ouvr&eacute;s avant le d&eacute;but de la formation.</span>
+                        </div>
+                    </TrainingMeta>
+                    <TrainingMeta>
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <div>
+                            <span class="meta-label">&Eacute;valuation</span>
+                            <ul class="meta-list">
+                                <li>Exercices pratiques tout au long de la formation</li>
+                                <li>Observation des mises en situation</li>
+                                <li>Cr&eacute;ation d'un agent IA fonctionnel en fin de formation</li>
+                                <li>Validation des comp&eacute;tences acquises</li>
+                            </ul>
+                        </div>
+                    </TrainingMeta>
+                    <TrainingMeta>
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        <div>
+                            <span class="meta-label">Sanction de la formation</span>
+                            <span class="meta-value">Attestation de fin de formation + certificat de r&eacute;alisation d&eacute;livr&eacute;s &agrave; l'issue.</span>
+                        </div>
+                    </TrainingMeta>
+                        <Button element="link" variant="link" href={"https://evaremote.com/reclamation"} target={"_blank"} rel={"noopener"}>R&eacute;clamation</Button>
+                    <div class="qualiopi-sidebar">
+                        <Img loading={"lazy"} src={"/images/LogoQualiopi-150dpi-AvecMarianne.png"} alt={"Certification Qualiopi"} appearance="logo" transparent />
+                        <Paragraph variant="main">La certification qualit&eacute; a &eacute;t&eacute; d&eacute;livr&eacute;e au titre de la cat&eacute;gorie d'actions suivante : <strong>Actions de formation</strong>.</Paragraph>
+                    </div>
+                </Fragment>
+            </TrainingLayout>
+
+    </Section>
+
+    <!-- ============================================
+         PROGRAMME DE LA FORMATION
+         ============================================ -->
+    <Section theme="light">
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">D&eacute;roul&eacute;</Eyebrow>
+                <Heading tag="h2" variant="h2">Programme de la formation</Heading>
+                <hr class="divider" style={"margin: var(--space-4) auto 0;"}>
+            </ContentWrapper>
+            <Grid xsmall={1} small={1} medium={1} large={2} gap="4">
+
+                <Card variant="panel">
+                    <span class="time">9:00 &ndash; 9:30 &middot; 30 min</span>
+                    <Heading tag="h3" variant="h4">Accueil et tour de table</Heading>
+                    <ul>
+                        <li>Quelle est votre vision de l'IA aujourd'hui&nbsp;?</li>
+                        <li>Vos usages actuels, vos questions, vos appr&eacute;hensions.</li>
+                        <li>Vos attentes pour la journ&eacute;e.</li>
+                    </ul>
+                </Card>
+
+                <Card variant="panel">
+                    <span class="time">9:30 &ndash; 10:30 &middot; 1h</span>
+                    <Heading tag="h3" variant="h4">Comprendre l'IA sans jargon</Heading>
+                    <ul>
+                        <li>Les fondamentaux expliqu&eacute;s simplement, sans jargon ni simplification trompeuse.</li>
+                        <li>Innovation et adoption&nbsp;: o&ugrave; en est-on vraiment&nbsp;?</li>
+                        <li>Cas d'usage &eacute;prouv&eacute;s qui ont d&eacute;j&agrave; fait leurs preuves.</li>
+                        <li>IA &laquo;&nbsp;traditionnelle&nbsp;&raquo; face &agrave; IA g&eacute;n&eacute;rative&nbsp;: ce qui change tout.</li>
+                        <li>Pourquoi l'acc&eacute;l&eacute;ration actuelle est sans pr&eacute;c&eacute;dent &mdash; et ce que cela implique pour vous.</li>
+                    </ul>
+                </Card>
+
+                <Card variant="panel">
+                    <span class="time">10:45 &ndash; 12:30 &middot; 1h45</span>
+                    <Heading tag="h3" variant="h4">Panorama des outils &mdash; d&eacute;monstrations m&eacute;tier</Heading>
+                    <ul>
+                        <li>R&eacute;diger, reformuler, r&eacute;sumer en quelques secondes.</li>
+                        <li>Analyser un document long et en extraire l'essentiel.</li>
+                        <li>G&eacute;n&eacute;rer des id&eacute;es et d&eacute;bloquer la cr&eacute;ativit&eacute;.</li>
+                        <li>Pr&eacute;parer une r&eacute;union, un courriel, un rapport.</li>
+                        <li>Cr&eacute;er des images et des vid&eacute;os.</li>
+                        <li>Faire appel &agrave; un agent IA pour la premi&egrave;re fois.</li>
+                    </ul>
+                    <Paragraph variant="main"><strong>Outils mobilis&eacute;s&nbsp;:</strong> Perplexity, ChatGPT, Claude, NotebookLM, Gemini, ElevenLabs.</Paragraph>
+                    <Paragraph variant="main">
+                        <strong>Exercice 1 &mdash; Note flash strat&eacute;gique</strong><br>
+                        &laquo;&nbsp;Vous &ecirc;tes l'&eacute;quipe strat&eacute;gie. Le comit&eacute; ex&eacute;cutif vous demande une note flash sur [entreprise tir&eacute;e au sort&nbsp;: Backmarket, Doctolib, Alan, Mirakl, Veepee, &Yuml;nsect, Qonto&hellip;]. Le directeur g&eacute;n&eacute;ral part demain matin.&nbsp;&raquo;<br>
+                        <em>Livrables en &eacute;quipe&nbsp;:</em> une note de synth&egrave;se d'une page, une infographie cl&eacute;, un briefing audio de 90 secondes.
+                    </Paragraph>
+                </Card>
+
+                <Card variant="panel">
+                    <span class="time">13:30 &ndash; 14:00 &middot; 30 min</span>
+                    <Heading tag="h3" variant="h4">L'&egrave;re des agents IA</Heading>
+                    <ul>
+                        <li>Ce que sont r&eacute;ellement les agents IA et comment ils fonctionnent.</li>
+                        <li>Vers un monde o&ugrave; l'IA n'assiste plus seulement, mais agit&nbsp;: quelles cons&eacute;quences pour vos m&eacute;tiers&nbsp;?</li>
+                    </ul>
+                </Card>
+
+                <Card variant="panel">
+                    <span class="time">14:00 &ndash; 14:30 &middot; 30 min</span>
+                    <Heading tag="h3" variant="h4">Mon premier agent IA</Heading>
+                    <ul>
+                        <li>Cr&eacute;ation guid&eacute;e de votre propre agent IA sur une plateforme d&eacute;di&eacute;e.</li>
+                        <li>Vous repartez avec un agent fonctionnel, cr&eacute;&eacute; de vos mains.</li>
+                    </ul>
+                    <Paragraph variant="main"><strong>Outils mobilis&eacute;s&nbsp;:</strong> Lovable, Vapi, Claude Cowork, ChatGPT.</Paragraph>
+                </Card>
+
+                <Card variant="panel">
+                    <span class="time">14:30 &ndash; 16:30 &middot; 2h (pause incluse)</span>
+                    <Heading tag="h3" variant="h4">Atelier &laquo;&nbsp;Cartographier vos cas d'usage&nbsp;&raquo;</Heading>
+                    <ul>
+                        <li>Listez 5 t&acirc;ches r&eacute;p&eacute;titives de votre poste.</li>
+                        <li>Identifiez ensemble lesquelles l'IA peut prendre en charge d&egrave;s demain.</li>
+                        <li>Mise en pratique individuelle sur un cas r&eacute;el que vous apportez.</li>
+                        <li>Pause&nbsp;: 15:15 &ndash; 15:30.</li>
+                    </ul>
+                    <Paragraph variant="main">
+                        <strong>Exercice 2 &mdash; Votre premier agent op&eacute;rationnel</strong><br>
+                        &laquo;&nbsp;&Agrave; partir d'un cas d'usage identifi&eacute; dans votre quotidien professionnel, concevez et d&eacute;ployez un agent IA fonctionnel, pr&ecirc;t &agrave; &ecirc;tre utilis&eacute; d&egrave;s demain.&nbsp;&raquo;<br>
+                        <em>D&eacute;marche individuelle&nbsp;:</em> identifier un cas d'usage concret &middot; concevoir l'agent (objectif, donn&eacute;es, actions, r&eacute;sultat attendu) &middot; construire l'agent sur la plateforme adapt&eacute;e &middot; tester sur un cas r&eacute;el et ajuster.<br>
+                        <em>Outils possibles&nbsp;:</em> ChatGPT (GPTs), Claude (Projects), Gemini Gems, Dust, Lovable&hellip; Le formateur oriente chaque participant vers l'outil le plus pertinent.
+                    </Paragraph>
+                </Card>
+
+                <Card variant="panel">
+                    <span class="time">16:30 &ndash; 17:00 &middot; 30 min</span>
+                    <Heading tag="h3" variant="h4">IA responsable &mdash; les angles morts &agrave; conna&icirc;tre</Heading>
+                    <ul>
+                        <li>Hallucinations&nbsp;: pourquoi l'IA invente, comment les d&eacute;tecter.</li>
+                        <li>Confidentialit&eacute;&nbsp;: ce qu'il ne faut jamais soumettre &agrave; un outil IA.</li>
+                        <li>Biais algorithmiques et esprit critique.</li>
+                        <li>Questions &eacute;thiques&nbsp;: plagiat, transparence, d&eacute;pendance.</li>
+                        <li>Cadre l&eacute;gal en clair&nbsp;: RGPD et r&egrave;glement europ&eacute;en sur l'IA en 3 points cl&eacute;s.</li>
+                    </ul>
+                </Card>
+
+                <Card variant="panel">
+                    <span class="time">17:00 &ndash; 17:15 &middot; 15 min</span>
+                    <Heading tag="h3" variant="h4">Cl&ocirc;ture et plan d'action</Heading>
+                    <ul>
+                        <li>Atelier &laquo;&nbsp;Mon plan d'action personnel&nbsp;&raquo;&nbsp;: 3 outils &agrave; tester, 3 t&acirc;ches &agrave; d&eacute;l&eacute;guer &agrave; l'IA d&egrave;s cette semaine.</li>
+                        <li>Partage en groupe&nbsp;: chacun annonce son engagement.</li>
+                    </ul>
+                </Card>
+
+            </Grid>
+
+    </Section>
+
+    <!-- ============================================
+         NOS R&Eacute;SULTATS (rempli auto depuis EVA Remote)
+         Bloc masqu&eacute; auto si &lt; 5 stagiaires form&eacute;s
+         Couvre Qualiopi indicateur 1
+         ============================================ -->
+    <Section theme="light">
+
+            <div data-formation-results-code="IAN1"></div>
+
+    </Section>
+
+    <!-- ============================================
+         MODALIT&Eacute;S PRATIQUES
+         ============================================ -->
+    <Section theme="light">
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">Informations</Eyebrow>
+                <Heading tag="h2" variant="h2">Modalit&eacute;s pratiques</Heading>
+                <hr class="divider" style={"margin: var(--space-4) auto 0;"}>
+            </ContentWrapper>
+            <Grid xsmall={1} small={1} medium={2} large={3} gap="4">
+
+                <Card variant="panel">
+                    <Heading tag="h3" variant="h4">M&eacute;thode p&eacute;dagogique</Heading>
+                    <ul>
+                        <li>Apports th&eacute;oriques et d&eacute;mystification</li>
+                        <li>D&eacute;monstrations en direct</li>
+                        <li>Travail en &eacute;quipe</li>
+                        <li>Mise en pratique individuelle</li>
+                        <li>Cr&eacute;ation guid&eacute;e d'un agent IA</li>
+                    </ul>
+                    <Paragraph variant="main">Alternance th&eacute;orie / pratique tout au long de la journ&eacute;e, adapt&eacute;e au contexte professionnel de chaque stagiaire.</Paragraph>
+                </Card>
+
+                <Card variant="panel">
+                    <Heading tag="h3" variant="h4">Ressources mat&eacute;rielles</Heading>
+                    <Paragraph variant="main">Nous recommandons aux stagiaires d'apporter leur propre ordinateur de travail, afin de repartir avec leurs configurations et historiques d'usage IA. &Agrave; d&eacute;faut, nous mettons &agrave; disposition nos ordinateurs &eacute;quip&eacute;s des outils n&eacute;cessaires.</Paragraph>
+                </Card>
+
+                <Card variant="panel">
+                    <Heading tag="h3" variant="h4">Modalit&eacute;s d'acc&egrave;s</Heading>
+                    <Paragraph variant="main">Remplir un formulaire de demande de formation, entretien t&eacute;l&eacute;phonique, formation en pr&eacute;sentiel.</Paragraph>
+                </Card>
+
+                <Card variant="panel">
+                    <Heading tag="h3" variant="h4">Acc&egrave;s &amp; situation</Heading>
+                    <Paragraph variant="main">39 bis rue Robert Creuzet, 47200 Marmande (Lot-et-Garonne). 10 minutes &agrave; pied depuis la gare de Marmande.</Paragraph>
+                </Card>
+
+                <Card variant="panel">
+                    <Heading tag="h3" variant="h4">Accessibilit&eacute; PMR et dispositions relatives &agrave; l'accessibilit&eacute;</Heading>
+                    <Paragraph variant="main">Salle de cours et espace de vie compatibles. L'organisme de formation s'engage &agrave; &eacute;tudier et &agrave; mettre en &oelig;uvre les adaptations n&eacute;cessaires pour l'accueil de personnes en situation de handicap, conform&eacute;ment &agrave; la l&eacute;gislation en vigueur. Pour toute demande sp&eacute;cifique, le stagiaire est invit&eacute; &agrave; contacter l'organisme de formation en amont.</Paragraph>
+                </Card>
+
+                <Card variant="panel">
+                    <Heading tag="h3" variant="h4">Financement de la formation</Heading>
+                    <Paragraph variant="main">Plusieurs modes de prise en charge sont possibles gr&acirc;ce &agrave; notre certification Qualiopi&nbsp;:</Paragraph>
+                    <ul>
+                        <li><strong>AFDAS</strong> &mdash; pour les intermittents du spectacle et de l'audiovisuel</li>
+                        <li><strong>OPCO</strong> &mdash; pour les salari&eacute;s via leur entreprise</li>
+                        <li><strong>France Travail (AIF)</strong> &mdash; pour les demandeurs d'emploi</li>
+                        <li><strong>Fonds propres</strong> &mdash; entreprise ou personnel</li>
+                    </ul>
+                    <Paragraph variant="main">Nous vous accompagnons dans le montage du dossier de financement. Contactez-nous pour en discuter.</Paragraph>
+                </Card>
+
+                <Card variant="panel">
+                    <Heading tag="h3" variant="h4">Contact &amp; Contact pour situation de PSH</Heading>
+                    <Paragraph variant="main">No&eacute;mie Marphay<br><a href="mailto:formation@lesateliersdustream.fr" style={"color: var(--heading-accent);"}>formation@lesateliersdustream.fr</a><br><a href="tel:+33646656577" style={"color: var(--heading-accent);"}>06 46 65 65 77</a></Paragraph>
+                </Card>
+
+            </Grid>
+
+    </Section>
+
+    <!-- ============================================
+         VOTRE FORMATEUR
+         ============================================ -->
+    <Section theme="light" tone="muted">
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">L'&eacute;quipe</Eyebrow>
+                <Heading tag="h2" variant="h2">Votre formateur</Heading>
+                <hr class="divider" style={"margin: var(--space-4) auto 0;"}>
+            </ContentWrapper>
+            <Card variant="profile">
+                <div class="formateur-photo">
+                    <Img loading={"lazy"} src={"/photo/anthony_formateur.webp"} alt={"Anthony, ingénieur IA et formateur"} />
+                </div>
+                <div class="formateur-info">
+                    <Heading tag="h3" variant="h3">Anthony</Heading>
+                    <span class="formateur-role">Ing&eacute;nieur IA</span>
+                    <Paragraph variant="main">Ing&eacute;nieur en activit&eacute;, Anthony con&ccedil;oit et d&eacute;ploie des solutions d'intelligence artificielle au quotidien. Il anime cette formation avec une approche concr&egrave;te et une vision &agrave; jour d'un domaine qui &eacute;volue chaque semaine.</Paragraph>
+                </div>
+            </Card>
+
+    </Section>
+
+    <!-- ============================================
+         POINTS FORTS
+         ============================================ -->
+    <Section theme="light">
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">Avantages</Eyebrow>
+                <Heading tag="h2" variant="h2">Points forts de la formation</Heading>
+                <hr class="divider" style={"margin: var(--space-4) auto 0;"}>
+            </ContentWrapper>
+            <ul class="points-forts-list ">
+                <li>Formateur expert dans les actualit&eacute;s IA et son utilisation en entreprise.</li>
+                <li>Possibilit&eacute; d'adapter le contenu en intra-entreprise.</li>
+                <li>Programme structur&eacute; pour vous rendre autonome dans un contexte professionnel.</li>
+                <li>Approche 100 % pratique, avec mat&eacute;riel professionnel &amp; cas r&eacute;els.</li>
+                <li>Effectif r&eacute;duit : accompagnement individualis&eacute;.</li>
+            </ul>
+
+    </Section>
+
+    <!-- ============================================
+         FAQ
+         Les reponses sont dans le HTML des le chargement (balise <details>) :
+         c'est la condition pour que Google les lise et pour que le balisage
+         FAQPage soit valide. Rien n'est charge au clic.
+         ============================================ -->
+    <Section theme="light" tone="muted">
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">Questions fr&eacute;quentes</Eyebrow>
+                <Heading tag="h2" variant="h2">Vos questions sur la formation IA &agrave; Marmande</Heading>
+                <hr class="divider" style={"margin: var(--space-4) auto 0;"}>
+            </ContentWrapper>
+
+            <div class="faq-list ">
+
+                <details class="faq-item" open>
+                    <summary>O&ugrave; se d&eacute;roule la formation IA&nbsp;?</summary>
+                    <div class="faq-answer">
+                        <Paragraph variant="main">La formation se d&eacute;roule en pr&eacute;sentiel dans nos locaux, au 39 bis rue Robert Creuzet, 47200 Marmande (Lot-et-Garonne). La gare de Marmande est &agrave; dix minutes &agrave; pied. Marmande est facilement accessible depuis Agen, Villeneuve-sur-Lot, Tonneins et Bordeaux.</Paragraph>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Combien de temps dure la formation et quel est son tarif&nbsp;?</summary>
+                    <div class="faq-answer">
+                        <Paragraph variant="main">La formation dure une journ&eacute;e, soit 7 heures, pour un tarif de 790 &euro; HT par participant. Le groupe est limit&eacute; &agrave; 8 personnes afin de garantir un accompagnement individualis&eacute;.</Paragraph>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Faut-il des connaissances techniques pour y participer&nbsp;?</summary>
+                    <div class="faq-answer">
+                        <Paragraph variant="main">Aucun pr&eacute;requis n'est demand&eacute;. La formation s'adresse &agrave; toute personne souhaitant se former &agrave; l'intelligence artificielle, quel que soit son m&eacute;tier. Le vocabulaire technique est syst&eacute;matiquement expliqu&eacute;.</Paragraph>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Quels financements sont possibles&nbsp;?</summary>
+                    <div class="faq-answer">
+                        <Paragraph variant="main">Notre certification Qualiopi ouvre plusieurs modes de prise en charge&nbsp;: l'AFDAS pour les intermittents du spectacle et de l'audiovisuel, votre OPCO si vous &ecirc;tes salari&eacute;, l'aide individuelle &agrave; la formation de France Travail si vous &ecirc;tes demandeur d'emploi, ou le financement sur fonds propres. Nous vous accompagnons dans le montage du dossier.</Paragraph>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>La formation est-elle centr&eacute;e sur un outil en particulier&nbsp;?</summary>
+                    <div class="faq-answer">
+                        <Paragraph variant="main">Non. Nous parcourons volontairement un large panel de solutions &mdash; Claude, ChatGPT, Gemini, Mistral, plateformes d'agents, outils sans code &mdash; pour que vous repartiez avec une vision d'ensemble plut&ocirc;t qu'avec la ma&icirc;trise d'un seul logiciel, et avec une m&eacute;thode de veille qui reste valable dans le temps.</Paragraph>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Qu'est-ce que je repars avec &agrave; la fin de la journ&eacute;e&nbsp;?</summary>
+                    <div class="faq-answer">
+                        <Paragraph variant="main">Vous aurez con&ccedil;u, d&eacute;ploy&eacute; et test&eacute; votre premier agent IA r&eacute;pondant &agrave; un besoin concret, cartographi&eacute; les cas d'usage pertinents dans votre propre contexte professionnel, et &eacute;tabli un plan d'action pour la suite.</Paragraph>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Peut-on organiser la formation en intra-entreprise&nbsp;?</summary>
+                    <div class="faq-answer">
+                        <Paragraph variant="main">Oui. Le contenu peut &ecirc;tre adapt&eacute; &agrave; votre secteur et &agrave; vos cas d'usage, et la formation peut &ecirc;tre organis&eacute;e pour vos seules &eacute;quipes. Contactez-nous pour en d&eacute;finir le format.</Paragraph>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>La formation est-elle accessible aux personnes en situation de handicap&nbsp;?</summary>
+                    <div class="faq-answer">
+                        <Paragraph variant="main">La salle de cours et l'espace de vie sont compatibles avec l'accueil de personnes &agrave; mobilit&eacute; r&eacute;duite. Nous &eacute;tudions et mettons en &oelig;uvre les adaptations n&eacute;cessaires&nbsp;: contactez No&eacute;mie Marphay en amont &agrave; formation@lesateliersdustream.fr pour toute demande sp&eacute;cifique.</Paragraph>
+                    </div>
+                </details>
+
+            </div>
+
+            <!-- Passerelle vers l'autre formation du catalogue -->
+            <p class="autre-formation ">
+                Vous cherchez plut&ocirc;t &agrave; ma&icirc;triser la r&eacute;gie vid&eacute;o&nbsp;? D&eacute;couvrez notre
+                <a href="/formations/vmix">formation vMix &agrave; Marmande</a>, sur cinq jours.
+            </p>
+
+            <!-- Back link -->
+            <div style={"text-align: center;"}>
+                <Button element="link" variant="link" href={"/formations"}>
+                    <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    Retour aux formations
+                </Button>
+            </div>
+
+    </Section>
+
+    <!-- ============================================
+         CTA / CONTACT
+         ============================================ -->
+    <ContactSection eyebrow={"Envie de vous former ?"} title={"Parlons de votre projet de formation"} description={"Vous souhaitez comprendre où en est l'IA en 2026 et lancer vos premiers cas d'usage ? Contactez-nous pour échanger sur vos besoins."} email={"formation@lesateliersdustream.fr"} phoneHref={"tel:+33646656577"} phone={"06 46 65 65 77"} locationAlt={"Lieu"} training={true} />
+
+    <!-- Footer -->
+
+
+
+    <script is:inline src="/formations-sessions.js?v=2"></script>
+    <script is:inline src="/formations-results.js?v=2"></script>
+
+
+
+<style is:global>
+@layer components {
+
+/* ============================================
+           POLICES
+           ============================================ */
+
+        /* ============================================
+           VARIABLES
+           ============================================ */
+
+        /* ============================================
+           RESET
+           ============================================ */
+
+        /* ============================================
+           PAGE HERO
+           ============================================ */
+        /* TODO image hero : ajouter ::before avec background-image quand l'image sera disponible */
+
+        /* ============================================
+           SECTIONS COMMUNES
+           ============================================ */
+        .divider {
+            margin: var(--space-4) 0 0 0;
+        }
+
+        /* ============================================
+           FORMATION DETAIL LAYOUT
+           ============================================ */
+        /* Liste des objectifs pédagogiques (puces custom — cohérent avec vmix.html) */
+        .objectifs-list {
+            list-style: none; margin-top: var(--space-2);
+        }
+        .objectifs-list li {
+            position: relative; padding-left: var(--space-4);
+            font-size: var(--text-main); color: var(--text-2); line-height: var(--text-main-line-height);
+        }
+        .objectifs-list li::before {
+            content: ''; position: absolute; left: 0; top: 0.6875rem;
+            width: 0.5rem; height: 0.5rem; border-radius: 50%;
+            background: var(--brand-500);
+        }
+        .formation-tag-inline {
+            display: inline-block; padding: var(--space-1) var(--space-3); font-size: var(--text-small);
+            font-weight: var(--primary-bold); text-transform: uppercase; letter-spacing: var(--letter-spacing-normal);
+            background: var(--tag-background); color: var(--heading-accent);
+            border-radius: var(--radius-round); margin-bottom: var(--space-4);
+        }
+
+        /* Sidebar m&eacute;ta */
+        .formation-meta-sidebar {
+            display: flex; flex-direction: column; gap: var(--space-4);
+            padding: var(--space-5);
+            background: var(--light-200);
+            border-radius: var(--radius-small);
+            border: var(--border-width) solid var(--light-300);
+        }
+        .meta-label {
+            display: block; font-size: var(--text-small); font-weight: var(--primary-bold);
+            text-transform: uppercase; letter-spacing: var(--letter-spacing-normal);
+            color: var(--text-2); margin-bottom: var(--space-1);
+        }
+        .meta-value {
+            display: block; font-size: var(--text-main); font-weight: var(--primary-medium);
+            color: var(--dark-900);
+        }
+        .meta-dates-list {
+            display: flex; flex-wrap: wrap; gap: var(--space-1);
+            margin-top: var(--space-1);
+        }
+        .meta-list {
+            list-style: none;
+            margin-top: var(--space-1);
+        }
+        .meta-list li {
+            position: relative;
+            padding-left: var(--space-3);
+            font-size: var(--text-small);
+            color: var(--dark-900);
+            font-weight: var(--primary-medium);
+            line-height: var(--text-small-line-height);
+            margin-bottom: var(--space-1);
+        }
+        .meta-list li::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0.5625rem;
+            width: 0.3125rem; height: 0.3125rem;
+            border-radius: 50%;
+            background: var(--brand-500);
+        }
+        /* Bloc mis en avant : la reassurance, juste avant le choix d'une date. */
+
+        /* Ligne secondaire d'un item de la sidebar : meme DA que .meta-list,
+           poids allege pour un paragraphe explicatif. */
+        .meta-note {
+            display: block;
+            font-size: var(--text-small); font-weight: var(--primary-medium);
+            color: var(--text-2);
+            line-height: var(--text-small-line-height);
+            margin-top: var(--space-1);
+        }
+        .meta-dates-hint {
+            display: none;             /* revele par formations-sessions.js si dates cliquables */
+            font-size: var(--text-small); color: var(--text-2);
+            line-height: var(--text-small-line-height); margin: var(--space-1) 0 var(--space-2);
+        }
+        .meta-date-chip {
+            display: inline-block;
+            padding: var(--space-1) var(--space-3);
+            font-size: var(--text-small); font-weight: var(--primary-medium);
+            background: var(--brand-500);
+            color: var(--dark-900);
+            border-radius: var(--radius-round);
+            white-space: nowrap;
+            cursor: pointer;
+            transition: transform var(--hover-duration), box-shadow var(--hover-duration), background var(--hover-duration);
+        }
+        .meta-date-chip--empty {
+            background: var(--background-2); color: var(--text-2);
+            font-weight: var(--primary-medium); cursor: default;
+        }
+        .sidebar-actions {
+            display: flex; flex-direction: column; gap: var(--space-2);
+        }
+        .qualiopi-sidebar {
+            display: flex; flex-direction: column; align-items: center;
+            gap: var(--space-2); margin-top: var(--space-4);
+            padding: var(--space-4) var(--space-3);
+            background: var(--light-100);
+            border: var(--border-width) solid var(--light-300);
+            border-radius: var(--radius-small);
+            text-align: center;
+        }
+        .qualiopi-sidebar strong {
+            color: var(--dark-900);
+        }
+
+        /* ============================================
+           OBJECTIFS P&Eacute;DAGOGIQUES
+           ============================================ */
+        .objectifs-list {
+            list-style: none; margin-top: var(--space-2);
+        }
+        .objectifs-list li {
+            position: relative; padding-left: var(--space-4);
+            font-size: var(--text-main); color: var(--text-2); line-height: var(--text-main-line-height);
+        }
+        .objectifs-list li::before {
+            content: ''; position: absolute; left: 0; top: 0.6875rem;
+            width: 0.5rem; height: 0.5rem; border-radius: 50%;
+            background: var(--brand-500);
+        }
+
+        /* ============================================
+           PROGRAMME
+           ============================================ */
+        .programme-note {
+            margin-top: var(--space-5); text-align: center;
+            font-size: var(--text-small); color: var(--text-2);
+            font-style: italic;
+        }
+
+        /* ============================================
+           MODALIT&Eacute;S PRATIQUES
+           ============================================ */
+
+        /* ============================================
+           VOTRE FORMATEUR
+           ============================================ */
+        .formateur-photo {
+            flex: 0 0 10.3125rem;
+        }
+        .formateur-role {
+            display: block;
+            font-size: var(--text-small); font-weight: var(--primary-bold); color: var(--heading-accent);
+            letter-spacing: var(--letter-spacing-normal); margin-bottom: var(--space-3);
+        }
+        @media (--mq-compact-max) {
+            .formateur-photo { flex: 0 0 auto; }
+        }
+
+        /* ============================================
+           POINTS FORTS
+           ============================================ */
+        .points-forts-list {
+            list-style: none;
+            max-width: 43.75rem;
+            margin: 0 auto;
+        }
+        .points-forts-list li {
+            position: relative; padding-left: var(--space-5);
+            font-size: var(--text-main); color: var(--text-2); line-height: var(--text-main-line-height);
+        }
+        .points-forts-list li::before {
+            content: ''; position: absolute; left: 0; top: 0.75rem;
+            width: 0.625rem; height: 0.625rem; border-radius: 50%;
+            background: var(--brand-500);
+        }
+
+        /* ============================================
+           BREADCRUMB BACK
+           ============================================ */
+        .breadcrumb-back {
+            display: inline-flex; align-items: center; gap: var(--space-2);
+            font-size: var(--text-small); font-weight: var(--primary-medium); text-transform: uppercase;
+            letter-spacing: var(--letter-spacing-normal); color: var(--text-2); transition: all var(--hover-duration) var(--hover-ease);
+            padding: var(--space-5) 0 0;
+        }
+        .breadcrumb-back:hover { color: var(--heading-accent); }
+        .breadcrumb-back svg {
+            width: 1rem; height: 1rem; stroke: currentColor; stroke-width: 2;
+            fill: none; transition: all var(--hover-duration) var(--hover-ease);
+        }
+
+        /* ============================================
+           BACK LINK
+           ============================================ */
+        /* ============================================
+           FAQ (accordeon natif <details>)
+           ============================================ */
+        .faq-list {
+            max-width: 51.25rem;
+            margin: 0 auto;
+        }
+        .faq-item {
+            border-bottom: var(--border-width) solid var(--light-300);
+        }
+        .faq-item:first-child { border-top: var(--border-width) solid var(--light-300); }
+        .faq-item summary {
+            list-style: none;
+            cursor: pointer;
+            padding: var(--space-4) var(--space-6) var(--space-4) 0;
+            position: relative;
+            font-size: var(--text-main);
+            font-weight: var(--primary-medium);
+            color: var(--dark-900);
+            line-height: var(--text-small-line-height);
+            transition: all var(--hover-duration) var(--hover-ease);
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary:hover { color: var(--heading-accent); }
+        /* Chevron */
+        .faq-item summary::after {
+            content: '';
+            position: absolute; right: 0.5rem; top: 50%;
+            width: 0.5625rem; height: 0.5625rem;
+            border-right: var(--border-width) solid var(--brand-500);
+            border-bottom: var(--border-width) solid var(--brand-500);
+            transform: translateY(-70%) rotate(45deg);
+            transition: transform var(--hover-duration) ease;
+        }
+        .faq-item[open] summary::after {
+            transform: translateY(-30%) rotate(-135deg);
+        }
+        .faq-item[open] summary { color: var(--heading-accent); }
+        .faq-answer {
+            padding: 0 var(--space-6) var(--space-4) 0;
+        }
+
+        /* Passerelle vers l'autre formation du catalogue */
+        .autre-formation {
+            text-align: center; margin-top: var(--space-6);
+            font-size: var(--text-main); color: var(--text-2);
+        }
+        .autre-formation a {
+            color: var(--dark-900); font-weight: var(--primary-medium);
+            border-bottom: var(--border-width) solid var(--brand-500);
+            transition: all var(--hover-duration) var(--hover-ease);
+        }
+        .autre-formation a:hover { color: var(--heading-accent); }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+
+}
+</style>

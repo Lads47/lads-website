@@ -1,0 +1,88 @@
+---
+import Img from '../media/Img.astro';
+import ContactSection from './ContactSection.astro';
+import Section from '../wrapper/Section.astro';
+import ContentWrapper from '../wrapper/ContentWrapper.astro';
+import Eyebrow from '../typography/Eyebrow.astro';
+import Heading from '../typography/Heading.astro';
+import Paragraph from '../typography/Paragraph.astro';
+import Grid from '../wrapper/Grid.astro';
+import Button from '../Button.astro';
+---
+<Section theme="dark" paddingTop="navoverlap" paddingBottom="small" align="center">
+<Img slot="background" src="/photo/20220717_194319.webp" alt="" loading="eager" style={"opacity:var(--hero-image-opacity)"} />
+        <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+            <Eyebrow tag="span">Technique</Eyebrow>
+            <Heading tag="h1" variant="h1">Sonorisation</Heading>
+            <Paragraph variant="large">Confort d'&eacute;coute pour votre public</Paragraph>
+        </ContentWrapper>
+    </Section>
+    <div class="site-container">
+        <a href="/solutions" class="breadcrumb-back">
+            <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Retour nos solutions
+        </a>
+    </div>
+    <Section theme="light">
+
+            <Grid xsmall={1} small={1} medium={1} large={2} gap="8" tracks="var(--tracks-content-sidebar)">
+                <div class="real-detail-text">
+                    <Eyebrow tag="span" variant="tag">Diffusion</Eyebrow>
+                    <Heading tag="h2" variant="h2" class="alignment-start">Sonorisation</Heading>
+                    <hr class="divider"><br>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>Une sonorisation de qualit&eacute; est essentielle pour garantir le confort d'&eacute;coute de votre public. Pour des audiences de 50 &agrave; 200 personnes, nous d&eacute;ployons des solutions de sonorisation professionnelles, assurant une diffusion sonore homog&egrave;ne et parfaitement intelligible dans l'ensemble de l'espace.</Paragraph>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>Le dispositif comprend des enceintes professionnelles et des micros HF, permettant aux intervenants de s'exprimer librement. Chaque &eacute;l&eacute;ment est r&eacute;gl&eacute; avec pr&eacute;cision en fonction du lieu et du nombre de participants. L'audio peut &ecirc;tre enregistr&eacute; pour exploitation ult&eacute;rieure : replay, archivage ou valorisation.</Paragraph>
+                    <ul class="feature-list">
+                        <li>Sonorisation pour 50 &agrave; 200 personnes</li>
+                        <li>Enceintes professionnelles et micros HF</li>
+                        <li>R&eacute;glages sur mesure selon le lieu</li>
+                        <li>Enregistrement audio pour replay et archivage</li>
+                    </ul>
+                </div>
+                <div class="real-meta">
+                    <div class="real-meta-item">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                        <div><span class="meta-label">Type de solution</span><span class="meta-value">Sonorisation</span></div>
+                    </div>
+                    <div class="real-meta-item">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        <div><span class="meta-label">Capacit&eacute;</span><span class="meta-value">50 &agrave; 200 personnes</span></div>
+                    </div>
+                    <div class="real-meta-item">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <div><span class="meta-label">Usage</span><span class="meta-value">Conf&eacute;rences, congr&egrave;s, s&eacute;minaires</span></div>
+                    </div>
+                </div>
+            </Grid>
+            <Button element="link" variant="link" href={"/solutions"}>
+                <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                Retour aux solutions
+            </Button>
+
+    </Section>
+    <ContactSection eyebrow={"Vous avez un projet ?"} title={"Demandez un devis"} description={"Un projet en construction, un événement qui approche ? Parlons-en."} email={"prod@lesateliersdustream.fr"} phoneHref={"tel:+33661968858"} phone={"06 61 96 88 58"} locationAlt={"Nos bureaux"} training={false} />
+
+    <!-- Footer -->
+
+
+
+<style is:global>
+@layer components {
+
+.divider { margin: var(--space-4) 0 0 0; }
+        .real-meta { display: flex; flex-direction: column; gap: var(--space-4); padding: var(--space-5); background: var(--light-200); border-radius: var(--radius-small); border: var(--border-width) solid var(--light-300); }
+        .real-meta-item { display: flex; align-items: center; gap: var(--space-3); }
+        .real-meta-item svg { width: 1.375rem; height: 1.375rem; flex-shrink: 0; stroke: var(--brand-500); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+        .meta-label { display: block; font-size: var(--text-small); font-weight: var(--primary-bold); text-transform: uppercase; letter-spacing: var(--letter-spacing-normal); color: var(--text-2); margin-bottom: var(--space-1); }
+        .meta-value { display: block; font-size: var(--text-main); font-weight: var(--primary-medium); color: var(--dark-900); }
+        .feature-list { list-style: none; margin-top: var(--space-4); }
+        .feature-list li { position: relative; padding-left: var(--space-4); font-size: var(--text-small); color: var(--text-2); line-height: var(--text-main-line-height); }
+        .feature-list li::before { content: ''; position: absolute; left: 0; top: 0.75rem; width: 0.625rem; height: 0.625rem; border-radius: 50%; background: var(--brand-500); }
+        .breadcrumb-back { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--text-small); font-weight: var(--primary-medium); text-transform: uppercase; letter-spacing: var(--letter-spacing-normal); color: var(--text-2); transition: all var(--hover-duration) var(--hover-ease); padding: var(--space-5) 0 0; }
+        .breadcrumb-back:hover { color: var(--heading-accent); }
+        .breadcrumb-back svg { width: 1rem; height: 1rem; stroke: currentColor; stroke-width: 2; fill: none; transition: all var(--hover-duration) var(--hover-ease); }
+
+        /* Lightbox */
+
+}
+</style>

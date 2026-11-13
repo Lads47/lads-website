@@ -1,0 +1,528 @@
+---
+import ContactSection from './ContactSection.astro';
+import Section from '../wrapper/Section.astro';
+import Video from '../media/Video.astro';
+import Button from '../Button.astro';
+import ButtonWrapper from '../wrapper/ButtonWrapper.astro';
+import ContentWrapper from '../wrapper/ContentWrapper.astro';
+import Eyebrow from '../typography/Eyebrow.astro';
+import Heading from '../typography/Heading.astro';
+import Paragraph from '../typography/Paragraph.astro';
+import Grid from '../wrapper/Grid.astro';
+import Card from '../item/Card.astro';
+import Img from '../media/Img.astro';
+---
+<!-- ============================================
+         HEADER
+         ============================================ -->
+
+
+
+    <!-- ============================================
+         HERO (INCHANGE)
+         ============================================ -->
+    <Section theme="dark" fullHeight paddingTop="none" paddingBottom="none" gap="0" align="center">
+<Video id="heroVideo" slot="background" src="/videos/demo-ateliers-du-stream.mp4" mobileSrc="/videos/demo-ateliers-du-stream-mobile.mp4" poster="/videos/demo-ateliers-du-stream.webp" autoplay={false} preload="none" variant="auto" style="opacity:var(--hero-image-opacity)" />
+<div slot="background" class="hero-control_wrap"><Button id="heroPause" variant="play" label="Mettre la vidéo en pause" pressed={true} emphasis="secondary" class="padding-2" /></div>
+<ContentWrapper centered class="hero-intro width-site margin-inline-auto">
+<Paragraph variant="small" class="hero-subtitle color-brand text-transform-uppercase letter-spacing-wide">Captation vid&eacute;o &eacute;v&eacute;nementielle &agrave; Bordeaux, Paris et partout en France</Paragraph>
+<Heading tag="h1" variant="display">Captation Vidéo multicam&eacute;ra<br /> et diffusion en direct</Heading>
+<ButtonWrapper class="justify-center" data-review-addition="home-actions">
+  <Button element="link" href="#possibilites">Nos solutions</Button>
+  <Button element="link" emphasis="secondary" href="#contact">Nous contacter</Button>
+</ButtonWrapper>
+</ContentWrapper>
+</Section>
+
+<script>
+  import '../../scripts/hero-intro';
+</script>
+
+    <!-- ============================================
+         NOS POSSIBILITES
+         4 cartes immersives plein largeur
+         ============================================ -->
+    <Section id="possibilites" theme="light" tone="muted" width="full" gap="8">
+        <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+            <Eyebrow tag="span">Nos solutions multicam&eacute;ra</Eyebrow>
+            <Heading tag="h2" variant="h2">Un &eacute;v&eacute;nement, une solution adapt&eacute;e</Heading>
+            <Paragraph variant="large" class="color-muted" maxWidth={70}>
+                Depuis plus de 25 ans, nous r&eacute;alisons des prestations de captation vid&eacute;o multicam&eacute;ra et de production live pour tout type d'&eacute;v&eacute;nement. Conf&eacute;rences, &eacute;v&eacute;nements institutionnels, festivals, assembl&eacute;es g&eacute;n&eacute;rales ou sportifs : nous adaptons notre organisation technique aux contraintes du lieu et du format. De la r&eacute;gie mobile compacte &agrave; des configurations multicam&eacute;ra plus &eacute;tendues, nous mettons en place un dispositif fiable et dimensionn&eacute;. Nous intervenons &agrave; Bordeaux, Paris et partout en France pour vos projets de captation vid&eacute;o &eacute;v&eacute;nementielle.
+            </Paragraph>
+            <hr class="divider">
+        </ContentWrapper>
+
+        <Grid xsmall={1} small={1} medium={2} large={4} gap="0" class="solution-cards">
+            <!-- Carte 1 -->
+            <Card variant="cover" theme="dark" overlayStrength={90} href={"/solutions/captation-multicam"} image="/photo/20251114_155704.webp" imageAlt="">
+
+
+                    <Eyebrow tag="span" variant="tag">Essentiel</Eyebrow>
+                    <Heading tag="h3" variant="h4">Captation multicam l&eacute;g&egrave;re</Heading>
+                    <Paragraph variant="main">2 &agrave; 3 cam&eacute;ras, id&eacute;ale pour les petites salles. R&eacute;gie compacte et agile pour conf&eacute;rences, interviews et tables rondes. Malgr&eacute; son format compact, elle g&egrave;re la diffusion des m&eacute;dias sur vid&eacute;oprojecteur et l'int&eacute;gration d'intervenants en visioconf&eacute;rence. Montage et d&eacute;montage rapides.</Paragraph>
+
+            </Card>
+            <!-- Carte 2 -->
+            <Card variant="cover" theme="dark" overlayStrength={90} href={"/solutions/captation-video"} image="/photo/20230825_194710.webp" imageAlt="">
+
+
+                    <Eyebrow tag="span" variant="tag">Premium</Eyebrow>
+                    <Heading tag="h3" variant="h4">Jusqu'&agrave; 8 cam&eacute;ras</Heading>
+                    <Paragraph variant="main">Pour les spectacles et grands &eacute;v&eacute;nements n&eacute;cessitant un dispositif cons&eacute;quent. Cette r&eacute;gie compl&egrave;te g&egrave;re le live stream, la diffusion sur grand &eacute;cran et l'ensemble des flux m&eacute;dias en simultan&eacute;.</Paragraph>
+
+            </Card>
+            <!-- Carte 3 -->
+            <Card variant="cover" theme="dark" overlayStrength={90} href={"/solutions/cameras-tourelle-hf"} image="/photo/20220717_194319.webp" imageAlt="">
+
+
+                    <Eyebrow tag="span" variant="tag">Liaison sans fil</Eyebrow>
+                    <Heading tag="h3" variant="h4">4 cam&eacute;ras tourelle 100% HF</Heading>
+                    <Paragraph variant="main">Dispositif id&eacute;al pour les installations en ext&eacute;rieur avec du public. Chaque cam&eacute;ra dispose de son propre &eacute;metteur et le tout est aliment&eacute; par batterie. Un dispositif tr&egrave;s rare sur le march&eacute; de l'audiovisuel.</Paragraph>
+
+            </Card>
+            <!-- Carte 4 -->
+            <Card variant="cover" theme="dark" overlayStrength={90} href={"/solutions/captation-multi-regies"} image="/photo/20251031_162920 (1).webp" imageAlt="">
+
+
+                    <Eyebrow tag="span" variant="tag">En simultan&eacute;</Eyebrow>
+                    <Heading tag="h3" variant="h4">8 r&eacute;gies de 3 cam&eacute;ras chacune</Heading>
+                    <Paragraph variant="main">Nous sommes en mesure de d&eacute;ployer jusqu'&agrave; 8 r&eacute;gies de 3 cam&eacute;ras en simultan&eacute;. Id&eacute;al pour les &eacute;v&eacute;nements multi-salles : chaque conf&eacute;rence dispose de sa propre captation, en live ou en enregistrement.</Paragraph>
+
+            </Card>
+        </Grid>
+
+        <div class="width-full" style={"text-align: center; padding: var(--section-space-medium) 0;"}>
+            <Button element="link" href={"/solutions"}>Toutes nos solutions</Button>
+        </div>
+    </Section>
+
+    <!-- ============================================
+         NOTRE SPECIFICITE
+         ============================================ -->
+    <Section theme="light">
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">Notre sp&eacute;cificit&eacute;</Eyebrow>
+                <Heading tag="h2" variant="h2">Un savoir-faire construit dans la dur&eacute;e</Heading>
+                <hr class="divider">
+            </ContentWrapper>
+            <div class="specificite-text">
+                <Paragraph variant="main">
+                    La captation multicam&eacute;ra est notre c&oelig;ur de m&eacute;tier depuis de nombreuses ann&eacute;es. Nous avons d&eacute;velopp&eacute; nos r&eacute;gies vid&eacute;os et nos m&eacute;thodes au fil des projets afin de garantir :
+                </Paragraph>
+                <ul>
+                    <li>une mise en &oelig;uvre rapide</li>
+                    <li>une organisation claire</li>
+                    <li>une fiabilit&eacute; technique</li>
+                    <li>une &eacute;quipe exp&eacute;riment&eacute;e</li>
+                </ul>
+                <Paragraph variant="main">
+                    Nous assurons une veille constante sur les outils de production audiovisuelle et de diffusion live, afin d'offrir des solutions adapt&eacute;es aux &eacute;volutions du secteur, sans complexifier inutilement les dispositifs.
+                </Paragraph>
+                <Paragraph variant="main">
+                    De Bordeaux &agrave; Paris, nous intervenons partout en France avec la m&ecirc;me exigence de pr&eacute;paration et d'anticipation.
+                </Paragraph>
+            </div>
+
+    </Section>
+
+    <!-- ============================================
+         CHIFFRES CLES
+         ============================================ -->
+    <Section theme="dark">
+
+            <Grid xsmall={1} small={2} medium={2} large={4} gap="6" class="alignment-center">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <mask id="calMask">
+                                    <rect width="100" height="100" fill="white"/>
+                                    <rect x="20" y="40" width="14" height="10" rx="2" fill="black"/>
+                                    <rect x="43" y="40" width="14" height="10" rx="2" fill="black"/>
+                                    <rect x="66" y="40" width="14" height="10" rx="2" fill="black"/>
+                                    <rect x="20" y="58" width="14" height="10" rx="2" fill="black"/>
+                                    <rect x="43" y="58" width="14" height="10" rx="2" fill="black"/>
+                                    <rect x="66" y="58" width="14" height="10" rx="2" fill="black"/>
+                                    <rect x="20" y="76" width="14" height="10" rx="2" fill="black"/>
+                                    <rect x="43" y="76" width="14" height="10" rx="2" fill="black"/>
+                                </mask>
+                            </defs>
+                            <g mask="url(#calMask)">
+                                <path d="M22,10 L22,6 C22,4.9 22.9,4 24,4 C25.1,4 26,4.9 26,6 L26,10 L74,10 L74,6 C74,4.9 74.9,4 76,4 C77.1,4 78,4.9 78,6 L78,10 L82,10 C87.5,10 92,14.5 92,20 L92,24 L8,24 L8,20 C8,14.5 12.5,10 18,10 Z"/>
+                                <path d="M8,30 L92,30 L92,82 C92,87.5 87.5,92 82,92 L18,92 C12.5,92 8,87.5 8,82 Z"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="stat-nombre">27</div>
+                    <div class="stat-label">Ann&eacute;es d'exp&eacute;rience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10,24 C10,18.5 14.5,14 20,14 L60,14 C65.5,14 70,18.5 70,24 L70,66 C70,71.5 65.5,76 60,76 L20,76 C14.5,76 10,71.5 10,66 Z"/>
+                            <path d="M75,30 L92,19 C93.7,18 95,18.9 95,21 L95,69 C95,71.1 93.7,72 92,71 L75,60 Z"/>
+                        </svg>
+                    </div>
+                    <div class="stat-nombre">+1000</div>
+                    <div class="stat-label">&Eacute;v&eacute;nements capt&eacute;s</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <mask id="regMask">
+                                    <rect width="100" height="100" fill="white"/>
+                                    <rect x="16" y="18" width="30" height="20" rx="2" fill="black"/>
+                                    <rect x="16" y="44" width="30" height="20" rx="2" fill="black"/>
+                                    <rect x="54" y="18" width="30" height="20" rx="2" fill="black"/>
+                                    <rect x="54" y="44" width="30" height="20" rx="2" fill="black"/>
+                                </mask>
+                            </defs>
+                            <g mask="url(#regMask)">
+                                <path d="M6,14 C6,9.6 9.6,6 14,6 L86,6 C90.4,6 94,9.6 94,14 L94,62 C94,66.4 90.4,70 86,70 L14,70 C9.6,70 6,66.4 6,62 Z"/>
+                            </g>
+                            <rect x="38" y="70" width="24" height="8"/>
+                            <rect x="28" y="80" width="44" height="6" rx="3"/>
+                        </svg>
+                    </div>
+                    <div class="stat-nombre">8</div>
+                    <div class="stat-label">R&eacute;gies d&eacute;ployables</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <mask id="pinMask">
+                                    <rect width="100" height="100" fill="white"/>
+                                    <circle cx="50" cy="41" r="14" fill="black"/>
+                                </mask>
+                            </defs>
+                            <path d="M50,2 C28.5,2 11,19.5 11,41 C11,67 50,98 50,98 C50,98 89,67 89,41 C89,19.5 71.5,2 50,2 Z" mask="url(#pinMask)"/>
+                        </svg>
+                    </div>
+                    <div class="stat-nombre">100 %</div>
+                    <div class="stat-label">Couverture nationale</div>
+                </div>
+            </Grid>
+
+    </Section>
+
+    <!-- ============================================
+         REALISATIONS (Galerie)
+         ============================================ -->
+    <Section id="realisations" theme="light" tone="muted" width="full" gap="8">
+        <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+            <Eyebrow tag="span">Nos r&eacute;alisations</Eyebrow>
+            <Heading tag="h2" variant="h2">Une exp&eacute;rience au service de vos projets</Heading>
+            <Paragraph variant="large" class="color-muted" maxWidth={70}>
+                Depuis 1998, nous accompagnons des &eacute;v&eacute;nements aux formats et contraintes vari&eacute;s &agrave; Bordeaux, Paris et dans toute la France. Chaque r&eacute;alisation nous permet d'affiner nos pratiques et de renforcer notre capacit&eacute; d'adaptation. De la captation vid&eacute;o simple &agrave; la production multicam&eacute;ra plus technique, nous mettons notre exp&eacute;rience au service de vos projets, avec la m&ecirc;me exigence de rigueur et de continuit&eacute;.
+            </Paragraph>
+            <hr class="divider">
+        </ContentWrapper>
+
+        <Grid xsmall={1} small={1} medium={2} large={4} gap="0">
+                <Card variant="cover" theme="dark" href={"/realisations/etourisme-pau"} image="/photo/20251016_085347.webp" imageAlt="">
+
+
+                        <Eyebrow tag="span" variant="tag">&Eacute;v&eacute;nementiel</Eyebrow>
+                        <Heading tag="h3" variant="h4">Rencontres nationales de l'etourisme</Heading>
+                        <Paragraph variant="main">5 r&eacute;gies, 12 cam&eacute;ras diss&eacute;min&eacute;es dans les murs du Palais Beaumont de Pau pour la grande messe du tourisme national.</Paragraph>
+
+                </Card>
+                <Card variant="cover" theme="dark" href={"/realisations/universite-ete-ceca"} image="/photo/20240830_103011.webp" imageAlt="">
+
+
+                        <Eyebrow tag="span" variant="tag">Corporate</Eyebrow>
+                        <Heading tag="h3" variant="h4">Universit&eacute; d'&Eacute;t&eacute; Ekivia</Heading>
+                        <Paragraph variant="main">Captation et diffusion en direct au Ch&acirc;teau Smith Haut Lafitte, avec duplex pour des intervenants &agrave; distance et gestion des m&eacute;dias sur vid&eacute;oprojecteur.</Paragraph>
+
+                </Card>
+                <Card variant="cover" theme="dark" href={"/realisations/ceremonie-docteurs-bordeaux"} image="/photo/20250411_165355.webp" imageAlt="">
+
+
+                        <Eyebrow tag="span" variant="tag">Universit&eacute; de Bordeaux</Eyebrow>
+                        <Heading tag="h3" variant="h4">C&eacute;r&eacute;monie des docteurs</Heading>
+                        <Paragraph variant="main">L'Universit&eacute; de Bordeaux organise chaque ann&eacute;e la remise de dipl&ocirc;mes de ses doctorants au Pin Galant, salle de 1&nbsp;400 places &agrave; M&eacute;rignac.</Paragraph>
+
+                </Card>
+                <Card variant="cover" theme="dark" href={"/realisations/peer-gynt"} image="/photo/peer gynt.webp" imageAlt="">
+
+
+                        <Eyebrow tag="span" variant="tag">Peer Gynt</Eyebrow>
+                        <Heading tag="h3" variant="h4">Op&eacute;ra de Limoges</Heading>
+                        <Paragraph variant="main">Six cam&eacute;ras diss&eacute;min&eacute;es sur le plateau, manipulables par les acteurs et une trentaine de vid&eacute;os, le tout diffus&eacute; sur le mur du d&eacute;cor d'une maison.</Paragraph>
+
+                </Card>
+            </Grid>
+
+            <Button element="link" href={"/realisations"} class="align-self-center">Nos r&eacute;alisations</Button>
+
+    </Section>
+
+    <!-- ============================================
+         REFERENCES
+         ============================================ -->
+    <Section theme="light">
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">Ils nous font confiance</Eyebrow>
+                <Heading tag="h2" variant="h2">R&eacute;f&eacute;rences</Heading>
+                <hr class="divider">
+            </ContentWrapper>
+            <Grid xsmall={3} small={3} medium={4} large={4} gap="4">
+                <div class="ref-item"><Img loading={"lazy"} src={"/logos-clients/inrae.svg"} alt={"INRAE"} appearance="logo" transparent /></div>
+                <div class="ref-item"><Img loading={"lazy"} src={"/logos-clients/caissedesdepots.webp"} alt={"Caisse des Dépôts"} appearance="logo" transparent /></div>
+                <div class="ref-item"><Img loading={"lazy"} src={"/logos-clients/cnfpt.webp"} alt={"CNFPT"} appearance="logo" transparent /></div>
+                <div class="ref-item"><Img loading={"lazy"} src={"/logos-clients/francerugby.webp"} alt={"France Rugby"} appearance="logo" transparent /></div>
+                <div class="ref-item"><Img loading={"lazy"} src={"/logos-clients/laposte.svg"} alt={"La Poste"} appearance="logo" transparent /></div>
+                <div class="ref-item"><Img loading={"lazy"} src={"/logos-clients/cultura.svg"} alt={"Cultura"} appearance="logo" transparent /></div>
+                <div class="ref-item"><Img loading={"lazy"} src={"/logos-clients/regionna.webp"} alt={"Région Nouvelle-Aquitaine"} appearance="logo" transparent /></div>
+                <div class="ref-item"><Img loading={"lazy"} src={"/logos-clients/sncf.webp"} alt={"SNCF"} appearance="logo" transparent /></div>
+                <div class="ref-item"><Img loading={"lazy"} src={"/logos-clients/bordeaux.webp"} alt={"Bordeaux"} appearance="logo" transparent /></div>
+                <div class="ref-item"><Img loading={"lazy"} src={"/logos-clients/seasons.svg"} alt={"Seasons"} appearance="logo" transparent /></div>
+                <div class="ref-item"><Img loading={"lazy"} src={"/logos-clients/garorock.svg"} alt={"Garorock"} appearance="logo" transparent /></div>
+                <div class="ref-item"><Img loading={"lazy"} src={"/logos-clients/digitalaquitaine.svg"} alt={"Digital Aquitaine"} appearance="logo" transparent /></div>
+                <div class="ref-item"><Img loading={"lazy"} src={"/logos-clients/universitebordeaux.webp"} alt={"Université de Bordeaux"} appearance="logo" transparent /></div>
+                <div class="ref-item"><Img loading={"lazy"} src={"/logos-clients/apacom.svg"} alt={"APACOM"} appearance="logo" transparent /></div>
+                <div class="ref-item"><Img loading={"lazy"} src={"/logos-clients/unitec.svg"} alt={"Unitec"} appearance="logo" transparent /></div>
+                <div class="ref-item"><Img loading={"lazy"} src={"/logos-clients/adina.svg"} alt={"ADINA"} appearance="logo" transparent /></div>
+            </Grid>
+
+    </Section>
+
+    <!-- ============================================
+         EQUIPE
+         ============================================ -->
+    <Section id="equipe" theme="light" tone="muted">
+
+            <Grid xsmall={1} small={1} medium={1} large={2} gap="7">
+                <div class="equipe-text">
+                    <Eyebrow tag="span">Depuis 1998</Eyebrow>
+                    <Heading tag="h2" variant="h2" class="alignment-start">Les Ateliers du Stream</Heading>
+                    <hr class="divider divider-left">
+                    <br>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>
+                        Les Ateliers du Stream sont issus de la collaboration entre Web Vid&eacute;o Production, Grand Angle Productions et Revue Far Ouest. Nous r&eacute;unissons plus de 25 ans d'exp&eacute;rience en captation multicam&eacute;ra, production live et r&eacute;alisation vid&eacute;o &eacute;v&eacute;nementielle.
+                    </Paragraph>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>
+                        Bas&eacute;s en Nouvelle-Aquitaine, avec des implantations &agrave; Bordeaux et Paris, nous intervenons sur l'ensemble du territoire. Chaque projet est accompagn&eacute; de la conception technique &agrave; la livraison finale, avec une attention constante port&eacute;e &agrave; la qualit&eacute; et &agrave; la coordination.
+                    </Paragraph>
+                    <div style={"display: flex; flex-wrap: wrap; gap: var(--space-6); margin-top: var(--space-5);"}>
+                        <Img loading={"lazy"} src={"/images/logo-web-video-production.png"} alt={"Web Vidéo Production"} style={"height: 2.5rem; opacity: 0.7;"} appearance="logo" transparent />
+                        <Img loading={"lazy"} src={"/images/logo-grand-angle.png"} alt={"Grand Angle"} style={"height: 2.5rem; opacity: 0.7;"} appearance="logo" transparent />
+                        <Img loading={"lazy"} src={"/images/logo-far-ouest.png"} alt={"Far Ouest"} style={"height: 2.5rem; opacity: 0.7;"} appearance="logo" transparent />
+                    </div>
+                </div>
+                <Grid xsmall={1} small={1} medium={1} large={2} gap="4" class="align-self-start">
+                    <Card variant="cover" theme="dark" image="/photo/historique.webp" imageAlt="Les Ateliers du Stream - Historique" imageZoom class="radius-main" style="--_min-height: 0; --_padding: var(--space-4); aspect-ratio: 3 / 4;">
+                            <Heading tag="h3" variant="h4">Notre r&eacute;gie dans les ann&eacute;es 2000</Heading>
+                    </Card>
+                    <Card variant="cover" theme="dark" image="/photo/2024.webp" imageAlt="Les Ateliers du Stream - 2024" imageZoom class="radius-main" style="--_min-height: 0; --_padding: var(--space-4); aspect-ratio: 3 / 4;">
+                            <Heading tag="h3" variant="h4">Nos r&eacute;gies dans les ann&eacute;es 2020</Heading>
+                    </Card>
+                    <p class="equipe-caption" style={"grid-column: 1 / -1; text-align: center; font-style: italic; color: var(--text-2); margin-top: var(--space-1); font-size: var(--text-main);"}>Le live a &eacute;volu&eacute;. Les r&eacute;gies aussi&hellip; enfin, pas toutes.</p>
+                </Grid>
+            </Grid>
+
+    </Section>
+
+    <!-- ============================================
+         CTA / CONTACT
+         ============================================ -->
+    <ContactSection eyebrow={"Parlons de votre projet"} title={"On passe à votre événement ?"} description={"Un projet en construction, un événement qui approche que vous envisagez de filmer et diffuser sur les réseaux ? Parlons-en."} email={"prod@lesateliersdustream.fr"} phoneHref={"tel:+33661968858"} phone={"06 61 96 88 58"} locationAlt={"Nos bureaux"} training={false} />
+
+    <!-- Footer -->
+
+
+
+
+    <!-- Hero video pause/play -->
+
+
+    <!-- Lightbox -->
+
+
+
+<style is:global>
+@layer components {
+        .solution-cards .card_wrap {
+            --text-2: var(--text);
+            --text-main-line-height: var(--line-height-huge);
+        }
+
+/* ============================================
+           POLICES
+           ============================================ */
+
+        /* ============================================
+           VARIABLES
+           ============================================ */
+
+        /* ============================================
+           RESET
+           ============================================ */
+
+        /* ============================================
+           HERO (INCHANGE)
+           ============================================ */
+
+        /* ============================================
+           SECTION COMMUNE
+           ============================================ */
+
+        .divider {
+            margin: var(--space-4) auto 0;
+        }
+        .divider-left { margin: var(--space-4) 0 0 0; }
+
+        /* ============================================
+           SECTION — NOS POSSIBILITES
+           Bande horizontale immersive
+           ============================================ */
+
+        /* Placeholder photos — fond gris avec icone */
+
+        /* ============================================
+           SECTION — NOTRE SPECIFICITE
+           ============================================ */
+
+        .specificite-text {
+            max-width: 46.875rem;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .specificite-text ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto var(--space-4);
+            display: inline-block;
+            text-align: left;
+        }
+        .specificite-text ul li {
+            font-size: var(--text-main);
+            color: var(--text-2);
+            line-height: var(--text-main-line-height);
+            padding-left: var(--space-4);
+            position: relative;
+        }
+        .specificite-text ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.75rem;
+            width: 0.5rem;
+            height: 0.125rem;
+            background: var(--brand-500);
+        }
+
+        /* ============================================
+           SECTION — CHIFFRES
+           Minimaliste, grandes typo
+           ============================================ */
+
+        .stat-item {
+            padding: var(--space-4);
+        }
+
+        .stat-icon {
+            margin-bottom: var(--space-4);
+            margin-inline: auto;
+            width: fit-content;
+        }
+
+        .stat-icon svg {
+            width: 2.75rem;
+            height: 2.75rem;
+            fill: var(--light-100);
+            stroke: none;
+        }
+
+        .stat-nombre {
+            font-family: var(--heading-family); font-size: var(--display); font-weight: var(--h3-font-weight);
+            color: var(--heading-accent); line-height: var(--line-height-large); margin-bottom: var(--space-2);
+        }
+
+        .stat-label {
+            font-size: var(--text-small); color: var(--text-2); text-transform: uppercase;
+            letter-spacing: var(--letter-spacing-normal); font-weight: var(--primary-medium);
+        }
+
+        /* ============================================
+           SECTION — REFERENCES
+           Logo wall minimaliste
+           ============================================ */
+
+        .ref-item {
+            background: var(--light-100);
+            border-radius: var(--radius-main);
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-4);
+            transition: all var(--hover-duration) var(--hover-ease);
+            box-shadow: var(--shadow-surface);
+            border: var(--border-width) solid var(--light-300);
+        }
+
+        .ref-item:hover {
+            box-shadow: var(--shadow-surface);
+            transform: translateY(-0.1875rem);
+        }
+
+        /* ============================================
+           SECTION — REALISATIONS (Galerie)
+           ============================================ */
+        .realisations {
+            background: var(--light-100);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-4);
+        }
+
+        .gallery-caption {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            padding: var(--space-4); color: var(--light-100); z-index: 1;
+            transform: translateY(0.625rem); opacity: 0;
+            transition: all var(--hover-duration) var(--hover-ease);
+        }
+
+        /* Grand item qui prend 2 colonnes */
+
+        /* Placeholder */
+        .gallery-placeholder {
+            width: 100%; height: 100%;
+            background: var(--light-300);
+            display: flex; align-items: center; justify-content: center;
+            border: var(--border-width) dashed var(--border);
+            font-size: var(--text-small); color: var(--text-2);
+        }
+
+        /* ============================================
+           SECTION — EQUIPE
+           ============================================ */
+
+        /* Lightbox */
+
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+
+        @media (--mq-large-min) {
+            .hero-subtitle { font-size: var(--text-main); }
+        }
+
+        @media (--mq-medium-max) {
+            .gallery-grid { grid-template-columns: 1fr; }
+            .stat-nombre { font-size: var(--display); }
+            .ref-item { padding: var(--space-4); }
+        }
+
+}
+</style>

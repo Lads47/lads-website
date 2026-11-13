@@ -1,0 +1,200 @@
+---
+import ContactSection from './ContactSection.astro';
+import Section from '../wrapper/Section.astro';
+import ContentWrapper from '../wrapper/ContentWrapper.astro';
+import Eyebrow from '../typography/Eyebrow.astro';
+import Heading from '../typography/Heading.astro';
+import Grid from '../wrapper/Grid.astro';
+import Paragraph from '../typography/Paragraph.astro';
+import Img from '../media/Img.astro';
+import Button from '../Button.astro';
+---
+<!-- ============================================
+         PAGE HERO
+         ============================================ -->
+    <Section theme="dark" paddingTop="navoverlap" paddingBottom="small" align="center">
+<Img slot="background" src="/photo/agri1.webp" alt="" loading="eager" style={"opacity:var(--hero-image-opacity)"} />
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">Plateau TV</Eyebrow>
+                <Heading tag="h1" variant="h1">Salon de l'Agriculture de Bordeaux &mdash; 2024</Heading>
+            </ContentWrapper>
+
+    </Section>
+
+    <!-- Breadcrumb retour -->
+    <div class="site-container">
+        <a href="/realisations" class="breadcrumb-back">
+            <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Retour nos r&eacute;alisations
+        </a>
+    </div>
+
+    <!-- ============================================
+         CONTENU
+         ============================================ -->
+    <Section theme="light">
+
+            <Grid xsmall={1} small={1} medium={1} large={2} gap="8" tracks="var(--tracks-content-sidebar)">
+                <div class="real-detail-text">
+                    <Eyebrow tag="span" variant="tag">Plateau TV</Eyebrow>
+                    <Heading tag="h2" variant="h2" class="alignment-start">Salon de l'Agriculture de Bordeaux &mdash; 2024</Heading>
+                    <hr class="divider">
+                    <br>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>
+                        Pour l'&eacute;dition 2024 du Salon de l'Agriculture de Bordeaux, nous avons con&ccedil;u un plateau TV pour AgriWebTV. La prestation incluait la cr&eacute;ation du plateau, le positionnement de 7 cam&eacute;ras, la sonorisation, l'enregistrement d'&eacute;missions quotidiennes et leur diffusion en replay.
+                    </Paragraph>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>
+                        Le plateau a &eacute;t&eacute; &eacute;quip&eacute; d'&eacute;crans publics pour permettre au public de suivre les &eacute;missions en direct et d'un &eacute;cran de retour m&eacute;dias pour les invit&eacute;s.
+                    </Paragraph>
+                </div>
+                <div class="real-meta">
+                    <div class="real-meta-item">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                        <div>
+                            <span class="meta-label">Client</span>
+                            <span class="meta-value">AgriWebTV</span>
+                        </div>
+                    </div>
+                    <div class="real-meta-item">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        <div>
+                            <span class="meta-label">Ann&eacute;e</span>
+                            <span class="meta-value">2024</span>
+                        </div>
+                    </div>
+                    <div class="real-meta-item">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <div>
+                            <span class="meta-label">Lieu</span>
+                            <span class="meta-value">Parc des expositions, Bordeaux</span>
+                        </div>
+                    </div>
+                </div>
+            </Grid>
+
+            <!-- Photos -->
+            <Grid xsmall={1} small={1} medium={1} large={1} gap="4">
+                <div class="real-photo-item">
+                    <Img loading={"lazy"} src={"/photo/agri1.webp"} alt={"Le plateau AgriWebTV"} appearance="photo" />
+                    <p class="real-photo-caption">Le plateau AgriWebTV</p>
+                </div>
+            </Grid>
+
+            <!-- Back link -->
+            <Button element="link" variant="link" href={"/realisations"}>
+                <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                Retour aux r&eacute;alisations
+            </Button>
+
+    </Section>
+
+    <ContactSection eyebrow={"On ajoute votre événement ?"} title={"On ajoute votre événement ?"} description={"Un projet en construction, un événement qui approche que vous envisagez de filmer et diffuser ? Parlons-en."} email={"prod@lesateliersdustream.fr"} phoneHref={"tel:+33661968858"} phone={"06 61 96 88 58"} locationAlt={"Nos bureaux"} training={false} />
+
+    <!-- Lightbox -->
+
+
+    <!-- Footer -->
+
+
+
+<style is:global>
+@layer components {
+
+/* ============================================
+           POLICES
+           ============================================ */
+
+        /* ============================================
+           VARIABLES
+           ============================================ */
+
+        /* ============================================
+           RESET
+           ============================================ */
+
+        /* ============================================
+           PAGE HERO
+           ============================================ */
+
+        /* ============================================
+           SECTIONS COMMUNES
+           ============================================ */
+        .divider {
+            margin: var(--space-4) 0 0 0;
+        }
+
+        /* ============================================
+           REALISATION DETAIL LAYOUT
+           ============================================ */
+
+        /* META SIDEBAR */
+        .real-meta {
+            display: flex; flex-direction: column; gap: var(--space-4);
+            padding: var(--space-5);
+            background: var(--light-200);
+            border-radius: var(--radius-small);
+            border: var(--border-width) solid var(--light-300);
+        }
+        .real-meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+        }
+        .real-meta-item svg {
+            width: 1.375rem; height: 1.375rem; flex-shrink: 0;
+            stroke: var(--brand-500); stroke-width: 2;
+            fill: none; stroke-linecap: round; stroke-linejoin: round;
+            margin-top: var(--space-1);
+        }
+        .meta-label {
+            display: block; font-size: var(--text-small); font-weight: var(--primary-bold);
+            text-transform: uppercase; letter-spacing: var(--letter-spacing-normal);
+            color: var(--text-2); margin-bottom: var(--space-1);
+        }
+        .meta-value {
+            display: block; font-size: var(--text-main); font-weight: var(--primary-medium);
+            color: var(--dark-900);
+        }
+
+        /* PHOTO SECTION */
+        .real-photo-item {
+            border-radius: var(--radius-small);
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .real-photo-caption {
+            font-size: var(--text-small);
+            color: var(--text-2);
+            font-style: italic;
+            margin-top: var(--space-2);
+            text-align: center;
+        }
+
+        /* Lightbox */
+
+        /* Video */
+        .video-container { margin-top: var(--space-4); position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-small); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: var(--radius-small); }
+
+        /* BREADCRUMB BACK */
+        .breadcrumb-back {
+            display: inline-flex; align-items: center; gap: var(--space-2);
+            font-size: var(--text-small); font-weight: var(--primary-medium); text-transform: uppercase;
+            letter-spacing: var(--letter-spacing-normal); color: var(--text-2); transition: all var(--hover-duration) var(--hover-ease);
+            padding: var(--space-5) 0 0;
+        }
+        .breadcrumb-back:hover { color: var(--heading-accent); }
+        .breadcrumb-back svg {
+            width: 1rem; height: 1rem; stroke: currentColor; stroke-width: 2;
+            fill: none; transition: all var(--hover-duration) var(--hover-ease);
+        }
+
+        /* BACK LINK */
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+
+}
+</style>

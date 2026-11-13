@@ -1,0 +1,57 @@
+---
+import Section from '../wrapper/Section.astro';
+import ContentWrapper from '../wrapper/ContentWrapper.astro';
+import Grid from '../wrapper/Grid.astro';
+import Card from '../item/Card.astro';
+import Heading from '../typography/Heading.astro';
+import Paragraph from '../typography/Paragraph.astro';
+import Eyebrow from '../typography/Eyebrow.astro';
+import Icon from '../media/Icon.astro';
+import emailIcon from '@/assets/icons/contact-email.svg';
+import phoneIcon from '@/assets/icons/contact-phone.svg';
+import locationIcon from '@/assets/icons/contact-location.svg';
+import Overlay from '../media/Overlay.astro';
+interface Props {
+  eyebrow: string;
+  title: string;
+  description: string;
+  email: string;
+  phoneHref: string;
+  phone: string;
+  locationAlt: string;
+  training: boolean;
+}
+const { eyebrow, title, description, email, phoneHref, phone, locationAlt, training } = Astro.props;
+---
+<Section id="contact" theme="dark" paddingTop="large" paddingBottom="large">
+  <Overlay slot="background" variant="ambient" />
+  <ContentWrapper centered class="max-width-small margin-inline-auto">
+    <Eyebrow tag="span">{eyebrow}</Eyebrow>
+    <Heading tag="h2" variant="h2">{title}</Heading>
+    <Paragraph variant="main" class="color-muted">{description}</Paragraph>
+    <hr class="divider" />
+  </ContentWrapper>
+  <Grid large={3} gap="5" class="alignment-center">
+      <Card variant="panel">
+        <Icon src={emailIcon} role="img" aria-label="Email" class="icon-brand align-self-center" />
+        <Heading tag="h3" variant="h5">Email</Heading>
+        <Paragraph variant="small"><a class="color-brand" href={`mailto:${email}`}>{email}</a></Paragraph>
+      </Card>
+      <Card variant="panel">
+        <Icon src={phoneIcon} role="img" aria-label="Téléphone" class="icon-brand align-self-center" />
+        <Heading tag="h3" variant="h5">Téléphone</Heading>
+        <Paragraph variant="small"><a class="color-brand" href={phoneHref}>{phone}</a></Paragraph>
+      </Card>
+      <Card variant="panel">
+        <Icon src={locationIcon} role="img" aria-label={locationAlt} class="icon-brand align-self-center" />
+        <Heading tag="h3" variant="h5">{training ? 'Lieu de formation' : 'Nos bureaux'}</Heading>
+        {training ? <Paragraph variant="small">39 bis rue Robert Creuzet<br />47200 Marmande</Paragraph> :
+          <Paragraph variant="small">
+            <span class="color-brand">39 bis rue Robert Creuzet, 47200 Marmande</span><br />
+            22 rue Marcelin Berthelot, 33700 Mérignac<br />
+            108 Bd Gallieni, 92130 Issy-les-Moulineaux
+          </Paragraph>
+        }
+      </Card>
+  </Grid>
+</Section>

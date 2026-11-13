@@ -1,0 +1,70 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { slotContent } from "@/utils/slots.ts";
+
+type Props = HTMLAttributes<"div"> & {
+  /** Set to `false` to omit the component. */
+  render?: boolean;
+  /** HTML element. */
+  tag?: "span" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  /** Eyebrow style. */
+  variant?: "default" | "tag";
+};
+
+const {
+  render = true,
+  tag: Tag = "p",
+  variant = "default",
+  class: className,
+  ...rest
+} = Astro.props;
+
+const content = await slotContent(Astro.slots);
+---
+
+{render && content && (
+  <div
+    class:list={["eyebrow_wrap", variant !== "default" && variant, className]}
+    {...rest}
+  >
+    {variant === "default" && (
+      <span class="eyebrow_marker" aria-hidden="true" />
+    )}
+    <Tag class="eyebrow_text text-style-small">
+      <Fragment set:html={content} />
+    </Tag>
+  </div>
+)}
+
+<style is:global>
+  @layer components {
+    .eyebrow_wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: var(--_alignment, start);
+      gap: var(--space-2);
+
+      &.tag {
+        background-color: var(--text);
+        color: var(--background);
+        padding: var(--space-1) var(--space-2);
+        border-radius: var(--radius-small);
+      }
+      .eyebrow_marker {
+        flex: none;
+        width: var(--border-width);
+        height: 0.75rem;
+        background-color: currentcolor;
+      }
+    }
+  }
+</style>
+
+<style is:global>
+@layer components {
+  .eyebrow_wrap { color: var(--heading-accent); font-weight: var(--primary-bold); text-transform: uppercase; letter-spacing: var(--label-tracking); margin-bottom: var(--space-3); }
+  .eyebrow_marker { display: none; }
+  .eyebrow_text { font-weight: inherit; text-transform: inherit; letter-spacing: inherit; }
+  .eyebrow_wrap.tag { background: color-mix(in srgb, var(--brand-500) 20%, transparent); color: var(--heading-accent); border-radius: var(--radius-round); }
+}
+</style>

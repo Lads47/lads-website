@@ -1,0 +1,9 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import Content from '@/components/content/404.astro';
+---
+<PageLayout shell={false} home={false} schema={false} lightbox={false}>
+  <Fragment slot="head"><meta name="robots" content="noindex">
+    <title>Page introuvable (404) - Les Ateliers du Stream</title></Fragment>
+  <Content />
+</PageLayout>

@@ -1,0 +1,221 @@
+---
+import ContactSection from './ContactSection.astro';
+import Section from '../wrapper/Section.astro';
+import ContentWrapper from '../wrapper/ContentWrapper.astro';
+import Eyebrow from '../typography/Eyebrow.astro';
+import Heading from '../typography/Heading.astro';
+import Paragraph from '../typography/Paragraph.astro';
+import Grid from '../wrapper/Grid.astro';
+import Img from '../media/Img.astro';
+import Button from '../Button.astro';
+---
+<!-- ============================================
+         HEADER
+         ============================================ -->
+
+
+
+    <!-- ============================================
+         PAGE HERO
+         ============================================ -->
+    <Section theme="dark" paddingTop="navoverlap" paddingBottom="small" align="center">
+<Img slot="background" src="/photo/20220717_194319.webp" alt="" loading="eager" style={"opacity:var(--hero-image-opacity)"} />
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">Liaison sans fil</Eyebrow>
+                <Heading tag="h1" variant="h1">4 cam&eacute;ras tourelle 100% HF</Heading>
+                <Paragraph variant="large">Dispositif id&eacute;al pour les installations en ext&eacute;rieur avec du public</Paragraph>
+            </ContentWrapper>
+
+    </Section>
+
+    <!-- Breadcrumb retour -->
+    <div class="site-container">
+        <a href="/solutions" class="breadcrumb-back">
+            <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Retour nos solutions
+        </a>
+    </div>
+
+    <!-- ============================================
+         DETAIL
+         ============================================ -->
+    <Section theme="light">
+
+            <Grid xsmall={1} small={1} medium={1} large={2} gap="8" tracks="var(--tracks-content-sidebar)">
+                <div class="real-detail-text">
+                    <Eyebrow tag="span" variant="tag">Liaison sans fil</Eyebrow>
+                    <Heading tag="h2" variant="h2" class="alignment-start">4 cam&eacute;ras tourelle 100% HF</Heading>
+                    <hr class="divider">
+                    <br>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>
+                        Dispositif id&eacute;al pour les installations en ext&eacute;rieur avec du public. Chaque cam&eacute;ra dispose de son propre &eacute;metteur et le tout est aliment&eacute; par batterie. Un dispositif tr&egrave;s rare sur le march&eacute; de l'audiovisuel.
+                    </Paragraph>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>
+                        Ce syst&egrave;me enti&egrave;rement sans fil permet un d&eacute;ploiement ultra-rapide sans aucun c&acirc;blage au sol, garantissant la s&eacute;curit&eacute; du public et une libert&eacute; totale de positionnement des cam&eacute;ras. Les cam&eacute;ras tourelle offrent un pilotage &agrave; distance pr&eacute;cis depuis la r&eacute;gie.
+                    </Paragraph>
+                    <ul class="feature-list">
+                        <li>4 cam&eacute;ras tourelle pilot&eacute;es &agrave; distance</li>
+                        <li>Liaison vid&eacute;o &eacute;metteur HF</li>
+                        <li>Alimentation par batterie</li>
+                        <li>Aucun c&acirc;blage au sol</li>
+                        <li>D&eacute;ploiement ultra-rapide</li>
+                    </ul>
+                </div>
+                <div class="real-meta">
+                    <div class="real-meta-item">
+                        <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                        <div>
+                            <span class="meta-label">Type de solution</span>
+                            <span class="meta-value">Cam&eacute;ra HF et autonome</span>
+                        </div>
+                    </div>
+                    <div class="real-meta-item">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="12" x2="16" y2="12"/></svg>
+                        <div>
+                            <span class="meta-label">Capacit&eacute;</span>
+                            <span class="meta-value">4 cam&eacute;ras tourelle</span>
+                        </div>
+                    </div>
+                    <div class="real-meta-item">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <div>
+                            <span class="meta-label">Usage</span>
+                            <span class="meta-value">Ext&eacute;rieur &middot; Festivals &middot; Espaces publics</span>
+                        </div>
+                    </div>
+                </div>
+            </Grid>
+
+            <!-- Photos -->
+            <Grid xsmall={1} small={1} medium={2} large={3} gap="4">
+                <div class="real-photo-item">
+                    <Img loading={"lazy"} src={"/photo/20220717_194319.webp"} alt={"Captation de conférence en plein air lors d'un festival"} appearance="photo" />
+                    <p class="real-photo-caption">Captation de conf&eacute;rences lors d'un festival en plein air</p>
+                </div>
+                <div class="real-photo-item">
+                    <Img loading={"lazy"} src={"/photo/hf 2.webp"} alt={"Captation multicam sur un salon professionnel"} appearance="photo" />
+                    <p class="real-photo-caption">Salon professionnel &mdash; captation multicam de stand en stand</p>
+                </div>
+                <div class="real-photo-item">
+                    <Img loading={"lazy"} src={"/photo/20250727_095239(0).webp"} alt={"Installation dans le sable pour un tournoi de Beach Tennis"} appearance="photo" />
+                    <p class="real-photo-caption">D&eacute;ploiement sur sable, en public, pour un tournoi de Beach Tennis</p>
+                </div>
+            </Grid>
+
+            <!-- Back link -->
+            <Button element="link" variant="link" href={"/solutions"}>
+                <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                Retour aux solutions
+            </Button>
+
+    </Section>
+
+    <ContactSection eyebrow={"Vous avez un projet similaire ?"} title={"Et si on travaillait ensemble ?"} description={"Un projet en construction, un événement qui approche que vous envisagez de filmer et diffuser ? Parlons-en."} email={"prod@lesateliersdustream.fr"} phoneHref={"tel:+33661968858"} phone={"06 61 96 88 58"} locationAlt={"Nos bureaux"} training={false} />
+
+    <!-- Lightbox -->
+
+
+    <!-- Footer -->
+
+
+
+<style is:global>
+@layer components {
+
+/* ============================================
+           POLICES
+           ============================================ */
+
+        /* ============================================
+           VARIABLES
+           ============================================ */
+
+        /* ============================================
+           RESET
+           ============================================ */
+
+        /* ============================================
+           PAGE HERO
+           ============================================ */
+
+        /* ============================================
+           SECTIONS COMMUNES
+           ============================================ */
+        .divider {
+            margin: var(--space-4) 0 0 0;
+        }
+
+        /* ============================================
+           SOLUTION DETAIL
+           ============================================ */
+        .real-meta {
+            display: flex; flex-direction: column; gap: var(--space-4);
+            padding: var(--space-5);
+            background: var(--light-200);
+            border-radius: var(--radius-small);
+            border: var(--border-width) solid var(--light-300);
+        }
+        .real-meta-item { display: flex; align-items: center; gap: var(--space-3); }
+        .real-meta-item svg {
+            width: 1.375rem; height: 1.375rem; flex-shrink: 0;
+            stroke: var(--brand-500); stroke-width: 2;
+            fill: none; stroke-linecap: round; stroke-linejoin: round;
+        }
+        .meta-label {
+            display: block; font-size: var(--text-small); font-weight: var(--primary-bold);
+            text-transform: uppercase; letter-spacing: var(--letter-spacing-normal);
+            color: var(--text-2); margin-bottom: var(--space-1);
+        }
+        .meta-value {
+            display: block; font-size: var(--text-main); font-weight: var(--primary-medium);
+            color: var(--dark-900);
+        }
+
+        /* ============================================
+           FEATURE LIST
+           ============================================ */
+        .feature-list { list-style: none; margin-top: var(--space-4); }
+        .feature-list li {
+            position: relative; padding-left: var(--space-4);
+            font-size: var(--text-small); color: var(--text-2); line-height: var(--text-main-line-height);
+        }
+        .feature-list li::before {
+            content: ''; position: absolute; left: 0; top: 0.75rem;
+            width: 0.625rem; height: 0.625rem; border-radius: 50%;
+            background: var(--brand-500);
+        }
+
+        /* ============================================
+           PHOTO SECTION
+           ============================================ */
+        .real-photo-item { border-radius: var(--radius-small); overflow: hidden; cursor: pointer; }
+        .real-photo-caption { font-size: var(--text-small); color: var(--text-2); font-style: italic; margin-top: var(--space-2); text-align: center; }
+
+        /* Lightbox */
+
+        /* ============================================
+           BREADCRUMB BACK
+           ============================================ */
+        .breadcrumb-back {
+            display: inline-flex; align-items: center; gap: var(--space-2);
+            font-size: var(--text-small); font-weight: var(--primary-medium); text-transform: uppercase;
+            letter-spacing: var(--letter-spacing-normal); color: var(--text-2); transition: all var(--hover-duration) var(--hover-ease);
+            padding: var(--space-5) 0 0;
+        }
+        .breadcrumb-back:hover { color: var(--heading-accent); }
+        .breadcrumb-back svg {
+            width: 1rem; height: 1rem; stroke: currentColor; stroke-width: 2;
+            fill: none; transition: all var(--hover-duration) var(--hover-ease);
+        }
+
+        /* ============================================
+           BACK LINK
+           ============================================ */
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+
+}
+</style>

@@ -1,0 +1,3 @@
+# Conserver un export HTML en fichiers
+
+Le serveur publié résout les routes sans extension vers des fichiers HTML et redirige les variantes `.html` vers ces routes. Nous utilisons l'export statique Astro avec `build.format: 'file'` et `trailingSlash: 'never'`, plutôt que les dossiers `index.html` par défaut : cette structure préserve les chemins servis et permet de remplacer les fichiers sans imposer une reconfiguration de l'hébergement. Les canoniques et le sitemap conservent explicitement les URL publiques sans extension ; la prévisualisation locale reproduit cette résolution. Les anciennes pages de redirection statique restent en place tant que la configuration serveur n'est pas disponible.

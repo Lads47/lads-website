@@ -1,0 +1,232 @@
+---
+import LocalVideo from '../site/LocalVideo.astro';
+import ContactSection from './ContactSection.astro';
+import Section from '../wrapper/Section.astro';
+import ContentWrapper from '../wrapper/ContentWrapper.astro';
+import Eyebrow from '../typography/Eyebrow.astro';
+import Heading from '../typography/Heading.astro';
+import Paragraph from '../typography/Paragraph.astro';
+import Grid from '../wrapper/Grid.astro';
+import Img from '../media/Img.astro';
+import Button from '../Button.astro';
+---
+<!-- ============================================
+         PAGE HERO
+         ============================================ -->
+    <Section theme="dark" paddingTop="navoverlap" paddingBottom="small" align="center">
+<Img slot="background" src="/photo/d%C3%A9mo.00_00_20_12.Still001.webp" alt="" loading="eager" style={"opacity:var(--hero-image-opacity)"} />
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">Plateau TV</Eyebrow>
+                <Heading tag="h1" variant="h1">Runik TCG Series</Heading>
+                <Paragraph variant="large">Bordeaux &mdash; 2026</Paragraph>
+            </ContentWrapper>
+
+    </Section>
+
+    <!-- Breadcrumb retour -->
+    <div class="site-container">
+        <a href="/realisations" class="breadcrumb-back">
+            <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Retour nos r&eacute;alisations
+        </a>
+    </div>
+
+    <!-- ============================================
+         DETAIL
+         ============================================ -->
+    <Section theme="light">
+
+            <Grid xsmall={1} small={1} medium={1} large={2} gap="8" tracks="var(--tracks-content-sidebar)">
+                <div class="real-detail-text">
+                    <Eyebrow tag="span" variant="tag">Plateau TV</Eyebrow>
+                    <Eyebrow tag="span" variant="tag">Captation multicam</Eyebrow>
+                    <Heading tag="h2" variant="h2" class="alignment-start">Runik TCG Series &mdash; Bordeaux &mdash; 2026</Heading>
+                    <hr class="divider">
+                    <br>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>
+                        Nous avons particip&eacute; &agrave; la premi&egrave;re &eacute;dition des Runik TCG Series en rediffusant le flux du cast officiel de cette comp&eacute;tition CCQ Lorcana de Ravensburger et en l'enrichissant&nbsp;: nous avons combl&eacute; les moments de pause par des &eacute;missions produites en direct sur notre propre plateau TV.
+                    </Paragraph>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>
+                        Au programme&nbsp;: interviews de joueurs et d'illustrateurs de cartes, analyses des moments forts de la comp&eacute;tition et captation de notre propre table de jeu avec overlay des cartes jou&eacute;es en temps r&eacute;el.
+                    </Paragraph>
+                </div>
+                <div class="real-meta">
+                    <div class="real-meta-item">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                        <div>
+                            <span class="meta-label">Client</span>
+                            <span class="meta-value">Runik</span>
+                        </div>
+                    </div>
+                    <div class="real-meta-item">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        <div>
+                            <span class="meta-label">Ann&eacute;e</span>
+                            <span class="meta-value">2026</span>
+                        </div>
+                    </div>
+                    <div class="real-meta-item">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <div>
+                            <span class="meta-label">Lieu</span>
+                            <span class="meta-value">Bordeaux</span>
+                        </div>
+                    </div>
+                </div>
+            </Grid>
+
+            <!-- Vid&eacute;o d&eacute;mo locale -->
+            <div class="real-video ">
+                <LocalVideo name="runik-tcg" />
+            </div>
+            <p class="real-video-caption ">Aper&ccedil;u de la captation de la table comp&eacute;titive.</p>
+
+            <!-- Photos -->
+            <Grid xsmall={1} small={1} medium={2} large={2} gap="4">
+                <div class="real-photo-item">
+                    <Img loading={"lazy"} src={"/photo/20260424_194500.webp"} alt={"Notre installation plateau TV et table de jeu"} appearance="photo" />
+                    <p class="real-photo-caption">Notre installation plateau TV et table de jeu</p>
+                </div>
+                <div class="real-photo-item">
+                    <Img loading={"lazy"} src={"/photo/20260424_194417.webp"} alt={"La régie de captation"} appearance="photo" />
+                    <p class="real-photo-caption">La r&eacute;gie de captation.</p>
+                </div>
+            </Grid>
+
+            <!-- Back link -->
+            <Button element="link" variant="link" href={"/realisations"}>
+                <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                Retour aux r&eacute;alisations
+            </Button>
+
+    </Section>
+
+    <ContactSection eyebrow={"Vous avez un projet similaire ?"} title={"On ajoute votre événement ?"} description={"Un projet en construction, un événement qui approche que vous envisagez de filmer et diffuser ? Parlons-en."} email={"prod@lesateliersdustream.fr"} phoneHref={"tel:+33661968858"} phone={"06 61 96 88 58"} locationAlt={"Nos bureaux"} training={false} />
+
+    <!-- Lightbox -->
+
+
+    <!-- Footer -->
+
+
+
+<style is:global>
+@layer components {
+
+/* ============================================
+           POLICES
+           ============================================ */
+
+        /* ============================================
+           VARIABLES
+           ============================================ */
+
+        /* ============================================
+           RESET
+           ============================================ */
+
+        /* ============================================
+           PAGE HERO
+           ============================================ */
+
+        /* ============================================
+           SECTIONS COMMUNES
+           ============================================ */
+        .divider {
+            margin: var(--space-4) 0 0 0;
+        }
+
+        /* ============================================
+           REALISATION DETAIL
+           ============================================ */
+        .real-meta {
+            display: flex; flex-direction: column; gap: var(--space-4);
+            padding: var(--space-5);
+            background: var(--light-200);
+            border-radius: var(--radius-small);
+            border: var(--border-width) solid var(--light-300);
+        }
+        .real-meta-item {
+            display: flex; align-items: center; gap: var(--space-3);
+        }
+        .real-meta-item svg {
+            width: 1.375rem; height: 1.375rem; flex-shrink: 0;
+            stroke: var(--brand-500); stroke-width: 2;
+            fill: none; stroke-linecap: round; stroke-linejoin: round;
+        }
+        .meta-label {
+            display: block; font-size: var(--text-small); font-weight: var(--primary-bold);
+            text-transform: uppercase; letter-spacing: var(--letter-spacing-normal);
+            color: var(--text-2); margin-bottom: var(--space-1);
+        }
+        .meta-value {
+            display: block; font-size: var(--text-main); font-weight: var(--primary-medium);
+            color: var(--dark-900);
+        }
+
+        /* ============================================
+           VIDEO SECTION
+           ============================================ */
+        .real-video {
+            margin-top: var(--space-7);
+            border-radius: var(--radius-small);
+            overflow: hidden;
+            background: #000;
+        }
+        .real-video video {
+            width: 100%; height: auto;
+            display: block;
+            border-radius: var(--radius-small);
+        }
+        .real-video-caption {
+            font-size: var(--text-small);
+            color: var(--text-2);
+            font-style: italic;
+            margin-top: var(--space-2);
+            text-align: center;
+        }
+
+        /* ============================================
+           PHOTO SECTION
+           ============================================ */
+        .real-photo-item {
+            border-radius: var(--radius-small);
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .real-photo-caption {
+            font-size: var(--text-small);
+            color: var(--text-2);
+            font-style: italic;
+            margin-top: var(--space-2);
+            text-align: center;
+        }
+
+        /* Lightbox */
+
+        /* ============================================
+           BREADCRUMB BACK
+           ============================================ */
+        .breadcrumb-back {
+            display: inline-flex; align-items: center; gap: var(--space-2);
+            font-size: var(--text-small); font-weight: var(--primary-medium); text-transform: uppercase;
+            letter-spacing: var(--letter-spacing-normal); color: var(--text-2); transition: all var(--hover-duration) var(--hover-ease);
+            padding: var(--space-5) 0 0;
+        }
+        .breadcrumb-back:hover { color: var(--heading-accent); }
+        .breadcrumb-back svg {
+            width: 1rem; height: 1rem; stroke: currentColor; stroke-width: 2;
+            fill: none; transition: all var(--hover-duration) var(--hover-ease);
+        }
+
+        /* ============================================
+           BACK LINK
+           ============================================ */
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+
+}
+</style>

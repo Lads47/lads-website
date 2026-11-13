@@ -1,0 +1,176 @@
+@font-face {
+  font-family: Butler;
+  src: url('/fonts/subset-Butler.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Butler;
+  src: url('/fonts/Butler-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/OpenSans-VariableFont_wght.woff2') format('woff2');
+  font-weight: 300 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --primary-family: 'Open Sans', sans-serif;
+  --heading-family: Butler, Georgia, serif;
+  --primary-regular: 400;
+  --primary-medium: 600;
+  --primary-bold: 700;
+  --light-100: #fff;
+  --light-200: #f7f8fa;
+  --light-300: #e9e9ed;
+  --dark-700: #363957;
+  --dark-800: #17192f;
+  --dark-900: #1f2244;
+  --brand-500: #7dcef5;
+  --action-500: #e8834a;
+  --action-600: #d4733c;
+  --brand-text: var(--dark-900);
+  --letter-spacing-tight: 0em;
+  --radius-small: .375rem;
+  --radius-main: .5rem;
+  --max-width-main: 81.25rem;
+  --max-width-small: 50rem;
+  --site-margin-min: 20;
+  --site-margin-max: 40;
+  --site-gutter-min: 20;
+  --site-gutter-max: 30;
+  --nav-height: 7.5rem;
+  --space-1-min: 4;
+  --space-1-max: 4;
+  --space-2-min: 6;
+  --space-2-max: 8;
+  --space-3-min: 10;
+  --space-3-max: 12;
+  --space-4-min: 16;
+  --space-4-max: 20;
+  --space-5-min: 24;
+  --space-5-max: 30;
+  --space-6-min: 30;
+  --space-6-max: 40;
+  --space-7-min: 40;
+  --space-7-max: 60;
+  --space-8-min: 48;
+  --space-8-max: 80;
+  --section-space-small-min: 48;
+  --section-space-small-max: 70;
+  --section-space-medium-min: 64;
+  --section-space-medium-max: 90;
+  --section-space-large-min: 80;
+  --section-space-large-max: 120;
+  --display-min: 36;
+  --display-max: 60.8;
+  --h1-min: 32;
+  --h1-max: 48;
+  --h2-min: 28;
+  --h2-max: 38.4;
+  --h3-min: 21;
+  --h3-max: 25.6;
+  --h4-min: 18;
+  --h4-max: 21;
+  --h5-min: 16;
+  --h5-max: 18;
+  --h6-min: 14;
+  --h6-max: 16;
+  --display-font-family: var(--heading-family);
+  --h1-font-family: var(--heading-family);
+  --h2-font-family: var(--heading-family);
+  --h3-font-family: var(--heading-family);
+  --h4-font-family: var(--heading-family);
+  --h5-font-family: var(--heading-family);
+  --h6-font-family: var(--heading-family);
+  --display-font-weight: 900;
+  --h1-font-weight: 900;
+  --h2-font-weight: 900;
+  --h3-font-weight: 900;
+  --h4-font-weight: 900;
+  --h5-font-weight: 900;
+  --h6-font-weight: 900;
+  --display-line-height: 1.2;
+  --h1-line-height: 1.2;
+  --h2-line-height: 1.2;
+  --h3-line-height: 1.3;
+  --h4-line-height: var(--line-height-large);
+  --h5-line-height: var(--line-height-large);
+  --display-margin-top: 0rem;
+  --display-margin-bottom: var(--space-4);
+  --h1-margin-top: 0rem;
+  --h1-margin-bottom: var(--space-4);
+  --h2-margin-top: 0rem;
+  --h2-margin-bottom: var(--space-4);
+  --h3-margin-top: 0rem;
+  --h3-margin-bottom: var(--space-3);
+  --h4-margin-top: 0rem;
+  --h4-margin-bottom: var(--space-3);
+  --h5-margin-top: 0rem;
+  --h5-margin-bottom: var(--space-3);
+  --h6-margin-top: 0rem;
+  --h6-margin-bottom: var(--space-3);
+  --text-main-min: 16;
+  --text-main-max: 16;
+  --text-main-line-height: 1.8;
+  --text-main-margin-top: 0rem;
+  --text-main-margin-bottom: var(--space-4);
+  --text-small-min: 14;
+  --text-small-max: 14;
+  --text-small-line-height: 1.65;
+  --text-small-margin-top: 0rem;
+  --text-small-margin-bottom: var(--space-3);
+  --text-large-min: 16;
+  --text-large-max: 17.6;
+  --text-large-line-height: 1.8;
+}
+
+:root, .theme-light {
+  --heading-accent: color-mix(in srgb, var(--brand-500) 40%, var(--dark-900));
+  --link-text: var(--heading-accent);
+  --link-text-hover: var(--text);
+  --background: var(--light-100);
+  --background-2: var(--light-200);
+  --background-3: var(--light-300);
+  --text-2: #686b7b;
+  --border: var(--light-300);
+  --button-background: var(--action-500);
+  --button-border: var(--action-500);
+  --button-text: var(--dark-900);
+  --button-background-hover: var(--action-600);
+  --button-border-hover: var(--action-600);
+  --button-text-hover: var(--dark-900);
+}
+
+.theme-dark {
+  --heading-accent: var(--brand-500);
+  --link-text: var(--heading-accent);
+  --link-text-hover: var(--text);
+  --text-2: #a6a7b5;
+  --button-background: var(--action-500);
+  --button-border: var(--action-500);
+  --button-text: var(--dark-900);
+  --button-background-hover: var(--action-600);
+  --button-border-hover: var(--action-600);
+  --button-text-hover: var(--dark-900);
+}
+
+:root {
+  --tracks-content-sidebar: 1.5fr 1fr;
+  --hero-image-opacity: .3;
+  --label-tracking: .08em;
+  --tag-background: color-mix(in srgb, var(--brand-500) 15%, transparent);
+  --shadow-surface: 0 .25rem 1rem color-mix(in srgb, var(--dark-900) 8%, transparent);
+}
+
+@media (--mq-navigation-mobile) {
+  :root { --nav-height: calc(var(--space-6) * 2 + var(--space-4)); }
+}

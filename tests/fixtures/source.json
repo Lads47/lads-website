@@ -1,0 +1,2728 @@
+{
+  "/404": {
+    "textHash": "7c6aa5a883b6e91ca2766df56685105c2fb11e6a08c130f636f7ae310baf6d0e",
+    "metadata": [
+      [
+        "robots",
+        "noindex"
+      ],
+      [
+        "title",
+        "Page introuvable (404) - Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/images/LOGO_clair.svg",
+        "Les Ateliers du Stream"
+      ]
+    ]
+  },
+  "/approche": {
+    "textHash": "30a2a7028aa52a28fbff62a3184e52188b0e56c0a3caeb6f0f427acffc635f69",
+    "metadata": [
+      [
+        "title",
+        "Captation vidéo sur mesure pour vos événements - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Découvrez notre accompagnement sur mesure : de l'écoute à la livraison, nous préparons minutieusement chaque étape de votre événement."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/approche"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/approche"
+      ],
+      [
+        "og:title",
+        "Captation vidéo sur mesure pour vos événements - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Découvrez notre accompagnement sur mesure : de l'écoute à la livraison, nous préparons minutieusement chaque étape de votre événement."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/images/og-default.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/images/visite-technique.avif",
+        "Visite technique"
+      ],
+      [
+        "/images/habillage_graphique.avif",
+        "Habillage graphique"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/contact": {
+    "textHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "metadata": [
+      [
+        "robots",
+        "noindex"
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/"
+      ],
+      [
+        "refresh",
+        "0;url=/#contact"
+      ],
+      [
+        "title",
+        "Redirection"
+      ]
+    ],
+    "structuredData": [],
+    "images": []
+  },
+  "/formation-vmix": {
+    "textHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "metadata": [
+      [
+        "robots",
+        "noindex"
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/formations/vmix"
+      ],
+      [
+        "refresh",
+        "0;url=/formations/vmix"
+      ],
+      [
+        "title",
+        "Redirection"
+      ]
+    ],
+    "structuredData": [],
+    "images": []
+  },
+  "/formation": {
+    "textHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "metadata": [
+      [
+        "robots",
+        "noindex"
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/formations"
+      ],
+      [
+        "refresh",
+        "0;url=/formations"
+      ],
+      [
+        "title",
+        "Redirection"
+      ]
+    ],
+    "structuredData": [],
+    "images": []
+  },
+  "/formations/ia": {
+    "textHash": "2e2f54af69c3163193b5f7b481faab6045e0bcbfabc8dc16222ecaadf8ddfcf2",
+    "metadata": [
+      [
+        "title",
+        "Formation IA à Marmande (47) — Initiation & agents IA"
+      ],
+      [
+        "description",
+        "Formation IA à Marmande (47) : une journée en présentiel pour comprendre l'IA générative et créer vos premiers agents IA. 8 places max, 790 € HT."
+      ],
+      [
+        "keywords",
+        "formation IA Marmande, formation intelligence artificielle Marmande, formation IA Lot-et-Garonne, formation agents IA, formation IA générative Nouvelle-Aquitaine"
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/formations/ia"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/formations/ia"
+      ],
+      [
+        "og:title",
+        "Formation IA à Marmande (47) — Initiation & agents IA"
+      ],
+      [
+        "og:description",
+        "Une journée en présentiel à Marmande pour maîtriser l'intelligence artificielle générative et créer vos premiers agents IA. Animée par un ingénieur en activité."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/images/og-formation-ia.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:image:alt",
+        "Salle de formation des Ateliers du Stream à Marmande"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ],
+      [
+        "twitter:card",
+        "summary_large_image"
+      ],
+      [
+        "twitter:title",
+        "Formation IA à Marmande (47) — Initiation & agents IA"
+      ],
+      [
+        "twitter:description",
+        "Une journée en présentiel à Marmande pour maîtriser l'IA générative et créer vos premiers agents IA."
+      ],
+      [
+        "twitter:image",
+        "https://lesateliersdustream.fr/images/og-formation-ia.jpg"
+      ]
+    ],
+    "structuredData": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Formation IA — Initiation et acculturation à l'intelligence artificielle",
+        "description": "Formation d'une journée en présentiel à Marmande pour comprendre l'IA générative et les agents IA, et lancer ses premiers cas d'usage.",
+        "url": "https://lesateliersdustream.fr/formations/ia",
+        "inLanguage": "fr",
+        "provider": {
+          "@id": "https://lesateliersdustream.fr/#organization"
+        },
+        "hasCourseInstance": {
+          "@type": "CourseInstance",
+          "courseMode": "onsite",
+          "courseWorkload": "PT7H",
+          "location": {
+            "@type": "Place",
+            "name": "Les Ateliers du Stream — Marmande",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "39 bis rue Robert Creuzet",
+              "addressLocality": "Marmande",
+              "postalCode": "47200",
+              "addressCountry": "FR"
+            }
+          }
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "790",
+          "priceCurrency": "EUR",
+          "category": "Formation professionnelle",
+          "availability": "https://schema.org/InStock",
+          "url": "https://lesateliersdustream.fr/formations/ia"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://lesateliersdustream.fr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Nos formations",
+            "item": "https://lesateliersdustream.fr/formations"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Formation IA à Marmande"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Où se déroule la formation IA ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La formation se déroule en présentiel dans nos locaux, au 39 bis rue Robert Creuzet, 47200 Marmande (Lot-et-Garonne). La gare de Marmande est à dix minutes à pied. Marmande est facilement accessible depuis Agen, Villeneuve-sur-Lot, Tonneins et Bordeaux."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Combien de temps dure la formation et quel est son tarif ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La formation dure une journée, soit 7 heures, pour un tarif de 790 € HT par participant. Le groupe est limité à 8 personnes afin de garantir un accompagnement individualisé."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Faut-il des connaissances techniques pour y participer ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Aucun prérequis n'est demandé. La formation s'adresse à toute personne souhaitant se former à l'intelligence artificielle, quel que soit son métier. Le vocabulaire technique est systématiquement expliqué."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quels financements sont possibles ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Notre certification Qualiopi ouvre plusieurs modes de prise en charge : l'AFDAS pour les intermittents du spectacle et de l'audiovisuel, votre OPCO si vous êtes salarié, l'aide individuelle à la formation de France Travail si vous êtes demandeur d'emploi, ou le financement sur fonds propres. Nous vous accompagnons dans le montage du dossier."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "La formation est-elle centrée sur un outil en particulier ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. Nous parcourons volontairement un large panel de solutions — Claude, ChatGPT, Gemini, Mistral, plateformes d'agents, outils sans code — pour que vous repartiez avec une vision d'ensemble plutôt qu'avec la maîtrise d'un seul logiciel, et avec une méthode de veille qui reste valable dans le temps."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qu'est-ce que je repars avec à la fin de la journée ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vous aurez conçu, déployé et testé votre premier agent IA répondant à un besoin concret, cartographié les cas d'usage pertinents dans votre propre contexte professionnel, et établi un plan d'action pour la suite."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Peut-on organiser la formation en intra-entreprise ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. Le contenu peut être adapté à votre secteur et à vos cas d'usage, et la formation peut être organisée pour vos seules équipes. Contactez-nous pour en définir le format."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "La formation est-elle accessible aux personnes en situation de handicap ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La salle de cours et l'espace de vie sont compatibles avec l'accueil de personnes à mobilité réduite. Nous étudions et mettons en œuvre les adaptations nécessaires : contactez Noémie Marphay en amont à formation@lesateliersdustream.fr pour toute demande spécifique."
+            }
+          }
+        ]
+      }
+    ],
+    "images": [
+      [
+        "/images/LogoQualiopi-150dpi-AvecMarianne.png",
+        "Certification Qualiopi"
+      ],
+      [
+        "/photo/anthony_formateur.webp",
+        "Anthony, ingénieur IA et formateur"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Lieu"
+      ]
+    ]
+  },
+  "/formations/vmix": {
+    "textHash": "1f81b603772a055d1457cc69b864ca6fa49c331faeb0cdf8b00660e3afb08d96",
+    "metadata": [
+      [
+        "title",
+        "Concevoir et piloter une régie vidéo virtuelle avec vMix - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Formation Concevoir et piloter une régie vidéo virtuelle avec vMix : développez vos compétences sur vMix pour produire, habiller et diffuser des contenus live professionnels."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/formations/vmix"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/formations/vmix"
+      ],
+      [
+        "og:title",
+        "Concevoir et piloter une régie vidéo virtuelle avec vMix - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Formation Concevoir et piloter une régie vidéo virtuelle avec vMix : développez vos compétences sur vMix pour produire, habiller et diffuser des contenus live professionnels."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/vmix.jpg"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/images/LogoQualiopi-150dpi-AvecMarianne.png",
+        "Certification Qualiopi"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Lieu"
+      ]
+    ]
+  },
+  "/formations": {
+    "textHash": "ed41acb39ff2181529b3ba5446cd8c78921f2ff7525c84c5ed7d94b4cfd6f51f",
+    "metadata": [
+      [
+        "title",
+        "Formations professionnelles - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Formations professionnelles des Ateliers du Stream : sessions intensives en présentiel en Nouvelle-Aquitaine pour monter en compétences."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/formations"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/formations"
+      ],
+      [
+        "og:title",
+        "Formations professionnelles - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Formations professionnelles des Ateliers du Stream : sessions intensives en présentiel en Nouvelle-Aquitaine pour monter en compétences."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/20221129_183847.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/images/LogoQualiopi-150dpi-AvecMarianne.png",
+        "Certification Qualiopi"
+      ],
+      [
+        "/photo/20260429_113309.webp",
+        "Espace de formation Les Ateliers du Stream"
+      ],
+      [
+        "/photo/vmix-logo.png",
+        "Logo vMix"
+      ],
+      [
+        "/photo/ia-logo.svg",
+        "Logo Formation IA"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/histoire": {
+    "textHash": "044eaca9b4122b7b36cf7ee6fb4567d575f0eb16e0ae87abbbfde7e19c6e3d0d",
+    "metadata": [
+      [
+        "title",
+        "Depuis 1998, spécialistes captation vidéo - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Depuis 1998, Les Ateliers du Stream écrivent leur histoire dans la captation multicaméra et le live streaming. Découvrez notre parcours en quelques dates clés."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/histoire"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/histoire"
+      ],
+      [
+        "og:title",
+        "Depuis 1998, spécialistes captation vidéo - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Depuis 1998, Les Ateliers du Stream écrivent leur histoire dans la captation multicaméra et le live streaming."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/historique.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/1998.webp",
+        "1998 - Création de l'entreprise"
+      ],
+      [
+        "/photo/2008.webp",
+        "2008 - Spécialisation multicam"
+      ],
+      [
+        "/photo/2014.webp",
+        "2014 - Adoption de vMix"
+      ],
+      [
+        "/photo/20230830_192536.webp",
+        "2022 - Nouveaux locaux"
+      ],
+      [
+        "/photo/20250226_185612.webp",
+        "2024 - Nouveaux locaux"
+      ],
+      [
+        "/photo/accueil%20eva.webp",
+        "2025 - EVA Electronic Virtual Assistant"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/": {
+    "textHash": "dd48d6eb81d7e94f5631c913eaba4a22881c5d7e50e1fb7a4ed31d23b0a19ae4",
+    "metadata": [
+      [
+        "title",
+        "Captation Vidéo MultiCam | Prestataire Audiovisuel Bordeaux, Paris"
+      ],
+      [
+        "description",
+        "Captation vidéo multicaméra et production live pour vos événements à Bordeaux, Paris et partout en France. Plus de 25 ans d'expertise audiovisuelle."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/"
+      ],
+      [
+        "og:title",
+        "Captation Vidéo MultiCam | Prestataire Audiovisuel Bordeaux, Paris"
+      ],
+      [
+        "og:description",
+        "Captation vidéo multicaméra et production live pour vos événements. Interventions à Bordeaux, Paris et partout en France."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/images/og-default.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/logos-clients/inrae.svg",
+        "INRAE"
+      ],
+      [
+        "/logos-clients/caissedesdepots.webp",
+        "Caisse des Dépôts"
+      ],
+      [
+        "/logos-clients/cnfpt.webp",
+        "CNFPT"
+      ],
+      [
+        "/logos-clients/francerugby.webp",
+        "France Rugby"
+      ],
+      [
+        "/logos-clients/laposte.svg",
+        "La Poste"
+      ],
+      [
+        "/logos-clients/cultura.svg",
+        "Cultura"
+      ],
+      [
+        "/logos-clients/regionna.webp",
+        "Région Nouvelle-Aquitaine"
+      ],
+      [
+        "/logos-clients/sncf.webp",
+        "SNCF"
+      ],
+      [
+        "/logos-clients/bordeaux.webp",
+        "Bordeaux"
+      ],
+      [
+        "/logos-clients/seasons.svg",
+        "Seasons"
+      ],
+      [
+        "/logos-clients/garorock.svg",
+        "Garorock"
+      ],
+      [
+        "/logos-clients/digitalaquitaine.svg",
+        "Digital Aquitaine"
+      ],
+      [
+        "/logos-clients/universitebordeaux.webp",
+        "Université de Bordeaux"
+      ],
+      [
+        "/logos-clients/apacom.svg",
+        "APACOM"
+      ],
+      [
+        "/logos-clients/unitec.svg",
+        "Unitec"
+      ],
+      [
+        "/logos-clients/adina.svg",
+        "ADINA"
+      ],
+      [
+        "/images/logo-web-video-production.png",
+        "Web Vidéo Production"
+      ],
+      [
+        "/images/logo-grand-angle.png",
+        "Grand Angle"
+      ],
+      [
+        "/images/logo-far-ouest.png",
+        "Far Ouest"
+      ],
+      [
+        "/photo/historique.webp",
+        "Les Ateliers du Stream - Historique"
+      ],
+      [
+        "/photo/2024.webp",
+        "Les Ateliers du Stream - 2024"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/mentions-legales": {
+    "textHash": "efa655c0be5f3ffde4644446ada204ebbd5e6d0e9b11473c478925d620084247",
+    "metadata": [
+      [
+        "title",
+        "Mentions légales - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Mentions légales du site lesateliersdustream.fr - Web Vidéo Production - Les Ateliers du Stream."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/mentions-legales"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/mentions-legales"
+      ],
+      [
+        "og:title",
+        "Mentions légales - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Mentions légales du site lesateliersdustream.fr - Web Vidéo Production - Les Ateliers du Stream."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/images/og-default.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": []
+  },
+  "/multiplex": {
+    "textHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "metadata": [
+      [
+        "robots",
+        "noindex"
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/solutions/multiplex"
+      ],
+      [
+        "refresh",
+        "0;url=/solutions/multiplex"
+      ],
+      [
+        "title",
+        "Redirection"
+      ]
+    ],
+    "structuredData": [],
+    "images": []
+  },
+  "/politique-confidentialite": {
+    "textHash": "08204bcc2a6cc2a5ad314c465374bd10a6bc37eb85ef6544279d5da13d1fbf28",
+    "metadata": [
+      [
+        "title",
+        "Politique de confidentialité - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Politique de confidentialité du site lesateliersdustream.fr : données collectées, cookies, services tiers et exercice de vos droits."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/politique-confidentialite"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/politique-confidentialite"
+      ],
+      [
+        "og:title",
+        "Politique de confidentialité - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Politique de confidentialité du site lesateliersdustream.fr : données collectées, cookies, services tiers et exercice de vos droits."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/images/og-default.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": []
+  },
+  "/realisations/ceremonie-docteurs-bordeaux": {
+    "textHash": "10ed14a663511c973ec792f1096400bd03edfc0bcbad61edcd0d216269e093c0",
+    "metadata": [
+      [
+        "title",
+        "Cérémonie de remise des diplômes des docteurs — Université de Bordeaux — 2024 - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Captation vidéo et diffusion en direct de la cérémonie de remise de diplômes des docteurs de l'Université de Bordeaux au Pin Galant."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/realisations/ceremonie-docteurs-bordeaux"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/realisations/ceremonie-docteurs-bordeaux"
+      ],
+      [
+        "og:title",
+        "Cérémonie de remise des diplômes des docteurs — Université de Bordeaux — 2024 - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Captation vidéo et diffusion en direct de la cérémonie de remise de diplômes des docteurs de l'Université de Bordeaux au Pin Galant."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/20250411_165355.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/ceremonie-docteurs.webp",
+        "Captation au Pin Galant"
+      ],
+      [
+        "/photo/20250411_165355.webp",
+        "Cérémonie des docteurs - Université de Bordeaux"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/realisations/destination-europe": {
+    "textHash": "c4e3d5e2ed6a2eb334aaa7b17213e47dbc70fd616a75f199efa984a35e83a7d3",
+    "metadata": [
+      [
+        "title",
+        "destiNAtion Europe — Talence — Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Plateau TV virtuel avec fond vert de 12 mètres pour l'ADI Nouvelle-Aquitaine. Intervenants en duplex et affichage dynamique de mots-clés."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/realisations/destination-europe"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/realisations/destination-europe"
+      ],
+      [
+        "og:title",
+        "destiNAtion Europe — Talence — Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Plateau TV virtuel avec fond vert de 12 mètres pour l'ADI Nouvelle-Aquitaine. Intervenants en duplex et affichage dynamique de mots-clés."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/20210601_144731.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/20210601_144731.webp",
+        "Le plateau TV virtuel"
+      ],
+      [
+        "/photo/20210406_151153.webp",
+        "destiNAtion Europe"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/realisations/etourisme-pau": {
+    "textHash": "238ebf42b87011f7b1e7d18e92ae6cd55b68a207011db8a95e8b9f489a4711aa",
+    "metadata": [
+      [
+        "title",
+        "Rencontres nationales de l'etourisme — Pau — Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "5 régies déployées au Palais Beaumont de Pau, 12 caméras pour les Rencontres nationales de l'etourisme 2023."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/realisations/etourisme-pau"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/realisations/etourisme-pau"
+      ],
+      [
+        "og:title",
+        "Rencontres nationales de l'etourisme — Pau — Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "5 régies déployées au Palais Beaumont de Pau, 12 caméras pour les Rencontres nationales de l'etourisme 2023."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/20251016_085347.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/20251014_174544.webp",
+        "Régie principale des Rencontres Nationales du Etourisme"
+      ],
+      [
+        "/photo/20251016_085347.webp",
+        "Auditorium Alfred de Vigny du Palais Beaumont à Pau"
+      ],
+      [
+        "/photo/DSC_0115.webp",
+        "Auditorium de Vigny avec écran central et vidéoprojecteurs"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/realisations/festival-imprime": {
+    "textHash": "38c41759c98b31e4d0b0a71f09f87bd635d310ae11e87cd70565be058eac0ce0",
+    "metadata": [
+      [
+        "title",
+        "Festival Imprimé — Rocher de Palmer — 2024 - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Captation et multistream du Festival Imprimé au Rocher de Palmer : diffusion simultanée sur YouTube, Facebook et LinkedIn."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/realisations/festival-imprime"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/realisations/festival-imprime"
+      ],
+      [
+        "og:title",
+        "Festival Imprimé — Rocher de Palmer — 2024 - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Captation et multistream du Festival Imprimé au Rocher de Palmer : diffusion simultanée sur YouTube, Facebook et LinkedIn."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/festival-imprime.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/festival-imprime.webp",
+        "Festival Imprimé - La régie"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/realisations/festival-journalisme-couthures": {
+    "textHash": "614f558cadc6f979d103c7ce62f5671b33a7b22599802cd5e1f95f582fe72f05",
+    "metadata": [
+      [
+        "title",
+        "Festival international de journalisme — Couthures-sur-Garonne — Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Captation du Festival International de Journalisme à Couthures-sur-Garonne 2022. Régie HF, 4 caméras sans câblage, direct Facebook."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/realisations/festival-journalisme-couthures"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/realisations/festival-journalisme-couthures"
+      ],
+      [
+        "og:title",
+        "Festival international de journalisme — Couthures-sur-Garonne — Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Captation du Festival International de Journalisme à Couthures-sur-Garonne 2022. Régie HF, 4 caméras sans câblage, direct Facebook."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/20220717_191121.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/20220717_191121.webp",
+        "Captation en extérieur parmi le public"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/realisations/inova-e": {
+    "textHash": "f20f406cd734ad4367416a7991807beea4614b4d631c7e528086c9e5f74d2ce7",
+    "metadata": [
+      [
+        "title",
+        "Inova-é — Bordeaux, Limoges, Poitiers — Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Événement hybride multi-sites INOVA-é avec trois Hôtels de Région connectés à une régie finale centralisée. 3 caméras par site."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/realisations/inova-e"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/realisations/inova-e"
+      ],
+      [
+        "og:title",
+        "Inova-é — Bordeaux, Limoges, Poitiers — Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Événement hybride multi-sites INOVA-é avec trois Hôtels de Région connectés à une régie finale centralisée. 3 caméras par site."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/20240621_152608.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/ino%2024%201.webp",
+        "Scène Bordeaux avec Limoges et Poitiers"
+      ],
+      [
+        "/photo/ino%2024%204.webp",
+        "Présentation de Poitiers sur les écrans"
+      ],
+      [
+        "/photo/20240621_152608.webp",
+        "Caméras tourelles à Bordeaux"
+      ],
+      [
+        "/photo/ino%2024%202.webp",
+        "Les 3 villes connectées en simultané"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/realisations/jeu-de-role": {
+    "textHash": "bd00c8e7dce65764d95da9045b0205599480f2f089f648b31de7b9044ebb7145",
+    "metadata": [
+      [
+        "title",
+        "Campagne de jeu de rôle — 2024 - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Réalisation campagne de jeu de rôle en streaming : 7 caméras, affichage dynamique en temps réel, diffusion Twitch et YouTube."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/realisations/jeu-de-role"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/realisations/jeu-de-role"
+      ],
+      [
+        "og:title",
+        "Campagne de jeu de rôle — 2024 - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Réalisation campagne de jeu de rôle en streaming : 7 caméras, affichage dynamique en temps réel, diffusion Twitch et YouTube."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/20250405_185756.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/20250405_190053.webp",
+        "Régie de Marmande"
+      ],
+      [
+        "/photo/20250405_185756.webp",
+        "Plateau de tournage Marmande"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/realisations/open-cote-de-beaute": {
+    "textHash": "8515d70ff05a4a573d1cd63127c4c1693a9860c4e8ed46266a5308bec591f154",
+    "metadata": [
+      [
+        "title",
+        "Open International de la Côte de Beauté — Saint-Georges-de-Didonne — 2026 - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Remote production d'un événement sportif à Saint-Georges-de-Didonne avec 4 caméras, replays, scoring en direct et diffusion sur écran LED, réalisée à distance depuis notre studio de Marmande."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/realisations/open-cote-de-beaute"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/realisations/open-cote-de-beaute"
+      ],
+      [
+        "og:title",
+        "Open International de la Côte de Beauté — Saint-Georges-de-Didonne — 2026 - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Remote production d'un événement sportif à Saint-Georges-de-Didonne avec 4 caméras, replays, scoring en direct et diffusion sur écran LED, réalisée à distance depuis Marmande."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/IMG_2801.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/IMG_1550.webp",
+        "Installation des caméras sur le terrain de beach tennis à Saint-Georges-de-Didonne"
+      ],
+      [
+        "/photo/regie-saint-georges.webp",
+        "La mini-régie sur site à Saint-Georges-de-Didonne, pilotant l'écran LED"
+      ],
+      [
+        "/photo/IMG_2801.webp",
+        "Régie de réalisation à Marmande — multiview des 4 caméras et incrustation du score"
+      ],
+      [
+        "/photo/20260816_145851.webp",
+        "Mélange des 4 flux caméras et diffusion live YouTube depuis Marmande"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/realisations/peer-gynt": {
+    "textHash": "3b901888b991a81b2bf2c135bf040befbf233ffbfcf8d979f972004de7876f3a",
+    "metadata": [
+      [
+        "title",
+        "Peer Gynt — Opéra de Limoges — 2024 - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Réalisation Peer Gynt à l'Opéra de Limoges : six caméras sur scène, trente vidéos, régie à trois mélangeurs vidéo et liaison fibre optique."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/realisations/peer-gynt"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/realisations/peer-gynt"
+      ],
+      [
+        "og:title",
+        "Peer Gynt — Opéra de Limoges — 2024 - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Réalisation Peer Gynt à l'Opéra de Limoges : six caméras sur scène, trente vidéos, régie à trois mélangeurs vidéo et liaison fibre optique."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/peer-gynt.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/peer-gynt.webp",
+        "La scène de l'Opéra de Limoges vue depuis la régie"
+      ],
+      [
+        "/photo/20221126_225140.webp",
+        "Le chef et les comédiens de Peer Gynt"
+      ],
+      [
+        "/photo/20221124_091720.webp",
+        "Chargement des régies par le treuil extérieur de l'Opéra de Compiègne"
+      ],
+      [
+        "/photo/20221126_163455.webp",
+        "La scène vue du public de l'Opéra de Compiègne"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/realisations/salon-agriculture-bordeaux": {
+    "textHash": "2cbc4e5634dcf93617b343ef082c0625f9f5ae217503b60f978e8ccb1d488ce5",
+    "metadata": [
+      [
+        "title",
+        "Salon de l'Agriculture de Bordeaux — 2024 — Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Plateau TV AgriWebTV au Salon de l'Agriculture de Bordeaux 2024. 7 caméras, émissions quotidiennes, diffusion en replay."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/realisations/salon-agriculture-bordeaux"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/realisations/salon-agriculture-bordeaux"
+      ],
+      [
+        "og:title",
+        "Salon de l'Agriculture de Bordeaux — 2024 — Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Plateau TV AgriWebTV au Salon de l'Agriculture de Bordeaux 2024. 7 caméras, émissions quotidiennes, diffusion en replay."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/agri1.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/agri1.webp",
+        "Le plateau AgriWebTV"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/realisations/tcg": {
+    "textHash": "c6c23e65553ef86369ef57e87727785e39aab450480d71a3cfbb6950aa1bea50",
+    "metadata": [
+      [
+        "title",
+        "Runik TCG Series — Bordeaux — 2026 - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Plateau TV 7 caméras et captation d'une table de TCG compétitive (Lorcana) pour les Runik TCG Series : analyses replay, overlay avec les cartes jouées en temps réel."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/realisations/tcg"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/realisations/tcg"
+      ],
+      [
+        "og:title",
+        "Runik TCG Series — Bordeaux — 2026 - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Plateau TV 7 caméras et captation d'une table de TCG compétitive (Lorcana) : analyses replay, overlay avec les cartes jouées en temps réel."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/d%C3%A9mo.00_00_20_12.Still001.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/20260424_194500.webp",
+        "Notre installation plateau TV et table de jeu"
+      ],
+      [
+        "/photo/20260424_194417.webp",
+        "La régie de captation"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/realisations/universite-dete-du-ceca-chateau-smith-haut-lafitte": {
+    "textHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "metadata": [
+      [
+        "robots",
+        "noindex"
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/realisations/universite-ete-ceca"
+      ],
+      [
+        "refresh",
+        "0;url=/realisations/universite-ete-ceca"
+      ],
+      [
+        "title",
+        "Redirection"
+      ]
+    ],
+    "structuredData": [],
+    "images": []
+  },
+  "/realisations/universite-ete-ceca": {
+    "textHash": "3e8164b0e2fd195694f4e6c8ce8a4129dbf54f7b297c100bb7f40b57daf2f8be",
+    "metadata": [
+      [
+        "title",
+        "Université d'Été d'Ekivia — Château Smith Haut Lafitte — 2025 - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Captation et diffusion en direct de l'Université d'Été d'Ekivia au Château Smith Haut Lafitte, avec intervenants en duplex et solution 5G."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/realisations/universite-ete-ceca"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/realisations/universite-ete-ceca"
+      ],
+      [
+        "og:title",
+        "Université d'Été d'Ekivia — Château Smith Haut Lafitte — 2025 - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Captation et diffusion en direct de l'Université d'Été d'Ekivia au Château Smith Haut Lafitte, avec intervenants en duplex et solution 5G."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/20240830_102943.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/20240830_102943.webp",
+        "Université d'Été d'Ekivia - La régie de captation"
+      ],
+      [
+        "/photo/20240830_103011.webp",
+        "Université d'Été d'Ekivia"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/realisations": {
+    "textHash": "9712d1f57a12c11947ce69e630cc806cc0b8dc89c67ef801d18eb33abcac859d",
+    "metadata": [
+      [
+        "title",
+        "Réalisations en captation vidéo : congrès, festivals, cérémonies - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Découvrez nos réalisations en captation multicaméra : opéras, festivals, congrès, cérémonies, plateaux TV. Plus de 500 événements depuis 1998."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/realisations"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/realisations"
+      ],
+      [
+        "og:title",
+        "Réalisations en captation vidéo : congrès, festivals, cérémonies - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Découvrez nos réalisations en captation multicaméra : opéras, festivals, congrès, cérémonies, plateaux TV."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/DSC_0118.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/20260816_145851.webp",
+        "Open International de la Côte de Beauté — régie de remote production à Marmande"
+      ],
+      [
+        "/photo/d%C3%A9mo.00_00_20_12.Still001.webp",
+        "Runik TCG Series — Bordeaux 2026"
+      ],
+      [
+        "/photo/peer-gynt.webp",
+        "Peer Gynt - Opéra de Limoges"
+      ],
+      [
+        "/photo/20250405_185756.webp",
+        "Campagne de jeu de rôle"
+      ],
+      [
+        "/photo/20250411_165355.webp",
+        "Cérémonie des docteurs - Université de Bordeaux"
+      ],
+      [
+        "/photo/festival-imprime.webp",
+        "Festival Imprimé - Rocher de Palmer"
+      ],
+      [
+        "/photo/20240830_103011.webp",
+        "Université d'Été Ekivia - Château Smith Haut Lafitte"
+      ],
+      [
+        "/photo/20210601_144731.webp",
+        "destiNAtion Europe - Talence"
+      ],
+      [
+        "/photo/agri1.webp",
+        "Salon de l'Agriculture - Bordeaux"
+      ],
+      [
+        "/photo/20240621_152608.webp",
+        "Inova-é - Multiplex"
+      ],
+      [
+        "/photo/20251016_085347.webp",
+        "Rencontres nationales de l'etourisme - Pau"
+      ],
+      [
+        "/photo/20220717_191121.webp",
+        "Festival international de journalisme - Couthures"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/solutions/cameras-tourelle-hf": {
+    "textHash": "c79cce70eb00f4fa51e7ed3fca52135830668a703e67922144f3a41d7eb07d27",
+    "metadata": [
+      [
+        "title",
+        "4 caméras tourelle 100% HF - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Dispositif de captation sans fil avec 4 caméras tourelle 100% HF, alimentées par batterie. Idéal pour les installations en extérieur avec du public."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/solutions/cameras-tourelle-hf"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/solutions/cameras-tourelle-hf"
+      ],
+      [
+        "og:title",
+        "4 caméras tourelle 100% HF - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Dispositif de captation sans fil avec 4 caméras tourelle 100% HF, alimentées par batterie. Idéal pour les installations en extérieur avec du public."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/20220717_194319.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/20220717_194319.webp",
+        "Captation de conférence en plein air lors d'un festival"
+      ],
+      [
+        "/photo/hf%202.webp",
+        "Captation multicam sur un salon professionnel"
+      ],
+      [
+        "/photo/20250727_095239(0).webp",
+        "Installation dans le sable pour un tournoi de Beach Tennis"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/solutions/captation-multi-regies": {
+    "textHash": "9b691d8fab96d2e97a667db67f41287e89c8aa791ee655336f36154e80a656fa",
+    "metadata": [
+      [
+        "title",
+        "8 régies en simultané - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Jusqu'à 8 régies de 3 caméras déployées en simultané. Idéal pour les événements multi-salles : chaque conférence dispose de sa propre captation."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/solutions/captation-multi-regies"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/solutions/captation-multi-regies"
+      ],
+      [
+        "og:title",
+        "8 régies en simultané - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Jusqu'à 8 régies de 3 caméras déployées en simultané. Idéal pour les événements multi-salles : chaque conférence dispose de sa propre captation."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/20251031_162920%20(1).webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/20251031_162920%20(1).webp",
+        "Dispositif 8 régies en simultané"
+      ],
+      [
+        "/photo/20251107_172009.webp",
+        "Les 7 régies en live sur Youtube BDX/IO"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/solutions/captation-multicam": {
+    "textHash": "1f9bc715cfd020b0f2e3f7d75bb2fbcd6425d07ca129f70568d2064336485975",
+    "metadata": [
+      [
+        "title",
+        "Captation multicam - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Solution de captation multicam : régies ultra-mobiles de 3 à 4 caméras pour la diffusion en direct ou en replay de vos événements."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/solutions/captation-multicam"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/solutions/captation-multicam"
+      ],
+      [
+        "og:title",
+        "Captation multicam - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Solution de captation multicam : régies ultra-mobiles de 3 à 4 caméras pour la diffusion en direct ou en replay de vos événements."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/20251114_155704.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/20251114_155704.webp",
+        "Régie de captation multicam légère"
+      ],
+      [
+        "/photo/20241114_141757.webp",
+        "Captation pour INRAE au cinéma Pathé Beaugrenelle"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/solutions/captation-video": {
+    "textHash": "279c7c90843082d884bb85221451e34111d63dc169bcc0c9799de65a20b520b7",
+    "metadata": [
+      [
+        "title",
+        "Captation vidéo et captation événementielle partout en France - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Captation vidéo et captation événementielle partout en France. Production audiovisuelle multicaméra pour congrès, séminaires et événements professionnels. Paris, Bordeaux et toute la France."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/solutions/captation-video"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/solutions/captation-video"
+      ],
+      [
+        "og:title",
+        "Captation vidéo et captation événementielle partout en France - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Captation vidéo et captation événementielle partout en France. Production audiovisuelle multicaméra pour congrès, séminaires et événements professionnels. Paris, Bordeaux et toute la France."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/20230825_194710.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/20230825_194710.webp",
+        "Régie 8 caméras avec poste réalisateur et opérateur"
+      ],
+      [
+        "/photo/ceremonie-docteurs.webp",
+        "Régie 8 caméras avec diffusion écran géant"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/solutions/chapitrage-automatique": {
+    "textHash": "93c58344b0b13b32e0d18e44aa4b698858f4dea4e066f2b17a6ed205dfaa706b",
+    "metadata": [
+      [
+        "title",
+        "Chapitrage automatique - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Chapitrage automatique de vos conférences avec timecodes et player intégrable sur votre site."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/solutions/chapitrage-automatique"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/solutions/chapitrage-automatique"
+      ],
+      [
+        "og:title",
+        "Chapitrage automatique - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Chapitrage automatique de vos conférences avec timecodes et player intégrable sur votre site."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/20220717_194319.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/solutions/diffusion-gestion-medias": {
+    "textHash": "2434873cc39d0baf5b0397a5a94a151b1b63dc970967bf1fe794dfab8e15362b",
+    "metadata": [
+      [
+        "title",
+        "Diffusion et gestion des médias - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Gestion complète de vos contenus événementiels : PowerPoint, vidéos et visioconférence."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/solutions/diffusion-gestion-medias"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/solutions/diffusion-gestion-medias"
+      ],
+      [
+        "og:title",
+        "Diffusion et gestion des médias - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Gestion complète de vos contenus événementiels : PowerPoint, vidéos et visioconférence."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/20220717_194319.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/solutions/fond-vert": {
+    "textHash": "87509c267dac63f064e173b906e9f630b15324d7b11845cff9397be30ac38c5c",
+    "metadata": [
+      [
+        "title",
+        "Fond vert - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Studio virtuel sur fond vert de 4 à 12 mètres de long et 2,20 mètres de haut pour réaliser des productions immersives avec incrustation de décors virtuels en temps réel."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/solutions/fond-vert"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/solutions/fond-vert"
+      ],
+      [
+        "og:title",
+        "Fond vert - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Studio virtuel sur fond vert de 4 à 12 mètres de long et 2,20 mètres de haut pour réaliser des productions immersives avec incrustation de décors virtuels en temps réel."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/20210406_151153.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/20210601_144731.webp",
+        "Réalisation en direct sur fond vert"
+      ],
+      [
+        "/photo/20210406_151153.webp",
+        "12 mètres de fond vert"
+      ],
+      [
+        "/photo/adi%20europe%202.webp",
+        "Intégration finale"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/solutions/multiplex": {
+    "textHash": "d249e47694f9c7f3d3a17494f67dc8e8f35a35c63110878303961643f2c29296",
+    "metadata": [
+      [
+        "title",
+        "Multiplex - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Solution multiplex : connectez plusieurs sites en temps réel grâce à la fibre optique et la 5G pour des interventions simultanées et fluides."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/solutions/multiplex"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/solutions/multiplex"
+      ],
+      [
+        "og:title",
+        "Multiplex - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Solution multiplex : connectez plusieurs sites en temps réel grâce à la fibre optique et la 5G pour des interventions simultanées et fluides."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/ino0.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/ino0.webp",
+        "Réalisation en Remote Production"
+      ],
+      [
+        "/photo/ino1.webp",
+        "Les 3 villes en scène"
+      ],
+      [
+        "/photo/ino3.webp",
+        "La régie de Bordeaux"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/solutions/plateau-web-tv": {
+    "textHash": "328394e1dd5570b320a982832247a58a1436accd0ea30fcd8ca8c47fb1f58a6e",
+    "metadata": [
+      [
+        "title",
+        "Plateau Web TV - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Plateau Web TV sur site pour produire des contenus dynamiques au cœur de votre événement."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/solutions/plateau-web-tv"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/solutions/plateau-web-tv"
+      ],
+      [
+        "og:title",
+        "Plateau Web TV - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Plateau Web TV sur site pour produire des contenus dynamiques au cœur de votre événement."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/20240521_154957.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/20240518_103654.webp",
+        "Régie 7 caméras Salon de l'agriculture Nouvelle-Aquitaine"
+      ],
+      [
+        "/photo/20240521_154957.webp",
+        "Le plateau avec l'animateur et ses invités"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/solutions/retranscription-synthese": {
+    "textHash": "b9e2dd961803e5cec181883a4fdb81b10dae03a6dc726d151ea1d83b168421e1",
+    "metadata": [
+      [
+        "title",
+        "Retranscription et synthèse - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Retranscription et synthèse automatiques de vos conférences en temps réel avec la plateforme EVA."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/solutions/retranscription-synthese"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/solutions/retranscription-synthese"
+      ],
+      [
+        "og:title",
+        "Retranscription et synthèse - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Retranscription et synthèse automatiques de vos conférences en temps réel avec la plateforme EVA."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/20220717_194319.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/photo/DSC_0178-1-1536x1024.webp",
+        "Captation pour le CIVB"
+      ],
+      [
+        "/photo/20260120_095957.webp",
+        "La station EVA, serveur mobile"
+      ],
+      [
+        "/photo/20260120_125428-1.webp",
+        "Interface client de vérification et correction"
+      ],
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/solutions/sonorisation": {
+    "textHash": "194826bfcc48440b8bfc56eaaaacfea5a1386f1eb99a9bea8f601f199839a6cd",
+    "metadata": [
+      [
+        "title",
+        "Sonorisation - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Sonorisation professionnelle pour vos événements de 50 à 200 personnes."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/solutions/sonorisation"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/solutions/sonorisation"
+      ],
+      [
+        "og:title",
+        "Sonorisation - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Sonorisation professionnelle pour vos événements de 50 à 200 personnes."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/20220717_194319.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/solutions/videoprojection": {
+    "textHash": "cde4ebc68ebd200abab18719032a7f8df8e715b9e79ee12fb2f3c414e68f44e7",
+    "metadata": [
+      [
+        "title",
+        "Vidéoprojection - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Vidéoprojection haute luminosité avec écran grand format pour vos événements."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/solutions/videoprojection"
+      ],
+      [
+        "og:type",
+        "article"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/solutions/videoprojection"
+      ],
+      [
+        "og:title",
+        "Vidéoprojection - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Vidéoprojection haute luminosité avec écran grand format pour vos événements."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/videoprojection.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  },
+  "/solutions": {
+    "textHash": "95a8c928b838f64eb052a6aab8d7442f73cb036e6f85ee9e1277511b5cf570fb",
+    "metadata": [
+      [
+        "title",
+        "Solutions de captation vidéo pour événements - Les Ateliers du Stream"
+      ],
+      [
+        "description",
+        "Découvrez nos solutions de captation multicaméra, diffusion live, plateau web TV, chapitrage automatique et sonorisation. Des briques modulables pour chaque événement."
+      ],
+      [
+        "canonical",
+        "https://lesateliersdustream.fr/solutions"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "og:url",
+        "https://lesateliersdustream.fr/solutions"
+      ],
+      [
+        "og:title",
+        "Solutions de captation vidéo pour événements - Les Ateliers du Stream"
+      ],
+      [
+        "og:description",
+        "Découvrez nos solutions de captation multicaméra, diffusion live, plateau web TV, chapitrage automatique et sonorisation."
+      ],
+      [
+        "og:image",
+        "https://lesateliersdustream.fr/photo/20241113_182041.webp"
+      ],
+      [
+        "og:locale",
+        "fr_FR"
+      ],
+      [
+        "og:site_name",
+        "Les Ateliers du Stream"
+      ]
+    ],
+    "structuredData": [],
+    "images": [
+      [
+        "/images/noun-email-5456693.svg",
+        "Email"
+      ],
+      [
+        "/images/noun-call-5456677.svg",
+        "Téléphone"
+      ],
+      [
+        "/images/noun-location-4693998.svg",
+        "Nos bureaux"
+      ]
+    ]
+  }
+}

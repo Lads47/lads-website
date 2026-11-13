@@ -1,0 +1,35 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { slotContent } from "@/utils/slots.ts";
+
+type Props = HTMLAttributes<"a"> & {
+  /** Set to `false` to omit the component. */
+  render?: boolean;
+  /** Link destination. The current URL is marked automatically. */
+  href: string;
+};
+
+const { render = true, href, class: className, ...rest } = Astro.props;
+
+/** Marks the link for the page being viewed. Trailing slashes are ignored. */
+const path = Astro.url.pathname.replace(/^\/index(?:\.html)?$/, "/").replace(/\.html$/, "").replace(/\/+$/, "");
+const destination = href.replace(/\/+$/, "");
+const current = path === destination ? "page" : undefined;
+const active = current === "page" || Boolean(destination && !href.startsWith("#") && path.startsWith(destination + "/"));
+
+const content = await slotContent(Astro.slots);
+---
+
+{render && content && (
+  <li>
+    <a
+      class:list={["nav_link", className]}
+      href={href}
+      aria-current={current}
+      data-active={active ? "true" : undefined}
+      {...rest}
+    >
+      <Fragment set:html={content} />
+    </a>
+  </li>
+)}

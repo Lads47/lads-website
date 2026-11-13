@@ -1,0 +1,308 @@
+---
+import ContactSection from './ContactSection.astro';
+import Button from '../Button.astro';
+import Section from '../wrapper/Section.astro';
+import ContentWrapper from '../wrapper/ContentWrapper.astro';
+import Eyebrow from '../typography/Eyebrow.astro';
+import Heading from '../typography/Heading.astro';
+import Paragraph from '../typography/Paragraph.astro';
+import Grid from '../wrapper/Grid.astro';
+import Img from '../media/Img.astro';
+import Card from '../item/Card.astro';
+---
+<!-- ============================================
+         HEADER
+         ============================================ -->
+
+
+
+    <!-- ============================================
+         PAGE HERO
+         ============================================ -->
+    <Section theme="dark" paddingTop="navoverlap" paddingBottom="small" align="center">
+<Img slot="background" src="/photo/20260429_113309.webp" alt="" loading="eager" style={"opacity:var(--hero-image-opacity)"} />
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">Formation professionnelle</Eyebrow>
+                <Heading tag="h1" variant="h1">Nos formations</Heading>
+                <Paragraph variant="large">De l'expertise terrain &agrave; la transmission. Notre savoir-faire au service de votre mont&eacute;e en comp&eacute;tences.</Paragraph>
+            </ContentWrapper>
+
+    </Section>
+
+    <!-- ============================================
+         INTRO
+         ============================================ -->
+    <Section theme="light">
+
+            <Grid xsmall={1} small={1} medium={1} large={2} gap="8">
+                <div class="intro-text">
+                    <Eyebrow tag="span">Notre organisme</Eyebrow>
+                    <Heading tag="h2" variant="h2" class="alignment-start">De l'expertise terrain &agrave; la transmission</Heading>
+                    <hr class="divider divider-left">
+                    <br>
+                    <Paragraph variant="main" class="color-muted" maxWidth={70}>
+                        Les Ateliers du Stream transmettent leur expertise &agrave; travers des formations en pr&eacute;sentiel, bas&eacute;es sur une approche pratique et l'exp&eacute;rience du terrain. Dans notre espace technique &agrave; Marmande, vous d&eacute;veloppez rapidement vos comp&eacute;tences sur des outils professionnels de derni&egrave;re g&eacute;n&eacute;ration.
+                    </Paragraph>
+                    <p class="highlight">
+                        Vous apprenez avec des professionnels en activit&eacute;, sur du mat&eacute;riel professionnel.
+                    </p>
+                    <div class="qualiopi-intro">
+                        <Img loading={"lazy"} src={"/images/LogoQualiopi-150dpi-AvecMarianne.png"} alt={"Certification Qualiopi"} appearance="logo" transparent />
+                        <div class="qualiopi-intro-text">
+                            <strong>Organisme certifi&eacute; Qualiopi</strong>
+                            <Paragraph variant="main">La certification qualit&eacute; a &eacute;t&eacute; d&eacute;livr&eacute;e au titre de la cat&eacute;gorie d'actions suivante : <strong>Actions de formation</strong>.</Paragraph>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro-visual">
+                    <Img loading={"lazy"} src={"/photo/20260429_113309.webp"} alt={"Espace de formation Les Ateliers du Stream"} />
+                </div>
+            </Grid>
+
+    </Section>
+
+    <!-- ============================================
+         CATALOGUE
+         ============================================ -->
+    <Section theme="light">
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">Catalogue</Eyebrow>
+                <Heading tag="h2" variant="h2">Nos formations</Heading>
+                <hr class="divider">
+            </ContentWrapper>
+            <Grid xsmall={1} small={1} medium={2} large={2} gap="6">
+
+                <!-- Formation vMix -->
+                <Card variant="panel" href={"/formations/vmix"}>
+                    <div class="formation-card-logo-wrap"><Img loading={"lazy"} src={"/photo/vmix-logo.png"} alt={"Logo vMix"} appearance="logo" transparent /></div>
+
+                        <Heading tag="h3" variant="h4">Concevoir et piloter une r&eacute;gie vid&eacute;o virtuelle avec vMix</Heading>
+                        <Paragraph variant="main">D&eacute;veloppez vos comp&eacute;tences sur vMix pour produire, habiller et diffuser des contenus live professionnels.</Paragraph>
+                        <div class="tech-spec">
+                            <span>5 jours (35h)</span>
+                            <span>Pr&eacute;sentiel</span>
+                            <span>Marmande (47)</span>
+                        </div>
+                        <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
+
+                </Card>
+
+                <!-- Formation IA -->
+                <Card variant="panel" href={"/formations/ia"}>
+                    <div class="formation-card-logo-wrap"><Img loading={"lazy"} src={"/photo/ia-logo.svg"} alt={"Logo Formation IA"} appearance="logo" transparent /></div>
+
+                        <Heading tag="h3" variant="h4">De l'IA aux agents autonomes</Heading>
+                        <Paragraph variant="main">L'IA &eacute;volue &agrave; un rythme in&eacute;dit, et les agents IA transforment d&eacute;j&agrave; la fa&ccedil;on dont les entreprises fonctionnent. Une journ&eacute;e pour faire le tri et passer &agrave; l'action.</Paragraph>
+                        <div class="tech-spec">
+                            <span>1 jour (7h)</span>
+                            <span>Pr&eacute;sentiel</span>
+                            <span>Marmande (47)</span>
+                        </div>
+                        <Button element="text" variant="link">D&eacute;couvrir <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></Button>
+
+                </Card>
+
+            </Grid>
+
+    </Section>
+
+    <!-- ============================================
+         ATOUTS
+         ============================================ -->
+    <Section theme="light">
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">Pourquoi nous choisir</Eyebrow>
+                <Heading tag="h2" variant="h2">Les atouts de nos formations</Heading>
+                <hr class="divider">
+            </ContentWrapper>
+            <Grid xsmall={1} small={1} medium={2} large={3} gap="5">
+                <Card variant="panel">
+                    <div class="atout-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <Heading tag="h3" variant="h3">Formateurs en activit&eacute;</Heading>
+                    <Paragraph variant="main">Nos formateurs sont des professionnels en activit&eacute; dans leur domaine. Vous b&eacute;n&eacute;ficiez d'une expertise actuelle et concr&egrave;te.</Paragraph>
+                </Card>
+                <Card variant="panel">
+                    <div class="atout-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <Heading tag="h3" variant="h3">Mat&eacute;riel professionnel</Heading>
+                    <Paragraph variant="main">Vous travaillez sur du mat&eacute;riel et des outils de pointe, directement issus de nos usages professionnels quotidiens.</Paragraph>
+                </Card>
+                <Card variant="panel">
+                    <div class="atout-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <Heading tag="h3" variant="h3">Sessions intensives</Heading>
+                    <Paragraph variant="main">Des formats courts et intensifs en pr&eacute;sentiel dans notre espace technique. Th&eacute;orie r&eacute;duite au strict n&eacute;cessaire, pratique maximale.</Paragraph>
+                </Card>
+            </Grid>
+
+    </Section>
+
+    <!-- ============================================
+         CTA / CONTACT
+         ============================================ -->
+    <ContactSection eyebrow={"Envie de vous former ?"} title={"Parlons de votre projet de formation"} description={"Vous souhaitez monter en compétences ? Contactez-nous pour échanger sur vos besoins."} email={"formation@lesateliersdustream.fr"} phoneHref={"tel:+33661968858"} phone={"06 61 96 88 58"} locationAlt={"Nos bureaux"} training={true} />
+
+    <!-- Footer -->
+
+
+
+<style is:global>
+@layer components {
+
+/* ============================================
+           POLICES
+           ============================================ */
+
+        /* ============================================
+           VARIABLES
+           ============================================ */
+
+        /* ============================================
+           RESET
+           ============================================ */
+
+        /* ============================================
+           PAGE HERO (bandeau interne)
+           ============================================ */
+
+        /* ============================================
+           SECTIONS COMMUNES
+           ============================================ */
+
+        .divider {
+            margin: var(--space-4) auto 0;
+        }
+        .divider-left { margin: var(--space-4) 0 0 0; }
+
+        .btn {
+            display: inline-block; padding: var(--space-3) var(--space-6);
+            font-family: var(--primary-family); font-size: var(--text-small); font-weight: var(--primary-bold);
+            text-transform: uppercase; letter-spacing: var(--letter-spacing-normal);
+            border: none; cursor: pointer; transition: all var(--hover-duration) var(--hover-ease);
+            border-radius: var(--radius-small);
+        }
+        .btn-outline {
+            background: transparent; color: var(--heading-accent);
+            border: var(--border-width) solid var(--brand-500);
+        }
+        .btn-outline:hover { background: var(--brand-500); color: var(--dark-900); }
+
+        /* ============================================
+           INTRO FORMATIONS
+           ============================================ */
+        /* La colonne texte s'etire sur toute la hauteur pour que le bloc
+           Qualiopi (margin-top:auto) vienne s'aligner sur le bas de la photo. */
+        .intro-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .intro-text .highlight {
+            font-size: var(--text-main);
+            font-weight: var(--primary-bold);
+            color: var(--dark-900);
+            margin-top: var(--space-4);
+            /* garantit un ecart minimal avec la carte Qualiopi : le margin-top:auto
+               de celle-ci tombe a zero des que la colonne est pleine */
+            margin-bottom: var(--space-6);
+            padding-left: var(--space-4);
+            border-left: var(--border-width) solid var(--brand-500);
+            line-height: var(--text-small-line-height);
+        }
+        .intro-visual {
+            position: relative;
+            border-radius: var(--radius-small);
+            overflow: hidden;
+        }
+
+        /* ============================================
+           ATOUTS (3 colonnes)
+           ============================================ */
+        .atout-icon {
+            width: 3.125rem; height: 3.125rem;
+            margin-bottom: var(--space-4);
+        }
+        .atout-icon svg {
+            width: 100%; height: 100%;
+            stroke: var(--brand-500); stroke-width: 1.5;
+            fill: none; stroke-linecap: round; stroke-linejoin: round;
+        }
+
+        /* ============================================
+           QUALIOPI (intégré au bloc intro)
+           ============================================ */
+        .qualiopi-intro {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            /* pousse le bloc en bas de colonne : son bord inferieur s'aligne
+               alors exactement sur celui de la photo */
+            margin-top: auto;
+            padding: var(--space-4) var(--space-5);
+            background: var(--light-100);
+            border: var(--border-width) solid var(--light-300);
+            border-radius: var(--radius-small);
+        }
+        /* Seul le titre passe en bloc. Sans le ">", le "Actions de formation"
+           du paragraphe devenait un bloc lui aussi et rejetait le point final
+           tout seul sur la ligne suivante. */
+        .qualiopi-intro-text > strong {
+            display: block;
+            font-family: var(--heading-family); font-size: var(--text-main); font-weight: var(--h3-font-weight);
+            color: var(--dark-900); margin-bottom: var(--space-1);
+        }
+        @media (--mq-training-compact) {
+            .qualiopi-intro { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
+        }
+
+        /* ============================================
+           CATALOGUE – TECH-CARDS (photo-card style)
+           ============================================ */
+        .formation-card-logo-wrap {
+            width: 100%;
+            min-height: calc(var(--space-8) * 2 + var(--space-5));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-6) var(--space-5);
+            background: var(--light-200);
+            border-bottom: var(--border-width) solid var(--light-300);
+        }
+        .formation-card-logo-wrap .image { width: 100%; height: var(--space-8); }
+        .discover-link-sm {
+            display: inline-flex; align-items: center; gap: var(--space-2);
+            font-size: var(--text-small); font-weight: var(--primary-bold); text-transform: uppercase;
+            letter-spacing: var(--letter-spacing-normal); color: var(--heading-accent); margin-top: var(--space-3); transition: all var(--hover-duration) var(--hover-ease);
+        }
+        .discover-link-sm svg {
+            width: 0.875rem; height: 0.875rem; stroke: currentColor; stroke-width: 2; fill: none; transition: all var(--hover-duration) var(--hover-ease);
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (--mq-large-max) {
+            /* une fois empile, plus rien a aligner : le bloc reprend une marge normale */
+            .qualiopi-intro { margin-top: var(--space-2); }
+        }
+
+}
+</style>

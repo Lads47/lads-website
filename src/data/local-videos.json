@@ -1,0 +1,410 @@
+{
+  "peer-gynt": {
+    "title": "Peer Gynt - Opéra de Limoges 2024",
+    "route": "/realisations/peer-gynt",
+    "source": {
+      "provider": "Vimeo",
+      "id": "1006258583",
+      "copy": "owner-download-export",
+      "bytes": 60949723,
+      "sha256": "ffa72030251643b90787fe01258550dad12db0e6ac6b7d2c80d8b8438bf801fb",
+      "width": 1920,
+      "height": 1080,
+      "duration": 120.446667,
+      "fps": "50/1",
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "audioChannels": 2,
+      "audioBitrate": 189377
+    },
+    "desktop": {
+      "src": "/videos/peer-gynt.mp4",
+      "method": "x264-slow-crf23-max4M",
+      "bytes": 33474938,
+      "sha256": "5640e767dd33c6ba485593402a119ba724e764e0a99f08f2a7023abf457767ed",
+      "width": 1920,
+      "height": 1080,
+      "duration": 120.405,
+      "fps": "50/1",
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "audioChannels": 2,
+      "audioBitrate": 128126
+    },
+    "mobile": {
+      "src": "/videos/peer-gynt-mobile.mp4",
+      "method": "x264-slow-crf25-max2M",
+      "bytes": 11220678,
+      "sha256": "3eea682cac11761516b6e81d38fa424a57bba8d7f35f4670aa4f01c6c6e2fc2f",
+      "width": 1280,
+      "height": 720,
+      "duration": 120.405,
+      "fps": "50/1",
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "audioChannels": 2,
+      "audioBitrate": 128126
+    },
+    "poster": {
+      "src": "/videos/peer-gynt.webp",
+      "at": 24.0893334,
+      "bytes": 72074,
+      "width": 1280,
+      "height": 720,
+      "sha256": "31c2971dadcad2b18a6a24a46f9d2e36dca39a366b6fff5d6f4c48b7a8ed3f3c"
+    },
+    "tracks": [
+      {
+        "src": "/videos/peer-gynt.fr.vtt",
+        "language": "fr",
+        "sourceLanguage": "fr-x-autogen",
+        "label": "Français (générés automatiquement)",
+        "kind": "captions",
+        "sha256": "7dc968735062a959c32146a01353c2638434f853a7df0c14cf16da2a966bf444"
+      }
+    ]
+  },
+  "runik-tcg": {
+    "title": "Runik TCG Serie démo TCG",
+    "route": "/realisations/tcg",
+    "source": {
+      "provider": "Vimeo",
+      "id": "1189015174",
+      "copy": "owner-download-export",
+      "bytes": 23223978,
+      "sha256": "474ad2930c7a64f282759184a5506e6d74e4859e4947caf67b69bf7e9b75aa85",
+      "width": 1920,
+      "height": 1080,
+      "duration": 32.725,
+      "fps": "25/1",
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "audioChannels": 2,
+      "audioBitrate": 189381
+    },
+    "desktop": {
+      "src": "/videos/runik-tcg.mp4",
+      "method": "x264-slow-crf23-max4M",
+      "bytes": 15011383,
+      "sha256": "b4700912483d676a8fd69d4f54ff06b1b3ca78f6bdf9e4346e8b766934af40f1",
+      "width": 1920,
+      "height": 1080,
+      "duration": 32.682,
+      "fps": "25/1",
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "audioChannels": 2,
+      "audioBitrate": 127331
+    },
+    "mobile": {
+      "src": "/videos/runik-tcg-mobile.mp4",
+      "method": "x264-slow-crf25-max2M",
+      "bytes": 4675066,
+      "sha256": "ac2d0484f524dcf992d2b3a273b477748ab1f967c108761152f2291a0fcf0e6e",
+      "width": 1280,
+      "height": 720,
+      "duration": 32.682,
+      "fps": "25/1",
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "audioChannels": 2,
+      "audioBitrate": 127331
+    },
+    "poster": {
+      "src": "/videos/runik-tcg.webp",
+      "at": 6.545000000000001,
+      "bytes": 124312,
+      "width": 1280,
+      "height": 720,
+      "sha256": "fcc345a0123590bcbd6df810af9bc7760236629d62dbd7123828f448c2049446"
+    },
+    "tracks": [
+      {
+        "src": "/videos/runik-tcg.fr.vtt",
+        "language": "fr",
+        "sourceLanguage": "fr-x-autogen",
+        "label": "Français (générés automatiquement)",
+        "kind": "subtitles",
+        "sha256": "cc1b9770dc01c6c46b3b5089216dbd4e128add1f5fa50a5a3cae4b383d560f15"
+      }
+    ]
+  },
+  "multiplex-inovae": {
+    "title": "inovae_1",
+    "route": "/solutions/multiplex",
+    "source": {
+      "provider": "Vimeo",
+      "id": "1006640017",
+      "copy": "owner-download-export",
+      "bytes": 55962478,
+      "sha256": "5039b69ea79b0644e4887271e778bfa0bd02471e62cf18dde3f6e0ca4f5a5f02",
+      "width": 1920,
+      "height": 1080,
+      "duration": 139.733333,
+      "fps": "25/1",
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "audioChannels": 2,
+      "audioBitrate": 189375
+    },
+    "desktop": {
+      "src": "/videos/multiplex-inovae.mp4",
+      "method": "x264-slow-crf23-max4M",
+      "bytes": 30729931,
+      "sha256": "4b771993c49c5026d316a3128fa74c56bb32dbb1c7782b799ac44ad39f81a888",
+      "width": 1920,
+      "height": 1080,
+      "duration": 139.69,
+      "fps": "25/1",
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "audioChannels": 2,
+      "audioBitrate": 115047
+    },
+    "mobile": {
+      "src": "/videos/multiplex-inovae-mobile.mp4",
+      "method": "x264-slow-crf25-max2M",
+      "bytes": 11469618,
+      "sha256": "ff891ecb1792e2083b1002e7475da4986287cdb17a28e3b103a22420ed895bfb",
+      "width": 1280,
+      "height": 720,
+      "duration": 139.69,
+      "fps": "25/1",
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "audioChannels": 2,
+      "audioBitrate": 115047
+    },
+    "poster": {
+      "src": "/videos/multiplex-inovae.webp",
+      "at": 27.9466666,
+      "bytes": 85030,
+      "width": 1280,
+      "height": 720,
+      "sha256": "cc4b8589e749d7f67907a062ae3938d4d87e596dde4e5aa517eee51d03f11087"
+    },
+    "tracks": [
+      {
+        "src": "/videos/multiplex-inovae.fr.vtt",
+        "language": "fr",
+        "sourceLanguage": "fr-x-autogen",
+        "label": "Français (générés automatiquement)",
+        "kind": "captions",
+        "sha256": "501fd29e547d3f5c9e99b51df9ef3df339547b7d89f589bc9b0c9652e5fbe020"
+      }
+    ]
+  },
+  "ceremonie-docteurs-bordeaux": {
+    "title": "Cérémonie des docteurs - Université de Bordeaux 2024",
+    "route": "/realisations/ceremonie-docteurs-bordeaux",
+    "source": {
+      "provider": "Vimeo",
+      "id": "1006235909",
+      "copy": "owner-download-export",
+      "bytes": 65553450,
+      "sha256": "637183528745471f80a3d423326847ad3e9dd5e0a4e7d04fa9cead4eed356aed",
+      "width": 1920,
+      "height": 1080,
+      "duration": 119.38,
+      "fps": "25/1",
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "audioChannels": 2,
+      "audioBitrate": 189395
+    },
+    "desktop": {
+      "src": "/videos/ceremonie-docteurs-bordeaux.mp4",
+      "method": "x264-slow-crf23-max4M",
+      "bytes": 42211804,
+      "sha256": "9b2e5ede8308425b02e504ff9b10d340312cb0a3b0af218400f88dd279750701",
+      "width": 1920,
+      "height": 1080,
+      "duration": 119.338,
+      "fps": "25/1",
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "audioChannels": 2,
+      "audioBitrate": 128117
+    },
+    "mobile": {
+      "src": "/videos/ceremonie-docteurs-bordeaux-mobile.mp4",
+      "method": "x264-slow-crf25-max2M",
+      "bytes": 17267423,
+      "sha256": "cf7831815991b0f91a4278f7a99a9b43248fa01f953481ced9ee1894ce2181b2",
+      "width": 1280,
+      "height": 720,
+      "duration": 119.338,
+      "fps": "25/1",
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "audioChannels": 2,
+      "audioBitrate": 128117
+    },
+    "poster": {
+      "src": "/videos/ceremonie-docteurs-bordeaux.webp",
+      "at": 23.876,
+      "bytes": 17900,
+      "width": 1280,
+      "height": 720,
+      "sha256": "75aa3636c164a2198e1ed26aff378ff1dd7624cfc6c4f6ff443ec8ce764bdbbb"
+    },
+    "tracks": [
+      {
+        "src": "/videos/ceremonie-docteurs-bordeaux.fr.vtt",
+        "language": "fr",
+        "sourceLanguage": "fr-x-autogen",
+        "label": "Français (générés automatiquement)",
+        "kind": "captions",
+        "sha256": "f08c776301df0da8690ad4664bcc781cc7c000c085cad9b954ebca31f91da2d8"
+      }
+    ]
+  },
+  "histoire-facebook-2016": {
+    "title": "2016 - Diffusion Facebook",
+    "route": "/histoire",
+    "source": {
+      "provider": "Vimeo",
+      "id": "1006969061",
+      "copy": "owner-download-export",
+      "bytes": 3650371,
+      "sha256": "c9cd729f7e5ceb665b3e63a2c0c94e8b86830102038b9991393b3491d9277cf1",
+      "width": 1920,
+      "height": 1080,
+      "duration": 18.686667,
+      "fps": "25/1",
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "audioChannels": 2,
+      "audioBitrate": 189388
+    },
+    "desktop": {
+      "src": "/videos/histoire-facebook-2016.mp4",
+      "method": "x264-slow-crf23-max4M",
+      "bytes": 2335966,
+      "sha256": "037ff3229fb88a455384364a7be467aba69c57ad693460773fc41d96f38d8a6a",
+      "width": 1920,
+      "height": 1080,
+      "duration": 18.645,
+      "fps": "25/1",
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "audioChannels": 2,
+      "audioBitrate": 126897
+    },
+    "mobile": {
+      "src": "/videos/histoire-facebook-2016-mobile.mp4",
+      "method": "x264-slow-crf25-max2M",
+      "bytes": 1042857,
+      "sha256": "ae578222c31cb0966dbad8879b2421efa4f7458a6a508d52640e45f3194b9c82",
+      "width": 1280,
+      "height": 720,
+      "duration": 18.645,
+      "fps": "25/1",
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "audioChannels": 2,
+      "audioBitrate": 126897
+    },
+    "poster": {
+      "src": "/videos/histoire-facebook-2016.webp",
+      "at": 3.7373334000000002,
+      "bytes": 29880,
+      "width": 1280,
+      "height": 720,
+      "sha256": "a2f5ad7b59d8ba2ce77d14bf19febd5ede2e30ecb8bfe0702e77c73d678dde20"
+    },
+    "tracks": [
+      {
+        "src": "/videos/histoire-facebook-2016.fr.vtt",
+        "language": "fr",
+        "sourceLanguage": "fr-x-autogen",
+        "label": "Français (générés automatiquement)",
+        "kind": "captions",
+        "sha256": "d3303efe0f38eef4857183e40ac1bc83f1bd5723a7c2592c41cff388abf03d75"
+      }
+    ]
+  },
+  "histoire-multiplex-2018": {
+    "title": "2018 - Premier multiplex",
+    "route": "/histoire",
+    "source": {
+      "provider": "Vimeo",
+      "id": "1013489106",
+      "copy": "owner-download-export",
+      "bytes": 43002322,
+      "sha256": "00b2bab954e3586e3e810c607c4022f3e0a924c44db18f34be24aec665e43cfb",
+      "width": 1920,
+      "height": 1080,
+      "duration": 90.495,
+      "fps": "25/1",
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "audioChannels": 2,
+      "audioBitrate": 189377
+    },
+    "desktop": {
+      "src": "/videos/histoire-multiplex-2018.mp4",
+      "method": "x264-slow-crf23-max4M",
+      "bytes": 24038144,
+      "sha256": "4500ba4015cf14fa03c8d4ebeefe3522f3d67c31044849a638c07645513f3917",
+      "width": 1920,
+      "height": 1080,
+      "duration": 90.453,
+      "fps": "25/1",
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "audioChannels": 2,
+      "audioBitrate": 127752
+    },
+    "mobile": {
+      "src": "/videos/histoire-multiplex-2018-mobile.mp4",
+      "method": "x264-slow-crf25-max2M",
+      "bytes": 9481039,
+      "sha256": "3a1ca3af5eda8114585dee461020782bcd131a2ac98aa94dfc678ed1b6c8fe0f",
+      "width": 1280,
+      "height": 720,
+      "duration": 90.453,
+      "fps": "25/1",
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "audioChannels": 2,
+      "audioBitrate": 127752
+    },
+    "poster": {
+      "src": "/videos/histoire-multiplex-2018.webp",
+      "at": 18.099,
+      "bytes": 120972,
+      "width": 1280,
+      "height": 720,
+      "sha256": "c7fbb6c5a64c9e954e7cfab4ddcedb0e565e33183fde7737bfdc423c5aabad10"
+    },
+    "tracks": [
+      {
+        "src": "/videos/histoire-multiplex-2018.fr.vtt",
+        "language": "fr",
+        "sourceLanguage": "fr-x-autogen",
+        "label": "Français (générés automatiquement)",
+        "kind": "captions",
+        "sha256": "56028f501c0b5ebbaf661963db918ae53d0ee67eb2ef7e413632802bee9f9077"
+      }
+    ]
+  }
+}

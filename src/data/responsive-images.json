@@ -1,0 +1,1115 @@
+{
+  "/photo/1998.webp": {
+    "width": 778,
+    "height": 521,
+    "candidates": [
+      {
+        "src": "/media/responsive/18dae4550cb0-400.webp",
+        "width": 400
+      }
+    ]
+  },
+  "/photo/2008.webp": {
+    "width": 933,
+    "height": 525,
+    "candidates": [
+      {
+        "src": "/media/responsive/5226ad9fee91-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/5226ad9fee91-800.webp",
+        "width": 800
+      }
+    ]
+  },
+  "/photo/2014.webp": {
+    "width": 933,
+    "height": 525,
+    "candidates": [
+      {
+        "src": "/media/responsive/1efb5cc095c6-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/1efb5cc095c6-800.webp",
+        "width": 800
+      }
+    ]
+  },
+  "/photo/20210406_151153.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/9fbc902a5e59-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/9fbc902a5e59-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/9fbc902a5e59-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20210601_144731.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/c90fc421cb58-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/c90fc421cb58-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/c90fc421cb58-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20220717_191121.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/062f9cdc119f-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/062f9cdc119f-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/062f9cdc119f-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20220717_194319.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/f3e688ce8e49-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/f3e688ce8e49-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/f3e688ce8e49-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20221124_091720.webp": {
+    "width": 1500,
+    "height": 2000,
+    "candidates": [
+      {
+        "src": "/media/responsive/30357a30eba7-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/30357a30eba7-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/30357a30eba7-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20221126_163455.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/2ce5aa71da01-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/2ce5aa71da01-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/2ce5aa71da01-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20221126_225140.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/754b57d0201b-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/754b57d0201b-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/754b57d0201b-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20221129_183847.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/f622469222f4-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/f622469222f4-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/f622469222f4-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20230825_194710.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/4d3f29c51215-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/4d3f29c51215-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/4d3f29c51215-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20230830_192536.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/74afbdd8f988-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/74afbdd8f988-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/74afbdd8f988-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/2024.webp": {
+    "width": 492,
+    "height": 688,
+    "candidates": [
+      {
+        "src": "/media/responsive/8a7e631c37fd-400.webp",
+        "width": 400
+      }
+    ]
+  },
+  "/photo/20240518_103654.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/e759c944cdc7-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/e759c944cdc7-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/e759c944cdc7-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20240521_154957.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/a53bb49ddd8b-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/a53bb49ddd8b-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/a53bb49ddd8b-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20240621_152608.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/1d4afef8fae2-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/1d4afef8fae2-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/1d4afef8fae2-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20240830_102943.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/3ab7142f1269-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/3ab7142f1269-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/3ab7142f1269-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20240830_103011.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/db422341717c-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/db422341717c-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/db422341717c-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20241113_182041.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/db61f8bcec35-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/db61f8bcec35-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/db61f8bcec35-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20241114_141757.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/eaac644aa15b-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/eaac644aa15b-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/eaac644aa15b-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20250226_185612.webp": {
+    "width": 1500,
+    "height": 2000,
+    "candidates": [
+      {
+        "src": "/media/responsive/498ce0268014-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/498ce0268014-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/498ce0268014-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20250405_185756.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/aaae2d489202-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/aaae2d489202-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/aaae2d489202-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20250405_190053.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/57a5798aa364-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/57a5798aa364-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/57a5798aa364-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20250411_165355.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/9c00dd1d597e-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/9c00dd1d597e-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/9c00dd1d597e-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20250727_095239(0).webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/300e8b263e70-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/300e8b263e70-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/300e8b263e70-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20251014_174544.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/876eafae1a3c-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/876eafae1a3c-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/876eafae1a3c-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20251016_085347.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/ead4d922f4e9-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/ead4d922f4e9-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/ead4d922f4e9-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20251031_162920 (1).webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/784e7dcc538c-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/784e7dcc538c-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/784e7dcc538c-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20251107_172009.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/17425ba23e50-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/17425ba23e50-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/17425ba23e50-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20251114_155704.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/e6212486e552-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/e6212486e552-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/e6212486e552-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20260120_095957.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/eab5e10c4554-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/eab5e10c4554-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/eab5e10c4554-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20260120_125428-1.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/10a37552bae1-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/10a37552bae1-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/10a37552bae1-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/20260424_194417.webp": {
+    "width": 4000,
+    "height": 3000,
+    "candidates": [
+      {
+        "src": "/media/responsive/f3079187883c-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/f3079187883c-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/f3079187883c-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/media/responsive/f3079187883c-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "/photo/20260424_194500.webp": {
+    "width": 4000,
+    "height": 3000,
+    "candidates": [
+      {
+        "src": "/media/responsive/96613df30913-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/96613df30913-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/96613df30913-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/media/responsive/96613df30913-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "/photo/20260429_113309.webp": {
+    "width": 4000,
+    "height": 3000,
+    "candidates": [
+      {
+        "src": "/media/responsive/240374b8904d-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/240374b8904d-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/240374b8904d-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/media/responsive/240374b8904d-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "/photo/20260816_145851.webp": {
+    "width": 1920,
+    "height": 1440,
+    "candidates": [
+      {
+        "src": "/media/responsive/cda48fdedcd4-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/cda48fdedcd4-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/cda48fdedcd4-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/media/responsive/cda48fdedcd4-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "/photo/DSC_0115.webp": {
+    "width": 1500,
+    "height": 1000,
+    "candidates": [
+      {
+        "src": "/media/responsive/7cd6d6546c27-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/7cd6d6546c27-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/7cd6d6546c27-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/DSC_0118.webp": {
+    "width": 1500,
+    "height": 1000,
+    "candidates": [
+      {
+        "src": "/media/responsive/3c3a94111a87-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/3c3a94111a87-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/3c3a94111a87-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/DSC_0178-1-1536x1024.webp": {
+    "width": 1500,
+    "height": 1000,
+    "candidates": [
+      {
+        "src": "/media/responsive/0678c2f75ec4-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/0678c2f75ec4-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/0678c2f75ec4-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/IMG_1550.webp": {
+    "width": 1920,
+    "height": 1080,
+    "candidates": [
+      {
+        "src": "/media/responsive/af0978f8d665-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/af0978f8d665-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/af0978f8d665-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/media/responsive/af0978f8d665-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "/photo/IMG_2801.webp": {
+    "width": 2055,
+    "height": 1170,
+    "candidates": [
+      {
+        "src": "/media/responsive/21ed37e79599-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/21ed37e79599-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/21ed37e79599-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/media/responsive/21ed37e79599-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "/photo/accueil eva.webp": {
+    "width": 1480,
+    "height": 752,
+    "candidates": [
+      {
+        "src": "/media/responsive/1f1fdf60b1cd-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/1f1fdf60b1cd-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/1f1fdf60b1cd-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/adi europe 2.webp": {
+    "width": 1347,
+    "height": 746,
+    "candidates": [
+      {
+        "src": "/media/responsive/1d2fb42669a9-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/1d2fb42669a9-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/1d2fb42669a9-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/agri1.webp": {
+    "width": 2048,
+    "height": 1365,
+    "candidates": [
+      {
+        "src": "/media/responsive/1d4507936d1f-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/1d4507936d1f-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/1d4507936d1f-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/media/responsive/1d4507936d1f-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "/photo/anthony_formateur.webp": {
+    "width": 1365,
+    "height": 2048,
+    "candidates": [
+      {
+        "src": "/media/responsive/4a5f03e1068a-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/4a5f03e1068a-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/4a5f03e1068a-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/ceremonie-docteurs.webp": {
+    "width": 1024,
+    "height": 768,
+    "candidates": [
+      {
+        "src": "/media/responsive/73e1b1977700-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/73e1b1977700-800.webp",
+        "width": 800
+      }
+    ]
+  },
+  "/photo/démo.00_00_20_12.Still001.webp": {
+    "width": 1920,
+    "height": 1080,
+    "candidates": [
+      {
+        "src": "/media/responsive/63596bfa9355-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/63596bfa9355-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/63596bfa9355-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/media/responsive/63596bfa9355-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "/photo/festival-imprime.webp": {
+    "width": 1024,
+    "height": 768,
+    "candidates": [
+      {
+        "src": "/media/responsive/6c4092ad0478-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/6c4092ad0478-800.webp",
+        "width": 800
+      }
+    ]
+  },
+  "/photo/hf 2.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/06ac4dbf2ca3-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/06ac4dbf2ca3-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/06ac4dbf2ca3-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/historique.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/ccf3df165492-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/ccf3df165492-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/ccf3df165492-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/ino 24 1.webp": {
+    "width": 1346,
+    "height": 757,
+    "candidates": [
+      {
+        "src": "/media/responsive/148571fd9a00-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/148571fd9a00-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/148571fd9a00-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/ino 24 2.webp": {
+    "width": 1341,
+    "height": 757,
+    "candidates": [
+      {
+        "src": "/media/responsive/10d0a7028218-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/10d0a7028218-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/10d0a7028218-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/ino 24 4.webp": {
+    "width": 1350,
+    "height": 761,
+    "candidates": [
+      {
+        "src": "/media/responsive/5b15c5949286-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/5b15c5949286-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/5b15c5949286-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/ino0.webp": {
+    "width": 1500,
+    "height": 675,
+    "candidates": [
+      {
+        "src": "/media/responsive/fe3af1ea3df3-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/fe3af1ea3df3-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/fe3af1ea3df3-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/ino1.webp": {
+    "width": 1346,
+    "height": 731,
+    "candidates": [
+      {
+        "src": "/media/responsive/c4d0287238ee-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/c4d0287238ee-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/c4d0287238ee-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/ino3.webp": {
+    "width": 1500,
+    "height": 1125,
+    "candidates": [
+      {
+        "src": "/media/responsive/3ea952300490-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/3ea952300490-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/3ea952300490-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/peer gynt.webp": {
+    "width": 2048,
+    "height": 1536,
+    "candidates": [
+      {
+        "src": "/media/responsive/30507a900fa2-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/30507a900fa2-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/30507a900fa2-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/media/responsive/30507a900fa2-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "/photo/peer-gynt.webp": {
+    "width": 1024,
+    "height": 768,
+    "candidates": [
+      {
+        "src": "/media/responsive/2f13e95479d4-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/2f13e95479d4-800.webp",
+        "width": 800
+      }
+    ]
+  },
+  "/photo/regie-saint-georges.webp": {
+    "width": 1536,
+    "height": 2048,
+    "candidates": [
+      {
+        "src": "/media/responsive/51b3127b40d6-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/51b3127b40d6-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/media/responsive/51b3127b40d6-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/photo/retranscription-synthese.jpg": {
+    "width": 1024,
+    "height": 682,
+    "candidates": [
+      {
+        "src": "/media/responsive/74c7c4465121-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/74c7c4465121-800.webp",
+        "width": 800
+      }
+    ]
+  },
+  "/photo/videoprojection.webp": {
+    "width": 1024,
+    "height": 576,
+    "candidates": [
+      {
+        "src": "/media/responsive/ccfcc1b351a5-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/media/responsive/ccfcc1b351a5-800.webp",
+        "width": 800
+      }
+    ]
+  },
+  "/photo/vmix-logo.png": {
+    "width": 207,
+    "height": 76,
+    "candidates": []
+  }
+}

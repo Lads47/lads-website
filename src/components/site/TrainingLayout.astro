@@ -1,0 +1,22 @@
+---
+import Grid from '../wrapper/Grid.astro';
+---
+<Grid large={2} gap="6" tracks="var(--tracks-content-sidebar)" class="training-layout">
+  <div class="training-summary formation-meta-sidebar"><slot name="summary" /></div>
+  <div class="training-content"><slot /></div>
+  <div class="training-details formation-meta-sidebar"><slot name="details" /></div>
+</Grid>
+<style is:global>
+@layer components {
+  .training-layout { align-items: start; }
+  .training-summary { grid-row: 1; }
+  .training-summary .button-wrapper { margin-top: 0; width: 100%; }
+  .training-summary .button-wrapper > .button_wrap { flex-grow: 1; }
+  .training-details > .button_wrap { align-self: start; }
+  @media (--mq-large-min) {
+    .training-content { grid-column: 1; grid-row: 1 / 3; }
+    .training-summary { grid-column: 2; grid-row: 1; }
+    .training-details { grid-column: 2; grid-row: 2; }
+  }
+}
+</style>

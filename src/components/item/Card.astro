@@ -1,0 +1,292 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { slotContent } from "@/utils/slots.ts";
+import Eyebrow from "@/components/typography/Eyebrow.astro";
+import Heading from "@/components/typography/Heading.astro";
+import Paragraph from "@/components/typography/Paragraph.astro";
+import Button from "@/components/Button.astro";
+import ButtonWrapper from "@/components/wrapper/ButtonWrapper.astro";
+import Img from "@/components/media/Img.astro";
+import Overlay from "@/components/media/Overlay.astro";
+
+type ImageSource = ImageMetadata | string;
+
+type Base = HTMLAttributes<"div"> & {
+  /** Set to `false` to omit the component. */
+  render?: boolean;
+  /** Whole-card destination, without nested interactive links. */
+  href?: string;
+  /** Allow the image to open in the shared photo dialog. */
+  imageZoom?: boolean;
+  /** Cover-image tint strength, passed to the native Overlay component (0–100). */
+  overlayStrength?: number;
+  /** Eyebrow text. Supports inline markup. */
+  eyebrow?: string;
+  /** Card title. Supports inline markup. */
+  heading?: string;
+  /** Heading level. */
+  headingTag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  /** Body text. Supports inline markup. */
+  text?: string;
+  /** Button label. Omit to hide the button. */
+  buttonLabel?: string;
+  /** Button destination. Omit for a `<button>`. */
+  buttonHref?: string;
+  /** Card layout. */
+  variant?: "default" | "panel" | "profile" | "cover" | "stacked";
+  /** Color theme of element and its children. */
+  theme?: "inherit" | "light" | "dark" | "brand" | "invert";
+};
+
+type Props = Base &
+  (
+    | {
+        variant?: "default" | "panel" | "profile";
+        image?: never;
+        imageAlt?: never;
+      }
+    | {
+        variant: "cover";
+        /** Image source. */
+        image?: ImageSource;
+        /** Image alt text. Omit for decorative images. */
+        imageAlt?: string;
+      }
+    | {
+        variant: "stacked";
+        /** Color theme of element and its children. */
+        theme?: never;
+        /** Image source. */
+        image?: ImageSource;
+        /** Image alt text. Omit for decorative images. */
+        imageAlt?: string;
+      }
+  );
+
+type AllProps = Base & {
+  image?: ImageSource;
+  imageAlt?: string;
+};
+
+const {
+  render = true,
+  href,
+  imageZoom = false,
+  overlayStrength = 50,
+  eyebrow,
+  heading,
+  headingTag = "h3",
+  text,
+  buttonLabel,
+  buttonHref,
+  variant = "default",
+  theme = "inherit",
+  image,
+  imageAlt,
+  class: className,
+  ...rest
+} = Astro.props as AllProps;
+
+const slot = await slotContent(Astro.slots);
+const Root = href ? "a" : "div";
+const hasImage = (variant === "cover" || variant === "stacked") && !!image;
+const hasContent = !!(slot || eyebrow || heading || text || buttonLabel);
+const hasTheme = variant !== "stacked" && theme !== "inherit";
+
+/* The button each variant closes with, so a set of cards reads as one system.
+   A link carries no emphasis of its own, so the two are picked together. */
+const buttonKind =
+  variant === "stacked"
+    ? ({ variant: "link" } as const)
+    : ({ emphasis: variant === "cover" ? "primary" : "secondary" } as const);
+
+if (import.meta.env.DEV && render) {
+  if (variant === "stacked" && theme !== "inherit") {
+    console.warn(
+      '[lumos] <Card variant="stacked"> has no surface to color, so `theme` was dropped. It keeps the theme around it.',
+    );
+  }
+  if (variant === "default" && image) {
+    console.warn(
+      '[lumos] <Card variant="default"> holds no image, so `image` was dropped. Use the cover or stacked variant to show it.',
+    );
+  }
+  if ((variant === "cover" || variant === "stacked") && !image) {
+    console.warn(
+      `[lumos] <Card variant="${variant}"> has no \`image\`, so it renders as a plain card.`,
+    );
+  }
+}
+---
+
+{render && (hasContent || hasImage) && (
+  <Root
+    href={href}
+    class:list={[
+      "card_wrap",
+      imageZoom && "zoomable",
+      variant !== "default" && variant,
+      hasTheme && `theme-${theme}`,
+      className,
+    ]}
+    {...rest}
+  >
+    {hasImage && (
+      <div class="card_visual">
+        <Img src={image!} alt={imageAlt} data-lightbox={imageZoom || undefined} />
+        {variant === "cover" && <Overlay variant={imageZoom ? "caption" : "gradient"} strength={overlayStrength} />}
+      </div>
+    )}
+    {hasContent && (
+      <div class="card_content margin-trim">
+        {slot ? <Fragment set:html={slot} /> : <>
+        <Eyebrow>
+          <Fragment set:html={eyebrow} />
+        </Eyebrow>
+        <Heading tag={headingTag} variant="h5">
+          <Fragment set:html={heading} />
+        </Heading>
+        <Paragraph>
+          <Fragment set:html={text} />
+        </Paragraph>
+        <ButtonWrapper>
+          {buttonHref ? (
+            <Button element="link" href={buttonHref} {...buttonKind}>
+              {buttonLabel}
+            </Button>
+          ) : (
+            <Button {...buttonKind}>{buttonLabel}</Button>
+          )}
+        </ButtonWrapper>
+        </>}
+      </div>
+    )}
+  </Root>
+)}
+
+<style is:global>
+  @layer components {
+    .card_wrap {
+      --_padding: var(--space-5);
+      --_min-height: 25rem;
+      --_visual-ratio: 3 / 2;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--_padding);
+      position: relative;
+      background-color: var(--background-2);
+      border-radius: var(--radius-main);
+      overflow: clip;
+
+      &.cover {
+        min-height: var(--_min-height);
+      }
+      &.stacked {
+        --_visual-ratio: 8 / 5;
+        background-color: var(--background);
+        box-shadow: var(--shadow-surface);
+        gap: 0;
+      }
+    }
+
+    .card_visual {
+      position: relative;
+      width: 100%;
+      flex: none;
+      border-radius: inherit;
+      overflow: clip;
+
+      .stacked > & {
+        aspect-ratio: var(--_visual-ratio);
+      }
+
+      .cover > & {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      > :is(.image, .video) {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    /* Buttons closing a card sit on its floor, however tall the row around it
+       grows. This outranks the margin `.button-wrapper` sets for itself. */
+    .card_content > :is(.button-wrapper, .button_wrap):last-child {
+      margin-top: auto;
+      padding-top: var(--space-6);
+    }
+
+    .card_content {
+      display: flex;
+      flex-direction: column;
+      align-items: var(--_alignment, start);
+      text-align: var(--_alignment, start);
+      flex-grow: 1;
+      width: 100%;
+      max-width: 100%;
+      padding: var(--_padding);
+
+      .cover > & {
+        z-index: 1;
+      }
+
+    }
+
+    .card_wrap:has(.button_wrap), .card_wrap[href], .card_wrap.zoomable {
+      .button_wrap::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+      }
+
+      .card_content a:not(.button_wrap) {
+        position: relative;
+        z-index: 1;
+      }
+
+      .image {
+        transition: scale calc(var(--hover-duration) * 2) var(--hover-ease);
+      }
+
+      @media (--mq-hover) {
+        &:hover .image {
+          scale: 1.04;
+        }
+      }
+    }
+  }
+</style>
+
+<style is:global>
+@layer components {
+  .card_wrap { border: var(--border-width) solid var(--border); color: inherit; text-decoration: none; }
+  .card_wrap.cover { border: 0; border-radius: 0; }
+  .card_wrap.cover > .card_content { justify-content: end; }
+  .card_wrap.zoomable > .card_content { pointer-events: none; }
+  .card_wrap.stacked > .card_visual > .image { position: absolute; inset: 0; }
+  .card_wrap.panel { background: var(--background); }
+  .card_content { gap: var(--space-3); min-width: 0; }
+  .card_content > .text { color: var(--text-2); }
+  .card_wrap.cover .heading { color: var(--light-100); }
+  .card_content > .heading:has(+ .text) { margin-bottom: 0; }
+  .card_content > .text + .text { margin-top: 0; }
+  .card_wrap.stacked .heading { width: 100%; text-align: start; }
+
+  .card_wrap.stacked .button_wrap { color: var(--link-text); align-self: start; }
+}
+</style>
+
+<style is:global>
+@layer components {
+.card_wrap.profile { max-width: 40rem; margin-inline: auto; }
+.card_wrap.profile > .card_content { flex-direction: row; align-items: center; gap: var(--space-5); }
+.card_wrap.profile .formateur-photo { flex: none; width: 10.3125rem; }
+.card_wrap.profile .formateur-photo .image { width: 100%; aspect-ratio: 3 / 4; object-position: top; border-radius: var(--radius-small); }
+@media (--mq-compact-max) { .card_wrap.profile > .card_content { flex-direction: column; text-align: center; } }
+}
+</style>

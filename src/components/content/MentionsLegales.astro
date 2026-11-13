@@ -1,0 +1,106 @@
+---
+import Section from '../wrapper/Section.astro';
+import ContentWrapper from '../wrapper/ContentWrapper.astro';
+import Eyebrow from '../typography/Eyebrow.astro';
+import Heading from '../typography/Heading.astro';
+import Paragraph from '../typography/Paragraph.astro';
+---
+<!-- ============================================
+         HEADER
+         ============================================ -->
+
+
+
+    <!-- ============================================
+         PAGE HERO
+         ============================================ -->
+    <Section theme="dark" paddingTop="navoverlap" paddingBottom="small" align="center">
+
+            <ContentWrapper centered class="width-site max-width-small margin-inline-auto">
+                <Eyebrow tag="span">L&eacute;gal</Eyebrow>
+                <Heading tag="h1" variant="h1">Mentions l&eacute;gales</Heading>
+            </ContentWrapper>
+
+    </Section>
+
+    <!-- ============================================
+         CONTENU
+         ============================================ -->
+    <Section theme="light">
+
+            <div class="legal-content ">
+
+                <Heading tag="h2" variant="h4">1. &Eacute;diteur du site</Heading>
+                <Paragraph variant="main">Nom de l'entreprise : Web Vid&eacute;o Production - Les Ateliers du Stream</Paragraph>
+                <Paragraph variant="main">Forme juridique : SAS</Paragraph>
+                <Paragraph variant="main">Si&egrave;ge social : 39 bis rue Robert Creuzet, 47200 Marmande</Paragraph>
+                <Paragraph variant="main">Capital social : 6 600 &euro;</Paragraph>
+                <Paragraph variant="main">SIREN : 819502238</Paragraph>
+                <Paragraph variant="main">Immatricul&eacute;e au RNE.</Paragraph>
+                <Paragraph variant="main">Directeur de publication : No&eacute;mie Marphay</Paragraph>
+
+                <Heading tag="h2" variant="h4">2. H&eacute;bergement du site</Heading>
+                <Paragraph variant="main">H&eacute;bergeur : OVH</Paragraph>
+                <Paragraph variant="main">Adresse : 2 rue Kellermann, 59100 Roubaix, France</Paragraph>
+                <Paragraph variant="main">T&eacute;l&eacute;phone : +33 9 72 10 10 07</Paragraph>
+
+                <Heading tag="h2" variant="h4">3. Protection des donn&eacute;es personnelles</Heading>
+                <Paragraph variant="main">Aucune donn&eacute;e personnelle n'est collect&eacute;e via ce site.</Paragraph>
+
+                <Heading tag="h2" variant="h4">4. Cookies et mesure d'audience</Heading>
+                <Paragraph variant="main">Le site ne d&eacute;pose aucun cookie de sa propre initiative. Il utilise une mesure d'audience interne, dispens&eacute;e de consentement, &agrave; laquelle vous pouvez vous opposer : voir la <a href="/politique-confidentialite">politique de confidentialit&eacute;</a>.</Paragraph>
+
+                <Heading tag="h2" variant="h4">5. Cr&eacute;dits / intervenants</Heading>
+                <Paragraph variant="main">D&eacute;veloppement web : <a href="https://laurentgarin.fr/" target="_blank" rel="noopener">Laurent GARIN, d&eacute;veloppeur web ind&eacute;pendant</a>.</Paragraph>
+
+            </div>
+
+    </Section>
+
+    <!-- Footer -->
+
+
+
+<style is:global>
+@layer components {
+
+/* ============================================
+           POLICES
+           ============================================ */
+
+        /* ============================================
+           VARIABLES
+           ============================================ */
+
+        /* ============================================
+           RESET
+           ============================================ */
+
+        /* ============================================
+           PAGE HERO
+           ============================================ */
+
+        /* ============================================
+           SECTIONS
+           ============================================ */
+
+        /* ============================================
+           MENTIONS LEGALES
+           ============================================ */
+        .legal-content {
+            max-width: 50rem;
+            margin: 0 auto;
+        }
+        .legal-content a {
+            color: var(--heading-accent);
+            text-decoration: underline;
+            transition: all var(--hover-duration) var(--hover-ease);
+        }
+        .legal-content a:hover { color: var(--dark-900); }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+
+}
+</style>

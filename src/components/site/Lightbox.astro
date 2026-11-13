@@ -1,0 +1,14 @@
+---
+import Modal from '../interactive/Modal.astro';
+---
+<Modal id="photo-lightbox" label="Photographie agrandie" closeLabel="Fermer la photographie" variant="photo" class="theme-dark" closedby="any">
+  <img alt="" />
+</Modal>
+<style is:global>
+@layer components {
+  .photo-trigger { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; text-align: inherit; }
+  .photo-trigger img { width: 100%; }
+  .card_visual > .photo-trigger { height: 100%; pointer-events: auto; }
+  .card_visual > .photo-trigger > .image { height: 100%; aspect-ratio: auto; object-fit: cover; }
+}
+</style>
