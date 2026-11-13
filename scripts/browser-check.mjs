@@ -8,7 +8,10 @@ import { verifyHeroMotion } from './verify-hero-motion.mjs';
 import { verifyNavigation } from './verify-navigation.mjs';
 import { verifyLocalVideos } from './verify-local-videos.mjs';
 import { verifyHistoryTimeline } from './verify-history-timeline.mjs';
+import { selectBrowserSuite, browserSuites } from './browser-suites.mjs';
 
+const suite = selectBrowserSuite();
+const runs = name => suite === 'all' || suite === name;
 const base = process.env.PREVIEW_URL || 'http://127.0.0.1:4321';
 const sourceBase = process.env.COMPARE_SOURCE_URL;
 let executablePath = process.env.BROWSER_PATH;
@@ -17,10 +20,20 @@ if (!executablePath && process.platform === 'win32') {
     if (await access(path).then(() => true, () => false)) { executablePath = path; break; }
   }
 }
-const browser = await chromium.launch({ executablePath, headless: true });
 const routes = JSON.parse(await readFile('tests/fixtures/routes.json', 'utf8'));
-const results = [], errors = [], screenshots = [];
-const visualReportName = process.env.ROUTE_FILTER ? 'filtered-visual-report' : 'visual-report';
+const results = [], errors = [], screenshots = [], checks = [];
+const visualReportName = suite !== 'all' ? `visual-report-${suite}` : process.env.ROUTE_FILTER ? 'filtered-visual-report' : 'visual-report';
+let release = { revision: null, run: null };
+if (process.env.GITHUB_ACTIONS === 'true') {
+  release = JSON.parse(await readFile('dist/release.json', 'utf8'));
+  assert.equal(release.revision, process.env.GITHUB_SHA, 'Build du commit attendu');
+  assert.equal(release.run, `${process.env.GITHUB_RUN_ID}-${process.env.GITHUB_RUN_ATTEMPT}`, 'Build de la tentative attendue');
+}
+function passed(check, message) {
+  assert.ok(suite === 'all' || browserSuites[suite].includes(check), `Contrôle hors lot : ${check}`);
+  checks.push(check);
+  results.push(message);
+}
 await mkdir('test-results', { recursive: true });
 
 async function contextFor(viewport, scenario = 'empty', javascript = true) {
@@ -51,8 +64,9 @@ async function settle(page) {
   await page.waitForFunction(() => !document.querySelector('.hero-line'));
 }
 
+const browser = await chromium.launch({ executablePath, headless: true });
 try {
-  const viewports = process.env.INTERACTIONS_ONLY ? [] : [{ width: 1440, height: 1000 }, { width: 390, height: 844 }];
+  const viewports = process.env.INTERACTIONS_ONLY ? [] : [{ width: 1440, height: 1000 }, { width: 390, height: 844 }].filter(viewport => runs(viewport.width === 1440 ? 'visual-desktop' : 'visual-mobile'));
   for (const viewport of viewports) {
     const context = await contextFor(viewport);
     const page = await context.newPage();
@@ -79,173 +93,186 @@ try {
           if (difference > .005) await writeFile(`test-results/${label}-diff.png`, PNG.sync.write(diff));
         } else difference = { source: [before.width, before.height], target: [after.width, after.height] };
       }
-      screenshots.push({ route: route.route, viewport: viewport.width, height: dimensions.height, difference });
+      screenshots.push({ route: route.route, viewport: viewport.width, height: dimensions.height, difference, file: `${label}.png` });
       await writeFile(`test-results/${visualReportName}.json`, JSON.stringify(screenshots, null, 2));
       console.log(`Page ${viewport.width} ${route.route} ${typeof difference === 'number' ? (100*difference).toFixed(3)+' % écart' : difference ? JSON.stringify(difference) : 'OK'}`);
     }
     await context.close();
+    passed(viewport.width === 1440 ? 'visual-desktop' : 'visual-mobile', `${screenshots.filter(shot => shot.viewport === viewport.width).length} rendus à ${viewport.width}px, aucun débordement horizontal ni image cassée`);
   }
-  if (screenshots.length) results.push(`${screenshots.length} rendus : ${new Set(screenshots.map((s) => s.route)).size} pages sur mobile et bureau, aucun débordement horizontal ni image cassée`);
 
-  const tablet = await contextFor({ width: 768, height: 1024 });
-  const page = await tablet.newPage();
-  for (const path of ['/', '/solutions', '/realisations/peer-gynt', '/formations/ia', '/mentions-legales']) {
-    await page.goto(base+path, { waitUntil: path === '/' ? 'domcontentloaded' : 'networkidle' });
-    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth+1), path);
-  }
-  results.push('5 gabarits tablette sans débordement');
-  await page.goto(base+'/', { waitUntil: 'domcontentloaded' });
-  const toggle = page.getByRole('button', { name: 'Menu', exact: true });
-  assert.equal(await toggle.getAttribute('aria-expanded'), 'false');
-  await toggle.click(); assert.equal(await toggle.getAttribute('aria-expanded'), 'true');
-  await page.keyboard.press('Tab');
-  assert.equal(await page.evaluate(() => document.activeElement.textContent.trim()), 'Accueil');
-  await page.keyboard.press('Escape'); assert.equal(await toggle.getAttribute('aria-expanded'), 'false');
-  assert.equal(await toggle.evaluate((el) => document.activeElement === el), true);
-  await toggle.click();
-  await page.locator('#site-navigation a[href="/solutions"]').click();
-  await page.waitForURL(base+'/solutions');
-  assert.equal(await page.locator('#site-navigation a[href="/solutions"]').getAttribute('aria-current'), 'page');
-  await toggle.click();
-  await page.getByRole('link', { name: 'Accueil', exact: true }).click();
-  await page.waitForURL(base+'/');
-  assert.equal(await page.locator('#site-navigation a[href="/"]').getAttribute('aria-current'), 'page');
-  results.push('Menu : ouverture, clavier, Échap, retour du focus et navigation');
-
-  for (const path of ['/', '/realisations/peer-gynt', '/solutions/multiplex']) {
-    await page.goto(base+path, { waitUntil: path === '/' ? 'domcontentloaded' : 'networkidle' });
-    const trigger = page.locator('.photo-trigger').first();
-    await trigger.click();
-    assert.equal(await page.locator('#photo-lightbox').evaluate((el) => el.open), true);
-    assert.equal(new URL(await page.locator('#photo-lightbox img').getAttribute('src'), base).href, new URL(await trigger.locator('img').getAttribute('src'), base).href);
-    await page.keyboard.press('Escape');
-    assert.equal(await page.locator('#photo-lightbox').evaluate((el) => el.open), false);
-    assert.equal(await trigger.evaluate((el) => document.activeElement === el), true);
-    await trigger.press('Enter'); await page.getByRole('button', { name: 'Fermer la photographie' }).click();
-    assert.equal(await page.locator('#photo-lightbox').evaluate((el) => el.open), false);
-    await trigger.click(); await page.mouse.click(2, 2);
-    assert.equal(await page.locator('#photo-lightbox').evaluate((el) => el.open), false);
-  }
-  results.push('Lightboxes accueil, réalisation et solution : souris, clavier, fermeture et retour du focus');
-  await page.goto(base+'/politique-confidentialite', { waitUntil: 'networkidle' });
-  await page.locator('#eva-stat-choix').click();
-  assert.equal(await page.evaluate(() => localStorage.getItem('evaStat_off')), '1');
-  await page.reload({ waitUntil: 'networkidle' });
-  assert.match(await page.locator('#eva-stat-etat').innerText(), /désactivée/);
-  await page.locator('#eva-stat-choix').click();
-  assert.equal(await page.evaluate(() => localStorage.getItem('evaStat_off')), null);
-  results.push('Opposition EVA : état persistant et réactivation');
-
-  await page.goto(base+'/', { waitUntil: 'domcontentloaded' });
-  await page.waitForFunction(() => document.querySelector('video').readyState >= 2);
-  assert.equal(await page.locator('video').evaluate((el) => el.currentSrc), base+'/videos/demo-ateliers-du-stream.mp4');
-  await page.waitForFunction(() => !document.querySelector('video').paused);
-  await page.locator('#heroPause').click();
-  assert.equal(await page.locator('video').evaluate((el) => el.paused), true);
-  await page.locator('#heroPause').click();
-  await page.waitForFunction(() => !document.querySelector('video').paused);
-  results.push('Vidéo locale : chargement MP4, lecture, pause et reprise sans S3');
-
-  await page.emulateMedia({ reducedMotion: 'reduce' });
-  await page.goto(base+'/', { waitUntil: 'domcontentloaded' });
-  assert.equal(await page.locator('video').evaluate((el) => el.paused), true);
-  assert.equal(await page.locator('h1').evaluate((el) => getComputedStyle(el).opacity), '1');
-  results.push('Réduction des animations : vidéo en pause et titre visible');
-  assert.equal(await page.locator('#contact svg.icon-brand').count(), 3);
-  const tokensBefore = await page.evaluate(() => {
-    const root = document.documentElement;
-    const eyebrow = document.querySelector('#possibilites .eyebrow_wrap');
-    const card = document.querySelector('#possibilites .card_content');
-    const before = { color: getComputedStyle(eyebrow).color, padding: getComputedStyle(card).paddingTop };
-    root.style.setProperty('--brand-500', 'rgb(1 2 3)');
-    root.style.setProperty('--space-5', '48px');
-    return before;
-  });
-  await page.waitForFunction(() =>
-    getComputedStyle(document.querySelector('#possibilites .eyebrow_wrap')).color !== 'rgb(125, 206, 245)' &&
-    getComputedStyle(document.querySelector('#possibilites .card_content')).paddingTop === '48px' &&
-    [...document.querySelectorAll('#contact svg.icon-brand path')].every((path) => getComputedStyle(path).fill === 'rgb(1, 2, 3)'));
-  const tokensAfter = await page.evaluate(() => {
-    const root = document.documentElement;
-    const after = { color: getComputedStyle(document.querySelector('#possibilites .eyebrow_wrap')).color, padding: getComputedStyle(document.querySelector('#possibilites .card_content')).paddingTop };
-    root.style.removeProperty('--brand-500'); root.style.removeProperty('--space-5');
-    return after;
-  });
-  assert.notEqual(tokensBefore.color, tokensAfter.color);
-  assert.notEqual(tokensBefore.padding, tokensAfter.padding);
-  assert.equal(tokensAfter.padding, '48px');
-  results.push('Lumos actif : les tokens de couleur et d’espacement modifient réellement les composants natifs');
-  await tablet.close();
-
-  for (const scenario of ['sessions','empty','error','results']) {
-    const context = await contextFor({ width: 1440, height: 1000 }, scenario);
-    const page = await context.newPage();
-    page.on('pageerror', (error) => errors.push(`${scenario}: ${error.message}`));
-    for (const path of ['/formations/vmix','/formations/ia']) {
+  if (runs('interactions')) {
+    const tablet = await contextFor({ width: 768, height: 1024 });
+    const page = await tablet.newPage();
+    for (const path of ['/', '/solutions', '/realisations/peer-gynt', '/formations/ia', '/mentions-legales']) {
       await page.goto(base+path, { waitUntil: path === '/' ? 'domcontentloaded' : 'networkidle' });
-      if (scenario === 'sessions') {
-        const chip = page.locator('[data-formation-code] a');
-        assert.equal(await chip.count(), 1);
-        assert.equal(new URL(await chip.getAttribute('href')).searchParams.get('retour'), base+path);
-        assert.equal(await chip.getAttribute('data-eva-event'), 'inscription_formation');
-        assert.equal(await page.locator('.meta-dates-hint').isVisible(), true);
-      } else if (scenario === 'empty') {
-        assert.match(await page.locator('[data-formation-code]').innerText(), /Prochaines dates à venir/);
-        assert.equal(await page.locator('.meta-dates-hint').isVisible(), false);
-      } else if (scenario === 'error') {
-        assert.equal(await page.locator('[data-formation-code] a').count(), 0);
-        assert.equal(await page.locator('.meta-dates-hint').isVisible(), false);
-        assert.match(await page.locator('[data-formation-code]').innerText(), /2026/);
-      }
-      assert.equal(await page.locator('[data-formation-results-code]').isVisible(), scenario === 'results');
-      if (scenario === 'results') {
-        assert.match(await page.locator('[data-formation-results-code]').innerText(), /4.8/);
-        assert.doesNotMatch(await page.locator('[data-formation-results-code]').innerText(), /undefined|NaN/);
-      }
+      assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth+1), path);
     }
-    await context.close();
+    passed('tablet', '5 gabarits tablette sans débordement');
+    await page.goto(base+'/', { waitUntil: 'domcontentloaded' });
+    const toggle = page.getByRole('button', { name: 'Menu', exact: true });
+    assert.equal(await toggle.getAttribute('aria-expanded'), 'false');
+    await toggle.click(); assert.equal(await toggle.getAttribute('aria-expanded'), 'true');
+    await page.keyboard.press('Tab');
+    assert.equal(await page.evaluate(() => document.activeElement.textContent.trim()), 'Accueil');
+    await page.keyboard.press('Escape'); assert.equal(await toggle.getAttribute('aria-expanded'), 'false');
+    assert.equal(await toggle.evaluate((el) => document.activeElement === el), true);
+    await toggle.click();
+    await page.locator('#site-navigation a[href="/solutions"]').click();
+    await page.waitForURL(base+'/solutions');
+    assert.equal(await page.locator('#site-navigation a[href="/solutions"]').getAttribute('aria-current'), 'page');
+    await toggle.click();
+    await page.getByRole('link', { name: 'Accueil', exact: true }).click();
+    await page.waitForURL(base+'/');
+    assert.equal(await page.locator('#site-navigation a[href="/"]').getAttribute('aria-current'), 'page');
+    passed('menu', 'Menu : ouverture, clavier, Échap, retour du focus et navigation');
+
+    for (const path of ['/', '/realisations/peer-gynt', '/solutions/multiplex']) {
+      await page.goto(base+path, { waitUntil: path === '/' ? 'domcontentloaded' : 'networkidle' });
+      const trigger = page.locator('.photo-trigger').first();
+      await trigger.click();
+      assert.equal(await page.locator('#photo-lightbox').evaluate((el) => el.open), true);
+      assert.equal(new URL(await page.locator('#photo-lightbox img').getAttribute('src'), base).href, new URL(await trigger.locator('img').getAttribute('src'), base).href);
+      await page.keyboard.press('Escape');
+      assert.equal(await page.locator('#photo-lightbox').evaluate((el) => el.open), false);
+      assert.equal(await trigger.evaluate((el) => document.activeElement === el), true);
+      await trigger.press('Enter'); await page.getByRole('button', { name: 'Fermer la photographie' }).click();
+      assert.equal(await page.locator('#photo-lightbox').evaluate((el) => el.open), false);
+      await trigger.click(); await page.mouse.click(2, 2);
+      assert.equal(await page.locator('#photo-lightbox').evaluate((el) => el.open), false);
+    }
+    passed('lightboxes', 'Lightboxes accueil, réalisation et solution : souris, clavier, fermeture et retour du focus');
+    await page.goto(base+'/politique-confidentialite', { waitUntil: 'networkidle' });
+    await page.locator('#eva-stat-choix').click();
+    assert.equal(await page.evaluate(() => localStorage.getItem('evaStat_off')), '1');
+    await page.reload({ waitUntil: 'networkidle' });
+    assert.match(await page.locator('#eva-stat-etat').innerText(), /désactivée/);
+    await page.locator('#eva-stat-choix').click();
+    assert.equal(await page.evaluate(() => localStorage.getItem('evaStat_off')), null);
+    passed('privacy', 'Opposition EVA : état persistant et réactivation');
+
+    await page.goto(base+'/', { waitUntil: 'domcontentloaded' });
+    await page.waitForFunction(() => document.querySelector('video').readyState >= 2);
+    assert.equal(await page.locator('video').evaluate((el) => el.currentSrc), base+'/videos/demo-ateliers-du-stream.mp4');
+    await page.waitForFunction(() => !document.querySelector('video').paused);
+    await page.locator('#heroPause').click();
+    assert.equal(await page.locator('video').evaluate((el) => el.paused), true);
+    await page.locator('#heroPause').click();
+    await page.waitForFunction(() => !document.querySelector('video').paused);
+    passed('background-video', 'Vidéo locale : chargement MP4, lecture, pause et reprise sans S3');
+
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.goto(base+'/', { waitUntil: 'domcontentloaded' });
+    assert.equal(await page.locator('video').evaluate((el) => el.paused), true);
+    assert.equal(await page.locator('h1').evaluate((el) => getComputedStyle(el).opacity), '1');
+    passed('reduced-motion', 'Réduction des animations : vidéo en pause et titre visible');
+    assert.equal(await page.locator('#contact svg.icon-brand').count(), 3);
+    const tokensBefore = await page.evaluate(() => {
+      const root = document.documentElement;
+      const eyebrow = document.querySelector('#possibilites .eyebrow_wrap');
+      const card = document.querySelector('#possibilites .card_content');
+      const before = { color: getComputedStyle(eyebrow).color, padding: getComputedStyle(card).paddingTop };
+      root.style.setProperty('--brand-500', 'rgb(1 2 3)');
+      root.style.setProperty('--space-5', '48px');
+      return before;
+    });
+    await page.waitForFunction(() =>
+      getComputedStyle(document.querySelector('#possibilites .eyebrow_wrap')).color !== 'rgb(125, 206, 245)' &&
+      getComputedStyle(document.querySelector('#possibilites .card_content')).paddingTop === '48px' &&
+      [...document.querySelectorAll('#contact svg.icon-brand path')].every((path) => getComputedStyle(path).fill === 'rgb(1, 2, 3)'));
+    const tokensAfter = await page.evaluate(() => {
+      const root = document.documentElement;
+      const after = { color: getComputedStyle(document.querySelector('#possibilites .eyebrow_wrap')).color, padding: getComputedStyle(document.querySelector('#possibilites .card_content')).paddingTop };
+      root.style.removeProperty('--brand-500'); root.style.removeProperty('--space-5');
+      return after;
+    });
+    assert.notEqual(tokensBefore.color, tokensAfter.color);
+    assert.notEqual(tokensBefore.padding, tokensAfter.padding);
+    assert.equal(tokensAfter.padding, '48px');
+    passed('lumos', 'Lumos actif : les tokens de couleur et d’espacement modifient réellement les composants natifs');
+    await tablet.close();
+
+    for (const scenario of ['sessions','empty','error','results']) {
+      const context = await contextFor({ width: 1440, height: 1000 }, scenario);
+      const page = await context.newPage();
+      page.on('pageerror', (error) => errors.push(`${scenario}: ${error.message}`));
+      for (const path of ['/formations/vmix','/formations/ia']) {
+        await page.goto(base+path, { waitUntil: path === '/' ? 'domcontentloaded' : 'networkidle' });
+        if (scenario === 'sessions') {
+          const chip = page.locator('[data-formation-code] a');
+          assert.equal(await chip.count(), 1);
+          assert.equal(new URL(await chip.getAttribute('href')).searchParams.get('retour'), base+path);
+          assert.equal(await chip.getAttribute('data-eva-event'), 'inscription_formation');
+          assert.equal(await page.locator('.meta-dates-hint').isVisible(), true);
+        } else if (scenario === 'empty') {
+          assert.match(await page.locator('[data-formation-code]').innerText(), /Prochaines dates à venir/);
+          assert.equal(await page.locator('.meta-dates-hint').isVisible(), false);
+        } else if (scenario === 'error') {
+          assert.equal(await page.locator('[data-formation-code] a').count(), 0);
+          assert.equal(await page.locator('.meta-dates-hint').isVisible(), false);
+          assert.match(await page.locator('[data-formation-code]').innerText(), /2026/);
+        }
+        assert.equal(await page.locator('[data-formation-results-code]').isVisible(), scenario === 'results');
+        if (scenario === 'results') {
+          assert.match(await page.locator('[data-formation-results-code]').innerText(), /4.8/);
+          assert.doesNotMatch(await page.locator('[data-formation-results-code]').innerText(), /undefined|NaN/);
+        }
+      }
+      await context.close();
+    }
+    passed('eva', '8 scénarios EVA : deux formations × sessions, aucune session, panne et résultats publics');
+
+    await verifyHeroMotion(contextFor, base);
+    passed('hero', 'Animation hero GSAP : lignes et boutons, mots et hauteur stables, redimensionnement, focus clavier et mouvement réduit à 384, 390 et 1440 px');
   }
-  results.push('8 scénarios EVA : deux formations × sessions, aucune session, panne et résultats publics');
 
-  await verifyHeroMotion(contextFor, base);
-  results.push('Animation hero GSAP : lignes et boutons, mots et hauteur stables, redimensionnement, focus clavier et mouvement réduit à 384, 390 et 1440 px');
-
-  await writeFile('test-results/history-timeline-report.json', JSON.stringify(await verifyHistoryTimeline(contextFor, base), null, 2));
-  results.push('Frise histoire : 8 étapes à 7 largeurs, texte 200 %, médias, contrastes, 64 passages aller/retour, restauration, redimensionnement et repli sans JavaScript');
-
-  await writeFile('test-results/local-videos-report.json', JSON.stringify(await verifyLocalVideos(contextFor, base), null, 2));
-  results.push('6 vidéos locales : 18 parcours bureau/tablette/mobile, clavier, lecture, son décodé, recherche, fin, plein écran, sous-titres, HTTP 206 ; 6 lectures sans scripts et pause mutuelle histoire');
-
-  const navigation = await verifyNavigation(contextFor, base, routes);
-  await writeFile('test-results/navigation-report.json', JSON.stringify(navigation, null, 2));
-  results.push(`Header : ${navigation.length} parcours haut/défilement/retour ; pages internes blanches, accueil transparent, menu mobile et repli sans JavaScript`);
-
-  await writeFile('test-results/refinements-report.json', JSON.stringify(await verifyRefinements(contextFor, base), null, 2));
-  results.push('Audit Impeccable : 320, 390, 768, 1200 et 1440 px ; contraste, logos, CTA, focus masqué, ancres, images responsive et vidéo adaptée');
-
-  const nojs = await contextFor({ width: 390, height: 844 }, 'empty', false);
-  const nojsPage = await nojs.newPage();
-  await nojsPage.goto(base+'/solutions', { waitUntil: 'networkidle' });
-  assert.equal(await nojsPage.locator('#site-navigation').isVisible(), true);
-  assert.equal(await nojsPage.locator('h1').isVisible(), true);
-  await nojsPage.goto(base+'/', { waitUntil: 'domcontentloaded' });
-  await nojsPage.waitForLoadState('load');
-  assert.equal(await nojsPage.locator('#heroPause').isVisible(), false);
-  assert.match(await nojsPage.locator('video').getAttribute('poster'), /demo-ateliers-du-stream\.webp$/);
-  await nojs.close();
-  results.push('Navigation et contenu mobile accessibles sans JavaScript');
-
-  const redirectContext = await contextFor({ width: 1440, height: 1000 });
-  const redirectPage = await redirectContext.newPage();
-  for (const route of routes.filter((r) => r.kind === 'redirect')) {
-    await redirectPage.goto(base+route.route);
-    await redirectPage.waitForURL(base+route.destination, { timeout: 10000 });
+  if (runs('content')) {
+    await writeFile('test-results/history-timeline-report.json', JSON.stringify(await verifyHistoryTimeline(contextFor, base), null, 2));
+    passed('history', 'Frise histoire : 8 étapes à 7 largeurs, texte 200 %, médias, contrastes, 64 passages aller/retour, restauration, redimensionnement et repli sans JavaScript');
   }
-  assert.equal((await redirectPage.goto(base+'/page-inexistante-test')).status(),404);
-  await redirectContext.close();
-  results.push('5 anciennes routes redirigées et vraie réponse 404');
+
+  if (runs('videos')) {
+    await writeFile('test-results/local-videos-report.json', JSON.stringify(await verifyLocalVideos(contextFor, base), null, 2));
+    passed('local-videos', '6 vidéos locales : 18 parcours bureau/tablette/mobile, clavier, lecture, son décodé, recherche, fin, plein écran, sous-titres, HTTP 206 ; 6 lectures sans scripts et pause mutuelle histoire');
+  }
+
+  if (runs('navigation')) {
+    const navigation = await verifyNavigation(contextFor, base, routes);
+    await writeFile('test-results/navigation-report.json', JSON.stringify(navigation, null, 2));
+    passed('navigation', `Header : ${navigation.length} parcours haut/défilement/retour ; pages internes blanches, accueil transparent, menu mobile et repli sans JavaScript`);
+  }
+
+  if (runs('content')) {
+    await writeFile('test-results/refinements-report.json', JSON.stringify(await verifyRefinements(contextFor, base), null, 2));
+    passed('refinements', 'Audit Impeccable : 320, 390, 768, 1200 et 1440 px ; contraste, logos, CTA, focus masqué, ancres, images responsive et vidéo adaptée');
+  }
+
+  if (runs('interactions')) {
+    const nojs = await contextFor({ width: 390, height: 844 }, 'empty', false);
+    const nojsPage = await nojs.newPage();
+    await nojsPage.goto(base+'/solutions', { waitUntil: 'networkidle' });
+    assert.equal(await nojsPage.locator('#site-navigation').isVisible(), true);
+    assert.equal(await nojsPage.locator('h1').isVisible(), true);
+    await nojsPage.goto(base+'/', { waitUntil: 'domcontentloaded' });
+    await nojsPage.waitForLoadState('load');
+    assert.equal(await nojsPage.locator('#heroPause').isVisible(), false);
+    assert.match(await nojsPage.locator('video').getAttribute('poster'), /demo-ateliers-du-stream\.webp$/);
+    await nojs.close();
+    passed('no-js', 'Navigation et contenu mobile accessibles sans JavaScript');
+
+    const redirectContext = await contextFor({ width: 1440, height: 1000 });
+    const redirectPage = await redirectContext.newPage();
+    for (const route of routes.filter((r) => r.kind === 'redirect')) {
+      await redirectPage.goto(base+route.route);
+      await redirectPage.waitForURL(base+route.destination, { timeout: 10000 });
+    }
+    assert.equal((await redirectPage.goto(base+'/page-inexistante-test')).status(),404);
+    await redirectContext.close();
+    passed('redirects', '5 anciennes routes redirigées et vraie réponse 404');
+  }
   assert.deepEqual(errors, [], 'Erreurs JavaScript');
-  const reportName = process.env.INTERACTIONS_ONLY ? 'interactions-report' : process.env.ROUTE_FILTER ? 'filtered-browser-report' : 'browser-report';
-  await writeFile(`test-results/${reportName}.json`, JSON.stringify({ results, errors, screenshots }, null, 2));
+  if (suite !== 'all') assert.deepEqual([...checks].sort(), [...browserSuites[suite]].sort(), 'Lot complet');
+  const reportName = suite !== 'all' ? `browser-report-${suite}` : process.env.INTERACTIONS_ONLY ? 'interactions-report' : process.env.ROUTE_FILTER ? 'filtered-browser-report' : 'browser-report';
+  await writeFile(`test-results/${reportName}.json`, JSON.stringify({ suite, ...release, checks, results, errors, screenshots }, null, 2));
   console.log(results.join('\n'));
 } finally { await browser.close(); }
