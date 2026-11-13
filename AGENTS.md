@@ -22,6 +22,10 @@ La migration conserve fidèlement le rendu et **tous les textes**, y compris les
 
 ## Agent skills
 
+### Déploiement et production
+
+Avant une fusion dans `main`, une publication, un retour arrière ou une modification de CI/SSH/Nginx, lire `docs/deploiement-hostinger.md`. Le propriétaire a autorisé le 13 novembre 2026 l'automatisation après fusion : **une fusion dans `main` peut publier le site** après contrôles. Préserver les autres services du VPS partagé ; tester et relire les changements avant fusion. Les scripts privilégiés et la configuration Nginx demandent une installation administrative distincte, décrite dans le guide.
+
 ### Issue tracker
 
 Les tickets et spécifications sont suivis dans GitHub Issues de `Lads47/lads-website`. Lire `docs/agents/issue-tracker.md` avant toute opération sur le suivi.

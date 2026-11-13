@@ -27,13 +27,13 @@ Dans un second terminal, avec la prévisualisation ouverte : `npm run test:brows
 
 Le site est construit en HTML statique dans `dist/`. Aucun serveur Node n'est nécessaire sur l'hébergement. Les composants Lumos utilisés et le contrat des tokens sont documentés dans `docs/lumos.md`. `npm test` vérifie aussi la réutilisation des rôles Lumos et le nommage des variables.
 
-Les six anciens lecteurs Vimeo sont remplacés localement par des vidéos natives Lumos en 1080p/720p, avec sous-titres et vignettes. Ce complément a été validé localement le 12 novembre 2026, et sa publication sur la même PR est autorisée : voir [le bilan et les poids](docs/videos-locales.md). La PR #4 reste en brouillon pendant les contrôles GitHub, puis peut être rendue prête à relire après leur réussite.
+Les six anciens lecteurs Vimeo sont remplacés par des vidéos natives Lumos en 1080p/720p, avec sous-titres et vignettes : voir [le bilan et les poids](docs/videos-locales.md). Ce complément a été validé localement le 12 novembre 2026 puis publié avec la PR #4.
 
 La vidéo d'accueil est incluse dans `public/videos/` et servie par le site, sans appel à Amazon S3. Le serveur de prévisualisation prend en charge son type MP4 et les requêtes partielles.
 
 ## Validation et livraison
 
-**En ligne depuis le 13 novembre 2026** sur lesateliersdustream.fr (PR #4 fusionnée). Le site publié est le `dist/` construit sur le poste, servi par nginx sur le VPS Hostinger : fusionner sur `main` ne publie rien, chaque mise en ligne suit [la procédure de livraison](docs/livraison.md). Le [dossier de revue GitHub](docs/revue-github.md) présente le résultat, les captures, les contrôles et les limites. La procédure de livraison et de retour arrière est dans [docs/livraison.md](docs/livraison.md).
+**En ligne depuis le 13 novembre 2026** sur lesateliersdustream.fr (PR #4 fusionnée). Après installation du déploiement automatique demandé le même jour, fusionner une PR dans `main` déclenche les contrôles puis la publication du `dist/` vérifié par GitHub Actions sur le VPS Hostinger. Préproduction isolée, sauvegarde, bascule atomique et retour arrière : lire [le guide de déploiement](docs/deploiement-hostinger.md) avant toute fusion ou intervention sur la production. L'état d'installation et les preuves sont dans [le suivi](docs/suivi-refonte.md). Le [dossier de revue GitHub](docs/revue-github.md) présente la refonte, les captures et les limites.
 
 Tous les textes sont conservés selon le choix de l'utilisateur. Les contradictions éditoriales et les limites d'intégrations externes sont signalées dans le rapport, sans correction éditoriale automatique.
 

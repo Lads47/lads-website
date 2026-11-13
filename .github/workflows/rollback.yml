@@ -1,0 +1,39 @@
+name: Retour arrière Hostinger
+on:
+  workflow_dispatch:
+    inputs:
+      release:
+        description: 'Version conservée à restaurer (identifiant complet, voir documentation)'
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  rollback:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    concurrency:
+      group: hostinger-production
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Restaurer une version conservée
+        env:
+          RELEASE: ${{ inputs.release }}
+          HOSTINGER_SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ $RELEASE =~ ^([0-9a-f]{40}-[0-9]{1,20}-[0-9]{1,4}|baseline-[0-9]{14})$ ]]
+          umask 077
+          key=$(mktemp)
+          trap 'rm -f "$key"' EXIT
+          printf '%s\n' "$HOSTINGER_SSH_KEY" > "$key"
+          unset HOSTINGER_SSH_KEY
+          ssh -T -i "$key" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes \
+            -o UserKnownHostsFile=deploy/known_hosts -o ConnectTimeout=15 \
+            lads-deploy@82.112.240.219 "rollback $RELEASE"
+          printf 'Version restaurée et contrôlée : `%s`\n' "$RELEASE" >> "$GITHUB_STEP_SUMMARY"
