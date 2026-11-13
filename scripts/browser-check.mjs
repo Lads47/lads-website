@@ -208,7 +208,7 @@ try {
   results.push('8 scénarios EVA : deux formations × sessions, aucune session, panne et résultats publics');
 
   await verifyHeroMotion(contextFor, base);
-  results.push('Animation hero GSAP : lignes et boutons, titre stable, redimensionnement, focus clavier et mouvement réduit à 390 et 1440 px');
+  results.push('Animation hero GSAP : lignes et boutons, mots et hauteur stables, redimensionnement, focus clavier et mouvement réduit à 384, 390 et 1440 px');
 
   await writeFile('test-results/history-timeline-report.json', JSON.stringify(await verifyHistoryTimeline(contextFor, base), null, 2));
   results.push('Frise histoire : 8 étapes à 7 largeurs, texte 200 %, médias, contrastes, 64 passages aller/retour, restauration, redimensionnement et repli sans JavaScript');

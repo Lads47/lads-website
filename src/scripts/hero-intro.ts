@@ -31,6 +31,8 @@ async function animateHero() {
       type: 'lines',
       mask: 'lines',
       linesClass: 'hero-line',
+      // Inline word spans preserve native wrapping and the heading's letter spacing.
+      tag: 'span',
       autoSplit: true,
       aria: 'auto',
       onSplit(self) {
