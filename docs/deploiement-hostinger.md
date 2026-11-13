@@ -1,5 +1,7 @@
 # Publication automatique sur Hostinger
 
+**Actif depuis le 13 novembre 2026.** La PR #6 a été fusionnée et la [première livraison automatique](https://github.com/Lads47/lads-website/actions/runs/43429291731) a publié le commit `f3e2091` après réussite des contrôles. L'accès dédié, la préproduction et les sauvegardes sont installés ; les dates de démarrage des dix conteneurs sont restées inchangées. Le [workflow manuel de retour arrière](https://github.com/Lads47/lads-website/actions/runs/43430214112) a aussi été exécuté avec succès sur la version déjà active (sans bascule). Les échecs avec restauration et les interruptions sont couverts par les tests simulés, sans provoquer de panne sur le site public. Les preuves et éventuels incidents ultérieurs sont suivis dans le ticket #5 et les exécutions Actions ; vérifier `/release.json` pour connaître la version actuelle.
+
 ## Déclenchement et responsabilité
 
 Le propriétaire a demandé le 13 novembre 2026 la publication automatique après fusion dans `main`, avec contrôles, sauvegarde et retour arrière. **Fusionner une PR dans `main` engage la mise en ligne.** Les PR ordinaires exécutent les contrôles sans recevoir la clé de production.
