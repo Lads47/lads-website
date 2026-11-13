@@ -52,7 +52,7 @@ import Img from '../media/Img.astro';
             <hr class="divider">
         </ContentWrapper>
 
-        <Grid xsmall={1} small={1} medium={2} large={4} gap="0" class="solution-cards">
+        <Grid xsmall={1} small={1} medium={2} large={4} gap="0" class="home-cover-cards">
             <!-- Carte 1 -->
             <Card variant="cover" theme="dark" overlayStrength={90} href={"/solutions/captation-multicam"} image="/photo/20251114_155704.webp" imageAlt="">
 
@@ -221,8 +221,8 @@ import Img from '../media/Img.astro';
             <hr class="divider">
         </ContentWrapper>
 
-        <Grid xsmall={1} small={1} medium={2} large={4} gap="0">
-                <Card variant="cover" theme="dark" href={"/realisations/etourisme-pau"} image="/photo/20251016_085347.webp" imageAlt="">
+        <Grid xsmall={1} small={1} medium={2} large={4} gap="0" class="home-cover-cards">
+                <Card variant="cover" theme="dark" overlayStrength={90} href={"/realisations/etourisme-pau"} image="/photo/20251016_085347.webp" imageAlt="">
 
 
                         <Eyebrow tag="span" variant="tag">&Eacute;v&eacute;nementiel</Eyebrow>
@@ -230,7 +230,7 @@ import Img from '../media/Img.astro';
                         <Paragraph variant="main">5 r&eacute;gies, 12 cam&eacute;ras diss&eacute;min&eacute;es dans les murs du Palais Beaumont de Pau pour la grande messe du tourisme national.</Paragraph>
 
                 </Card>
-                <Card variant="cover" theme="dark" href={"/realisations/universite-ete-ceca"} image="/photo/20240830_103011.webp" imageAlt="">
+                <Card variant="cover" theme="dark" overlayStrength={90} href={"/realisations/universite-ete-ceca"} image="/photo/20240830_103011.webp" imageAlt="">
 
 
                         <Eyebrow tag="span" variant="tag">Corporate</Eyebrow>
@@ -238,7 +238,7 @@ import Img from '../media/Img.astro';
                         <Paragraph variant="main">Captation et diffusion en direct au Ch&acirc;teau Smith Haut Lafitte, avec duplex pour des intervenants &agrave; distance et gestion des m&eacute;dias sur vid&eacute;oprojecteur.</Paragraph>
 
                 </Card>
-                <Card variant="cover" theme="dark" href={"/realisations/ceremonie-docteurs-bordeaux"} image="/photo/20250411_165355.webp" imageAlt="">
+                <Card variant="cover" theme="dark" overlayStrength={90} href={"/realisations/ceremonie-docteurs-bordeaux"} image="/photo/20250411_165355.webp" imageAlt="">
 
 
                         <Eyebrow tag="span" variant="tag">Universit&eacute; de Bordeaux</Eyebrow>
@@ -246,7 +246,7 @@ import Img from '../media/Img.astro';
                         <Paragraph variant="main">L'Universit&eacute; de Bordeaux organise chaque ann&eacute;e la remise de dipl&ocirc;mes de ses doctorants au Pin Galant, salle de 1&nbsp;400 places &agrave; M&eacute;rignac.</Paragraph>
 
                 </Card>
-                <Card variant="cover" theme="dark" href={"/realisations/peer-gynt"} image="/photo/peer gynt.webp" imageAlt="">
+                <Card variant="cover" theme="dark" overlayStrength={90} href={"/realisations/peer-gynt"} image="/photo/peer gynt.webp" imageAlt="">
 
 
                         <Eyebrow tag="span" variant="tag">Peer Gynt</Eyebrow>
@@ -346,7 +346,7 @@ import Img from '../media/Img.astro';
 
 <style is:global>
 @layer components {
-        .solution-cards .card_wrap {
+        .home-cover-cards .card_wrap {
             --text-2: var(--text);
             --text-main-line-height: var(--line-height-huge);
         }
