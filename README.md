@@ -33,7 +33,7 @@ La vidéo d'accueil est incluse dans `public/videos/` et servie par le site, san
 
 ## Validation et livraison
 
-**En ligne depuis le 13 novembre 2026** sur lesateliersdustream.fr (PR #4 fusionnée). Après installation du déploiement automatique demandé le même jour, fusionner une PR dans `main` déclenche les contrôles puis la publication du `dist/` vérifié par GitHub Actions sur le VPS Hostinger. Préproduction isolée, sauvegarde, bascule atomique et retour arrière : lire [le guide de déploiement](docs/deploiement-hostinger.md) avant toute fusion ou intervention sur la production. L'état d'installation et les preuves sont dans [le suivi](docs/suivi-refonte.md). Le [dossier de revue GitHub](docs/revue-github.md) présente la refonte, les captures et les limites.
+**En ligne depuis le 13 novembre 2026** sur lesateliersdustream.fr (PR #4 fusionnée). **Le déploiement automatique est actif et sa première publication a été vérifiée le même jour** : fusionner une PR dans `main` déclenche les contrôles puis la publication du `dist/` vérifié par GitHub Actions sur le VPS Hostinger. Préproduction isolée, sauvegarde, bascule atomique et retour arrière : lire [le guide de déploiement](docs/deploiement-hostinger.md) avant toute fusion ou intervention sur la production. L'état d'installation et les preuves sont dans [le suivi](docs/suivi-refonte.md). Le [dossier de revue GitHub](docs/revue-github.md) présente la refonte, les captures et les limites.
 
 Tous les textes sont conservés selon le choix de l'utilisateur. Les contradictions éditoriales et les limites d'intégrations externes sont signalées dans le rapport, sans correction éditoriale automatique.
 
