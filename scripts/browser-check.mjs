@@ -5,6 +5,7 @@ import pixelmatch from 'pixelmatch';
 import { PNG } from 'pngjs';
 import { verifyRefinements } from './verify-refinements.mjs';
 import { verifyHeroMotion } from './verify-hero-motion.mjs';
+import { verifyStatCounters } from './verify-stat-counters.mjs';
 import { verifyNavigation } from './verify-navigation.mjs';
 import { verifyLocalVideos } from './verify-local-videos.mjs';
 import { verifyHistoryTimeline } from './verify-history-timeline.mjs';
@@ -223,6 +224,7 @@ try {
     passed('eva', '8 scénarios EVA : deux formations × sessions, aucune session, panne et résultats publics');
 
     await verifyHeroMotion(contextFor, base);
+    await verifyStatCounters(contextFor, base);
     passed('hero', 'Animation hero GSAP : lignes et boutons, mots et hauteur stables, redimensionnement, focus clavier et mouvement réduit à 384, 390 et 1440 px');
   }
 
