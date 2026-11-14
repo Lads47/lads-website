@@ -7,7 +7,16 @@ export async function verifyStatCounters(contextFor, base) {
     const page = await context.newPage();
     try {
       await page.emulateMedia({ reducedMotion: 'no-preference' });
-      await page.goto(base + '/', { waitUntil: 'networkidle' });
+      await page.addInitScript(() => {
+        window.counterStarts = [];
+        setInterval(() => document.querySelectorAll('.stat-nombre').forEach((number, index) => {
+          const overlay = number.querySelector('.stat-counter-overlay');
+          if (overlay && Number(overlay.textContent.replace(/\D/g, '')) > 0 && window.counterStarts[index] === undefined) {
+            window.counterStarts[index] = performance.now();
+          }
+        }), 16);
+      });
+      await page.goto(base + '/', { waitUntil: 'domcontentloaded' });
       await page.evaluate(() => document.fonts.ready);
       const numbers = page.locator('.stat-nombre');
       for (let i = 0; i < 4; i++) {
@@ -42,10 +51,18 @@ export async function verifyStatCounters(contextFor, base) {
       await page.waitForTimeout(100);
       assert.equal(await page.locator('.stat-counter-overlay').count(), 0);
       assert.deepEqual(await numbers.allTextContents(), expected);
+      if (width >= 1024) {
+        const starts = await page.evaluate(() => window.counterStarts);
+        assert.equal(starts.length, 4);
+        for (let i = 1; i < starts.length; i++) {
+          assert.ok(starts[i] - starts[i - 1] > 100 && starts[i] - starts[i - 1] < 300, 'Desktop counters start successively, about 180 ms apart');
+        }
+      }
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
       await page.screenshot({ path: `test-results/stat-counters-${width}.png` });
-      await page.reload({ waitUntil: 'networkidle' });
-      await page.waitForTimeout(1600);
+      await page.reload({ waitUntil: 'domcontentloaded' });
+      await page.waitForTimeout(2100);
+      await page.waitForFunction(() => !document.querySelector('.stat-counter-overlay'));
       assert.deepEqual(await numbers.allTextContents(), expected, 'Restored scroll settles to final values');
     } finally { await context.close(); }
   }
@@ -54,7 +71,7 @@ export async function verifyStatCounters(contextFor, base) {
     const page = await context.newPage();
     try {
       await page.emulateMedia({ reducedMotion: mode === 'reduced' ? 'reduce' : 'no-preference' });
-      await page.goto(base + '/', { waitUntil: 'networkidle' });
+      await page.goto(base + '/', { waitUntil: 'domcontentloaded' });
       const numbers = page.locator('.stat-nombre');
       await numbers.first().evaluate(el => el.scrollIntoView({ block: 'center', behavior: 'instant' }));
       if (mode === 'change') {
@@ -69,3 +86,4 @@ export async function verifyStatCounters(contextFor, base) {
     } finally { await context.close(); }
   }
 }
+

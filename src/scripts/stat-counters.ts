@@ -35,6 +35,8 @@ if (!preference.matches && 'IntersectionObserver' in window) {
       };
       const tween = gsap.to(state, {
         value: Number(match[2]), duration: 1.4, ease: 'power2.out',
+        delay: window.matchMedia(mediaTokens['--mq-large-min']).matches
+          ? Array.from(numbers).indexOf(number) * 0.18 : 0,
         onUpdate: render, onComplete: finish,
       });
       finishers.add(finish);
