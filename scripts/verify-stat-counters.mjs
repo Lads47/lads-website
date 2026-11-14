@@ -86,4 +86,3 @@ export async function verifyStatCounters(contextFor, base) {
     } finally { await context.close(); }
   }
 }
-
