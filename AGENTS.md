@@ -1,10 +1,12 @@
-# Les Ateliers du Stream — refonte Astro et Lumos
+# Les Ateliers du Stream — site Astro et Lumos
 
 @C:\Users\webat\.codex\RTK.md
 
+Le site utilise déjà **Astro et Lumos for Astro**. Avant toute modification d’interface, lire [le guide Lumos du projet](docs/lumos.md). Modifier les pages et composants dans `src/` en réutilisant les composants Lumos, leurs variantes et les styles existants de `src/styles/`. Astro génère le HTML dans `dist/` à chaque build. Toute modification directe de ce HTML sera écrasée.
+
 ## Mandat et autonomie
 
-Le projet consiste à refondre le site de `Lads47/lads-website` avec Astro et Lumos. Le propriétaire souhaite déléguer la conduite du projet aux agents, sans gérer les choix techniques ni le suivi quotidien.
+Le propriétaire souhaite déléguer la conduite du projet aux agents, sans gérer les choix techniques ni le suivi quotidien.
 
 ### Présentation locale obligatoire
 
@@ -12,7 +14,7 @@ Présenter la version construite en local et attendre la validation explicite de
 
 La migration conserve fidèlement le rendu et **tous les textes**, y compris les contradictions éditoriales. Signaler les incohérences dans le rapport, sans les harmoniser. Les réparations de fonctionnement et d'accessibilité sont incluses.
 
-- Examiner le code, les ressources du projet et les sources officielles avant de choisir une solution. Vérifier le socle Lumos adapté à Astro avant son installation.
+- Examiner le code, les ressources du projet et les sources officielles avant de choisir une solution.
 - Prendre les décisions courantes, documenter les hypothèses utiles et avancer par étapes vérifiables. Consulter l'utilisateur seulement lorsqu'une information indispensable reste introuvable ou qu'une action engageante dépasse le mandat reçu.
 - Prendre en charge le découpage en tickets, leur mise à jour, l'implémentation, les contrôles et les corrections. Reprendre le travail à partir des tickets ouverts et de leurs dépendances.
 - Conserver les contenus métier, coordonnées, médias, fonctionnalités et URL utiles du site source. Justifier les changements de comportement et prévoir les redirections avant de changer les URL.
